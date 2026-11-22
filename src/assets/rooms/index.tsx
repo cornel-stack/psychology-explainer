@@ -163,11 +163,20 @@ export const TrainInterior: React.FC = () => (
   </g>
 );
 
-/** Cozy living room: couch, rug, picture, plant, lamp. */
+/** Cozy living room: wallpaper + wainscot, couch, rug, picture, plant. */
 export const LivingRoom: React.FC = () => (
   <g>
     <WallFloor wall={COLORS.pink} floor={COLORS.wood} floorY={800} stripe={false} />
-    <rect x={0} y={0} width={CANVAS.width} height={800} fill={shade(COLORS.pink, 0.04)} />
+    {/* wallpaper stripes on the upper wall (breaks up the flat pink) */}
+    {Array.from({ length: 24 }).map((_, i) => (
+      <rect key={i} x={i * 84} y={0} width={42} height={560} fill={shade(COLORS.pink, 0.08)} />
+    ))}
+    {/* wainscot panel along the lower wall */}
+    <rect x={0} y={560} width={CANVAS.width} height={240} fill={COLORS.bgCream} />
+    <rect x={0} y={560} width={CANVAS.width} height={16} fill={shade(COLORS.wood, 0.1)} />
+    {Array.from({ length: 10 }).map((_, i) => (
+      <rect key={i} x={70 + i * 190} y={596} width={150} height={168} rx={10} fill="none" stroke={shade(COLORS.bgCream, 0.14)} strokeWidth={STROKE.sm} />
+    ))}
     {/* rug */}
     <ellipse cx={760} cy={960} rx={620} ry={110} fill={shade(COLORS.wood, 0.14)} />
     {/* window with day sky */}
