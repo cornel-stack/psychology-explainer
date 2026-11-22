@@ -140,14 +140,14 @@ export const Mascot: React.FC<MascotProps> = ({
       <g transform={`rotate(${lean})`}>
         {!seated && <ellipse cx={0} cy={352} rx={120} ry={20} fill={COLORS.outline} opacity={0.15} />}
         <g transform={`translate(0 ${bodyBob})`}>
-          <Arms pose={armPose} sleeve={sleeve} frame={frame} layer="back" />
           <CostumeBody costume={costume} showLegs={!seated} />
           {pose === 'hands-on-wheel' && (
             <g transform="translate(0 252) scale(0.9)">
               <SteeringWheel />
             </g>
           )}
-          <Arms pose={armPose} sleeve={sleeve} frame={frame} layer="front" />
+          {/* both arms in front, each attached at the shoulder */}
+          <Arms pose={armPose} sleeve={sleeve} frame={frame} />
         </g>
         <g transform={`translate(${jitter} ${headBob}) rotate(${headTilt})`}>
           <Head />

@@ -72,7 +72,7 @@ const POSES: Record<Pose, ArmSet> = {
   walking: { L: [SHOULDER_L, [-100, 236], [-108, 296]], R: [SHOULDER_R, [100, 236], [108, 296]] },
 };
 
-export const Arms: React.FC<{ pose: Pose; sleeve: string; frame?: number; layer?: 'back' | 'front' }> = ({ pose, sleeve, frame = 0, layer = 'front' }) => {
+export const Arms: React.FC<{ pose: Pose; sleeve: string; frame?: number }> = ({ pose, sleeve, frame = 0 }) => {
   const def = POSES[pose] ?? POSES.idle;
   let { L, R } = def;
   if (pose === 'walking') {
@@ -80,9 +80,14 @@ export const Arms: React.FC<{ pose: Pose; sleeve: string; frame?: number; layer?
     L = [SHOULDER_L, [-100, 236 + s], [-108, 296 + s]];
     R = [SHOULDER_R, [100, 236 - s], [108, 296 - s]];
   }
-  // back layer: the arm that reads as "behind" the torso (left for most poses)
-  if (layer === 'back') return <Limb pts={L} fill={sleeve} hand={COLORS.skin} finger={def.lFinger} />;
-  return <Limb pts={R} fill={sleeve} hand={COLORS.skin} finger={def.rFinger} />;
+  // Both arms are drawn in the SAME (front) layer, each rooted at its shoulder
+  // inside the torso, so they read as symmetrically attached — never hanging.
+  return (
+    <g>
+      <Limb pts={L} fill={sleeve} hand={COLORS.skin} finger={def.lFinger} />
+      <Limb pts={R} fill={sleeve} hand={COLORS.skin} finger={def.rFinger} />
+    </g>
+  );
 };
 
 /** sleeve color helper used by Mascot. */
