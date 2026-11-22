@@ -60,6 +60,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Ensure Remotion headless browser (+ Linux deps)
+        run: npx remotion browser ensure
+
       # Per-beat TTS cache: restored audio means tts.py only re-synthesizes beats
       # whose text/voice hash changed (see scripts/tts.py).
       - name: Cache TTS audio
@@ -83,21 +86,21 @@ jobs:
       - name: Validate (schema + asset registry + manifest)
         run: npm run validate "$SLUG"
 
-      - name: Lint strokes + grid overlap
+      - name: Lint strokes + grid overlap (pre-render gates)
         run: |
           npm run lint:strokes
           node scripts/qa_grid_overlap.mjs
-
-      - name: Stills QA pass (fails on any red)
-        run: |
-          node scripts/stills.mjs "$SLUG"
-          python3 scripts/qa_stills.py "renders/${SLUG}-stills"
 
       - name: Thumbnails (3 variants)
         run: npm run thumbnails
 
       - name: Full 1080p render
         run: npm run render "$SLUG"
+
+      - name: Stills QA pass (one frame per beat from the mp4; fails on any red)
+        run: |
+          node scripts/extract_beat_stills.mjs "$SLUG"
+          python3 scripts/qa_stills.py "renders/${SLUG}-stills"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
