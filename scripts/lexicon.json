@@ -1,0 +1,10 @@
+{
+  "_comment": "Pronunciation dictionary applied before TTS. Keys are case-insensitive whole words; values are phonetic respellings edge-tts handles reliably. Seeded per spec.",
+  "hypnagogic": "hip-nuh-GOJ-ik",
+  "hypnopompic": "hip-noh-POMP-ik",
+  "myoclonus": "my-OCK-luh-nus",
+  "atonia": "ay-TOH-nee-uh",
+  "LaBerge": "luh-BAIRZH",
+  "parasomnia": "pair-uh-SOM-nee-uh",
+  "adenosine": "uh-DEN-uh-seen"
+}

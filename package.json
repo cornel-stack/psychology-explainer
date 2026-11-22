@@ -1,0 +1,27 @@
+{
+  "name": "psychology-explainer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Code-only faceless psychology explainer video pipeline (Remotion + edge-tts)",
+  "scripts": {
+    "preview": "remotion studio",
+    "tts": "python3 scripts/tts.py",
+    "render": "node scripts/render.mjs",
+    "stills": "node scripts/stills.mjs",
+    "validate": "tsx scripts/validate.ts",
+    "contact-sheet": "remotion still CardContactSheet renders/contact-sheet.png --frame=15 && remotion still CardAccessories renders/accessories.png --frame=15",
+    "voices": "python3 scripts/voice_candidates.py"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.*",
+    "@remotion/google-fonts": "^4.0.545",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.*"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3"
+  }
+}

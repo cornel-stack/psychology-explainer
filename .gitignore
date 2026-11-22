@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Renders (large, regenerable)
+renders/
+/content/*/audio/
+/content/*/durations.json
+
+# Reference material — derived from a COPYRIGHTED video; never commit to a public repo
+reference/source.*
+reference/frames/
+reference/montage_*.jpg
+reference/*.vtt
+reference/*.srt
+
+# Remotion / build
+.remotion/
+out/
+dist/
+
+# OS / editor
+.DS_Store
+*.log
+.env
+.env.*
