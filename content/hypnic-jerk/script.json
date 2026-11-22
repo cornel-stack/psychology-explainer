@@ -1,0 +1,95 @@
+{
+  "title": "The Hypnic Jerk",
+  "slug": "hypnic-jerk",
+  "chapters": [
+    {
+      "name": "Hypnic Jerk",
+      "beats": [
+        {
+          "vo": "The hypnic jerk. You're lying in bed, warm and heavy, finally starting to drift off to sleep.",
+          "scene": "story",
+          "room": "bedroom-night",
+          "emotion": "sleepy",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "mascots": [
+            { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "sleepy", "accessory": "nightcap", "x": 660, "y": 520, "scale": 1.25, "talking": true, "lookDir": "center" }
+          ],
+          "props": [
+            { "name": "blanket", "x": 660, "y": 812, "scale": 1.0 }
+          ]
+        },
+        {
+          "vo": "Then, out of nowhere, your whole body twitches, and for a split second it feels like you're falling.",
+          "scene": "story",
+          "room": "bedroom-night",
+          "emotion": "terrified",
+          "camera": { "zoomTo": [0.42, 0.46, 1.3] },
+          "mascots": [
+            { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "terrified", "accessory": "nightcap", "x": 660, "y": 520, "scale": 1.25, "talking": true }
+          ],
+          "props": [
+            { "name": "blanket", "x": 660, "y": 812, "scale": 1.0 },
+            { "name": "red-arrow", "x": 1120, "y": 540, "scale": 1.2, "appearAt": 6, "args": { "dir": "down" } }
+          ]
+        },
+        {
+          "vo": "Maybe you were dreaming of missing a step on the stairs, or tipping backward off a chair, right as it happened.",
+          "scene": "story",
+          "room": "bedroom-night",
+          "emotion": "confused",
+          "camera": "static",
+          "mascots": [
+            { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "confused", "accessory": "nightcap", "x": 660, "y": 520, "scale": 1.25, "talking": true }
+          ],
+          "props": [
+            { "name": "blanket", "x": 660, "y": 812, "scale": 1.0 },
+            { "name": "thought-bubble", "x": 1180, "y": 420, "scale": 1.3, "appearAt": 8 }
+          ]
+        },
+        {
+          "vo": "That twitch happens right as you slip from being awake down into the first light stages of sleep.",
+          "scene": "diagramCard",
+          "diagram": "sleep-stage",
+          "highlight": "rem",
+          "emotion": "serious-expert",
+          "withMascot": true
+        },
+        {
+          "vo": "On the way down, your muscles go limp, and your brain's activity begins to wind down for the night.",
+          "scene": "explainer",
+          "prop": "lightning-cloud",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "For a moment, it's as if your mind and your body fall slightly out of sync with each other.",
+          "scene": "diagramCard",
+          "diagram": "switchboard",
+          "emotion": "confused",
+          "withMascot": true
+        },
+        {
+          "vo": "And you are far from alone. Around seventy percent of people have felt a hypnic jerk at some point.",
+          "scene": "statCard",
+          "value": 70,
+          "suffix": "%",
+          "pictogram": "crowd",
+          "fraction": 0.7,
+          "emotion": "excited"
+        },
+        {
+          "vo": "One popular idea is that your brain misreads those relaxing muscles as a real fall, and fires a quick jolt to catch you.",
+          "scene": "explainer",
+          "prop": "red-arrow",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "Either way, it's completely harmless. Just your nervous system settling in. So take a breath, and let yourself drift.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "neutral"
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import { SceneRouter } from './scenes/SceneRouter';
 import { SAMPLE_BEATS } from './dev/samples';
 import { MotionReel, MOTION_REEL_FRAMES } from './dev/MotionReel';
 import { JointTest } from './dev/JointTest';
+import { MainVideo, calcVideoMetadata } from './Video';
 
 // Each template still is a SceneRouter wrapped at canvas size.
 const TEMPLATE_STILLS: { id: string; beat: keyof typeof SAMPLE_BEATS; dur: number }[] = [
@@ -46,6 +47,18 @@ export const RemotionRoot: React.FC = () => {
 
       {/* Phase 2 — 15s silent motion reel through all templates */}
       <Composition id="MotionReel" component={MotionReel} durationInFrames={MOTION_REEL_FRAMES} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
+
+      {/* Phase 3 — duration-driven assembled video (props from render.mjs) */}
+      <Composition
+        id="MainVideo"
+        component={MainVideo}
+        durationInFrames={300}
+        fps={CANVAS.fps}
+        width={CANVAS.width}
+        height={CANVAS.height}
+        defaultProps={{ slug: '', fps: CANVAS.fps, beats: [], music: 'sfx/music_bed.mp3' }}
+        calculateMetadata={calcVideoMetadata}
+      />
     </>
   );
 };
