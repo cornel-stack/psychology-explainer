@@ -13,6 +13,7 @@ export type EyeStyle =
   | 'shrunk' // scared (tiny pupils)
   | 'white-wide' // terrified (white, huge)
   | 'closed-smile' // >< happy closed arcs
+  | 'closed-peaceful' // gentle downward arcs (peaceful sleep)
   | 'clench'; // >< strained
 
 export type BrowStyle =

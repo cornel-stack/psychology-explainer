@@ -64,7 +64,8 @@ export const ContactSheet: React.FC = () => {
           {POSES.map((pose, c) => {
             const cx = gridX0 + c * CELL_W;
             const cy = gridY0 + r * CELL_H;
-            const scale = pose === 'face-on-pillow' ? 0.42 : 0.33;
+            const scale = pose === 'face-on-pillow' ? 0.4 : pose === 'sitting-up-in-bed' ? 0.3 : 0.33;
+            const bedHint = pose === 'face-on-pillow' || pose === 'sitting-up-in-bed';
             return (
               <Cell key={pose} x={cx} y={cy}>
                 <Mascot
@@ -76,6 +77,7 @@ export const ContactSheet: React.FC = () => {
                   x={CELL_W / 2}
                   y={CELL_H / 2 + 24}
                   seed={r * 11 + c + 1}
+                  bedHint={bedHint}
                 />
               </Cell>
             );

@@ -101,7 +101,7 @@ const Switch: React.FC<{ label: string; on: boolean; x: number }> = ({ label, on
       {/* track */}
       <rect x={-130} y={-60} width={260} height={130} rx={65} fill={on ? COLORS.greenLeaf : COLORS.ledGrey} opacity={0.5} {...lg} />
       <circle cx={knobX} cy={5} r={66} fill={COLORS.white} {...lg} />
-      <circle cx={knobX} cy={5} r={66} fill="none" stroke={shade(COLORS.white, 0.12)} strokeWidth={STROKE.sm} />
+      <circle cx={knobX} cy={5} r={40} fill={shade(COLORS.white, 0.08)} />
       {/* LED */}
       <circle cx={0} cy={140} r={26} fill={led} {...lg} />
       {/* label */}

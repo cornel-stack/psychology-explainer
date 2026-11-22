@@ -71,7 +71,8 @@ export const LightningCloud: React.FC = () => {
         </g>
       )}
       <path d="M -96 12 Q -116 -32 -74 -42 Q -64 -82 -10 -68 Q 32 -98 74 -60 Q 124 -62 114 -14 Q 128 22 84 26 L -74 26 Q -110 26 -96 12 Z" fill={COLORS.lavender} {...xl} />
-      <path d="M -70 -2 Q -40 -28 0 -22 Q 40 -28 70 -6 Q 30 2 -70 -2 Z" fill={shade(COLORS.lavender, 0.18)} />
+      {/* crisp darker crescent along the bottom edge only */}
+      <path d="M -92 14 Q -40 36 84 24 Q 118 22 110 2 Q 60 22 -72 18 Q -96 16 -92 14 Z" fill={shade(COLORS.lavender, 0.2)} />
       <path d="M 12 22 L -18 74 L 10 74 L -14 126 L 44 60 L 16 60 L 38 22 Z" fill={COLORS.yellow} {...lg} opacity={strike ? 1 : 0.9} />
     </g>
   );
@@ -90,7 +91,10 @@ export const Footprints: React.FC = () => (
   </g>
 );
 
-/** 4-point sparkles — gold fill + token outline, twinkling. */
+/**
+ * 4-point sparkles — ALWAYS full-opacity gold fill + black outline token.
+ * Twinkle is a SCALE pulse (0.85–1.15), never an opacity fade (S1).
+ */
 export const Sparkles: React.FC<{ n?: number }> = ({ n = 4 }) => {
   const f = useCurrentFrame();
   const pts = [
@@ -103,9 +107,13 @@ export const Sparkles: React.FC<{ n?: number }> = ({ n = 4 }) => {
   ].slice(0, n);
   return (
     <g fill={COLORS.yellow} {...sm}>
-      {pts.map(([x, y, r], i) => (
-        <path key={i} opacity={0.4 + 0.6 * Math.abs(Math.sin(f / 7 + i))} d={`M ${x} ${y - r} L ${x + r * 0.3} ${y - r * 0.3} L ${x + r} ${y} L ${x + r * 0.3} ${y + r * 0.3} L ${x} ${y + r} L ${x - r * 0.3} ${y + r * 0.3} L ${x - r} ${y} L ${x - r * 0.3} ${y - r * 0.3} Z`} />
-      ))}
+      {pts.map(([x, y, r], i) => {
+        const s = 1 + 0.15 * Math.sin(f / 7 + i * 1.7);
+        const rr = r * s;
+        return (
+          <path key={i} d={`M ${x} ${y - rr} L ${x + rr * 0.3} ${y - rr * 0.3} L ${x + rr} ${y} L ${x + rr * 0.3} ${y + rr * 0.3} L ${x} ${y + rr} L ${x - rr * 0.3} ${y + rr * 0.3} L ${x - rr} ${y} L ${x - rr * 0.3} ${y - rr * 0.3} Z`} />
+        );
+      })}
     </g>
   );
 };

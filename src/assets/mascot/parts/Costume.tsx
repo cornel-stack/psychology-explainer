@@ -29,29 +29,33 @@ export const BrandBadge: React.FC<{ x: number; y: number; scale?: number }> = ({
   </g>
 );
 
-/** One continuous leg + foot (silhouette+inset). */
-const Leg: React.FC<{ x: number; legFill: string; shoe: string; dir: 1 | -1 }> = ({ x, legFill, shoe, dir }) => {
-  const d = `M ${x} 246 L ${x} 316`;
-  const fx = x + dir * 14;
+/** One continuous leg + foot (silhouette+inset). footDX/footDY + bend swing the
+ *  leg for the walk cycle. */
+const Leg: React.FC<{ x: number; legFill: string; shoe: string; dir: 1 | -1; footDX?: number; footDY?: number; bend?: number }> = ({ x, legFill, shoe, dir, footDX = 0, footDY = 0, bend = 0 }) => {
+  const fx = x + footDX + dir * 14;
+  const fy = 330 + footDY;
+  const d = `M ${x} 246 Q ${x + bend} 284 ${x + footDX} ${316 + footDY}`;
   return (
     <g>
-      {/* silhouette */}
-      <path d={d} fill="none" stroke={COLORS.outline} strokeWidth={LEG_W + 2 * PEEK} strokeLinecap="round" />
-      <ellipse cx={fx} cy={330} rx={36} ry={22} fill={COLORS.outline} />
-      {/* fill */}
-      <path d={d} fill="none" stroke={legFill} strokeWidth={LEG_W} strokeLinecap="round" />
-      <ellipse cx={fx} cy={330} rx={36 - PEEK} ry={22 - PEEK} fill={shoe} />
-      {shoe !== legFill && <path d={`M ${fx - 28} 332 L ${fx + 28} 332`} stroke={shade(shoe, 0.25)} strokeWidth={STROKE.sm} strokeLinecap="round" />}
+      <path d={d} fill="none" stroke={COLORS.outline} strokeWidth={LEG_W + 2 * PEEK} strokeLinecap="round" strokeLinejoin="round" />
+      <ellipse cx={fx} cy={fy} rx={36} ry={22} fill={COLORS.outline} />
+      <path d={d} fill="none" stroke={legFill} strokeWidth={LEG_W} strokeLinecap="round" strokeLinejoin="round" />
+      <ellipse cx={fx} cy={fy} rx={36 - PEEK} ry={22 - PEEK} fill={shoe} />
+      {shoe !== legFill && <path d={`M ${fx - 28} ${fy + 2} L ${fx + 28} ${fy + 2}`} stroke={shade(shoe, 0.25)} strokeWidth={STROKE.sm} strokeLinecap="round" />}
     </g>
   );
 };
 
-const Legs: React.FC<{ legFill: string; shoe: string }> = ({ legFill, shoe }) => (
-  <g>
-    <Leg x={-34} legFill={legFill} shoe={shoe} dir={-1} />
-    <Leg x={34} legFill={legFill} shoe={shoe} dir={1} />
-  </g>
-);
+const Legs: React.FC<{ legFill: string; shoe: string; stride?: number }> = ({ legFill, shoe, stride = 0 }) => {
+  const a = stride;
+  const lDX = a * 64;
+  const rDX = -a * 64;
+  const lDY = a > 0 ? -Math.abs(a) * 38 : 0;
+  const rDY = a < 0 ? -Math.abs(a) * 38 : 0;
+  const left = <Leg key="l" x={-34} legFill={legFill} shoe={shoe} dir={-1} footDX={lDX} footDY={lDY} bend={lDX * 0.4} />;
+  const right = <Leg key="r" x={34} legFill={legFill} shoe={shoe} dir={1} footDX={rDX} footDY={rDY} bend={rDX * 0.4} />;
+  return <g>{a >= 0 ? [right, left] : [left, right]}</g>;
+};
 
 const starMoon = (
   <g fill={COLORS.yellowDark} opacity={0.85}>
@@ -62,12 +66,12 @@ const starMoon = (
   </g>
 );
 
-export const Costume: React.FC<{ costume: Costume; showLegs?: boolean }> = ({ costume, showLegs = true }) => {
+export const Costume: React.FC<{ costume: Costume; showLegs?: boolean; stride?: number }> = ({ costume, showLegs = true, stride = 0 }) => {
   switch (costume) {
     case 'pajamas':
       return (
         <g>
-          {showLegs && <Legs legFill={COLORS.yellow} shoe={COLORS.white} />}
+          {showLegs && <Legs legFill={COLORS.yellow} shoe={COLORS.white} stride={stride} />}
           <path d={TORSO} fill={COLORS.yellow} {...xl} />
           {/* inner-shade (two-tone) */}
           <path d="M -70 250 Q 0 276 70 250 L 66 288 Q 0 300 -66 288 Z" fill={COLORS.yellowDark} opacity={0.35} />
@@ -82,7 +86,7 @@ export const Costume: React.FC<{ costume: Costume; showLegs?: boolean }> = ({ co
     case 'labcoat':
       return (
         <g>
-          {showLegs && <Legs legFill={COLORS.shirtDark} shoe={COLORS.shirtDarker} />}
+          {showLegs && <Legs legFill={COLORS.shirtDark} shoe={COLORS.shirtDarker} stride={stride} />}
           {/* dark shirt behind coat */}
           <path d="M -36 118 L 36 118 L 26 288 L -26 288 Z" fill={COLORS.shirtDark} {...lg} />
           {/* coat */}
@@ -102,7 +106,7 @@ export const Costume: React.FC<{ costume: Costume; showLegs?: boolean }> = ({ co
     case 'suit':
       return (
         <g>
-          {showLegs && <Legs legFill={COLORS.shirtDark} shoe={COLORS.shirtDarker} />}
+          {showLegs && <Legs legFill={COLORS.shirtDark} shoe={COLORS.shirtDarker} stride={stride} />}
           <path d={TORSO} fill={COLORS.navy} {...xl} />
           <path d="M -70 250 Q 0 276 70 250 L 66 288 Q 0 300 -66 288 Z" fill={COLORS.navyDark} opacity={0.5} />
           {/* white collar */}
@@ -116,7 +120,7 @@ export const Costume: React.FC<{ costume: Costume; showLegs?: boolean }> = ({ co
     case 'hoodie':
       return (
         <g>
-          {showLegs && <Legs legFill={COLORS.navy} shoe={COLORS.white} />}
+          {showLegs && <Legs legFill={COLORS.navy} shoe={COLORS.white} stride={stride} />}
           {/* hood behind head */}
           <path d="M -122 44 Q 0 -72 122 44 Q 70 92 0 92 Q -70 92 -122 44 Z" fill={COLORS.hoodie} {...xl} />
           <path d={TORSO} fill={COLORS.hoodie} {...xl} />

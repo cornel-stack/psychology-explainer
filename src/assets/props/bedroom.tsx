@@ -20,9 +20,9 @@ export const Pillow: React.FC = () => (
 
 export const Bed: React.FC = () => (
   <g>
-    {/* headboard */}
-    <rect x={-360} y={-180} width={120} height={300} rx={24} fill={COLORS.wood} {...sil} />
-    <rect x={-336} y={-150} width={72} height={150} rx={16} fill={COLORS.woodDark} opacity={0.35} />
+    {/* headboard — taller than the pillows */}
+    <rect x={-360} y={-260} width={120} height={380} rx={24} fill={COLORS.wood} {...sil} />
+    <rect x={-336} y={-230} width={72} height={210} rx={16} fill={COLORS.woodDark} opacity={0.35} />
     {/* mattress base */}
     <rect x={-360} y={40} width={720} height={120} rx={28} fill={COLORS.white} {...sil} />
     {/* blue mattress band (second tone) */}
@@ -36,13 +36,18 @@ export const Bed: React.FC = () => (
   </g>
 );
 
-/** Foreground blanket — drawn OVER the mascot's lap so it reads as "in bed". */
+/** Bed blanket/duvet — sits on the bed behind/around the sitting mascot.
+ *  Visible fold lines + a darker-blue band along the lower edge. */
 export const Blanket: React.FC = () => (
   <g>
-    <path d="M -480 -80 Q 0 -150 480 -80 L 480 220 L -480 220 Z" fill={COLORS.sky} {...sil} />
-    <path d="M -480 -40 Q 0 -110 480 -40" fill="none" {...fine} stroke={COLORS.whiteShade} />
-    <path d="M -300 -70 Q -300 40 -260 160 M 0 -96 Q 0 40 0 180 M 300 -70 Q 300 40 260 160" fill="none" {...fine} stroke={shade(COLORS.sky, 0.16)} />
-    <rect x={-480} y={160} width={960} height={60} fill={shade(COLORS.sky, 0.18)} opacity={0.5} />
+    <path d="M -440 -70 Q 0 -130 440 -70 L 440 200 L -440 200 Z" fill={COLORS.sky} {...sil} />
+    {/* top roll highlight */}
+    <path d="M -440 -36 Q 0 -96 440 -36" fill="none" {...std} stroke={COLORS.white} />
+    {/* 3 fold lines */}
+    <path d="M -250 -60 Q -256 60 -240 180 M 0 -84 Q 0 60 0 196 M 250 -60 Q 256 60 240 180" fill="none" {...std} stroke={COLORS.skyDark} />
+    {/* darker band along the lower edge */}
+    <rect x={-440} y={150} width={880} height={50} fill={shade(COLORS.sky, 0.2)} />
+    <path d="M -440 150 L 440 150" {...std} stroke={shade(COLORS.sky, 0.25)} />
   </g>
 );
 

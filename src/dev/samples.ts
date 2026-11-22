@@ -9,14 +9,15 @@ export const SAMPLE_BEATS: Record<string, Beat> = {
     camera: 'slowZoom',
     chapterStart: true,
     mascots: [
-      // tucked into the bed (head above the blanket), facing the nightstand
-      { costume: 'pajamas', pose: 'sitting-up-in-bed', emotion: 'scared', accessory: 'nightcap', x: 700, y: 560, scale: 1.5, talking: true, lookDir: 'right' },
+      // sitting up in bed; blanket sits behind so the arms rest in front of it
+      { costume: 'pajamas', pose: 'sitting-up-in-bed', emotion: 'scared', accessory: 'nightcap', x: 660, y: 520, scale: 1.25, talking: true, lookDir: 'right' },
     ],
     props: [
-      // alarm clock SITS ON the nightstand (nightstand top ~636 at x1560)
-      { name: 'alarm-clock', x: 1560, y: 584, scale: 0.9, appearAt: 8 },
+      // blanket on the bed, behind the mascot's body
+      { name: 'blanket', x: 660, y: 812, scale: 1.0 },
+      // alarm clock on the nightstand, beside the lamp (to the right)
+      { name: 'alarm-clock', x: 1626, y: 600, scale: 0.82, appearAt: 8 },
     ],
-    fg: [{ name: 'blanket', x: 700, y: 840, scale: 1.05 }],
   },
   explainer: {
     vo: 'Deep in your brainstem, a tiny alarm system misfires a surge of adrenaline.',

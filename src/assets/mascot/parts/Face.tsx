@@ -68,6 +68,9 @@ const Eye: React.FC<{ x: number; spec: EmotionSpec; blinking: boolean }> = ({ x,
           <circle cx={x} cy={EYE_Y + 2} r={6} fill={COLORS.outline} />
         </g>
       );
+    case 'closed-peaceful':
+      // gentle downward arc — calm, sleeping
+      return <path d={`M ${x - 24} ${EYE_Y - 2} Q ${x} ${EYE_Y + 14} ${x + 24} ${EYE_Y - 2}`} fill="none" {...strokeProps(STROKE.lg)} />;
     case 'closed-smile':
     case 'clench':
       return <path d={`M ${x - 24} ${EYE_Y + 10} L ${x} ${EYE_Y - 12} L ${x + 24} ${EYE_Y + 10}`} fill="none" {...strokeProps(STROKE.sm)} />;
@@ -169,14 +172,14 @@ const Mouth: React.FC<{ spec: EmotionSpec; talk: number }> = ({ spec, talk }) =>
 
 // ---------- Extras ----------
 const Extras: React.FC<{ spec: EmotionSpec; frame: number; fps: number }> = ({ spec, frame, fps }) => {
-  const twinkle = (phase: number) => 0.4 + 0.6 * Math.abs(Math.sin(frame / 8 + phase));
   switch (spec.extra) {
     case 'sparkles':
       return (
         <g fill={COLORS.yellow} {...strokeProps(STROKE.sm)}>
-          {[[-152, -120, 0], [150, -110, 1.3], [128, -6, 2.6]].map(([x, y, p], i) => (
-            <path key={i} opacity={twinkle(p)} d={`M ${x} ${y - 18} L ${x + 6} ${y - 6} L ${x + 18} ${y} L ${x + 6} ${y + 6} L ${x} ${y + 18} L ${x - 6} ${y + 6} L ${x - 18} ${y} L ${x - 6} ${y - 6} Z`} />
-          ))}
+          {[[-152, -120, 0], [150, -110, 1.3], [128, -6, 2.6]].map(([x, y, p], i) => {
+            const r = 18 * (1 + 0.15 * Math.sin(frame / 7 + p));
+            return <path key={i} d={`M ${x} ${y - r} L ${x + r * 0.33} ${y - r * 0.33} L ${x + r} ${y} L ${x + r * 0.33} ${y + r * 0.33} L ${x} ${y + r} L ${x - r * 0.33} ${y + r * 0.33} L ${x - r} ${y} L ${x - r * 0.33} ${y - r * 0.33} Z`} />;
+          })}
         </g>
       );
     case 'zzz':

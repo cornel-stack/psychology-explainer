@@ -68,8 +68,12 @@ export const CloseUp: React.FC<{
           <Place x={CANVAS.width / 2} y={CANVAS.height / 2 + 120} scale={3.4} bob={6} bobDiv={20}>
             {Comp ? <Comp /> : null}
           </Place>
-          <g transform={`translate(${CANVAS.width / 2} ${CANVAS.height / 2}) scale(4.0)`}>
-            <Sparkles n={5} />
+          {/* sparkles in the upper cloud space, clear of the object on its shelf */}
+          <g transform={`translate(${CANVAS.width / 2 - 360} ${CANVAS.height / 2 - 230}) scale(2.2)`}>
+            <Sparkles n={3} />
+          </g>
+          <g transform={`translate(${CANVAS.width / 2 + 360} ${CANVAS.height / 2 - 210}) scale(2.2)`}>
+            <Sparkles n={3} />
           </g>
         </Stage>
         <ChapterFlash active={chapterStart} />
@@ -77,9 +81,9 @@ export const CloseUp: React.FC<{
     );
   }
 
-  // face close-up
+  // face close-up — head low enough that the nightcap bleeds in at the top (P1)
   const headX = CANVAS.width / 2;
-  const headY = CANVAS.height * 0.42;
+  const headY = 560;
   const tremble = emotion === 'terrified';
   return (
     <AbsoluteFill>
@@ -103,7 +107,7 @@ export const CloseUp: React.FC<{
         <path d={`M 0 900 Q ${CANVAS.width / 2} 840 ${CANVAS.width} 900 L ${CANVAS.width} 1080 L 0 1080 Z`} fill={COLORS.sky} {...xl} />
         <path d={`M 0 940 Q ${CANVAS.width / 2} 890 ${CANVAS.width} 940`} fill="none" stroke={shade(COLORS.sky, 0.18)} strokeWidth={STROKE.lg} />
       </Stage>
-      <Mascot costume="pajamas" pose="face-on-pillow" emotion={emotion} accessory={accessory} x={headX} y={headY} scale={3.2} seed={9} />
+      <Mascot costume="pajamas" pose="face-on-pillow" emotion={emotion} accessory={accessory} x={headX} y={headY} scale={3.0} seed={9} />
       <ChapterFlash active={chapterStart} />
     </AbsoluteFill>
   );

@@ -17,19 +17,21 @@ export type RoomName = 'bedroom-night' | 'kitchen' | 'car-interior' | 'floor-pla
 export const BedroomNight: React.FC = () => (
   <g>
     <WallFloor wall={COLORS.wallNight} floor={COLORS.purpleDeep} floorY={820} />
-    {/* rug under the bed (no outline — it's on the floor plane) */}
-    <ellipse cx={720} cy={900} rx={520} ry={90} fill={COLORS.wallNightDark} />
-    <ellipse cx={720} cy={900} rx={430} ry={64} fill={shade(COLORS.wallNight, 0.1)} />
+    {/* rug directly under the bed only (no stray blob to the right) */}
+    <ellipse cx={660} cy={900} rx={360} ry={64} fill={shade(COLORS.wallNight, 0.1)} />
     {/* window on the wall (moon/stars live inside it) */}
     <g transform="translate(320 300)"><WindowNight /></g>
     {/* picture hangs on the wall */}
-    <g transform="translate(1150 300)"><FramedPicture /></g>
+    <g transform="translate(1150 280)"><FramedPicture /></g>
     {/* bed grounded on the floor */}
-    <g transform="translate(700 660)"><Bed /></g>
-    {/* nightstand + lamp (lamp sits on top; flat light pool on the surface) */}
+    <g transform="translate(660 660)"><Bed /></g>
+    {/* nightstand with a lamp BESIDE the alarm-clock spot; both grounded */}
     <g transform="translate(1560 760)"><Nightstand /></g>
-    <ellipse cx={1560} cy={636} rx={120} ry={30} fill={COLORS.yellowSoft} opacity={0.35} />
-    <g transform="translate(1560 540)"><Lamp /></g>
+    {/* lamp light pool + contact shadows on the surface */}
+    <ellipse cx={1560} cy={640} rx={130} ry={26} fill={COLORS.yellowSoft} opacity={0.3} />
+    <ellipse cx={1512} cy={648} rx={48} ry={13} fill={COLORS.outline} opacity={0.14} />
+    <ellipse cx={1626} cy={648} rx={44} ry={12} fill={COLORS.outline} opacity={0.14} />
+    <g transform="translate(1508 548)"><Lamp /></g>
     <g transform="translate(360 900)"><Slippers /></g>
   </g>
 );

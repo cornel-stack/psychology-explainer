@@ -75,28 +75,44 @@ export const TeddyBear: React.FC = () => (
   </g>
 );
 
-/** One classic stiletto in side profile: pointed toe (left), arch, thin heel (right). */
+/** A side-profile high heel: rounded toe box (left), arch, thin heel spike (right),
+ *  flat sole with a darker-pink crescent, and a bow on the instep. */
 const Stiletto: React.FC<{ tone?: string }> = ({ tone = COLORS.pink }) => (
   <g>
-    {/* thin heel spike under the back */}
-    <path d="M 48 -30 L 64 64 L 46 64 L 28 -28 Z" fill={tone} {...std} />
-    {/* sole */}
-    <path d="M -132 -24 C -60 -16 20 -20 70 -30 C 78 -24 74 -16 60 -12 C 0 -4 -84 -8 -130 -14 C -140 -16 -140 -22 -132 -24 Z" fill={shade(tone, 0.24)} {...std} />
-    {/* upper / vamp (low profile, pointed toe at left) */}
-    <path d="M -132 -26 C -120 -52 -66 -66 -6 -66 C 34 -66 58 -54 60 -32 C 8 -30 -72 -28 -132 -26 Z" fill={tone} {...std} />
+    {/* thin heel spike at the back */}
+    <path d="M 46 -8 L 58 62 L 66 62 L 52 -10 Z" fill={tone} {...std} />
+    {/* upper / vamp: toe box left, rising to the heel at right */}
+    <path
+      d="M -122 -8
+         C -134 -40 -98 -60 -58 -60
+         C -22 -60 -2 -50 10 -32
+         C 20 -18 40 -16 58 -18
+         L 58 -8
+         C 20 -2 -70 -2 -122 -8 Z"
+      fill={tone}
+      {...std}
+    />
+    {/* darker-pink crescent along the SOLE only */}
+    <path d="M -118 -10 C -50 -2 16 -4 54 -14 L 54 -6 C 16 4 -60 4 -118 -4 Z" fill={shade(tone, 0.22)} />
     {/* ankle opening */}
-    <ellipse cx={22} cy={-48} rx={24} ry={14} fill={shade(tone, 0.32)} />
-    {/* toe shine */}
-    <path d="M -116 -36 C -96 -44 -64 -48 -36 -46 C -64 -40 -92 -36 -112 -30 Z" fill={COLORS.white} opacity={0.4} />
+    <ellipse cx={40} cy={-34} rx={18} ry={11} fill={shade(tone, 0.3)} />
+    {/* bow on the instep */}
+    <g transform="translate(-34 -58)">
+      <path d="M 0 0 L -20 -11 L -20 11 Z" fill={tone} {...strokeProps(STROKE.sm)} />
+      <path d="M 0 0 L 20 -11 L 20 11 Z" fill={tone} {...strokeProps(STROKE.sm)} />
+      <circle r={7} fill={shade(tone, 0.15)} {...strokeProps(STROKE.sm)} />
+    </g>
   </g>
 );
 
 export const PinkHeels: React.FC = () => (
   <g>
-    <g transform="translate(-58 44) scale(0.82)" opacity={0.92}>
-      <Stiletto tone={shade(COLORS.pink, 0.08)} />
+    {/* second shoe behind, offset + slightly smaller */}
+    <g transform="translate(-36 54) scale(0.78)">
+      <Stiletto tone={shade(COLORS.pink, 0.1)} />
     </g>
-    <g transform="translate(40 -6)">
+    {/* front shoe, large in profile */}
+    <g transform="translate(30 -8)">
       <Stiletto />
     </g>
   </g>

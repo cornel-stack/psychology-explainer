@@ -36,10 +36,11 @@ export const EndScreen: React.FC<{ tagline?: string }> = ({ tagline = 'MIND MINU
           ))}
         </g>
 
-        {/* floating stars around the tagline */}
-        {[[subX - 360, 150], [subX + 360, 140], [subX - 250, 70], [subX + 250, 80]].map(([x, y], i) => (
-          <path key={i} d={`M ${x} ${y - 18} l 5 13 13 2 -10 9 3 14 -11 -7 -11 7 3 -14 -10 -9 13 -2 z`} fill={COLORS.white} opacity={0.5 + 0.5 * Math.abs(Math.sin(frame / 12 + i))} {...strokeProps(STROKE.sm)} />
-        ))}
+        {/* floating stars around the tagline — full opacity, scale twinkle */}
+        {[[subX - 360, 150], [subX + 360, 140], [subX - 250, 70], [subX + 250, 80]].map(([x, y], i) => {
+          const s = 1 + 0.15 * Math.sin(frame / 8 + i * 1.6);
+          return <path key={i} transform={`translate(${x} ${y}) scale(${s})`} d={`M 0 -18 l 5 13 13 2 -10 9 3 14 -11 -7 -11 7 3 -14 -10 -9 13 -2 z`} fill={COLORS.yellowSoft} {...strokeProps(STROKE.sm)} />;
+        })}
 
         {/* subscribe circle with the mascot face (clipped) */}
         <defs>

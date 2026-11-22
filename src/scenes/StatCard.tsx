@@ -46,10 +46,13 @@ export const StatCard: React.FC<{
       <Stage>
         <BurstBackground base={COLORS.bgCream} accent={COLORS.yellow} cx={CANVAS.width / 2} cy={340} rays={12} />
       </Stage>
-      {/* sparkles around the number */}
+      {/* sparkles flanking the number in clear space (never over it) */}
       <svg width={CANVAS.width} height={CANVAS.height} viewBox={`0 0 ${CANVAS.width} ${CANVAS.height}`} style={{ position: 'absolute', inset: 0 }}>
-        <g transform={`translate(${CANVAS.width / 2} 330) scale(3.4)`}>
-          <Sparkles n={4} />
+        <g transform={`translate(360 300) scale(2.0)`}>
+          <Sparkles n={3} />
+        </g>
+        <g transform={`translate(1560 300) scale(2.0)`}>
+          <Sparkles n={3} />
         </g>
       </svg>
       <div

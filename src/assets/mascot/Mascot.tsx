@@ -37,43 +37,61 @@ export interface MascotProps {
   seed?: number;
   /** spring-entrance frame (squash & stretch). omit = already on screen. */
   enterAt?: number;
+  /** draw a minimal bed hint behind bed poses (contact sheet only; scenes supply their own). */
+  bedHint?: boolean;
 }
 
-/** Head disc + SMALL low-left shine (A2 — replaces the old ivory crescent). */
-const Head: React.FC = () => (
-  <g>
-    <circle cx={0} cy={0} r={135} fill={COLORS.white} {...strokeProps(STROKE.xl)} />
-    <ellipse cx={-44} cy={74} rx={40} ry={22} fill={COLORS.whiteShade} opacity={0.5} />
-  </g>
-);
+/** Head disc — clean white, no shine (S2: the shine read as a smudge/drool). */
+const Head: React.FC = () => <circle cx={0} cy={0} r={135} fill={COLORS.white} {...strokeProps(STROKE.xl)} />;
 
-/** Bespoke reclined pose (NOT a rotated standing rig). */
+/** Peaceful sleeping face spec (calm closed eyes, tiny smile, zzz). */
+const SLEEP_FACE = { eyes: 'closed-peaceful', brows: 'raised', mouth: 'wavy-sm', extra: 'zzz', talkBias: 0 } as const;
+
+/** Bespoke reclined pose (NOT a rotated standing rig). Legs together, head tilted
+ *  onto a pillow, peaceful face. */
 const LyingRig: React.FC<{ costume: Costume; accessory: AccessoryVariant; frame: number; fps: number }> = ({ costume, accessory, frame, fps }) => {
   const sleeve = sleeveColor(costume);
   const breathe = Math.sin(frame / 16) * 3;
   return (
     <g transform={`translate(0 ${breathe})`}>
+      {/* pillow under the head */}
+      <ellipse cx={-120} cy={120} rx={150} ry={56} fill={COLORS.white} {...strokeProps(STROKE.xl)} />
+      <path d="M -220 118 Q -120 150 -20 118" fill="none" {...strokeProps(STROKE.sm)} stroke={COLORS.whiteShade} />
       {/* torso lying horizontally */}
-      <ellipse cx={70} cy={90} rx={170} ry={92} fill={sleeve} {...strokeProps(STROKE.xl)} />
-      <ellipse cx={70} cy={120} rx={120} ry={46} fill={COLORS.outline} opacity={0.12} />
-      {/* little legs to the right */}
-      <path d="M 220 70 L 290 50" fill="none" stroke={COLORS.outline} strokeWidth={44} strokeLinecap="round" />
-      <path d="M 220 70 L 290 50" fill="none" stroke={sleeve} strokeWidth={30} strokeLinecap="round" />
-      <path d="M 220 110 L 288 118" fill="none" stroke={COLORS.outline} strokeWidth={44} strokeLinecap="round" />
-      <path d="M 220 110 L 288 118" fill="none" stroke={sleeve} strokeWidth={30} strokeLinecap="round" />
+      <ellipse cx={70} cy={80} rx={175} ry={92} fill={sleeve} {...strokeProps(STROKE.xl)} />
+      <ellipse cx={70} cy={120} rx={120} ry={40} fill={COLORS.outline} opacity={0.1} />
+      {/* legs together (one overlapping pair, not splayed) */}
+      <path d="M 220 76 Q 280 70 312 84" fill="none" stroke={COLORS.outline} strokeWidth={56} strokeLinecap="round" />
+      <path d="M 220 76 Q 280 70 312 84" fill="none" stroke={sleeve} strokeWidth={42} strokeLinecap="round" />
+      <ellipse cx={320} cy={88} rx={30} ry={24} fill={COLORS.white} {...strokeProps(STROKE.sm)} />
       {/* resting arm on torso */}
-      <path d="M 40 60 Q 120 30 180 70" fill="none" stroke={COLORS.outline} strokeWidth={42} strokeLinecap="round" />
-      <path d="M 40 60 Q 120 30 180 70" fill="none" stroke={sleeve} strokeWidth={28} strokeLinecap="round" />
-      <circle cx={182} cy={72} r={22} fill={COLORS.skin} {...strokeProps(STROKE.sm)} />
-      {/* head on the left (pillow drawn by scene) */}
-      <g transform="translate(-120 18) rotate(-8)">
+      <path d="M 30 56 Q 110 26 176 64" fill="none" stroke={COLORS.outline} strokeWidth={42} strokeLinecap="round" />
+      <path d="M 30 56 Q 110 26 176 64" fill="none" stroke={sleeve} strokeWidth={28} strokeLinecap="round" />
+      <circle cx={178} cy={66} r={22} fill={COLORS.skin} {...strokeProps(STROKE.sm)} />
+      {/* head resting on the pillow */}
+      <g transform="translate(-120 10) rotate(-12)">
         <Head />
-        <Face spec={resolveEmotion('sleepy')} talk={0} blinking frame={frame} fps={fps} />
+        <Face spec={SLEEP_FACE} talk={0} blinking frame={frame} fps={fps} />
         {accessory !== 'none' && <Accessory variant={accessory} frame={frame} />}
       </g>
     </g>
   );
 };
+
+/** Minimal bed hint so bed poses read alone (contact sheet). Not used in scenes. */
+const BedHint: React.FC<{ kind: 'pillow' | 'mattress' }> = ({ kind }) =>
+  kind === 'pillow' ? (
+    <g>
+      <ellipse cx={0} cy={150} rx={240} ry={110} fill={COLORS.white} {...strokeProps(STROKE.xl)} />
+      <path d="M -170 150 Q 0 200 170 150" fill="none" {...strokeProps(STROKE.sm)} stroke={COLORS.whiteShade} />
+    </g>
+  ) : (
+    <g>
+      <rect x={-230} y={300} width={460} height={150} rx={40} fill={COLORS.white} {...strokeProps(STROKE.xl)} />
+      <path d="M -230 360 Q 0 320 230 360 L 230 450 L -230 450 Z" fill={COLORS.sky} {...strokeProps(STROKE.xl)} />
+      <path d="M -150 356 Q -150 410 -150 440 M 0 346 Q 0 410 0 450 M 150 356 Q 150 410 150 440" fill="none" {...strokeProps(STROKE.sm)} stroke={COLORS.skyDark} />
+    </g>
+  );
 
 export const Mascot: React.FC<MascotProps> = ({
   costume = 'labcoat',
@@ -88,6 +106,7 @@ export const Mascot: React.FC<MascotProps> = ({
   flip = false,
   seed = 1,
   enterAt,
+  bedHint = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -120,6 +139,7 @@ export const Mascot: React.FC<MascotProps> = ({
   if (pose === 'face-on-pillow') {
     body = (
       <g transform={`rotate(-8)`}>
+        {bedHint && <BedHint kind="pillow" />}
         <g transform={`translate(0 ${headBob + jitter})`}>
           <Head />
           <Face spec={spec} talk={talk} blinking={blinking} frame={frame} fps={fps} look={look} />
@@ -140,7 +160,7 @@ export const Mascot: React.FC<MascotProps> = ({
       <g transform={`rotate(${lean})`}>
         {!seated && <ellipse cx={0} cy={352} rx={120} ry={20} fill={COLORS.outline} opacity={0.15} />}
         <g transform={`translate(0 ${bodyBob})`}>
-          <CostumeBody costume={costume} showLegs={!seated} />
+          <CostumeBody costume={costume} showLegs={!seated} stride={pose === 'walking' ? Math.sin(frame / 6) : 0} />
           {pose === 'hands-on-wheel' && (
             <g transform="translate(0 252) scale(0.9)">
               <SteeringWheel />
@@ -158,6 +178,8 @@ export const Mascot: React.FC<MascotProps> = ({
             </g>
           )}
         </g>
+        {/* bed hint (blanket over the lap) drawn in front for the seated pose */}
+        {seated && bedHint && <BedHint kind="mattress" />}
       </g>
     );
   }
