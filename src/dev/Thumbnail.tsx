@@ -1,11 +1,11 @@
 /**
- * Thumbnail.tsx — 1280x720 thumbnails drawn with the same SVG system.
- * Mascot large on the right with an intense emotion; 3-4 word hook on the left in
- * the display font; one accent color; burst background; readable at 120px wide.
+ * Thumbnail.tsx — 1280x720 clickbait thumbnails (Dear Brain). Big reacting
+ * mascot, a 2-3 word curiosity hook, a red attention badge, one accent color,
+ * readable at 120px wide.
  */
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
-import { COLORS } from '../lib/style';
+import { COLORS, STROKE } from '../lib/style';
 import { fontFamily } from '../lib/fonts';
 import { BurstBackground, Stage, Place } from '../scenes/common';
 import { Mascot } from '../assets/mascot/Mascot';
@@ -13,18 +13,22 @@ import { PROPS } from '../assets/props/registry';
 import { EmotionName } from '../lib/emotions';
 
 export interface ThumbVariant {
-  lines: string[]; // 2-3 lines, 1-2 words each
+  lines: string[];
   accent: string;
   bg: string;
   emotion: EmotionName;
   textColor: string;
+  badge: string; // red attention badge
   prop?: string;
 }
 
 export const THUMBS: Record<string, ThumbVariant> = {
-  A: { lines: ['FEELINGS', 'YOU CAN’T', 'NAME'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'terrified', textColor: COLORS.white, prop: 'red-arrow' },
-  B: { lines: ['YOU’VE FELT', 'ALL 15', 'OF THESE'], accent: COLORS.pink, bg: COLORS.bgCream, emotion: 'excited', textColor: COLORS.outline, prop: 'heart' },
-  C: { lines: ['WHAT IS', 'THIS', 'FEELING?'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, prop: 'thought-bubble' },
+  // A — the void hook (highest curiosity gap)
+  A: { lines: ['THE URGE', 'TO JUMP,', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'terrified', textColor: COLORS.white, badge: '#1', prop: 'red-arrow' },
+  // B — relatable "you've felt all of these"
+  B: { lines: ['YOU’VE FELT', 'ALL 15', 'OF THESE'], accent: COLORS.pink, bg: COLORS.sky, emotion: 'excited', textColor: COLORS.outline, badge: '15', prop: 'heart' },
+  // C — mystery hook
+  C: { lines: ['WHAT IS', 'THIS', 'FEELING?!'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?!', prop: 'thought-bubble' },
 };
 
 export const Thumbnail: React.FC<{ variant: keyof typeof THUMBS }> = ({ variant }) => {
@@ -34,49 +38,52 @@ export const Thumbnail: React.FC<{ variant: keyof typeof THUMBS }> = ({ variant 
   return (
     <AbsoluteFill style={{ width: W, height: H }}>
       <Stage>
-        <BurstBackground base={v.bg} accent={v.accent} cx={W * 0.72} cy={H * 0.5} rays={14} />
+        <BurstBackground base={v.bg} accent={v.accent} cx={W * 0.74} cy={H * 0.5} rays={14} />
       </Stage>
-      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: 'absolute', inset: 0 }}>
-        {/* accent slab behind the text for contrast */}
-        <path d={`M 0 0 L ${W * 0.56} 0 L ${W * 0.46} ${H} L 0 ${H} Z`} fill={v.accent} opacity={0.18} />
-        {v.prop && (
-          <g />
-        )}
-      </svg>
-      {/* floating prop near the mascot */}
-      {v.prop && PROPS[v.prop] && (
-        <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
-          <Place x={W * 0.52} y={H * 0.26} scale={1.1}>
+      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
+        {/* dark slab behind text for pop */}
+        <path d={`M -40 -40 L ${W * 0.6} -40 L ${W * 0.5} ${H + 40} L -40 ${H + 40} Z`} fill={COLORS.outline} opacity={0.18} />
+        {/* floating prop near the mascot */}
+        {v.prop && PROPS[v.prop] && (
+          <Place x={W * 0.52} y={H * 0.24} scale={1.15}>
             {React.createElement(PROPS[v.prop])}
           </Place>
-        </svg>
-      )}
+        )}
+        {/* red attention badge, tilted */}
+        <g transform={`translate(${W * 0.60} ${H * 0.2}) rotate(-12)`}>
+          <circle r={86} fill={COLORS.red} stroke={COLORS.outline} strokeWidth={STROKE.lg} />
+          <circle r={70} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} />
+          <text x={0} y={30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={86} fill={COLORS.white}>
+            {v.badge}
+          </text>
+        </g>
+      </svg>
       {/* hook text, left */}
-      <div style={{ position: 'absolute', left: 54, top: 90, width: 720, display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <div style={{ position: 'absolute', left: 48, top: 70, width: 760, display: 'flex', flexDirection: 'column', gap: 0 }}>
         {v.lines.map((ln, i) => (
           <div
             key={i}
             style={{
               fontFamily,
               fontWeight: 800,
-              fontSize: 132,
-              lineHeight: 1.0,
-              color: v.textColor,
-              WebkitTextStroke: `10px ${COLORS.outline}`,
+              fontSize: 150,
+              lineHeight: 0.98,
+              color: i === 1 ? v.accent : v.textColor,
+              WebkitTextStroke: `12px ${COLORS.outline}`,
               paintOrder: 'stroke fill',
-              transform: `rotate(${i === 1 ? -2 : 0}deg)`,
-              letterSpacing: -2,
+              transform: `rotate(${i === 1 ? -2.5 : 0}deg)`,
+              letterSpacing: -3,
             }}
           >
             {ln}
           </div>
         ))}
-        <div style={{ marginTop: 18, fontFamily, fontWeight: 800, fontSize: 40, color: v.accent, WebkitTextStroke: `6px ${COLORS.outline}`, paintOrder: 'stroke fill' }}>
-          MIND MINUTE
+        <div style={{ marginTop: 20, fontFamily, fontWeight: 800, fontSize: 44, color: v.accent, WebkitTextStroke: `7px ${COLORS.outline}`, paintOrder: 'stroke fill', letterSpacing: 1 }}>
+          DEAR BRAIN
         </div>
       </div>
-      {/* mascot large on the right */}
-      <Mascot costume="hoodie" pose="startled" emotion={v.emotion} x={W * 0.8} y={H * 0.62} scale={1.6} seed={4} />
+      {/* big reacting mascot on the right */}
+      <Mascot costume="hoodie" pose="startled" emotion={v.emotion} x={W * 0.82} y={H * 0.64} scale={1.7} seed={4} />
     </AbsoluteFill>
   );
 };

@@ -102,17 +102,28 @@ jobs:
           node scripts/extract_beat_stills.mjs "$SLUG"
           python3 scripts/qa_stills.py "renders/${SLUG}-stills"
 
-      - name: Upload artifact
+      # Everything you actually upload to YouTube: the video, the 3 thumbnails,
+      # and the description/metadata. Download THIS one.
+      - name: Upload YouTube package
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.SLUG }}-package
+          name: ${{ env.SLUG }}-youtube
           if-no-files-found: warn
           path: |
             renders/${{ env.SLUG }}.mp4
-            renders/${{ env.SLUG }}-stills/**
             renders/thumbnails/**
-            renders/terms-test/**
             content/${{ env.SLUG }}/metadata.md
+
+      # Full QA bundle (stills, pronunciation checks, sources, defect list) — only
+      # if you want to inspect the production, not needed for the upload.
+      - name: Upload QA bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SLUG }}-qa
+          if-no-files-found: warn
+          path: |
+            renders/${{ env.SLUG }}-stills/**
+            renders/terms-test/**
             content/${{ env.SLUG }}/DEFECTS.md
             content/${{ env.SLUG }}/SOURCES.md
             content/${{ env.SLUG }}/asset-manifest.json

@@ -11,25 +11,47 @@ const sil = strokeProps(STROKE.xl);
 const std = strokeProps(STROKE.lg);
 const fine = strokeProps(STROKE.sm);
 
-/** Speech bubble with a tail pointing to the speaker (tail dir: left|right). */
-export const SpeechBubble: React.FC<{ w?: number; h?: number; tail?: 'left' | 'right'; children?: React.ReactNode }> = ({ w = 320, h = 180, tail = 'left', children }) => {
-  const tx = tail === 'left' ? -w / 2 + 40 : w / 2 - 40;
+/** Centered, multi-line (\n) handwritten text inside a bubble. */
+const BubbleText: React.FC<{ text?: string; size?: number; cy?: number }> = ({ text, size = 46, cy = 0 }) => {
+  if (!text) return null;
+  const lines = text.split('\n');
+  const lh = size * 1.05;
+  const y0 = cy - ((lines.length - 1) * lh) / 2 + size * 0.34;
+  return (
+    <g fill={COLORS.outline} fontFamily="Baloo 2" fontWeight={700} textAnchor="middle">
+      {lines.map((ln, i) => (
+        <text key={i} x={0} y={y0 + i * lh} fontSize={size}>
+          {ln}
+        </text>
+      ))}
+    </g>
+  );
+};
+
+/** Speech bubble with a tail. Pass `text` (\n for line breaks) or children. */
+export const SpeechBubble: React.FC<{ w?: number; h?: number; tail?: 'left' | 'right'; text?: string; children?: React.ReactNode }> = ({ w, h, tail = 'left', text, children }) => {
+  const lines = text ? text.split('\n') : [];
+  const bw = w ?? Math.max(300, Math.max(0, ...lines.map((l) => l.length)) * 28 + 90);
+  const bh = h ?? Math.max(170, lines.length * 60 + 80);
+  const tx = tail === 'left' ? -bw / 2 + 40 : bw / 2 - 40;
   const tdir = tail === 'left' ? -1 : 1;
   return (
     <g>
-      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={34} fill={COLORS.white} {...sil} />
-      <path d={`M ${tx} ${h / 2 - 10} L ${tx + tdir * 36} ${h / 2 + 54} L ${tx + tdir * 4} ${h / 2 - 2} Z`} fill={COLORS.white} {...std} />
+      <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={34} fill={COLORS.white} {...sil} />
+      <path d={`M ${tx} ${bh / 2 - 10} L ${tx + tdir * 36} ${bh / 2 + 54} L ${tx + tdir * 4} ${bh / 2 - 2} Z`} fill={COLORS.white} {...std} />
+      <BubbleText text={text} size={46} />
       {children}
     </g>
   );
 };
 
-/** Thought bubble: cloud + three trailing dots. Contents swappable via children. */
-export const ThoughtBubble: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
+/** Thought bubble: cloud + trailing dots. Pass `text` or children. */
+export const ThoughtBubble: React.FC<{ text?: string; children?: React.ReactNode }> = ({ text, children }) => (
   <g>
     <circle cx={-30} cy={110} r={10} fill={COLORS.white} {...fine} />
     <circle cx={-6} cy={78} r={16} fill={COLORS.white} {...std} />
-    <path d="M -120 0 Q -140 -60 -80 -70 Q -70 -120 0 -104 Q 70 -120 100 -70 Q 160 -60 130 0 Q 150 54 80 56 L -70 56 Q -140 54 -120 0 Z" fill={COLORS.white} {...sil} />
+    <path d="M -150 0 Q -172 -70 -100 -82 Q -88 -140 0 -122 Q 88 -140 124 -82 Q 196 -70 162 0 Q 186 64 100 66 L -86 66 Q -172 64 -150 0 Z" fill={COLORS.white} {...sil} />
+    <BubbleText text={text} size={40} cy={-24} />
     <g transform="translate(0 -20)">{children}</g>
   </g>
 );

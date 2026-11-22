@@ -14,12 +14,13 @@ import { EmotionName } from '../lib/emotions';
 
 export const ExplainerScene: React.FC<{
   prop?: string;
+  propArgs?: Record<string, unknown>;
   diagram?: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now';
   emotion?: EmotionName;
   chapterStart?: boolean;
   talking?: boolean;
   chapterIndex?: number;
-}> = ({ prop, emotion = 'happy-talk', chapterStart, talking = true, chapterIndex = 0 }) => {
+}> = ({ prop, propArgs, emotion = 'happy-talk', chapterStart, talking = true, chapterIndex = 0 }) => {
   const frame = useCurrentFrame();
   const accent = chapterAccent(chapterIndex);
   const gesture = Math.floor(frame / 40) % 2 === 0 ? 'point-right' : 'arms-out-presenting';
@@ -34,7 +35,7 @@ export const ExplainerScene: React.FC<{
         <FlashBurst cx={propX} cy={propY} at={8} />
         {Comp && (
           <Place x={propX} y={propY} scale={2.0} appearAt={10} bob={3} bobDiv={12} bobPhase={1.5}>
-            <Comp />
+            <Comp {...(propArgs ?? {})} />
           </Place>
         )}
       </Stage>

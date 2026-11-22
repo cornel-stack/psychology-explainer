@@ -9,7 +9,7 @@ Alternates:
 
 ## Description
 
-There's a feeling you've had a hundred times and never once named out loud.
+Welcome to Dear Brain. There's a feeling you've had a hundred times and never once named out loud.
 Today we're giving names to 15 of them — from the urge to jump off a perfectly
 safe balcony, to the chills a song sends down your spine, to the specific
 emptiness after your friends go home. Backed by real psychology and linguistics,
@@ -54,7 +54,7 @@ Prevalence figures and mechanisms are presented as research estimates and
 theories, not settled fact. If a feeling ever stops being a curiosity and starts
 affecting your daily life, please talk to a qualified professional.
 
-#psychology #feelings #mindminute
+#psychology #feelings #dearbrain
 
 ## Tags
-feelings you can't name, emotions explained, psychology, l'appel du vide, call of the void, sonder, frisson, musical chills, jamais vu, tip of the tongue, saudade, anemoia, gigil, cute aggression, torschlusspanik, kenopsia, collective effervescence, amae, awumbuk, fernweh, elevation emotion, dictionary of obscure sorrows, mind minute, why do i feel this, emotional vocabulary
+feelings you can't name, emotions explained, psychology, l'appel du vide, call of the void, sonder, frisson, musical chills, jamais vu, tip of the tongue, saudade, anemoia, gigil, cute aggression, torschlusspanik, kenopsia, collective effervescence, amae, awumbuk, fernweh, elevation emotion, dictionary of obscure sorrows, dear brain, why do i feel this, emotional vocabulary

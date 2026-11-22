@@ -21,6 +21,18 @@ or **JUSTIFIED**.
    share to ~11% and making the room read richer. (This is the QA gate doing its
    job — a plain wall pushed over the "empty frame" budget and blocked the upload.)
 
+## Design decisions this cut
+- **On-screen text added by request** — section **title cards** (term + gloss) at
+  every chapter start plus a topic card at 0:00, and **text inside speech/thought
+  bubbles**. This intentionally overrides the earlier "narration-only" rule.
+  Tradeoff: baked-in English text means an auto-dubbed/translated version would
+  need the title cards + bubble text re-localized (the narration alone no longer
+  carries 100% of the meaning). Worth it for clarity/retention.
+- **Rebrand to "Dear Brain"** — badge `DB`, end-screen tagline, VO welcome +
+  outro, metadata/hashtags. Outro ends on an explicit subscribe ask.
+- **Thumbnails are clickbait** — 3 variants with a red attention badge, a
+  reacting face, and a curiosity-gap hook; readable at 120 px.
+
 ## Justified (intentional / acceptable at 480p)
 5. **Room reuse.** `living-room` backs 7 items. The hero prop and the pose/emotion
    differ every time (music-notes, speech-bubble, photo-stack, rain-cloud, puppy,

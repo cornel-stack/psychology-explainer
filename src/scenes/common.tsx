@@ -6,8 +6,9 @@
  */
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
-import { COLORS, CANVAS, shade } from '../lib/style';
+import { COLORS, CANVAS, STROKE, shade } from '../lib/style';
 import { springIn } from '../lib/anim';
+import { fontFamily } from '../lib/fonts';
 
 /** A full-bleed 1920x1080 SVG stage. Children draw in canvas pixel coords. */
 export const Stage: React.FC<{ children: React.ReactNode; bg?: string }> = ({ children, bg }) => (
@@ -127,6 +128,44 @@ export const ChapterFlash: React.FC<{ active?: boolean }> = ({ active = false })
   if (o <= 0) return null;
   return <AbsoluteFill style={{ backgroundColor: COLORS.white, opacity: o, pointerEvents: 'none' }} />;
 };
+
+/**
+ * TitleCard — a lower-third white banner (term + one-line gloss) shown briefly at
+ * the start of a section so the viewer knows the topic. Pops up, holds ~2.5s,
+ * slides out. (On-screen text is intentional here per the channel's current spec.)
+ */
+export const TitleCard: React.FC<{ title: string; subtitle?: string; accent?: string }> = ({ title, subtitle, accent = COLORS.yellow }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const OUT = 72;
+  if (frame > OUT + 18) return null;
+  const pop = springIn(frame, fps, 2, { damping: 13 });
+  const exit = interpolate(frame, [OUT, OUT + 16], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const ty = interpolate(pop, [0, 1], [70, 0]) + exit * 90;
+  const op = Math.min(1, pop * 1.2) * (1 - exit);
+
+  const w = Math.max(620, title.length * 42 + 180);
+  const h = subtitle ? 190 : 140;
+  const cx = CANVAS.width / 2;
+  const cy = 872;
+  return (
+    <svg width={CANVAS.width} height={CANVAS.height} viewBox={`0 0 ${CANVAS.width} ${CANVAS.height}`} style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+      <g transform={`translate(${cx} ${cy + ty})`} opacity={op}>
+        <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={28} fill={COLORS.white} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinejoin="round" />
+        <rect x={-w / 2} y={-h / 2} width={26} height={h} rx={13} fill={accent} />
+        <text x={0} y={subtitle ? -12 : 20} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={74} fill={COLORS.outline}>
+          {title}
+        </text>
+        {subtitle && (
+          <text x={0} y={52} textAnchor="middle" fontFamily={fontFamily} fontWeight={600} fontSize={38} fill={COLORS.purpleDeep}>
+            {subtitle}
+          </text>
+        )}
+      </g>
+    </svg>
+  );
+};
+
 
 /** Standard wall + floor backdrop (frontal flat set). Texture via fills, no strokes. */
 export const WallFloor: React.FC<{ wall: string; floor: string; floorY?: number; stripe?: boolean }> = ({ wall, floor, floorY = 760, stripe = true }) => (

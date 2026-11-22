@@ -47,6 +47,11 @@ export interface Beat {
   emotion?: EmotionName;
   camera?: Camera;
   chapterStart?: boolean;
+  /** section title card (shown briefly at the start of this beat) */
+  title?: string;
+  subtitle?: string;
+  /** args forwarded to the explainer's single prop (e.g. bubble text) */
+  propArgs?: Record<string, unknown>;
   // story
   room?: RoomName;
   mascots?: MascotConfig[];

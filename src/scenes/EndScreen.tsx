@@ -12,7 +12,7 @@ import { Mascot } from '../assets/mascot/Mascot';
 
 const xl = strokeProps(STROKE.xl);
 
-export const EndScreen: React.FC<{ tagline?: string }> = ({ tagline = 'MIND MINUTE' }) => {
+export const EndScreen: React.FC<{ tagline?: string }> = ({ tagline = 'DEAR BRAIN' }) => {
   const frame = useCurrentFrame();
   const spin = frame * 0.016 * 60; // ~0.5 deg/s * ... slow
   const subX = CANVAS.width * 0.5;

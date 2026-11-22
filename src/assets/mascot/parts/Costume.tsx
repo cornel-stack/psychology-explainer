@@ -24,7 +24,7 @@ export const BrandBadge: React.FC<{ x: number; y: number; scale?: number }> = ({
     <path d="M 0 -24 L 21 -12 L 21 12 L 0 24 L -21 12 L -21 -12 Z" fill={COLORS.yellow} {...sm} />
     <path d="M 0 -15 L 13 -7 L 13 7 L 0 15 L -13 7 L -13 -7 Z" fill={COLORS.yellowDark} opacity={0.55} />
     <text x={0} y={7} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={19} fill={COLORS.outline}>
-      MM
+      DB
     </text>
   </g>
 );
