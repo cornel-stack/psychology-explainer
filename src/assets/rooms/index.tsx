@@ -13,6 +13,7 @@ import { Fridge, Kettle } from '../props/objects';
 const std = strokeProps(STROKE.lg);
 const xl = strokeProps(STROKE.xl);
 const sm = strokeProps(STROKE.sm);
+const lg = strokeProps(STROKE.lg);
 
 export type RoomName =
   | 'bedroom-night'
@@ -23,7 +24,10 @@ export type RoomName =
   | 'train-interior'
   | 'living-room'
   | 'stadium-crowd'
-  | 'empty-hall';
+  | 'empty-hall'
+  | 'store-aisle'
+  | 'casino'
+  | 'office';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -265,6 +269,96 @@ export const EmptyHall: React.FC = () => {
   );
 };
 
+/** Supermarket aisle: shelving with products + price tags (anchoring, framing). */
+export const StoreAisle: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.whiteShade} floorY={860} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={120} fill={shade(COLORS.sky, 0.12)} />
+    {/* floor tiles */}
+    {Array.from({ length: 10 }).map((_, i) => (
+      <rect key={i} x={i * 200} y={862} width={2} height={CANVAS.height - 862} fill={shade(COLORS.whiteShade, 0.18)} />
+    ))}
+    {/* two shelf units */}
+    {[120, 1360].map((sx, s) => (
+      <g key={s} transform={`translate(${sx} 0)`}>
+        <rect x={0} y={220} width={440} height={640} rx={10} fill={COLORS.woodDark} {...xl} />
+        {[0, 1, 2].map((row) => (
+          <g key={row}>
+            <rect x={14} y={260 + row * 190} width={412} height={170} rx={8} fill={shade(COLORS.wood, 0.1)} />
+            {Array.from({ length: 5 }).map((_, c) => {
+              const colors = [COLORS.red, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.lavender];
+              return <rect key={c} x={28 + c * 80} y={300 + row * 190} width={60} height={120} rx={8} fill={colors[(row + c + s) % 5]} {...sm} />;
+            })}
+            {/* price label strip */}
+            <rect x={14} y={408 + row * 190} width={412} height={22} fill={COLORS.white} {...strokeProps(STROKE.sm)} />
+          </g>
+        ))}
+      </g>
+    ))}
+  </g>
+);
+
+/** Casino: dark room, neon arch, slot machines in the back, patterned carpet. */
+export const Casino: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+    <rect x={0} y={0} width={CANVAS.width} height={720} fill={COLORS.wallNight} />
+    {/* neon arch */}
+    <path d="M 360 300 Q 960 60 1560 300" fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.xl} />
+    <path d="M 360 340 Q 960 110 1560 340" fill="none" stroke={COLORS.pink} strokeWidth={STROKE.lg} />
+    {[[500, 220], [960, 110], [1420, 220]].map(([x, y], i) => (
+      <text key={i} x={x} y={y} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={60} fill={COLORS.yellow} stroke={COLORS.outline} strokeWidth={STROKE.sm}>
+        {['7', '$', '7'][i]}
+      </text>
+    ))}
+    {/* slot machines silhouettes in the back */}
+    {[180, 440, 1480, 1740].map((x, i) => (
+      <g key={i} transform={`translate(${x} 520)`}>
+        <rect x={-70} y={-120} width={140} height={240} rx={18} fill={shade(COLORS.red, 0.2)} {...lg} />
+        <rect x={-50} y={-90} width={100} height={60} rx={8} fill={COLORS.yellowDark} />
+      </g>
+    ))}
+    {/* carpet */}
+    <rect x={0} y={720} width={CANVAS.width} height={CANVAS.height - 720} fill={COLORS.redDark} />
+    {Array.from({ length: 16 }).map((_, i) => (
+      <path key={i} d={`M ${i * 130} 760 l 40 40 -40 40 -40 -40 z`} fill={shade(COLORS.redDark, 0.18)} opacity={0.6} />
+    ))}
+    {/* felt table */}
+    <ellipse cx={960} cy={940} rx={560} ry={120} fill={COLORS.greenDark} {...xl} />
+    <ellipse cx={960} cy={928} rx={520} ry={100} fill={COLORS.greenLeaf} />
+  </g>
+);
+
+/** Office: desk, chair, monitor, window, plant (interview, work, survivorship). */
+export const Office: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.wood} floorY={820} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.greenTeal, 0.08)} />
+    {/* window */}
+    <g transform="translate(330 300)"><WindowDay /></g>
+    {/* wall clock */}
+    <g transform="translate(1150 260)"><WallClock /></g>
+    {/* desk */}
+    <rect x={560} y={660} width={800} height={60} rx={10} fill={COLORS.wood} {...xl} />
+    <rect x={590} y={720} width={40} height={160} fill={COLORS.woodDark} {...lg} />
+    <rect x={1290} y={720} width={40} height={160} fill={COLORS.woodDark} {...lg} />
+    {/* monitor */}
+    <rect x={820} y={500} width={280} height={180} rx={14} fill={COLORS.shirtDark} {...xl} />
+    <rect x={838} y={518} width={244} height={132} rx={6} fill={COLORS.sky} />
+    <rect x={940} y={680} width={40} height={30} fill={COLORS.shirtDark} />
+    <rect x={900} y={706} width={120} height={16} rx={6} fill={COLORS.shirtDarker} />
+    {/* coffee + papers */}
+    <rect x={1160} y={636} width={60} height={26} rx={6} fill={COLORS.white} {...sm} />
+    <rect x={1160} y={610} width={54} height={50} rx={10} fill={COLORS.red} {...lg} />
+    {/* plant */}
+    <g transform="translate(1660 640)">
+      <path d="M 0 -20 Q -60 -120 -20 -180 Q 10 -120 0 -20 Z" fill={COLORS.greenLeaf} {...lg} />
+      <path d="M 0 -20 Q 60 -140 24 -200 Q -6 -120 0 -20 Z" fill={COLORS.greenLeaf} {...lg} />
+      <path d="M -60 0 L 60 0 L 44 110 L -44 110 Z" fill={COLORS.wood} {...xl} />
+    </g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -275,6 +369,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'living-room': LivingRoom,
   'stadium-crowd': StadiumCrowd,
   'empty-hall': EmptyHall,
+  'store-aisle': StoreAisle,
+  casino: Casino,
+  office: Office,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

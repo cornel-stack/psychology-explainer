@@ -241,12 +241,160 @@ const ThenNow: React.FC = () => {
   );
 };
 
+/** Two-path decision fork: situation splits into a biased (✗) and a true (✓) path. */
+const DecisionFork: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const [situation = 'YOUR BRAIN', biased = 'the easy story', real = 'what’s actually true'] = labels;
+  const pL = springIn(frame, fps, 14, { damping: 14 });
+  const pR = springIn(frame, fps, 22, { damping: 14 });
+  const cx = CANVAS.width * 0.56;
+  const box = (x: number, y: number, w: number, h: number, fill: string, p: number) => (
+    <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={22} fill={fill} transform={`scale(${p})`} transform-origin={`${x} ${y}`} {...lg} />
+  );
+  const wrap = (s: string, n = 16) => {
+    const words = s.split(' ');
+    const lines: string[] = [];
+    let cur = '';
+    for (const w of words) {
+      if ((cur + ' ' + w).trim().length > n) {
+        lines.push(cur.trim());
+        cur = w;
+      } else cur += ' ' + w;
+    }
+    if (cur.trim()) lines.push(cur.trim());
+    return lines;
+  };
+  const Label: React.FC<{ x: number; y: number; text: string; size: number; color?: string }> = ({ x, y, text, size, color = COLORS.outline }) => {
+    const lines = wrap(text, 18);
+    return (
+      <g fill={color} fontFamily={fontFamily} fontWeight={700} textAnchor="middle">
+        {lines.map((ln, i) => (
+          <text key={i} x={x} y={y + (i - (lines.length - 1) / 2) * (size * 1.05) + size * 0.34} fontSize={size}>
+            {ln}
+          </text>
+        ))}
+      </g>
+    );
+  };
+  return (
+    <g>
+      {/* situation node */}
+      {box(cx, 200, 460, 120, COLORS.yellow, 1)}
+      <Label x={cx} y={200} text={situation} size={46} />
+      {/* branches */}
+      <path d={`M ${cx - 60} 262 Q ${cx - 260} 330 ${cx - 260} 420`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} />
+      <path d={`M ${cx + 60} 262 Q ${cx + 260} 330 ${cx + 260} 420`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} />
+      {/* left = biased */}
+      {box(cx - 260, 560, 420, 230, COLORS.red, Math.min(1, pL))}
+      <g transform={`translate(${cx - 260} 490) scale(${Math.min(1, pL)})`}>
+        <circle r={34} fill={COLORS.white} {...sm} />
+        <path d="M -16 -16 L 16 16 M 16 -16 L -16 16" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      </g>
+      <Label x={cx - 260} y={580} text={biased} size={38} color={COLORS.white} />
+      {/* right = true */}
+      {box(cx + 260, 560, 420, 230, COLORS.greenLeaf, Math.min(1, pR))}
+      <g transform={`translate(${cx + 260} 490) scale(${Math.min(1, pR)})`}>
+        <circle r={34} fill={COLORS.white} {...sm} />
+        <path d="M -18 2 L -4 18 L 20 -14" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+      <Label x={cx + 260} y={580} text={real} size={38} color={COLORS.white} />
+    </g>
+  );
+};
+
+/** Dunning–Kruger curve: confidence peaks early, dips, climbs with real skill. */
+const DKCurve: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const x0 = CANVAS.width * 0.36;
+  const y0 = 760;
+  const w = 900;
+  const h = 460;
+  // confidence curve points
+  const pts: [number, number][] = [
+    [0, 0.35], [0.12, 0.95], [0.2, 1.0], [0.34, 0.5], [0.46, 0.22], [0.62, 0.3], [0.82, 0.55], [1, 0.78],
+  ];
+  const P = pts.map(([px, py]) => [x0 + px * w, y0 - py * h]);
+  const path = P.map((p, i) => `${i ? 'L' : 'M'} ${p[0]} ${p[1]}`).join(' ');
+  const peak = P[2];
+  const valley = P[4];
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + w} y2={y0} {...lg} />
+      <line x1={x0} y1={y0} x2={x0} y2={y0 - h} {...lg} />
+      <text x={x0 + w / 2} y={y0 + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={36} fill={COLORS.outline}>EXPERIENCE →</text>
+      <text x={x0 - 30} y={y0 - h / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={36} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 30} ${y0 - h / 2})`}>CONFIDENCE</text>
+      <path d={path} fill="none" stroke={COLORS.blueDiagram} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={3000} strokeDashoffset={3000 * (1 - draw)} />
+      {draw > 0.4 && (
+        <g>
+          <text x={peak[0]} y={peak[1] - 24} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.red}>“I’M AN EXPERT”</text>
+          <circle cx={peak[0]} cy={peak[1]} r={12} fill={COLORS.red} {...sm} />
+        </g>
+      )}
+      {draw > 0.95 && (
+        <g>
+          <text x={valley[0]} y={valley[1] + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.purpleDeep}>“I know nothing”</text>
+          <circle cx={valley[0]} cy={valley[1]} r={12} fill={COLORS.purpleDeep} {...sm} />
+        </g>
+      )}
+    </g>
+  );
+};
+
+/** Loss scale: a losing bet weighs ~2x a winning one. */
+const LossScale: React.FC = () => {
+  const frame = useCurrentFrame();
+  const tilt = interpolate(frame, [10, 40], [0, 11], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cx = CANVAS.width * 0.56;
+  const cy = 440;
+  return (
+    <g transform={`translate(${cx} ${cy})`}>
+      <rect x={-10} y={-140} width={20} height={320} rx={10} fill={COLORS.woodDark} {...lg} />
+      <ellipse cx={0} cy={180} rx={110} ry={28} fill={COLORS.woodDark} {...lg} />
+      <g transform={`rotate(${tilt})`}>
+        <rect x={-280} y={-150} width={560} height={20} rx={10} fill={COLORS.wood} {...lg} />
+        <line x1={-250} y1={-140} x2={-250} y2={-60} {...sm} />
+        <line x1={250} y1={-140} x2={250} y2={-100} {...sm} />
+        <path d="M -330 -60 Q -250 70 -170 -60 Z" fill={COLORS.red} {...lg} />
+        <path d="M 170 -100 Q 250 10 330 -100 Z" fill={COLORS.greenLeaf} {...lg} />
+        <text x={-250} y={-10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.white}>LOSE $100</text>
+        <text x={250} y={-50} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.white}>WIN $100</text>
+      </g>
+      <text x={0} y={250} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={64} fill={COLORS.outline}>≈ 2× heavier</text>
+    </g>
+  );
+};
+
+/** Framing flip: the SAME thing, two labels — people choose differently. */
+const FramingFlip: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const [a = '90% FAT-FREE', b = '10% FAT'] = labels;
+  const cx = CANVAS.width * 0.56;
+  const Jar: React.FC<{ x: number; label: string; tone: string }> = ({ x, label, tone }) => (
+    <g transform={`translate(${x} 420)`}>
+      <rect x={-120} y={-150} width={240} height={300} rx={30} fill={COLORS.sky} {...xl} />
+      <rect x={-120} y={-150} width={240} height={80} rx={30} fill={shade(COLORS.sky, 0.12)} />
+      <rect x={-96} y={-40} width={192} height={150} rx={14} fill={tone} />
+      <text x={0} y={60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.white}>{label}</text>
+    </g>
+  );
+  return (
+    <g>
+      <Jar x={cx - 230} label={a} tone={COLORS.greenLeaf} />
+      <Jar x={cx + 230} label={b} tone={COLORS.red} />
+      <text x={cx} y={440} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={96} fill={COLORS.outline}>=</text>
+      <text x={cx} y={660} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={40} fill={COLORS.purpleDeep}>same jar. different choice.</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip';
   highlight?: string;
   withMascot?: boolean;
+  labels?: string[];
   chapterStart?: boolean;
-}> = ({ diagram, highlight = 'deep', chapterStart }) => {
+}> = ({ diagram, highlight = 'deep', labels = [], chapterStart }) => {
   const accent: Record<string, string> = {
     'sleep-stage': COLORS.lavender,
     switchboard: COLORS.sky,
@@ -254,8 +402,12 @@ export const DiagramCard: React.FC<{
     'overflow-meter': COLORS.pink,
     'two-gates': COLORS.greenLeaf,
     'then-now': COLORS.sky,
+    'decision-fork': COLORS.yellow,
+    'dk-curve': COLORS.sky,
+    'loss-scale': COLORS.pink,
+    'framing-flip': COLORS.greenLeaf,
   };
-  const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' ? 'excited' : 'serious-expert';
+  const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
     <AbsoluteFill>
       <Stage>
@@ -273,6 +425,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'overflow-meter' && <OverflowMeter />}
         {diagram === 'two-gates' && <TwoGates />}
         {diagram === 'then-now' && <ThenNow />}
+        {diagram === 'decision-fork' && <DecisionFork labels={labels} />}
+        {diagram === 'dk-curve' && <DKCurve />}
+        {diagram === 'loss-scale' && <LossScale />}
+        {diagram === 'framing-flip' && <FramingFlip labels={labels} />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

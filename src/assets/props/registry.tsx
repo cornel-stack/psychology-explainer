@@ -8,6 +8,7 @@ import * as Obj from './objects';
 import * as Ico from './icons';
 import * as Bub from './bubbles';
 import * as Feel from './feelings';
+import * as Bias from './biases';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -55,6 +56,22 @@ export const PROPS: Record<string, React.FC<any>> = {
   'city-gate': Feel.CityGate,
   'water-bowl': Feel.WaterBowl,
   suitcase: Feel.Suitcase,
+  // cognitive-biases props
+  'price-tag': Bias.PriceTag,
+  'tv-screen': Bias.TvScreen,
+  'balance-scale': Bias.BalanceScale,
+  crown: Bias.Crown,
+  'slot-machine': Bias.SlotMachine,
+  dice: Bias.Dice,
+  'plane-bullet': Bias.PlaneBullet,
+  'star-rating': Bias.StarRating,
+  'horoscope-card': Bias.HoroscopeCard,
+  trophy: Bias.Trophy,
+  'magnifying-glass': Bias.MagnifyingGlass,
+  calendar: Bias.Calendar,
+  coins: Bias.Coins,
+  brain: Bias.Brain,
+  'check-badge': Bias.CheckBadge,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

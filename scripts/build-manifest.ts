@@ -21,6 +21,11 @@ const NEW_ASSETS = new Set([
   'balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall',
   'group-chat-phone', 'music-notes', 'photo-stack', 'rain-cloud', 'puppy', 'city-gate', 'water-bowl', 'suitcase',
   'signal-race', 'overflow-meter', 'two-gates', 'then-now',
+  // cognitive-biases
+  'store-aisle', 'casino', 'office',
+  'price-tag', 'tv-screen', 'balance-scale', 'crown', 'slot-machine', 'dice', 'plane-bullet',
+  'star-rating', 'horoscope-card', 'trophy', 'magnifying-glass', 'calendar', 'coins', 'brain', 'check-badge',
+  'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

@@ -15,7 +15,7 @@ import { EmotionName } from '../lib/emotions';
 export const ExplainerScene: React.FC<{
   prop?: string;
   propArgs?: Record<string, unknown>;
-  diagram?: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now';
+  diagram?: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip';
   emotion?: EmotionName;
   chapterStart?: boolean;
   talking?: boolean;

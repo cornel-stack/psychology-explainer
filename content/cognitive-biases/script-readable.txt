@@ -1,0 +1,121 @@
+
+### Cold Open
+[story *BIASES RUNNING YOUR LIFE] You're in a store. A jacket. The tag says two hundred dollars, crossed out. Now, eighty-nine. You feel the deal land in your chest, and you reach for your wallet.
+[story] But here's the thing. That two hundred dollars was never real. It was bait. And the smartest part of your brain never even noticed it happen.
+[closeUp] You like to think you're rational. That you weigh the facts and choose carefully. Mostly, you don't.
+[explainer] Your mind runs on mental shortcuts. Usually they save you. Sometimes they quietly wreck your decisions. Psychologists call them cognitive biases, and you are absolutely full of them.
+[explainer] Welcome to Dear Brain. Today, fifteen biases secretly steering you, and by the end, you'll catch yourself using at least five of them. Let's go.
+
+### 1 — Anchoring
+[story *ANCHORING] Anchoring. Back to that jacket. The very first number your brain sees becomes an anchor, and every judgment after it quietly drifts toward that number.
+[closeUp] Eighty-nine next to two hundred feels like a steal. Eighty-nine next to nothing is just, well, eighty-nine dollars.
+[explainer] In nineteen seventy-four, Kahneman and Tversky spun a rigged wheel of fortune, then asked people what percent of countries in the UN were African.
+[statCard=45%] People who watched the wheel land on ten guessed twenty-five percent. People who saw sixty-five guessed forty-five. A completely random number dragged their answer twenty points.
+[closeUp] The fix? Before you judge any price, cover the first number and ask what the thing is worth on its own. But some numbers are even harder to let go of, like the ones you've already spent.
+
+### Overview
+[overviewGrid] Here are all fifteen biases we're unpacking today. Watch how many you catch yourself doing.
+
+### 2 — Sunk cost
+[story *SUNK COST FALLACY] The sunk cost fallacy. You're two hours into a terrible movie. It is not getting better. And yet, you keep watching, because you've already made it this far.
+[closeUp] It's the bad relationship you stay in, the degree you don't want, the stock you won't sell. The more you've put in, the harder it is to walk away.
+[explainer] In a classic Ohio study, people who paid full price for theater tickets showed up to more plays than those given a discount. Same seats. They'd just invested more.
+[diagramCard/decision-fork] Here's the trap your brain falls into, versus the truth it's hiding.
+[closeUp] The money and time are already spent, whether you continue or not. The only real question is what's best from right now. Which your brain is terrible at, especially when something scares it.
+
+### 3 — Loss aversion
+[story *LOSS AVERSION] Loss aversion. I'll give you a bet. Heads, you win a hundred dollars. Tails, you lose a hundred. Fifty-fifty. Almost nobody takes it, and that's your brain talking.
+[closeUp] The joy of winning a hundred is real. But the pain of losing a hundred? That's a different weight class entirely.
+[explainer] This is the heart of Kahneman and Tversky's prospect theory, the work that later won a Nobel Prize. Losses loom larger than gains.
+[diagramCard/loss-scale] Put them on a scale, and a loss weighs about twice as much as the same-sized win.
+[statCard=2×] Losing feels roughly twice as bad as winning feels good. It's why you hold losing stocks too long, and why free trials end in subscriptions. Now, watch what happens when the facts agree with you.
+
+### 4 — Confirmation
+[story *CONFIRMATION BIAS] Confirmation bias. You have a hunch you're right about something, so you type it into Google. And of course, you find proof. Case closed.
+[closeUp] You didn't go looking for the truth. You went looking for agreement. And the internet will hand it to you, every single time.
+[explainer] In nineteen sixty, Peter Wason gave people the numbers two, four, six, and asked them to guess the rule. Almost everyone only tested examples that confirmed their first guess.
+[diagramCard/decision-fork] What your brain does with a belief, versus what actually tests it.
+[closeUp] Real thinking means trying to prove yourself wrong. Ask what evidence would change your mind, then go look for that. And speaking of what your brain reaches for first…
+
+### 5 — Availability
+[story *AVAILABILITY HEURISTIC] The availability heuristic. A plane crash is on the news, and suddenly flying feels terrifying. So you drive instead, which is statistically far more dangerous.
+[closeUp] Your brain judges how likely something is by how easily an example comes to mind. And dramatic, scary examples come to mind very, very easily.
+[explainer] Tversky and Kahneman showed this with a simple trick. Ask people whether more words start with the letter K, or have K in the third spot.
+[diagramCard/decision-fork] Almost everyone says they start with K, because those are easier to think of. But there are about twice as many with K in third place. Easy to recall isn't the same as common.
+[closeUp] Shark attacks, plane crashes, lottery wins. The vivid stuff feels common. The quiet, boring risks are usually the ones that get you. But confidence has its own trap.
+
+### 6 — Dunning-Kruger
+[story *DUNNING–KRUGER] The Dunning–Kruger effect. The less someone knows about a subject, the more confident they often sound. You've met this person. You might have been this person.
+[closeUp] The cruel twist is that the skills you'd need to realize you're bad at something are the exact same skills you're missing.
+[explainer] In nineteen ninety-nine, Kruger and Dunning at Cornell tested people on logic, grammar, and humor, then asked them to rate their own performance.
+[diagramCard/dk-curve] Confidence doesn't climb steadily with skill. It spikes early, on a peak of knowing almost nothing, then crashes once you learn enough to see how much you don't know.
+[statCard=62%] The people who scored in the bottom few percent? On average, they rated themselves above the sixty-second percentile. True experts, meanwhile, often assume everyone finds it as easy as they do.
+
+### 7 — Halo effect
+[story *THE HALO EFFECT] The halo effect. Someone walks into a job interview, well-dressed and good-looking, and before they say a word, your brain has already decided they're competent, kind, and smart.
+[closeUp] One good trait leaks all over the others. Attractive people are assumed to be smarter. Confident people, more honest. None of it follows.
+[explainer] Nisbett and Wilson filmed the same instructor being warm in one version and cold in another. Students who saw the warm one even rated his looks and accent as more appealing.
+[diagramCard/decision-fork] One shiny impression, versus the thing you're actually judging.
+[closeUp] It's why brands pay beautiful strangers to hold their product. The glow is real. The logic is not. And sometimes, the words alone are enough to flip you.
+
+### 8 — Framing
+[story *THE FRAMING EFFECT] The framing effect. One yogurt says ninety percent fat-free. The other says ten percent fat. They are the exact same yogurt. You'll reach for the first one every time.
+[closeUp] It isn't the facts that move you. It's how they're worded. Gain or loss, saved or lost, the frame changes the choice.
+[explainer] Tversky and Kahneman gave people a crisis with two options, framed once as lives saved, once as lives lost. The math was identical.
+[diagramCard/framing-flip] The same jar. The same odds. Two labels. And people flip their choice.
+[statCard=72%] When it was framed as lives saved, seventy-two percent played it safe. Framed as deaths, most people gambled. Watch the frame, not just the facts.
+
+### 9 — Hindsight
+[story *HINDSIGHT BIAS] Hindsight bias. Your team loses the big game, and you turn to your friend and say, I knew they'd lose. But did you? An hour ago, you bet they'd win.
+[closeUp] Once you know how something turned out, your brain quietly rewrites the past so the ending feels obvious. It was never obvious before.
+[explainer] Baruch Fischhoff showed this in nineteen seventy-five. Tell people how an event ended, and they'll swear they saw it coming, far more than people who were never told.
+[diagramCard/decision-fork] The story your memory tells, versus what you actually knew at the time.
+[closeUp] It makes the world feel more predictable than it is, and makes you overconfident about the next prediction. The cure is to write your guesses down before you learn the answer. Now, a bias that spreads through crowds.
+
+### 10 — Bandwagon
+[story *THE BANDWAGON EFFECT] The bandwagon effect. A restaurant has a long line, so you assume it must be amazing and join it. A video has millions of views, so it must be worth watching. Everyone's doing it, so it must be right.
+[closeUp] Humans are herd animals. Agreeing with the group once kept us safe, so going along just feels correct, even when the group is clearly wrong.
+[explainer] In the nineteen fifties, Solomon Asch had groups judge which of three lines was longest. The answer was obvious, but actors in the room all gave the same wrong one on purpose.
+[statCard=75%] Around seventy-five percent of people caved and agreed with the obviously wrong group at least once. Alone, almost nobody got it wrong. The group bent their eyes.
+[closeUp] Popular is not the same as true. Before you join the line, ask if you actually want what's at the front of it. Some crowds, though, only show you the winners.
+
+### 11 — Survivorship
+[story *SURVIVORSHIP BIAS] Survivorship bias. Five billionaires dropped out of college, so you think, maybe I should drop out too. You never hear about the million who dropped out and went nowhere.
+[closeUp] You study the survivors, the winners, the ones who made it, and quietly delete everyone the same path destroyed. The data is lying by leaving people out.
+[explainer] In World War Two, the military mapped bullet holes on planes that came back, and wanted to armor the most-hit spots. The statistician Abraham Wald said: do the opposite.
+[diagramCard/decision-fork] Armor the places with no holes. Because the planes hit there never made it home to be counted. The survivors were a biased sample.
+[closeUp] Whenever you hear how the successful did it, ask about everyone who did the same thing and failed. That's where the real lesson hides. Now, why one bad thing outweighs a hundred good ones.
+
+### 12 — Negativity bias
+[story *NEGATIVITY BIAS] Negativity bias. You get a hundred compliments and one insult. Guess which one you'll replay at 2 AM, word for word, for the next ten years.
+[closeUp] Ninety-nine glowing reviews, one angry one, and your eyes go straight to the angry one. Bad news just hits harder than good news.
+[explainer] A landmark two thousand one paper put it bluntly in the title: bad is stronger than good. Negative events shape us more than positive ones of the same size.
+[diagramCard/decision-fork] What one bad review tells you, versus what the full picture says.
+[closeUp] It kept your ancestors alive, but today it skews your whole view of your day, your work, and yourself. Count the good ones on purpose. They're really there. And here's one that leans the other way.
+
+### 13 — Optimism
+[story *OPTIMISM BIAS] Optimism bias. The deadline is weeks away. Plenty of time. Smoking won't catch up with you. The accident, the breakup, the layoff, those happen to other people. Not you.
+[closeUp] You systematically expect good things to be more likely for you, and bad things less likely, than the numbers actually say.
+[explainer] Neuroscientist Tali Sharot has spent years mapping this. It shows up almost everywhere, across cultures, ages, and situations.
+[statCard=80%] By her estimate, around eighty percent of people carry an optimism bias. It's why we marry despite the divorce rate, and why every project runs late.
+[closeUp] A little optimism keeps you going. Too much, and you skip the sunscreen and the savings account. Plan for the version of you that procrastinates, because that's the real one. Now, a bias about being watched.
+
+### 14 — Spotlight
+[story *THE SPOTLIGHT EFFECT] The spotlight effect. You spill coffee on your shirt, and you're certain the entire train is staring, judging, remembering it forever. They are not. They're thinking about their own shirt.
+[closeUp] You are the main character of your own life, so you assume you're a main character in everyone else's. You're barely a background extra.
+[explainer] At Cornell, Gilovich had students wear an embarrassing T-shirt into a room, then guess how many people noticed.
+[statCard=50%] The wearers were sure about half the room clocked the shirt. In reality, only about a quarter did. You are far less noticed than it feels.
+[closeUp] That stumble, that typo, that awkward thing you said in 2014? Nobody is thinking about it but you. Which, honestly, is freedom. And our last one is the reason horoscopes feel so personal.
+
+### 15 — Barnum
+[story *THE BARNUM EFFECT] The Barnum effect. You read your horoscope. You sometimes feel misunderstood, but you're secretly very capable. And you think, wow, that is scarily accurate. It describes you perfectly.
+[closeUp] It feels tailor-made for you. It describes everyone. That's the whole trick, vague statements general enough to fit almost any human alive.
+[explainer] In nineteen forty-nine, psychologist Bertram Forer gave his students a personality test, then handed every single one the identical description, secretly copied from a newsstand astrology book.
+[statCard=4.3/5] He asked them to rate how accurate it was, just for them. On average, they rated it four point three out of five. The same words. For everyone.
+[closeUp] Personality quizzes, psychics, fortune cookies, all run on this. The more a description flatters you and stays vague, the more personal it feels. Being seen is lovely. Just make sure it's actually you being seen.
+
+### Outro
+[explainer] So here's the uncomfortable part. You didn't reason your way to most of what you believe today. Your biases did. They're not a glitch in the system. Running fast and cheap, they are the system.
+[story] But remember that jacket? Two hundred, crossed out to eighty-nine? Now you'll see the anchor every time you shop. And once you can name a bias, it loses a little of its grip on you.
+[closeUp] So which bias runs you the most? Drop its number in the comments. And send this to the one friend who swears they're perfectly rational, because they need it the most.
+[endScreen] This is Dear Brain. If you want to out-think your own brain a little more often, subscribe, and I'll see you in the next one.

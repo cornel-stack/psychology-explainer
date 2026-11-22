@@ -60,7 +60,9 @@ export interface Beat {
   fg?: PropConfig[];
   // explainer
   prop?: string;
-  diagram?: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now';
+  diagram?: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip';
+  /** labels for parametric diagrams (decision-fork, framing-flip) */
+  labels?: string[];
   side?: 'left' | 'right';
   // statCard
   value?: number;
