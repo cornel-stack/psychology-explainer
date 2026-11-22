@@ -1,6 +1,27 @@
-/** Font loading — Baloo 2 (rounded handwritten family per STYLE.md §5). */
-import { loadFont } from '@remotion/google-fonts/Baloo2';
+/**
+ * fonts.ts — loads the display font from a BUNDLED file (public/fonts/Baloo2.ttf)
+ * via a local @font-face, so local and CI renders are pixel-identical and need
+ * no network. Uses delayRender until the font is ready.
+ */
+import { continueRender, delayRender, staticFile } from 'remotion';
 
-export const { fontFamily } = loadFont('normal', {
-  weights: ['400', '500', '600', '700', '800'],
-});
+export const fontFamily = 'Baloo 2';
+
+if (typeof document !== 'undefined' && !document.getElementById('baloo2-face')) {
+  const handle = delayRender('Loading Baloo 2');
+  const url = staticFile('fonts/Baloo2.ttf');
+
+  const style = document.createElement('style');
+  style.id = 'baloo2-face';
+  style.textContent = `@font-face{font-family:'Baloo 2';src:url('${url}') format('truetype');font-weight:400 800;font-style:normal;font-display:block;}`;
+  document.head.appendChild(style);
+
+  const face = new FontFace('Baloo 2', `url(${url})`, { weight: '400 800', display: 'block' });
+  face
+    .load()
+    .then((loaded) => {
+      document.fonts.add(loaded);
+      continueRender(handle);
+    })
+    .catch(() => continueRender(handle));
+}

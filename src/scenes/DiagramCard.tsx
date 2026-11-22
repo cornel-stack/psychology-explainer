@@ -144,23 +144,40 @@ const SignalRace: React.FC = () => {
   );
 };
 
-/** A meter that fills and overflows. */
+/** A meter that fills to the brim and then keeps spilling droplets over the top. */
 const OverflowMeter: React.FC = () => {
   const frame = useCurrentFrame();
-  const fill = interpolate(frame, [10, 55], [0, 1.15], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  // fill reaches the brim by frame 36, then holds just over it (sustained spill)
+  const fill = interpolate(frame, [8, 36], [0, 1.06], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const cx = CANVAS.width * 0.56;
   const top = 300;
   const h = 430;
   const level = top + h - Math.min(1, fill) * h;
-  const over = fill > 1;
+  const spilling = fill >= 1;
+  const drop = (col: number, phase: number) => {
+    // each droplet falls from the brim, loops; visible for the whole spill window
+    const t = ((frame - 36) * 4 + phase) % 150;
+    const y = top - 10 + Math.max(0, t) * 1.0;
+    const x = cx + col;
+    return (
+      <path key={`${col}-${phase}`} d={`M ${x} ${y - 20} C ${x + 15} ${y + 6} ${x + 15} ${y + 22} ${x} ${y + 30} C ${x - 15} ${y + 22} ${x - 15} ${y + 6} ${x} ${y - 20} Z`} fill={COLORS.pink} {...sm} />
+    );
+  };
   return (
     <g>
       <rect x={cx - 110} y={top} width={220} height={h} rx={40} fill={COLORS.white} {...xl} />
       <rect x={cx - 92} y={level} width={184} height={top + h - level} rx={28} fill={COLORS.pink} />
-      <rect x={cx - 92} y={level} width={184} height={30} fill={shade(COLORS.pink, 0.16)} />
-      {over && [-1, 0, 1].map((d, i) => (
-        <path key={i} d={`M ${cx + d * 70} ${top - 6} C ${cx + d * 70 + 14} ${top + 20} ${cx + d * 70 + 14} ${top + 36} ${cx + d * 70} ${top + 44} C ${cx + d * 70 - 14} ${top + 36} ${cx + d * 70 - 14} ${top + 20} ${cx + d * 70} ${top - 6} Z`} fill={COLORS.pink} {...sm} />
-      ))}
+      <rect x={cx - 92} y={level} width={184} height={28} fill={shade(COLORS.pink, 0.16)} />
+      {/* overflow lip + falling droplets on both sides */}
+      {spilling && (
+        <g>
+          <path d={`M ${cx - 110} ${top + 2} Q ${cx} ${top - 26} ${cx + 110} ${top + 2}`} fill="none" stroke={COLORS.pink} strokeWidth={STROKE.lg} strokeLinecap="round" />
+          {drop(-120, 0)}
+          {drop(-120, 90)}
+          {drop(120, 45)}
+          {drop(120, 120)}
+        </g>
+      )}
       {Array.from({ length: 5 }).map((_, i) => (
         <rect key={i} x={cx + 92} y={top + 40 + i * 90} width={30} height={8} rx={4} fill={COLORS.outline} opacity={0.35} />
       ))}

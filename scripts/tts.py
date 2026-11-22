@@ -7,7 +7,7 @@ frames = ceil(seconds*fps) + sceneTailFrames).
 
 Usage: python3 scripts/tts.py <slug>   (default slug: hypnic-jerk)
 """
-import asyncio, json, os, re, subprocess, sys, math
+import asyncio, json, os, re, subprocess, sys, math, hashlib
 import edge_tts
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,17 +49,30 @@ async def main():
     beats = [b for ch in script["chapters"] for b in ch["beats"]]
     print(f"{slug}: {len(beats)} beats, voice={voice['voice']} rate={voice['rate']} pitch={voice['pitch']}")
 
+    # per-beat cache: skip synthesis when the (voice+text) hash is unchanged so
+    # CI only re-synthesizes beats that actually changed.
+    voice_key = f"{voice['voice']}|{voice['rate']}|{voice['pitch']}"
     durations = []
+    synthed = cached = 0
     for i, beat in enumerate(beats):
         spoken = apply_lexicon(beat["vo"], lex)
         out = os.path.join(audio_dir, f"beat_{i:03d}.mp3")
-        tts = edge_tts.Communicate(spoken, voice["voice"], rate=voice["rate"], pitch=voice["pitch"])
-        await tts.save(out)
+        hp = out + ".hash"
+        h = hashlib.sha1((voice_key + "|" + spoken).encode()).hexdigest()
+        fresh = os.path.exists(out) and os.path.exists(hp) and open(hp).read().strip() == h
+        if fresh:
+            cached += 1
+        else:
+            tts = edge_tts.Communicate(spoken, voice["voice"], rate=voice["rate"], pitch=voice["pitch"])
+            await tts.save(out)
+            open(hp, "w").write(h)
+            synthed += 1
         sec = ffprobe_seconds(out)
         frames = math.ceil(sec * FPS) + tail
         durations.append({"index": i, "seconds": round(sec, 3), "frames": frames,
                           "audio": f"content/{slug}/audio/beat_{i:03d}.mp3"})
-        print(f"  beat {i:02d}: {sec:5.2f}s -> {frames} frames  | {beat['vo'][:52]}...")
+        print(f"  beat {i:02d}: {sec:5.2f}s -> {frames} frames  {'(cached)' if fresh else '(synth)'} | {beat['vo'][:44]}...")
+    print(f"  [{synthed} synthesized, {cached} cached]")
 
     total = sum(d["frames"] for d in durations)
     meta = {"slug": slug, "fps": FPS, "sceneTailFrames": tail,

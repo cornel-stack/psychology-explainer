@@ -11,6 +11,8 @@
     "validate": "tsx scripts/validate.ts",
     "manifest": "tsx scripts/build-manifest.ts",
     "terms": "python3 scripts/terms_test.py",
+    "thumbnails": "remotion still Thumb-A renders/thumbnails/thumb-A.png --frame=20 && remotion still Thumb-B renders/thumbnails/thumb-B.png --frame=20 && remotion still Thumb-C renders/thumbnails/thumb-C.png --frame=20",
+    "qa:video": "node scripts/stills.mjs && python3 scripts/qa_stills.py renders/unnamed-feelings-stills",
     "contact-sheet": "remotion still CardContactSheet renders/contact-sheet.png --frame=15 && remotion still CardAccessories renders/accessories.png --frame=15 && remotion still CardJointTest renders/joint-test.png --frame=15",
     "voices": "python3 scripts/voice_candidates.py",
     "lint:strokes": "node scripts/lint-strokes.mjs",

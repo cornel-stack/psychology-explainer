@@ -11,6 +11,7 @@ import { JointTest } from './dev/JointTest';
 import { MainVideo, calcVideoMetadata } from './Video';
 import { NewPropsSheet, RoomStill } from './dev/NewAssets';
 import { DiagramCard } from './scenes/DiagramCard';
+import { Thumbnail, THUMBS } from './dev/Thumbnail';
 
 const NEW_ROOMS = ['balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall'] as const;
 const NEW_DIAGRAMS = ['signal-race', 'overflow-meter', 'two-gates', 'then-now'] as const;
@@ -60,6 +61,11 @@ export const RemotionRoot: React.FC = () => {
       ))}
       {NEW_DIAGRAMS.map((d) => (
         <Composition key={d} id={`Diag-${d}`} component={DiagramCard as React.FC} durationInFrames={90} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} defaultProps={{ diagram: d, withMascot: true } as never} />
+      ))}
+
+      {/* Phase 4 — thumbnail variants (1280x720) */}
+      {Object.keys(THUMBS).map((v) => (
+        <Composition key={v} id={`Thumb-${v}`} component={Thumbnail as React.FC} durationInFrames={60} fps={CANVAS.fps} width={1280} height={720} defaultProps={{ variant: v } as never} />
       ))}
 
       {/* Phase 3 — duration-driven assembled video (props from render.mjs) */}

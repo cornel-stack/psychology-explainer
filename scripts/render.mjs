@@ -48,5 +48,7 @@ writeFileSync(propsPath, JSON.stringify(props));
 const out = join(ROOT, 'renders', `${slug}.mp4`);
 console.log(`\nRendering ${slug}: ${beats.length} beats, ${durations.totalFrames} frames (${durations.totalSeconds}s) -> ${out}\n`);
 
-execFileSync('npx', ['remotion', 'render', 'MainVideo', out, `--props=${propsPath}`, '--codec=h264'], { cwd: ROOT, stdio: 'inherit' });
+const args = ['remotion', 'render', 'MainVideo', out, `--props=${propsPath}`, '--codec=h264'];
+if (process.env.REMOTION_CONCURRENCY) args.push(`--concurrency=${process.env.REMOTION_CONCURRENCY}`);
+execFileSync('npx', args, { cwd: ROOT, stdio: 'inherit' });
 console.log(`\n✓ ${out}`);

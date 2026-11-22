@@ -1,0 +1,115 @@
+name: Render video
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Content slug to render"
+        required: true
+        default: "unnamed-feelings"
+  push:
+    paths:
+      - "content/**/script.json"
+
+# One render per slug at a time; newer pushes cancel stale runs.
+concurrency:
+  group: render-${{ github.event.inputs.slug || 'unnamed-feelings' }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      SLUG: ${{ github.event.inputs.slug || 'unnamed-feelings' }}
+      # 4-core runner: leave 1 core for the OS / encoder.
+      REMOTION_CONCURRENCY: "3"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install system deps (ffmpeg) + edge-tts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts Pillow
+
+      # Fonts are BUNDLED in the repo (public/fonts/Baloo2.ttf) and loaded via a
+      # local @font-face, so no system-font install is needed and renders are
+      # pixel-identical to local.
+      - name: Verify bundled font present
+        run: test -f public/fonts/Baloo2.ttf
+
+      - name: Cache Remotion headless browser
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/remotion
+            node_modules/.remotion
+          key: remotion-browser-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Per-beat TTS cache: restored audio means tts.py only re-synthesizes beats
+      # whose text/voice hash changed (see scripts/tts.py).
+      - name: Cache TTS audio
+        uses: actions/cache@v4
+        with:
+          path: |
+            content/${{ env.SLUG }}/audio
+          key: tts-${{ env.SLUG }}-${{ hashFiles(format('content/{0}/script.json', env.SLUG), 'scripts/lexicon.json', 'scripts/voice.json') }}
+          restore-keys: |
+            tts-${{ env.SLUG }}-
+
+      - name: TTS (one file per beat, cached)
+        run: npm run tts "$SLUG"
+
+      - name: Terms pronunciation MP3s
+        run: npm run terms || true
+
+      - name: Build asset manifest
+        run: npm run manifest "$SLUG"
+
+      - name: Validate (schema + asset registry + manifest)
+        run: npm run validate "$SLUG"
+
+      - name: Lint strokes + grid overlap
+        run: |
+          npm run lint:strokes
+          node scripts/qa_grid_overlap.mjs
+
+      - name: Stills QA pass (fails on any red)
+        run: |
+          node scripts/stills.mjs "$SLUG"
+          python3 scripts/qa_stills.py "renders/${SLUG}-stills"
+
+      - name: Thumbnails (3 variants)
+        run: npm run thumbnails
+
+      - name: Full 1080p render
+        run: npm run render "$SLUG"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SLUG }}-package
+          if-no-files-found: warn
+          path: |
+            renders/${{ env.SLUG }}.mp4
+            renders/${{ env.SLUG }}-stills/**
+            renders/thumbnails/**
+            renders/terms-test/**
+            content/${{ env.SLUG }}/metadata.md
+            content/${{ env.SLUG }}/DEFECTS.md
+            content/${{ env.SLUG }}/SOURCES.md
+            content/${{ env.SLUG }}/asset-manifest.json
