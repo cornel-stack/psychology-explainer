@@ -35,7 +35,8 @@ for (const ch of script.chapters) {
     bi++;
   }
   if (SKIP.has(ch.name)) continue;
-  const label = ch.name === 'Cold Open' ? 'The balcony' : ch.name;
+  const n = ch.name.match(/^(\d+)\s*—\s*(.+)$/);
+  const label = ch.name === 'Cold Open' ? 'The balcony' : n ? `${n[1]}. ${n[2]}` : ch.name;
   lines.push(`${ts(start === 0 ? 0 : start)} — ${label}`);
 }
 

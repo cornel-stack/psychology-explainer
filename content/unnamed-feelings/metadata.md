@@ -17,8 +17,23 @@ so you don't just feel seen — you understand why. By the end, you'll know whic
 one you feel the most.
 
 ⏱ Chapters
-0:00 — The balcony (cold open)
-<<TIMESTAMPS — inserted automatically from the final render in Step 3>>
+0:00 — The balcony
+0:49 — 1. L'appel du vide
+2:00 — 2. Sonder
+2:59 — 3. Frisson
+3:49 — 4. Jamais vu
+4:43 — 5. Presque vu
+5:39 — 6. Anemoia
+6:31 — 7. Saudade
+7:27 — 8. Gigil
+8:21 — 9. Torschlusspanik
+9:09 — 10. Kenopsia
+10:03 — 11. Collective effervescence
+10:56 — 12. Amae
+11:48 — 13. Awumbuk
+12:45 — 14. Fernweh
+13:28 — 15. Elevation
+14:21 — Outro
 
 🧠 Sources & further reading
 • High Place Phenomenon — Hames, Ribeiro, Smith & Joiner (2012), Journal of Affective Disorders (Florida State University)
