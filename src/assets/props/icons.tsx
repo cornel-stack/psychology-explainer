@@ -1,32 +1,32 @@
 /**
- * icons.tsx — symbolic icon props. Local origin (0,0).
+ * icons.tsx — symbolic icon props. Local origin (0,0). Token strokes only.
  */
 import React from 'react';
 import { useCurrentFrame, useVideoConfig } from 'remotion';
-import { COLORS, STROKE, strokeProps } from '../../lib/style';
+import { COLORS, STROKE, strokeProps, shade } from '../../lib/style';
 import { pulse } from '../../lib/anim';
 
-const sil = strokeProps(STROKE.sil);
-const std = strokeProps(STROKE.std);
-const fine = strokeProps(STROKE.fine);
+const xl = strokeProps(STROKE.xl);
+const lg = strokeProps(STROKE.lg);
+const sm = strokeProps(STROKE.sm);
 
 export const RedArrow: React.FC<{ dir?: 'up' | 'down' | 'left' | 'right' }> = ({ dir = 'up' }) => {
   const rot = { up: 0, right: 90, down: 180, left: 270 }[dir];
   return (
     <g transform={`rotate(${rot})`}>
-      <path d="M -26 60 L -26 -10 L -54 -10 L 0 -70 L 54 -10 L 26 -10 L 26 60 Z" fill={COLORS.red} {...sil} />
+      <path d="M -28 64 L -28 -10 L -58 -10 L 0 -74 L 58 -10 L 28 -10 L 28 64 Z" fill={COLORS.red} {...xl} />
+      <path d="M -14 60 L -14 -10 L -30 -10 L 0 -46 Z" fill={COLORS.redDark} opacity={0.4} />
     </g>
   );
 };
 
 export const StopHand: React.FC = () => (
   <g>
-    <circle cx={0} cy={0} r={86} fill={COLORS.red} {...sil} />
-    <circle cx={0} cy={0} r={86} fill="none" stroke={COLORS.white} strokeWidth={8} />
-    {/* palm */}
-    <rect x={-34} y={-28} width={68} height={74} rx={20} fill={COLORS.white} {...fine} />
-    {[-24, -8, 8, 24].map((x, i) => (
-      <rect key={i} x={x - 7} y={-54} width={14} height={34} rx={7} fill={COLORS.white} {...fine} />
+    <circle cx={0} cy={0} r={90} fill={COLORS.red} {...xl} />
+    <circle cx={0} cy={0} r={90} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} />
+    <rect x={-36} y={-28} width={72} height={78} rx={22} fill={COLORS.white} {...sm} />
+    {[-26, -9, 9, 26].map((x, i) => (
+      <rect key={i} x={x - 8} y={-58} width={16} height={38} rx={8} fill={COLORS.white} {...sm} />
     ))}
   </g>
 );
@@ -37,7 +37,8 @@ export const Heart: React.FC<{ beat?: boolean }> = ({ beat = true }) => {
   const s = beat ? pulse(f, fps, 1, 1.14, 0.7) : 1;
   return (
     <g transform={`scale(${s})`}>
-      <path d="M 0 54 C -70 2 -60 -58 -20 -58 C -4 -58 0 -44 0 -36 C 0 -44 4 -58 20 -58 C 60 -58 70 2 0 54 Z" fill={COLORS.pink} {...sil} />
+      <path d="M 0 58 C -74 4 -64 -62 -22 -62 C -4 -62 0 -46 0 -38 C 0 -46 4 -62 22 -62 C 64 -62 74 4 0 58 Z" fill={COLORS.pink} {...xl} />
+      <path d="M -36 -40 C -36 -20 -20 -4 -2 16 C -24 4 -52 -14 -52 -40 C -52 -52 -44 -56 -36 -56 Z" fill={COLORS.white} opacity={0.35} />
     </g>
   );
 };
@@ -46,22 +47,32 @@ export const MoonStars: React.FC = () => {
   const f = useCurrentFrame();
   return (
     <g>
-      <path d="M 24 -40 a 52 52 0 1 0 30 84 a 42 42 0 1 1 -30 -84 z" fill={COLORS.yellowSoft} {...std} />
-      {[[-60, -50, 0], [-80, 30, 1.5], [60, 60, 3]].map(([x, y, p], i) => (
-        <path key={i} opacity={0.5 + 0.5 * Math.abs(Math.sin(f / 10 + p))} d={`M ${x} ${y - 12} l 3 9 9 1 -7 6 2 9 -7 -5 -7 5 2 -9 -7 -6 9 -1 z`} fill={COLORS.white} {...strokeProps(2.5)} />
+      <path d="M 24 -42 a 54 54 0 1 0 32 86 a 44 44 0 1 1 -32 -86 z" fill={COLORS.yellowSoft} {...lg} />
+      <ellipse cx={8} cy={-8} rx={16} ry={20} fill={COLORS.yellowDark} opacity={0.3} />
+      {[[-62, -52, 0], [-82, 32, 1.5], [62, 62, 3]].map(([x, y, p], i) => (
+        <path key={i} opacity={0.5 + 0.5 * Math.abs(Math.sin(f / 10 + p))} d={`M ${x} ${y - 13} l 3 9 9 1 -7 6 2 9 -7 -5 -7 5 2 -9 -7 -6 9 -1 z`} fill={COLORS.white} {...sm} />
       ))}
     </g>
   );
 };
 
-/** Lightning cloud — soft thunder (spec SFX); the bolt flickers. */
+/** Lightning cloud — soft thunder (spec SFX); bolt flashes with a white burst. */
 export const LightningCloud: React.FC = () => {
   const f = useCurrentFrame();
-  const flash = Math.sin(f / 6) > 0.6 ? 1 : 0.55;
+  const strike = Math.sin(f / 6) > 0.6;
   return (
     <g>
-      <path d="M -90 10 Q -110 -30 -70 -40 Q -60 -78 -10 -64 Q 30 -92 70 -56 Q 118 -58 108 -14 Q 120 20 80 24 L -70 24 Q -104 24 -90 10 Z" fill={COLORS.lavender} {...sil} />
-      <path d="M 10 20 L -16 70 L 8 70 L -12 118 L 40 56 L 14 56 L 34 20 Z" fill={COLORS.yellow} opacity={flash} {...std} />
+      {strike && (
+        <g opacity={0.7}>
+          {Array.from({ length: 8 }).map((_, i) => {
+            const a = (i / 8) * Math.PI * 2;
+            return <path key={i} d={`M ${Math.cos(a) * 40} ${30 + Math.sin(a) * 40} L ${Math.cos(a) * 150} ${30 + Math.sin(a) * 150}`} stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" />;
+          })}
+        </g>
+      )}
+      <path d="M -96 12 Q -116 -32 -74 -42 Q -64 -82 -10 -68 Q 32 -98 74 -60 Q 124 -62 114 -14 Q 128 22 84 26 L -74 26 Q -110 26 -96 12 Z" fill={COLORS.lavender} {...xl} />
+      <path d="M -70 -2 Q -40 -28 0 -22 Q 40 -28 70 -6 Q 30 2 -70 -2 Z" fill={shade(COLORS.lavender, 0.18)} />
+      <path d="M 12 22 L -18 74 L 10 74 L -14 126 L 44 60 L 16 60 L 38 22 Z" fill={COLORS.yellow} {...lg} opacity={strike ? 1 : 0.9} />
     </g>
   );
 };
@@ -79,13 +90,21 @@ export const Footprints: React.FC = () => (
   </g>
 );
 
+/** 4-point sparkles — gold fill + token outline, twinkling. */
 export const Sparkles: React.FC<{ n?: number }> = ({ n = 4 }) => {
   const f = useCurrentFrame();
-  const pts = [[-80, -60], [80, -40], [60, 60], [-60, 50]].slice(0, n);
+  const pts = [
+    [-90, -64, 24],
+    [92, -44, 18],
+    [64, 70, 22],
+    [-62, 56, 16],
+    [0, -92, 14],
+    [20, 96, 12],
+  ].slice(0, n);
   return (
-    <g fill={COLORS.yellow} {...strokeProps(3)}>
-      {pts.map(([x, y], i) => (
-        <path key={i} opacity={0.4 + 0.6 * Math.abs(Math.sin(f / 7 + i))} d={`M ${x} ${y - 20} L ${x + 6} ${y - 6} L ${x + 20} ${y} L ${x + 6} ${y + 6} L ${x} ${y + 20} L ${x - 6} ${y + 6} L ${x - 20} ${y} L ${x - 6} ${y - 6} Z`} />
+    <g fill={COLORS.yellow} {...sm}>
+      {pts.map(([x, y, r], i) => (
+        <path key={i} opacity={0.4 + 0.6 * Math.abs(Math.sin(f / 7 + i))} d={`M ${x} ${y - r} L ${x + r * 0.3} ${y - r * 0.3} L ${x + r} ${y} L ${x + r * 0.3} ${y + r * 0.3} L ${x} ${y + r} L ${x - r * 0.3} ${y + r * 0.3} L ${x - r} ${y} L ${x - r * 0.3} ${y - r * 0.3} Z`} />
       ))}
     </g>
   );

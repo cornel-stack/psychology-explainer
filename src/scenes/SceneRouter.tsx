@@ -16,7 +16,7 @@ export const SceneRouter: React.FC<{ beat: Beat }> = ({ beat }) => {
   const cs = beat.chapterStart;
   switch (beat.scene) {
     case 'story':
-      return <StoryScene room={beat.room ?? 'bedroom-night'} mascots={beat.mascots} props={beat.props} camera={beat.camera} chapterStart={cs} />;
+      return <StoryScene room={beat.room ?? 'bedroom-night'} mascots={beat.mascots} props={beat.props} fg={beat.fg} camera={beat.camera} chapterStart={cs} />;
     case 'explainer':
       return <ExplainerScene prop={beat.prop} diagram={beat.diagram} emotion={beat.emotion} chapterStart={cs} />;
     case 'statCard':

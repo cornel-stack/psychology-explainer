@@ -1,15 +1,15 @@
 /**
- * CloseUp —
- *  (a) face: head fills ~75% of frame height; room collapses to 2 flat color
- *      bands (NO blur, per style); faint radiating rings; sweat/tremble via the
- *      mascot's emotion extras.
- *  (b) object: object inside a scalloped dream-cloud frame with twinkling
- *      4-point sparkles.
+ * CloseUp (B7/B8/A4) —
+ *  (a) face: head fills >=80% of frame height, hat bleeds off the top edge
+ *      (crop = closeness); NO body slab — pillow + blanket edge fill the bottom;
+ *      2 flat color bands; faint radiating rings; trembling motion lines.
+ *  (b) object: object large (2x) on a dream-cloud floor shelf inside a scalloped
+ *      frame with a soft inner radial ring and gold sparkles.
  */
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame } from 'remotion';
-import { COLORS, CANVAS, STROKE, strokeProps } from '../lib/style';
-import { Stage, Place, ChapterFlash } from './common';
+import { COLORS, CANVAS, STROKE, strokeProps, shade } from '../lib/style';
+import { Stage, Place, ChapterFlash, BurstBackground, AccentCorners } from './common';
 import { Mascot } from '../assets/mascot/Mascot';
 import { PROPS } from '../assets/props/registry';
 import { Pillow } from '../assets/props/bedroom';
@@ -17,28 +17,32 @@ import { Sparkles } from '../assets/props/icons';
 import { EmotionName } from '../lib/emotions';
 import { AccessoryVariant } from '../assets/mascot/parts/Accessory';
 
-const sil = strokeProps(STROKE.sil);
+const xl = strokeProps(STROKE.xl);
 
-/** Scalloped dream-cloud border as a path of bumps around a rounded rect. */
+/** Scalloped dream-cloud border around a rounded rect. */
 const DreamCloud: React.FC = () => {
-  const r = 70;
-  const w = 1180;
-  const h = 680;
+  const r = 74;
+  const w = 1360;
+  const h = 800;
   const x0 = (CANVAS.width - w) / 2;
   const y0 = (CANVAS.height - h) / 2;
-  const bumpsX = Math.round(w / (r * 1.6));
-  const bumpsY = Math.round(h / (r * 1.6));
+  const bx = Math.round(w / (r * 1.6));
+  const by = Math.round(h / (r * 1.6));
   let d = `M ${x0} ${y0}`;
-  for (let i = 0; i < bumpsX; i++) d += ` a ${r} ${r} 0 0 1 ${w / bumpsX} 0`;
-  for (let i = 0; i < bumpsY; i++) d += ` a ${r} ${r} 0 0 1 0 ${h / bumpsY}`;
-  for (let i = 0; i < bumpsX; i++) d += ` a ${r} ${r} 0 0 1 ${-w / bumpsX} 0`;
-  for (let i = 0; i < bumpsY; i++) d += ` a ${r} ${r} 0 0 1 0 ${-h / bumpsY}`;
+  for (let i = 0; i < bx; i++) d += ` a ${r} ${r} 0 0 1 ${w / bx} 0`;
+  for (let i = 0; i < by; i++) d += ` a ${r} ${r} 0 0 1 0 ${h / by}`;
+  for (let i = 0; i < bx; i++) d += ` a ${r} ${r} 0 0 1 ${-w / bx} 0`;
+  for (let i = 0; i < by; i++) d += ` a ${r} ${r} 0 0 1 0 ${-h / by}`;
   d += ' Z';
   return (
     <g>
-      <rect x={x0} y={y0} width={w} height={h} rx={40} fill={COLORS.lavender} />
-      <path d={d} fill={COLORS.lavender} {...sil} />
-      <rect x={x0 + 10} y={y0 + 10} width={w - 20} height={h - 20} rx={30} fill="none" stroke={COLORS.white} strokeWidth={6} opacity={0.5} />
+      <path d={d} fill={COLORS.lavender} {...xl} />
+      {/* soft inner radial rings */}
+      {[0, 1, 2].map((i) => (
+        <circle key={i} cx={CANVAS.width / 2} cy={CANVAS.height / 2} r={160 + i * 110} fill="none" stroke={shade(COLORS.lavender, 0.08)} strokeWidth={40} opacity={0.5} />
+      ))}
+      {/* dream-cloud floor shelf */}
+      <ellipse cx={CANVAS.width / 2} cy={CANVAS.height / 2 + 190} rx={360} ry={70} fill={shade(COLORS.lavender, 0.14)} />
     </g>
   );
 };
@@ -52,39 +56,54 @@ export const CloseUp: React.FC<{
   chapterStart?: boolean;
 }> = ({ subject, emotion = 'scared', prop, accessory = 'nightcap', bands = [COLORS.wallNight, COLORS.purpleDeep], chapterStart }) => {
   const frame = useCurrentFrame();
+
   if (subject === 'object') {
     const Comp = prop ? PROPS[prop] : null;
     return (
       <AbsoluteFill style={{ backgroundColor: COLORS.wallNight }}>
         <Stage>
+          <BurstBackground base={COLORS.wallNight} cx={CANVAS.width / 2} cy={CANVAS.height / 2} rays={12} />
+          <AccentCorners color={COLORS.yellowSoft} />
           <DreamCloud />
-          <Place x={CANVAS.width / 2} y={CANVAS.height / 2} scale={2.1} bob={6} bobDiv={20}>
+          <Place x={CANVAS.width / 2} y={CANVAS.height / 2 + 120} scale={3.4} bob={6} bobDiv={20}>
             {Comp ? <Comp /> : null}
           </Place>
-          <Place x={CANVAS.width / 2} y={CANVAS.height / 2} scale={3.2}>
-            <Sparkles n={4} />
-          </Place>
+          <g transform={`translate(${CANVAS.width / 2} ${CANVAS.height / 2}) scale(4.0)`}>
+            <Sparkles n={5} />
+          </g>
         </Stage>
         <ChapterFlash active={chapterStart} />
       </AbsoluteFill>
     );
   }
-  // face close-up: two flat bands + radiating rings + big head
+
+  // face close-up
+  const headX = CANVAS.width / 2;
+  const headY = CANVAS.height * 0.42;
+  const tremble = emotion === 'terrified';
   return (
     <AbsoluteFill>
       <Stage>
-        <rect x={0} y={0} width={CANVAS.width} height={700} fill={bands[0]} />
-        <rect x={0} y={700} width={CANVAS.width} height={380} fill={bands[1]} />
-        {/* faint radiating rings (energy, not blur) */}
+        <rect x={0} y={0} width={CANVAS.width} height={640} fill={bands[0]} />
+        <rect x={0} y={640} width={CANVAS.width} height={440} fill={bands[1]} />
         {[0, 1, 2, 3].map((i) => (
-          <circle key={i} cx={CANVAS.width / 2} cy={520} r={260 + i * 120 + (frame % 60)} fill="none" stroke={COLORS.white} strokeWidth={4} opacity={0.08} />
+          <circle key={i} cx={headX} cy={headY + 60} r={300 + i * 130 + (frame % 60)} fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} opacity={0.08} />
         ))}
-        {/* pillow under the head */}
-        <g transform={`translate(${CANVAS.width / 2} 980) scale(3.4)`}>
+        {/* trembling motion lines near the head */}
+        {tremble &&
+          [-1, 1].map((s) =>
+            [0, 1, 2].map((i) => (
+              <path key={`${s}-${i}`} d={`M ${headX + s * (430 + i * 26)} ${headY - 120 + i * 90} q ${s * 26} 16 0 40`} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.5} />
+            ))
+          )}
+        {/* pillow + blanket edge fill the bottom (no body slab) */}
+        <g transform={`translate(${headX} 1010) scale(5.2)`}>
           <Pillow />
         </g>
+        <path d={`M 0 900 Q ${CANVAS.width / 2} 840 ${CANVAS.width} 900 L ${CANVAS.width} 1080 L 0 1080 Z`} fill={COLORS.sky} {...xl} />
+        <path d={`M 0 940 Q ${CANVAS.width / 2} 890 ${CANVAS.width} 940`} fill="none" stroke={shade(COLORS.sky, 0.18)} strokeWidth={STROKE.lg} />
       </Stage>
-      <Mascot costume="pajamas" pose="face-on-pillow" emotion={emotion} accessory={accessory} x={CANVAS.width / 2} y={CANVAS.height * 0.5} scale={2.4} seed={9} />
+      <Mascot costume="pajamas" pose="face-on-pillow" emotion={emotion} accessory={accessory} x={headX} y={headY} scale={3.2} seed={9} />
       <ChapterFlash active={chapterStart} />
     </AbsoluteFill>
   );

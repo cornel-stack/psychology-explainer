@@ -11,7 +11,7 @@ import { COLORS, STROKE, strokeProps } from '../../../lib/style';
 
 export type AccessoryVariant = 'nightcap' | 'halo' | 'antenna' | 'none';
 
-const sil = strokeProps(STROKE.std);
+const sil = strokeProps(STROKE.lg);
 
 export const Accessory: React.FC<{ variant: AccessoryVariant; frame?: number }> = ({ variant, frame = 0 }) => {
   switch (variant) {
@@ -43,9 +43,9 @@ export const Accessory: React.FC<{ variant: AccessoryVariant; frame?: number }> 
           {/* glow */}
           <ellipse cx={0} cy={-168} rx={96} ry={30} fill={COLORS.yellow} opacity={0.25} />
           {/* ring */}
-          <ellipse cx={0} cy={-168} rx={78} ry={22} fill="none" stroke={COLORS.yellow} strokeWidth={16} />
-          <ellipse cx={0} cy={-168} rx={78} ry={22} fill="none" {...strokeProps(STROKE.fine)} />
-          <ellipse cx={0} cy={-168} rx={62} ry={12} fill="none" {...strokeProps(4)} opacity={0.5} />
+          <ellipse cx={0} cy={-168} rx={78} ry={22} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.xl} />
+          <ellipse cx={0} cy={-168} rx={78} ry={22} fill="none" {...strokeProps(STROKE.sm)} />
+          <ellipse cx={0} cy={-168} rx={62} ry={12} fill="none" {...strokeProps(STROKE.sm)} opacity={0.5} />
         </g>
       );
     }
@@ -53,8 +53,8 @@ export const Accessory: React.FC<{ variant: AccessoryVariant; frame?: number }> 
       const sway = Math.sin(frame / 12) * 3;
       const Bulb: React.FC<{ x: number; tilt: number }> = ({ x, tilt }) => (
         <g>
-          <path d={`M ${x} -120 Q ${x + tilt} -165 ${x + tilt * 1.4} -188`} fill="none" {...strokeProps(STROKE.std)} />
-          <circle cx={x + tilt * 1.4} cy={-190} r={16} fill={COLORS.sky} {...strokeProps(STROKE.fine)} />
+          <path d={`M ${x} -120 Q ${x + tilt} -165 ${x + tilt * 1.4} -188`} fill="none" {...strokeProps(STROKE.lg)} />
+          <circle cx={x + tilt * 1.4} cy={-190} r={16} fill={COLORS.sky} {...strokeProps(STROKE.sm)} />
           <circle cx={x + tilt * 1.4 - 5} cy={-195} r={5} fill={COLORS.white} />
         </g>
       );

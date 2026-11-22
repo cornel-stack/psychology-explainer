@@ -3,11 +3,11 @@
  */
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
-import { COLORS, STROKE, strokeProps } from '../../lib/style';
+import { COLORS, STROKE, strokeProps, shade } from '../../lib/style';
 
-const sil = strokeProps(STROKE.sil);
-const std = strokeProps(STROKE.std);
-const fine = strokeProps(STROKE.fine);
+const sil = strokeProps(STROKE.xl);
+const std = strokeProps(STROKE.lg);
+const fine = strokeProps(STROKE.sm);
 
 export const Fridge: React.FC = () => (
   <g>
@@ -16,8 +16,8 @@ export const Fridge: React.FC = () => (
     <rect x={70} y={-180} width={16} height={100} rx={8} fill={COLORS.white} {...fine} />
     <rect x={70} y={20} width={16} height={120} rx={8} fill={COLORS.white} {...fine} />
     {/* magnets + note */}
-    <circle cx={-60} cy={60} r={12} fill={COLORS.yellow} {...strokeProps(3)} />
-    <circle cx={-30} cy={100} r={12} fill={COLORS.greenLeaf} {...strokeProps(3)} />
+    <circle cx={-60} cy={60} r={12} fill={COLORS.yellow} {...strokeProps(STROKE.sm)} />
+    <circle cx={-30} cy={100} r={12} fill={COLORS.greenLeaf} {...strokeProps(STROKE.sm)} />
     <rect x={20} y={40} width={64} height={84} rx={6} fill={COLORS.white} {...fine} />
   </g>
 );
@@ -37,7 +37,7 @@ export const Toothbrush: React.FC = () => (
     <rect x={-14} y={-120} width={28} height={200} rx={14} fill={COLORS.sky} {...std} />
     <rect x={-18} y={-150} width={36} height={44} rx={10} fill={COLORS.white} {...std} />
     {Array.from({ length: 5 }).map((_, i) => (
-      <line key={i} x1={-14 + i * 7} y1={-150} x2={-14 + i * 7} y2={-166} {...strokeProps(4)} />
+      <line key={i} x1={-14 + i * 7} y1={-150} x2={-14 + i * 7} y2={-166} {...strokeProps(STROKE.sm)} />
     ))}
   </g>
 );
@@ -75,12 +75,30 @@ export const TeddyBear: React.FC = () => (
   </g>
 );
 
+/** One classic stiletto in side profile: pointed toe (left), arch, thin heel (right). */
+const Stiletto: React.FC<{ tone?: string }> = ({ tone = COLORS.pink }) => (
+  <g>
+    {/* thin heel spike under the back */}
+    <path d="M 48 -30 L 64 64 L 46 64 L 28 -28 Z" fill={tone} {...std} />
+    {/* sole */}
+    <path d="M -132 -24 C -60 -16 20 -20 70 -30 C 78 -24 74 -16 60 -12 C 0 -4 -84 -8 -130 -14 C -140 -16 -140 -22 -132 -24 Z" fill={shade(tone, 0.24)} {...std} />
+    {/* upper / vamp (low profile, pointed toe at left) */}
+    <path d="M -132 -26 C -120 -52 -66 -66 -6 -66 C 34 -66 58 -54 60 -32 C 8 -30 -72 -28 -132 -26 Z" fill={tone} {...std} />
+    {/* ankle opening */}
+    <ellipse cx={22} cy={-48} rx={24} ry={14} fill={shade(tone, 0.32)} />
+    {/* toe shine */}
+    <path d="M -116 -36 C -96 -44 -64 -48 -36 -46 C -64 -40 -92 -36 -112 -30 Z" fill={COLORS.white} opacity={0.4} />
+  </g>
+);
+
 export const PinkHeels: React.FC = () => (
   <g>
-    <path d="M -120 0 Q -120 -40 -70 -40 L 10 -40 Q 40 -40 20 10 L -90 10 Q -120 10 -120 0 Z" fill={COLORS.pink} {...std} />
-    <path d="M -90 10 L -80 50 L -66 50 L -74 10 Z" fill={COLORS.pink} {...fine} />
-    <path d="M 40 -6 Q 40 -46 90 -46 L 130 -46 Q 150 -46 134 4 L 30 4 Q 40 4 40 -6 Z" fill={COLORS.pink} {...std} transform="translate(0 6)" />
-    <path d="M 110 0 L 120 40 L 134 40 L 126 0 Z" fill={COLORS.pink} {...fine} />
+    <g transform="translate(-58 44) scale(0.82)" opacity={0.92}>
+      <Stiletto tone={shade(COLORS.pink, 0.08)} />
+    </g>
+    <g transform="translate(40 -6)">
+      <Stiletto />
+    </g>
   </g>
 );
 
@@ -100,12 +118,12 @@ export const SpiderOnThread: React.FC = () => {
   const sway = Math.sin(f / 18) * 10;
   return (
     <g transform={`rotate(${sway})`} style={{ transformOrigin: '0px -220px' }}>
-      <line x1={0} y1={-220} x2={0} y2={-40} {...strokeProps(3)} />
+      <line x1={0} y1={-220} x2={0} y2={-40} {...strokeProps(STROKE.sm)} />
       <circle cx={0} cy={0} r={34} fill={COLORS.purpleDeep} {...sil} />
       <circle cx={0} cy={-26} r={20} fill={COLORS.purpleDeep} {...std} />
       <circle cx={-7} cy={-28} r={5} fill={COLORS.white} />
       <circle cx={7} cy={-28} r={5} fill={COLORS.white} />
-      <g {...strokeProps(5)}>
+      <g {...strokeProps(STROKE.sm)}>
         {[-1, 1].map((s) =>
           [0, 1, 2, 3].map((i) => (
             <path key={`${s}-${i}`} d={`M ${s * 20} ${-6 + i * 10} q ${s * 34} ${-6} ${s * 44} ${14}`} fill="none" />

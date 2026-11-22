@@ -1,137 +1,135 @@
 /**
- * Costume.tsx — torso + legs + feet + costume decoration (costume-dependent).
- * Original brand badge (placeholder monogram "MM") — NOT the reference APEX badge.
- * Head-centered coords; torso top ~y120 (behind head), feet ~y330.
- * Arms are drawn separately (pose-dependent) in Arms.tsx.
+ * Costume.tsx — torso + connected legs + costume decoration. Legs use the same
+ * silhouette+inset-fill technique as arms so they are continuous with the body
+ * (no floating capsules). Every costume carries ONE darker flat inner-shade
+ * (A6 two-tone). Original brand badge (placeholder "MM").
  */
 import React from 'react';
-import { COLORS, STROKE, strokeProps } from '../../../lib/style';
+import { COLORS, STROKE, strokeProps, shade } from '../../../lib/style';
 
 export type Costume = 'pajamas' | 'labcoat' | 'suit' | 'hoodie';
 
-const sil = strokeProps(STROKE.sil);
-const std = strokeProps(STROKE.std);
-const fine = strokeProps(STROKE.fine);
+const xl = strokeProps(STROKE.xl);
+const lg = strokeProps(STROKE.lg);
+const sm = strokeProps(STROKE.sm);
+const PEEK = STROKE.xl / 2;
+const LEG_W = 36;
 
 const TORSO =
-  'M -95 136 Q -101 122 -86 118 L 86 118 Q 101 122 95 136 L 80 270 Q 78 288 54 288 L -54 288 Q -78 288 -80 270 Z';
+  'M -98 138 Q -104 120 -88 116 L 88 116 Q 104 120 98 138 L 82 272 Q 80 292 54 292 L -54 292 Q -80 292 -82 272 Z';
 
 /** Original channel badge — rounded hexagon, gold, monogram. */
 export const BrandBadge: React.FC<{ x: number; y: number; scale?: number }> = ({ x, y, scale = 1 }) => (
   <g transform={`translate(${x} ${y}) scale(${scale})`}>
-    <path
-      d="M 0 -22 L 19 -11 L 19 11 L 0 22 L -19 11 L -19 -11 Z"
-      fill={COLORS.yellow}
-      {...fine}
-    />
-    <path d="M 0 -14 L 12 -7 L 12 7 L 0 14 L -12 7 L -12 -7 Z" fill="none" {...strokeProps(2.5)} opacity={0.5} />
-    <text x={0} y={7} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={18} fill={COLORS.outline}>
+    <path d="M 0 -24 L 21 -12 L 21 12 L 0 24 L -21 12 L -21 -12 Z" fill={COLORS.yellow} {...sm} />
+    <path d="M 0 -15 L 13 -7 L 13 7 L 0 15 L -13 7 L -13 -7 Z" fill={COLORS.yellowDark} opacity={0.55} />
+    <text x={0} y={7} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={19} fill={COLORS.outline}>
       MM
     </text>
   </g>
 );
 
-const Legs: React.FC<{ kind: 'socks' | 'shoes' | 'sneakers'; fill: string }> = ({ kind, fill }) => (
+/** One continuous leg + foot (silhouette+inset). */
+const Leg: React.FC<{ x: number; legFill: string; shoe: string; dir: 1 | -1 }> = ({ x, legFill, shoe, dir }) => {
+  const d = `M ${x} 246 L ${x} 316`;
+  const fx = x + dir * 14;
+  return (
+    <g>
+      {/* silhouette */}
+      <path d={d} fill="none" stroke={COLORS.outline} strokeWidth={LEG_W + 2 * PEEK} strokeLinecap="round" />
+      <ellipse cx={fx} cy={330} rx={36} ry={22} fill={COLORS.outline} />
+      {/* fill */}
+      <path d={d} fill="none" stroke={legFill} strokeWidth={LEG_W} strokeLinecap="round" />
+      <ellipse cx={fx} cy={330} rx={36 - PEEK} ry={22 - PEEK} fill={shoe} />
+      {shoe !== legFill && <path d={`M ${fx - 28} 332 L ${fx + 28} 332`} stroke={shade(shoe, 0.25)} strokeWidth={STROKE.sm} strokeLinecap="round" />}
+    </g>
+  );
+};
+
+const Legs: React.FC<{ legFill: string; shoe: string }> = ({ legFill, shoe }) => (
   <g>
-    {/* leg stubs */}
-    <rect x={-46} y={276} width={28} height={46} rx={14} fill={fill} {...std} />
-    <rect x={18} y={276} width={28} height={46} rx={14} fill={fill} {...std} />
-    {/* feet */}
-    {kind === 'socks' && (
-      <>
-        <ellipse cx={-32} cy={328} rx={30} ry={17} fill={COLORS.white} {...std} />
-        <ellipse cx={32} cy={328} rx={30} ry={17} fill={COLORS.white} {...std} />
-      </>
-    )}
-    {kind === 'shoes' && (
-      <>
-        <path d="M -62 322 Q -62 308 -40 308 L -14 308 Q -6 308 -6 320 Q -6 334 -20 334 L -52 334 Q -62 334 -62 322 Z" fill={COLORS.shirtDark} {...std} />
-        <path d="M 6 322 Q 6 308 28 308 L 54 308 Q 62 308 62 320 Q 62 334 48 334 L 16 334 Q 6 334 6 322 Z" fill={COLORS.shirtDark} {...std} />
-      </>
-    )}
-    {kind === 'sneakers' && (
-      <>
-        <path d="M -62 322 Q -62 308 -40 308 L -14 308 Q -6 308 -6 320 Q -6 334 -20 334 L -52 334 Q -62 334 -62 322 Z" fill={COLORS.white} {...std} />
-        <path d="M 6 322 Q 6 308 28 308 L 54 308 Q 62 308 62 320 Q 62 334 48 334 L 16 334 Q 6 334 6 322 Z" fill={COLORS.white} {...std} />
-        <path d="M -60 326 L -8 326 M 8 326 L 60 326" {...strokeProps(4)} />
-      </>
-    )}
+    <Leg x={-34} legFill={legFill} shoe={shoe} dir={-1} />
+    <Leg x={34} legFill={legFill} shoe={shoe} dir={1} />
   </g>
 );
 
 const starMoon = (
-  <g fill={COLORS.purpleDeep} opacity={0.75}>
-    <path d="M -50 170 l 4 10 10 1 -7 7 2 10 -9 -5 -9 5 2 -10 -7 -7 10 -1 z" transform="scale(0.8)" />
-    <path d="M 40 150 a 11 11 0 1 0 6 18 a 9 9 0 1 1 -6 -18 z" />
-    <path d="M 10 230 l 3 7 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" />
-    <path d="M -30 240 a 8 8 0 1 0 5 13 a 7 7 0 1 1 -5 -13 z" />
-    <path d="M 55 210 l 3 7 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" />
+  <g fill={COLORS.yellowDark} opacity={0.85}>
+    <path d="M -52 168 l 4 10 10 1 -7 7 2 10 -9 -5 -9 5 2 -10 -7 -7 10 -1 z" transform="scale(0.85)" />
+    <path d="M 44 150 a 11 11 0 1 0 6 18 a 9 9 0 1 1 -6 -18 z" />
+    <path d="M 12 236 l 3 7 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" />
+    <path d="M -30 246 a 8 8 0 1 0 5 13 a 7 7 0 1 1 -5 -13 z" />
   </g>
 );
 
 export const Costume: React.FC<{ costume: Costume; showLegs?: boolean }> = ({ costume, showLegs = true }) => {
-  const legs = (kind: 'socks' | 'shoes' | 'sneakers', fill: string) => (showLegs ? <Legs kind={kind} fill={fill} /> : null);
   switch (costume) {
     case 'pajamas':
       return (
         <g>
-          {legs('socks', COLORS.yellow)}
-          <path d={TORSO} fill={COLORS.yellow} {...sil} />
+          {showLegs && <Legs legFill={COLORS.yellow} shoe={COLORS.white} />}
+          <path d={TORSO} fill={COLORS.yellow} {...xl} />
+          {/* inner-shade (two-tone) */}
+          <path d="M -70 250 Q 0 276 70 250 L 66 288 Q 0 300 -66 288 Z" fill={COLORS.yellowDark} opacity={0.35} />
           {starMoon}
-          {/* placket + buttons + collar */}
-          <path d="M 0 120 L 0 285" {...fine} />
-          <circle cx={0} cy={170} r={6} fill={COLORS.purpleDeep} />
-          <circle cx={0} cy={210} r={6} fill={COLORS.purpleDeep} />
-          <path d="M -26 120 L 0 146 L 26 120" fill="none" {...std} />
+          {/* placket + buttons (persist across poses) */}
+          <path d="M 0 118 L 0 288" {...sm} />
+          <circle cx={0} cy={170} r={7} fill={COLORS.yellowDark} {...strokeProps(STROKE.sm)} />
+          <circle cx={0} cy={214} r={7} fill={COLORS.yellowDark} {...strokeProps(STROKE.sm)} />
+          <path d="M -28 118 L 0 148 L 28 118" fill="none" {...lg} />
         </g>
       );
     case 'labcoat':
       return (
         <g>
-          {legs('shoes', COLORS.shirtDark)}
+          {showLegs && <Legs legFill={COLORS.shirtDark} shoe={COLORS.shirtDarker} />}
           {/* dark shirt behind coat */}
-          <path d="M -34 120 L 34 120 L 24 285 L -24 285 Z" fill={COLORS.shirtDark} {...std} />
+          <path d="M -36 118 L 36 118 L 26 288 L -26 288 Z" fill={COLORS.shirtDark} {...lg} />
           {/* coat */}
-          <path d={TORSO} fill={COLORS.white} {...sil} />
-          {/* coat opening V (reveals shirt) */}
-          <path d="M -30 118 L 0 210 L 30 118" fill={COLORS.shirtDark} {...std} />
+          <path d={TORSO} fill={COLORS.white} {...xl} />
+          {/* coat opening V reveals shirt */}
+          <path d="M -32 116 L 0 214 L 32 116" fill={COLORS.shirtDark} {...lg} />
+          {/* inner-shade down coat left */}
+          <path d="M -82 200 Q -74 260 -52 288 L -30 288 Q -56 250 -60 200 Z" fill={COLORS.whiteShade} opacity={0.7} />
           {/* lapels */}
-          <path d="M -30 118 L -14 175 M 30 118 L 14 175" fill="none" {...fine} />
-          {/* pockets */}
-          <rect x={-70} y={210} width={40} height={34} rx={8} fill="none" {...fine} />
-          <rect x={30} y={210} width={40} height={34} rx={8} fill="none" {...fine} />
-          <BrandBadge x={40} y={168} />
+          <path d="M -32 116 L -14 178 M 32 116 L 14 178" fill="none" {...sm} />
+          {/* pockets with shadow */}
+          <rect x={-74} y={212} width={44} height={38} rx={10} fill={COLORS.whiteShade} {...sm} />
+          <rect x={30} y={212} width={44} height={38} rx={10} fill={COLORS.whiteShade} {...sm} />
+          <BrandBadge x={44} y={170} />
         </g>
       );
     case 'suit':
       return (
         <g>
-          {legs('shoes', COLORS.shirtDark)}
-          <path d={TORSO} fill={COLORS.navy} {...sil} />
+          {showLegs && <Legs legFill={COLORS.shirtDark} shoe={COLORS.shirtDarker} />}
+          <path d={TORSO} fill={COLORS.navy} {...xl} />
+          <path d="M -70 250 Q 0 276 70 250 L 66 288 Q 0 300 -66 288 Z" fill={COLORS.navyDark} opacity={0.5} />
           {/* white collar */}
-          <path d="M -34 118 L 0 150 L 34 118 L 20 112 L 0 128 L -20 112 Z" fill={COLORS.white} {...std} />
+          <path d="M -36 116 L 0 152 L 36 116 L 20 110 L 0 128 L -20 110 Z" fill={COLORS.white} {...lg} />
           {/* tie */}
-          <path d="M 0 132 L -12 150 L -6 240 L 0 252 L 6 240 L 12 150 Z" fill={COLORS.red} {...fine} />
-          {/* lapels */}
-          <path d="M -30 120 L -8 200 M 30 120 L 8 200" fill="none" {...fine} />
-          <BrandBadge x={-44} y={176} scale={0.8} />
+          <path d="M 0 132 L -13 152 L -6 244 L 0 256 L 6 244 L 13 152 Z" fill={COLORS.red} {...sm} />
+          <path d="M -30 120 L -8 202 M 30 120 L 8 202" fill="none" {...sm} />
+          <BrandBadge x={-46} y={178} scale={0.8} />
         </g>
       );
     case 'hoodie':
       return (
         <g>
-          {legs('sneakers', COLORS.navy)}
+          {showLegs && <Legs legFill={COLORS.navy} shoe={COLORS.white} />}
           {/* hood behind head */}
-          <path d="M -120 40 Q 0 -70 120 40 Q 70 90 0 90 Q -70 90 -120 40 Z" fill={COLORS.hoodie} {...sil} />
-          <path d={TORSO} fill={COLORS.hoodie} {...sil} />
-          {/* hood opening collar */}
-          <path d="M -70 120 Q 0 150 70 120 Q 40 96 0 96 Q -40 96 -70 120 Z" fill={COLORS.woodDark} opacity={0.3} />
+          <path d="M -122 44 Q 0 -72 122 44 Q 70 92 0 92 Q -70 92 -122 44 Z" fill={COLORS.hoodie} {...xl} />
+          <path d={TORSO} fill={COLORS.hoodie} {...xl} />
+          {/* inner-shade */}
+          <path d="M -70 250 Q 0 276 70 250 L 66 288 Q 0 300 -66 288 Z" fill={COLORS.hoodieDark} opacity={0.45} />
+          {/* hood opening */}
+          <path d="M -72 118 Q 0 150 72 118 Q 40 94 0 94 Q -40 94 -72 118 Z" fill={COLORS.hoodieDark} opacity={0.4} />
           {/* drawstrings */}
-          <path d="M -14 128 L -16 190 M 14 128 L 16 190" fill="none" {...fine} />
-          <circle cx={-16} cy={194} r={6} fill={COLORS.white} {...strokeProps(3)} />
-          <circle cx={16} cy={194} r={6} fill={COLORS.white} {...strokeProps(3)} />
+          <path d="M -14 128 L -16 192 M 14 128 L 16 192" fill="none" {...sm} />
+          <circle cx={-16} cy={196} r={7} fill={COLORS.white} {...strokeProps(STROKE.sm)} />
+          <circle cx={16} cy={196} r={7} fill={COLORS.white} {...strokeProps(STROKE.sm)} />
           {/* kangaroo pocket */}
-          <path d="M -54 226 Q 0 246 54 226 L 48 270 L -48 270 Z" fill="none" {...fine} />
+          <path d="M -56 228 Q 0 248 56 228 L 50 272 L -50 272 Z" fill="none" {...sm} />
         </g>
       );
     default:

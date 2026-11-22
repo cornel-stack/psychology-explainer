@@ -7,6 +7,7 @@ import { CANVAS } from './lib/style';
 import { SceneRouter } from './scenes/SceneRouter';
 import { SAMPLE_BEATS } from './dev/samples';
 import { MotionReel, MOTION_REEL_FRAMES } from './dev/MotionReel';
+import { JointTest } from './dev/JointTest';
 
 // Each template still is a SceneRouter wrapped at canvas size.
 const TEMPLATE_STILLS: { id: string; beat: keyof typeof SAMPLE_BEATS; dur: number }[] = [
@@ -27,6 +28,7 @@ export const RemotionRoot: React.FC = () => {
       {/* Phase 1 QA boards (stills) */}
       <Composition id="CardContactSheet" component={ContactSheet} durationInFrames={60} fps={30} width={3010} height={2320} />
       <Composition id="CardAccessories" component={Accessories} durationInFrames={60} fps={30} width={2010} height={920} />
+      <Composition id="CardJointTest" component={JointTest} durationInFrames={60} fps={30} width={1920} height={1420} />
 
       {/* Phase 2 — one composition per template (for stills) */}
       {TEMPLATE_STILLS.map(({ id, beat, dur }) => (

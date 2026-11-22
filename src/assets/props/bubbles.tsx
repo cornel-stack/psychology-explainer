@@ -7,9 +7,9 @@ import { useCurrentFrame, useVideoConfig } from 'remotion';
 import { COLORS, STROKE, strokeProps } from '../../lib/style';
 import { pulse } from '../../lib/anim';
 
-const sil = strokeProps(STROKE.sil);
-const std = strokeProps(STROKE.std);
-const fine = strokeProps(STROKE.fine);
+const sil = strokeProps(STROKE.xl);
+const std = strokeProps(STROKE.lg);
+const fine = strokeProps(STROKE.sm);
 
 /** Speech bubble with a tail pointing to the speaker (tail dir: left|right). */
 export const SpeechBubble: React.FC<{ w?: number; h?: number; tail?: 'left' | 'right'; children?: React.ReactNode }> = ({ w = 320, h = 180, tail = 'left', children }) => {
@@ -36,7 +36,7 @@ export const ThoughtBubble: React.FC<{ children?: React.ReactNode }> = ({ childr
 
 /** Gibberish sleep-talk glyphs (for sleep-talk bubbles). */
 export const GibberishGlyphs: React.FC = () => (
-  <g {...strokeProps(5)} fill="none" stroke={COLORS.outline}>
+  <g {...strokeProps(STROKE.sm)} fill="none" stroke={COLORS.outline}>
     <path d="M -90 0 q 14 -22 28 0 t 28 0" />
     <path d="M -20 10 l 18 -20 l 10 20" />
     <circle cx={40} cy={-2} r={10} fill={COLORS.outline} />

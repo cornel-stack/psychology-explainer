@@ -51,6 +51,8 @@ export interface Beat {
   room?: RoomName;
   mascots?: MascotConfig[];
   props?: PropConfig[];
+  /** foreground props drawn OVER the mascots (e.g. a blanket tucking them in) */
+  fg?: PropConfig[];
   // explainer
   prop?: string;
   diagram?: 'sleep-stage' | 'switchboard';

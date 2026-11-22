@@ -12,6 +12,7 @@ export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
   pillow: Bed.Pillow,
   bed: Bed.Bed,
+  blanket: Bed.Blanket,
   nightstand: Bed.Nightstand,
   lamp: Bed.Lamp,
   slippers: Bed.Slippers,

@@ -22,10 +22,13 @@ export type BrowStyle =
   | 'droopy'
   | 'worried' // wavy
   | 'angry' // angled down-in
+  | 'stern' // heavy straight low (serious-expert)
+  | 'smug' // one raised (smug)
   | 'asym'; // one up one down (confused)
 
 export type MouthStyle =
   | 'smile-sm' // small closed smile
+  | 'smirk' // asymmetric side smile (smug)
   | 'talk' // talk-cycle open/closed
   | 'open-big' // excited
   | 'wavy-sm' // tiny wavy (sleepy)
@@ -74,9 +77,9 @@ export const EMOTIONS: Record<EmotionName, EmotionSpec> = {
   scared: { eyes: 'shrunk', brows: 'worried', mouth: 'wavy', extra: 'sweat', talkBias: 0.15 },
   terrified: { eyes: 'white-wide', brows: 'worried', mouth: 'scream', extra: 'tremble', talkBias: 0.5 },
   annoyed: { eyes: 'oval', brows: 'angry', mouth: 'flat', extra: 'tick', talkBias: 0.1 },
-  // smug & serious-expert share the confident-brow + slight-smile look (labcoat default)
-  smug: { eyes: 'oval', brows: 'angry', mouth: 'smile-sm', extra: 'none', talkBias: 0.15 },
-  'serious-expert': { eyes: 'open', brows: 'angry', mouth: 'talk', extra: 'none', talkBias: 0.2 },
+  // smug = one raised brow + side smirk; serious-expert = heavy stern brows + talk
+  smug: { eyes: 'oval', brows: 'smug', mouth: 'smirk', extra: 'none', talkBias: 0.12 },
+  'serious-expert': { eyes: 'open', brows: 'stern', mouth: 'talk', extra: 'none', talkBias: 0.2 },
 };
 
 export const resolveEmotion = (name: EmotionName): EmotionSpec =>

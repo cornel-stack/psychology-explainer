@@ -4,11 +4,11 @@
  */
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
-import { COLORS, STROKE, strokeProps } from '../../lib/style';
+import { COLORS, STROKE, strokeProps, shade } from '../../lib/style';
 
-const sil = strokeProps(STROKE.sil);
-const std = strokeProps(STROKE.std);
-const fine = strokeProps(STROKE.fine);
+const sil = strokeProps(STROKE.xl);
+const std = strokeProps(STROKE.lg);
+const fine = strokeProps(STROKE.sm);
 
 export const Pillow: React.FC = () => (
   <g>
@@ -36,13 +36,23 @@ export const Bed: React.FC = () => (
   </g>
 );
 
+/** Foreground blanket — drawn OVER the mascot's lap so it reads as "in bed". */
+export const Blanket: React.FC = () => (
+  <g>
+    <path d="M -480 -80 Q 0 -150 480 -80 L 480 220 L -480 220 Z" fill={COLORS.sky} {...sil} />
+    <path d="M -480 -40 Q 0 -110 480 -40" fill="none" {...fine} stroke={COLORS.whiteShade} />
+    <path d="M -300 -70 Q -300 40 -260 160 M 0 -96 Q 0 40 0 180 M 300 -70 Q 300 40 260 160" fill="none" {...fine} stroke={shade(COLORS.sky, 0.16)} />
+    <rect x={-480} y={160} width={960} height={60} fill={shade(COLORS.sky, 0.18)} opacity={0.5} />
+  </g>
+);
+
 export const Nightstand: React.FC = () => (
   <g>
     <rect x={-100} y={-120} width={200} height={240} rx={20} fill={COLORS.wood} {...sil} />
     <rect x={-80} y={-96} width={160} height={90} rx={12} fill={COLORS.woodDark} opacity={0.3} {...fine} />
     <rect x={-80} y={10} width={160} height={90} rx={12} fill={COLORS.woodDark} opacity={0.3} {...fine} />
-    <circle cx={0} cy={-50} r={9} fill={COLORS.yellow} {...strokeProps(3)} />
-    <circle cx={0} cy={56} r={9} fill={COLORS.yellow} {...strokeProps(3)} />
+    <circle cx={0} cy={-50} r={9} fill={COLORS.yellow} {...strokeProps(STROKE.sm)} />
+    <circle cx={0} cy={56} r={9} fill={COLORS.yellow} {...strokeProps(STROKE.sm)} />
   </g>
 );
 
@@ -70,7 +80,7 @@ export const FramedPicture: React.FC = () => (
     <rect x={-62} y={-46} width={124} height={92} rx={6} fill={COLORS.sky} {...fine} />
     {/* tiny landscape */}
     <path d="M -62 30 L -24 -6 L 6 22 L 34 -12 L 62 30 Z" fill={COLORS.greenLeaf} />
-    <circle cx={40} cy={-24} r={12} fill={COLORS.yellow} {...strokeProps(2.5)} />
+    <circle cx={40} cy={-24} r={12} fill={COLORS.yellow} {...strokeProps(STROKE.sm)} />
   </g>
 );
 
@@ -81,8 +91,8 @@ export const WallClock: React.FC = () => {
     <g>
       <circle cx={0} cy={0} r={70} fill={COLORS.sky} {...sil} />
       <circle cx={0} cy={0} r={54} fill={COLORS.white} {...fine} />
-      <line x1={0} y1={0} x2={0} y2={-36} transform={`rotate(${hand})`} {...strokeProps(5)} />
-      <line x1={0} y1={0} x2={26} y2={0} transform={`rotate(${hand * 12})`} {...strokeProps(4)} />
+      <line x1={0} y1={0} x2={0} y2={-36} transform={`rotate(${hand})`} {...strokeProps(STROKE.sm)} />
+      <line x1={0} y1={0} x2={26} y2={0} transform={`rotate(${hand * 12})`} {...strokeProps(STROKE.sm)} />
       <circle cx={0} cy={0} r={6} fill={COLORS.outline} />
     </g>
   );
@@ -99,8 +109,8 @@ export const AlarmClock: React.FC<{ shaking?: boolean }> = ({ shaking = true }) 
       <circle cx={44} cy={-70} r={22} fill={COLORS.red} {...std} />
       <circle cx={0} cy={0} r={76} fill={COLORS.yellow} {...sil} />
       <circle cx={0} cy={0} r={58} fill={COLORS.white} {...fine} />
-      <line x1={0} y1={0} x2={0} y2={-36} {...strokeProps(5)} />
-      <line x1={0} y1={0} x2={28} y2={6} {...strokeProps(4)} />
+      <line x1={0} y1={0} x2={0} y2={-36} {...strokeProps(STROKE.sm)} />
+      <line x1={0} y1={0} x2={28} y2={6} {...strokeProps(STROKE.sm)} />
       <rect x={-20} y={72} width={40} height={20} rx={8} fill={COLORS.red} {...std} />
     </g>
   );
@@ -127,7 +137,7 @@ export const WindowDay: React.FC = () => (
     <rect x={-130} y={-160} width={260} height={320} rx={18} fill={COLORS.sky} {...sil} />
     <rect x={-110} y={-140} width={220} height={280} rx={10} fill={COLORS.sky} />
     <circle cx={46} cy={-74} r={34} fill={COLORS.yellow} {...std} />
-    <g {...strokeProps(4)} stroke={COLORS.yellow}>
+    <g {...strokeProps(STROKE.sm)} stroke={COLORS.yellow}>
       {Array.from({ length: 8 }).map((_, i) => {
         const a = (i / 8) * Math.PI * 2;
         return <line key={i} x1={46 + Math.cos(a) * 42} y1={-74 + Math.sin(a) * 42} x2={46 + Math.cos(a) * 56} y2={-74 + Math.sin(a) * 56} />;
