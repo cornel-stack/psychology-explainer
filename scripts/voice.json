@@ -1,0 +1,7 @@
+{
+  "_comment": "Locked narration voice for the pipeline (Phase 1 decision). Deep/calm male English.",
+  "voice": "en-US-BrianNeural",
+  "rate": "-6%",
+  "pitch": "-2Hz",
+  "sceneTailFrames": 12
+}
