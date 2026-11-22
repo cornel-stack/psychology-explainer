@@ -47,14 +47,30 @@ const DreamCloud: React.FC = () => {
   );
 };
 
+/** Backdrop tone for a generic (non-bed) emotional close-up, by emotion. */
+const BACKDROP: Partial<Record<EmotionName, string>> = {
+  terrified: COLORS.wallNight,
+  scared: COLORS.wallNight,
+  sleepy: COLORS.lavender,
+  neutral: COLORS.lavender,
+  confused: COLORS.lavender,
+  annoyed: COLORS.pink,
+  smug: COLORS.sky,
+  'happy-talk': COLORS.sky,
+  'serious-expert': COLORS.sky,
+  excited: COLORS.yellowSoft,
+};
+
 export const CloseUp: React.FC<{
   subject: 'face' | 'object';
   emotion?: EmotionName;
   prop?: string;
   accessory?: AccessoryVariant;
   bands?: [string, string];
+  /** bedroom rig (pillow + blanket + nightcap) — for sleep-type videos. */
+  bed?: boolean;
   chapterStart?: boolean;
-}> = ({ subject, emotion = 'scared', prop, accessory = 'nightcap', bands = [COLORS.wallNight, COLORS.purpleDeep], chapterStart }) => {
+}> = ({ subject, emotion = 'neutral', prop, accessory, bands = [COLORS.wallNight, COLORS.purpleDeep], bed = false, chapterStart }) => {
   const frame = useCurrentFrame();
 
   if (subject === 'object') {
@@ -81,33 +97,51 @@ export const CloseUp: React.FC<{
     );
   }
 
-  // face close-up — head low enough that the nightcap bleeds in at the top (P1)
   const headX = CANVAS.width / 2;
-  const headY = 560;
-  const tremble = emotion === 'terrified';
+  const trembleOn = emotion === 'terrified';
+
+  // Bedroom close-up (sleep-type videos): pillow + blanket + night bands + nightcap.
+  if (bed) {
+    const headY = 560;
+    return (
+      <AbsoluteFill>
+        <Stage>
+          <rect x={0} y={0} width={CANVAS.width} height={640} fill={bands[0]} />
+          <rect x={0} y={640} width={CANVAS.width} height={440} fill={bands[1]} />
+          {[0, 1, 2, 3].map((i) => (
+            <circle key={i} cx={headX} cy={headY + 60} r={300 + i * 130 + (frame % 60)} fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} opacity={0.08} />
+          ))}
+          <g transform={`translate(${headX} 1010) scale(5.2)`}>
+            <Pillow />
+          </g>
+          <path d={`M 0 900 Q ${CANVAS.width / 2} 840 ${CANVAS.width} 900 L ${CANVAS.width} 1080 L 0 1080 Z`} fill={COLORS.sky} {...xl} />
+          <path d={`M 0 940 Q ${CANVAS.width / 2} 890 ${CANVAS.width} 940`} fill="none" stroke={shade(COLORS.sky, 0.18)} strokeWidth={STROKE.lg} />
+        </Stage>
+        <Mascot costume="pajamas" pose="face-on-pillow" emotion={emotion} accessory={accessory ?? 'nightcap'} x={headX} y={headY} scale={3.0} seed={9} />
+        <ChapterFlash active={chapterStart} />
+      </AbsoluteFill>
+    );
+  }
+
+  // Generic emotional close-up: a burst backdrop tinted by the emotion, big
+  // expressive head (no bed, no nightcap), trembling lines when terrified.
+  const headY = 600;
+  const backdrop = BACKDROP[emotion] ?? COLORS.lavender;
   return (
     <AbsoluteFill>
       <Stage>
-        <rect x={0} y={0} width={CANVAS.width} height={640} fill={bands[0]} />
-        <rect x={0} y={640} width={CANVAS.width} height={440} fill={bands[1]} />
+        <BurstBackground base={backdrop} accent={COLORS.white} cx={headX} cy={headY + 40} rays={14} />
         {[0, 1, 2, 3].map((i) => (
-          <circle key={i} cx={headX} cy={headY + 60} r={300 + i * 130 + (frame % 60)} fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} opacity={0.08} />
+          <circle key={i} cx={headX} cy={headY + 40} r={300 + i * 130 + (frame % 60)} fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} opacity={0.1} />
         ))}
-        {/* trembling motion lines near the head */}
-        {tremble &&
+        {trembleOn &&
           [-1, 1].map((s) =>
             [0, 1, 2].map((i) => (
-              <path key={`${s}-${i}`} d={`M ${headX + s * (430 + i * 26)} ${headY - 120 + i * 90} q ${s * 26} 16 0 40`} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.5} />
+              <path key={`${s}-${i}`} d={`M ${headX + s * (420 + i * 26)} ${headY - 120 + i * 90} q ${s * 26} 16 0 40`} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.55} />
             ))
           )}
-        {/* pillow + blanket edge fill the bottom (no body slab) */}
-        <g transform={`translate(${headX} 1010) scale(5.2)`}>
-          <Pillow />
-        </g>
-        <path d={`M 0 900 Q ${CANVAS.width / 2} 840 ${CANVAS.width} 900 L ${CANVAS.width} 1080 L 0 1080 Z`} fill={COLORS.sky} {...xl} />
-        <path d={`M 0 940 Q ${CANVAS.width / 2} 890 ${CANVAS.width} 940`} fill="none" stroke={shade(COLORS.sky, 0.18)} strokeWidth={STROKE.lg} />
       </Stage>
-      <Mascot costume="pajamas" pose="face-on-pillow" emotion={emotion} accessory={accessory} x={headX} y={headY} scale={3.0} seed={9} />
+      <Mascot costume="hoodie" pose="face-on-pillow" emotion={emotion} accessory={accessory ?? 'none'} x={headX} y={headY} scale={3.3} seed={9} />
       <ChapterFlash active={chapterStart} />
     </AbsoluteFill>
   );

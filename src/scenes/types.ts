@@ -68,6 +68,8 @@ export interface Beat {
   // closeUp
   subject?: 'face' | 'object';
   bands?: [string, string];
+  bed?: boolean;
+  accessory?: AccessoryVariant;
   // overviewGrid
   items?: string[];
 }

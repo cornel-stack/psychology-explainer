@@ -24,7 +24,7 @@ export const SceneRouter: React.FC<{ beat: Beat }> = ({ beat }) => {
     case 'diagramCard':
       return <DiagramCard diagram={beat.diagram ?? 'sleep-stage'} highlight={beat.highlight} withMascot={beat.withMascot ?? true} chapterStart={cs} />;
     case 'closeUp':
-      return <CloseUp subject={beat.subject ?? 'face'} emotion={beat.emotion} prop={beat.prop} bands={beat.bands} chapterStart={cs} />;
+      return <CloseUp subject={beat.subject ?? 'face'} emotion={beat.emotion} prop={beat.prop} bands={beat.bands} bed={beat.bed} accessory={beat.accessory} chapterStart={cs} />;
     case 'overviewGrid':
       return <OverviewGrid items={beat.items ?? []} chapterStart={cs} />;
     case 'endScreen':
