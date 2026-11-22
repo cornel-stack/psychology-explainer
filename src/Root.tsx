@@ -11,7 +11,7 @@ import { JointTest } from './dev/JointTest';
 import { MainVideo, calcVideoMetadata } from './Video';
 import { NewPropsSheet, BiasPropsSheet, RoomStill } from './dev/NewAssets';
 import { DiagramCard } from './scenes/DiagramCard';
-import { Thumbnail, THUMBS } from './dev/Thumbnail';
+import { Thumbnail, THUMBS_BY_SLUG } from './dev/Thumbnail';
 
 const NEW_ROOMS = ['balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall', 'store-aisle', 'casino', 'office'] as const;
 const NEW_DIAGRAMS = ['signal-race', 'overflow-meter', 'two-gates', 'then-now', 'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip'] as const;
@@ -64,10 +64,12 @@ export const RemotionRoot: React.FC = () => {
         <Composition key={d} id={`Diag-${d}`} component={DiagramCard as React.FC} durationInFrames={90} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} defaultProps={{ diagram: d, withMascot: true } as never} />
       ))}
 
-      {/* Phase 4 — thumbnail variants (1280x720) */}
-      {Object.keys(THUMBS).map((v) => (
-        <Composition key={v} id={`Thumb-${v}`} component={Thumbnail as React.FC} durationInFrames={60} fps={CANVAS.fps} width={1280} height={720} defaultProps={{ variant: v } as never} />
-      ))}
+      {/* Phase 4 — per-slug thumbnail variants (1280x720): Thumb-<slug>-<A|B|C> */}
+      {Object.entries(THUMBS_BY_SLUG).flatMap(([slug, set]) =>
+        Object.keys(set).map((v) => (
+          <Composition key={`${slug}-${v}`} id={`Thumb-${slug}-${v}`} component={Thumbnail as React.FC} durationInFrames={60} fps={CANVAS.fps} width={1280} height={720} defaultProps={{ slug, variant: v } as never} />
+        ))
+      )}
 
       {/* Phase 3 — duration-driven assembled video (props from render.mjs) */}
       <Composition

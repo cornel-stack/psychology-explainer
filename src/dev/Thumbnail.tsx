@@ -1,7 +1,7 @@
 /**
- * Thumbnail.tsx — 1280x720 clickbait thumbnails (Dear Brain). Big reacting
- * mascot, a 2-3 word curiosity hook, a red attention badge, one accent color,
- * readable at 120px wide.
+ * Thumbnail.tsx — 1280x720 clickbait thumbnails (Dear Brain), per video slug.
+ * Big reacting mascot, 2-3 word curiosity hook, red attention badge, one accent,
+ * readable at 120px.
  */
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
@@ -18,21 +18,27 @@ export interface ThumbVariant {
   bg: string;
   emotion: EmotionName;
   textColor: string;
-  badge: string; // red attention badge
+  badge: string;
   prop?: string;
 }
 
-export const THUMBS: Record<string, ThumbVariant> = {
-  // A — the void hook (highest curiosity gap)
-  A: { lines: ['THE URGE', 'TO JUMP,', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'terrified', textColor: COLORS.white, badge: '#1', prop: 'red-arrow' },
-  // B — relatable "you've felt all of these"
-  B: { lines: ['YOU’VE FELT', 'ALL 15', 'OF THESE'], accent: COLORS.pink, bg: COLORS.sky, emotion: 'excited', textColor: COLORS.outline, badge: '15', prop: 'heart' },
-  // C — mystery hook
-  C: { lines: ['WHAT IS', 'THIS', 'FEELING?!'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?!', prop: 'thought-bubble' },
+/** Thumbnail sets keyed by content slug. */
+export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
+  'unnamed-feelings': {
+    A: { lines: ['THE URGE', 'TO JUMP,', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'terrified', textColor: COLORS.white, badge: '#1', prop: 'red-arrow' },
+    B: { lines: ['YOU’VE FELT', 'ALL 15', 'OF THESE'], accent: COLORS.pink, bg: COLORS.sky, emotion: 'excited', textColor: COLORS.outline, badge: '15', prop: 'heart' },
+    C: { lines: ['WHAT IS', 'THIS', 'FEELING?!'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?!', prop: 'thought-bubble' },
+  },
+  'cognitive-biases': {
+    A: { lines: ['YOU’RE NOT', 'AS SMART', 'AS YOU THINK'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'smug', textColor: COLORS.white, badge: '15', prop: 'brain' },
+    B: { lines: ['15 BIASES', 'RUINING', 'YOUR LIFE'], accent: COLORS.red, bg: COLORS.sky, emotion: 'scared', textColor: COLORS.outline, badge: '!', prop: 'price-tag' },
+    C: { lines: ['WHY SMART', 'PEOPLE MAKE', 'DUMB CHOICES'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?!', prop: 'magnifying-glass' },
+  },
 };
 
-export const Thumbnail: React.FC<{ variant: keyof typeof THUMBS }> = ({ variant }) => {
-  const v = THUMBS[variant] ?? THUMBS.A;
+export const Thumbnail: React.FC<{ slug?: string; variant: string }> = ({ slug = 'unnamed-feelings', variant }) => {
+  const set = THUMBS_BY_SLUG[slug] ?? THUMBS_BY_SLUG['unnamed-feelings'];
+  const v = set[variant] ?? set.A;
   const W = 1280;
   const H = 720;
   return (
@@ -41,16 +47,13 @@ export const Thumbnail: React.FC<{ variant: keyof typeof THUMBS }> = ({ variant 
         <BurstBackground base={v.bg} accent={v.accent} cx={W * 0.74} cy={H * 0.5} rays={14} />
       </Stage>
       <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
-        {/* dark slab behind text for pop */}
         <path d={`M -40 -40 L ${W * 0.6} -40 L ${W * 0.5} ${H + 40} L -40 ${H + 40} Z`} fill={COLORS.outline} opacity={0.18} />
-        {/* floating prop near the mascot */}
         {v.prop && PROPS[v.prop] && (
           <Place x={W * 0.52} y={H * 0.24} scale={1.15}>
             {React.createElement(PROPS[v.prop])}
           </Place>
         )}
-        {/* red attention badge, tilted */}
-        <g transform={`translate(${W * 0.60} ${H * 0.2}) rotate(-12)`}>
+        <g transform={`translate(${W * 0.6} ${H * 0.2}) rotate(-12)`}>
           <circle r={86} fill={COLORS.red} stroke={COLORS.outline} strokeWidth={STROKE.lg} />
           <circle r={70} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} />
           <text x={0} y={30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={86} fill={COLORS.white}>
@@ -58,7 +61,6 @@ export const Thumbnail: React.FC<{ variant: keyof typeof THUMBS }> = ({ variant 
           </text>
         </g>
       </svg>
-      {/* hook text, left */}
       <div style={{ position: 'absolute', left: 48, top: 70, width: 760, display: 'flex', flexDirection: 'column', gap: 0 }}>
         {v.lines.map((ln, i) => (
           <div
@@ -66,7 +68,7 @@ export const Thumbnail: React.FC<{ variant: keyof typeof THUMBS }> = ({ variant 
             style={{
               fontFamily,
               fontWeight: 800,
-              fontSize: 150,
+              fontSize: 140,
               lineHeight: 0.98,
               color: i === 1 ? v.accent : v.textColor,
               WebkitTextStroke: `12px ${COLORS.outline}`,
@@ -82,7 +84,6 @@ export const Thumbnail: React.FC<{ variant: keyof typeof THUMBS }> = ({ variant 
           DEAR BRAIN
         </div>
       </div>
-      {/* big reacting mascot on the right */}
       <Mascot costume="hoodie" pose="startled" emotion={v.emotion} x={W * 0.82} y={H * 0.64} scale={1.7} seed={4} />
     </AbsoluteFill>
   );

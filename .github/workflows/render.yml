@@ -92,7 +92,7 @@ jobs:
           node scripts/qa_grid_overlap.mjs
 
       - name: Thumbnails (3 variants)
-        run: npm run thumbnails
+        run: node scripts/thumbnails.mjs "$SLUG"
 
       - name: Full 1080p render
         run: npm run render "$SLUG"
