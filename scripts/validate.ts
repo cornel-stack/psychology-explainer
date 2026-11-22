@@ -3,7 +3,7 @@
  * Unknown prop / room / pose / emotion / costume / scene = failure with a clear
  * message. Run: npm run validate <slug>   (default: hypnic-jerk)
  */
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { EMOTION_NAMES } from '../src/lib/emotions';
 import { PROP_NAMES } from '../src/assets/props/registry';
@@ -83,6 +83,19 @@ function checkBeat(where: string, beat: Record<string, unknown>) {
   }
 }
 
+/** Manifest gate: a referenced asset must be in the registry OR the manifest;
+ *  and the manifest must contain no MISSING entries. */
+function checkManifest() {
+  const mp = join(ROOT, 'content', slug, 'asset-manifest.json');
+  if (!existsSync(mp)) {
+    console.warn(`  (no asset-manifest.json for "${slug}" — run: npm run manifest ${slug})`);
+    return;
+  }
+  const m = JSON.parse(readFileSync(mp, 'utf8')) as { assets: { name: string; type: string; status: string }[] };
+  const missing = m.assets.filter((a) => a.status === 'MISSING');
+  for (const a of missing) errors.push(`manifest: ${a.type} "${a.name}" is MISSING (referenced but not drawn/registered)`);
+}
+
 function main() {
   const path = join(ROOT, 'content', slug, 'script.json');
   let script: { title?: string; chapters?: { name: string; beats: Record<string, unknown>[] }[] };
@@ -96,6 +109,7 @@ function main() {
     console.error('✗ script has no chapters');
     process.exit(1);
   }
+  checkManifest();
   let n = 0;
   script.chapters.forEach((ch, ci) => {
     if (!Array.isArray(ch.beats)) return errors.push(`chapter[${ci}] "${ch.name}": beats must be an array`);

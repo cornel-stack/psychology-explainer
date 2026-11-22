@@ -1,0 +1,238 @@
+{
+  "title": "Every Feeling You Can't Name, Explained (You've Had All of These)",
+  "slug": "unnamed-feelings",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "You're standing on a balcony, twelve floors up, hands on the cold railing, the whole city glowing quietly below you.", "scene": "story", "room": "balcony-night", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 700, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "moon-stars", "x": 1500, "y": 240, "scale": 1.1, "bob": 6 } ] },
+        { "vo": "And then, for half a second, a thought flickers through you. What if you jumped? You step back, heart pounding. You don't want to die. So what was that?", "scene": "story", "room": "balcony-night", "emotion": "terrified", "camera": { "zoomTo": [0.42, 0.42, 1.3] },
+          "mascots": [ { "costume": "hoodie", "pose": "startled", "emotion": "terrified", "x": 700, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "red-arrow", "x": 1120, "y": 560, "scale": 1.1, "appearAt": 6, "args": { "dir": "down" } } ] },
+        { "vo": "You've felt this. On a balcony, a cliff edge, a train platform. And you've never once said its name out loud.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "Maybe you blamed stress, or a dark mood, or wondered if something was wrong with you. The real answer is stranger, and kind of comforting.", "scene": "explainer", "prop": "thought-bubble", "emotion": "serious-expert" },
+        { "vo": "Welcome back to Mind Minute. Today we're naming fifteen feelings you've had your whole life, and by the end, you'll know which one you feel the most. Grab your blanket, and let's go.", "scene": "explainer", "prop": "heart", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "1 — L'appel du vide",
+      "beats": [
+        { "vo": "L'appel du vide. The call of the void. That flicker on the balcony has a name, and scientists gave it one trying to understand why healthy people feel it.", "scene": "story", "room": "balcony-night", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "serious-expert", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ] },
+        { "vo": "Picture it again. The railing, the drop, the strange pull. Nothing about you is broken. In fact, something about you is working exactly as designed.", "scene": "story", "room": "balcony-night", "emotion": "neutral", "camera": { "zoomTo": [0.5, 0.45, 1.25] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 680, "y": 600, "scale": 1.3, "talking": true } ] },
+        { "vo": "Your conscious mind scrambles for a reason, and grabs the only dramatic story that fits. I must have wanted to jump.", "scene": "closeUp", "subject": "face", "emotion": "confused" },
+        { "vo": "Here's the theory. Up high, your brain fires a lightning-fast alarm. Step back. But that signal reaches your body before the slow, thinking part can explain it.", "scene": "diagramCard", "diagram": "signal-race", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "In a Florida State study of four hundred and thirty-one people, about half who had never once been suicidal had still felt that exact urge.", "scene": "statCard", "value": 50, "suffix": "%", "pictogram": "crowd", "fraction": 0.5, "emotion": "excited" },
+        { "vo": "So the call of the void may be the opposite of what it feels like. Your survival instinct, working perfectly. How often does your brain write a story you never agreed to? Our next feeling happens in a crowd.", "scene": "explainer", "prop": "thought-bubble", "emotion": "smug" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here are all fifteen we're naming today. Count how many you already recognize.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["THE VOID", "SONDER", "FRISSON", "JAMAIS VU", "PRESQUE VU", "ANEMOIA", "SAUDADE", "GIGIL", "GATE-SHUT", "KENOPSIA", "THE CROWD", "AMAE", "AWUMBUK", "FERNWEH", "ELEVATION"] }
+      ]
+    },
+    {
+      "name": "2 — Sonder",
+      "beats": [
+        { "vo": "Sonder. You're on a train, forehead against the window, half asleep. Across the aisle, a stranger is texting someone, smiling at something you'll never see.", "scene": "story", "room": "train-interior", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "sitting-up-in-bed", "emotion": "sleepy", "x": 640, "y": 560, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "group-chat-phone", "x": 1280, "y": 560, "scale": 1.0, "appearAt": 10 } ] },
+        { "vo": "And it hits you. That person has a whole life. Childhood bedrooms, inside jokes, a favorite song, a worry keeping them up tonight. And you're just an extra passing through it.", "scene": "story", "room": "train-interior", "emotion": "neutral", "camera": { "zoomTo": [0.65, 0.5, 1.25] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 640, "y": 560, "scale": 1.2, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "thought-bubble", "x": 1300, "y": 420, "scale": 1.2, "appearAt": 8 } ] },
+        { "vo": "A whole universe behind one face on a train. And another. And another. Every single one of them.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "There's a word for this, coined by the writer John Koenig for his Dictionary of Obscure Sorrows, a collection of invented names for feelings we never had words for.", "scene": "explainer", "prop": "speech-bubble", "emotion": "happy-talk" },
+        { "vo": "Underneath it is theory of mind, your brain's constant, automatic modeling of other people. Usually it runs in the background. Sonder is the moment you catch it running. And what about the feelings that move down your spine?", "scene": "diagramCard", "diagram": "then-now", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "3 — Frisson",
+      "beats": [
+        { "vo": "Frisson. A song you love reaches its biggest moment. The key change, the drop, the voice that cracks just right. And goosebumps roll down your arms.", "scene": "story", "room": "living-room", "emotion": "excited", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "arms-out-presenting", "emotion": "excited", "x": 660, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "music-notes", "x": 1300, "y": 420, "scale": 1.2, "bob": 8 } ] },
+        { "vo": "Your skin prickles. The hair on your neck lifts. For two or three seconds, a piece of music has reached into your body and physically moved it.", "scene": "story", "room": "living-room", "emotion": "excited", "camera": { "zoomTo": [0.5, 0.45, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "excited", "x": 660, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "music-notes", "x": 1320, "y": 420, "scale": 1.0, "bob": 8 } ] },
+        { "vo": "No one touched you. A sound did this.", "scene": "closeUp", "subject": "face", "emotion": "excited" },
+        { "vo": "When researchers at McGill scanned people getting these chills, the music lit up the brain's reward system. The same circuitry as food, sex, and money.", "scene": "explainer", "prop": "music-notes", "emotion": "serious-expert" },
+        { "vo": "A later study even caught the brain releasing dopamine at the peak. And it's common. About two in three people feel it. But sometimes your brain does the opposite, and makes a word you've known forever feel alien.", "scene": "statCard", "value": 66, "suffix": "%", "pictogram": "crowd", "fraction": 0.66, "emotion": "excited" }
+      ]
+    },
+    {
+      "name": "4 — Jamais vu",
+      "beats": [
+        { "vo": "Jamais vu. You're signing your name for the hundredth time, and halfway through you stop. Your own name suddenly looks wrong. Like a random pile of letters.", "scene": "story", "room": "kitchen", "emotion": "confused", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "confused", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "speech-bubble", "x": 1280, "y": 460, "scale": 1.2, "appearAt": 8 } ] },
+        { "vo": "You say it out loud. Then again. And again. And the more you repeat it, the stranger it gets, until it's just noise in your mouth.", "scene": "story", "room": "kitchen", "emotion": "confused", "camera": { "zoomTo": [0.4, 0.45, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "gibberish-glyphs", "x": 1280, "y": 460, "scale": 1.4, "appearAt": 6 } ] },
+        { "vo": "Familiar. And completely alien. At the same time.", "scene": "closeUp", "subject": "face", "emotion": "confused" },
+        { "vo": "This is jamais vu. Never seen. The mirror image of déjà vu. And psychologists can switch it on in a lab, on purpose.", "scene": "explainer", "prop": "gibberish-glyphs", "emotion": "serious-expert" },
+        { "vo": "In a prize-winning experiment, people wrote one word over and over. After about thirty-three repetitions, roughly a minute, it dissolved into nonsense. It's called semantic satiation. But if that's losing a word you know, what's it called to almost find one you've lost?", "scene": "statCard", "value": 33, "suffix": "", "pictogram": "none", "emotion": "excited" }
+      ]
+    },
+    {
+      "name": "5 — Presque vu",
+      "beats": [
+        { "vo": "Presque vu. You're telling a story at dinner. That actor, you know the one, he was in that movie. And the name is right there, on the tip of your tongue. And it will not come.", "scene": "story", "room": "living-room", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "annoyed", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "speech-bubble", "x": 1280, "y": 440, "scale": 1.2, "appearAt": 8 } ] },
+        { "vo": "You can feel its shape. Starts with a B, maybe? Two syllables? You can almost taste it. But the harder you reach, the further it slips.", "scene": "story", "room": "living-room", "emotion": "annoyed", "camera": { "zoomTo": [0.4, 0.45, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "annoyed", "x": 640, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "thought-bubble", "x": 1280, "y": 420, "scale": 1.2, "appearAt": 8 } ] },
+        { "vo": "So close. And completely out of reach.", "scene": "closeUp", "subject": "face", "emotion": "annoyed" },
+        { "vo": "This got its first experiment in nineteen sixty-six at Harvard. Researchers read people definitions of rare words and watched them squirm on the edge of remembering.", "scene": "explainer", "prop": "thought-bubble", "emotion": "serious-expert" },
+        { "vo": "The twist. People stuck on a word still named its first letter about fifty-seven percent of the time. Your memory hadn't lost the word. It lost the key to the right drawer. Some feelings, though, aren't about one word. They're about a whole life that was never yours.", "scene": "statCard", "value": 57, "suffix": "%", "pictogram": "crowd", "fraction": 0.57, "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "6 — Anemoia",
+      "beats": [
+        { "vo": "Anemoia. You're flipping through a box of old photographs. A summer afternoon in nineteen seventy-three, people you never met, laughing in colors that don't quite exist anymore.", "scene": "story", "room": "living-room", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "photo-stack", "x": 1260, "y": 560, "scale": 1.1, "appearAt": 8 } ] },
+        { "vo": "And you feel homesick. For a decade you never lived, a kitchen you never stood in, a warmth that was over before you were born.", "scene": "story", "room": "living-room", "emotion": "sleepy", "camera": { "zoomTo": [0.66, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "photo-stack", "x": 1260, "y": 540, "scale": 1.3, "appearAt": 4 } ] },
+        { "vo": "How do you miss something you never even had?", "scene": "closeUp", "subject": "face", "emotion": "sleepy" },
+        { "vo": "Anemoia is another Koenig coinage, from the Greek word for wind. His name for nostalgia aimed at a time that was gone before you arrived.", "scene": "explainer", "prop": "photo-stack", "emotion": "serious-expert" },
+        { "vo": "Here's why it works. Memories aren't recordings. They're reconstructions, softened and warmed each time. Anemoia is your mind doing that to a past that was never yours. But some longing points at something you really did lose.", "scene": "diagramCard", "diagram": "then-now", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "7 — Saudade",
+      "beats": [
+        { "vo": "Saudade. It's raining, and a song comes on that you haven't heard in years. And suddenly someone's in the room with you who isn't there anymore.", "scene": "story", "room": "living-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "rain-cloud", "x": 1280, "y": 360, "scale": 1.1, "bob": 6 } ] },
+        { "vo": "It isn't quite sadness. It's warmer. A sweet ache for a person, a place, a version of your life that's gone. And you almost don't want it to stop.", "scene": "story", "room": "living-room", "emotion": "sleepy", "camera": { "zoomTo": [0.5, 0.45, 1.18] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "heart", "x": 1280, "y": 420, "scale": 1.0, "bob": 6 } ] },
+        { "vo": "Missing someone, and loving the missing, at the same time.", "scene": "closeUp", "subject": "face", "emotion": "sleepy" },
+        { "vo": "Saudade is Portuguese, so central to the culture it has its own national day. There's no clean English word for it. The closest is a bittersweet longing.", "scene": "explainer", "prop": "heart", "emotion": "serious-expert" },
+        { "vo": "And researchers at the University of Southampton found this kind of nostalgia actually makes people feel more connected, more hopeful, and that their lives hold more meaning. So it isn't torture. It's proof something mattered. Now, ever squeezed something so cute it made you angry?", "scene": "explainer", "prop": "heart", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "8 — Gigil",
+      "beats": [
+        { "vo": "Gigil. A puppy looks up at you with enormous eyes, and you feel it. A bizarre urge to squeeze it, to clench your teeth, to just crush something this adorable.", "scene": "story", "room": "living-room", "emotion": "excited", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "startled", "emotion": "excited", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "puppy", "x": 1280, "y": 660, "scale": 1.1, "appearAt": 8 } ] },
+        { "vo": "You'd never hurt it. But your hands actually want to grab, your jaw tightens. Something that cute makes you feel almost aggressive.", "scene": "story", "room": "living-room", "emotion": "excited", "camera": { "zoomTo": [0.66, 0.55, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "excited", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "puppy", "x": 1260, "y": 640, "scale": 1.3, "appearAt": 4 } ] },
+        { "vo": "So cute you could just... scream.", "scene": "closeUp", "subject": "face", "emotion": "excited" },
+        { "vo": "Tagalog has a word for exactly this. Gigil. Added to the Oxford English Dictionary in twenty twenty-five. Scientists call it cute aggression.", "scene": "explainer", "prop": "puppy", "emotion": "serious-expert" },
+        { "vo": "A Yale team called it a dimorphous expression, and brain scans at U C Riverside showed cuteness lighting up reward and emotion systems at once. The aggression is a release valve, so you don't just melt into a puddle. Some feelings, though, hit when a door is quietly closing.", "scene": "diagramCard", "diagram": "overflow-meter", "emotion": "excited", "withMascot": true }
+      ]
+    },
+    {
+      "name": "9 — Torschlusspanik",
+      "beats": [
+        { "vo": "Torschlusspanik. It's two in the morning, and you're scrolling. Everyone your age is getting married, buying homes, having kids. And a cold thought lands in your stomach. Am I running out of time?", "scene": "story", "room": "bedroom-night", "emotion": "scared", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "scared", "accessory": "nightcap", "x": 660, "y": 520, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "blanket", "x": 660, "y": 812, "scale": 1.0 }, { "name": "group-chat-phone", "x": 1280, "y": 560, "scale": 1.0, "appearAt": 8 } ] },
+        { "vo": "Doors swinging shut all around you. One career, one city, one relationship at a time.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "The Germans have a word for it. Torschlusspanik. Literally, gate-shut panic. From the Middle Ages, when you had to race back inside the city gates before they slammed shut at nightfall.", "scene": "explainer", "prop": "city-gate", "emotion": "serious-expert" },
+        { "vo": "Today the gates are invisible, but your brain still sprints for them. Here's the reframe. A closing gate assumes there was only one way in. Now picture the opposite. A place that should be full, and isn't.", "scene": "diagramCard", "diagram": "two-gates", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "10 — Kenopsia",
+      "beats": [
+        { "vo": "Kenopsia. You walk through your old school long after everyone's gone. Same hallways, same lockers, same flickering lights. But the silence is wrong. The emptiness has a texture.", "scene": "story", "room": "empty-hall", "emotion": "scared", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 640, "y": 620, "scale": 1.25, "talking": true } ] },
+        { "vo": "An office at midnight. A playground in the rain. A mall after closing. The space remembers the crowd that should be here, and its absence feels almost haunted.", "scene": "story", "room": "empty-hall", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 640, "y": 620, "scale": 1.25, "talking": true, "lookDir": "left" } ] },
+        { "vo": "A room full of everyone who isn't there.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "Kenopsia is Koenig's word for it, from the Greek for seeing emptiness. Not an empty room. The eerie feeling of one that should be full.", "scene": "explainer", "prop": "moon-stars", "emotion": "serious-expert" },
+        { "vo": "Your brain predicts every familiar place, and the prediction includes people. When reality comes back empty, the mismatch registers as dread. So what does a crowd give us that its absence takes away?", "scene": "diagramCard", "diagram": "then-now", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "11 — Collective effervescence",
+      "beats": [
+        { "vo": "Collective effervescence. You're in a packed stadium, and the whole crowd starts singing the same song. Thousands of voices, one sound. The hair on your arms stands up again.", "scene": "story", "room": "stadium-crowd", "emotion": "excited", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "excited", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "sparkles", "x": 1320, "y": 320, "scale": 1.6 } ] },
+        { "vo": "For a few minutes, you stop being just you. You're part of something huge and warm and alive, all breathing together.", "scene": "story", "room": "stadium-crowd", "emotion": "excited", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "hoodie", "pose": "arms-out-presenting", "emotion": "excited", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "sparkles", "x": 540, "y": 340, "scale": 1.4 } ] },
+        { "vo": "You'd do almost anything for these strangers.", "scene": "closeUp", "subject": "face", "emotion": "excited" },
+        { "vo": "A sociologist, Émile Durkheim, named this back in nineteen twelve. The electric charge a group makes when it moves and feels as one.", "scene": "statCard", "value": 1912, "suffix": "", "pictogram": "none", "emotion": "serious-expert" },
+        { "vo": "And psychologists at the University at Buffalo found that people who chase these moments, concerts, games, services, are measurably less lonely, with more meaning in their lives. We don't gather for nothing. But connection can also be quiet, as small as leaning on one person.", "scene": "explainer", "prop": "heart", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "12 — Amae",
+      "beats": [
+        { "vo": "Amae. You come home exhausted, drop onto the couch, and let someone you trust just take care of you. You don't explain. You don't earn it. And it feels safe.", "scene": "story", "room": "living-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "heart", "x": 1280, "y": 440, "scale": 1.0, "bob": 6 } ] },
+        { "vo": "It's the toddler reaching up to be carried. The partner who steals your fries, knowing you'll let them. The friend you can call at midnight and say nothing.", "scene": "story", "room": "living-room", "emotion": "happy-talk", "camera": { "zoomTo": [0.5, 0.45, 1.18] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "heart", "x": 1280, "y": 420, "scale": 1.2, "bob": 6 } ] },
+        { "vo": "Being a little helpless, with someone safe.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "The Japanese psychiatrist Takeo Doi built a whole theory around this, amae, in his nineteen seventy-one book, The Anatomy of Dependence.", "scene": "explainer", "prop": "heart", "emotion": "serious-expert" },
+        { "vo": "His point. Every culture feels it, but Japanese has a rich vocabulary for it, while English treats needing other people as a weakness to hide. It isn't weakness. It's trust, out loud. But what happens the morning after all that warmth leaves?", "scene": "diagramCard", "diagram": "switchboard", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "13 — Awumbuk",
+      "beats": [
+        { "vo": "Awumbuk. Your friends stayed all weekend, and this morning they left. The apartment is quiet. The spare sheets are still warm. And a heavy flatness settles over everything.", "scene": "story", "room": "living-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "water-bowl", "x": 1280, "y": 660, "scale": 1.1, "appearAt": 10 } ] },
+        { "vo": "You should feel relieved to have your space back. Instead there's an emptiness, a listlessness, like the air itself went stale the moment the door closed.", "scene": "story", "room": "living-room", "emotion": "sleepy", "camera": { "zoomTo": [0.5, 0.45, 1.15] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 600, "scale": 1.3, "talking": true } ] },
+        { "vo": "The silence a person leaves behind.", "scene": "closeUp", "subject": "face", "emotion": "sleepy" },
+        { "vo": "According to ethnographers who lived with the Baining people of Papua New Guinea, there's a name for this. Awumbuk. The emptiness after guests depart.", "scene": "explainer", "prop": "water-bowl", "emotion": "serious-expert" },
+        { "vo": "In that account, visitors shed a heaviness to travel light, and leave it behind in your home. So people would set out a bowl of water overnight to soak it up, and throw it out at dawn. Sometimes, though, the ache isn't for who left, but for somewhere you've never been.", "scene": "explainer", "prop": "water-bowl", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "14 — Fernweh",
+      "beats": [
+        { "vo": "Fernweh. You're at your desk on an ordinary Tuesday, and a photo of a mountain road stops you cold. A sudden, physical pull toward somewhere far away. Anywhere but here.", "scene": "story", "room": "living-room", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "neutral", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "suitcase", "x": 1280, "y": 640, "scale": 1.1, "appearAt": 8 } ] },
+        { "vo": "Homesick for a place you've never been.", "scene": "closeUp", "subject": "face", "emotion": "sleepy" },
+        { "vo": "German has the perfect word. Fernweh. Literally, far-sickness. The exact mirror of Heimweh, homesickness, aimed in the opposite direction.", "scene": "explainer", "prop": "suitcase", "emotion": "serious-expert" },
+        { "vo": "Homesickness aches for the known. Fernweh aches for the unknown. Same longing, opposite ends of the same compass. It isn't ingratitude. It's hunger. And our last feeling might just save your week.", "scene": "diagramCard", "diagram": "two-gates", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "15 — Elevation",
+      "beats": [
+        { "vo": "Elevation. You watch a stranger give their coat to someone shivering at a bus stop, expecting nothing back. And something in your chest goes warm and loose.", "scene": "story", "room": "train-interior", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true,
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "heart", "x": 1280, "y": 440, "scale": 1.1, "bob": 6 } ] },
+        { "vo": "You weren't even involved. But witnessing that small, pure act of goodness lifts you. You suddenly want to be better. To go do something kind yourself.", "scene": "story", "room": "train-interior", "emotion": "happy-talk", "camera": { "zoomTo": [0.5, 0.45, 1.18] },
+          "mascots": [ { "costume": "hoodie", "pose": "arms-out-presenting", "emotion": "happy-talk", "x": 640, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "heart", "x": 1280, "y": 420, "scale": 1.3, "bob": 6 } ] },
+        { "vo": "Your eyes sting a little, and you don't mind.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "The psychologist Jonathan Haidt named this. Elevation. The warm, uplifting feeling we get watching other people's moral beauty.", "scene": "explainer", "prop": "heart", "emotion": "serious-expert" },
+        { "vo": "He found it's physical, a warmth and openness in the chest, sometimes tears, and he suspects it's tied to the vagus nerve, the system that calms your heart. Goodness, it turns out, is contagious. The cure for a cynical week might be watching someone be good, on purpose.", "scene": "diagramCard", "diagram": "overflow-meter", "emotion": "excited", "withMascot": true }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So here's the thing. None of these feelings are glitches, or signs that something's wrong with you. Every one is proof that you're paying attention. To people, to music, to time, to places, to kindness.", "scene": "explainer", "prop": "heart", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "Remember that balcony, twelve floors up, and the flicker that scared you? That wasn't a crack in you. That was l'appel du vide. Your own mind, insisting that you live.", "scene": "story", "room": "balcony-night", "emotion": "neutral", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 700, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "moon-stars", "x": 1500, "y": 240, "scale": 1.1, "bob": 6 } ] },
+        { "vo": "So which one hit the hardest? Put its number in the comments, I read them. And send this to the friend who texts you feelings they can't explain. They need these words too.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "I'm Minute. If this gave you even one name you didn't have before, hit subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

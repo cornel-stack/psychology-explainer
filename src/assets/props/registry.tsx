@@ -7,6 +7,7 @@ import * as Bed from './bedroom';
 import * as Obj from './objects';
 import * as Ico from './icons';
 import * as Bub from './bubbles';
+import * as Feel from './feelings';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -45,6 +46,15 @@ export const PROPS: Record<string, React.FC<any>> = {
   'gibberish-glyphs': Bub.GibberishGlyphs,
   'sweat-drop': Bub.SweatDrop,
   'zzz-trail': Bub.ZzzTrail,
+  // unnamed-feelings props
+  'group-chat-phone': Feel.GroupChatPhone,
+  'music-notes': Feel.MusicNotes,
+  'photo-stack': Feel.PhotoStack,
+  'rain-cloud': Feel.RainCloud,
+  puppy: Feel.Puppy,
+  'city-gate': Feel.CityGate,
+  'water-bowl': Feel.WaterBowl,
+  suitcase: Feel.Suitcase,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

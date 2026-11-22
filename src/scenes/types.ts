@@ -55,7 +55,7 @@ export interface Beat {
   fg?: PropConfig[];
   // explainer
   prop?: string;
-  diagram?: 'sleep-stage' | 'switchboard';
+  diagram?: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now';
   side?: 'left' | 'right';
   // statCard
   value?: number;

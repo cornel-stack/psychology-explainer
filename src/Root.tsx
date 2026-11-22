@@ -9,6 +9,11 @@ import { SAMPLE_BEATS } from './dev/samples';
 import { MotionReel, MOTION_REEL_FRAMES } from './dev/MotionReel';
 import { JointTest } from './dev/JointTest';
 import { MainVideo, calcVideoMetadata } from './Video';
+import { NewPropsSheet, RoomStill } from './dev/NewAssets';
+import { DiagramCard } from './scenes/DiagramCard';
+
+const NEW_ROOMS = ['balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall'] as const;
+const NEW_DIAGRAMS = ['signal-race', 'overflow-meter', 'two-gates', 'then-now'] as const;
 
 // Each template still is a SceneRouter wrapped at canvas size.
 const TEMPLATE_STILLS: { id: string; beat: keyof typeof SAMPLE_BEATS; dur: number }[] = [
@@ -47,6 +52,15 @@ export const RemotionRoot: React.FC = () => {
 
       {/* Phase 2 — 15s silent motion reel through all templates */}
       <Composition id="MotionReel" component={MotionReel} durationInFrames={MOTION_REEL_FRAMES} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
+
+      {/* Phase 4 Checkpoint 2 — new assets QA */}
+      <Composition id="CardNewProps" component={NewPropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
+      {NEW_ROOMS.map((room) => (
+        <Composition key={room} id={`Room-${room}`} component={RoomStill as React.FC} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} defaultProps={{ room } as never} />
+      ))}
+      {NEW_DIAGRAMS.map((d) => (
+        <Composition key={d} id={`Diag-${d}`} component={DiagramCard as React.FC} durationInFrames={90} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} defaultProps={{ diagram: d, withMascot: true } as never} />
+      ))}
 
       {/* Phase 3 — duration-driven assembled video (props from render.mjs) */}
       <Composition

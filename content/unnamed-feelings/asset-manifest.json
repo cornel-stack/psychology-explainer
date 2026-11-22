@@ -1,0 +1,580 @@
+{
+  "slug": "unnamed-feelings",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 31,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "nightcap",
+      "type": "accessory",
+      "status": "exists",
+      "beats": [
+        47
+      ]
+    },
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        6,
+        12,
+        13,
+        17,
+        18,
+        22,
+        23,
+        27,
+        28,
+        32,
+        33,
+        37,
+        38,
+        42,
+        43,
+        51,
+        52,
+        56,
+        57,
+        61,
+        62,
+        66,
+        67,
+        71,
+        75,
+        76,
+        81
+      ]
+    },
+    {
+      "name": "pajamas",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        47
+      ]
+    },
+    {
+      "name": "overflow-meter",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        46,
+        79
+      ]
+    },
+    {
+      "name": "signal-race",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "switchboard",
+      "type": "diagram",
+      "status": "exists",
+      "beats": [
+        65
+      ]
+    },
+    {
+      "name": "then-now",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        16,
+        36,
+        55
+      ]
+    },
+    {
+      "name": "two-gates",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        50,
+        74
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        9,
+        17,
+        18,
+        19,
+        21,
+        26,
+        42,
+        43,
+        44,
+        46,
+        56,
+        57,
+        58,
+        79
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        11,
+        15,
+        41,
+        60,
+        62,
+        63,
+        70,
+        75,
+        76,
+        77,
+        82,
+        83
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        13,
+        14,
+        32,
+        71,
+        81
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        2,
+        47,
+        48,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        5,
+        8,
+        16,
+        20,
+        25,
+        30,
+        31,
+        35,
+        36,
+        40,
+        45,
+        49,
+        50,
+        54,
+        55,
+        59,
+        64,
+        65,
+        69,
+        73,
+        74,
+        78,
+        80
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        12,
+        33,
+        34,
+        37,
+        38,
+        39,
+        61,
+        66,
+        67,
+        68,
+        72
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "terrified",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        17,
+        57,
+        76
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        13,
+        18,
+        23,
+        32,
+        33,
+        37,
+        38,
+        43,
+        51,
+        52,
+        61,
+        62,
+        66,
+        67,
+        75,
+        81
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5,
+        22,
+        28,
+        71
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "sitting-up-in-bed",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        12,
+        47
+      ]
+    },
+    {
+      "name": "startled",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        1,
+        42
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        56
+      ]
+    },
+    {
+      "name": "blanket",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        47
+      ]
+    },
+    {
+      "name": "city-gate",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        49
+      ]
+    },
+    {
+      "name": "gibberish-glyphs",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        23,
+        25
+      ]
+    },
+    {
+      "name": "group-chat-phone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        47
+      ]
+    },
+    {
+      "name": "heart",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        4,
+        38,
+        40,
+        41,
+        60,
+        61,
+        62,
+        64,
+        75,
+        76,
+        78,
+        80
+      ]
+    },
+    {
+      "name": "moon-stars",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        0,
+        54,
+        81
+      ]
+    },
+    {
+      "name": "music-notes",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "photo-stack",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        32,
+        33,
+        35
+      ]
+    },
+    {
+      "name": "puppy",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        42,
+        43,
+        45
+      ]
+    },
+    {
+      "name": "rain-cloud",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        37
+      ]
+    },
+    {
+      "name": "red-arrow",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "sparkles",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        56,
+        57
+      ]
+    },
+    {
+      "name": "speech-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        15,
+        22,
+        27
+      ]
+    },
+    {
+      "name": "suitcase",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "thought-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        3,
+        10,
+        13,
+        28,
+        30
+      ]
+    },
+    {
+      "name": "water-bowl",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        66,
+        69,
+        70
+      ]
+    },
+    {
+      "name": "balcony-night",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        5,
+        6,
+        81
+      ]
+    },
+    {
+      "name": "bedroom-night",
+      "type": "room",
+      "status": "exists",
+      "beats": [
+        47
+      ]
+    },
+    {
+      "name": "empty-hall",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        51,
+        52
+      ]
+    },
+    {
+      "name": "kitchen",
+      "type": "room",
+      "status": "exists",
+      "beats": [
+        22,
+        23
+      ]
+    },
+    {
+      "name": "living-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17,
+        18,
+        27,
+        28,
+        32,
+        33,
+        37,
+        38,
+        42,
+        43,
+        61,
+        62,
+        66,
+        67,
+        71
+      ]
+    },
+    {
+      "name": "stadium-crowd",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        56,
+        57
+      ]
+    },
+    {
+      "name": "train-interior",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        12,
+        13,
+        75,
+        76
+      ]
+    }
+  ]
+}

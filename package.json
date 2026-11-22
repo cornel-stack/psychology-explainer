@@ -9,6 +9,8 @@
     "render": "node scripts/render.mjs",
     "stills": "node scripts/stills.mjs",
     "validate": "tsx scripts/validate.ts",
+    "manifest": "tsx scripts/build-manifest.ts",
+    "terms": "python3 scripts/terms_test.py",
     "contact-sheet": "remotion still CardContactSheet renders/contact-sheet.png --frame=15 && remotion still CardAccessories renders/accessories.png --frame=15 && remotion still CardJointTest renders/joint-test.png --frame=15",
     "voices": "python3 scripts/voice_candidates.py",
     "lint:strokes": "node scripts/lint-strokes.mjs",

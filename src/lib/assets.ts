@@ -7,6 +7,6 @@ export const POSE_NAMES = [
 export const COSTUME_NAMES = ['pajamas', 'labcoat', 'suit', 'hoodie'] as const;
 export const ACCESSORY_NAMES = ['nightcap', 'halo', 'antenna', 'none'] as const;
 export const SCENE_KINDS = ['story', 'explainer', 'statCard', 'diagramCard', 'closeUp', 'overviewGrid', 'endScreen'] as const;
-export const DIAGRAM_TYPES = ['sleep-stage', 'switchboard'] as const;
+export const DIAGRAM_TYPES = ['sleep-stage', 'switchboard', 'signal-race', 'overflow-meter', 'two-gates', 'then-now'] as const;
 export const LOOK_DIRS = ['left', 'center', 'right'] as const;
 export const CLOSEUP_SUBJECTS = ['face', 'object'] as const;

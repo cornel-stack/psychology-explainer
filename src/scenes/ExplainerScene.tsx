@@ -14,7 +14,7 @@ import { EmotionName } from '../lib/emotions';
 
 export const ExplainerScene: React.FC<{
   prop?: string;
-  diagram?: 'sleep-stage' | 'switchboard';
+  diagram?: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now';
   emotion?: EmotionName;
   chapterStart?: boolean;
   talking?: boolean;
