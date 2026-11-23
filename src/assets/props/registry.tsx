@@ -13,6 +13,7 @@ import * as Def from './defenses';
 import * as Sty from './story';
 import * as Att from './attachment';
 import * as Iq from './iq';
+import * as Man from './manipulation';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -131,6 +132,15 @@ export const PROPS: Record<string, React.FC<any>> = {
   stopwatch: Iq.Stopwatch,
   'jigsaw-piece': Iq.JigsawPiece,
   'chess-knight': Iq.ChessKnight,
+  // manipulation-tactics props
+  'puppet-strings': Man.PuppetStrings,
+  'sheep-mask': Man.SheepMask,
+  'gaslight-lamp': Man.GaslightLamp,
+  'guilt-chain': Man.GuiltChain,
+  'countdown-timer': Man.CountdownTimer,
+  goalpost: Man.Goalpost,
+  'carrot-on-stick': Man.CarrotOnStick,
+  'fish-hook': Man.FishHook,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

@@ -45,6 +45,9 @@ const NEW_ASSETS = new Set([
   'classroom', 'science-lab',
   'iq-report', 'puzzle-cube', 'lightbulb', 'test-paper', 'gears', 'stopwatch', 'jigsaw-piece', 'chess-knight',
   'bell-curve', 'flynn-effect', 'multi-intelligence',
+  // manipulation-tactics
+  'puppet-strings', 'sheep-mask', 'gaslight-lamp', 'guilt-chain', 'countdown-timer', 'goalpost', 'carrot-on-stick', 'fish-hook',
+  'fog-triangle', 'manipulation-cycle', 'ask-ladder',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

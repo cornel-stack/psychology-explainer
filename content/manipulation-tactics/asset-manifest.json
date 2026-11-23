@@ -1,0 +1,638 @@
+{
+  "slug": "manipulation-tactics",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 19,
+    "NEW": 34
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        9,
+        11,
+        13,
+        14,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        33,
+        35,
+        37,
+        41,
+        43,
+        45,
+        49,
+        51,
+        53,
+        57,
+        59,
+        61,
+        63,
+        66
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        9,
+        13,
+        19,
+        21,
+        25,
+        29,
+        33,
+        37,
+        45,
+        49,
+        53,
+        61,
+        66
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "ask-ladder",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        46
+      ]
+    },
+    {
+      "name": "fog-triangle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "manipulation-cycle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "redirect-arrow",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        21,
+        23,
+        27,
+        29,
+        33,
+        37,
+        41
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        11,
+        13,
+        19,
+        25,
+        45,
+        51,
+        61,
+        63,
+        66
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        54
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        3,
+        4,
+        9,
+        21,
+        53,
+        67,
+        68
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        12,
+        16,
+        19,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        2,
+        14,
+        17,
+        19,
+        29,
+        33,
+        35,
+        37,
+        49,
+        57,
+        59
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        6,
+        7,
+        10,
+        15,
+        18,
+        22,
+        26,
+        30,
+        31,
+        34,
+        38,
+        39,
+        42,
+        46,
+        47,
+        50,
+        55,
+        58,
+        62,
+        65
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        43
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        9,
+        13,
+        21,
+        25,
+        45,
+        49,
+        53,
+        61,
+        66
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        19,
+        27,
+        33,
+        66
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5,
+        53
+      ]
+    },
+    {
+      "name": "cover-eyes",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        14,
+        37
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        29,
+        35
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        23,
+        43
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        11,
+        13,
+        17,
+        21,
+        25,
+        53,
+        61,
+        63
+      ]
+    },
+    {
+      "name": "point-left",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        13,
+        21,
+        25,
+        29,
+        45,
+        49,
+        61
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        9,
+        37
+      ]
+    },
+    {
+      "name": "reach-down",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        9,
+        19,
+        33,
+        41
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        1,
+        45,
+        51,
+        66
+      ]
+    },
+    {
+      "name": "startled",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        49,
+        57,
+        59
+      ]
+    },
+    {
+      "name": "bouquet",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        6
+      ]
+    },
+    {
+      "name": "carrot-on-stick",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "check-badge",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        47
+      ]
+    },
+    {
+      "name": "countdown-timer",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        57,
+        58
+      ]
+    },
+    {
+      "name": "crown",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "door",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        34,
+        49,
+        50
+      ]
+    },
+    {
+      "name": "gaslight-lamp",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13,
+        15
+      ]
+    },
+    {
+      "name": "gift-box",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        53,
+        55
+      ]
+    },
+    {
+      "name": "goalpost",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        41,
+        42
+      ]
+    },
+    {
+      "name": "guilt-chain",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        31
+      ]
+    },
+    {
+      "name": "mirror",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        26,
+        39
+      ]
+    },
+    {
+      "name": "phone-unread",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "price-tag",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        57
+      ]
+    },
+    {
+      "name": "puppet-strings",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        65,
+        66
+      ]
+    },
+    {
+      "name": "relationship-thermometer",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "sheep-mask",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "slot-machine",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "speech-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        9,
+        13,
+        21,
+        25,
+        29,
+        33,
+        37,
+        41,
+        45,
+        49,
+        53,
+        61,
+        66
+      ]
+    },
+    {
+      "name": "star-rating",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        61,
+        62
+      ]
+    },
+    {
+      "name": "thought-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        1,
+        11,
+        23,
+        51,
+        63
+      ]
+    },
+    {
+      "name": "casino",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "date-restaurant",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        5,
+        25,
+        27,
+        66
+      ]
+    },
+    {
+      "name": "gym",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        41,
+        43
+      ]
+    },
+    {
+      "name": "living-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        9,
+        11,
+        13,
+        14,
+        19,
+        21,
+        29,
+        33,
+        35,
+        37
+      ]
+    },
+    {
+      "name": "office",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "store-aisle",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        45,
+        49,
+        51,
+        53,
+        57,
+        59,
+        61,
+        63
+      ]
+    }
+  ]
+}

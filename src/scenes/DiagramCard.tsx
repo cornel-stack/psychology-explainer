@@ -799,8 +799,107 @@ const MultiIntelligence: React.FC = () => {
   );
 };
 
+/** Susan Forward's FOG: Fear, Obligation, Guilt — the three walls of emotional
+ *  blackmail, with the target trapped in the middle. */
+const FogTriangle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const R = 300;
+  const corners = [
+    { label: 'FEAR', color: COLORS.lavender },
+    { label: 'OBLIGATION', color: COLORS.sky },
+    { label: 'GUILT', color: COLORS.red },
+  ];
+  const pts = corners.map((_, i) => {
+    const a = (-90 + i * 120) * (Math.PI / 180);
+    return [cx + Math.cos(a) * R, cy + Math.sin(a) * R];
+  });
+  return (
+    <g>
+      <path d={`M ${pts[0][0]} ${pts[0][1]} L ${pts[1][0]} ${pts[1][1]} L ${pts[2][0]} ${pts[2][1]} Z`} fill={COLORS.yellowSoft} opacity={0.3} {...lg} />
+      {corners.map((c, i) => {
+        const pop = springIn(frame, fps, 10 + i * 5, { damping: 13 });
+        return (
+          <g key={c.label} transform={`translate(${pts[i][0]} ${pts[i][1]}) scale(${Math.min(1, pop)})`}>
+            <circle r={86} fill={c.color} {...lg} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={c.label.length > 6 ? 28 : 38} fill={COLORS.outline}>{c.label}</text>
+          </g>
+        );
+      })}
+      <circle cx={cx} cy={cy} r={64} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy + 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>YOU</text>
+    </g>
+  );
+};
+
+/** The narcissistic cycle: idealize → devalue → discard, round and round. */
+const ManipulationCycle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const r = 250;
+  const nodes = [
+    { label: 'IDEALIZE', color: COLORS.greenLeaf },
+    { label: 'DEVALUE', color: COLORS.yellow },
+    { label: 'DISCARD', color: COLORS.red },
+  ];
+  const a = (frame / 55) * Math.PI * 2;
+  const tx = cx + Math.cos(a - Math.PI / 2) * r;
+  const ty = cy + Math.sin(a - Math.PI / 2) * r;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeDasharray="4 26" strokeLinecap="round" opacity={0.5} />
+      {nodes.map((n, i) => {
+        const ang = (-90 + i * 120) * (Math.PI / 180);
+        const x = cx + Math.cos(ang) * r;
+        const y = cy + Math.sin(ang) * r;
+        return (
+          <g key={n.label} transform={`translate(${x} ${y})`}>
+            <circle r={100} fill={n.color} {...lg} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>{n.label}</text>
+          </g>
+        );
+      })}
+      <circle cx={tx} cy={ty} r={26} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy + 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline} opacity={0.6}>↻</text>
+    </g>
+  );
+};
+
+/** Foot-in-the-door: a tiny yes at the bottom, climbing to the real ask on top. */
+const AskLadder: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const [a = 'a tiny yes', b = 'a bigger yes', c = 'the REAL ask'] = labels;
+  const rungs = [
+    { label: a, color: COLORS.sky, w: 440 },
+    { label: b, color: COLORS.yellow, w: 560 },
+    { label: c, color: COLORS.red, w: 680 },
+  ];
+  const x = CANVAS.width * 0.56;
+  const h = 150;
+  const gap = 40;
+  return (
+    <g transform="translate(0 250)">
+      {rungs.map((r, i) => {
+        const y = (rungs.length - 1 - i) * (h + gap);
+        const pop = springIn(frame, fps, 10 + i * 8, { damping: 13 });
+        return (
+          <g key={i} transform={`translate(${x} ${y}) scale(${Math.min(1, pop)})`}>
+            <rect x={-r.w / 2} y={0} width={r.w} height={h} rx={22} fill={r.color} {...lg} />
+            <text x={0} y={h / 2 + 18} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={48} fill={COLORS.outline}>{r.label}</text>
+            {i < rungs.length - 1 && <path d={`M ${r.w / 2 - 60} 0 l 30 -40 l 30 40 z`} fill={COLORS.outline} opacity={0.5} />}
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -829,6 +928,9 @@ export const DiagramCard: React.FC<{
     'bell-curve': COLORS.blueDiagram,
     'flynn-effect': COLORS.greenLeaf,
     'multi-intelligence': COLORS.yellow,
+    'fog-triangle': COLORS.lavender,
+    'manipulation-cycle': COLORS.red,
+    'ask-ladder': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -864,6 +966,9 @@ export const DiagramCard: React.FC<{
         {diagram === 'bell-curve' && <BellCurve highlight={highlight} />}
         {diagram === 'flynn-effect' && <FlynnEffect />}
         {diagram === 'multi-intelligence' && <MultiIntelligence />}
+        {diagram === 'fog-triangle' && <FogTriangle />}
+        {diagram === 'manipulation-cycle' && <ManipulationCycle />}
+        {diagram === 'ask-ladder' && <AskLadder labels={labels} />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

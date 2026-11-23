@@ -32,7 +32,7 @@ Glitches.
 3. ⬜ The Psychology of People Who Don't Use Social Media
 4. ✅ Every Psychological Defense Mechanism Explained — *done (`defense-mechanisms`)*
 5. ⬜ Why Your Brain Never Stops Thinking (and the Off Switch)
-6. ⬜ Every Manipulation Tactic Explained — So Nobody Can Use Them on You
+6. 🟡 Every Manipulation Tactic Explained — *built (`manipulation-tactics`), 15 tactics + counters; awaiting CI render*
 7. ⬜ The Psychology of People With a High IQ
 8. 🟡 **Every Attachment Style Explained** — *built (`attachment-styles`), awaiting CI render*
 9. ⬜ Every Sleep Glitch You Might Experience
@@ -52,7 +52,7 @@ All ⬜ except the three shipped above. Pull full evidence/proof-video/competiti
 detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 
 **Every X (1–18):** 1 Feelings ✅ · 2 Cognitive Bias ✅ · 3 Defense Mechanisms ✅ ·
-4 Attachment Styles 🟡 · 5 Manipulation Tactics · 6 Personality Types (16) ·
+4 Attachment Styles 🟡 · 5 Manipulation Tactics 🟡 · 6 Personality Types (16) ·
 7 Types of Intelligence · 8 Logical Fallacies · 9 Mental Complexes ·
 10 Habits That Reveal High Intelligence · 11 Types of Toxic Person ·
 12 Types of Couple · 13 Types of Friend · 14 Psychological Experiments ·

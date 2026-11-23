@@ -1,0 +1,222 @@
+{
+  "title": "Every Manipulation Tactic Explained (So Nobody Can Use Them on You)",
+  "slug": "manipulation-tactics",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "They seem perfect. Charming, generous, saying all the right things. You feel lucky. Special. Chosen. And that warm glow is exactly where a skilled manipulator wants you, before you ever notice a single string being pulled.", "scene": "story", "room": "date-restaurant", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "EVERY MANIPULATION TACTIC", "subtitle": "so nobody can use them on you",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "excited", "x": 560, "y": 620, "scale": 1.15, "talking": false, "lookDir": "right" }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 620, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "bouquet", "x": 960, "y": 540, "scale": 0.8, "appearAt": 4 }, { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.9, "appearAt": 10, "args": { "text": "you're the\nONE", "tail": "right" } } ] },
+        { "vo": "Because manipulation isn't always a villain twirling a mustache. It's quiet. It hides inside flattery, inside guilt, inside a great deal. It works by bypassing your thinking, and pulling on your emotions instead.", "scene": "story", "room": "date-restaurant", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.46, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 620, "y": 600, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "thought-bubble", "x": 780, "y": 300, "scale": 0.95, "appearAt": 8, "args": { "text": "wait…\nwhat?" } } ] },
+        { "vo": "The good news? Every tactic has a tell. Once you can name the move, it stops working. You simply cannot be puppeteered by strings that you can see.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "Welcome to Dear Brain. Today, fifteen manipulation tactics, from the sweet ones that hook you to the sneaky ones that close the sale. Learn them not to use them, but so that nobody can use them on you. Let's go.", "scene": "explainer", "prop": "sheep-mask", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's the whole playbook, fifteen moves. The first handful mostly show up in relationships. The last few, every ad and salesperson uses on you weekly. Watch for the ones that feel a little too familiar.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["LOVE-BOMBING", "FUTURE FAKING", "GASLIGHTING", "HOT & COLD", "TRIANGULATION", "NEGGING", "GUILT TRIPS", "SILENT TREATMENT", "DARVO", "GOALPOSTS", "FOOT-IN-DOOR", "DOOR-IN-FACE", "RECIPROCITY", "SCARCITY", "SOCIAL PROOF"] }
+      ]
+    },
+    {
+      "name": "1 — Love-bombing",
+      "beats": [
+        { "vo": "Love-bombing. A flood of affection, gifts, and attention, so fast and so intense it sweeps you clean off your feet. It feels like a fairytale. It's really a down payment, buying leverage for later.", "scene": "story", "room": "date-restaurant", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "LOVE-BOMBING", "subtitle": "too much, too fast",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "excited", "x": 560, "y": 620, "scale": 1.15, "talking": false }, { "costume": "suit", "pose": "arms-out-presenting", "emotion": "smug", "x": 1360, "y": 620, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "gift-box", "x": 980, "y": 560, "scale": 0.8, "appearAt": 4 }, { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.85, "appearAt": 10, "args": { "text": "you're\nPERFECT", "tail": "right" } } ] },
+        { "vo": "The grand gestures, the constant texts, the talk of soulmates and forever, within a week. It's intoxicating by design. Nobody questions a fairytale while they're still inside it.", "scene": "explainer", "prop": "bouquet", "emotion": "serious-expert" },
+        { "vo": "It's really just phase one of a cycle. Idealize you completely, so that later, when they devalue and then discard you, you'll do almost anything to earn that first high back.", "scene": "diagramCard", "diagram": "manipulation-cycle", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "The tell? Intensity that badly outpaces trust. Real love is patient. If it's moving at lightning speed, slow it down on purpose, and watch very closely how they react.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Future faking",
+      "beats": [
+        { "vo": "Future faking. Vivid, detailed promises of a dazzling future. The trip, the ring, the big change. It keeps you invested in who they might one day become, instead of who they actually are right now.", "scene": "story", "room": "living-room", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "FUTURE FAKING", "subtitle": "the promise that never comes",
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "happy-talk", "x": 560, "y": 600, "scale": 1.25, "talking": false, "lookDir": "right" }, { "costume": "suit", "pose": "point-right", "emotion": "smug", "x": 1360, "y": 610, "scale": 1.2, "flip": true, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "carrot-on-stick", "x": 1000, "y": 440, "scale": 0.7, "appearAt": 4 }, { "name": "speech-bubble", "x": 600, "y": 300, "scale": 0.85, "appearAt": 10, "args": { "text": "someday,\nwe'll…", "tail": "left" } } ] },
+        { "vo": "But the future never quite arrives. There's always a reason, a delay, a fresh crisis. The carrot keeps dangling, and you keep chasing it, one more month, one more chance, one more benefit of the doubt.", "scene": "explainer", "prop": "carrot-on-stick", "emotion": "serious-expert" },
+        { "vo": "It costs them nothing to promise, and buys them endless patience from you. You're not dating a person anymore. You're dating a trailer for a movie that never comes out.", "scene": "story", "room": "living-room", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.48, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "thought-bubble", "x": 760, "y": 300, "scale": 0.9, "appearAt": 6, "args": { "text": "…when,\nthough?" } } ] },
+        { "vo": "Judge people on their patterns, not their promises. Watch what they do, on repeat, not the beautiful movie they narrate about tomorrow.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Gaslighting",
+      "beats": [
+        { "vo": "Gaslighting. Named after an old film, where a husband secretly dims the gas lights, then insists his wife is crazy for noticing. The manipulator denies what you saw, heard, and felt, until you trust them over your own mind.", "scene": "story", "room": "living-room", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "GASLIGHTING", "subtitle": "'that never happened'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 600, "scale": 1.25, "talking": false }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 610, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "gaslight-lamp", "x": 1020, "y": 560, "scale": 0.7, "appearAt": 4 }, { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.85, "appearAt": 10, "args": { "text": "you're\nimagining it", "tail": "right" } } ] },
+        { "vo": "You clearly saw it. No you didn't. You're too sensitive. You're remembering it all wrong. Repeated enough, you slowly stop trusting yourself, and start outsourcing reality to them. Which is the entire point.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.48, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "cover-eyes", "emotion": "scared", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "mirror", "x": 1240, "y": 580, "scale": 0.95, "appearAt": 4 } ] },
+        { "vo": "It's one of the most damaging tactics there is, because it attacks the one tool you need to spot all the others, your own judgment.", "scene": "explainer", "prop": "gaslight-lamp", "emotion": "serious-expert" },
+        { "vo": "So keep a reality anchor they can't reach. Write things down as they happen. Talk to people you trust. Your memory is not the problem.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Hot and cold",
+      "beats": [
+        { "vo": "Hot and cold, or intermittent reinforcement. This one borrows straight from the slot machine. Unpredictable rewards are the most addictive kind there is. Be wonderful sometimes, distant others, with no clear pattern.", "scene": "story", "room": "casino", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "HOT & COLD", "subtitle": "intermittent reinforcement",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 620, "y": 600, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "relationship-thermometer", "x": 1250, "y": 520, "scale": 0.9, "appearAt": 4 }, { "name": "phone-unread", "x": 1030, "y": 560, "scale": 0.6, "appearAt": 8 } ] },
+        { "vo": "And you'll have someone hooked, endlessly pulling the lever for one more good day. The cruelty is the randomness. If they were always cold, you'd leave. Those random bursts of warmth keep you chasing the high.", "scene": "explainer", "prop": "slot-machine", "emotion": "serious-expert" },
+        { "vo": "You end up grading on a brutal curve, treasuring crumbs of affection you'd never have accepted up front, just because they arrive after a stretch of cold.", "scene": "story", "room": "living-room", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "scared", "x": 560, "y": 600, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "suit", "pose": "arms-crossed", "emotion": "neutral", "x": 1360, "y": 610, "scale": 1.2, "flip": true, "lookDir": "left" } ],
+          "props": [] },
+        { "vo": "Judge the relationship by its average, not its best five minutes. Steady, boring consistency is not the opposite of love. It's a form of respect.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Triangulation",
+      "beats": [
+        { "vo": "Triangulation. They pull a third person into your relationship. An ex, a friend, a vague 'someone', always there to compare you against. Suddenly you're competing for basic decency you should have had all along.", "scene": "story", "room": "living-room", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "TRIANGULATION", "subtitle": "bringing in a third person",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 440, "y": 600, "scale": 1.15, "talking": false, "lookDir": "right" }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1020, "y": 610, "scale": 1.1 }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1480, "y": 610, "scale": 1.15, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "speech-bubble", "x": 1480, "y": 300, "scale": 0.8, "appearAt": 10, "args": { "text": "they'd\nnever complain", "tail": "right" } } ] },
+        { "vo": "It keeps you insecure and off-balance, fighting to be chosen, while they sit back and quietly enjoy the power of being the prize everyone's supposedly competing for.", "scene": "explainer", "prop": "crown", "emotion": "serious-expert" },
+        { "vo": "Done to kids, it's playing siblings against each other. Done at work, it's a boss hinting someone else wants your job. The shape is always the same: never let you feel secure.", "scene": "story", "room": "office", "emotion": "annoyed", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "facepalm", "emotion": "annoyed", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "thought-bubble", "x": 780, "y": 300, "scale": 0.85, "appearAt": 6, "args": { "text": "am I not\nenough?" } } ] },
+        { "vo": "Refuse the contest. You are not auditioning for a role in someone's life. Healthy people build you up. They don't pit you against others to keep you hungry.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Negging",
+      "beats": [
+        { "vo": "Negging. A compliment with a hook buried in it. You're so smart, for someone who didn't go to college. Great dress, brave choice. It chips away at your confidence while keeping their hands perfectly clean.", "scene": "story", "room": "date-restaurant", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "NEGGING", "subtitle": "the backhanded compliment",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 620, "scale": 1.15, "talking": false }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 620, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.8, "appearAt": 8, "args": { "text": "nice try,\nfor YOU", "tail": "right" } } ] },
+        { "vo": "The goal is to knock you slightly off balance. Lower your self-esteem just enough that their approval suddenly becomes something you feel you have to chase, and earn.", "scene": "explainer", "prop": "mirror", "emotion": "serious-expert" },
+        { "vo": "A confident person doesn't need to shrink you to feel tall. So when someone's 'jokes' always seem to land at your expense, that isn't an accident. That's the strategy, working exactly as intended.", "scene": "story", "room": "date-restaurant", "emotion": "annoyed", "camera": { "zoomTo": [0.5, 0.46, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "annoyed", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [] },
+        { "vo": "Trust the sting, not the spin. If a compliment leaves you feeling smaller, it was never really a compliment. You don't owe anyone the chance to make you shrink.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Guilt trips",
+      "beats": [
+        { "vo": "Guilt-tripping. Therapist Susan Forward gave the recipe a name: F.O.G. Fear, obligation, and guilt. The manipulator wraps you in all three, until saying a simple no feels like a crime you must apologize for.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "GUILT TRIPS", "subtitle": "F.O.G. — fear, obligation, guilt",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 560, "y": 610, "scale": 1.2, "talking": false }, { "costume": "suit", "pose": "point-left", "emotion": "annoyed", "x": 1360, "y": 610, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.82, "appearAt": 8, "args": { "text": "after all\nI've done…", "tail": "right" } } ] },
+        { "vo": "They map the three walls that trap you, until every exit feels blocked by shame.", "scene": "diagramCard", "diagram": "fog-triangle", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Every favor becomes a debt. Every boundary becomes an attack on them. You end up managing their feelings instead of living your own life, dragging a ball and chain you never once agreed to carry.", "scene": "explainer", "prop": "guilt-chain", "emotion": "serious-expert" },
+        { "vo": "Remember, no is a complete sentence. You are allowed to disappoint people in order to stay true to yourself. Guilt is a feeling. It is not a command you have to obey.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Silent treatment",
+      "beats": [
+        { "vo": "The silent treatment. Not going quiet to cool down, which is healthy. This is silence as a weapon, stretched out for hours or days, to punish you and force you to cave.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "SILENT TREATMENT", "subtitle": "punishment by silence",
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "scared", "x": 560, "y": 600, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "suit", "pose": "arms-crossed", "emotion": "annoyed", "x": 1360, "y": 610, "scale": 1.2, "flip": true, "lookDir": "left" } ],
+          "props": [ { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.8, "appearAt": 10, "args": { "text": "…", "tail": "right" } } ] },
+        { "vo": "You're left anxious and spiraling, apologizing for things you didn't even do, just to end the freeze-out. The message is clear without a single word: displease me, and I will make you disappear.", "scene": "explainer", "prop": "door", "emotion": "serious-expert" },
+        { "vo": "So you learn to walk on eggshells, quietly managing their moods, shrinking yourself to avoid the next big chill. The silence trains you, like a pet.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 620, "y": 610, "scale": 1.2, "talking": true } ],
+          "props": [] },
+        { "vo": "Don't chase the silence. Calmly name it, say when you're available to talk, then go live your day. Refusing to panic quietly takes away its entire power.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "9 — DARVO",
+      "beats": [
+        { "vo": "DARVO. You finally raise a real problem. They Deny it ever happened, Attack you for daring to bring it up, then Reverse the roles, so that suddenly they are the wounded victim, and you are the offender.", "scene": "story", "room": "living-room", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "DARVO", "subtitle": "deny, attack, reverse victim",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "annoyed", "x": 540, "y": 600, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "suit", "pose": "cover-eyes", "emotion": "scared", "x": 1360, "y": 610, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.8, "appearAt": 10, "args": { "text": "how could\nYOU hurt ME?", "tail": "right" } } ] },
+        { "vo": "The blame does a perfect U-turn. The person who caused the harm becomes the one demanding comfort. You walked in with a grievance, and somehow you walk out saying sorry.", "scene": "diagramCard", "diagram": "redirect-arrow", "labels": ["their wrong", "somehow YOUR fault"], "emotion": "serious-expert", "withMascot": true },
+        { "vo": "It's dizzying on purpose. By the time you've untangled how you became the bad guy, the original issue, the thing they actually did, has been completely buried.", "scene": "explainer", "prop": "mirror", "emotion": "serious-expert" },
+        { "vo": "Keep your eyes locked on the first issue. Don't chase the counter-accusation. We can discuss that next. Right now, we are still talking about this.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "10 — Moving the goalposts",
+      "beats": [
+        { "vo": "Moving the goalposts. You do exactly what they asked. Then, quietly, the requirement changes. Do more, do it better, prove yourself again. The standard keeps sliding just out of reach, so you can never quite win.", "scene": "story", "room": "gym", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "MOVING GOALPOSTS", "subtitle": "the finish line keeps moving",
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "annoyed", "x": 560, "y": 600, "scale": 1.2, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "goalpost", "x": 1300, "y": 560, "scale": 0.8, "appearAt": 4 }, { "name": "speech-bubble", "x": 640, "y": 300, "scale": 0.82, "appearAt": 10, "args": { "text": "still not\nenough", "tail": "left" } } ] },
+        { "vo": "It keeps you anxious and over-performing, forever chasing an approval that was designed never to arrive. Because your success was never the real goal. Your endless, exhausting effort was.", "scene": "explainer", "prop": "goalpost", "emotion": "serious-expert" },
+        { "vo": "No matter how high you jump, the bar rises another inch. Exhaustion starts to feel like your fault, instead of what it actually is: the whole point of a rigged game.", "scene": "story", "room": "gym", "emotion": "sleepy", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "facepalm", "emotion": "sleepy", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [] },
+        { "vo": "Define 'done' in advance, out loud. If the target moves the instant you reach it, the game is rigged, and you are allowed to simply stop playing it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "11 — Foot-in-the-door",
+      "beats": [
+        { "vo": "Now the sales floor. Foot-in-the-door. They start with a request so small you can't really say no. A tiny favor, a signature, a free trial. The goal isn't the small yes. It's what that yes does to you.", "scene": "story", "room": "store-aisle", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "FOOT-IN-THE-DOOR", "subtitle": "the tiny first yes",
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 560, "y": 620, "scale": 1.15, "talking": false }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 620, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.82, "appearAt": 10, "args": { "text": "just a\nquick sec?", "tail": "right" } } ] },
+        { "vo": "Once you've said yes once, you quietly start seeing yourself as a yes-person. And each next ask, a little bigger, gets much harder to refuse, because now you'd be contradicting yourself.", "scene": "diagramCard", "diagram": "ask-ladder", "labels": ["a tiny yes", "a bigger yes", "the REAL ask"], "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Researchers showed it cleanly. Agree to one small thing, and you become dramatically more likely to agree to a much larger thing later. Consistency feels good, and they turn it into a lever.", "scene": "explainer", "prop": "check-badge", "emotion": "serious-expert" },
+        { "vo": "Treat every request on its own merits. A past yes is not a binding contract. You are always allowed to say, that small thing was fine, this big thing is not.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "12 — Door-in-the-face",
+      "beats": [
+        { "vo": "Door-in-the-face. The exact mirror image. They open with an outrageous request they know you'll refuse. Lend me five thousand dollars? Then, when you slam that door, they reluctantly shrink it down.", "scene": "story", "room": "store-aisle", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "DOOR-IN-THE-FACE", "subtitle": "the shocking first ask",
+          "mascots": [ { "costume": "hoodie", "pose": "startled", "emotion": "scared", "x": 560, "y": 620, "scale": 1.15, "talking": false }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 620, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "door", "x": 1020, "y": 560, "scale": 0.8, "appearAt": 4 }, { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.8, "appearAt": 10, "args": { "text": "lend me\n$5,000?", "tail": "right" } } ] },
+        { "vo": "To what they actually wanted all along, which now feels generous and reasonable by comparison. Because they appeared to give something up, you feel a pull to meet them halfway.", "scene": "explainer", "prop": "door", "emotion": "serious-expert" },
+        { "vo": "That second ask would've sounded steep entirely on its own. But sitting right next to the monster first one, it suddenly feels like a friendly little bargain. The contrast does all the work.", "scene": "story", "room": "store-aisle", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 620, "y": 600, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "thought-bubble", "x": 780, "y": 300, "scale": 0.85, "appearAt": 6, "args": { "text": "that's…\nfairer?" } } ] },
+        { "vo": "Anchor to the thing itself, not the contrast. Ask yourself, would I agree to this if they had simply led with it? If the answer's no, the discount is an illusion.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "13 — Reciprocity",
+      "beats": [
+        { "vo": "Reciprocity. The free gift. The unexpected favor. The sample pressed into your hand with a warm smile. It feels like generosity. Often, it's quietly opening a tab that you now feel you have to settle.", "scene": "story", "room": "store-aisle", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "RECIPROCITY", "subtitle": "the 'free' gift",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 560, "y": 620, "scale": 1.15, "talking": false }, { "costume": "suit", "pose": "arms-out-presenting", "emotion": "smug", "x": 1360, "y": 620, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "gift-box", "x": 1000, "y": 560, "scale": 0.75, "appearAt": 4 }, { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.82, "appearAt": 10, "args": { "text": "it's on\nthe house!", "tail": "right" } } ] },
+        { "vo": "In one famous study, waiters who left a single mint with the bill boosted their tips by around twenty-three percent. One tiny mint. A surprisingly large pull to repay.", "scene": "statCard", "value": 23, "suffix": "%", "pictogram": "none", "emotion": "excited" },
+        { "vo": "We're wired to repay favors. It kept our ancestors alive. Manipulators simply exploit that ancient wiring, with the free trial, the gift, the favor you never asked for, each one a quiet little debt.", "scene": "explainer", "prop": "gift-box", "emotion": "serious-expert" },
+        { "vo": "A gift with strings attached was a transaction, not a kindness. You can accept it graciously and still owe nothing at all. Sometimes, thank you is the entire repayment.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "14 — Scarcity",
+      "beats": [
+        { "vo": "Scarcity, and its twin, urgency. Only one left. Offer ends tonight. Selling fast. The fear of missing out shoves your rational brain aside and jams your finger down onto the buy button, before you've had a second to think.", "scene": "story", "room": "store-aisle", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "SCARCITY", "subtitle": "now or never",
+          "mascots": [ { "costume": "hoodie", "pose": "startled", "emotion": "scared", "x": 560, "y": 620, "scale": 1.15, "talking": true } ],
+          "props": [ { "name": "countdown-timer", "x": 1250, "y": 520, "scale": 0.8, "appearAt": 4 }, { "name": "price-tag", "x": 1000, "y": 580, "scale": 0.9, "appearAt": 8 } ] },
+        { "vo": "Real scarcity does exist. But manufactured urgency, the fake timer, the always-vanishing stock, the 'twelve other people are looking right now', exists only to stop you from pausing. Because pausing kills bad deals.", "scene": "explainer", "prop": "countdown-timer", "emotion": "serious-expert" },
+        { "vo": "Every red banner and ticking clock is engineered for one job: to replace your careful judgment with raw panic, right at the exact moment you're about to hand over your money.", "scene": "story", "room": "store-aisle", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "startled", "emotion": "scared", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [] },
+        { "vo": "When you feel rushed, treat that feeling itself as the warning light. A genuinely good decision survives a night's sleep. Pressure is never proof of a good deal.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "15 — Social proof",
+      "beats": [
+        { "vo": "And finally, social proof. When we're unsure, we copy the crowd. The long line, the five-star reviews, the 'as seen by millions'. If everyone else is doing it, our brain whispers, it must be safe, it must be right.", "scene": "story", "room": "store-aisle", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "SOCIAL PROOF", "subtitle": "'everyone's doing it'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 620, "scale": 1.15, "talking": false }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 620, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "star-rating", "x": 1020, "y": 540, "scale": 0.9, "appearAt": 4 }, { "name": "speech-bubble", "x": 1360, "y": 300, "scale": 0.78, "appearAt": 10, "args": { "text": "10,000 happy\ncustomers!", "tail": "right" } } ] },
+        { "vo": "It's a handy shortcut, most of the time. But crowds can be faked, with bots, paid reviews, and hollow hype. And a million people can absolutely be wrong, together, all at once.", "scene": "explainer", "prop": "star-rating", "emotion": "serious-expert" },
+        { "vo": "Popularity is not the same thing as truth, or quality, or what's actually right for you. The crowd isn't thinking about your life. Half the time, the crowd isn't even real.", "scene": "story", "room": "store-aisle", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "thought-bubble", "x": 780, "y": 300, "scale": 0.85, "appearAt": 6, "args": { "text": "but is it\ngood?" } } ] },
+        { "vo": "Ask what you would choose if absolutely no one was watching. The real question is never, is this popular. It's quietly, is this actually good, for me.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So here's the real power. Manipulation runs entirely on staying hidden. The flattery, the guilt, the ticking clock, they only work in the dark. Name the tactic out loud, even just to yourself, and the spell breaks.", "scene": "explainer", "prop": "puppet-strings", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "Remember that perfect charmer from the start? Now you can see the strings. The love-bomb, the dangled future, the urgent deadline. The exact same moves, but they don't land, because you can finally see the hand holding them.", "scene": "story", "room": "date-restaurant", "emotion": "smug", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "smug", "x": 560, "y": 620, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "suit", "pose": "shrug", "emotion": "confused", "x": 1360, "y": 620, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "puppet-strings", "x": 1360, "y": 360, "scale": 0.9, "appearAt": 6 }, { "name": "speech-bubble", "x": 600, "y": 300, "scale": 0.82, "appearAt": 12, "args": { "text": "I see what\nyou're doing", "tail": "left" } } ] },
+        { "vo": "You don't need to become cynical. Just awake. So which tactic have you run into? Drop its number in the comments, and send this to someone who could really use the power to see the strings too.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}
