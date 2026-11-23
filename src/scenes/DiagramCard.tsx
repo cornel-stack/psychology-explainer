@@ -1569,8 +1569,128 @@ const AbsorptionScale: React.FC = () => {
   );
 };
 
+/** Circadian low: body temperature & alertness bottom out at ~3-4 a.m. */
+const CircadianLow: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const x0 = CANVAS.width * 0.34; const y0 = 760; const w = 960; const h = 420;
+  // curve: high evening, dropping to a trough ~3-4am (~0.7 across), rising to morning
+  const pts: [number, number][] = [[0, 0.8], [0.15, 0.6], [0.35, 0.3], [0.52, 0.08], [0.62, 0.05], [0.78, 0.35], [1, 0.75]];
+  const P = pts.map(([px, py]) => [x0 + px * w, y0 - py * h]);
+  const path = P.map((p, i) => `${i ? 'L' : 'M'} ${p[0]} ${p[1]}`).join(' ');
+  const trough = P[4];
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + w} y2={y0} {...lg} />
+      <line x1={x0} y1={y0} x2={x0} y2={y0 - h} {...lg} />
+      <text x={x0 - 30} y={y0 - h / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={32} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 30} ${y0 - h / 2})`}>BODY TEMP</text>
+      {['9pm', '12', '3am', '6am', '9am'].map((t, i) => <text key={t} x={x0 + (w / 4) * i} y={y0 + 50} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.outline} opacity={0.75}>{t}</text>)}
+      <path d={path} fill="none" stroke={COLORS.blueDiagram} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={2600} strokeDashoffset={2600 * (1 - draw)} />
+      {draw > 0.95 && <g><circle cx={trough[0]} cy={trough[1]} r={14} fill={COLORS.red} {...lg} /><text x={trough[0]} y={trough[1] + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.redDark}>you are HERE</text></g>}
+    </g>
+  );
+};
+
+/** Cortisol curve: the stress hormone rises in the pre-dawn hours. */
+const CortisolCurve: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const x0 = CANVAS.width * 0.34; const y0 = 760; const w = 960; const h = 420;
+  const pts: [number, number][] = [[0, 0.1], [0.3, 0.12], [0.5, 0.28], [0.68, 0.72], [0.78, 0.95], [0.9, 0.6], [1, 0.3]];
+  const P = pts.map(([px, py]) => [x0 + px * w, y0 - py * h]);
+  const path = P.map((p, i) => `${i ? 'L' : 'M'} ${p[0]} ${p[1]}`).join(' ');
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + w} y2={y0} {...lg} />
+      <line x1={x0} y1={y0} x2={x0} y2={y0 - h} {...lg} />
+      <text x={x0 - 30} y={y0 - h / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={32} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 30} ${y0 - h / 2})`}>CORTISOL</text>
+      {['12', '2am', '4am', '6am', '8am'].map((t, i) => <text key={t} x={x0 + (w / 4) * i} y={y0 + 50} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.outline} opacity={0.75}>{t}</text>)}
+      {/* shaded pre-dawn danger window */}
+      <rect x={x0 + 0.55 * w} y={y0 - h} width={0.3 * w} height={h} fill={COLORS.red} opacity={0.12} />
+      <path d={path} fill="none" stroke={COLORS.red} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={2600} strokeDashoffset={2600 * (1 - draw)} />
+      {draw > 0.9 && <text x={x0 + 0.72 * w} y={y0 - h - 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.redDark}>the pre-dawn surge</text>}
+    </g>
+  );
+};
+
+/** Night brain: the rational front-brain is asleep while the fear centre runs free. */
+const NightBrain: React.FC = () => {
+  const frame = useCurrentFrame();
+  const alarm = 0.5 + 0.4 * Math.abs(Math.sin(frame / 7));
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  return (
+    <g>
+      {/* prefrontal — OFF */}
+      <g transform={`translate(${cx - 220} ${cy})`}>
+        <rect x={-180} y={-150} width={360} height={300} rx={28} fill={COLORS.ledGrey} opacity={0.5} {...xl} />
+        <text x={0} y={-30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>RATIONAL</text>
+        <text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.outline}>(front brain)</text>
+        <text x={110} y={110} fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.lavenderDark}>z</text>
+        <text x={60} y={90} fontFamily={fontFamily} fontWeight={800} fontSize={56} fill={COLORS.lavenderDark}>Z</text>
+        <text x={0} y={120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.redDark}>OFFLINE</text>
+      </g>
+      {/* amygdala — ON */}
+      <g transform={`translate(${cx + 220} ${cy})`}>
+        <rect x={-180} y={-150} width={360} height={300} rx={28} fill={COLORS.red} opacity={alarm} {...xl} />
+        <text x={0} y={-20} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.white}>FEAR</text>
+        <text x={0} y={24} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.white}>(amygdala)</text>
+        <text x={0} y={120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.white}>WIDE AWAKE</text>
+      </g>
+      <text x={cx} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>no brakes, all alarm</text>
+    </g>
+  );
+};
+
+/** Molehill by day, mountain by night — the same problem, two sizes. */
+const MolehillMountain: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.62;
+  return (
+    <g>
+      {/* day side */}
+      <g opacity={0.9}>
+        <circle cx={cx - 280} cy={240} r={44} fill={COLORS.yellow} {...lg} />
+        <path d={`M ${cx - 420} ${cy} Q ${cx - 280} ${cy - 60} ${cx - 140} ${cy} Z`} fill={COLORS.greenLeaf} {...xl} />
+        <text x={cx - 280} y={cy + 60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={36} fill={COLORS.outline}>9 a.m.</text>
+        <text x={cx - 280} y={cy - 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={28} fill={COLORS.greenDark}>a molehill</text>
+      </g>
+      {/* night side */}
+      <g>
+        <circle cx={cx + 300} cy={100} r={40} fill={COLORS.yellowSoft} {...lg} />
+        <path d={`M ${cx + 100} ${cy} L ${cx + 280} ${cy - 360} L ${cx + 320} ${cy - 360} L ${cx + 500} ${cy} Z`} fill={COLORS.purpleDeep} {...xl} />
+        <path d={`M ${cx + 270} ${cy - 290} l 30 -40 l 30 40 Z`} fill={COLORS.white} />
+        <text x={cx + 300} y={cy + 60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={36} fill={COLORS.outline}>3 a.m.</text>
+        <text x={cx + 300} y={cy - 390} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.redDark}>a MOUNTAIN</text>
+      </g>
+      <line x1={cx} y1={120} x2={cx} y2={cy + 40} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="4 14" opacity={0.4} />
+      <text x={cx} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>same problem</text>
+    </g>
+  );
+};
+
+/** Dawn vs dark: the identical worry, catastrophic at 3am, manageable by morning. */
+const DawnVsDark: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const w = 420; const h = 440; const y0 = 250;
+  const Panel: React.FC<{ x: number; label: string; bg: string; size: number; tone: string; cap: string }> = ({ x, label, bg, size, tone, cap }) => (
+    <g>
+      <rect x={x} y={y0} width={w} height={h} rx={24} fill={bg} {...xl} />
+      <text x={x + w / 2} y={y0 - 24} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={46} fill={COLORS.outline}>{label}</text>
+      <g transform={`translate(${x + w / 2} ${y0 + h / 2 + 20}) scale(${size})`}>
+        <circle r={60} fill={tone} {...xl} /><path d="M -22 -24 L 22 24 M 22 -24 L -22 24" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      </g>
+      <text x={x + w / 2} y={y0 + h - 30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={tone === COLORS.red ? COLORS.redDark : COLORS.greenDark}>{cap}</text>
+    </g>
+  );
+  return (
+    <g>
+      <Panel x={cx - w - 30} label="3 A.M." bg={COLORS.purpleDeep} size={1.4} tone={COLORS.red} cap="the end of the world" />
+      <Panel x={cx + 30} label="9 A.M." bg={COLORS.yellowSoft} size={0.6} tone={COLORS.greenLeaf} cap="eh, I'll handle it" />
+      <text x={cx} y={y0 + h + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>wait for the sun</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1627,6 +1747,11 @@ export const DiagramCard: React.FC<{
     'trigger-loop': COLORS.sky,
     'two-lives': COLORS.lavender,
     'absorption-scale': COLORS.pink,
+    'circadian-low': COLORS.blueDiagram,
+    'cortisol-curve': COLORS.red,
+    'night-brain': COLORS.red,
+    'molehill-mountain': COLORS.purpleDeep,
+    'dawn-vs-dark': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -1690,6 +1815,11 @@ export const DiagramCard: React.FC<{
         {diagram === 'trigger-loop' && <TriggerLoop />}
         {diagram === 'two-lives' && <TwoLives />}
         {diagram === 'absorption-scale' && <AbsorptionScale />}
+        {diagram === 'circadian-low' && <CircadianLow />}
+        {diagram === 'cortisol-curve' && <CortisolCurve />}
+        {diagram === 'night-brain' && <NightBrain />}
+        {diagram === 'molehill-mountain' && <MolehillMountain />}
+        {diagram === 'dawn-vs-dark' && <DawnVsDark />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

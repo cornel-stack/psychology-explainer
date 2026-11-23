@@ -56,7 +56,11 @@ export type RoomName =
   | 'inner-theater'
   | 'daydream-realm'
   | 'pacing-room'
-  | 'bus-window';
+  | 'bus-window'
+  | 'witching-bedroom'
+  | 'night-street'
+  | 'brain-nightshift'
+  | 'dawn-window';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -1575,6 +1579,157 @@ export const BusWindow: React.FC = () => {
   );
 };
 
+/** Witching bedroom: the specific dread of 3 a.m. — a huge low moon, a glowing
+ *  3:00 clock, long shadows creeping up the wall. */
+export const WitchingBedroom: React.FC = () => {
+  const f = useCurrentFrame();
+  const glow = 0.7 + 0.2 * Math.sin(f / 6);
+  return (
+    <g>
+      <WallFloor wall={shade(COLORS.purpleDeep, 0.08)} floor={shade(COLORS.purpleDeep, 0.28)} floorY={840} stripe={false} />
+      {Array.from({ length: 24 }).map((_, i) => (
+        <rect key={i} x={i * 84} y={0} width={42} height={600} fill={shade(COLORS.purpleDeep, -0.06)} opacity={0.5} />
+      ))}
+      <rect x={0} y={600} width={CANVAS.width} height={240} fill={shade(COLORS.purpleDeep, 0.14)} />
+      {/* window with a huge low moon */}
+      <g transform="translate(360 320)">
+        <rect x={-170} y={-170} width={340} height={360} rx={14} fill={COLORS.wallNight} {...xl} />
+        <circle cx={40} cy={40} r={96} fill={COLORS.yellowSoft} opacity={0.9} />
+        {[[-70, -70], [90, -110], [-110, 80], [60, 140]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={4} fill={COLORS.white} opacity={0.8} />)}
+        <line x1={0} y1={-170} x2={0} y2={190} {...std} />
+        <line x1={-170} y1={10} x2={170} y2={10} {...std} />
+      </g>
+      {/* long creeping shadow on the wall */}
+      <path d="M 900 1080 L 1020 300 L 1120 300 L 1160 1080 Z" fill={shade(COLORS.purpleDeep, -0.2)} opacity={0.4} />
+      {/* framed picture (slightly crooked, uneasy) */}
+      <g transform="translate(1180 300) rotate(-4)"><FramedPicture /></g>
+      {/* nightstand + glowing 3:00 clock */}
+      <g transform="translate(1540 700)">
+        <rect x={-110} y={60} width={220} height={180} rx={14} fill={COLORS.woodDark} {...xl} />
+        <ellipse cx={0} cy={0} rx={150} ry={70} fill={COLORS.red} opacity={0.16 * glow} />
+        <rect x={-96} y={-44} width={192} height={92} rx={14} fill={COLORS.shirtDarker} {...lg} />
+        <text x={0} y={30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={72} fill={COLORS.red} opacity={glow}>3:00</text>
+      </g>
+      {/* bed */}
+      <g transform="translate(760 740)">
+        <rect x={-320} y={-30} width={640} height={190} rx={28} fill={shade(COLORS.lavender, 0.34)} {...xl} />
+        <rect x={-320} y={-110} width={200} height={120} rx={28} fill={shade(COLORS.lavender, 0.28)} {...xl} />
+        <rect x={-300} y={-70} width={140} height={60} rx={20} fill={COLORS.whiteShade} opacity={0.4} {...std} />
+        <rect x={-150} y={-10} width={460} height={140} rx={22} fill={shade(COLORS.sky, 0.34)} {...std} />
+      </g>
+    </g>
+  );
+};
+
+/** Night street: a deserted small-hours street — dark buildings, one streetlight,
+ *  an empty road, a parked car, a low moon and a little ground fog. */
+export const NightStreet: React.FC = () => {
+  const f = useCurrentFrame();
+  const flick = 0.8 + 0.1 * Math.sin(f / 8);
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+      <rect x={0} y={0} width={CANVAS.width} height={560} fill={COLORS.wallNight} />
+      <circle cx={960} cy={200} r={80} fill={COLORS.yellowSoft} opacity={0.85} />
+      {[[200, 120], [560, 90], [1360, 150], [1700, 100]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={4} fill={COLORS.white} opacity={0.8} />)}
+      {/* building silhouettes with mostly-dark windows */}
+      {[[20, 360, 260, 300], [300, 300, 220, 360], [1380, 320, 240, 340], [1640, 280, 260, 380]].map(([x, y, w, h], i) => (
+        <g key={i}>
+          <rect x={x} y={y} width={w} height={h} fill={shade(COLORS.purpleDeep, 0.22)} />
+          {Array.from({ length: 6 }).map((_, k) => <rect key={k} x={x + 24 + (k % 2) * 90} y={y + 30 + Math.floor(k / 2) * 80} width={44} height={50} rx={5} fill={(i + k) === 3 ? COLORS.yellow : shade(COLORS.purpleDeep, 0.05)} opacity={0.85} />)}
+        </g>
+      ))}
+      {/* road */}
+      <rect x={0} y={760} width={CANVAS.width} height={CANVAS.height - 760} fill={shade(COLORS.purpleDeep, 0.3)} />
+      {[300, 700, 1100, 1500].map((x, i) => <rect key={i} x={x} y={900} width={100} height={18} rx={8} fill={COLORS.yellow} opacity={0.4} />)}
+      {/* lone streetlight */}
+      <g transform="translate(560 540)">
+        <rect x={-12} y={0} width={24} height={260} rx={10} fill={COLORS.shirtDark} {...lg} />
+        <rect x={-50} y={-30} width={100} height={44} rx={14} fill={COLORS.shirtDark} {...xl} />
+        <rect x={-38} y={-20} width={76} height={26} rx={10} fill={COLORS.yellow} opacity={flick} />
+        <path d="M -38 6 L -130 280 L 130 280 L 38 6 Z" fill={COLORS.yellowSoft} opacity={0.12 * flick} />
+      </g>
+      {/* a parked car */}
+      <g transform="translate(1300 820)">
+        <path d="M -160 20 L -120 -50 L 120 -50 L 160 20 Z" fill={COLORS.red} {...xl} />
+        <rect x={-170} y={20} width={340} height={70} rx={20} fill={COLORS.redDark} {...xl} />
+        <rect x={-96} y={-40} width={90} height={54} rx={8} fill={COLORS.wallNight} />
+        <rect x={10} y={-40} width={90} height={54} rx={8} fill={COLORS.wallNight} />
+        <circle cx={-100} cy={92} r={34} fill={COLORS.shirtDark} {...lg} />
+        <circle cx={100} cy={92} r={34} fill={COLORS.shirtDark} {...lg} />
+      </g>
+      {/* ground fog */}
+      <ellipse cx={960} cy={1060} rx={1100} ry={120} fill={COLORS.wallNight} opacity={0.4} />
+    </g>
+  );
+};
+
+/** Brain night-shift: the brain as an office building at night — nearly every
+ *  department dark and asleep, except one red "FEAR" floor, wide awake. */
+export const BrainNightshift: React.FC = () => {
+  const f = useCurrentFrame();
+  const glow = 0.6 + 0.3 * Math.abs(Math.sin(f / 7));
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+      <rect x={0} y={0} width={CANVAS.width} height={420} fill={COLORS.wallNight} opacity={0.7} />
+      {[[200, 120], [900, 90], [1500, 160], [1760, 100]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={4} fill={COLORS.white} opacity={0.7} />)}
+      {/* the brain-building, shaped like a brain outline filled with window-rooms */}
+      <g transform="translate(960 560)">
+        <path d="M -380 160 Q -440 -120 -200 -200 Q -120 -320 40 -270 Q 200 -330 300 -200 Q 460 -130 380 60 Q 420 240 220 290 Q 60 380 -90 300 Q -360 300 -380 160 Z" fill={shade(COLORS.pink, 0.1)} {...xl} />
+        {/* grid of office windows, mostly dark */}
+        {Array.from({ length: 5 }).map((_, r) => Array.from({ length: 9 }).map((_, c) => {
+          const x = -320 + c * 78; const y = -170 + r * 90;
+          const fear = r === 2 && (c === 6 || c === 7);
+          return <rect key={`${r}-${c}`} x={x} y={y} width={58} height={66} rx={6} fill={fear ? COLORS.red : shade(COLORS.purpleDeep, -0.02)} opacity={fear ? glow : 0.55} {...sm} />;
+        }))}
+      </g>
+      {/* "FEAR" dept label */}
+      <g transform="translate(1340 580)">
+        <rect x={-70} y={-24} width={140} height={48} rx={10} fill={COLORS.red} {...lg} opacity={glow} />
+        <text x={0} y={12} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.white}>FEAR</text>
+      </g>
+      {/* dark ground */}
+      <rect x={0} y={880} width={CANVAS.width} height={CANVAS.height - 880} fill={shade(COLORS.purpleDeep, 0.2)} />
+    </g>
+  );
+};
+
+/** Dawn window: warm sunrise pouring into a bedroom — the relief of morning. */
+export const DawnWindow: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.pink} floor={COLORS.wood} floorY={820} stripe={false} />
+    {Array.from({ length: 24 }).map((_, i) => (
+      <rect key={i} x={i * 84} y={0} width={42} height={560} fill={shade(COLORS.pink, 0.07)} opacity={0.7} />
+    ))}
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={COLORS.bgCream} />
+    {/* big window with sunrise */}
+    <g transform="translate(1480 330)">
+      <rect x={-200} y={-200} width={400} height={400} rx={16} fill={COLORS.sky} {...xl} />
+      <rect x={-200} y={-200} width={400} height={180} fill={shade(COLORS.sky, -0.06)} />
+      <rect x={-200} y={80} width={400} height={120} fill={COLORS.yellowSoft} opacity={0.6} />
+      <circle cx={0} cy={80} r={80} fill={COLORS.yellow} {...lg} />
+      {Array.from({ length: 8 }).map((_, i) => { const a = (i / 8) * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 96} y1={80 + Math.sin(a) * 96} x2={Math.cos(a) * 130} y2={80 + Math.sin(a) * 130} stroke={COLORS.yellow} strokeWidth={STROKE.lg} strokeLinecap="round" />; })}
+      <path d="M -200 120 Q 0 90 200 120 L 200 200 L -200 200 Z" fill={COLORS.greenLeaf} />
+      <line x1={0} y1={-200} x2={0} y2={200} {...std} />
+      <line x1={-200} y1={0} x2={200} y2={0} {...std} />
+      {/* two little birds */}
+      <path d="M -120 -120 q 14 -12 28 0 q 14 -12 28 0" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+    </g>
+    {/* warm light pool on the floor */}
+    <ellipse cx={1100} cy={900} rx={520} ry={120} fill={COLORS.yellowSoft} opacity={0.3} />
+    {/* bed with a relieved sleeper spot */}
+    <g transform="translate(640 740)">
+      <rect x={-320} y={-30} width={640} height={180} rx={28} fill={COLORS.lavender} {...xl} />
+      <rect x={-320} y={-110} width={200} height={120} rx={28} fill={COLORS.lavender} {...xl} />
+      <rect x={-300} y={-70} width={140} height={60} rx={20} fill={COLORS.white} {...std} />
+      <rect x={-150} y={-10} width={460} height={130} rx={22} fill={COLORS.sky} {...std} />
+    </g>
+    {/* potted plant */}
+    <g transform="translate(120 660)"><path d="M 0 -20 Q -50 -110 -16 -160 Q 6 -110 0 -20 Z" fill={COLORS.greenLeaf} {...lg} /><path d="M 0 -20 Q 50 -120 20 -172 Q -4 -110 0 -20 Z" fill={COLORS.greenLeaf} {...lg} /><path d="M -56 0 L 56 0 L 40 110 L -40 110 Z" fill={COLORS.wood} {...xl} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -1616,6 +1771,10 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'daydream-realm': DaydreamRealm,
   'pacing-room': PacingRoom,
   'bus-window': BusWindow,
+  'witching-bedroom': WitchingBedroom,
+  'night-street': NightStreet,
+  'brain-nightshift': BrainNightshift,
+  'dawn-window': DawnWindow,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

@@ -38,7 +38,7 @@ Glitches.
 9. 🟡 Every Sleep Glitch You Might Experience — *built (`sleep-glitches`), 28 bespoke assets (biggest art set); awaiting CI render*
 10. ✅ Every Cognitive Bias Ruining Your Decisions — *done (`cognitive-biases`)*
 11. 🟡 The Psychology of People Who Imagine Fake Scenarios All Day — *built (`daydreamers`), 22 bespoke assets; awaiting CI render*
-12. ⬜ Why Your Brain Fears 3 AM
+12. 🟡 Why Your Brain Fears 3 AM — *built (`fear-3am`), 22 bespoke assets; awaiting CI render*
 13. ⬜ Every Level of Overthinking Explained
 14. ⬜ Signs Someone Is Secretly Jealous of You
 15. ⬜ Every Mental Complex Explained
@@ -68,7 +68,7 @@ detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 30 Struggle to Make Friends · 31 Keep House Spotless · 32 Prefer Being Alone ·
 33 Who Cheat.
 
-**Why Your Brain (34–41):** 34 Never Stops Thinking 🟡 · 35 Fears 3 AM ·
+**Why Your Brain (34–41):** 34 Never Stops Thinking 🟡 · 35 Fears 3 AM 🟡 ·
 36 Feel Someone Watching · 37 Can't Stop Thinking About Someone · 38 Procrastinates ·
 39 Why We Dream · 40 Feels Foggy · 41 Why You Cry.
 

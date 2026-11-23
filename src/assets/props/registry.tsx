@@ -19,6 +19,7 @@ import * as Rest from './restless';
 import * as Slp from './sleep';
 import * as Hiq from './highiq';
 import * as Dd from './daydream';
+import * as F3 from './fear3am';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -218,6 +219,20 @@ export const PROPS: Record<string, React.FC<any>> = {
   'window-gaze': Dd.WindowGaze,
   'plot-web': Dd.PlotWeb,
   'popcorn-mind': Dd.PopcornMind,
+  // fear-3am props (all new)
+  'clock-3am': F3.Clock3am,
+  'worry-monster': F3.WorryMonster,
+  'cortisol-gauge': F3.CortisolGauge,
+  'amygdala-alarm': F3.AmygdalaAlarm,
+  'prefrontal-asleep': F3.PrefrontalAsleep,
+  'cold-thermometer': F3.ColdThermometer,
+  'silence-ring': F3.SilenceRing,
+  'lone-streetlight': F3.LoneStreetlight,
+  'lonely-window': F3.LonelyWindow,
+  'catastrophe-snowball': F3.CatastropheSnowball,
+  'wolf-howl': F3.WolfHowl,
+  'worry-notebook': F3.WorryNotebook,
+  'sunrise-relief': F3.SunriseRelief,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

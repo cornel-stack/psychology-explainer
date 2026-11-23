@@ -1,0 +1,136 @@
+{
+  "title": "Why Your Brain Fears 3 AM",
+  "slug": "fear-3am",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "You wake at three a.m. for no reason. And within seconds, a tiny worry you'd forgotten by day, an email, a comment, a what-if, has quietly grown into a towering monster that is absolutely certain to ruin your entire life.", "scene": "story", "room": "witching-bedroom", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "WHY YOUR BRAIN FEARS 3 AM", "subtitle": "the biology of small-hours dread",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "scared", "x": 680, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "worry-monster", "x": 1200, "y": 440, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "By nine a.m., that same thought will seem almost laughably small. So what happens in the dark? Here's the good news. It is not a message from your soul. It's chemistry, and a brain running on a skeleton night crew.", "scene": "story", "room": "witching-bedroom", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.46, 1.2] },
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "confused", "x": 680, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "clock-3am", "x": 1200, "y": 420, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "That three a.m. dread feels profoundly, convincingly true. It is almost never telling you the truth. It's just telling you the time.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Tonight, the real reasons your brain turns on you in the small hours, and exactly how to take its power away. Let's switch the light on.", "scene": "explainer", "prop": "clock-3am", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "There's no single villain here. It's a perfect storm of biology, all peaking at once, right around three in the morning. Let's walk through the storm, one layer at a time.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["THE BODY'S LOW", "CORTISOL RISES", "RATIONAL BRAIN OFF", "COLDEST HOUR", "DEAD SILENCE", "ALL ALONE", "MOLEHILL TO MOUNTAIN", "FEAR OF THE DARK", "WAIT FOR DAWN"] }
+      ]
+    },
+    {
+      "name": "1 — The body's low",
+      "beats": [
+        { "vo": "First, the ground floor. Your body runs on a twenty-four-hour clock, and somewhere between three and five a.m., it hits rock bottom. Core temperature, alertness, and mood all sink to their lowest point of the entire day.", "scene": "story", "room": "witching-bedroom", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE BODY'S LOW", "subtitle": "your clock hits rock bottom",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "sleepy", "x": 680, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "clock-3am", "x": 1230, "y": 420, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "Evolution built this low point as the deepest trough of sleep. You were never supposed to be awake and thinking down here. If you are, you're trying to run your mind on a battery that's almost completely flat.", "scene": "diagramCard", "diagram": "circadian-low", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So everything just feels worse, because biologically, you are at your worst. This is the shaky foundation the whole night of dread is built on top of.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And right on top of it, your body pours a dose of pure stress fuel.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "2 — Cortisol rises",
+      "beats": [
+        { "vo": "Cortisol. Your main stress hormone. Here's the cruel timing. In the last hours of sleep, your body ramps cortisol up, on purpose, to prepare you to wake up in the morning. It's meant to be a gentle alarm clock.", "scene": "story", "room": "witching-bedroom", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "CORTISOL RISES", "subtitle": "stress fuel, badly timed",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "scared", "x": 680, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "cortisol-gauge", "x": 1220, "y": 440, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "But if you wake up early, in the middle of that surge, you get all the stress chemistry of a crisis, with absolutely no crisis to use it on. So the body goes looking for one. And a worried mind is always happy to supply it.", "scene": "diagramCard", "diagram": "cortisol-curve", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "That jittery, heart-thumping, something-is-wrong feeling isn't a warning. It's just fuel with nowhere to go, pointed at the first anxious thought it can find.", "scene": "explainer", "prop": "cortisol-gauge", "emotion": "serious-expert" },
+        { "vo": "Normally, you'd have a wise inner voice to talk you down. But at three a.m., that voice has clocked off for the night.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Rational brain off",
+      "beats": [
+        { "vo": "Your rational brain is offline. Think of the mind as an office. By day, the sensible manager up front, the prefrontal cortex, keeps the panicky intern in the back room calm and in check.", "scene": "story", "room": "brain-nightshift", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "RATIONAL BRAIN OFF", "subtitle": "the manager has gone home",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 600, "y": 660, "scale": 1.1, "talking": true } ],
+          "props": [ { "name": "amygdala-alarm", "x": 1200, "y": 760, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "At night, the manager goes home. The prefrontal cortex powers down for sleep, while the brain's fear centre, the amygdala, stays wide awake, and with nobody to supervise it, gets even louder than usual.", "scene": "diagramCard", "diagram": "night-brain", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So you have a maximum fear signal, and a minimum ability to reason with it. Every thought arrives raw, catastrophic, and completely unchallenged. It's all alarm, and no brakes.", "scene": "explainer", "prop": "prefrontal-asleep", "emotion": "serious-expert" },
+        { "vo": "And that defenceless, groggy brain is sitting inside a body that's chemically begging to stay asleep.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Coldest hour",
+      "beats": [
+        { "vo": "You're at your coldest, foggiest, and bleakest. Down at the circadian low, your body temperature has dropped, and melatonin, the sleep hormone, is still flooding your system.", "scene": "story", "room": "witching-bedroom", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "COLDEST HOUR", "subtitle": "chemically primed for gloom",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "sleepy", "x": 680, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "cold-thermometer", "x": 1230, "y": 440, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "Your whole system is chemically set up for one job, sleep, and is deeply unequipped for another, calm, balanced thinking. So your thoughts don't just feel scary. They feel heavy, hopeless, and grey.", "scene": "explainer", "prop": "cold-thermometer", "emotion": "serious-expert" },
+        { "vo": "This is why problems feel genuinely unsolvable at three a.m. You're not seeing them clearly. You're seeing them through a thick fog of sleep chemistry.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And in that fog, there is nothing, at all, to distract you.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "5 — Dead silence",
+      "beats": [
+        { "vo": "The silence is deafening. By day, your worries have to compete with a thousand things, work, people, traffic, your phone. At three a.m., every one of those distractions is gone.", "scene": "story", "room": "witching-bedroom", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "DEAD SILENCE", "subtitle": "nothing to drown it out",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "scared", "x": 680, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "silence-ring", "x": 1230, "y": 440, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "In total darkness and total silence, your anxious thoughts get the entire stage, with a spotlight, and a microphone. There is simply nothing left to drown them out, so they echo.", "scene": "explainer", "prop": "silence-ring", "emotion": "serious-expert" },
+        { "vo": "A worry that would be background noise at noon becomes the only sound in the universe at three. The quiet doesn't calm the mind. It amplifies it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And in all that silence, a very old, very lonely feeling creeps in.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — All alone",
+      "beats": [
+        { "vo": "You feel like the only person awake on Earth. Everyone you know is asleep. The streets are empty. There's no one to call, no one to reassure you, nothing to do but lie there, alone with the monster.", "scene": "story", "room": "night-street", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "ALL ALONE", "subtitle": "the only one awake",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "lonely-window", "x": 1200, "y": 480, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "That isolation makes everything feel heavier. Humans are wired to feel safer together, so being the lone sentinel awake in the dark flips on an ancient sense of vulnerability.", "scene": "explainer", "prop": "lone-streetlight", "emotion": "serious-expert" },
+        { "vo": "But here's a secret worth holding onto. Millions of other people are lying awake at this exact moment, feeling exactly the same way. The three a.m. club is enormous. It just never meets.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "Alone, unsupervised, and fuelled, the mind now does its most dramatic trick of all.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "7 — Molehill to mountain",
+      "beats": [
+        { "vo": "It turns molehills into mountains. With no rational manager to keep perspective, the mind catastrophizes. One small worry snowballs, link by link, into a chain of total disaster.", "scene": "story", "room": "witching-bedroom", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "MOLEHILL TO MOUNTAIN", "subtitle": "catastrophe, link by link",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "terrified", "x": 680, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "catastrophe-snowball", "x": 1220, "y": 440, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "A slightly awkward text becomes, they hate me, becomes, I'll be fired, becomes, I'll end up alone and broke. It's the exact same molehill you'd step over by day. The dark just makes it a mountain.", "scene": "diagramCard", "diagram": "molehill-mountain", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "The feeling of certainty is the trap. It feels like three a.m. is finally showing you the terrifying truth. It isn't. It's just showing you your fears with all the lights turned off.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And underneath all of it sits the oldest fear of them all.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "8 — Fear of the dark",
+      "beats": [
+        { "vo": "A primal fear of the dark. For almost all of human history, the night was genuinely dangerous. Predators hunted, enemies crept, and you could not see them coming. The dark meant death.", "scene": "story", "room": "night-street", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "FEAR OF THE DARK", "subtitle": "the hour of the wolf",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "terrified", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "wolf-howl", "x": 1200, "y": 560, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "So evolution wired us to be hyper-vigilant at night. Jumpy, watchful, and primed to assume the worst. That ancient alarm system is still fully installed, even when the only threat is an unpaid bill.", "scene": "explainer", "prop": "wolf-howl", "emotion": "serious-expert" },
+        { "vo": "Your brain doesn't know it's safe in a locked bedroom. A deep, ancient part of it still thinks it's on watch, listening for the wolf at the edge of the firelight.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "So. Biology has thrown everything it has at you. Here is how you quietly win.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "9 — Wait for dawn",
+      "beats": [
+        { "vo": "The single most powerful move is this. Do not trust, and do not try to solve, anything at three a.m. Your brain is chemically incapable of good judgment right now. So just refuse to hold the meeting.", "scene": "story", "room": "dawn-window", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "WAIT FOR DAWN", "subtitle": "don't trust the 3 a.m. brain",
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "worry-notebook", "x": 1200, "y": 500, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "Tell yourself, plainly, this is just the hour, not the truth. If a worry won't leave, write it down, and promise to deal with it in daylight. You're not ignoring it. You're booking it an appointment with a brain that actually works.", "scene": "diagramCard", "diagram": "dawn-vs-dark", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Don't stare at the clock. If you're wired, get up, keep the lights low, and do something calm and boring until sleep sneaks back. Whatever you do, don't fight it with a screen.", "scene": "explainer", "prop": "worry-notebook", "emotion": "serious-expert" },
+        { "vo": "Because the one thing that is always, reliably true, is that the sun comes up. And the monster that felt so real never, ever survives the morning.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So the next time you jolt awake at three a.m. with your heart pounding, try to remember the whole stack. Rock-bottom body clock, a cortisol surge, the manager asleep, total silence, and an ancient fear of the dark.", "scene": "explainer", "prop": "sunrise-relief", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "None of it is prophecy. It's just a tired, frightened brain, doing exactly what biology built it to do. Your only job is to not believe a single word it says until the sun is up.", "scene": "story", "room": "dawn-window", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "sunrise-relief", "x": 1180, "y": 560, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "So, what does your brain torment you about at three a.m.? Tell me in the comments, you are in enormous, sleepless company. And send this to someone who could use it, tonight, at exactly the wrong hour.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and get some sleep. I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}
