@@ -186,6 +186,9 @@ const ROOM_DEMO: Record<string, { pose: any; emotion: any; props?: any[] }> = {
   gym: { pose: 'arms-out-presenting', emotion: 'excited', props: [{ name: 'dumbbell', x: 1180, y: 760, scale: 1.1 }] },
   'art-studio': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'easel', x: 1200, y: 560, scale: 0.9 }] },
   'theater-stage': { pose: 'wave', emotion: 'excited', props: [{ name: 'comedy-mask', x: 1300, y: 460, scale: 1.0 }] },
+  nursery: { pose: 'sitting-up-in-bed', emotion: 'happy-talk', props: [{ name: 'toy-blocks', x: 1050, y: 760, scale: 0.9 }] },
+  'date-restaurant': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'wine-glasses', x: 1180, y: 600, scale: 0.9 }] },
+  'park-bench': { pose: 'wave', emotion: 'neutral', props: [{ name: 'anchor', x: 1240, y: 600, scale: 0.9 }] },
 };
 
 export const RoomStill: React.FC<{ room: RoomName }> = ({ room }) => {

@@ -199,7 +199,11 @@ export const Mascot: React.FC<MascotProps> = ({
   return (
     <div style={{ position: 'absolute', left: x, top: y, transform: `translate(-50%, -50%) scale(${scale})`, transformOrigin: 'center' }}>
       <svg width={620} height={820} viewBox="-310 -340 620 820" style={{ overflow: 'visible' }}>
-        <g transform={`scale(${flipT * enterScaleX} ${enterScaleY})`} style={{ transformOrigin: 'center' }}>
+        {/* flip + entrance squash are applied about the art's true geometric centre
+            (0, 70) in user space. Using an explicit translate/scale/translate keeps
+            this deterministic — a CSS transform-origin here resolves against the SVG
+            viewport and shoves flipped mascots ~620px off their x. */}
+        <g transform={`translate(0 70) scale(${flipT * enterScaleX} ${enterScaleY}) translate(0 -70)`}>
           {body}
         </g>
       </svg>

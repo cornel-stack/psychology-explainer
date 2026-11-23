@@ -160,6 +160,14 @@ room with props/`fg`), `explainer` (host + one prop), `statCard`, `diagramCard`,
 - **Unknown emotion** → there's no "sad"; use the 10 in §3.
 - **Hands at the face vanish** → head renders over arms; use an overlay or edge-hands.
 - **Key prop hidden** → title card covers the lower third on chapterStart beats.
+- **Flipped 2nd characters** (`flip:true`) now position correctly — `Mascot.tsx`
+  mirrors about the art's true centre via an explicit `translate/scale/translate`.
+  (A prior CSS `transform-origin:'center'` shoved every flipped mascot ~620px off
+  its `x`, off the right edge — fixed Nov 2026. Verify flipped chars with a
+  **MainVideo** still, not `BeatStill`, if you ever touch that transform.)
+- **QA stills:** prefer `MainVideo` (fabricate a `renders/<slug>.props.json` with
+  uniform `frames` + any existing `sfx/*.mp3` as `audio`) over `BeatStill` — they
+  should match, but MainVideo is the source of truth for the final render.
 - **Renders must run in CI** (public repo `cornel-stack/psychology-explainer`).
   Local render is a fallback only.
 

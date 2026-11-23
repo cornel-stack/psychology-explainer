@@ -1,0 +1,550 @@
+{
+  "slug": "attachment-styles",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 17,
+    "NEW": 30
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        6,
+        7,
+        11,
+        12,
+        16,
+        17,
+        21,
+        22,
+        26,
+        27,
+        31,
+        32,
+        36,
+        37,
+        40,
+        41,
+        44,
+        45,
+        49,
+        50,
+        55
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        0,
+        6,
+        11,
+        12,
+        21,
+        27,
+        31,
+        32,
+        44,
+        55
+      ]
+    },
+    {
+      "name": "attachment-grid",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        14,
+        19,
+        24,
+        29
+      ]
+    },
+    {
+      "name": "chase-cycle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        47
+      ]
+    },
+    {
+      "name": "push-pull",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        34
+      ]
+    },
+    {
+      "name": "secure-base",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "then-now",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        52
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        31,
+        32,
+        36,
+        37
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        21,
+        26,
+        27,
+        30,
+        45
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        15,
+        44,
+        50,
+        53,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        10,
+        12,
+        22,
+        32,
+        35,
+        40,
+        41,
+        43,
+        48,
+        49
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        2,
+        7,
+        16,
+        17,
+        18,
+        20,
+        27,
+        31,
+        32,
+        39
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        8,
+        9,
+        13,
+        14,
+        19,
+        23,
+        24,
+        25,
+        28,
+        29,
+        33,
+        34,
+        38,
+        42,
+        46,
+        47,
+        51,
+        52,
+        54
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        0,
+        21,
+        22,
+        31,
+        40
+      ]
+    },
+    {
+      "name": "fist-up",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        11,
+        12,
+        16,
+        17,
+        21,
+        27,
+        41,
+        44,
+        45,
+        49,
+        55
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        12,
+        31,
+        32,
+        37,
+        50
+      ]
+    },
+    {
+      "name": "reach-down",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        6,
+        7,
+        26,
+        27
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "walking",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "anchor",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        13,
+        50,
+        51,
+        54
+      ]
+    },
+    {
+      "name": "book-stack",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        49
+      ]
+    },
+    {
+      "name": "brick-wall",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21,
+        40,
+        42
+      ]
+    },
+    {
+      "name": "broken-heart",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        28
+      ]
+    },
+    {
+      "name": "door",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8,
+        32
+      ]
+    },
+    {
+      "name": "heart",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        1,
+        11,
+        55
+      ]
+    },
+    {
+      "name": "love-note",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        50,
+        55
+      ]
+    },
+    {
+      "name": "magnifying-glass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "megaphone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        37
+      ]
+    },
+    {
+      "name": "phone-unread",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        16,
+        31,
+        36,
+        37,
+        38,
+        45
+      ]
+    },
+    {
+      "name": "red-flag",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "relationship-thermometer",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        33
+      ]
+    },
+    {
+      "name": "speech-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        7,
+        12,
+        21,
+        26,
+        36,
+        49
+      ]
+    },
+    {
+      "name": "suitcase",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        41
+      ]
+    },
+    {
+      "name": "teddy-bear",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "thought-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        16,
+        41,
+        45
+      ]
+    },
+    {
+      "name": "toy-blocks",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "turtle-shell",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        23,
+        40
+      ]
+    },
+    {
+      "name": "wine-glasses",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        44,
+        46
+      ]
+    },
+    {
+      "name": "date-restaurant",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        44
+      ]
+    },
+    {
+      "name": "living-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        16,
+        17,
+        21,
+        26,
+        27,
+        31,
+        32,
+        36,
+        37,
+        45
+      ]
+    },
+    {
+      "name": "nursery",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "office",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        22,
+        40,
+        41
+      ]
+    },
+    {
+      "name": "park-bench",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        11,
+        12,
+        55
+      ]
+    },
+    {
+      "name": "therapist-office",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        49,
+        50
+      ]
+    }
+  ]
+}

@@ -13,8 +13,8 @@ import { NewPropsSheet, BiasPropsSheet, DefensePropsSheet, StoryPropsSheet, Pose
 import { DiagramCard } from './scenes/DiagramCard';
 import { Thumbnail, THUMBS_BY_SLUG } from './dev/Thumbnail';
 
-const NEW_ROOMS = ['balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall', 'store-aisle', 'casino', 'office', 'therapist-office', 'basement', 'gym', 'art-studio', 'theater-stage'] as const;
-const NEW_DIAGRAMS = ['signal-race', 'overflow-meter', 'two-gates', 'then-now', 'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip', 'defense-shield', 'iceberg', 'maturity-ladder', 'redirect-arrow', 'pressure-valve'] as const;
+const NEW_ROOMS = ['balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall', 'store-aisle', 'casino', 'office', 'therapist-office', 'basement', 'gym', 'art-studio', 'theater-stage', 'nursery', 'date-restaurant', 'park-bench'] as const;
+const NEW_DIAGRAMS = ['signal-race', 'overflow-meter', 'two-gates', 'then-now', 'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip', 'defense-shield', 'iceberg', 'maturity-ladder', 'redirect-arrow', 'pressure-valve', 'attachment-grid', 'secure-base', 'push-pull', 'chase-cycle'] as const;
 
 // Each template still is a SceneRouter wrapped at canvas size.
 const TEMPLATE_STILLS: { id: string; beat: keyof typeof SAMPLE_BEATS; dur: number }[] = [

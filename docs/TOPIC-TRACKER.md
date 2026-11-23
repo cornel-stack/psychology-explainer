@@ -20,7 +20,10 @@ a multi-million <6mo video still holding the query.
 | 3 | `defense-mechanisms` | Every Psychological Defense Mechanism Explained | ✅ | **Remade** with literal story staging (2nd character, 25 new assets, words on screen, story spine). This remake set the current art standard — see the Playbook §2. |
 | — | `hypnic-jerk` | (Phase 3 TTS/pipeline test chapter — not a published video) | ✅ | Scaffolding only. |
 
-**Next up in the suggested order: #4 Every Attachment Style Explained.**
+**In progress: #8 Every Attachment Style Explained (`attachment-styles`)** — scripted,
+art built, local gates green; adapted to the topic's real structure (4 styles +
+sourced dynamics, not 15 invented styles). Next clean pick after it ships: #19 IQ
+or #5 Manipulation Tactics.
 
 ## Suggested first-15 build order (from the Overview sheet)
 1. ✅ Every Feeling You Can't Name, Explained — *done (`unnamed-feelings`)*
@@ -30,7 +33,7 @@ a multi-million <6mo video still holding the query.
 5. ⬜ Why Your Brain Never Stops Thinking (and the Off Switch)
 6. ⬜ Every Manipulation Tactic Explained — So Nobody Can Use Them on You
 7. ⬜ The Psychology of People With a High IQ
-8. ⬜ **Every Attachment Style Explained** ← next
+8. 🟡 **Every Attachment Style Explained** — *built (`attachment-styles`), awaiting CI render*
 9. ⬜ Every Sleep Glitch You Might Experience
 10. ✅ Every Cognitive Bias Ruining Your Decisions — *done (`cognitive-biases`)*
 11. ⬜ The Psychology of People Who Imagine Fake Scenarios All Day
@@ -48,7 +51,7 @@ All ⬜ except the three shipped above. Pull full evidence/proof-video/competiti
 detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 
 **Every X (1–18):** 1 Feelings ✅ · 2 Cognitive Bias ✅ · 3 Defense Mechanisms ✅ ·
-4 Attachment Styles · 5 Manipulation Tactics · 6 Personality Types (16) ·
+4 Attachment Styles 🟡 · 5 Manipulation Tactics · 6 Personality Types (16) ·
 7 Types of Intelligence · 8 Logical Fallacies · 9 Mental Complexes ·
 10 Habits That Reveal High Intelligence · 11 Types of Toxic Person ·
 12 Types of Couple · 13 Types of Friend · 14 Psychological Experiments ·

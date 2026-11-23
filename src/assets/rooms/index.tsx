@@ -33,7 +33,10 @@ export type RoomName =
   | 'basement'
   | 'gym'
   | 'art-studio'
-  | 'theater-stage';
+  | 'theater-stage'
+  | 'nursery'
+  | 'date-restaurant'
+  | 'park-bench';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -532,6 +535,158 @@ export const TheaterStage: React.FC = () => (
   </g>
 );
 
+/** Nursery: pastel wall, alphabet frieze, crib with a mobile, toy cubbies, rug.
+ *  The set for the Strange Situation (where attachment first forms). */
+export const Nursery: React.FC = () => {
+  const f = useCurrentFrame();
+  const sway = Math.sin(f / 18) * 4;
+  return (
+    <g>
+      <WallFloor wall={COLORS.lavender} floor={COLORS.wood} floorY={820} stripe={false} />
+      {/* polka-dot upper wall */}
+      {Array.from({ length: 7 }).map((_, r) =>
+        Array.from({ length: 13 }).map((_, c) => (
+          <circle key={`${r}-${c}`} cx={80 + c * 150 + (r % 2) * 75} cy={80 + r * 78} r={12} fill={shade(COLORS.lavender, 0.12)} />
+        )),
+      )}
+      {/* alphabet frieze band */}
+      <rect x={0} y={470} width={CANVAS.width} height={80} fill={COLORS.bgCream} />
+      <rect x={0} y={470} width={CANVAS.width} height={12} fill={shade(COLORS.wood, 0.1)} />
+      {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'].map((ch, i) => (
+        <text key={i} x={70 + i * 135} y={532} fontFamily="Baloo 2" fontWeight={800} fontSize={44} fill={[COLORS.red, COLORS.sky, COLORS.greenLeaf, COLORS.yellowDark][i % 4]}>
+          {ch}
+        </text>
+      ))}
+      {/* window with day sky */}
+      <g transform="translate(300 200)"><WindowDay /></g>
+      {/* rug */}
+      <ellipse cx={820} cy={960} rx={620} ry={110} fill={COLORS.pink} opacity={0.35} />
+      {/* crib with bars + mobile */}
+      <g transform="translate(1480 600)">
+        {/* mobile */}
+        <g transform={`rotate(${sway})`} style={{ transformOrigin: '0px -200px' }}>
+          <line x1={0} y1={-260} x2={0} y2={-200} {...sm} />
+          <path d="M -90 -200 Q 0 -230 90 -200" fill="none" {...std} />
+          {[-90, 0, 90].map((x, i) => (
+            <g key={i}>
+              <line x1={x} y1={-200} x2={x} y2={-160} {...sm} />
+              <circle cx={x} cy={-146} r={22} fill={[COLORS.yellow, COLORS.pink, COLORS.sky][i]} {...sm} />
+            </g>
+          ))}
+        </g>
+        <rect x={-180} y={-60} width={360} height={240} rx={18} fill={COLORS.sky} {...xl} />
+        <rect x={-180} y={-60} width={360} height={40} rx={14} fill={shade(COLORS.sky, 0.14)} />
+        {Array.from({ length: 9 }).map((_, i) => (
+          <line key={i} x1={-150 + i * 38} y1={-20} x2={-150 + i * 38} y2={150} {...sm} />
+        ))}
+        <rect x={-180} y={150} width={360} height={30} rx={10} fill={COLORS.woodDark} {...lg} />
+      </g>
+      {/* toy cubby shelf */}
+      <g transform="translate(300 700)">
+        <rect x={-150} y={-120} width={300} height={220} rx={12} fill={COLORS.woodDark} {...xl} />
+        {[[-74, -58, COLORS.red], [74, -58, COLORS.greenLeaf], [-74, 44, COLORS.yellow], [74, 44, COLORS.pink]].map(([x, y, c], i) => (
+          <g key={i}>
+            <rect x={(x as number) - 60} y={(y as number) - 44} width={120} height={92} rx={8} fill={shade(COLORS.wood, 0.1)} />
+            <circle cx={x as number} cy={y as number} r={30} fill={c as string} {...sm} />
+          </g>
+        ))}
+      </g>
+    </g>
+  );
+};
+
+/** A warm candle-lit restaurant: pendant lamps, booth, a set table, night window.
+ *  Where adult attachment plays out — the date. */
+export const DateRestaurant: React.FC = () => {
+  const f = useCurrentFrame();
+  const flick = 0.8 + 0.2 * Math.sin(f / 5);
+  return (
+    <g>
+      <WallFloor wall={COLORS.wallNight} floor={COLORS.woodDark} floorY={860} stripe={false} />
+      {/* wood-panel wainscot */}
+      <rect x={0} y={560} width={CANVAS.width} height={300} fill={shade(COLORS.wallNight, 0.18)} />
+      <rect x={0} y={560} width={CANVAS.width} height={16} fill={COLORS.woodDark} />
+      {Array.from({ length: 12 }).map((_, i) => (
+        <rect key={i} x={40 + i * 160} y={596} width={120} height={230} rx={8} fill="none" stroke={shade(COLORS.wallNight, 0.28)} strokeWidth={STROKE.sm} />
+      ))}
+      {/* night-city window on the left */}
+      <g transform="translate(300 260)"><WindowNight /></g>
+      {/* framed picture on the right */}
+      <g transform="translate(1500 300)"><FramedPicture /></g>
+      {/* two pendant lamps with warm glow pools */}
+      {[680, 1240].map((x, i) => (
+        <g key={i}>
+          <line x1={x} y1={0} x2={x} y2={150} {...sm} />
+          <path d={`M ${x - 54} 220 Q ${x} 130 ${x + 54} 220 Z`} fill={COLORS.shirtDark} {...lg} />
+          <ellipse cx={x} cy={226} rx={48} ry={14} fill={COLORS.yellow} opacity={flick} />
+          <ellipse cx={x} cy={560} rx={190} ry={260} fill={COLORS.yellowSoft} opacity={0.12 * flick} />
+        </g>
+      ))}
+      {/* set table in the center */}
+      <g transform="translate(960 760)">
+        <ellipse cx={0} cy={150} rx={360} ry={70} fill={shade(COLORS.woodDark, 0.2)} opacity={0.5} />
+        <rect x={-300} y={40} width={600} height={120} rx={12} fill={COLORS.white} {...xl} />
+        <path d="M -300 90 Q 0 130 300 90 L 300 160 Q 0 200 -300 160 Z" fill={shade(COLORS.white, 0.08)} />
+        {/* candle */}
+        <rect x={-14} y={-30} width={28} height={70} rx={8} fill={COLORS.pink} {...lg} />
+        <path d="M 0 -30 q -16 -26 0 -46 q 16 20 0 46 Z" fill={COLORS.yellow} {...sm} />
+        <ellipse cx={0} cy={-28} rx={46} ry={14} fill={COLORS.yellowSoft} opacity={0.5} />
+        {/* two plates */}
+        <ellipse cx={-180} cy={74} rx={56} ry={20} fill={COLORS.whiteShade} {...sm} />
+        <ellipse cx={180} cy={74} rx={56} ry={20} fill={COLORS.whiteShade} {...sm} />
+        {/* small vase */}
+        <path d="M 150 36 q 16 -40 44 0 Z" fill={COLORS.sky} {...sm} />
+      </g>
+    </g>
+  );
+};
+
+/** A sunny park: sky, distant hills, a tree, a path and an empty bench, a lamppost.
+ *  A calm outdoor set for the secure / earned-secure beats. */
+export const ParkBench: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.sky} />
+    {/* sun + clouds */}
+    <circle cx={1560} cy={220} r={90} fill={COLORS.yellow} {...lg} />
+    {[[320, 200], [760, 150], [1180, 260]].map(([x, y], i) => (
+      <g key={i}>
+        <ellipse cx={x} cy={y} rx={120} ry={46} fill={COLORS.white} opacity={0.9} />
+        <ellipse cx={x - 60} cy={y + 14} rx={70} ry={38} fill={COLORS.white} opacity={0.9} />
+        <ellipse cx={x + 70} cy={y + 16} rx={74} ry={36} fill={COLORS.white} opacity={0.9} />
+      </g>
+    ))}
+    {/* distant hills */}
+    <path d="M 0 760 Q 480 620 960 740 Q 1440 640 1920 760 L 1920 1080 L 0 1080 Z" fill={COLORS.greenDark} />
+    <rect x={0} y={800} width={CANVAS.width} height={CANVAS.height - 800} fill={COLORS.greenLeaf} />
+    {/* winding path */}
+    <path d="M 760 1080 Q 900 900 960 840 Q 1020 900 1160 1080 Z" fill={COLORS.wood} />
+    {/* tree on the left */}
+    <g transform="translate(300 640)">
+      <rect x={-34} y={0} width={68} height={300} rx={18} fill={COLORS.woodDark} {...xl} />
+      <circle cx={-20} cy={-70} r={150} fill={COLORS.greenLeaf} {...xl} />
+      <circle cx={120} cy={-20} r={110} fill={COLORS.greenLeaf} {...xl} />
+      <circle cx={30} cy={-170} r={120} fill={COLORS.greenLeaf} {...xl} />
+      <circle cx={0} cy={-80} r={120} fill={shade(COLORS.greenLeaf, 0.12)} />
+    </g>
+    {/* lamppost on the right */}
+    <g transform="translate(1600 480)">
+      <rect x={-12} y={0} width={24} height={420} rx={10} fill={COLORS.shirtDark} {...lg} />
+      <rect x={-50} y={-60} width={100} height={70} rx={16} fill={COLORS.yellowSoft} {...lg} />
+      <rect x={-50} y={-60} width={100} height={20} rx={10} fill={COLORS.shirtDark} />
+    </g>
+    {/* park bench in the center */}
+    <g transform="translate(960 820)">
+      <rect x={-260} y={-70} width={520} height={30} rx={14} fill={COLORS.greenTeal} {...xl} />
+      {[-240, -120, 0, 120, 240].map((x, i) => (
+        <rect key={i} x={x - 16} y={-120} width={32} height={60} rx={8} fill={COLORS.greenTeal} {...sm} />
+      ))}
+      <rect x={-260} y={40} width={520} height={26} rx={12} fill={COLORS.greenTeal} {...xl} />
+      <rect x={-230} y={0} width={30} height={120} rx={10} fill={COLORS.woodDark} {...lg} />
+      <rect x={200} y={0} width={30} height={120} rx={10} fill={COLORS.woodDark} {...lg} />
+    </g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -550,6 +705,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   gym: Gym,
   'art-studio': ArtStudio,
   'theater-stage': TheaterStage,
+  nursery: Nursery,
+  'date-restaurant': DateRestaurant,
+  'park-bench': ParkBench,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

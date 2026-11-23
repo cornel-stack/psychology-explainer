@@ -1,0 +1,176 @@
+{
+  "title": "Every Attachment Style Explained (Which One Are You?)",
+  "slug": "attachment-styles",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Two people on the same couch. One keeps inching closer, checking their phone, needing a little more reassurance. The other quietly leans away, and goes silent. Same love. Two completely different ways of handling it.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "ATTACHMENT STYLES", "subtitle": "why we love the way we do",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "scared", "x": 560, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "arms-crossed", "emotion": "annoyed", "x": 1360, "y": 610, "scale": 1.2, "flip": true, "lookDir": "left" } ],
+          "props": [ { "name": "phone-unread", "x": 880, "y": 560, "scale": 0.7, "appearAt": 4 }, { "name": "thought-bubble", "x": 600, "y": 300, "scale": 0.9, "appearAt": 10, "args": { "text": "why so\nquiet?" } } ] },
+        { "vo": "The way you reach for love, or pull back from it, isn't random. It's your attachment style, a pattern set long before you ever dated anyone. And once you see yours, you can't unsee it.", "scene": "story", "room": "living-room", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.46, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "thought-bubble", "x": 780, "y": 300, "scale": 1.0, "appearAt": 8, "args": { "text": "where did\nthis come from?" } }, { "name": "heart", "x": 1240, "y": 420, "scale": 0.8, "appearAt": 16 } ] },
+        { "vo": "Because the same four patterns that show up in a nursery, decades later, show up in your group chat and your relationships.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "Psychologists find that only about half of us are reliably secure. The rest lean anxious, avoidant, or a confusing mix of both.", "scene": "statCard", "value": 50, "suffix": "%", "pictogram": "crowd", "fraction": 0.5, "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Today, the four attachment styles. Where they come from, how each one loves, and the trap two of them fall into. By the end, you'll know exactly which one is yours. Let's go.", "scene": "explainer", "prop": "anchor", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's the whole map. Four styles, plus the dynamics that make them collide. Watch for the ones that feel a little too familiar.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["WHERE IT STARTS", "SECURE", "ANXIOUS", "DISMISSIVE", "FEARFUL", "THE TRAP", "PROTEST", "DEACTIVATE", "HOW THEY LOVE", "CAN YOU CHANGE?"] }
+      ]
+    },
+    {
+      "name": "Where it starts",
+      "beats": [
+        { "vo": "In the nineteen-sixties, psychologist John Bowlby noticed something simple. A baby needs a caregiver not just for food, but as a safe base, someone to run back to when the world gets scary.", "scene": "story", "room": "nursery", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "WHERE IT STARTS", "subtitle": "Bowlby & Ainsworth",
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "happy-talk", "x": 620, "y": 640, "scale": 1.1, "talking": false, "lookDir": "right" }, { "costume": "tee", "pose": "wave", "emotion": "happy-talk", "x": 1360, "y": 610, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "toy-blocks", "x": 900, "y": 780, "scale": 0.8, "appearAt": 4 }, { "name": "teddy-bear", "x": 1120, "y": 770, "scale": 0.8, "appearAt": 8 } ] },
+        { "vo": "His student, Mary Ainsworth, built a now-famous test. Bring a baby and parent into a room, have the parent quietly step out, then come back. How the baby reacts to that reunion reveals the pattern.", "scene": "story", "room": "nursery", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "scared", "x": 600, "y": 640, "scale": 1.15, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "door", "x": 1380, "y": 560, "scale": 1.0, "appearAt": 2 }, { "name": "toy-blocks", "x": 900, "y": 790, "scale": 0.7 }, { "name": "speech-bubble", "x": 680, "y": 300, "scale": 0.85, "appearAt": 8, "args": { "text": "wait—\ncome back!", "tail": "left" } } ] },
+        { "vo": "Secure babies protest when the parent leaves, then settle fast when they return. Others barely react, or cling and stay upset. Those early reunions become a blueprint for closeness.", "scene": "explainer", "prop": "door", "emotion": "serious-expert" },
+        { "vo": "A good-enough caregiver becomes a secure base. The child learns, I can go explore the whole world, because someone reliable will be right here when I come back.", "scene": "diagramCard", "diagram": "secure-base", "labels": ["go explore", "always return"], "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Do that thousands of times, and it wires in deep. Decades later, Hazan and Shaver showed those very patterns running our adult love lives. Let's meet the lucky ones first.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "1 — Secure",
+      "beats": [
+        { "vo": "Secure attachment. Around half of people. They're comfortable getting close, and comfortable being apart. Love doesn't feel like a threat, so they don't have to manage it.", "scene": "story", "room": "park-bench", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "SECURE", "subtitle": "comfortable with closeness",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 580, "y": 640, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1340, "y": 650, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "heart", "x": 960, "y": 380, "scale": 0.9, "appearAt": 6 } ] },
+        { "vo": "Something bothers them? They say it, calmly, and trust it'll be heard. No games, no silent treatment, no spiraling. They can offer reassurance, and accept it right back.", "scene": "story", "room": "park-bench", "emotion": "neutral", "camera": { "zoomTo": [0.5, 0.5, 1.18] },
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "happy-talk", "x": 580, "y": 640, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1340, "y": 650, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "speech-bubble", "x": 640, "y": 320, "scale": 0.85, "appearAt": 6, "args": { "text": "hey, that\nhurt me.", "tail": "left" } } ] },
+        { "vo": "Think of them as an anchor. Steady in a storm, not because they feel nothing, but because closeness doesn't set off an alarm. That's the calm the other three are quietly reaching for.", "scene": "explainer", "prop": "anchor", "emotion": "serious-expert" },
+        { "vo": "On the map, they sit low on both anxiety and avoidance. Not scared of being abandoned, not needing to keep their distance. Right in the calm corner.", "scene": "diagramCard", "diagram": "attachment-grid", "highlight": "secure", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "If that's you, wonderful. But if love feels more like a fire alarm you can't switch off, the next style will feel very familiar.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "2 — Anxious / Preoccupied",
+      "beats": [
+        { "vo": "Anxious attachment, sometimes called preoccupied. The deep fear is simple. They're going to leave, or stop loving me, and I won't see it coming.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "ANXIOUS", "subtitle": "preoccupied: 'are we okay?'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "phone-unread", "x": 1150, "y": 560, "scale": 0.95, "appearAt": 4 }, { "name": "thought-bubble", "x": 700, "y": 300, "scale": 0.9, "appearAt": 10, "args": { "text": "why no\nreply??" } } ] },
+        { "vo": "So they scan for danger constantly. One dry text, a slightly flat hello, and the mind is off: what did I do wrong? They crave closeness, and the craving can tip into clinging.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.48, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 600, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "magnifying-glass", "x": 1050, "y": 560, "scale": 1.0, "appearAt": 4 }, { "name": "relationship-thermometer", "x": 1300, "y": 520, "scale": 0.9, "appearAt": 8 } ] },
+        { "vo": "About one in five adults lean this way. Their love runs hot and devoted, but it's wired to a smoke detector that goes off at the smell of toast.", "scene": "statCard", "value": 20, "suffix": "%", "pictogram": "crowd", "fraction": 0.2, "emotion": "scared" },
+        { "vo": "On the map, high on anxiety, low on avoidance. They want to merge, to close every last inch of distance. And distance is exactly what terrifies them.", "scene": "diagramCard", "diagram": "attachment-grid", "highlight": "anxious", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "They chase connection to feel safe. Which collides, catastrophically, with a style that does the exact opposite. Meet the avoidant.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "3 — Dismissive-Avoidant",
+      "beats": [
+        { "vo": "Dismissive-avoidant attachment. Their rule, learned early, is that needing other people is dangerous. So they become fiercely, proudly self-sufficient.", "scene": "story", "room": "living-room", "emotion": "smug", "camera": "slowZoom", "chapterStart": true, "title": "DISMISSIVE-AVOIDANT", "subtitle": "'I don't need anyone'",
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "smug", "x": 560, "y": 600, "scale": 1.25, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "confused", "x": 1360, "y": 610, "scale": 1.15, "flip": true } ],
+          "props": [ { "name": "brick-wall", "x": 980, "y": 600, "scale": 0.85, "appearAt": 6 }, { "name": "speech-bubble", "x": 560, "y": 300, "scale": 0.8, "appearAt": 12, "args": { "text": "I'm fine\non my own", "tail": "left" } } ] },
+        { "vo": "When a relationship gets too close, they feel crowded, and pull back. They go quiet, bury themselves in work, suddenly notice all their partner's flaws, or just need a lot of space.", "scene": "story", "room": "office", "emotion": "neutral", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "neutral", "x": 600, "y": 600, "scale": 1.25, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "turtle-shell", "x": 1060, "y": 640, "scale": 0.85, "appearAt": 4 }, { "name": "suitcase", "x": 1300, "y": 720, "scale": 0.9, "appearAt": 8 } ] },
+        { "vo": "It isn't that they don't feel. Under the armor, the longing is still there. They just learned to retreat into the shell the moment closeness starts to feel like a trap.", "scene": "explainer", "prop": "turtle-shell", "emotion": "serious-expert" },
+        { "vo": "On the map, low anxiety, high avoidance. They don't panic about losing you. They manage the fear of closeness by keeping a comfortable, protective distance.", "scene": "diagramCard", "diagram": "attachment-grid", "highlight": "dismissive", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Around a quarter of adults lean avoidant. From outside it looks like cool independence. Inside, it's a wall built to keep old hurt out. And some people live on both sides of that wall at once.", "scene": "statCard", "value": 25, "suffix": "%", "pictogram": "crowd", "fraction": 0.25, "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "4 — Fearful-Avoidant",
+      "beats": [
+        { "vo": "Fearful-avoidant attachment, also called disorganized. The rarest, and the most painful. They want closeness desperately, and they're terrified of it, at the exact same time.", "scene": "story", "room": "living-room", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "FEARFUL-AVOIDANT", "subtitle": "'come here / go away'",
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "confused", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "broken-heart", "x": 1150, "y": 400, "scale": 0.9, "appearAt": 4 }, { "name": "speech-bubble", "x": 700, "y": 300, "scale": 0.82, "appearAt": 10, "args": { "text": "come here—\nno, go away", "tail": "left" } } ] },
+        { "vo": "So they'll pull you in, then panic and push you away. The person they run to for comfort can be the same person they've learned to fear. It often grows from a childhood where the caregiver was both the safety and the threat.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "scared", "x": 600, "y": 600, "scale": 1.25, "talking": true, "lookDir": "left" }, { "costume": "tee", "pose": "idle", "emotion": "confused", "x": 1360, "y": 610, "scale": 1.15, "flip": true } ],
+          "props": [ { "name": "red-flag", "x": 1080, "y": 560, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "It's the anxious craving and the avoidant wall, fighting inside one person. Intense, hot and cold, and exhausting, most of all for them.", "scene": "explainer", "prop": "broken-heart", "emotion": "serious-expert" },
+        { "vo": "On the map, they're high on both. High anxiety, and high avoidance. Afraid of being left, and afraid of being close. No safe direction to move.", "scene": "diagramCard", "diagram": "attachment-grid", "highlight": "fearful", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Four styles. Now here's where it gets cruel, because of who we tend to fall for.", "scene": "closeUp", "subject": "face", "emotion": "confused" }
+      ]
+    },
+    {
+      "name": "5 — The anxious-avoidant trap",
+      "beats": [
+        { "vo": "The anxious-avoidant trap. Here's the cruel twist. The anxious and the avoidant are drawn to each other like magnets, and then make each other miserable.", "scene": "story", "room": "living-room", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE TRAP", "subtitle": "why they chase each other",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "scared", "x": 560, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "arms-crossed", "emotion": "annoyed", "x": 1360, "y": 610, "scale": 1.2, "flip": true, "lookDir": "left" } ],
+          "props": [ { "name": "phone-unread", "x": 900, "y": 560, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "The anxious chase feels like passion. The avoidant distance feels like a challenge worth winning. So the anxious one pursues, the avoidant one retreats, and each perfectly confirms the other's deepest fear.", "scene": "story", "room": "living-room", "emotion": "annoyed", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "scared", "x": 520, "y": 600, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "walking", "emotion": "neutral", "x": 1380, "y": 610, "scale": 1.2, "flip": true, "lookDir": "right" } ],
+          "props": [ { "name": "door", "x": 1680, "y": 560, "scale": 0.9, "appearAt": 2 } ] },
+        { "vo": "Every time the avoidant pulls back, the anxious one's alarm screams louder, and they push harder. Which makes the avoidant feel smothered, and pull back even further. A perfect, self-feeding loop.", "scene": "explainer", "prop": "relationship-thermometer", "emotion": "serious-expert" },
+        { "vo": "One pulls to close the gap. The other pulls to widen it. The distance between them never settles. It just stretches and snaps, over and over.", "scene": "diagramCard", "diagram": "push-pull", "labels": ["pull closer", "pull away"], "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Both are reacting from fear, in opposite directions. And each fear has a signature move. First, the anxious one's.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Protest behavior",
+      "beats": [
+        { "vo": "When an anxious person feels the distance grow, they don't go quiet. They protest. It's a loud, desperate bid to re-establish the connection, right now.", "scene": "story", "room": "living-room", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "PROTEST BEHAVIOR", "subtitle": "the anxious alarm",
+          "mascots": [ { "costume": "hoodie", "pose": "fist-up", "emotion": "annoyed", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "phone-unread", "x": 1150, "y": 560, "scale": 0.95, "appearAt": 4 }, { "name": "speech-bubble", "x": 700, "y": 300, "scale": 0.85, "appearAt": 10, "args": { "text": "answer\nME", "tail": "left" } } ] },
+        { "vo": "Double, triple texting. Keeping score. Trying to make them jealous. Threatening to leave while praying they'll beg you to stay. Anything to force a response and kill the silence.", "scene": "story", "room": "living-room", "emotion": "annoyed", "camera": { "zoomTo": [0.5, 0.48, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "annoyed", "x": 600, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "phone-unread", "x": 1150, "y": 560, "scale": 0.9, "appearAt": 2 }, { "name": "megaphone", "x": 880, "y": 440, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "It feels like love turned up to eleven. Really, it's the alarm system doing its job, badly. The protest is a child crying for a parent who just walked out of the room.", "scene": "explainer", "prop": "phone-unread", "emotion": "serious-expert" },
+        { "vo": "The healthier move is to name the need, instead of firing a flare. Now, the avoidant's opposite move.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "7 — Deactivating",
+      "beats": [
+        { "vo": "The avoidant has the opposite reflex. When closeness spikes, they deactivate, quietly turning the attachment system down, until the need for the other person fades out.", "scene": "story", "room": "office", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "DEACTIVATING", "subtitle": "the avoidant shutdown",
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "neutral", "x": 620, "y": 600, "scale": 1.3, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "turtle-shell", "x": 1060, "y": 640, "scale": 0.85, "appearAt": 4 }, { "name": "brick-wall", "x": 1320, "y": 540, "scale": 0.75, "appearAt": 8 } ] },
+        { "vo": "The moves are subtle. Suddenly fixating on a partner's small flaws. Daydreaming about being single. Pulling away right after a close moment. Flirting with the idea of someone just out of reach.", "scene": "story", "room": "office", "emotion": "neutral", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 600, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "suitcase", "x": 1080, "y": 720, "scale": 0.95, "appearAt": 4 }, { "name": "thought-bubble", "x": 760, "y": 300, "scale": 0.85, "appearAt": 8, "args": { "text": "need\nspace" } } ] },
+        { "vo": "Each one puts a brick back in the wall and restores a safe distance. It isn't coldness for its own sake. It's a nervous system that learned closeness is where you get hurt.", "scene": "explainer", "prop": "brick-wall", "emotion": "serious-expert" },
+        { "vo": "Protest and deactivation. Same fear, opposite directions. You can watch them collide in something as small as a single text.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — How each loves",
+      "beats": [
+        { "vo": "Put the four styles on the same date, send the same unanswered text, and watch four completely different brains light up.", "scene": "story", "room": "date-restaurant", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "HOW THEY LOVE", "subtitle": "same text, four minds",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 560, "y": 620, "scale": 1.15, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 620, "scale": 1.15, "flip": true } ],
+          "props": [ { "name": "wine-glasses", "x": 960, "y": 520, "scale": 0.8, "appearAt": 6 } ] },
+        { "vo": "Secure thinks, they're probably busy, and gets on with their day. Anxious spirals: it's over. Dismissive feels quietly relieved at the space. Fearful feels both the panic and the relief, and freezes.", "scene": "story", "room": "living-room", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.48, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "phone-unread", "x": 1150, "y": 560, "scale": 0.9, "appearAt": 2 }, { "name": "thought-bubble", "x": 720, "y": 300, "scale": 0.85, "appearAt": 8, "args": { "text": "…they're\nbusy?" } } ] },
+        { "vo": "Same event. Four scripts, all written in childhood. In a fight it's the same split: secure repairs, anxious pursues, avoidant stonewalls, and fearful does both, then flees.", "scene": "explainer", "prop": "wine-glasses", "emotion": "serious-expert" },
+        { "vo": "Pair a pursuer with a withdrawer, and you get this loop. One pushes for a talk, the other shuts down, which makes the first push harder. Round and round.", "scene": "diagramCard", "diagram": "chase-cycle", "labels": ["PURSUE", "WITHDRAW"], "emotion": "serious-expert", "withMascot": true },
+        { "vo": "If you've recognized yourself by now, here's the question that actually matters. Are you stuck with this forever?", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "9 — Can you change?",
+      "beats": [
+        { "vo": "Here's the hopeful part. Your attachment style is not a life sentence. Psychologists call the goal earned security. You weren't handed a secure start, so you build one yourself.", "scene": "story", "room": "therapist-office", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "CAN YOU CHANGE?", "subtitle": "earned secure",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 600, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "book-stack", "x": 1080, "y": 720, "scale": 0.8, "appearAt": 4 }, { "name": "speech-bubble", "x": 680, "y": 300, "scale": 0.82, "appearAt": 10, "args": { "text": "I notice I'm\nspiraling", "tail": "left" } } ] },
+        { "vo": "It starts with spotting your pattern in real time. Naming the fear instead of obeying it. A steady, secure partner can help, and so can therapy. The nervous system can slowly relearn that closeness is safe.", "scene": "story", "room": "therapist-office", "emotion": "happy-talk", "camera": { "zoomTo": [0.5, 0.5, 1.18] },
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "happy-talk", "x": 600, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "love-note", "x": 1060, "y": 520, "scale": 0.9, "appearAt": 4 }, { "name": "anchor", "x": 1320, "y": 560, "scale": 0.8, "appearAt": 8 } ] },
+        { "vo": "Little by little, the anxious learn to self-soothe, the avoidant learn to let people in, and both inch toward that calm, anchored corner of the map.", "scene": "explainer", "prop": "anchor", "emotion": "serious-expert" },
+        { "vo": "It's not an overnight flip. It's slow, repeated proof that reaching out doesn't end in abandonment, and that letting someone close doesn't end in being trapped.", "scene": "diagramCard", "diagram": "then-now", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Which takes us right back to that couch, and the couple we started with.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So here's the real point. Attachment isn't about being broken or whole. It's a strategy you learned for staying safe when love felt uncertain. And strategies can be updated.", "scene": "explainer", "prop": "anchor", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "Remember that couple on the couch? One chasing, one running? Picture them finally seeing the dance they're caught in, and slowly, clumsily, choosing to move toward the calm corner together.", "scene": "story", "room": "park-bench", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 580, "y": 640, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1340, "y": 650, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "heart", "x": 960, "y": 360, "scale": 0.95, "appearAt": 6 }, { "name": "love-note", "x": 1120, "y": 540, "scale": 0.7, "appearAt": 14 } ] },
+        { "vo": "So which one are you? Secure, anxious, dismissive, or fearful? Drop it in the comments, no shame, most of us aren't fully secure. And send this to the person you always double-text.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

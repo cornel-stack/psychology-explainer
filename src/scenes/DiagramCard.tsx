@@ -531,8 +531,165 @@ const PressureValve: React.FC = () => {
   );
 };
 
+/** The two-dimension attachment map (anxiety × avoidance → four styles).
+ *  `highlight` lights the active quadrant: secure | anxious | dismissive | fearful. */
+const AttachmentGrid: React.FC<{ highlight: string }> = ({ highlight }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const pop = springIn(frame, fps, 14, { damping: 12 });
+  const gx = CANVAS.width * 0.4;
+  const gy = 170;
+  const cs = 340;
+  const quads = [
+    { key: 'anxious', col: 0, row: 0, label: 'ANXIOUS', sub: 'need, cling', color: COLORS.yellow },
+    { key: 'fearful', col: 1, row: 0, label: 'FEARFUL', sub: 'want + fear', color: COLORS.red },
+    { key: 'secure', col: 0, row: 1, label: 'SECURE', sub: 'calm, close', color: COLORS.greenLeaf },
+    { key: 'dismissive', col: 1, row: 1, label: 'DISMISSIVE', sub: 'distance', color: COLORS.sky },
+  ];
+  return (
+    <g>
+      {/* axis labels */}
+      <text x={gx - 54} y={gy + cs} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline} transform={`rotate(-90 ${gx - 54} ${gy + cs})`}>
+        ANXIETY →
+      </text>
+      <text x={gx + cs} y={gy + 2 * cs + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>
+        AVOIDANCE →
+      </text>
+      {quads.map((q) => {
+        const on = q.key === highlight;
+        const x = gx + q.col * cs;
+        const y = gy + q.row * cs;
+        const s = on ? 1 + 0.03 * Math.min(1, pop) : 1;
+        return (
+          <g key={q.key} transform={`translate(${x + cs / 2} ${y + cs / 2}) scale(${s})`}>
+            <rect x={-cs / 2 + 8} y={-cs / 2 + 8} width={cs - 16} height={cs - 16} rx={24} fill={q.color} opacity={on ? 1 : 0.4} {...lg} />
+            <text x={0} y={-6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={58} fill={COLORS.outline} opacity={on ? 1 : 0.7}>
+              {q.label}
+            </text>
+            <text x={0} y={52} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={34} fill={COLORS.outline} opacity={on ? 0.85 : 0.55}>
+              {q.sub}
+            </text>
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+/** Ainsworth's secure base: a safe home the child ventures out from and returns to. */
+const SecureBase: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const frame = useCurrentFrame();
+  const [out = 'explore', back = 'come back'] = labels;
+  const t = (frame % 120) / 120; // 0..1 loop: out then back
+  const ang = Math.PI * (t < 0.5 ? t * 2 : (1 - t) * 2); // 0..π..0
+  const baseX = CANVAS.width * 0.44;
+  const baseY = CANVAS.height * 0.62;
+  const rx = 320;
+  const ry = 300;
+  const childX = baseX + Math.sin(ang) * rx;
+  const childY = baseY - Math.sin(ang) * ry * 0.5 - 20;
+  return (
+    <g>
+      {/* explore arc */}
+      <path d={`M ${baseX} ${baseY - 20} Q ${baseX + rx} ${baseY - ry} ${baseX + rx + 40} ${baseY - 20}`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeDasharray="4 22" strokeLinecap="round" opacity={0.5} />
+      {/* the safe base — a little house */}
+      <g transform={`translate(${baseX} ${baseY})`}>
+        <rect x={-110} y={-40} width={220} height={190} rx={16} fill={COLORS.greenLeaf} {...xl} />
+        <path d="M -140 -40 L 0 -170 L 140 -40 Z" fill={COLORS.greenDark} {...xl} />
+        <rect x={-44} y={40} width={88} height={110} rx={10} fill={COLORS.wood} {...lg} />
+        <circle cx={28} cy={96} r={8} fill={COLORS.outline} />
+        <path d="M 0 -120 Q -40 -80 0 -56 Q 40 -80 0 -120 Z" fill={COLORS.pink} />
+      </g>
+      <text x={baseX} y={baseY + 210} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={46} fill={COLORS.outline}>SAFE BASE</text>
+      {/* venturing child */}
+      <g transform={`translate(${childX} ${childY})`}>
+        <circle r={46} fill={COLORS.yellow} {...lg} />
+        <circle cx={-16} cy={-6} r={7} fill={COLORS.outline} />
+        <circle cx={16} cy={-6} r={7} fill={COLORS.outline} />
+        <path d="M -16 16 Q 0 28 16 16" fill="none" {...sm} />
+      </g>
+      {/* captions */}
+      <text x={baseX + rx + 60} y={baseY - 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={38} fill={COLORS.greenDark}>{out}</text>
+      <text x={baseX + rx + 60} y={baseY + 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={38} fill={COLORS.outline}>{back}</text>
+    </g>
+  );
+};
+
+/** The anxious–avoidant trap: one pulls closer, the other pulls away, forever. */
+const PushPull: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const frame = useCurrentFrame();
+  const [left = 'pull closer', right = 'pull away'] = labels;
+  const osc = Math.sin(frame / 14);
+  const cy = CANVAS.height * 0.46;
+  const cx = CANVAS.width * 0.56;
+  const lx = cx - 210 + osc * 40; // anxious chases right
+  const rx = cx + 210 + osc * 40; // avoidant retreats right
+  const Face: React.FC<{ color: string }> = ({ color }) => (
+    <g>
+      <circle r={96} fill={color} {...xl} />
+      <circle cx={-30} cy={-10} r={11} fill={COLORS.outline} />
+      <circle cx={30} cy={-10} r={11} fill={COLORS.outline} />
+    </g>
+  );
+  return (
+    <g>
+      {/* stretchy elastic between them */}
+      <path d={`M ${lx + 70} ${cy} Q ${cx} ${cy + 30 * osc} ${rx - 70} ${cy}`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      {/* anxious on the left, reaching toward */}
+      <g transform={`translate(${lx} ${cy})`}>
+        <Face color={COLORS.yellow} />
+        <path d="M -30 24 Q 0 40 30 24" fill="none" {...sm} />
+      </g>
+      <path d={`M ${lx + 110} ${cy - 110} l 70 0 l -18 -14 m 18 14 l -18 14`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <text x={lx} y={cy + 180} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={42} fill={COLORS.outline}>{left}</text>
+      {/* avoidant on the right, turning away */}
+      <g transform={`translate(${rx} ${cy})`}>
+        <Face color={COLORS.sky} />
+        <path d="M -30 30 Q 0 18 30 30" fill="none" {...sm} />
+      </g>
+      <path d={`M ${rx + 70} ${cy - 110} l 70 0 l -18 -14 m 18 14 l -18 14`} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <text x={rx} y={cy + 180} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={42} fill={COLORS.outline}>{right}</text>
+    </g>
+  );
+};
+
+/** The pursue–withdraw loop: a token circles endlessly between two phases. */
+const ChaseCycle: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const frame = useCurrentFrame();
+  const [top = 'PURSUE', bottom = 'WITHDRAW'] = labels;
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const r = 230;
+  const a = (frame / 50) * Math.PI * 2;
+  const tx = cx + Math.cos(a) * r;
+  const ty = cy + Math.sin(a) * r;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeDasharray="4 26" strokeLinecap="round" opacity={0.55} />
+      {/* direction arrows on the ring */}
+      {[0, 0.5].map((o, i) => {
+        const aa = (o + 0.25) * Math.PI * 2;
+        const ax = cx + Math.cos(aa) * r;
+        const ay = cy + Math.sin(aa) * r;
+        return <path key={i} d={`M ${ax} ${ay} l ${-18 * Math.sin(aa)} ${18 * Math.cos(aa)} l 22 8 z`} fill={COLORS.outline} opacity={0.6} />;
+      })}
+      {/* phase chips */}
+      <g transform={`translate(${cx} ${cy - r})`}>
+        <rect x={-180} y={-54} width={360} height={108} rx={54} fill={COLORS.yellow} {...lg} />
+        <text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={52} fill={COLORS.outline}>{top}</text>
+      </g>
+      <g transform={`translate(${cx} ${cy + r})`}>
+        <rect x={-200} y={-54} width={400} height={108} rx={54} fill={COLORS.sky} {...lg} />
+        <text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={52} fill={COLORS.outline}>{bottom}</text>
+      </g>
+      {/* travelling token */}
+      <circle cx={tx} cy={ty} r={30} fill={COLORS.red} {...xl} />
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -554,6 +711,10 @@ export const DiagramCard: React.FC<{
     'maturity-ladder': COLORS.greenLeaf,
     'redirect-arrow': COLORS.yellow,
     'pressure-valve': COLORS.pink,
+    'attachment-grid': COLORS.lavender,
+    'secure-base': COLORS.greenLeaf,
+    'push-pull': COLORS.yellow,
+    'chase-cycle': COLORS.pink,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -582,6 +743,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'maturity-ladder' && <MaturityLadder highlight={highlight} />}
         {diagram === 'redirect-arrow' && <RedirectArrow labels={labels} />}
         {diagram === 'pressure-valve' && <PressureValve />}
+        {diagram === 'attachment-grid' && <AttachmentGrid highlight={highlight} />}
+        {diagram === 'secure-base' && <SecureBase labels={labels} />}
+        {diagram === 'push-pull' && <PushPull labels={labels} />}
+        {diagram === 'chase-cycle' && <ChaseCycle labels={labels} />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

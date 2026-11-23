@@ -11,6 +11,7 @@ import * as Feel from './feelings';
 import * as Bias from './biases';
 import * as Def from './defenses';
 import * as Sty from './story';
+import * as Att from './attachment';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -111,6 +112,15 @@ export const PROPS: Record<string, React.FC<any>> = {
   sink: Sty.Sink,
   megaphone: Sty.Megaphone,
   'running-shoe': Sty.RunningShoe,
+  // attachment-styles props
+  'phone-unread': Att.PhoneUnread,
+  'toy-blocks': Att.ToyBlocks,
+  'brick-wall': Att.BrickWall,
+  'turtle-shell': Att.TurtleShell,
+  anchor: Att.Anchor,
+  'wine-glasses': Att.WineGlasses,
+  'love-note': Att.LoveNote,
+  'relationship-thermometer': Att.RelationshipThermometer,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

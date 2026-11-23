@@ -37,6 +37,10 @@ const NEW_ASSETS = new Set([
   'bouquet', 'book-stack', 'whiteboard', 'flatline-screen', 'door', 'punching-bag', 'broken-heart',
   'sink', 'megaphone', 'running-shoe', 'tee',
   'cover-eyes', 'cower', 'cheer', 'facepalm', 'arms-crossed', 'fist-up', 'hands-hips', 'reach-down',
+  // attachment-styles
+  'nursery', 'date-restaurant', 'park-bench',
+  'phone-unread', 'toy-blocks', 'brick-wall', 'turtle-shell', 'anchor', 'wine-glasses', 'love-note', 'relationship-thermometer',
+  'attachment-grid', 'secure-base', 'push-pull', 'chase-cycle',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
