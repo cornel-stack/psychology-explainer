@@ -91,6 +91,9 @@ jobs:
           npm run lint:strokes
           node scripts/qa_grid_overlap.mjs
 
+      - name: Chapter timestamps -> metadata.md
+        run: node scripts/chapters.mjs "$SLUG" || true
+
       - name: Thumbnails (3 variants)
         run: node scripts/thumbnails.mjs "$SLUG"
 
