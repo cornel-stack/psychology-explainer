@@ -22,4 +22,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 
 | 13 | Every Level of Overthinking Explained | `overthinking-levels` | 7:11 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45274510119 | ✅ delivered |
 
+| 14 | Signs Someone Is Secretly Jealous of You | `jealousy-signs` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45278710843 | ⏳ rendering |
+
 _Continuing through the backlog one by one — new rows appended as each render completes._
