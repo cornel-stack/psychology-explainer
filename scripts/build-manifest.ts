@@ -26,6 +26,12 @@ const NEW_ASSETS = new Set([
   'price-tag', 'tv-screen', 'balance-scale', 'crown', 'slot-machine', 'dice', 'plane-bullet',
   'star-rating', 'horoscope-card', 'trophy', 'magnifying-glass', 'calendar', 'coins', 'brain', 'check-badge',
   'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip',
+  // defense-mechanisms
+  'therapist-office', 'basement', 'gym', 'art-studio', 'theater-stage',
+  'shield', 'threat-blob', 'locked-box', 'projector', 'trash-can', 'easel', 'sour-grapes', 'angel-devil',
+  'pacifier', 'open-book', 'sealed-jar', 'soap-bubbles', 'dumbbell', 'sticky-note', 'comedy-mask', 'volcano',
+  'pressure-gauge', 'diploma',
+  'defense-shield', 'iceberg', 'maturity-ladder', 'redirect-arrow', 'pressure-valve',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

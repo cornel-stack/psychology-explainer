@@ -9,6 +9,7 @@ import { COLORS, CANVAS, STROKE, strokeProps, shade } from '../../lib/style';
 import { WallFloor } from '../../scenes/common';
 import { Bed, Nightstand, Lamp, WallClock, FramedPicture, WindowNight, WindowDay, Slippers } from '../props/bedroom';
 import { Fridge, Kettle } from '../props/objects';
+import { Diploma } from '../props/defenses';
 
 const std = strokeProps(STROKE.lg);
 const xl = strokeProps(STROKE.xl);
@@ -27,7 +28,12 @@ export type RoomName =
   | 'empty-hall'
   | 'store-aisle'
   | 'casino'
-  | 'office';
+  | 'office'
+  | 'therapist-office'
+  | 'basement'
+  | 'gym'
+  | 'art-studio'
+  | 'theater-stage';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -359,6 +365,173 @@ export const Office: React.FC = () => (
   </g>
 );
 
+/** Therapist's office: chaise couch, armchair, rug, diploma, bookshelf, plant. */
+export const TherapistOffice: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.wood} floorY={820} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.greenTeal, 0.08)} />
+    {/* rug */}
+    <ellipse cx={820} cy={940} rx={640} ry={120} fill={shade(COLORS.wood, 0.14)} />
+    <ellipse cx={820} cy={940} rx={540} ry={92} fill={COLORS.pink} opacity={0.3} />
+    {/* diploma + framed picture on wall */}
+    <g transform="translate(300 280)"><Diploma /></g>
+    <g transform="translate(560 300)"><FramedPicture /></g>
+    {/* bookshelf */}
+    <g transform="translate(1680 560)">
+      <rect x={-120} y={-260} width={240} height={420} rx={10} fill={COLORS.woodDark} {...xl} />
+      {[0, 1, 2].map((r) => (
+        <g key={r}>
+          <rect x={-104} y={-230 + r * 140} width={208} height={120} fill={shade(COLORS.wood, 0.1)} />
+          {Array.from({ length: 6 }).map((_, c) => {
+            const cols = [COLORS.red, COLORS.yellow, COLORS.sky, COLORS.greenLeaf, COLORS.lavender, COLORS.pink];
+            return <rect key={c} x={-96 + c * 34} y={-224 + r * 140} width={26} height={108} rx={4} fill={cols[(r + c) % 6]} {...sm} />;
+          })}
+        </g>
+      ))}
+    </g>
+    {/* chaise couch */}
+    <g>
+      <rect x={560} y={660} width={620} height={150} rx={30} fill={COLORS.lavender} {...xl} />
+      <path d="M 560 660 Q 540 560 600 560 L 720 560 Q 760 560 760 660 Z" fill={COLORS.lavender} {...xl} />
+      <rect x={560} y={760} width={620} height={46} rx={16} fill={shade(COLORS.lavender, 0.14)} />
+      <rect x={610} y={600} width={120} height={70} rx={20} fill={COLORS.yellowSoft} {...std} />
+    </g>
+    {/* small plant */}
+    <g transform="translate(220 700)">
+      <path d="M 0 -10 Q -40 -80 -12 -120 Q 6 -80 0 -10 Z" fill={COLORS.greenLeaf} {...lg} />
+      <path d="M 0 -10 Q 40 -90 16 -130 Q -4 -80 0 -10 Z" fill={COLORS.greenLeaf} {...lg} />
+      <path d="M -44 0 L 44 0 L 32 90 L -32 90 Z" fill={COLORS.red} {...xl} />
+    </g>
+  </g>
+);
+
+/** Dark basement: concrete, shelves of boxes, bare bulb, a locked steel door. */
+export const Basement: React.FC = () => {
+  const f = useCurrentFrame();
+  const flick = 0.5 + 0.1 * Math.sin(f / 4);
+  return (
+    <g>
+      <WallFloor wall={shade(COLORS.purpleDeep, 0.1)} floor={shade(COLORS.purpleDeep, 0.25)} floorY={840} stripe={false} />
+      {/* concrete block lines */}
+      {Array.from({ length: 8 }).map((_, r) => (
+        <rect key={r} x={0} y={100 + r * 90} width={CANVAS.width} height={2} fill={COLORS.wallNight} opacity={0.3} />
+      ))}
+      {/* bare bulb */}
+      <line x1={760} y1={0} x2={760} y2={120} {...sm} />
+      <circle cx={760} cy={140} r={34} fill={COLORS.yellowSoft} opacity={flick + 0.3} />
+      <ellipse cx={760} cy={420} rx={360} ry={300} fill={COLORS.yellowSoft} opacity={flick * 0.14} />
+      {/* steel vault door */}
+      <g transform="translate(1560 540)">
+        <rect x={-150} y={-280} width={300} height={580} rx={16} fill={COLORS.greenTeal} {...xl} />
+        <circle cx={0} cy={0} r={90} fill={shade(COLORS.greenTeal, 0.16)} {...lg} />
+        {[0, 1, 2, 3].map((i) => (
+          <rect key={i} x={-12} y={-80} width={24} height={60} rx={8} fill={COLORS.shirtDark} transform={`rotate(${i * 45})`} />
+        ))}
+        <circle cx={0} cy={0} r={22} fill={COLORS.shirtDark} />
+      </g>
+      {/* shelf of boxes */}
+      <g transform="translate(300 640)">
+        <rect x={-180} y={-40} width={360} height={24} fill={COLORS.woodDark} {...lg} />
+        <rect x={-180} y={160} width={360} height={24} fill={COLORS.woodDark} {...lg} />
+        {[[-130, -10], [-40, -20], [70, -14]].map(([x, y], i) => (
+          <rect key={i} x={x} y={y} width={90} height={70} rx={8} fill={COLORS.wood} {...lg} />
+        ))}
+      </g>
+    </g>
+  );
+};
+
+/** Gym: mirror wall, weight rack, bench, rubber floor. */
+export const Gym: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.shirtDark} floorY={820} stripe={false} />
+    {/* mirror panels */}
+    {[180, 560].map((x, i) => (
+      <rect key={i} x={x} y={120} width={340} height={520} rx={10} fill={shade(COLORS.sky, 0.12)} {...lg} />
+    ))}
+    {/* weight rack */}
+    <g transform="translate(1560 460)">
+      <rect x={-180} y={-60} width={360} height={30} rx={8} fill={COLORS.shirtDarker} {...lg} />
+      <rect x={-180} y={320} width={360} height={30} rx={8} fill={COLORS.shirtDarker} {...lg} />
+      <rect x={-180} y={-60} width={24} height={410} fill={COLORS.shirtDark} />
+      <rect x={156} y={-60} width={24} height={410} fill={COLORS.shirtDark} />
+      {[0, 1, 2].map((r) => (
+        <g key={r} transform={`translate(0 ${20 + r * 110})`}>
+          <rect x={-120} y={-14} width={240} height={28} rx={10} fill={COLORS.shirtDark} />
+          <circle cx={-120} cy={0} r={34} fill={COLORS.red} {...lg} />
+          <circle cx={120} cy={0} r={34} fill={COLORS.red} {...lg} />
+        </g>
+      ))}
+    </g>
+    {/* bench */}
+    <rect x={620} y={740} width={420} height={40} rx={12} fill={COLORS.red} {...xl} />
+    <rect x={650} y={780} width={40} height={90} fill={COLORS.shirtDark} {...lg} />
+    <rect x={970} y={780} width={40} height={90} fill={COLORS.shirtDark} {...lg} />
+    {/* floor mat lines */}
+    {Array.from({ length: 12 }).map((_, i) => (
+      <rect key={i} x={i * 170} y={820} width={3} height={CANVAS.height - 820} fill={COLORS.shirtDarker} />
+    ))}
+  </g>
+);
+
+/** Art studio: big window light, canvases, paint splatters. */
+export const ArtStudio: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCream} floor={COLORS.wood} floorY={820} stripe={false} />
+    {/* wainscot band + a shelf of paint jars break up the plain wall */}
+    <rect x={0} y={600} width={CANVAS.width} height={220} fill={shade(COLORS.bgCream, 0.08)} />
+    <rect x={0} y={600} width={CANVAS.width} height={14} fill={shade(COLORS.wood, 0.1)} />
+    <rect x={0} y={420} width={CANVAS.width} height={16} rx={6} fill={COLORS.woodDark} />
+    {([[80, COLORS.red], [180, COLORS.sky], [280, COLORS.yellow], [1500, COLORS.greenLeaf], [1600, COLORS.pink], [1700, COLORS.lavender], [1800, COLORS.red]] as [number, string][]).map(([x, c], i) => (
+      <rect key={i} x={x} y={360} width={56} height={60} rx={8} fill={c} {...sm} />
+    ))}
+    {/* big window with light */}
+    <rect x={120} y={120} width={520} height={520} rx={18} fill={COLORS.sky} {...xl} />
+    <line x1={380} y1={120} x2={380} y2={640} {...std} />
+    <line x1={120} y1={380} x2={640} y2={380} {...std} />
+    <circle cx={500} cy={260} r={44} fill={COLORS.yellow} {...std} />
+    {/* paint splatters on wall */}
+    {([[1000, 240, COLORS.red], [1120, 360, COLORS.greenLeaf], [1300, 220, COLORS.sky], [1420, 380, COLORS.yellow], [1200, 480, COLORS.pink]] as [number, number, string][]).map(([x, y, c], i) => (
+      <circle key={i} cx={x} cy={y} r={26 + (i % 3) * 8} fill={c} opacity={0.8} />
+    ))}
+    {/* canvases leaning */}
+    <g transform="translate(1660 640)">
+      <rect x={-90} y={-220} width={180} height={240} rx={8} fill={COLORS.white} {...xl} transform="rotate(6)" />
+      <rect x={-110} y={-200} width={180} height={240} rx={8} fill={COLORS.white} {...xl} transform="rotate(-4)" />
+      <path d="M -96 -60 L -40 -140 L 10 -90 L 70 -170" fill="none" stroke={COLORS.pink} strokeWidth={STROKE.lg} strokeLinecap="round" />
+    </g>
+    {/* paint tubes on floor */}
+    {([[760, 880, COLORS.red], [860, 900, COLORS.sky], [960, 885, COLORS.yellow]] as [number, number, string][]).map(([x, y, c], i) => (
+      <rect key={i} x={x} y={y} width={90} height={34} rx={16} fill={c} {...sm} transform={`rotate(${i * 10 - 10} ${x} ${y})`} />
+    ))}
+  </g>
+);
+
+/** Theater stage: red curtains, spotlight, wooden boards (humor, masks). */
+export const TheaterStage: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+    {/* back curtain */}
+    <rect x={0} y={0} width={CANVAS.width} height={760} fill={COLORS.redDark} />
+    {Array.from({ length: 24 }).map((_, i) => (
+      <rect key={i} x={i * 84} y={0} width={42} height={760} fill={COLORS.red} opacity={0.5} />
+    ))}
+    {/* top valance */}
+    <path d="M 0 0 L 1920 0 L 1920 120 Q 1820 190 1720 120 Q 1620 190 1520 120 Q 1420 190 1320 120 Q 1220 190 1120 120 Q 1020 190 920 120 Q 820 190 720 120 Q 620 190 520 120 Q 420 190 320 120 Q 220 190 120 120 Q 40 160 0 120 Z" fill={COLORS.redDark} {...xl} />
+    {/* side curtains */}
+    <path d="M 0 0 L 320 0 Q 260 400 300 760 Q 160 700 0 760 Z" fill={COLORS.red} {...xl} />
+    <path d="M 1920 0 L 1600 0 Q 1660 400 1620 760 Q 1760 700 1920 760 Z" fill={COLORS.red} {...xl} />
+    {/* spotlight */}
+    <path d="M 760 0 L 520 760 L 1400 760 L 1160 0 Z" fill={COLORS.yellowSoft} opacity={0.14} />
+    {/* stage floor boards */}
+    <rect x={0} y={760} width={CANVAS.width} height={CANVAS.height - 760} fill={COLORS.wood} />
+    {Array.from({ length: 12 }).map((_, i) => (
+      <rect key={i} x={i * 170} y={760} width={3} height={CANVAS.height - 760} fill={shade(COLORS.wood, 0.18)} />
+    ))}
+    <rect x={0} y={760} width={CANVAS.width} height={14} fill={COLORS.yellow} />
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -372,6 +545,11 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'store-aisle': StoreAisle,
   casino: Casino,
   office: Office,
+  'therapist-office': TherapistOffice,
+  basement: Basement,
+  gym: Gym,
+  'art-studio': ArtStudio,
+  'theater-stage': TheaterStage,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

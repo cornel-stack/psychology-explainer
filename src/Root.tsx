@@ -9,12 +9,12 @@ import { SAMPLE_BEATS } from './dev/samples';
 import { MotionReel, MOTION_REEL_FRAMES } from './dev/MotionReel';
 import { JointTest } from './dev/JointTest';
 import { MainVideo, calcVideoMetadata } from './Video';
-import { NewPropsSheet, BiasPropsSheet, RoomStill } from './dev/NewAssets';
+import { NewPropsSheet, BiasPropsSheet, DefensePropsSheet, RoomStill } from './dev/NewAssets';
 import { DiagramCard } from './scenes/DiagramCard';
 import { Thumbnail, THUMBS_BY_SLUG } from './dev/Thumbnail';
 
-const NEW_ROOMS = ['balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall', 'store-aisle', 'casino', 'office'] as const;
-const NEW_DIAGRAMS = ['signal-race', 'overflow-meter', 'two-gates', 'then-now', 'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip'] as const;
+const NEW_ROOMS = ['balcony-night', 'train-interior', 'living-room', 'stadium-crowd', 'empty-hall', 'store-aisle', 'casino', 'office', 'therapist-office', 'basement', 'gym', 'art-studio', 'theater-stage'] as const;
+const NEW_DIAGRAMS = ['signal-race', 'overflow-meter', 'two-gates', 'then-now', 'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip', 'defense-shield', 'iceberg', 'maturity-ladder', 'redirect-arrow', 'pressure-valve'] as const;
 
 // Each template still is a SceneRouter wrapped at canvas size.
 const TEMPLATE_STILLS: { id: string; beat: keyof typeof SAMPLE_BEATS; dur: number }[] = [
@@ -57,6 +57,7 @@ export const RemotionRoot: React.FC = () => {
       {/* Phase 4 Checkpoint 2 — new assets QA */}
       <Composition id="CardNewProps" component={NewPropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
       <Composition id="CardBiasProps" component={BiasPropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
+      <Composition id="CardDefenseProps" component={DefensePropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
       {NEW_ROOMS.map((room) => (
         <Composition key={room} id={`Room-${room}`} component={RoomStill as React.FC} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} defaultProps={{ room } as never} />
       ))}

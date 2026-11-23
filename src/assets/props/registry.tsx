@@ -9,6 +9,7 @@ import * as Ico from './icons';
 import * as Bub from './bubbles';
 import * as Feel from './feelings';
 import * as Bias from './biases';
+import * as Def from './defenses';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -72,6 +73,25 @@ export const PROPS: Record<string, React.FC<any>> = {
   coins: Bias.Coins,
   brain: Bias.Brain,
   'check-badge': Bias.CheckBadge,
+  // defense-mechanisms props
+  shield: Def.Shield,
+  'threat-blob': Def.ThreatBlob,
+  'locked-box': Def.LockedBox,
+  projector: Def.Projector,
+  'trash-can': Def.TrashCan,
+  easel: Def.Easel,
+  'sour-grapes': Def.SourGrapes,
+  'angel-devil': Def.AngelDevil,
+  pacifier: Def.Pacifier,
+  'open-book': Def.OpenBook,
+  'sealed-jar': Def.SealedJar,
+  'soap-bubbles': Def.SoapBubbles,
+  dumbbell: Def.Dumbbell,
+  'sticky-note': Def.StickyNote,
+  'comedy-mask': Def.ComedyMask,
+  volcano: Def.Volcano,
+  'pressure-gauge': Def.PressureGauge,
+  diploma: Def.Diploma,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

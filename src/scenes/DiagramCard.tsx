@@ -388,8 +388,151 @@ const FramingFlip: React.FC<{ labels: string[] }> = ({ labels }) => {
   );
 };
 
+/** The ego behind a shield, deflecting a threat (the core defense metaphor). */
+const DefenseShield: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const [threat = 'ANXIETY', defense = 'the defense'] = labels;
+  const cx = CANVAS.width * 0.58;
+  const cy = CANVAS.height * 0.42;
+  const hit = Math.abs(Math.sin(frame / 7));
+  const tone = COLORS.sky;
+  return (
+    <g>
+      {/* threat on the left */}
+      <g transform={`translate(${cx - 440} ${cy}) scale(0.9)`}>
+        <path d="M -70 20 Q -96 -56 -30 -70 Q 0 -96 42 -68 Q 104 -58 84 8 Q 104 64 32 70 Q 0 92 -36 70 Q -94 64 -70 20 Z" fill={COLORS.red} {...lg} />
+        <path d="M -38 -16 L -10 -2 M -10 -16 L -38 -2 M 10 -16 L 38 -2 M 38 -16 L 10 -2" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      </g>
+      <text x={cx - 440} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.redDark}>{threat}</text>
+      {/* flying arrows deflecting off the shield */}
+      {[0, 1].map((i) => {
+        const x = cx - 320 + hit * 150 + i * 30;
+        return <path key={i} d={`M ${x} ${cy - 40 + i * 70} l 60 0 l -18 -14 m 18 14 l -18 14`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />;
+      })}
+      {/* ego face behind the shield */}
+      <circle cx={cx + 120} cy={cy} r={86} fill={COLORS.white} {...xl} />
+      <circle cx={cx + 98} cy={cy - 12} r={10} fill={COLORS.outline} />
+      <circle cx={cx + 142} cy={cy - 12} r={10} fill={COLORS.outline} />
+      <path d={`M ${cx + 98} ${cy + 26} q 22 -14 44 0`} fill="none" {...sm} />
+      <ellipse cx={cx + 90} cy={cy + 12} rx={12} ry={8} fill={COLORS.pink} />
+      <ellipse cx={cx + 150} cy={cy + 12} rx={12} ry={8} fill={COLORS.pink} />
+      {/* shield */}
+      <g transform={`translate(${cx + 10} ${cy})`}>
+        <path d="M 0 -130 L 118 -86 L 118 24 Q 118 118 0 160 Q -118 118 -118 24 L -118 -86 Z" fill={tone} {...xl} />
+        <path d="M 0 -96 L 0 130 M -92 -42 L 92 -42" stroke={shade(tone, 0.18)} strokeWidth={STROKE.lg} />
+      </g>
+      <text x={cx + 10} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={46} fill={COLORS.outline}>{defense}</text>
+    </g>
+  );
+};
+
+/** Freud's iceberg: a sliver of conscious mind above water, the vast rest below. */
+const Iceberg: React.FC = () => {
+  const cx = CANVAS.width * 0.56;
+  const sea = 430;
+  return (
+    <g>
+      <rect x={CANVAS.width * 0.28} y={sea} width={CANVAS.width * 0.56} height={560} fill={COLORS.sky} opacity={0.5} />
+      <path d={`M ${cx} ${sea - 170} L ${cx + 130} ${sea} L ${cx - 130} ${sea} Z`} fill={COLORS.white} {...xl} />
+      <path d={`M ${cx - 130} ${sea} L ${cx + 130} ${sea} L ${cx + 250} ${sea + 420} Q ${cx} ${sea + 540} ${cx - 250} ${sea + 420} Z`} fill={shade(COLORS.sky, 0.08)} {...xl} />
+      <rect x={CANVAS.width * 0.28} y={sea - 6} width={CANVAS.width * 0.56} height={10} fill={COLORS.skyDark} />
+      <text x={cx + 300} y={sea - 60} fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>CONSCIOUS</text>
+      <text x={cx + 20} y={sea + 300} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={52} fill={COLORS.purpleDeep}>UNCONSCIOUS</text>
+    </g>
+  );
+};
+
+/** Vaillant's maturity ladder — 4 rungs, the current level highlighted. */
+const MaturityLadder: React.FC<{ highlight: string }> = ({ highlight }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const rungs = [
+    { key: 'mature', label: 'MATURE', color: COLORS.greenLeaf },
+    { key: 'neurotic', label: 'NEUROTIC', color: COLORS.sky },
+    { key: 'immature', label: 'IMMATURE', color: COLORS.yellow },
+    { key: 'pathological', label: 'PATHOLOGICAL', color: COLORS.red },
+  ];
+  const active = Math.max(0, rungs.findIndex((r) => r.key === highlight));
+  const x = CANVAS.width * 0.42;
+  const w = 720;
+  const h = 130;
+  const gap = 24;
+  const pop = springIn(frame, fps, 14, { damping: 12 });
+  return (
+    <g transform="translate(0 220)">
+      {rungs.map((r, i) => {
+        const y = i * (h + gap);
+        const on = i === active;
+        return (
+          <g key={r.key} transform={`translate(${x} ${y}) scale(${on ? 1 + 0.04 * Math.min(1, pop) : 1})`} transform-origin={`${x + w / 2} ${y + h / 2}`}>
+            <rect x={0} y={0} width={w} height={h} rx={22} fill={r.color} opacity={on ? 1 : 0.6} {...lg} />
+            <text x={34} y={h / 2 + 18} fontFamily={fontFamily} fontWeight={800} fontSize={54} fill={COLORS.outline}>{r.label}</text>
+            {on && (
+              <g transform={`translate(${w - 70} ${h / 2})`}>
+                <circle r={34} fill={COLORS.white} {...sm} />
+                <path d="M -16 2 L -4 16 L 18 -12" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+              </g>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+/** A feeling redirected from its real source to a safer target. */
+const RedirectArrow: React.FC<{ labels: string[] }> = ({ labels }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const [source = 'the real target', target = 'a safe target'] = labels;
+  const draw = springIn(frame, fps, 10, { damping: 16 });
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  return (
+    <g>
+      <g transform={`translate(${cx - 240} ${cy})`}>
+        <circle r={90} fill={COLORS.red} {...xl} />
+        <path d="M -30 -30 L 30 30 M 30 -30 L -30 30" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      </g>
+      <text x={cx - 240} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.redDark}>{source}</text>
+      {/* bent redirect arrow */}
+      <path d={`M ${cx - 150} ${cy - 30} Q ${cx} ${cy - 220} ${cx + 150} ${cy - 30}`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeLinecap="round" strokeDasharray={900} strokeDashoffset={900 * (1 - Math.min(1, draw))} />
+      {draw > 0.9 && <path d={`M ${cx + 150} ${cy - 30} l -6 -34 l 30 22 z`} fill={COLORS.outline} />}
+      <g transform={`translate(${cx + 240} ${cy})`}>
+        <circle r={90} fill={COLORS.greenLeaf} {...xl} />
+        <path d="M -20 2 L -4 20 L 24 -16" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+      <text x={cx + 240} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.greenDark}>{target}</text>
+    </g>
+  );
+};
+
+/** A pressure tank venting through a relief valve (the defense as release). */
+const PressureValve: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.5;
+  const puff = (frame % 40) / 40;
+  return (
+    <g>
+      <rect x={cx - 150} y={cy - 160} width={300} height={320} rx={40} fill={COLORS.sky} {...xl} />
+      <rect x={cx - 130} y={cy + 20} width={260} height={120} rx={20} fill={COLORS.red} opacity={0.8} />
+      <rect x={cx - 130} y={cy + 20} width={260} height={24} fill={shade(COLORS.red, 0.16)} />
+      {/* valve on top */}
+      <rect x={cx - 24} y={cy - 220} width={48} height={70} rx={10} fill={COLORS.woodDark} {...lg} />
+      <circle cx={cx} cy={cy - 230} r={30} fill={COLORS.red} {...lg} />
+      {/* steam */}
+      {[0, 1, 2].map((i) => (
+        <circle key={i} cx={cx + (i - 1) * 30} cy={cy - 270 - puff * 120} r={22 + i * 6} fill={COLORS.white} opacity={0.6 * (1 - puff)} {...sm} />
+      ))}
+      <text x={cx} y={cy + 220} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>pressure finds a way out</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -406,6 +549,11 @@ export const DiagramCard: React.FC<{
     'dk-curve': COLORS.sky,
     'loss-scale': COLORS.pink,
     'framing-flip': COLORS.greenLeaf,
+    'defense-shield': COLORS.sky,
+    iceberg: COLORS.sky,
+    'maturity-ladder': COLORS.greenLeaf,
+    'redirect-arrow': COLORS.yellow,
+    'pressure-valve': COLORS.pink,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -429,6 +577,11 @@ export const DiagramCard: React.FC<{
         {diagram === 'dk-curve' && <DKCurve />}
         {diagram === 'loss-scale' && <LossScale />}
         {diagram === 'framing-flip' && <FramingFlip labels={labels} />}
+        {diagram === 'defense-shield' && <DefenseShield labels={labels} />}
+        {diagram === 'iceberg' && <Iceberg />}
+        {diagram === 'maturity-ladder' && <MaturityLadder highlight={highlight} />}
+        {diagram === 'redirect-arrow' && <RedirectArrow labels={labels} />}
+        {diagram === 'pressure-valve' && <PressureValve />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />
