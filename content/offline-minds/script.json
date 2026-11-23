@@ -1,0 +1,157 @@
+{
+  "title": "The Psychology of People Who Don't Use Social Media",
+  "slug": "offline-minds",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Observe, if you will, the modern human in its natural habitat. Heads bowed. Faces lit by a cold blue glow. Thumbs moving in a slow, hypnotic scroll. The species is rarely seen looking up.", "scene": "story", "room": "digital-wilderness", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "PEOPLE WHO DON'T USE SOCIAL MEDIA", "subtitle": "a field guide to a rare species",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 620, "y": 640, "scale": 1.15, "talking": false } ],
+          "props": [ { "name": "scroll-feed", "x": 1050, "y": 520, "scale": 0.6, "appearAt": 8 } ] },
+        { "vo": "But wait. There. Standing perfectly upright, phone nowhere in sight, actually watching the sunset. A magnificent, and increasingly rare, creature. The person who does not use social media.", "scene": "story", "room": "digital-wilderness", "emotion": "happy-talk", "camera": { "zoomTo": [0.33, 0.5, 1.3] },
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 600, "y": 640, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "thought-bubble", "x": 760, "y": 320, "scale": 0.85, "appearAt": 8, "args": { "text": "nice\nsunset" } } ] },
+        { "vo": "To grasp how special this is, consider the herd. The average human now spends over two hours, every single day, feeding the glow. Our specimen spends roughly none of them.", "scene": "statCard", "value": 2, "suffix": " HRS/DAY", "pictogram": "none", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Today, a field guide to this fascinating species. Nine traits that quietly set them apart. And by the end, you might just recognize one. Possibly in the mirror. Let's observe.", "scene": "explainer", "prop": "binoculars", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here is our field guide. Nine observable traits of the offline mind, climbing from how they think to how they live. Watch closely for the ones that look a little familiar.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["OWN VOICE", "NO COMPARISON", "DEEP FOCUS", "FULLY PRESENT", "REAL FRIENDS", "UNSEEN & FINE", "PRIVACY", "LOW FOMO", "CREATIVE BOREDOM"] }
+      ]
+    },
+    {
+      "name": "1 — Own voice",
+      "beats": [
+        { "vo": "First observation. While the herd is fed its opinions, served piping hot by an algorithm that rewards outrage, our specimen forms views the slow, old-fashioned way. By actually thinking.", "scene": "story", "room": "digital-wilderness", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "AN UNBORROWED MIND", "subtitle": "they think in their own voice",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "scroll-feed", "x": 1050, "y": 500, "scale": 0.65, "appearAt": 4 }, { "name": "thought-bubble", "x": 740, "y": 320, "scale": 0.8, "appearAt": 10, "args": { "text": "hmm, let\nme think" } } ] },
+        { "vo": "The feed doesn't show you the world. It shows you whatever keeps you scrolling. Usually the most extreme, most agreeable, or most enraging version. Opt out, and your mind stops being quite so programmable.", "scene": "explainer", "prop": "binoculars", "emotion": "serious-expert" },
+        { "vo": "They read the whole article, not just the headline. Sit with a question. Change their mind slowly, and on purpose. Their takes end up a little weird, a little their own. Unborrowed.", "scene": "story", "room": "reading-nook", "emotion": "happy-talk", "camera": { "zoomTo": [0.4, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "book-stack", "x": 1050, "y": 720, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "A mind that nobody is farming for clicks. Remarkable. Which may be why our next trait is so hard for the herd to manage. Contentment.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — No comparison",
+      "beats": [
+        { "vo": "Second trait. The herd suffers a peculiar affliction. All day, they compare their messy, behind-the-scenes real life, to everyone else's carefully edited highlight reel. And they always, always lose.", "scene": "story", "room": "living-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "IMMUNE TO THE REEL", "subtitle": "no comparison trap",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 580, "y": 600, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "highlight-reel", "x": 1230, "y": 480, "scale": 0.72, "appearAt": 4 } ] },
+        { "vo": "It's a rigged game. Your whole life, good days and bad, weighed against a stranger's single best moment, filtered twice. No wonder it stings. Our specimen simply never steps on the scale.", "scene": "diagramCard", "diagram": "comparison-trap", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Not seeing the vacations they weren't invited to, the promotions, the flawless couples, they stay free of a comparison that was never fair, or even real, to begin with.", "scene": "explainer", "prop": "comparison-mirror", "emotion": "serious-expert" },
+        { "vo": "Their yardstick is their own last week, not a thousand strangers' highlight reels. A quiet superpower. And it frees up something precious. Attention.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Deep focus",
+      "beats": [
+        { "vo": "Third observation. Attention. The herd is interrupted, on average, every few minutes, by a buzz, a ping, a little red dot demanding to be fed. Each one shatters focus like a dropped glass.", "scene": "story", "room": "digital-wilderness", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "DEEP FOCUS", "subtitle": "attention like a laser",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "notification-swarm", "x": 1200, "y": 440, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "Every notification leaves a little smear of itself on your mind. Researchers call it attention residue. Dozens a day, and deep thought becomes almost impossible. You are always only half here.", "scene": "explainer", "prop": "notification-swarm", "emotion": "serious-expert" },
+        { "vo": "Each ping also drips a little dopamine, so the herd is trapped in a loop. Scroll, hit, crave, scroll, every thirty seconds. Our specimen just quietly stepped out of the casino.", "scene": "diagramCard", "diagram": "dopamine-loop", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Unpinged, they can do something rare. Track one thought for an hour. Read a long book. Fall into that deep, delicious state of flow the herd has nearly forgotten. Which lets them do the next rare thing. Be here.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "4 — Fully present",
+      "beats": [
+        { "vo": "Fourth trait. Presence. Watch the herd at a concert, a dinner, a sunset. They experience it through a six-inch screen, busy capturing the moment, and somehow missing it completely.", "scene": "story", "room": "digital-wilderness", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "FULLY PRESENT", "subtitle": "living it, not filming it",
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "glowing-phone", "x": 1150, "y": 560, "scale": 0.9, "appearAt": 4 } ] },
+        { "vo": "Psychologists even have a word for half-ignoring the person in front of you to check your phone. Phubbing. And it quietly drains the joy out of the very moments you were trying to save.", "scene": "explainer", "prop": "heart", "emotion": "serious-expert" },
+        { "vo": "Our specimen tastes the meal. Hears the whole story. Feels the sunset instead of framing it. The moment isn't content to be posted later. It's just lived, right now, in full colour.", "scene": "story", "room": "park-bench", "emotion": "happy-talk", "camera": { "zoomTo": [0.5, 0.5, 1.18] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 580, "y": 640, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1340, "y": 650, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "heart", "x": 960, "y": 380, "scale": 0.8, "appearAt": 8 } ] },
+        { "vo": "They trade a perfect photo for an actual memory. A good trade. And that memory is usually shared with a very particular, very small circle.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "5 — Real friends",
+      "beats": [
+        { "vo": "Fifth observation. The social circle. The herd collects friends by the thousand. A vast, shallow sea of acquaintances, follows, and faces they will never once actually meet.", "scene": "story", "room": "living-room", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "A SMALL, REAL PACK", "subtitle": "fewer, deeper bonds",
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 580, "y": 600, "scale": 1.2, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "wave", "emotion": "happy-talk", "x": 1340, "y": 610, "scale": 1.2, "flip": true } ],
+          "props": [ { "name": "heart", "x": 960, "y": 360, "scale": 0.8, "appearAt": 6 } ] },
+        { "vo": "But the human brain has a hard limit. We can only truly, deeply hold about five close people, and around a hundred and fifty we really know. Anthropologist Robin Dunbar's famous number.", "scene": "statCard", "value": 5, "suffix": "", "pictogram": "crowd", "fraction": 0.5, "emotion": "excited" },
+        { "vo": "Our specimen pours their energy into that small, real pack, instead of spreading it like a thin film across two thousand strangers. Fewer friends. Much, much deeper roots.", "scene": "explainer", "prop": "heart", "emotion": "serious-expert" },
+        { "vo": "Quality, quietly beating quantity. They don't need the crowd at all. Which leads us to a trait the herd finds almost unthinkable. Being unseen.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Unseen and fine",
+      "beats": [
+        { "vo": "Sixth trait. Our specimen can do a wonderful thing, a beautiful meal, a trip, a small private triumph, and tell absolutely no one. It happened. It was good. And that is enough.", "scene": "story", "room": "reading-nook", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "HAPPILY UNSEEN", "subtitle": "no audience required",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "seed-sprout", "x": 1040, "y": 640, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "For the herd, an experience barely counts until it's posted, liked, and validated. Their sense of self gets quietly outsourced to a scoreboard of little red hearts.", "scene": "explainer", "prop": "binoculars", "emotion": "serious-expert" },
+        { "vo": "When your worth isn't wired to an audience, you stop performing your own life, and start simply living it. You can be nobody's content, and still feel completely, solidly real.", "scene": "story", "room": "reading-nook", "emotion": "happy-talk", "camera": { "zoomTo": [0.45, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "heart", "x": 1080, "y": 420, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "No audience required. And part of staying unseen is guarding something the herd gives away, every day, for free. Themselves.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Privacy",
+      "beats": [
+        { "vo": "Seventh observation. Privacy. Every scroll, like, and pause is logged, measured, and stored, building a shockingly detailed profile of the herd. A profile that is then sold to the highest bidder.", "scene": "story", "room": "digital-wilderness", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "LEAVES NO TRACKS", "subtitle": "fiercely private",
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "serious-expert", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "scroll-feed", "x": 1120, "y": 520, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "Here is the uncomfortable rule of the internet. If the app is free, you are not the customer. You are the product. Your attention is the thing being packaged up, and sold.", "scene": "diagramCard", "diagram": "attention-economy", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Our specimen leaves far fewer tracks. Less surveilled, less profiled, less predictable. In a world that monetizes your every move, quietly keeping some of yourself to yourself is almost an act of rebellion.", "scene": "explainer", "prop": "magnifying-glass", "emotion": "serious-expert" },
+        { "vo": "Their life isn't a data stream for sale. And without that live feed of everyone else's lives, they're spared a very particular, very modern ache.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Low FOMO",
+      "beats": [
+        { "vo": "Eighth trait. There's a ghost that haunts the herd. FOMO. The fear of missing out. A low, gnawing dread that somewhere, right now, everyone else is having far more fun than you are.", "scene": "story", "room": "digital-wilderness", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE FOMO GHOST", "subtitle": "low fear of missing out",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "fomo-ghost", "x": 1180, "y": 460, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "The feed is a non-stop live broadcast of every party, trip, and milestone you weren't part of. It manufactures the feeling of missing out, so that you'll keep checking, just to make sure you're not.", "scene": "explainer", "prop": "fomo-ghost", "emotion": "serious-expert" },
+        { "vo": "One study found that cutting social media to just thirty minutes a day measurably reduced people's loneliness and depression. Our specimen, simply never broadcast to, isn't haunted at all.", "scene": "statCard", "value": 30, "suffix": " MIN", "pictogram": "none", "emotion": "excited" },
+        { "vo": "The ghost can't find someone who isn't watching the stream. They have the one thing the herd is starving for. Enough. And in the quiet that's left behind, something unexpected grows.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "9 — Creative boredom",
+      "beats": [
+        { "vo": "Ninth, and final, trait. Boredom. The herd has abolished it. Every empty second, in a queue, in a lift, in the bathroom, is instantly filled with a scroll. The gift of an idle mind is simply gone.", "scene": "story", "room": "reading-nook", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "CREATIVE BOREDOM", "subtitle": "boredom is a superpower",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "seed-sprout", "x": 1060, "y": 660, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But boredom isn't the enemy. It's fertile ground. Studies show a wandering, under-stimulated mind generates more original ideas. Daydreaming is where creativity quietly does its best work.", "scene": "explainer", "prop": "seed-sprout", "emotion": "serious-expert" },
+        { "vo": "So our specimen lets themselves be bored. Stares out of windows. Lets the mind drift. And in that empty quiet, where the herd would have been scrolling, a brand new idea takes root, and grows.", "scene": "story", "room": "reading-nook", "emotion": "excited", "camera": { "zoomTo": [0.45, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "lightbulb", "x": 1060, "y": 440, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "Boredom, it turns out, was a superpower all along. So. Nine traits. But before we romanticize our specimen too much, honesty demands a quick word about the trade-offs.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "The honest part",
+      "beats": [
+        { "vo": "Because logging off is not pure enlightenment. Our specimen genuinely misses things. The group plans, the breaking news, the in-jokes, the invitations that only ever go out in a chat they're not in.", "scene": "story", "room": "digital-wilderness", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE HONEST PART", "subtitle": "it's not all rosy",
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "thought-bubble", "x": 760, "y": 320, "scale": 0.82, "appearAt": 8, "args": { "text": "wait, what\ndid I miss?" } } ] },
+        { "vo": "And let's be fair to the herd. Social media is also how people find their community, keep up with faraway friends, grow a business, and give a voice to those who would otherwise go unheard. It's not evil. It's a tool.", "scene": "explainer", "prop": "heart", "emotion": "serious-expert" },
+        { "vo": "So let's kill a few myths. The offline person isn't antisocial. Usually the opposite. They're not technophobes, and they're not secretly judging you. They've just turned this one particular firehose off.", "scene": "story", "room": "reading-nook", "emotion": "happy-talk", "camera": { "zoomTo": [0.45, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [] },
+        { "vo": "Because the real trait underneath all nine was never being offline. It's being intentional. Using the tool on purpose, instead of being quietly used by it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "And that's the secret the whole field guide was pointing at. You don't have to delete everything to think like our specimen. You just have to decide that you are the one holding the phone, not the other way around.", "scene": "explainer", "prop": "binoculars", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "Look again at the habitat. All those bowed heads, lit cold and blue. And here and there, one or two, looking up. Choosing the sunset. You can become one of them any time you like. The glow will survive without you.", "scene": "story", "room": "digital-wilderness", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 600, "y": 640, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "thought-bubble", "x": 780, "y": 330, "scale": 0.8, "appearAt": 8, "args": { "text": "look\nup" } } ] },
+        { "vo": "So, how many of the nine were you? And which one do you want back? Tell me down in the comments. Then, if you're feeling brave, put the phone down, and go be gloriously, rarely, offline for an hour.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

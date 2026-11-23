@@ -14,6 +14,7 @@ import * as Sty from './story';
 import * as Att from './attachment';
 import * as Iq from './iq';
 import * as Man from './manipulation';
+import * as Off from './offline';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -141,6 +142,15 @@ export const PROPS: Record<string, React.FC<any>> = {
   goalpost: Man.Goalpost,
   'carrot-on-stick': Man.CarrotOnStick,
   'fish-hook': Man.FishHook,
+  // offline-minds props
+  'glowing-phone': Off.GlowingPhone,
+  'scroll-feed': Off.ScrollFeed,
+  'comparison-mirror': Off.ComparisonMirror,
+  'fomo-ghost': Off.FomoGhost,
+  'highlight-reel': Off.HighlightReel,
+  'notification-swarm': Off.NotificationSwarm,
+  'seed-sprout': Off.SeedSprout,
+  binoculars: Off.Binoculars,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

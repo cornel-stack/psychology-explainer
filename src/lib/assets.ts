@@ -8,6 +8,6 @@ export const POSE_NAMES = [
 export const COSTUME_NAMES = ['pajamas', 'labcoat', 'suit', 'hoodie', 'tee'] as const;
 export const ACCESSORY_NAMES = ['nightcap', 'halo', 'antenna', 'none'] as const;
 export const SCENE_KINDS = ['story', 'explainer', 'statCard', 'diagramCard', 'closeUp', 'overviewGrid', 'endScreen'] as const;
-export const DIAGRAM_TYPES = ['sleep-stage', 'switchboard', 'signal-race', 'overflow-meter', 'two-gates', 'then-now', 'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip', 'defense-shield', 'iceberg', 'maturity-ladder', 'redirect-arrow', 'pressure-valve', 'attachment-grid', 'secure-base', 'push-pull', 'chase-cycle', 'bell-curve', 'flynn-effect', 'multi-intelligence', 'fog-triangle', 'manipulation-cycle', 'ask-ladder'] as const;
+export const DIAGRAM_TYPES = ['sleep-stage', 'switchboard', 'signal-race', 'overflow-meter', 'two-gates', 'then-now', 'decision-fork', 'dk-curve', 'loss-scale', 'framing-flip', 'defense-shield', 'iceberg', 'maturity-ladder', 'redirect-arrow', 'pressure-valve', 'attachment-grid', 'secure-base', 'push-pull', 'chase-cycle', 'bell-curve', 'flynn-effect', 'multi-intelligence', 'fog-triangle', 'manipulation-cycle', 'ask-ladder', 'dopamine-loop', 'comparison-trap', 'attention-economy'] as const;
 export const LOOK_DIRS = ['left', 'center', 'right'] as const;
 export const CLOSEUP_SUBJECTS = ['face', 'object'] as const;

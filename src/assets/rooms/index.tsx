@@ -38,7 +38,9 @@ export type RoomName =
   | 'date-restaurant'
   | 'park-bench'
   | 'classroom'
-  | 'science-lab';
+  | 'science-lab'
+  | 'digital-wilderness'
+  | 'reading-nook';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -760,6 +762,108 @@ export const ScienceLab: React.FC = () => {
   );
 };
 
+/** A hunched silhouette glued to a glowing phone — the "glow-dweller" that fills
+ *  the digital wilderness (drawn into the room so the specimen stands out). */
+const GlowDweller: React.FC<{ x: number; y: number; s: number; tone: string }> = ({ x, y, s, tone }) => (
+  <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* light cone from the phone up onto the face */}
+    <path d="M -30 -70 L -70 -200 L 70 -200 L 30 -70 Z" fill={COLORS.sky} opacity={0.3} />
+    {/* hunched body */}
+    <path d="M -70 120 Q -80 -10 0 -30 Q 80 -10 70 120 Z" fill={tone} {...strokeProps(STROKE.xl)} />
+    {/* head tilted down to the phone */}
+    <circle cx={0} cy={-80} r={52} fill={tone} {...strokeProps(STROKE.xl)} />
+    <path d="M -22 -70 q 22 16 44 0" fill="none" stroke={shade(tone, -0.4)} strokeWidth={STROKE.sm} opacity={0.5} />
+    {/* the phone, screen glowing blue */}
+    <rect x={-34} y={-78} width={68} height={30} rx={8} fill={COLORS.shirtDark} {...strokeProps(STROKE.lg)} />
+    <rect x={-26} y={-72} width={52} height={18} rx={4} fill={COLORS.sky} />
+  </g>
+);
+
+/** Digital wilderness: a dusk plaza where everyone is a hunched, blue-glowing
+ *  glow-dweller — the "habitat" the specimen lives among. Leaves a gap centre-left
+ *  for the full-colour protagonist. */
+export const DigitalWilderness: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+    {/* dusk sky band + a low sunset glow */}
+    <rect x={0} y={0} width={CANVAS.width} height={560} fill={COLORS.wallNight} />
+    <ellipse cx={960} cy={620} rx={900} ry={160} fill={COLORS.hoodie} opacity={0.18} />
+    {[[180, 120], [1240, 90], [1680, 150], [520, 90]].map(([x, y], i) => (
+      <circle key={i} cx={x} cy={y} r={5} fill={COLORS.white} opacity={0.8} />
+    ))}
+    {/* skyline silhouettes with a few lit windows */}
+    {[[40, 360, 200, 260], [260, 300, 170, 320], [1180, 320, 190, 300], [1400, 260, 210, 360], [1640, 340, 200, 280]].map(([x, y, w, h], i) => (
+      <g key={i}>
+        <rect x={x} y={y} width={w} height={h} fill={shade(COLORS.purpleDeep, 0.2)} />
+        {Array.from({ length: 4 }).map((_, k) => (
+          <rect key={k} x={x + 24 + (k % 2) * 70} y={y + 30 + Math.floor(k / 2) * 70} width={30} height={38} rx={4} fill={(i + k) % 3 === 0 ? COLORS.sky : shade(COLORS.purpleDeep, 0.05)} opacity={0.8} />
+        ))}
+      </g>
+    ))}
+    {/* ground */}
+    <rect x={0} y={760} width={CANVAS.width} height={CANVAS.height - 760} fill={shade(COLORS.purpleDeep, 0.22)} />
+    <rect x={0} y={760} width={CANVAS.width} height={10} fill={COLORS.wallNight} />
+    {/* the herd of glow-dwellers (gap left around x 520-820 for the protagonist) */}
+    <GlowDweller x={200} y={790} s={0.72} tone={shade(COLORS.purpleDeep, -0.1)} />
+    <GlowDweller x={1020} y={810} s={0.8} tone={shade(COLORS.wallNight, 0.18)} />
+    <GlowDweller x={1270} y={792} s={0.74} tone={shade(COLORS.purpleDeep, -0.05)} />
+    <GlowDweller x={1520} y={812} s={0.82} tone={shade(COLORS.wallNight, 0.1)} />
+    <GlowDweller x={1740} y={790} s={0.7} tone={shade(COLORS.purpleDeep, -0.08)} />
+  </g>
+);
+
+/** Reading nook: the specimen's natural habitat — warm lamp, armchair, a wall of
+ *  books, a plant, an evening window, a steaming mug. Not a screen in sight. */
+export const ReadingNook: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wood} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    {/* warm wall panelling */}
+    {Array.from({ length: 24 }).map((_, i) => (
+      <rect key={i} x={i * 84} y={0} width={42} height={560} fill={shade(COLORS.wood, 0.06)} />
+    ))}
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={COLORS.bgCream} />
+    <rect x={0} y={560} width={CANVAS.width} height={14} fill={shade(COLORS.woodDark, 0.1)} />
+    {/* evening window */}
+    <g transform="translate(300 260)"><WindowNight /></g>
+    {/* a tall wall of books */}
+    <g transform="translate(1540 430)">
+      <rect x={-150} y={-280} width={300} height={520} rx={10} fill={COLORS.woodDark} {...xl} />
+      {[0, 1, 2, 3].map((r) => (
+        <g key={r}>
+          <rect x={-132} y={-250 + r * 130} width={264} height={112} fill={shade(COLORS.wood, 0.14)} />
+          {Array.from({ length: 8 }).map((_, c) => {
+            const cols = [COLORS.red, COLORS.yellow, COLORS.sky, COLORS.greenLeaf, COLORS.lavender, COLORS.pink, COLORS.greenTeal, COLORS.hoodie];
+            return <rect key={c} x={-124 + c * 32} y={-244 + r * 130 + ((c * 7) % 10)} width={24} height={106 - ((c * 7) % 10)} rx={3} fill={cols[(r + c) % 8]} {...sm} />;
+          })}
+        </g>
+      ))}
+    </g>
+    {/* floor lamp casting a warm pool */}
+    <ellipse cx={1180} cy={760} rx={220} ry={90} fill={COLORS.yellowSoft} opacity={0.25} />
+    <g transform="translate(1180 420)">
+      <path d="M -70 0 L 70 0 L 44 -90 L -44 -90 Z" fill={COLORS.yellow} {...xl} />
+      <rect x={-8} y={0} width={16} height={330} fill={COLORS.woodDark} {...lg} />
+      <ellipse cx={0} cy={338} rx={70} ry={20} fill={COLORS.woodDark} {...lg} />
+    </g>
+    {/* cosy armchair */}
+    <g transform="translate(680 620)">
+      <rect x={-170} y={0} width={340} height={210} rx={40} fill={COLORS.greenTeal} {...xl} />
+      <rect x={-170} y={-120} width={340} height={160} rx={40} fill={COLORS.greenTeal} {...xl} />
+      <rect x={-170} y={-120} width={340} height={54} rx={28} fill={shade(COLORS.greenTeal, 0.14)} />
+      <rect x={-210} y={-40} width={70} height={230} rx={28} fill={shade(COLORS.greenTeal, 0.1)} {...std} />
+      <rect x={140} y={-40} width={70} height={230} rx={28} fill={shade(COLORS.greenTeal, 0.1)} {...std} />
+      <rect x={-120} y={-96} width={130} height={110} rx={24} fill={COLORS.yellowSoft} {...std} />
+    </g>
+    {/* a steaming mug on a side table */}
+    <g transform="translate(1000 720)">
+      <rect x={-70} y={0} width={140} height={100} rx={12} fill={COLORS.woodDark} {...lg} />
+      <rect x={-44} y={-54} width={70} height={58} rx={12} fill={COLORS.red} {...lg} />
+      <path d="M 26 -44 q 30 0 30 24 q 0 20 -30 20" fill="none" {...std} />
+      <path d="M -24 -70 q -8 -16 6 -26 M 4 -70 q -8 -16 6 -26" fill="none" stroke={COLORS.whiteShade} strokeWidth={STROKE.sm} strokeLinecap="round" />
+    </g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -783,6 +887,8 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'park-bench': ParkBench,
   classroom: Classroom,
   'science-lab': ScienceLab,
+  'digital-wilderness': DigitalWilderness,
+  'reading-nook': ReadingNook,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

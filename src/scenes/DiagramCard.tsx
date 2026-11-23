@@ -898,8 +898,107 @@ const AskLadder: React.FC<{ labels: string[] }> = ({ labels }) => {
   );
 };
 
+/** The feed's dopamine loop: scroll → a little hit → crave more → scroll. */
+const DopamineLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const r = 250;
+  const nodes = [
+    { label: 'SCROLL', color: COLORS.sky },
+    { label: 'DOPAMINE', color: COLORS.yellow },
+    { label: 'CRAVE MORE', color: COLORS.red },
+  ];
+  const a = (frame / 40) * Math.PI * 2;
+  const tx = cx + Math.cos(a - Math.PI / 2) * r;
+  const ty = cy + Math.sin(a - Math.PI / 2) * r;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeDasharray="4 24" strokeLinecap="round" opacity={0.5} />
+      {nodes.map((n, i) => {
+        const ang = (-90 + i * 120) * (Math.PI / 180);
+        const x = cx + Math.cos(ang) * r;
+        const y = cy + Math.sin(ang) * r;
+        return (
+          <g key={n.label} transform={`translate(${x} ${y})`}>
+            <circle r={100} fill={n.color} {...lg} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={n.label.length > 7 ? 26 : 32} fill={COLORS.outline}>{n.label}</text>
+          </g>
+        );
+      })}
+      <circle cx={tx} cy={ty} r={24} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy - 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline} opacity={0.6}>↻</text>
+      <text x={cx} y={cy + 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={28} fill={COLORS.purpleDeep} opacity={0.8}>every 30s</text>
+    </g>
+  );
+};
+
+/** The comparison trap: your whole messy life vs everyone's highlight reel. */
+const ComparisonTrap: React.FC = () => {
+  const frame = useCurrentFrame();
+  const tilt = interpolate(frame, [10, 40], [0, 10], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cx = CANVAS.width * 0.56;
+  const cy = 430;
+  return (
+    <g>
+      <rect x={cx - 10} y={cy - 150} width={20} height={330} rx={10} fill={COLORS.woodDark} {...lg} />
+      <ellipse cx={cx} cy={cy + 180} rx={120} ry={28} fill={COLORS.woodDark} {...lg} />
+      <g transform={`rotate(${tilt} ${cx} ${cy - 140})`}>
+        <rect x={cx - 300} y={cy - 150} width={600} height={20} rx={10} fill={COLORS.wood} {...lg} />
+        {/* left pan = YOU (up): real mixed life */}
+        <line x1={cx - 270} y1={cy - 140} x2={cx - 270} y2={cy - 70} {...sm} />
+        <path d={`M ${cx - 350} ${cy - 70} Q ${cx - 270} ${cy + 60} ${cx - 190} ${cy - 70} Z`} fill={COLORS.sky} {...lg} />
+        <text x={cx - 270} y={cy - 20} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>YOUR LIFE</text>
+        <text x={cx - 270} y={cy + 18} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={26} fill={COLORS.purpleDeep}>(good + bad)</text>
+        {/* right pan = THEM (down): all highlights, looks heavier */}
+        <line x1={cx + 270} y1={cy - 140} x2={cx + 270} y2={cy - 30} {...sm} />
+        <path d={`M ${cx + 190} ${cy - 30} Q ${cx + 270} ${cy + 110} ${cx + 350} ${cy - 30} Z`} fill={COLORS.yellow} {...lg} />
+        <text x={cx + 270} y={cy + 30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>THEIR FEED</text>
+        <text x={cx + 270} y={cy + 66} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={26} fill={COLORS.redDark}>(highlights)</text>
+      </g>
+      <text x={cx} y={cy + 250} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>a rigged comparison</text>
+    </g>
+  );
+};
+
+/** The attention economy: if the app is free, YOU are the product being sold. */
+const AttentionEconomy: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const pop = springIn(frame, fps, 14, { damping: 13 });
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.44;
+  return (
+    <g>
+      {/* the "product" = a person on a price tag */}
+      <g transform={`translate(${cx} ${cy}) scale(${Math.min(1, pop)})`}>
+        <path d="M -150 -140 L 70 -140 L 190 -20 L -30 200 L -150 80 Z" fill={COLORS.yellow} {...xl} />
+        <circle cx={-110} cy={-100} r={26} fill={COLORS.white} {...lg} />
+        {/* little person icon */}
+        <g transform="translate(20 10)">
+          <circle cx={0} cy={-40} r={34} fill={COLORS.white} {...lg} />
+          <path d="M -50 60 Q 0 -10 50 60 Z" fill={COLORS.white} {...lg} />
+        </g>
+        <text x={10} y={150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline} transform={`rotate(-20 ${10} 150)`}>FREE</text>
+      </g>
+      {/* barcode under it */}
+      {Array.from({ length: 14 }).map((_, i) => (
+        <rect key={i} x={cx - 130 + i * 18} y={cy + 150} width={i % 3 ? 6 : 12} height={60} fill={COLORS.outline} />
+      ))}
+      {/* money flowing out to an advertiser bag */}
+      <g transform={`translate(${cx + 360} ${cy - 20})`}>
+        <path d="M -70 -40 Q -70 -80 0 -80 Q 70 -80 70 -40 L 90 120 L -90 120 Z" fill={COLORS.greenLeaf} {...xl} />
+        <text x={0} y={60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={70} fill={COLORS.white}>$</text>
+        <text x={0} y={170} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.outline}>advertisers</text>
+      </g>
+      <path d={`M ${cx + 210} ${cy} l 70 0 l -18 -14 m 18 14 l -18 14`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <text x={cx + 20} y={cy + 300} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>you are the product</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -931,6 +1030,9 @@ export const DiagramCard: React.FC<{
     'fog-triangle': COLORS.lavender,
     'manipulation-cycle': COLORS.red,
     'ask-ladder': COLORS.yellow,
+    'dopamine-loop': COLORS.sky,
+    'comparison-trap': COLORS.yellow,
+    'attention-economy': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -969,6 +1071,9 @@ export const DiagramCard: React.FC<{
         {diagram === 'fog-triangle' && <FogTriangle />}
         {diagram === 'manipulation-cycle' && <ManipulationCycle />}
         {diagram === 'ask-ladder' && <AskLadder labels={labels} />}
+        {diagram === 'dopamine-loop' && <DopamineLoop />}
+        {diagram === 'comparison-trap' && <ComparisonTrap />}
+        {diagram === 'attention-economy' && <AttentionEconomy />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

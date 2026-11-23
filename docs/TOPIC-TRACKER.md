@@ -29,7 +29,7 @@ Glitches.
 ## Suggested first-15 build order (from the Overview sheet)
 1. ✅ Every Feeling You Can't Name, Explained — *done (`unnamed-feelings`)*
 2. 🟡 Every Level of IQ Explained — *built (`iq-levels`), 7 levels + "not your worth" spine; awaiting CI render*
-3. ⬜ The Psychology of People Who Don't Use Social Media
+3. 🟡 The Psychology of People Who Don't Use Social Media — *built (`offline-minds`), nature-doc angle, 9 traits; awaiting CI render*
 4. ✅ Every Psychological Defense Mechanism Explained — *done (`defense-mechanisms`)*
 5. ⬜ Why Your Brain Never Stops Thinking (and the Off Switch)
 6. 🟡 Every Manipulation Tactic Explained — *built (`manipulation-tactics`), 15 tactics + counters; awaiting CI render*
@@ -63,7 +63,7 @@ detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 22 Overthinking · 23 Attractiveness · 24 Self-Awareness. *(Hottest grammar in late
 2026 — seven figures in weeks; good for browse reach early.)*
 
-**Psychology Of People Who (25–33):** 25 Don't Use Social Media · 26 High IQ ·
+**Psychology Of People Who (25–33):** 25 Don't Use Social Media 🟡 · 26 High IQ ·
 27 Imagine Fake Scenarios · 28 Cry Easily · 29 Birthday Like a Normal Day ·
 30 Struggle to Make Friends · 31 Keep House Spotless · 32 Prefer Being Alone ·
 33 Who Cheat.

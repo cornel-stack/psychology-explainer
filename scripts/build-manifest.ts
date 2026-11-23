@@ -48,6 +48,10 @@ const NEW_ASSETS = new Set([
   // manipulation-tactics
   'puppet-strings', 'sheep-mask', 'gaslight-lamp', 'guilt-chain', 'countdown-timer', 'goalpost', 'carrot-on-stick', 'fish-hook',
   'fog-triangle', 'manipulation-cycle', 'ask-ladder',
+  // offline-minds
+  'digital-wilderness', 'reading-nook',
+  'glowing-phone', 'scroll-feed', 'comparison-mirror', 'fomo-ghost', 'highlight-reel', 'notification-swarm', 'seed-sprout', 'binoculars',
+  'dopamine-loop', 'comparison-trap', 'attention-economy',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

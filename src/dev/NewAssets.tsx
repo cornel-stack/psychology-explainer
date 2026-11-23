@@ -191,6 +191,8 @@ const ROOM_DEMO: Record<string, { pose: any; emotion: any; props?: any[] }> = {
   'park-bench': { pose: 'wave', emotion: 'neutral', props: [{ name: 'anchor', x: 1240, y: 600, scale: 0.9 }] },
   classroom: { pose: 'point-right', emotion: 'serious-expert', props: [{ name: 'test-paper', x: 1180, y: 640, scale: 0.9 }] },
   'science-lab': { pose: 'arms-out-presenting', emotion: 'excited', props: [{ name: 'lightbulb', x: 1180, y: 520, scale: 0.9 }] },
+  'digital-wilderness': { pose: 'idle', emotion: 'happy-talk', props: [] },
+  'reading-nook': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'seed-sprout', x: 1000, y: 620, scale: 0.7 }] },
 };
 
 export const RoomStill: React.FC<{ room: RoomName }> = ({ room }) => {

@@ -1,0 +1,399 @@
+{
+  "slug": "offline-minds",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 14,
+    "NEW": 21
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        7,
+        9,
+        13,
+        17,
+        19,
+        21,
+        25,
+        27,
+        29,
+        33,
+        37,
+        39,
+        41,
+        43,
+        46
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        19,
+        21
+      ]
+    },
+    {
+      "name": "attention-economy",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "comparison-trap",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "dopamine-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        41
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        22,
+        35,
+        39
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        3,
+        4,
+        7,
+        16,
+        17,
+        19,
+        20,
+        21,
+        25,
+        27,
+        33,
+        36,
+        40,
+        43,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        9,
+        12,
+        24,
+        28,
+        32,
+        44
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        29,
+        33
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        2,
+        5,
+        6,
+        10,
+        11,
+        13,
+        14,
+        15,
+        18,
+        23,
+        26,
+        29,
+        30,
+        31,
+        34,
+        38,
+        42,
+        45
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        17,
+        37
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        39
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        7,
+        9,
+        13,
+        19,
+        25,
+        27,
+        33,
+        37
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        41
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        1,
+        17,
+        21,
+        43,
+        46
+      ]
+    },
+    {
+      "name": "binoculars",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        6,
+        26,
+        45
+      ]
+    },
+    {
+      "name": "book-stack",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "comparison-mirror",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "fomo-ghost",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        33,
+        34
+      ]
+    },
+    {
+      "name": "glowing-phone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "heart",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        18,
+        19,
+        21,
+        23,
+        27,
+        42
+      ]
+    },
+    {
+      "name": "highlight-reel",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "lightbulb",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        39
+      ]
+    },
+    {
+      "name": "magnifying-glass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        31
+      ]
+    },
+    {
+      "name": "notification-swarm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13,
+        14
+      ]
+    },
+    {
+      "name": "scroll-feed",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        5,
+        29
+      ]
+    },
+    {
+      "name": "seed-sprout",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        37,
+        38
+      ]
+    },
+    {
+      "name": "thought-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        1,
+        5,
+        41,
+        46
+      ]
+    },
+    {
+      "name": "digital-wilderness",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        5,
+        13,
+        17,
+        29,
+        33,
+        41,
+        46
+      ]
+    },
+    {
+      "name": "living-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        9,
+        21
+      ]
+    },
+    {
+      "name": "park-bench",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "reading-nook",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        7,
+        25,
+        27,
+        37,
+        39,
+        43
+      ]
+    }
+  ]
+}
