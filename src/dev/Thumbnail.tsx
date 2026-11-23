@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'mental-complexes': {
+    A: { lines: ['EVERY', 'MENTAL', 'COMPLEX'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '15', prop: 'god-throne' },
+    B: { lines: ['WHICH', 'MASK ARE', 'YOU WEARING?'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'smug', textColor: COLORS.white, badge: '?', prop: 'pedestal-strut' },
+    C: { lines: ['SAME', 'WOUND,', 'OPPOSITE MASK'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'shrinking-figure' },
+  },
 };
 
 export const Thumbnail: React.FC<{ slug?: string; variant: string }> = ({ slug = 'unnamed-feelings', variant }) => {

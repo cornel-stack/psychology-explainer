@@ -1883,8 +1883,88 @@ const HowToRespond: React.FC = () => {
   );
 };
 
+/** A complex = an emotionally-charged cluster pulling in thoughts, feelings, memories. */
+const ComplexCore: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const bits = ['a memory', 'a feeling', 'a belief', 'a fear', 'a wound'];
+  return (
+    <g>
+      {bits.map((b, i) => {
+        const a = (i / bits.length) * Math.PI * 2 + frame / 40;
+        const r = 230 + Math.sin(frame / 12 + i) * 16;
+        const x = cx + Math.cos(a) * r; const y = cy + Math.sin(a) * (r * 0.7);
+        return (
+          <g key={b}>
+            <line x1={cx} y1={cy} x2={x} y2={y} stroke={COLORS.red} strokeWidth={STROKE.sm} opacity={0.4} />
+            <g transform={`translate(${x} ${y})`}><rect x={-80} y={-28} width={160} height={56} rx={16} fill={[COLORS.sky, COLORS.pink, COLORS.yellow, COLORS.lavender, COLORS.greenTeal][i]} {...lg} /><text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{b}</text></g>
+          </g>
+        );
+      })}
+      <circle cx={cx} cy={cy} r={94} fill={COLORS.red} opacity={0.3} />
+      <circle cx={cx} cy={cy} r={66} fill={COLORS.red} {...xl} />
+      <text x={cx} y={cy + 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.white}>CORE</text>
+      <text x={cx} y={cy + 260} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>a charged knot in the mind</text>
+    </g>
+  );
+};
+
+/** Inferiority → overcompensation → superiority (the same wound, two masks). */
+const OvercompensateArc: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cy = CANVAS.height * 0.56; const cx = CANVAS.width * 0.56;
+  return (
+    <g>
+      <g transform={`translate(${cx - 320} ${cy})`}><rect x={-130} y={-50} width={260} height={100} rx={20} fill={COLORS.sky} {...lg} /><text x={0} y={12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>INFERIOR</text></g>
+      <g transform={`translate(${cx + 320} ${cy})`}><rect x={-140} y={-50} width={280} height={100} rx={20} fill={COLORS.red} {...lg} /><text x={0} y={12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.white}>SUPERIOR</text></g>
+      <path d={`M ${cx - 200} ${cy - 20} Q ${cx} ${cy - 260} ${cx + 200} ${cy - 20}`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeLinecap="round" strokeDasharray={1200} strokeDashoffset={1200 * (1 - draw)} />
+      {draw > 0.9 && <path d={`M ${cx + 200} ${cy - 20} l -26 -18 l 6 24 z`} fill={COLORS.outline} />}
+      <text x={cx} y={cy - 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>overcompensation</text>
+      <text x={cx} y={cy + 140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>same wound, opposite mask</text>
+    </g>
+  );
+};
+
+/** A flower of behaviour above ground, a tangled complex root below (the hidden driver). */
+const HiddenRoots: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const ground = CANVAS.height * 0.5;
+  return (
+    <g>
+      <rect x={CANVAS.width * 0.28} y={ground} width={CANVAS.width * 0.56} height={CANVAS.height - ground} fill={COLORS.wood} opacity={0.3} />
+      <line x1={CANVAS.width * 0.28} y1={ground} x2={CANVAS.width * 0.84} y2={ground} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} />
+      {/* flower above = the behaviour */}
+      <line x1={cx} y1={ground} x2={cx} y2={ground - 150} stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <g transform={`translate(${cx} ${ground - 180})`}>{[0, 1, 2, 3, 4].map((k) => <circle key={k} cx={Math.cos(k * 1.26) * 38} cy={Math.sin(k * 1.26) * 38} r={28} fill={COLORS.yellow} {...lg} />)}<circle r={22} fill={COLORS.yellowDark} /></g>
+      <text x={cx + 170} y={ground - 170} fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>the behaviour</text>
+      {/* roots below = the complex */}
+      <path d={`M ${cx} ${ground} Q ${cx - 120} ${ground + 120} ${cx - 220} ${ground + 300} M ${cx} ${ground} Q ${cx + 100} ${ground + 140} ${cx + 230} ${ground + 280} M ${cx} ${ground} Q ${cx - 30} ${ground + 180} ${cx + 20} ${ground + 340} M ${cx} ${ground} Q ${cx + 60} ${ground + 100} ${cx - 90} ${ground + 320}`} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.8} />
+      <text x={cx + 200} y={ground + 260} fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.redDark}>the complex</text>
+    </g>
+  );
+};
+
+/** Two sides of one coin — the inferiority/superiority flip. */
+const TwoSidesCoin: React.FC = () => {
+  const frame = useCurrentFrame();
+  const flip = Math.cos(frame / 16);
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const front = flip >= 0;
+  return (
+    <g>
+      <ellipse cx={cx} cy={cy + 210} rx={110} ry={24} fill={COLORS.outline} opacity={0.14} />
+      <g transform={`translate(${cx} ${cy}) scale(${Math.abs(flip)} 1)`} style={{ transformOrigin: 'center' }}>
+        <circle r={170} fill={front ? COLORS.sky : COLORS.red} {...xl} />
+        <circle r={140} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} />
+        <text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>{front ? '“I’m less”' : '“I’m more”'}</text>
+      </g>
+      <text x={cx} y={cy + 270} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>one coin, two faces</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1954,6 +2034,10 @@ export const DiagramCard: React.FC<{
     'warm-cold-map': COLORS.sky,
     'jealousy-roots': COLORS.greenLeaf,
     'how-to-respond': COLORS.yellow,
+    'complex-core': COLORS.red,
+    'overcompensate-arc': COLORS.sky,
+    'hidden-roots': COLORS.greenLeaf,
+    'two-sides-coin': COLORS.sky,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2030,6 +2114,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'warm-cold-map' && <WarmColdMap />}
         {diagram === 'jealousy-roots' && <JealousyRoots />}
         {diagram === 'how-to-respond' && <HowToRespond />}
+        {diagram === 'complex-core' && <ComplexCore />}
+        {diagram === 'overcompensate-arc' && <OvercompensateArc />}
+        {diagram === 'hidden-roots' && <HiddenRoots />}
+        {diagram === 'two-sides-coin' && <TwoSidesCoin />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

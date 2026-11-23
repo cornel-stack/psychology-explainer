@@ -1,0 +1,182 @@
+{
+  "title": "Every Mental Complex Explained",
+  "slug": "mental-complexes",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "We all wear them sometimes. Little masks we don't remember putting on. One person has to be the smartest in every room. Another can't stop rescuing people who never asked. A third is quietly, permanently convinced the world is against them. These aren't random quirks. They're complexes.", "scene": "story", "room": "masquerade-hall", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY MENTAL COMPLEX", "subtitle": "the masks the mind wears",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 600, "y": 700, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "arms-crossed", "emotion": "smug", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ] },
+        { "vo": "A complex is a knot. A tight little bundle of beliefs, feelings and old memories, all wrapped around one charged theme. Once it forms, it tugs at everything. The way you read a compliment, a silence, a closed door. It runs in the background, quietly steering, and you rarely feel the strings.", "scene": "diagramCard", "diagram": "complex-core", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "One rule before we start, and it matters. These are patterns, not proof. Seeing yourself in one of these is not a diagnosis. It's a mirror. We all carry a few of these knots. The goal isn't to label anyone. It's to understand, so the knot can finally loosen.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Fifteen of the mind's most common complexes. Where each one comes from, how it shows up, and the single wound that so many of them are quietly protecting. Let's meet them.", "scene": "explainer", "prop": "god-throne", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's the full cast. Some inflate the self, some shrink it. Some cast you as the hero, some as the victim. But watch closely, because by the end you'll see that almost all of them are reaching for the exact same thing.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["INFERIORITY", "SUPERIORITY", "GOD", "SAVIOR", "HERO", "MARTYR", "GUILT", "PERSECUTION", "VICTIM", "NAPOLEON", "CINDERELLA", "PETER PAN", "OEDIPUS", "CASSANDRA", "JONAH"] }
+      ]
+    },
+    {
+      "name": "1 — Inferiority",
+      "beats": [
+        { "vo": "We start at the root of almost everything else. The inferiority complex. Not just feeling bad after a setback, which is normal. This is a deep, running hum of not enough. Smaller, dimmer, less-than, no matter what the scoreboard actually says.", "scene": "story", "room": "analysis-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE INFERIORITY COMPLEX", "subtitle": "a quiet hum of 'not enough'",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 640, "y": 720, "scale": 1.0, "talking": true }, { "costume": "labcoat", "pose": "reach-down", "emotion": "serious-expert", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "shrinking-figure", "x": 1060, "y": 470, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The psychologist Alfred Adler noticed the twist. What you see on the surface is never the whole story. A complex is like a flower. The behaviour is the bloom above the soil, but the real thing, the tangle of old comparisons and small humiliations, is buried in the roots, out of sight.", "scene": "diagramCard", "diagram": "hidden-roots", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Because here's the strange part. A deep enough feeling of inferiority almost never stays quiet. It pushes. It demands to be covered. And the cover it reaches for can look like the exact opposite.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Superiority",
+      "beats": [
+        { "vo": "Which brings us to the superiority complex. The person who has to be the best, the smartest, the one correcting everyone. It looks like towering confidence. Adler argued it's often the opposite, bolted on top. A loud cover story for a quiet fear of being small.", "scene": "story", "room": "pedestal-gallery", "emotion": "smug", "camera": "slowZoom", "chapterStart": true, "title": "THE SUPERIORITY COMPLEX", "subtitle": "confidence as a cover story",
+          "mascots": [ { "costume": "suit", "pose": "hands-hips", "emotion": "smug", "x": 640, "y": 700, "scale": 1.0, "talking": true }, { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 1360, "y": 720, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "pedestal-strut", "x": 1040, "y": 470, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "So inferiority and superiority aren't opposites at all. They're a single arc. The same wound, wearing opposite masks. The one who shrinks and the one who struts are often reaching for the identical thing, to finally feel like they matter.", "scene": "diagramCard", "diagram": "overcompensate-arc", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Turn that need all the way up, past confidence, past arrogance, and you reach a place where a person stops feeling merely better than others, and starts to feel like something more.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — God",
+      "beats": [
+        { "vo": "The god complex. The unshakeable belief that one is essentially infallible. My judgement is always right. The rules are for other people. If I decided it, it must be correct. You see it most where power is high and feedback is low. Certain leaders, certain experts, certain bosses.", "scene": "story", "room": "masquerade-hall", "emotion": "smug", "camera": "slowZoom", "chapterStart": true, "title": "THE GOD COMPLEX", "subtitle": "'I am never wrong'",
+          "mascots": [ { "costume": "suit", "pose": "arms-crossed", "emotion": "smug", "x": 660, "y": 700, "scale": 1.05, "talking": true, "accessory": "halo" }, { "costume": "labcoat", "pose": "shrug", "emotion": "annoyed", "x": 1380, "y": 720, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "god-throne", "x": 1060, "y": 450, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The tell isn't confidence. Plenty of skilled people are confident. The tell is the allergy to correction. A god complex cannot absorb being wrong, because being wrong would crack the whole structure. So evidence bounces off, and everyone around them slowly learns to stop arguing.", "scene": "explainer", "prop": "god-throne", "emotion": "serious-expert" },
+        { "vo": "Now, not every rescuer wants to rule. Some just desperately, endlessly need to save. And that need has its own name.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Savior",
+      "beats": [
+        { "vo": "The savior complex, sometimes called the messiah complex. The compulsion to rescue. To fix the broken partner, carry the struggling friend, solve problems nobody asked you to touch. It feels like pure generosity. Underneath, there's often a condition. I am worth something only when I'm saving someone.", "scene": "story", "room": "analysis-room", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "THE SAVIOR COMPLEX", "subtitle": "'they need me to fix them'",
+          "mascots": [ { "costume": "tee", "pose": "reach-down", "emotion": "happy-talk", "x": 640, "y": 710, "scale": 1.0, "talking": true }, { "costume": "hoodie", "pose": "cower", "emotion": "sleepy", "x": 1360, "y": 740, "scale": 0.9, "flip": true } ],
+          "props": [ { "name": "savior-ring", "x": 1050, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The quiet cost is that a savior needs someone drowning. Healthy helping wants the other person to grow strong and not need you. A savior complex, without meaning to, keeps people a little dependent, because their rescue is the whole source of their worth.", "scene": "explainer", "prop": "savior-ring", "emotion": "serious-expert" },
+        { "vo": "Rescue has a close cousin, one that cares less about helping and more about being seen doing it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Hero",
+      "beats": [
+        { "vo": "The hero complex. Where the savior wants to help, the hero wants the spotlight that comes with helping. The dramatic rescue, the applause, the story where they arrive just in time. In its sharper form, a person may even quietly create the crisis, just to be the one who swoops in and solves it.", "scene": "story", "room": "masquerade-hall", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "THE HERO COMPLEX", "subtitle": "the rescue, and the applause",
+          "mascots": [ { "costume": "tee", "pose": "fist-up", "emotion": "excited", "x": 640, "y": 700, "scale": 1.0, "talking": true }, { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 1360, "y": 720, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "hero-spotlight", "x": 1050, "y": 450, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The spotlight is the giveaway. A true helper is just as glad when the problem is quietly solved by someone else. A hero complex deflates when there's no audience, because the point was never only the rescue. It was the recognition for being the one who rescued.", "scene": "explainer", "prop": "hero-spotlight", "emotion": "serious-expert" },
+        { "vo": "But some people seek worth not through winning the spotlight, but through sacrifice. Through how much they're seen to suffer.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Martyr",
+      "beats": [
+        { "vo": "The martyr complex. Identity built on sacrifice and suffering. I do everything for this family and no one even notices. After all I've given up for you. The martyr carries the heaviest load in the room, and makes very sure you know exactly how heavy it is.", "scene": "story", "room": "analysis-room", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "THE MARTYR COMPLEX", "subtitle": "worth measured in suffering",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 710, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "facepalm", "emotion": "annoyed", "x": 1360, "y": 720, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "martyr-cross", "x": 1050, "y": 470, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The trap is that the suffering becomes the reward. A martyr will often refuse the very help that would lighten the load, because the load is the proof. Without it, they'd have to find their value somewhere new, and that unknown can feel scarier than the weight itself.", "scene": "explainer", "prop": "martyr-cross", "emotion": "serious-expert" },
+        { "vo": "Sacrifice has a shadow partner that lives even deeper inside, one that doesn't wait for a reason to feel responsible.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Guilt",
+      "beats": [
+        { "vo": "The guilt complex. A chronic, oversized sense of being at fault. Not the healthy guilt that follows an actual wrong and helps you repair it. This is a free-floating guilt that attaches to anything. A friend's bad mood, a stranger's misfortune, a plan that fell through. Somehow, it all feels like your doing.", "scene": "story", "room": "analysis-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE GUILT COMPLEX", "subtitle": "'it must be my fault'",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 640, "y": 720, "scale": 1.0, "talking": true }, { "costume": "labcoat", "pose": "reach-down", "emotion": "serious-expert", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "guilt-weight", "x": 1050, "y": 470, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "It often starts early, in a child who decided that the chaos around them must somehow be their fault, because a world you caused feels more controllable than a world that's simply unfair. The weight is heavy, but it's also, secretly, a kind of control. If it's my fault, then I can fix it.", "scene": "explainer", "prop": "guilt-weight", "emotion": "serious-expert" },
+        { "vo": "Spin that sense of being responsible for everything a half turn, and it becomes something colder. The feeling that everything is being aimed at you.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Persecution",
+      "beats": [
+        { "vo": "The persecution complex. A pervasive sense that others are out to get you. The jokes are really digs. The meeting you weren't invited to was a plot. A run of bad luck becomes proof of a world conspiring against you. One honest note, this is the everyday version, distinct from the serious conditions a professional treats.", "scene": "story", "room": "masquerade-hall", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE PERSECUTION COMPLEX", "subtitle": "'they're all against me'",
+          "mascots": [ { "costume": "hoodie", "pose": "cover-eyes", "emotion": "scared", "x": 640, "y": 720, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "shrug", "emotion": "confused", "x": 1360, "y": 720, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "targeted-figure", "x": 1050, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The engine underneath is often a fragile self trying to make sense of pain. If something hurts and I can't explain it, deciding that someone did it on purpose at least gives the hurt a shape, and a target. The cost is a life lived braced, behind glass, trusting almost no one.", "scene": "explainer", "prop": "targeted-figure", "emotion": "serious-expert" },
+        { "vo": "When the sense of being wronged settles in and stops pointing at a plot, it becomes a role the person lives inside. The permanent victim.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "9 — Victim",
+      "beats": [
+        { "vo": "The victim complex. To be clear, this is not about people who have genuinely been harmed, which is most of us at some point. This is a settled stance, where a person is always and only the one things happen to. Nothing is ever theirs to own. The world acts, and they are forever done to.", "scene": "story", "room": "analysis-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE VICTIM COMPLEX", "subtitle": "'everything happens to me'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 720, "scale": 1.0, "talking": true }, { "costume": "labcoat", "pose": "reach-down", "emotion": "serious-expert", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "victim-cloud", "x": 1050, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "What keeps it in place is a hidden payoff. If nothing is ever your fault, you never have to risk changing, or failing, or being blamed. But the price is enormous. You hand away your power. Because a person to whom things merely happen can never be the person who makes things happen.", "scene": "explainer", "prop": "victim-cloud", "emotion": "serious-expert" },
+        { "vo": "So far, big inner postures. The next few are more specific, more human-sized, and some you'll recognise by their famous names.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "10 — Napoleon",
+      "beats": [
+        { "vo": "The Napoleon complex. The popular idea that a person who feels physically small, shorter, slighter, less imposing, overcompensates by being loud, domineering, quick to a fight. Named, of course, for the emperor, though historians note he was actually around average height for his time. Folklore, not a clean fact.", "scene": "story", "room": "pedestal-gallery", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "THE NAPOLEON COMPLEX", "subtitle": "overcompensating for small",
+          "mascots": [ { "costume": "suit", "pose": "fist-up", "emotion": "annoyed", "x": 660, "y": 730, "scale": 0.85, "talking": true, "accessory": "none" }, { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 1360, "y": 700, "scale": 1.1, "flip": true } ],
+          "props": [ { "name": "napoleon-hat", "x": 1050, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The research here is genuinely mixed, so hold it loosely. But the underlying mechanism is rock solid, and we've already met it. It's simple overcompensation. Any felt smallness, physical or not, can get covered by an outsized show of bigness. The hat gets taller as the fear gets louder.", "scene": "explainer", "prop": "napoleon-hat", "emotion": "serious-expert" },
+        { "vo": "Smallness can also push the other way. Instead of puffing up, a person shrinks down, and waits to be taken care of.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "11 — Cinderella",
+      "beats": [
+        { "vo": "The Cinderella complex, named by the author Colette Dowling. A quiet, often unconscious wish to be rescued. To be swept up and looked after, so you never have to stand fully on your own. It can look like helplessness, or endless waiting for the right person to come and finally fix your life.", "scene": "story", "room": "masquerade-hall", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE CINDERELLA COMPLEX", "subtitle": "waiting to be rescued",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 640, "y": 720, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "reach-down", "emotion": "happy-talk", "x": 1360, "y": 710, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "glass-slipper", "x": 1050, "y": 470, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "At its heart is a fear of independence. Standing alone means risking failure, and being fully responsible for your own life. The dream of rescue is really a way to stay safe, to keep the training wheels on. But the glass slipper only fits when you finally decide to walk in it yourself.", "scene": "explainer", "prop": "glass-slipper", "emotion": "serious-expert" },
+        { "vo": "A fear of standing on your own has a twin, a fear not of independence, but of growing up at all.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "12 — Peter Pan",
+      "beats": [
+        { "vo": "The Peter Pan complex, from the psychologist Dan Kiley. The adult who won't, or can't, grow up. Commitments feel like cages. Responsibility is always someone else's job. Fun is the highest value, and the future is a conversation for another day. Forever young, and forever dodging the bill.", "scene": "story", "room": "masquerade-hall", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "THE PETER PAN COMPLEX", "subtitle": "the adult who won't grow up",
+          "mascots": [ { "costume": "tee", "pose": "cheer", "emotion": "excited", "x": 640, "y": 710, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "arms-crossed", "emotion": "annoyed", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "never-grow-up", "x": 1050, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Underneath the fun is usually fear. Of failure, of boredom, of the grey weight of being responsible for a whole life. Staying a kid keeps the big scary doors safely shut. The tragedy is that the doors it shuts, deep bonds, real mastery, self-respect, are exactly where adult joy actually lives.", "scene": "explainer", "prop": "never-grow-up", "emotion": "serious-expert" },
+        { "vo": "Our next complex is the oldest and most debated of them all, and it reaches all the way back to the family we were born into.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "13 — Oedipus / Electra",
+      "beats": [
+        { "vo": "The Oedipus complex, and its counterpart the Electra complex. Freud's famous, and heavily debated, idea that in early childhood we form an intense attachment to the opposite-sex parent, and a rivalry with the other. We'll keep this one brief and grown-up about it.", "scene": "story", "room": "analysis-room", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE OEDIPUS COMPLEX", "subtitle": "the first blueprint for love",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 640, "y": 720, "scale": 1.0, "talking": true }, { "costume": "labcoat", "pose": "point-left", "emotion": "serious-expert", "x": 1360, "y": 700, "scale": 1.0, "flip": true, "lookDir": "left" } ],
+          "props": [ { "name": "parent-photo", "x": 1050, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Most modern psychologists don't take the literal story very seriously. But the useful kernel survives. Our earliest family bonds really do become a first blueprint, a rough template for how closeness, rivalry and love are supposed to feel. We spend a lot of adulthood either following that template, or carefully rewriting it.", "scene": "explainer", "prop": "parent-photo", "emotion": "serious-expert" },
+        { "vo": "The last two complexes are about potential. The first is the pain of seeing clearly, and not being believed.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "14 — Cassandra",
+      "beats": [
+        { "vo": "The Cassandra complex. Named for the Trojan princess cursed to see the future truly, and to never be believed. It's the ache of the person who spots the problem early, raises the alarm, and is waved away. The ignored warning on the project. The quiet worry about a friend that everyone brushes off, until it's too late.", "scene": "story", "room": "masquerade-hall", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE CASSANDRA COMPLEX", "subtitle": "right, and unheard",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "scared", "x": 640, "y": 710, "scale": 1.0, "talking": true, "lookDir": "right" }, { "costume": "suit", "pose": "arms-crossed", "emotion": "annoyed", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "unheard-warning", "x": 1050, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Over time, being disbelieved does something corrosive. You start to doubt your own clear eyes. Was I overreacting? Should I just stay quiet? The real danger of the Cassandra complex isn't only being unheard. It's slowly learning to silence yourself, and losing trust in the very perception that was right all along.", "scene": "explainer", "prop": "unheard-warning", "emotion": "serious-expert" },
+        { "vo": "And the final complex may be the most quietly tragic of all. It's not the fear of failing. It's the fear of succeeding.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "15 — Jonah",
+      "beats": [
+        { "vo": "The Jonah complex, named by the psychologist Abraham Maslow. The fear of your own greatness. We expect people to fear failure. Maslow noticed something stranger. We're often even more afraid of our own potential. Of the big calling, the bright path, the version of ourselves that would demand everything we've got.", "scene": "story", "room": "pedestal-gallery", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE JONAH COMPLEX", "subtitle": "the fear of your own greatness",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 640, "y": 730, "scale": 1.0, "talking": true }, { "costume": "labcoat", "pose": "point-right", "emotion": "serious-expert", "x": 1360, "y": 700, "scale": 1.0, "flip": true, "lookDir": "right" } ],
+          "props": [ { "name": "dodged-summit", "x": 1050, "y": 450, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "So we shrink. We duck the opportunity, pick the smaller dream, talk ourselves out of the summit before we even start to climb. Because if you never really try, you can never really fail. Named for Jonah, who ran from his calling. It's the complex of the person standing at the foot of their own mountain, quietly walking away.", "scene": "explainer", "prop": "dodged-summit", "emotion": "serious-expert" },
+        { "vo": "Fifteen masks. And if you look back, almost every one of them was reaching for the same single thing.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Common Root",
+      "beats": [
+        { "vo": "Strut or shrink. Rescue or be rescued. Rule the room or hide from it. Look closely and the same coin keeps turning. On one face, I'm more than you. On the other, I'm less. But it's one coin, minted from one quiet question we all carry. Am I enough?", "scene": "diagramCard", "diagram": "two-sides-coin", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "That's what makes a complex so human, and so forgivable. It isn't a flaw in your character. It's a strategy a younger you invented to feel safe, and worthy, and loved. It did its job once. It just never clocked off, and now it's running a life it was only ever meant to protect.", "scene": "story", "room": "analysis-room", "emotion": "serious-expert", "camera": { "zoomTo": [0.5, 0.45, 1.15] },
+          "mascots": [ { "costume": "labcoat", "pose": "arms-out-presenting", "emotion": "serious-expert", "x": 960, "y": 710, "scale": 1.15, "talking": true } ] },
+        { "vo": "And that's the hopeful part. A knot that was tied can be untied. It usually starts right where we started, with a name. The moment you can say, ah, that's my martyr talking, the mask stops wearing you, and you get to choose. You are not your complexes. You're the one who can loosen them. Be gentle, and take the mask off. I'm Dear Brain.", "scene": "explainer", "prop": "savior-ring", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

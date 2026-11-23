@@ -67,7 +67,10 @@ export type RoomName =
   | 'misty-clearing'
   | 'break-room'
   | 'celebration'
-  | 'coffee-catchup';
+  | 'coffee-catchup'
+  | 'masquerade-hall'
+  | 'pedestal-gallery'
+  | 'analysis-room';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -1953,6 +1956,86 @@ export const CoffeeCatchup: React.FC = () => (
   </g>
 );
 
+/** Masquerade hall: an ornate ballroom hung with masks and drapes — complexes as
+ *  the masks we wear without knowing it. */
+export const MasqueradeHall: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.purpleDeep} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {/* damask pattern */}
+    {Array.from({ length: 6 }).map((_, r) => Array.from({ length: 12 }).map((_, c) => (
+      <path key={`${r}-${c}`} d={`M ${80 + c * 170 + (r % 2) * 85} ${70 + r * 90} q 30 -30 60 0 q -30 30 -60 0 Z`} fill="none" stroke={shade(COLORS.purpleDeep, -0.1)} strokeWidth={STROKE.sm} opacity={0.6} />
+    )))}
+    {/* side drapes */}
+    <path d="M 0 0 L 240 0 Q 180 400 220 760 Q 100 700 0 760 Z" fill={COLORS.redDark} {...xl} />
+    <path d="M 1920 0 L 1680 0 Q 1740 400 1700 760 Q 1820 700 1920 760 Z" fill={COLORS.redDark} {...xl} />
+    {/* chandelier */}
+    <line x1={960} y1={0} x2={960} y2={110} {...sm} />
+    <g transform="translate(960 160)"><ellipse rx={120} ry={30} fill={COLORS.yellow} {...lg} />{[-80, -40, 0, 40, 80].map((x, i) => <circle key={i} cx={x} cy={20} r={12} fill={COLORS.yellowSoft} />)}</g>
+    <ellipse cx={960} cy={420} rx={300} ry={360} fill={COLORS.yellowSoft} opacity={0.07} />
+    {/* masks on the wall */}
+    {([[360, 300, COLORS.yellow], [1560, 300, COLORS.sky], [620, 230, COLORS.pink], [1320, 230, COLORS.greenLeaf]] as [number, number, string][]).map(([x, y, c], i) => (
+      <g key={i} transform={`translate(${x} ${y}) rotate(${i % 2 ? 6 : -6})`}>
+        <path d="M -70 -40 Q -80 50 0 70 Q 80 50 70 -40 Q 0 -70 -70 -40 Z" fill={c} {...xl} />
+        <ellipse cx={-30} cy={-6} rx={18} ry={12} fill={COLORS.outline} /><ellipse cx={30} cy={-6} rx={18} ry={12} fill={COLORS.outline} />
+        <path d="M 0 -40 l 12 -30 l -24 0 Z" fill={shade(c, 0.2)} {...sm} />
+      </g>
+    ))}
+  </g>
+);
+
+/** Pedestal gallery: a museum of plinths and busts — the ego on display. */
+export const PedestalGallery: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCreamDark} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+    {Array.from({ length: 24 }).map((_, i) => <rect key={i} x={i * 84} y={0} width={42} height={560} fill={shade(COLORS.bgCreamDark, 0.05)} opacity={0.7} />)}
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.bgCreamDark, 0.03)} />
+    {/* arched alcoves */}
+    {[300, 1620].map((x, i) => <g key={i} transform={`translate(${x} 320)`}><path d="M -120 160 L -120 -40 Q -120 -160 0 -160 Q 120 -160 120 -40 L 120 160 Z" fill={shade(COLORS.bgCreamDark, 0.08)} {...lg} /></g>)}
+    {/* row of pedestals with busts */}
+    {[520, 960, 1400].map((x, i) => (
+      <g key={i} transform={`translate(${x} 700)`}>
+        <rect x={-70} y={0} width={140} height={150} rx={6} fill={COLORS.ledGrey} {...xl} />
+        <rect x={-86} y={-16} width={172} height={28} rx={6} fill={shade(COLORS.ledGrey, 0.14)} {...lg} />
+        {/* bust */}
+        <circle cx={0} cy={-70} r={46} fill={COLORS.white} {...lg} />
+        <path d="M -56 -10 Q 0 -70 56 -10 Z" fill={COLORS.white} {...lg} />
+        <circle cx={-16} cy={-74} r={6} fill={COLORS.outline} /><circle cx={16} cy={-74} r={6} fill={COLORS.outline} />
+      </g>
+    ))}
+    {/* a red velvet rope */}
+    <path d="M 160 760 Q 300 800 440 760" fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+    <rect x={150} y={740} width={16} height={80} rx={6} fill={COLORS.yellowDark} />
+    <rect x={434} y={740} width={16} height={80} rx={6} fill={COLORS.yellowDark} />
+  </g>
+);
+
+/** Analysis room: a classic psychoanalysis study — a chaise couch, an analyst's
+ *  chair + notebook, a bookshelf, a diploma and a dim lamp. */
+export const AnalysisRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenDark} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    {Array.from({ length: 24 }).map((_, i) => <rect key={i} x={i * 84} y={0} width={42} height={560} fill={shade(COLORS.greenDark, 0.08)} opacity={0.6} />)}
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.greenDark, 0.12)} />
+    {/* rug */}
+    <ellipse cx={820} cy={940} rx={640} ry={120} fill={shade(COLORS.woodDark, 0.1)} />
+    <ellipse cx={820} cy={940} rx={520} ry={92} fill={COLORS.red} opacity={0.25} />
+    {/* diploma + framed inkblot */}
+    <g transform="translate(300 290)"><rect x={-100} y={-70} width={200} height={140} rx={8} fill={COLORS.bgCream} {...xl} /><rect x={-76} y={-46} width={152} height={12} rx={6} fill={COLORS.whiteShade} /><rect x={-76} y={-20} width={120} height={12} rx={6} fill={COLORS.whiteShade} /><circle cx={60} cy={34} r={16} fill={COLORS.red} /></g>
+    <g transform="translate(560 300)"><rect x={-70} y={-80} width={140} height={160} rx={8} fill={COLORS.white} {...xl} />{/* rorschach */}<path d="M 0 -40 Q -46 -20 -30 20 Q -10 40 0 20 Q 10 40 30 20 Q 46 -20 0 -40 Z" fill={COLORS.outline} /></g>
+    {/* bookshelf */}
+    <g transform="translate(1680 460)"><rect x={-120} y={-240} width={240} height={420} rx={10} fill={COLORS.woodDark} {...xl} />{[0, 1, 2].map((r) => <g key={r}><rect x={-104} y={-210 + r * 140} width={208} height={120} fill={shade(COLORS.wood, 0.1)} />{Array.from({ length: 7 }).map((_, c) => <rect key={c} x={-96 + c * 29} y={-204 + r * 140} width={22} height={108} rx={3} fill={[COLORS.red, COLORS.yellow, COLORS.sky, COLORS.greenLeaf, COLORS.lavender, COLORS.pink, COLORS.greenTeal][(r + c) % 7]} {...sm} />)}</g>)}</g>
+    {/* the chaise couch */}
+    <g transform="translate(820 720)">
+      <rect x={-300} y={0} width={600} height={120} rx={28} fill={COLORS.red} {...xl} />
+      <path d="M -300 0 Q -320 -110 -250 -110 L -140 -110 Q -90 -110 -90 0 Z" fill={COLORS.red} {...xl} />
+      <rect x={-300} y={78} width={600} height={42} rx={16} fill={shade(COLORS.red, 0.16)} />
+      <rect x={-250} y={-70} width={120} height={60} rx={16} fill={COLORS.yellowSoft} {...std} />
+    </g>
+    {/* analyst chair + notebook */}
+    <g transform="translate(300 760)"><rect x={-60} y={-10} width={120} height={110} rx={16} fill={COLORS.wood} {...xl} /><rect x={-60} y={-100} width={120} height={100} rx={16} fill={COLORS.wood} {...xl} /><rect x={-40} y={10} width={80} height={56} rx={8} fill={COLORS.white} {...sm} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2005,6 +2088,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'break-room': BreakRoom,
   celebration: Celebration,
   'coffee-catchup': CoffeeCatchup,
+  'masquerade-hall': MasqueradeHall,
+  'pedestal-gallery': PedestalGallery,
+  'analysis-room': AnalysisRoom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

@@ -80,6 +80,10 @@ const NEW_ASSETS = new Set([
   'break-room', 'celebration', 'coffee-catchup',
   'green-monster', 'backhanded-gift', 'deflate-balloon', 'copycat-twins', 'scoreboard', 'fake-smile-mask', 'gossip-cloud', 'hidden-grin', 'frost-shoulder', 'red-pen', 'envy-thermometer', 'side-eye',
   'comparison-envy', 'warm-cold-map', 'jealousy-roots', 'how-to-respond',
+  // mental-complexes (all new)
+  'masquerade-hall', 'pedestal-gallery', 'analysis-room',
+  'shrinking-figure', 'pedestal-strut', 'god-throne', 'savior-ring', 'hero-spotlight', 'martyr-cross', 'guilt-weight', 'targeted-figure', 'victim-cloud', 'napoleon-hat', 'glass-slipper', 'never-grow-up', 'parent-photo', 'unheard-warning', 'dodged-summit',
+  'complex-core', 'overcompensate-arc', 'hidden-roots', 'two-sides-coin',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

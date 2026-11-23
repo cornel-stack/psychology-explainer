@@ -1,0 +1,551 @@
+{
+  "slug": "mental-complexes",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 19,
+    "NEW": 31
+  },
+  "assets": [
+    {
+      "name": "halo",
+      "type": "accessory",
+      "status": "exists",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "none",
+      "type": "accessory",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        8,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35,
+        41,
+        44,
+        47
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        5,
+        11,
+        23,
+        29,
+        41,
+        47,
+        51
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        11,
+        20,
+        26,
+        32,
+        38,
+        44
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        14,
+        17,
+        35,
+        38
+      ]
+    },
+    {
+      "name": "complex-core",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "hidden-roots",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "overcompensate-arc",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "two-sides-coin",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        50
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        11,
+        20,
+        32,
+        38,
+        44
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        17,
+        26,
+        32,
+        41
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        17,
+        38
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        4,
+        14,
+        35,
+        38,
+        52
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34,
+        37,
+        40,
+        43,
+        46
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        23,
+        26,
+        44,
+        47
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        5,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        23,
+        24,
+        27,
+        29,
+        30,
+        33,
+        36,
+        39,
+        41,
+        42,
+        45,
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        14,
+        20,
+        23,
+        29,
+        35
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        11
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        0,
+        11,
+        38,
+        44
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        51
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "cover-eyes",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        5,
+        14,
+        23,
+        47
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "fist-up",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        17,
+        32
+      ]
+    },
+    {
+      "name": "hands-hips",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        17,
+        20,
+        29,
+        32,
+        35,
+        41
+      ]
+    },
+    {
+      "name": "point-left",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        41
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        44,
+        47
+      ]
+    },
+    {
+      "name": "reach-down",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        5,
+        14,
+        23,
+        29,
+        35
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        11,
+        26
+      ]
+    },
+    {
+      "name": "dodged-summit",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        47,
+        48
+      ]
+    },
+    {
+      "name": "glass-slipper",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        35,
+        36
+      ]
+    },
+    {
+      "name": "god-throne",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        11,
+        12
+      ]
+    },
+    {
+      "name": "guilt-weight",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23,
+        24
+      ]
+    },
+    {
+      "name": "hero-spotlight",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "martyr-cross",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20,
+        21
+      ]
+    },
+    {
+      "name": "napoleon-hat",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        32,
+        33
+      ]
+    },
+    {
+      "name": "never-grow-up",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        38,
+        39
+      ]
+    },
+    {
+      "name": "parent-photo",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        41,
+        42
+      ]
+    },
+    {
+      "name": "pedestal-strut",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "savior-ring",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        15,
+        52
+      ]
+    },
+    {
+      "name": "shrinking-figure",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "targeted-figure",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        27
+      ]
+    },
+    {
+      "name": "unheard-warning",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        44,
+        45
+      ]
+    },
+    {
+      "name": "victim-cloud",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29,
+        30
+      ]
+    },
+    {
+      "name": "analysis-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        5,
+        14,
+        20,
+        23,
+        29,
+        41,
+        51
+      ]
+    },
+    {
+      "name": "masquerade-hall",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        11,
+        17,
+        26,
+        35,
+        38,
+        44
+      ]
+    },
+    {
+      "name": "pedestal-gallery",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        8,
+        32,
+        47
+      ]
+    }
+  ]
+}

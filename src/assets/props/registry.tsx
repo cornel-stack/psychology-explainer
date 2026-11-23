@@ -22,6 +22,7 @@ import * as Dd from './daydream';
 import * as F3 from './fear3am';
 import * as Ot from './overthink';
 import * as Jl from './jealousy';
+import * as Cx from './complexes';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -261,6 +262,22 @@ export const PROPS: Record<string, React.FC<any>> = {
   'red-pen': Jl.RedPen,
   'envy-thermometer': Jl.EnvyThermometer,
   'side-eye': Jl.SideEye,
+  // mental-complexes props (all new)
+  'shrinking-figure': Cx.ShrinkingFigure,
+  'pedestal-strut': Cx.PedestalStrut,
+  'god-throne': Cx.GodThrone,
+  'savior-ring': Cx.SaviorRing,
+  'hero-spotlight': Cx.HeroSpotlight,
+  'martyr-cross': Cx.MartyrCross,
+  'guilt-weight': Cx.GuiltWeight,
+  'targeted-figure': Cx.TargetedFigure,
+  'victim-cloud': Cx.VictimCloud,
+  'napoleon-hat': Cx.NapoleonHat,
+  'glass-slipper': Cx.GlassSlipper,
+  'never-grow-up': Cx.NeverGrowUp,
+  'parent-photo': Cx.ParentPhoto,
+  'unheard-warning': Cx.UnheardWarning,
+  'dodged-summit': Cx.DodgedSummit,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
