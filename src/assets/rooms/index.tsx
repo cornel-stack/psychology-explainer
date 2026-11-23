@@ -876,12 +876,34 @@ export const InsomniaBedroom: React.FC = () => {
   return (
     <g>
       <WallFloor wall={COLORS.wallNightDark} floor={shade(COLORS.purpleDeep, 0.2)} floorY={840} stripe={false} />
-      {/* moonlit window */}
-      <g transform="translate(330 300)"><WindowNight /></g>
-      {/* faint restless thought-scribbles near the ceiling */}
-      {[[720, 170], [980, 120], [1180, 200]].map(([x, y], i) => (
-        <path key={i} d={`M ${x} ${y} q 30 -30 60 0 t 60 0 t 60 0`} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.3} />
+      {/* wallpaper stripes break up the flat dark wall */}
+      {Array.from({ length: 24 }).map((_, i) => (
+        <rect key={i} x={i * 84} y={0} width={42} height={600} fill={shade(COLORS.wallNightDark, -0.14)} opacity={0.7} />
       ))}
+      {/* wainscot panelling along the lower wall */}
+      <rect x={0} y={600} width={CANVAS.width} height={240} fill={shade(COLORS.purpleDeep, 0.06)} />
+      <rect x={0} y={600} width={CANVAS.width} height={14} fill={shade(COLORS.purpleDeep, 0.3)} />
+      {Array.from({ length: 10 }).map((_, i) => (
+        <rect key={`p${i}`} x={70 + i * 190} y={636} width={150} height={150} rx={10} fill="none" stroke={shade(COLORS.purpleDeep, 0.14)} strokeWidth={STROKE.sm} opacity={0.6} />
+      ))}
+      {/* rug under the bed */}
+      <ellipse cx={720} cy={930} rx={460} ry={80} fill={shade(COLORS.purpleDeep, -0.08)} opacity={0.6} />
+      {/* moonlit window + a framed picture */}
+      <g transform="translate(330 300)"><WindowNight /></g>
+      <g transform="translate(1040 290)"><FramedPicture /></g>
+      {/* faint restless thought-scribbles near the ceiling */}
+      {[[720, 150], [980, 110], [1200, 180]].map(([x, y], i) => (
+        <path key={i} d={`M ${x} ${y} q 30 -30 60 0 t 60 0 t 60 0`} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.35} />
+      ))}
+      {/* a tall wardrobe on the far right */}
+      <g transform="translate(1820 560)">
+        <rect x={-130} y={-300} width={260} height={560} rx={14} fill={COLORS.woodDark} {...xl} />
+        <line x1={0} y1={-290} x2={0} y2={250} stroke={shade(COLORS.woodDark, 0.22)} strokeWidth={STROKE.sm} />
+        <rect x={-114} y={-280} width={100} height={240} rx={8} fill={shade(COLORS.woodDark, 0.1)} />
+        <rect x={16} y={-280} width={100} height={240} rx={8} fill={shade(COLORS.woodDark, 0.1)} />
+        <circle cx={-18} cy={-10} r={9} fill={COLORS.yellow} {...sm} />
+        <circle cx={18} cy={-10} r={9} fill={COLORS.yellow} {...sm} />
+      </g>
       {/* bed */}
       <g transform="translate(720 720)">
         <rect x={-320} y={-30} width={640} height={190} rx={28} fill={shade(COLORS.lavender, 0.3)} {...xl} />
