@@ -18,4 +18,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 10 | The Psychology of People With a High IQ | `high-iq` | 8:36 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45262862461 | ✅ delivered |
 | 11 | The Psychology of People Who Imagine Fake Scenarios All Day | `daydreamers` | 7:40 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45265024741 | ✅ delivered |
 
+| 12 | Why Your Brain Fears 3 AM | `fear-3am` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45269110911 | ⏳ rendering |
+
 _Continuing through the backlog one by one — new rows appended as each render completes._
