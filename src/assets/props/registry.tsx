@@ -17,6 +17,7 @@ import * as Man from './manipulation';
 import * as Off from './offline';
 import * as Rest from './restless';
 import * as Slp from './sleep';
+import * as Hiq from './highiq';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -187,6 +188,21 @@ export const PROPS: Record<string, React.FC<any>> = {
   'dream-bubble': Slp.DreamBubble,
   'moon-face': Slp.MoonFace,
   'eeg-strip': Slp.EegStrip,
+  // high-iq props (all new)
+  'question-magnet': Hiq.QuestionMagnet,
+  'nuance-palette': Hiq.NuancePalette,
+  'overthink-pretzel': Hiq.OverthinkPretzel,
+  'rabbit-hole': Hiq.RabbitHole,
+  'yawn-cloud': Hiq.YawnCloud,
+  'high-bar': Hiq.HighBar,
+  'deep-well': Hiq.DeepWell,
+  'night-owl': Hiq.NightOwl,
+  'knowledge-island': Hiq.KnowledgeIsland,
+  'burr-puzzle': Hiq.BurrPuzzle,
+  'idea-constellation': Hiq.IdeaConstellation,
+  'coffee-tower': Hiq.CoffeeTower,
+  'book-tower': Hiq.BookTower,
+  'lost-maze': Hiq.LostMaze,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

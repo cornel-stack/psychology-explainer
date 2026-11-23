@@ -1,0 +1,153 @@
+{
+  "title": "The Psychology of People With a High IQ",
+  "slug": "high-iq",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "We tend to picture a high-IQ person as a calm, confident genius, effortlessly acing everything. The reality is stranger, and a lot more human. More questions, more intensity, and a lot more three a.m. ceiling-staring.", "scene": "story", "room": "study-den", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "PEOPLE WITH A HIGH IQ", "subtitle": "what it's actually like in there",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "question-magnet", "x": 1120, "y": 460, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "Because a powerful mind isn't just a faster calculator. It's a different way of experiencing the whole world, with real gifts, and some very real costs. And it rarely feels like being smart.", "scene": "story", "room": "study-den", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.46, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 640, "y": 620, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "overthink-pretzel", "x": 1150, "y": 440, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Only about two in a hundred people score in the gifted range. And the inner life behind that number is almost never what you'd expect.", "scene": "statCard", "value": 2, "suffix": "%", "pictogram": "none", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Nine traits of the high-IQ mind, the beautiful ones and the exhausting ones, and the big myth we need to bust by the end. A quick note first. This describes tendencies, not a test. Let's go.", "scene": "explainer", "prop": "night-owl", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here are the nine. They climb from the obvious gifts, into the hidden costs, and land on the one thing a high IQ absolutely does not guarantee. See how many feel like you.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["CURIOSITY", "LIVES IN GREY", "OVERTHINKS", "RABBIT HOLES", "BORED EASILY", "NEVER ENOUGH", "HATES SMALL TALK", "NIGHT OWL", "KNOWS NOTHING", "THE BIG MYTH"] }
+      ]
+    },
+    {
+      "name": "1 — Curiosity",
+      "beats": [
+        { "vo": "First, a bottomless curiosity. For the high-IQ mind, nothing is ever just a fact. It's a door. Every answer immediately cracks open three new questions, and the itch to know is almost physical.", "scene": "story", "room": "study-den", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "CURIOSITY", "subtitle": "every answer opens three doors",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "excited", "x": 580, "y": 640, "scale": 1.2, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "question-magnet", "x": 1150, "y": 460, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "Psychologists tie high intelligence tightly to a trait called openness, a deep hunger for ideas, patterns, and understanding how things truly work, just for the joy of it.", "scene": "diagramCard", "diagram": "curiosity-tree", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "It's why they fall in love with obscure topics, and can't walk past a how or a why. The curiosity isn't a strategy to get ahead. It's just how the lights stay on in there.", "scene": "explainer", "prop": "question-magnet", "emotion": "serious-expert" },
+        { "vo": "That endless questioning has a side effect, though. When you can see every question, you stop seeing simple answers.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Lives in grey",
+      "beats": [
+        { "vo": "Which is the second trait. They live in the grey. Most of us crave clean, simple answers. Good or bad, right or wrong. The high-IQ mind sees all the exceptions, caveats, and shades in between.", "scene": "story", "room": "study-den", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "LIVES IN GREY", "subtitle": "comfortable with nuance",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "nuance-palette", "x": 1150, "y": 480, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "Ask a simple question and the honest answer is, well, it depends. They can hold two opposing ideas at once without needing to collapse them into a tidy side.", "scene": "diagramCard", "diagram": "complexity-comfort", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "It makes them fair, thoughtful, and hard to fool. But it's also lonely in a world that rewards loud certainty, and it can make simple choices, off a menu, in an argument, quietly agonising.", "scene": "explainer", "prop": "nuance-palette", "emotion": "serious-expert" },
+        { "vo": "And seeing every angle feeds directly into the heaviest cost of all.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Overthinks",
+      "beats": [
+        { "vo": "Overthinking. The brilliant mind's built-in tax. The same horsepower that solves hard problems will happily turn on a tiny social moment and analyse it, relentlessly, for hours.", "scene": "story", "room": "late-night-desk", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "OVERTHINKS", "subtitle": "the brilliant mind's tax",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "overthink-pretzel", "x": 1200, "y": 440, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "A powerful engine with no off switch doesn't just idle. It revs. Research links stronger verbal intelligence to more worry and rumination, because the mind is simply better at generating detailed things to worry about.", "scene": "explainer", "prop": "overthink-pretzel", "emotion": "serious-expert" },
+        { "vo": "It shows up as analysis paralysis, replaying conversations, and second-guessing decisions long after everyone else has moved on. The gift of deep thought, pointed in exactly the wrong direction.", "scene": "story", "room": "late-night-desk", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "facepalm", "emotion": "scared", "x": 640, "y": 640, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "coffee-tower", "x": 1250, "y": 500, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "That same depth, aimed at something they love, becomes a superpower instead.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Rabbit holes",
+      "beats": [
+        { "vo": "Deep dives. When a high-IQ mind finds something fascinating, it doesn't dabble. It disappears. It falls down the rabbit hole, and emerges hours later, blinking, an accidental expert in medieval plumbing.", "scene": "story", "room": "tinker-workshop", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "RABBIT HOLES", "subtitle": "all in, or not at all",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "excited", "x": 580, "y": 640, "scale": 1.2, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "rabbit-hole", "x": 1180, "y": 520, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "This is deep, total absorption, the state psychologists call flow. The rest of the world vanishes. Time stops. There is only the problem, and the delicious click of it coming apart.", "scene": "explainer", "prop": "burr-puzzle", "emotion": "serious-expert" },
+        { "vo": "It's how they master hard skills fast and produce genuinely original work. The catch? It's all or nothing. Boring-but-necessary admin, taxes, tidying, can feel almost physically impossible by comparison.", "scene": "story", "room": "tinker-workshop", "emotion": "annoyed", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "annoyed", "x": 640, "y": 640, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "burr-puzzle", "x": 1200, "y": 480, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "And the flip side of loving deep focus is a deep, gnawing hatred of its opposite.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Bored easily",
+      "beats": [
+        { "vo": "Boredom. For a hungry mind, understimulation isn't just dull. It's genuinely painful. A repetitive task, a slow meeting, an easy class, can feel like a kind of torture.", "scene": "story", "room": "study-den", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "BORED EASILY", "subtitle": "understimulation hurts",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "yawn-cloud", "x": 1180, "y": 460, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "The mind demands a certain level of challenge to feel okay, so it will manufacture its own, daydreaming, questioning, taking a task apart just to make it interesting again.", "scene": "explainer", "prop": "yawn-cloud", "emotion": "serious-expert" },
+        { "vo": "It's why gifted kids are sometimes mislabelled as disruptive or inattentive. Often, they're just desperately under-challenged, and starving for something worth thinking about.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "That same high bar they hold for stimulation, they hold, mercilessly, for themselves.", "scene": "diagramCard", "diagram": "overexcitability", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "6 — Never enough",
+      "beats": [
+        { "vo": "Impossibly high standards. The bar is set somewhere up in the clouds, and nothing they produce ever quite reaches it. A brilliant piece of work gets scanned, instantly, for the one tiny flaw.", "scene": "story", "room": "study-den", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "NEVER ENOUGH", "subtitle": "the standards are in the clouds",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "high-bar", "x": 1180, "y": 500, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "Because they can vividly imagine a perfect version, the real, finished thing always feels like a disappointment. Hello, perfectionism, procrastination, and a nagging sense of never being good enough.", "scene": "explainer", "prop": "high-bar", "emotion": "serious-expert" },
+        { "vo": "It fuels the quiet, corrosive feeling of being a fraud, convinced that any moment now, everyone will discover you're not actually that clever. Even when the evidence says otherwise.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "All this inner intensity makes a certain kind of conversation absolutely unbearable.", "scene": "closeUp", "subject": "face", "emotion": "annoyed" }
+      ]
+    },
+    {
+      "name": "7 — Hates small talk",
+      "beats": [
+        { "vo": "They can't stand small talk. The weather. The weekend. Fine, thanks, you? To a mind craving depth, surface-level chatter feels like sandpaper. It isn't snobbery. It's a kind of hunger.", "scene": "story", "room": "study-den", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "HATES SMALL TALK", "subtitle": "take me deeper",
+          "mascots": [ { "costume": "hoodie", "pose": "arms-crossed", "emotion": "annoyed", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "deep-well", "x": 1200, "y": 520, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "They'd trade ten shallow chats for one real conversation about something that actually matters. Death, meaning, the universe, your genuine fears. The deep end, where most people don't want to swim.", "scene": "explainer", "prop": "deep-well", "emotion": "serious-expert" },
+        { "vo": "So they often prefer a few close, deep friendships to a big social circle, and can seem quiet or aloof at parties. They're not bored of people. They're just waiting for the conversation to get good.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And the best conversations, the best ideas, tend to arrive at a very particular, very unsociable hour.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "8 — Night owl",
+      "beats": [
+        { "vo": "They come alive at night. When the world goes quiet and the demands switch off, the high-IQ mind finally gets room to stretch. The best thinking often happens well after midnight.", "scene": "story", "room": "late-night-desk", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "NIGHT OWL", "subtitle": "alive after midnight",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "coffee-tower", "x": 1230, "y": 500, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "There's some real, if debated, research linking higher intelligence to being a night owl. One idea is that staying up late is evolutionarily novel, and novelty-seeking brains lean into it.", "scene": "story", "room": "mind-cosmos", "emotion": "excited", "camera": { "zoomTo": [0.5, 0.42, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "excited", "x": 560, "y": 720, "scale": 0.9, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "idea-constellation", "x": 1150, "y": 400, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "In the still of the night, the mind connects ideas no one else would, linking things that seemingly have nothing to do with each other. The downside is simply mornings, which become a tragedy.", "scene": "explainer", "prop": "night-owl", "emotion": "serious-expert" },
+        { "vo": "And in those long, quiet hours, the smartest ones arrive at a surprising, humbling conclusion.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "9 — Knows nothing",
+      "beats": [
+        { "vo": "They realise how little they actually know. It's the great paradox of intelligence. The more you learn, the more you can see of everything you don't understand.", "scene": "story", "room": "mind-cosmos", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "KNOWS NOTHING", "subtitle": "the smartest are the humblest",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 560, "y": 720, "scale": 0.9, "talking": true } ],
+          "props": [ { "name": "knowledge-island", "x": 1180, "y": 460, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "Picture your knowledge as an island. The bigger it grows, the longer its coastline, touching an ever-bigger ocean of the unknown. Learn more, and you feel like you know less.", "scene": "diagramCard", "diagram": "knowledge-circle", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "It's the exact opposite of the overconfident beginner. Genuinely capable people tend to underrate themselves, painfully aware of all the gaps. True intelligence often sounds like, honestly, I'm not sure.", "scene": "explainer", "prop": "knowledge-island", "emotion": "serious-expert" },
+        { "vo": "Which brings us, finally, to the single biggest myth about all of this.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "The big myth",
+      "beats": [
+        { "vo": "Here's what a high IQ does not buy you. A good life. We assume the smartest people must be the most successful, happiest, and wisest. The evidence is surprisingly, stubbornly unconvinced.", "scene": "story", "room": "study-den", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "THE BIG MYTH", "subtitle": "smart ≠ successful, happy, or wise",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 620, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "lost-maze", "x": 1180, "y": 480, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "IQ is one kind of horsepower. But a great life runs just as much on other engines, your emotional intelligence, your grit, your warmth, your ability to actually finish things and connect with people.", "scene": "diagramCard", "diagram": "iq-vs-eq", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "The famous study that tracked gifted kids for life found most did perfectly well, but none became the world-changing geniuses everyone expected. Smart is not the same as wise, or kind, or happy.", "scene": "explainer", "prop": "lost-maze", "emotion": "serious-expert" },
+        { "vo": "A high IQ is a powerful tool. It is not a personality, a virtue, or a destiny. What you build with it matters infinitely more than the number itself.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So if you recognised yourself in these, the curiosity, the overthinking, the three a.m. ideas, know that the gifts and the costs are a package deal. The same depth that exhausts you is the depth that lets you see.", "scene": "explainer", "prop": "idea-constellation", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "And if you didn't? You almost certainly have your own kind of brilliant the test could never catch. Because the most interesting minds were never really about the score. They were about what they wondered.", "scene": "story", "room": "mind-cosmos", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 560, "y": 720, "scale": 0.9, "talking": true } ],
+          "props": [ { "name": "idea-constellation", "x": 1180, "y": 420, "scale": 0.8, "appearAt": 6 } ] },
+        { "vo": "So which of the nine was most you? And what rabbit hole have you fallen down lately? Tell me in the comments. And send this to the friend who overthinks absolutely everything.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

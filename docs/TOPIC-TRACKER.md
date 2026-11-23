@@ -33,7 +33,7 @@ Glitches.
 4. ✅ Every Psychological Defense Mechanism Explained — *done (`defense-mechanisms`)*
 5. 🟡 Why Your Brain Never Stops Thinking (and the Off Switch) — *built (`restless-brain`), 100% bespoke art; awaiting CI render*
 6. 🟡 Every Manipulation Tactic Explained — *built (`manipulation-tactics`), 15 tactics + counters; awaiting CI render*
-7. ⬜ The Psychology of People With a High IQ
+7. 🟡 The Psychology of People With a High IQ — *built (`high-iq`), 23 bespoke assets; awaiting CI render*
 8. 🟡 **Every Attachment Style Explained** — *built (`attachment-styles`), awaiting CI render*
 9. 🟡 Every Sleep Glitch You Might Experience — *built (`sleep-glitches`), 28 bespoke assets (biggest art set); awaiting CI render*
 10. ✅ Every Cognitive Bias Ruining Your Decisions — *done (`cognitive-biases`)*

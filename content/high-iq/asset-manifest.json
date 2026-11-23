@@ -1,0 +1,401 @@
+{
+  "slug": "high-iq",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 13,
+    "NEW": 24
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        9,
+        13,
+        15,
+        17,
+        19,
+        21,
+        25,
+        29,
+        33,
+        34,
+        37,
+        41,
+        46
+      ]
+    },
+    {
+      "name": "complexity-comfort",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "curiosity-tree",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "iq-vs-eq",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        42
+      ]
+    },
+    {
+      "name": "knowledge-circle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "overexcitability",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19,
+        25,
+        28,
+        29
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        9,
+        37
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        17,
+        34
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        4,
+        32,
+        33,
+        44,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        12,
+        16,
+        20,
+        23,
+        31,
+        36,
+        40
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        13,
+        15,
+        27
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        2,
+        6,
+        7,
+        9,
+        10,
+        11,
+        14,
+        18,
+        22,
+        24,
+        26,
+        30,
+        35,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        45
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        19,
+        29
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        13,
+        21,
+        25,
+        33,
+        37,
+        41
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5,
+        17,
+        34
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        46
+      ]
+    },
+    {
+      "name": "burr-puzzle",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "coffee-tower",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        33
+      ]
+    },
+    {
+      "name": "deep-well",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29,
+        30
+      ]
+    },
+    {
+      "name": "high-bar",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        26
+      ]
+    },
+    {
+      "name": "idea-constellation",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        34,
+        45,
+        46
+      ]
+    },
+    {
+      "name": "knowledge-island",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        37,
+        39
+      ]
+    },
+    {
+      "name": "lost-maze",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        41,
+        43
+      ]
+    },
+    {
+      "name": "night-owl",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        35
+      ]
+    },
+    {
+      "name": "nuance-palette",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        11
+      ]
+    },
+    {
+      "name": "overthink-pretzel",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        1,
+        13,
+        14
+      ]
+    },
+    {
+      "name": "question-magnet",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        5,
+        7
+      ]
+    },
+    {
+      "name": "rabbit-hole",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "yawn-cloud",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "late-night-desk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        13,
+        15,
+        33
+      ]
+    },
+    {
+      "name": "mind-cosmos",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        34,
+        37,
+        46
+      ]
+    },
+    {
+      "name": "study-den",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        5,
+        9,
+        21,
+        25,
+        29,
+        41
+      ]
+    },
+    {
+      "name": "tinker-workshop",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17,
+        19
+      ]
+    }
+  ]
+}

@@ -1348,8 +1348,136 @@ const TerrorVsNightmare: React.FC = () => {
   );
 };
 
+/** Knowledge circle: the bigger what you know, the longer its edge with the unknown. */
+const KnowledgeCircle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const grow = interpolate(frame, [10, 60], [0.35, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const r = 90 + grow * 200;
+  return (
+    <g>
+      {/* the unknown (hatched edge) */}
+      {Array.from({ length: 48 }).map((_, i) => {
+        const a = (i / 48) * Math.PI * 2;
+        return <line key={i} x1={cx + Math.cos(a) * r} y1={cy + Math.sin(a) * r} x2={cx + Math.cos(a) * (r + 26)} y2={cy + Math.sin(a) * (r + 26)} stroke={COLORS.purpleDeep} strokeWidth={STROKE.sm} opacity={0.5} />;
+      })}
+      <circle cx={cx} cy={cy} r={r} fill={COLORS.yellow} opacity={0.6} {...xl} />
+      <text x={cx} y={cy + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>what you know</text>
+      <text x={cx} y={cy + r + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.purpleDeep}>…the bigger the edge of the unknown</text>
+    </g>
+  );
+};
+
+/** IQ vs EQ: two independent gauges — a life needs both. */
+const IqVsEq: React.FC = () => {
+  const frame = useCurrentFrame();
+  const iq = interpolate(frame, [10, 40], [0, 0.92], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const eq = interpolate(frame, [20, 50], [0, 0.4], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cx = CANVAS.width * 0.56;
+  const Gauge: React.FC<{ x: number; label: string; v: number; color: string }> = ({ x, label, v, color }) => (
+    <g transform={`translate(${x} ${CANVAS.height * 0.46})`}>
+      <rect x={-60} y={-220} width={120} height={440} rx={30} fill={COLORS.white} {...xl} />
+      <rect x={-44} y={-204} width={88} height={408} rx={22} fill={COLORS.bgCreamDark} />
+      <rect x={-44} y={204 - v * 408} width={88} height={v * 408} rx={22} fill={color} />
+      <text x={0} y={280} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={46} fill={COLORS.outline}>{label}</text>
+      <text x={0} y={-250} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>{Math.round(v * 100)}</text>
+    </g>
+  );
+  return (
+    <g>
+      <Gauge x={cx - 150} label="IQ" v={iq} color={COLORS.blueDiagram} />
+      <Gauge x={cx + 150} label="EQ" v={eq} color={COLORS.pink} />
+      <text x={cx} y={CANVAS.height * 0.82} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>they don't come as a set</text>
+    </g>
+  );
+};
+
+/** Dabrowski's overexcitabilities — the high-IQ mind runs intense on 5 channels. */
+const Overexcitability: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const spokes = [
+    { label: 'INTELLECTUAL', color: COLORS.blueDiagram },
+    { label: 'EMOTIONAL', color: COLORS.red },
+    { label: 'IMAGINATIONAL', color: COLORS.lavender },
+    { label: 'SENSUAL', color: COLORS.pink },
+    { label: 'PSYCHOMOTOR', color: COLORS.greenLeaf },
+  ];
+  const R = 300;
+  return (
+    <g>
+      {spokes.map((s, i) => {
+        const a = (-90 + (i / spokes.length) * 360) * (Math.PI / 180);
+        const x = cx + Math.cos(a) * R; const y = cy + Math.sin(a) * R;
+        const pop = springIn(frame, fps, 10 + i * 4, { damping: 13 });
+        return (
+          <g key={s.label}>
+            <line x1={cx} y1={cy} x2={x} y2={y} stroke={COLORS.outline} strokeWidth={STROKE.lg} opacity={0.4} />
+            <g transform={`translate(${x} ${y}) scale(${Math.min(1, pop)})`}>
+              <circle r={86} fill={s.color} {...lg} />
+              <text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={s.label.length > 10 ? 22 : 26} fill={COLORS.outline}>{s.label}</text>
+            </g>
+          </g>
+        );
+      })}
+      <circle cx={cx} cy={cy} r={80} fill={COLORS.yellow} {...xl} />
+      <text x={cx} y={cy + 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>INTENSE</text>
+    </g>
+  );
+};
+
+/** Complexity comfort: a spectrum from black-and-white thinking to comfort in grey. */
+const ComplexityComfort: React.FC = () => {
+  const frame = useCurrentFrame();
+  const marker = interpolate(frame, [15, 55], [0.18, 0.82], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
+  const x0 = CANVAS.width * 0.34; const w = CANVAS.width * 0.44; const y = CANVAS.height * 0.48;
+  return (
+    <g>
+      {/* gradient of greys */}
+      {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={x0 + (i / 22) * w} y={y - 40} width={w / 22 + 1} height={80} fill={shade(COLORS.white, 0.04 * i)} />)}
+      <rect x={x0} y={y - 40} width={w} height={80} rx={40} fill="none" {...xl} />
+      <text x={x0} y={y + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>BLACK & WHITE</text>
+      <text x={x0 + w} y={y + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.white}>ALL THE GREY</text>
+      {/* marker */}
+      <g transform={`translate(${x0 + marker * w} ${y})`}>
+        <path d="M 0 -70 l 24 -40 l -48 0 Z" fill={COLORS.red} {...lg} />
+        <circle cx={0} cy={0} r={26} fill={COLORS.red} {...lg} />
+      </g>
+      <text x={x0 + w / 2} y={y - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>comfortable in nuance</text>
+    </g>
+  );
+};
+
+/** Curiosity tree: one "why?" branching endlessly into more questions. */
+const CuriosityTree: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [8, 54], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cx = CANVAS.width * 0.56;
+  const baseY = CANVAS.height * 0.78;
+  const node = (x: number, y: number, r: number, c: string, show: number) => (draw > show ? <g><circle cx={x} cy={y} r={r} fill={c} {...lg} /><text x={x} y={y + r * 0.34} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={r * 0.9} fill={COLORS.outline}>?</text></g> : null);
+  return (
+    <g>
+      {/* branches */}
+      <path d={`M ${cx} ${baseY} L ${cx} ${baseY - 150}`} stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <path d={`M ${cx} ${baseY - 150} L ${cx - 180} ${baseY - 280} M ${cx} ${baseY - 150} L ${cx + 180} ${baseY - 280}`} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={draw > 0.3 ? 1 : 0} />
+      <path d={`M ${cx - 180} ${baseY - 280} L ${cx - 280} ${baseY - 400} M ${cx - 180} ${baseY - 280} L ${cx - 90} ${baseY - 410} M ${cx + 180} ${baseY - 280} L ${cx + 90} ${baseY - 410} M ${cx + 180} ${baseY - 280} L ${cx + 290} ${baseY - 400}`} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={draw > 0.6 ? 1 : 0} />
+      {node(cx, baseY - 150, 54, COLORS.yellow, 0)}
+      {node(cx - 180, baseY - 280, 42, COLORS.sky, 0.3)}
+      {node(cx + 180, baseY - 280, 42, COLORS.pink, 0.3)}
+      {node(cx - 280, baseY - 400, 30, COLORS.greenLeaf, 0.6)}
+      {node(cx - 90, baseY - 410, 30, COLORS.lavender, 0.6)}
+      {node(cx + 90, baseY - 410, 30, COLORS.greenTeal, 0.6)}
+      {node(cx + 290, baseY - 400, 30, COLORS.red, 0.6)}
+      <text x={cx} y={baseY + 56} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>but why?</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1396,6 +1524,11 @@ export const DiagramCard: React.FC<{
     'dream-layers': COLORS.lavender,
     'mind-body-sleep': COLORS.sky,
     'terror-vs-nightmare': COLORS.red,
+    'knowledge-circle': COLORS.yellow,
+    'iq-vs-eq': COLORS.blueDiagram,
+    overexcitability: COLORS.lavender,
+    'complexity-comfort': COLORS.greenTeal,
+    'curiosity-tree': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -1449,6 +1582,11 @@ export const DiagramCard: React.FC<{
         {diagram === 'dream-layers' && <DreamLayers />}
         {diagram === 'mind-body-sleep' && <MindBodySleep highlight={highlight} />}
         {diagram === 'terror-vs-nightmare' && <TerrorVsNightmare />}
+        {diagram === 'knowledge-circle' && <KnowledgeCircle />}
+        {diagram === 'iq-vs-eq' && <IqVsEq />}
+        {diagram === 'overexcitability' && <Overexcitability />}
+        {diagram === 'complexity-comfort' && <ComplexityComfort />}
+        {diagram === 'curiosity-tree' && <CuriosityTree />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

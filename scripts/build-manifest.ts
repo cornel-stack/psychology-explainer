@@ -60,6 +60,10 @@ const NEW_ASSETS = new Set([
   'dream-bedroom', 'sleep-lab', 'dreamscape', 'liminal-hallway',
   'falling-void', 'shadow-figure', 'phantom-faces', 'boom-burst', 'nested-dream', 'lucid-hand', 'walking-slippers', 'sleep-mumble', 'scream-burst', 'tetris-blocks', 'fog-cloud', 'micro-flicker', 'dream-boxing', 'deja-reel', 'dream-stairs', 'dream-bubble', 'moon-face', 'eeg-strip',
   'hypnogram', 'sleep-threshold', 'rem-switch', 'dream-layers', 'mind-body-sleep', 'terror-vs-nightmare',
+  // high-iq (all new)
+  'study-den', 'tinker-workshop', 'late-night-desk', 'mind-cosmos',
+  'question-magnet', 'nuance-palette', 'overthink-pretzel', 'rabbit-hole', 'yawn-cloud', 'high-bar', 'deep-well', 'night-owl', 'knowledge-island', 'burr-puzzle', 'idea-constellation', 'coffee-tower', 'book-tower', 'lost-maze',
+  'knowledge-circle', 'iq-vs-eq', 'overexcitability', 'complexity-comfort', 'curiosity-tree',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
