@@ -205,6 +205,10 @@ const ROOM_DEMO: Record<string, { pose: any; emotion: any; props?: any[] }> = {
   'tinker-workshop': { pose: 'idle', emotion: 'excited', props: [{ name: 'burr-puzzle', x: 1150, y: 520, scale: 0.7 }] },
   'late-night-desk': { pose: 'idle', emotion: 'sleepy', props: [{ name: 'coffee-tower', x: 1250, y: 520, scale: 0.7 }] },
   'mind-cosmos': { pose: 'idle', emotion: 'excited', props: [{ name: 'idea-constellation', x: 1150, y: 480, scale: 0.8 }] },
+  'inner-theater': { pose: 'idle', emotion: 'excited', props: [{ name: 'popcorn-mind', x: 1180, y: 700, scale: 0.6 }] },
+  'daydream-realm': { pose: 'arms-out-presenting', emotion: 'excited', props: [{ name: 'alter-ego', x: 1200, y: 600, scale: 0.7 }] },
+  'pacing-room': { pose: 'walking', emotion: 'confused', props: [{ name: 'inner-cinema', x: 1100, y: 420, scale: 0.6 }] },
+  'bus-window': { pose: 'sitting-up-in-bed', emotion: 'sleepy', props: [{ name: 'trigger-headphones', x: 1150, y: 420, scale: 0.6 }] },
 };
 
 export const RoomStill: React.FC<{ room: RoomName }> = ({ room }) => {

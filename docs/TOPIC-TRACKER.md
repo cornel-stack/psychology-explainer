@@ -37,7 +37,7 @@ Glitches.
 8. 🟡 **Every Attachment Style Explained** — *built (`attachment-styles`), awaiting CI render*
 9. 🟡 Every Sleep Glitch You Might Experience — *built (`sleep-glitches`), 28 bespoke assets (biggest art set); awaiting CI render*
 10. ✅ Every Cognitive Bias Ruining Your Decisions — *done (`cognitive-biases`)*
-11. ⬜ The Psychology of People Who Imagine Fake Scenarios All Day
+11. 🟡 The Psychology of People Who Imagine Fake Scenarios All Day — *built (`daydreamers`), 22 bespoke assets; awaiting CI render*
 12. ⬜ Why Your Brain Fears 3 AM
 13. ⬜ Every Level of Overthinking Explained
 14. ⬜ Signs Someone Is Secretly Jealous of You

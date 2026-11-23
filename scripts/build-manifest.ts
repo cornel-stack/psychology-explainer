@@ -64,6 +64,10 @@ const NEW_ASSETS = new Set([
   'study-den', 'tinker-workshop', 'late-night-desk', 'mind-cosmos',
   'question-magnet', 'nuance-palette', 'overthink-pretzel', 'rabbit-hole', 'yawn-cloud', 'high-bar', 'deep-well', 'night-owl', 'knowledge-island', 'burr-puzzle', 'idea-constellation', 'coffee-tower', 'book-tower', 'lost-maze',
   'knowledge-circle', 'iq-vs-eq', 'overexcitability', 'complexity-comfort', 'curiosity-tree',
+  // daydreamers (all new)
+  'inner-theater', 'daydream-realm', 'pacing-room', 'bus-window',
+  'inner-cinema', 'story-strip', 'trigger-headphones', 'imaginary-companion', 'pacing-loop', 'time-warp-clock', 'escape-hatch', 'daydream-cloud', 'spinning-top', 'alter-ego', 'window-gaze', 'plot-web', 'popcorn-mind',
+  'daydream-spectrum', 'immersion-meter', 'trigger-loop', 'two-lives', 'absorption-scale',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

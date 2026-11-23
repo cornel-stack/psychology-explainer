@@ -1476,8 +1476,101 @@ const CuriosityTree: React.FC = () => {
   );
 };
 
+/** Daydream spectrum: from healthy imagination to maladaptive daydreaming. */
+const DaydreamSpectrum: React.FC = () => {
+  const frame = useCurrentFrame();
+  const marker = interpolate(frame, [15, 55], [0.2, 0.8], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
+  const x0 = CANVAS.width * 0.32; const w = CANVAS.width * 0.48; const y = CANVAS.height * 0.48;
+  return (
+    <g>
+      {Array.from({ length: 24 }).map((_, i) => { const t = i / 24; return <rect key={i} x={x0 + t * w} y={y - 40} width={w / 24 + 1} height={80} fill={i < 12 ? shade(COLORS.greenLeaf, 0.02 * i) : shade(COLORS.red, 0.02 * (24 - i))} opacity={0.8} />; })}
+      <rect x={x0} y={y - 40} width={w} height={80} rx={40} fill="none" {...xl} />
+      <text x={x0} y={y + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.greenDark}>HEALTHY</text>
+      <text x={x0 + w / 2} y={y + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={26} fill={COLORS.outline}>immersive</text>
+      <text x={x0 + w} y={y + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.redDark}>MALADAPTIVE</text>
+      <g transform={`translate(${x0 + marker * w} ${y})`}><path d="M 0 -70 l 24 -40 l -48 0 Z" fill={COLORS.outline} /><circle r={24} fill={COLORS.white} {...xl} /></g>
+      <text x={x0 + w / 2} y={y - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>when does it tip over?</text>
+    </g>
+  );
+};
+
+/** Immersion meter: how deep the daydream pulls you under. */
+const ImmersionMeter: React.FC = () => {
+  const frame = useCurrentFrame();
+  const fill = interpolate(frame, [8, 46], [0.1, 0.95], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cx = CANVAS.width * 0.56; const top = 230; const h = 480;
+  const level = top + (1 - fill) * h;
+  const labels = ['here', 'drifting', 'immersed', 'gone'];
+  return (
+    <g>
+      <rect x={cx - 110} y={top} width={220} height={h} rx={30} fill={COLORS.white} {...xl} />
+      <rect x={cx - 92} y={level} width={184} height={top + h - level} rx={22} fill={COLORS.lavender} />
+      <rect x={cx - 92} y={level} width={184} height={24} fill={shade(COLORS.lavender, 0.18)} />
+      {labels.map((l, i) => <text key={i} x={cx + 130} y={top + 40 + i * (h / 4) + 10} fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={i === 3 ? COLORS.redDark : COLORS.outline} opacity={0.8}>{l}</text>)}
+      {labels.map((_, i) => <line key={i} x1={cx - 110} y1={top + 30 + i * (h / 4)} x2={cx - 150} y2={top + 30 + i * (h / 4)} stroke={COLORS.outline} strokeWidth={STROKE.sm} />)}
+      <text x={cx} y={top - 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>how deep it goes</text>
+    </g>
+  );
+};
+
+/** The daydream trigger loop: a cue (music/boredom) → immerse → relief → crave → repeat. */
+const TriggerLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const r = 240;
+  const nodes = [{ label: 'TRIGGER', color: COLORS.sky }, { label: 'IMMERSE', color: COLORS.lavender }, { label: 'RELIEF', color: COLORS.greenLeaf }, { label: 'CRAVE', color: COLORS.red }];
+  const a = (frame / 45) * Math.PI * 2;
+  const tx = cx + Math.cos(a - Math.PI / 2) * r; const ty = cy + Math.sin(a - Math.PI / 2) * r;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeDasharray="4 24" strokeLinecap="round" opacity={0.5} />
+      {nodes.map((n, i) => { const ang = (-90 + i * 90) * (Math.PI / 180); const x = cx + Math.cos(ang) * r; const y = cy + Math.sin(ang) * r; return <g key={n.label} transform={`translate(${x} ${y})`}><circle r={86} fill={n.color} {...lg} /><text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>{n.label}</text></g>; })}
+      <circle cx={tx} cy={ty} r={22} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy + 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline} opacity={0.6}>↻</text>
+    </g>
+  );
+};
+
+/** Two lives: the grey real life running next to the vivid inner one. */
+const TwoLives: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const w = 420; const h = 440; const y0 = 260;
+  const Panel: React.FC<{ x: number; label: string; bg: string; vivid: boolean }> = ({ x, label, bg, vivid }) => (
+    <g opacity={vivid ? 1 : 0.6}>
+      <rect x={x} y={y0} width={w} height={h} rx={24} fill={bg} {...xl} />
+      <circle cx={x + w * 0.72} cy={y0 + 100} r={48} fill={vivid ? COLORS.yellow : shade(COLORS.yellow, 0.2)} {...lg} />
+      <path d={`M ${x + 20} ${y0 + h - 40} L ${x + 150} ${y0 + h - 150} L ${x + 250} ${y0 + h - 70} L ${x + w - 20} ${y0 + h - 40} Z`} fill={vivid ? COLORS.greenLeaf : shade(COLORS.greenLeaf, 0.2)} />
+      {vivid && <g transform={`translate(${x + w / 2} ${y0 + 120})`}>{[[-40, -20], [50, 10], [0, -50]].map(([dx, dy], i) => <path key={i} d={`M ${dx} ${dy - 8} l 3 7 l 7 3 l -7 3 l -3 7 l -3 -7 l -7 -3 l 7 -3 Z`} fill={COLORS.white} />)}</g>}
+      <text x={x + w / 2} y={y0 - 24} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>{label}</text>
+    </g>
+  );
+  return (
+    <g>
+      <Panel x={cx - w - 30} label="REAL LIFE" bg={COLORS.ledGrey} vivid={false} />
+      <Panel x={cx + 30} label="INNER LIFE" bg={COLORS.lavender} vivid />
+      <text x={cx} y={y0 + h + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>living in two worlds at once</text>
+    </g>
+  );
+};
+
+/** Absorption scale: the fantasy-proneness dial (how easily you get lost). */
+const AbsorptionScale: React.FC = () => {
+  const frame = useCurrentFrame();
+  const turn = interpolate(frame, [15, 60], [-70, 70], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  return (
+    <g>
+      <path d={`M ${cx - 280} ${cy} A 280 280 0 0 1 ${cx + 280} ${cy}`} fill="none" stroke={COLORS.bgCreamDark} strokeWidth={60} strokeLinecap="round" />
+      {Array.from({ length: 9 }).map((_, i) => { const a = Math.PI + (i / 8) * Math.PI; return <line key={i} x1={cx + Math.cos(a) * 250} y1={cy + Math.sin(a) * 250} x2={cx + Math.cos(a) * 300} y2={cy + Math.sin(a) * 300} stroke={COLORS.outline} strokeWidth={STROKE.sm} />; })}
+      <line x1={cx} y1={cy} x2={cx + Math.cos((turn - 90) * Math.PI / 180) * 230} y2={cy + Math.sin((turn - 90) * Math.PI / 180) * 230} stroke={COLORS.red} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <circle cx={cx} cy={cy} r={28} fill={COLORS.outline} />
+      <text x={cx - 300} y={cy + 60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>grounded</text>
+      <text x={cx + 300} y={cy + 60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.redDark}>lost in it</text>
+      <text x={cx} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>how absorbable is your mind?</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1529,6 +1622,11 @@ export const DiagramCard: React.FC<{
     overexcitability: COLORS.lavender,
     'complexity-comfort': COLORS.greenTeal,
     'curiosity-tree': COLORS.greenLeaf,
+    'daydream-spectrum': COLORS.lavender,
+    'immersion-meter': COLORS.lavender,
+    'trigger-loop': COLORS.sky,
+    'two-lives': COLORS.lavender,
+    'absorption-scale': COLORS.pink,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -1587,6 +1685,11 @@ export const DiagramCard: React.FC<{
         {diagram === 'overexcitability' && <Overexcitability />}
         {diagram === 'complexity-comfort' && <ComplexityComfort />}
         {diagram === 'curiosity-tree' && <CuriosityTree />}
+        {diagram === 'daydream-spectrum' && <DaydreamSpectrum />}
+        {diagram === 'immersion-meter' && <ImmersionMeter />}
+        {diagram === 'trigger-loop' && <TriggerLoop />}
+        {diagram === 'two-lives' && <TwoLives />}
+        {diagram === 'absorption-scale' && <AbsorptionScale />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

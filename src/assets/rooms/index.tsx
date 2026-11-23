@@ -52,7 +52,11 @@ export type RoomName =
   | 'study-den'
   | 'tinker-workshop'
   | 'late-night-desk'
-  | 'mind-cosmos';
+  | 'mind-cosmos'
+  | 'inner-theater'
+  | 'daydream-realm'
+  | 'pacing-room'
+  | 'bus-window';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -1433,6 +1437,144 @@ export const MindCosmos: React.FC = () => {
   );
 };
 
+/** Inner theater: a grand cinema of the mind — a glowing screen, rows of red
+ *  velvet seats, aisle lights. Where the daydreamer watches their own stories. */
+export const InnerTheater: React.FC = () => {
+  const f = useCurrentFrame();
+  const glow = 0.85 + 0.12 * Math.sin(f / 7);
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+      {/* stage + glowing screen */}
+      <rect x={0} y={0} width={CANVAS.width} height={120} fill={COLORS.redDark} />
+      <rect x={360} y={120} width={1200} height={420} rx={20} fill={COLORS.shirtDark} {...xl} />
+      <rect x={392} y={152} width={1136} height={356} rx={12} fill={COLORS.sky} opacity={glow} />
+      {/* a dreamy scene on screen */}
+      <circle cx={1120} cy={280} r={66} fill={COLORS.yellow} {...lg} />
+      <path d="M 392 440 Q 960 320 1528 440 L 1528 508 L 392 508 Z" fill={COLORS.greenLeaf} />
+      <g transform="translate(760 430)"><circle r={28} fill={COLORS.white} {...lg} /><path d="M 0 28 L 0 72 M 0 40 L -28 60 M 0 40 L 28 60" stroke={COLORS.white} strokeWidth={STROKE.xl} strokeLinecap="round" /></g>
+      {/* side curtains */}
+      <path d="M 0 0 L 320 0 Q 260 300 300 760 Q 160 700 0 760 Z" fill={COLORS.red} {...xl} />
+      <path d="M 1920 0 L 1600 0 Q 1660 300 1620 760 Q 1760 700 1920 760 Z" fill={COLORS.red} {...xl} />
+      {/* rows of seats */}
+      {[0, 1, 2].map((r) => (
+        <g key={r} transform={`translate(0 ${640 + r * 150}) scale(${1 + r * 0.14})`} style={{ transformOrigin: '960px 0px' }}>
+          {Array.from({ length: 11 }).map((_, c) => (
+            <g key={c} transform={`translate(${160 + c * 160} 0)`}>
+              <rect x={-54} y={-30} width={108} height={90} rx={16} fill={COLORS.redDark} {...lg} />
+              <rect x={-54} y={-80} width={108} height={70} rx={20} fill={shade(COLORS.redDark, 0.12)} {...lg} />
+            </g>
+          ))}
+        </g>
+      ))}
+      {/* aisle floor lights */}
+      {[300, 1620].map((x, i) => <ellipse key={i} cx={x} cy={900} rx={30} ry={10} fill={COLORS.yellow} opacity={0.5} />)}
+    </g>
+  );
+};
+
+/** Daydream realm: a vivid fantasy landscape — rolling hills, a far castle,
+ *  floating islands, a rainbow, a bright sun. The "better" imagined world. */
+export const DaydreamRealm: React.FC = () => {
+  const f = useCurrentFrame();
+  const floatY = Math.sin(f / 22) * 10;
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.sky} />
+      <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.sky, -0.06)} />
+      {/* sun + rays */}
+      <circle cx={1560} cy={220} r={110} fill={COLORS.yellow} {...lg} />
+      {Array.from({ length: 12 }).map((_, i) => { const a = (i / 12) * Math.PI * 2; return <line key={i} x1={1560 + Math.cos(a) * 130} y1={220 + Math.sin(a) * 130} x2={1560 + Math.cos(a) * 170} y2={220 + Math.sin(a) * 170} stroke={COLORS.yellow} strokeWidth={STROKE.lg} strokeLinecap="round" />; })}
+      {/* rainbow */}
+      {[COLORS.red, COLORS.yellow, COLORS.greenLeaf, COLORS.sky, COLORS.lavender].map((c, i) => (
+        <path key={i} d={`M ${200 + i * 20} 760 A ${520 - i * 20} ${520 - i * 20} 0 0 1 ${1240 - i * 20} 760`} fill="none" stroke={c} strokeWidth={26} />
+      ))}
+      {/* clouds */}
+      {([[320, 200], [900, 150], [1180, 260]] as [number, number][]).map(([x, y], i) => (
+        <g key={i}>{[[-60, 0, 44], [0, -16, 56], [60, 0, 44]].map(([cx, cy, r], k) => <circle key={k} cx={x + cx} cy={y + cy} r={r} fill={COLORS.white} opacity={0.95} />)}</g>
+      ))}
+      {/* floating islands */}
+      {([[1400, 520, 0.8], [520, 480, 0.6]] as [number, number, number][]).map(([x, y, s], i) => (
+        <g key={i} transform={`translate(${x} ${y + floatY}) scale(${s})`}>
+          <path d="M -120 0 Q 0 -40 120 0 Q 70 70 0 76 Q -70 70 -120 0 Z" fill={COLORS.woodDark} {...xl} />
+          <path d="M -120 0 Q 0 -40 120 0 Q 50 6 0 10 Q -50 6 -120 0 Z" fill={COLORS.greenLeaf} {...lg} />
+          <path d="M 0 10 Q -10 -20 0 -34" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        </g>
+      ))}
+      {/* hills */}
+      <path d="M 0 700 Q 480 600 960 680 Q 1440 600 1920 700 L 1920 1080 L 0 1080 Z" fill={COLORS.greenDark} />
+      <rect x={0} y={820} width={CANVAS.width} height={CANVAS.height - 820} fill={COLORS.greenLeaf} />
+      {/* a far castle on a hill */}
+      <g transform="translate(960 690)">
+        <rect x={-90} y={-30} width={180} height={120} fill={COLORS.ledGrey} {...lg} />
+        <rect x={-90} y={-70} width={40} height={60} fill={COLORS.ledGrey} {...lg} />
+        <rect x={50} y={-70} width={40} height={60} fill={COLORS.ledGrey} {...lg} />
+        {[-70, 70].map((x, i) => <path key={i} d={`M ${x - 20} -70 l 20 -30 l 20 30 Z`} fill={COLORS.red} {...sm} />)}
+        <rect x={-18} y={30} width={36} height={60} fill={COLORS.woodDark} />
+      </g>
+    </g>
+  );
+};
+
+/** Pacing room: an ordinary room with a daydreamer's tell — a worn oval path
+ *  paced into the rug, looping footprints, a bed and a window. */
+export const PacingRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={COLORS.wood} floorY={820} stripe={false} />
+    {Array.from({ length: 24 }).map((_, i) => (
+      <rect key={i} x={i * 84} y={0} width={42} height={560} fill={shade(COLORS.lavender, 0.08)} opacity={0.7} />
+    ))}
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.lavender, 0.14)} />
+    {/* window + framed picture */}
+    <g transform="translate(330 290)"><WindowDay /></g>
+    <g transform="translate(1120 300)"><FramedPicture /></g>
+    {/* worn oval pacing path on the floor */}
+    <ellipse cx={900} cy={950} rx={520} ry={120} fill={shade(COLORS.wood, 0.1)} />
+    <ellipse cx={900} cy={950} rx={520} ry={120} fill="none" stroke={shade(COLORS.wood, 0.2)} strokeWidth={STROKE.lg} strokeDasharray="30 30" opacity={0.6} />
+    {/* looping footprints */}
+    {Array.from({ length: 12 }).map((_, i) => { const a = (i / 12) * Math.PI * 2; const x = 900 + Math.cos(a) * 500; const y = 950 + Math.sin(a) * 110; return <ellipse key={i} cx={x} cy={y} rx={20} ry={11} fill={shade(COLORS.wood, 0.26)} opacity={0.5} transform={`rotate(${(a * 180) / Math.PI + 90} ${x} ${y})`} />; })}
+    {/* bed */}
+    <g transform="translate(1540 720)">
+      <rect x={-200} y={-30} width={360} height={170} rx={24} fill={COLORS.pink} {...xl} />
+      <rect x={-200} y={-100} width={130} height={90} rx={24} fill={COLORS.pink} {...xl} />
+      <rect x={-184} y={-70} width={90} height={44} rx={16} fill={COLORS.white} opacity={0.7} {...std} />
+      <rect x={-60} y={-10} width={220} height={120} rx={18} fill={COLORS.sky} {...std} />
+    </g>
+  </g>
+);
+
+/** Bus window: the interior of a bus — a big window with scenery sliding by,
+ *  seat backs, overhead rail and handles. The classic commute daydream spot. */
+export const BusWindow: React.FC = () => {
+  const f = useCurrentFrame();
+  const slide = (f * 3) % 400;
+  return (
+    <g>
+      <WallFloor wall={COLORS.greenTeal} floor={COLORS.shirtDark} floorY={860} stripe={false} />
+      {/* big window band */}
+      <rect x={0} y={120} width={CANVAS.width} height={460} fill={COLORS.sky} />
+      <rect x={0} y={120} width={CANVAS.width} height={200} fill={shade(COLORS.sky, -0.06)} />
+      {/* scenery sliding past */}
+      {[0, 1, 2, 3, 4, 5].map((i) => {
+        const x = ((i * 400 - slide) % 2200) - 140;
+        return <g key={i}><rect x={x} y={360} width={120} height={200} fill={shade(COLORS.greenTeal, 0.2)} opacity={0.7} /><circle cx={x + 200} cy={300} r={44} fill={COLORS.greenDark} opacity={0.5} /><rect x={x + 180} y={340} width={16} height={60} fill={COLORS.woodDark} opacity={0.5} /></g>;
+      })}
+      <circle cx={1600} cy={230} r={70} fill={COLORS.yellow} opacity={0.8} />
+      {/* window frame mullions */}
+      <rect x={0} y={120} width={CANVAS.width} height={24} fill={COLORS.ledGrey} />
+      <rect x={0} y={556} width={CANVAS.width} height={24} fill={COLORS.ledGrey} />
+      {[480, 960, 1440].map((x, i) => <rect key={i} x={x - 12} y={120} width={24} height={460} fill={COLORS.ledGrey} />)}
+      {/* overhead rail + handles */}
+      <rect x={0} y={80} width={CANVAS.width} height={14} rx={7} fill={COLORS.ledGrey} {...std} />
+      {[220, 620, 1020, 1420, 1760].map((x, i) => <g key={i}><line x1={x} y1={90} x2={x} y2={160} {...sm} /><circle cx={x} cy={180} r={22} fill="none" {...std} /></g>)}
+      {/* seat back in the foreground */}
+      <rect x={-40} y={660} width={520} height={260} rx={24} fill={COLORS.blueDiagram} {...xl} />
+      <rect x={-40} y={660} width={520} height={70} rx={24} fill={shade(COLORS.blueDiagram, 0.14)} />
+      <rect x={1480} y={700} width={480} height={240} rx={24} fill={COLORS.blueDiagram} {...xl} />
+    </g>
+  );
+};
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -1470,6 +1612,10 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'tinker-workshop': TinkerWorkshop,
   'late-night-desk': LateNightDesk,
   'mind-cosmos': MindCosmos,
+  'inner-theater': InnerTheater,
+  'daydream-realm': DaydreamRealm,
+  'pacing-room': PacingRoom,
+  'bus-window': BusWindow,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

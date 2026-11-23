@@ -18,6 +18,7 @@ import * as Off from './offline';
 import * as Rest from './restless';
 import * as Slp from './sleep';
 import * as Hiq from './highiq';
+import * as Dd from './daydream';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -203,6 +204,20 @@ export const PROPS: Record<string, React.FC<any>> = {
   'coffee-tower': Hiq.CoffeeTower,
   'book-tower': Hiq.BookTower,
   'lost-maze': Hiq.LostMaze,
+  // daydreamers props (all new)
+  'inner-cinema': Dd.InnerCinema,
+  'story-strip': Dd.StoryStrip,
+  'trigger-headphones': Dd.TriggerHeadphones,
+  'imaginary-companion': Dd.ImaginaryCompanion,
+  'pacing-loop': Dd.PacingLoop,
+  'time-warp-clock': Dd.TimeWarpClock,
+  'escape-hatch': Dd.EscapeHatch,
+  'daydream-cloud': Dd.DaydreamCloud,
+  'spinning-top': Dd.SpinningTop,
+  'alter-ego': Dd.AlterEgo,
+  'window-gaze': Dd.WindowGaze,
+  'plot-web': Dd.PlotWeb,
+  'popcorn-mind': Dd.PopcornMind,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
