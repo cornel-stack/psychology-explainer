@@ -41,6 +41,10 @@ const NEW_ASSETS = new Set([
   'nursery', 'date-restaurant', 'park-bench',
   'phone-unread', 'toy-blocks', 'brick-wall', 'turtle-shell', 'anchor', 'wine-glasses', 'love-note', 'relationship-thermometer',
   'attachment-grid', 'secure-base', 'push-pull', 'chase-cycle',
+  // iq-levels
+  'classroom', 'science-lab',
+  'iq-report', 'puzzle-cube', 'lightbulb', 'test-paper', 'gears', 'stopwatch', 'jigsaw-piece', 'chess-knight',
+  'bell-curve', 'flynn-effect', 'multi-intelligence',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

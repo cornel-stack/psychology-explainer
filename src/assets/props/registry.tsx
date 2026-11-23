@@ -12,6 +12,7 @@ import * as Bias from './biases';
 import * as Def from './defenses';
 import * as Sty from './story';
 import * as Att from './attachment';
+import * as Iq from './iq';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -121,6 +122,15 @@ export const PROPS: Record<string, React.FC<any>> = {
   'wine-glasses': Att.WineGlasses,
   'love-note': Att.LoveNote,
   'relationship-thermometer': Att.RelationshipThermometer,
+  // iq-levels props
+  'iq-report': Iq.IqReport,
+  'puzzle-cube': Iq.PuzzleCube,
+  lightbulb: Iq.Lightbulb,
+  'test-paper': Iq.TestPaper,
+  gears: Iq.Gears,
+  stopwatch: Iq.Stopwatch,
+  'jigsaw-piece': Iq.JigsawPiece,
+  'chess-knight': Iq.ChessKnight,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

@@ -36,7 +36,9 @@ export type RoomName =
   | 'theater-stage'
   | 'nursery'
   | 'date-restaurant'
-  | 'park-bench';
+  | 'park-bench'
+  | 'classroom'
+  | 'science-lab';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -687,6 +689,77 @@ export const ParkBench: React.FC = () => (
   </g>
 );
 
+/** Classroom: green chalkboard with a bell curve, desks, clock, window, charts. */
+export const Classroom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.greenTeal, 0.08)} />
+    {/* big chalkboard */}
+    <g transform="translate(700 300)">
+      <rect x={-520} y={-180} width={1040} height={360} rx={16} fill={COLORS.woodDark} {...xl} />
+      <rect x={-496} y={-156} width={992} height={312} rx={8} fill={COLORS.greenDark} />
+      {/* chalk bell curve */}
+      <path d="M -420 120 Q -250 120 -120 -60 Q 0 -160 120 -60 Q 250 120 420 120" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.85} />
+      <line x1={-440} y1={120} x2={440} y2={120} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.7} />
+      {/* chalk sums */}
+      <path d="M -430 -110 l 90 0 M -385 -140 l 0 60" stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.6} />
+      <text x={300} y={-90} fontFamily="Baloo 2" fontWeight={800} fontSize={54} fill={COLORS.white} opacity={0.7}>100</text>
+    </g>
+    {/* window + clock */}
+    <g transform="translate(1600 260)"><WindowDay /></g>
+    <g transform="translate(1600 560)"><WallClock /></g>
+    {/* two school desks */}
+    {[520, 1040].map((x, i) => (
+      <g key={i} transform={`translate(${x} 720)`}>
+        <rect x={-110} y={0} width={220} height={40} rx={10} fill={COLORS.wood} {...xl} />
+        <rect x={-110} y={0} width={220} height={16} rx={8} fill={shade(COLORS.wood, 0.12)} />
+        <rect x={-96} y={40} width={26} height={150} fill={COLORS.ledGrey} {...lg} />
+        <rect x={70} y={40} width={26} height={150} fill={COLORS.ledGrey} {...lg} />
+        <rect x={-70} y={14} width={90} height={56} rx={6} fill={COLORS.white} {...sm} />
+      </g>
+    ))}
+  </g>
+);
+
+/** Science lab: periodic-table poster, shelves of flasks, a bench with bubbling beaker. */
+export const ScienceLab: React.FC = () => {
+  const f = useCurrentFrame();
+  const bub = (f % 40) / 40;
+  return (
+    <g>
+      <WallFloor wall={COLORS.sky} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+      <rect x={0} y={0} width={CANVAS.width} height={120} fill={shade(COLORS.sky, 0.12)} />
+      {/* periodic-table poster */}
+      <g transform="translate(360 300)">
+        <rect x={-220} y={-170} width={440} height={300} rx={14} fill={COLORS.white} {...xl} />
+        {Array.from({ length: 5 }).map((_, r) =>
+          Array.from({ length: 9 }).map((_, c) => (
+            <rect key={`${r}-${c}`} x={-200 + c * 46} y={-150 + r * 56} width={40} height={48} rx={5} fill={[COLORS.yellowSoft, COLORS.pink, COLORS.sky, COLORS.greenLeaf, COLORS.lavender][(r + c) % 5]} {...strokeProps(STROKE.sm)} />
+          )),
+        )}
+      </g>
+      {/* shelf of flasks */}
+      <rect x={1120} y={420} width={700} height={18} rx={6} fill={COLORS.woodDark} {...lg} />
+      {[1200, 1340, 1480, 1620, 1740].map((x, i) => (
+        <g key={i} transform={`translate(${x} 360)`}>
+          <path d="M -22 -40 L -22 0 L -40 56 L 40 56 L 22 0 L 22 -40 Z" fill={[COLORS.greenLeaf, COLORS.pink, COLORS.yellow, COLORS.sky, COLORS.red][i]} opacity={0.8} {...lg} />
+          <rect x={-22} y={-52} width={44} height={16} rx={6} fill={COLORS.ledGrey} {...sm} />
+        </g>
+      ))}
+      {/* lab bench with a bubbling beaker */}
+      <rect x={1040} y={700} width={880} height={60} rx={10} fill={COLORS.greenTeal} {...xl} />
+      <rect x={1040} y={700} width={880} height={22} rx={8} fill={shade(COLORS.greenTeal, 0.14)} />
+      <g transform="translate(1320 700)">
+        <path d="M -54 -120 L -54 -40 L -78 10 L 78 10 L 54 -40 L 54 -120 Z" fill={COLORS.greenLeaf} opacity={0.5} {...lg} />
+        <path d="M -70 -14 L 70 -14 L 78 10 L -78 10 Z" fill={COLORS.greenLeaf} />
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={-20 + i * 24} cy={-30 - bub * 70 - i * 10} r={8 - i * 1.5} fill={COLORS.white} opacity={0.8 * (1 - bub)} />
+        ))}
+      </g>
+    </g>
+  );
+};
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -708,6 +781,8 @@ export const ROOMS: Record<RoomName, React.FC> = {
   nursery: Nursery,
   'date-restaurant': DateRestaurant,
   'park-bench': ParkBench,
+  classroom: Classroom,
+  'science-lab': ScienceLab,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

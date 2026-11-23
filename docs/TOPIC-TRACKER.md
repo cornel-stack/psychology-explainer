@@ -20,14 +20,15 @@ a multi-million <6mo video still holding the query.
 | 3 | `defense-mechanisms` | Every Psychological Defense Mechanism Explained | ✅ | **Remade** with literal story staging (2nd character, 25 new assets, words on screen, story spine). This remake set the current art standard — see the Playbook §2. |
 | — | `hypnic-jerk` | (Phase 3 TTS/pipeline test chapter — not a published video) | ✅ | Scaffolding only. |
 
-**In progress: #8 Every Attachment Style Explained (`attachment-styles`)** — scripted,
-art built, local gates green; adapted to the topic's real structure (4 styles +
-sourced dynamics, not 15 invented styles). Next clean pick after it ships: #19 IQ
-or #5 Manipulation Tactics.
+**Rendered in CI (awaiting publish):** #8 Attachment Styles (`attachment-styles`)
+and #2/#19 Every Level of IQ (`iq-levels`, "Every Level Of" grammar, 7 levels
+day-in-life + strong "IQ ≠ worth" framing). Next clean picks: #5/#6
+Manipulation Tactics, #3/#25 "People Who Don't Use Social Media", or #9 Sleep
+Glitches.
 
 ## Suggested first-15 build order (from the Overview sheet)
 1. ✅ Every Feeling You Can't Name, Explained — *done (`unnamed-feelings`)*
-2. ⬜ Every Level of IQ Explained — What Life Looks Like at 70, 100, 130, 160
+2. 🟡 Every Level of IQ Explained — *built (`iq-levels`), 7 levels + "not your worth" spine; awaiting CI render*
 3. ⬜ The Psychology of People Who Don't Use Social Media
 4. ✅ Every Psychological Defense Mechanism Explained — *done (`defense-mechanisms`)*
 5. ⬜ Why Your Brain Never Stops Thinking (and the Off Switch)
@@ -58,7 +59,7 @@ detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 15 Ways Memory Lies · 16 Personality Archetypes · 17 Weird Habits You Do Alone ·
 18 Types of Lie.
 
-**Every Level Of (19–24):** 19 IQ · 20 Consciousness · 21 Dreaming ·
+**Every Level Of (19–24):** 19 IQ 🟡 · 20 Consciousness · 21 Dreaming ·
 22 Overthinking · 23 Attractiveness · 24 Self-Awareness. *(Hottest grammar in late
 2026 — seven figures in weeks; good for browse reach early.)*
 

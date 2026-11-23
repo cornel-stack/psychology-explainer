@@ -1,0 +1,138 @@
+{
+  "title": "Every Level of IQ Explained (What Life Looks Like at Each)",
+  "slug": "iq-levels",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Picture a huge hall. Thousands of people, all taking the exact same test. Same questions, same clock. When the scores come back, they don't land in a clump. They spread out, into a shape.", "scene": "story", "room": "classroom", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "EVERY LEVEL OF IQ", "subtitle": "what life looks like at each",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 560, "y": 640, "scale": 1.15, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "idle", "emotion": "neutral", "x": 1360, "y": 650, "scale": 1.1, "flip": true } ],
+          "props": [ { "name": "test-paper", "x": 980, "y": 640, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "A few score very low. A few, very high. And most people pile up in the middle. That shape has a name, the bell curve, and it's the secret map behind every IQ score.", "scene": "story", "room": "classroom", "emotion": "happy-talk", "camera": { "zoomTo": [0.4, 0.3, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "happy-talk", "x": 620, "y": 640, "scale": 1.15, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "test-paper", "x": 1150, "y": 650, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "The middle is set at exactly one hundred, on purpose. So your score isn't really a number. It's a position. It tells you where you sit on that curve, next to everyone else who took it.", "scene": "statCard", "value": 100, "suffix": "", "pictogram": "none", "emotion": "serious-expert" },
+        { "vo": "And here's the part people forget. It measures one narrow thing, how you reason on a certain kind of puzzle. Not your worth. Not your heart. Not what you'll become.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Today we climb that curve, from the lowest scores up to the rarest genius, and see what daily life actually looks like at each level. No judgment, just curiosity. Let's go.", "scene": "explainer", "prop": "lightbulb", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's the climb. Seven stops up the curve, then the big question everyone really wants answered: what does this number actually predict about a life?", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["WHERE IT STARTS", "IQ ~70", "IQ ~85", "IQ 100", "IQ 115", "IQ 130", "IQ 145", "IQ 160", "WHAT IT PREDICTS", "NOT YOUR WORTH"] }
+      ]
+    },
+    {
+      "name": "Where the number comes from",
+      "beats": [
+        { "vo": "The first real test was born in nineteen-oh-five. France needed to find schoolkids who were struggling, so they could get extra help. Alfred Binet built a test to spot them. That was the whole goal. Help, not ranking.", "scene": "story", "room": "classroom", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "WHERE THE NUMBER COMES FROM", "subtitle": "Binet & Wechsler",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 640, "scale": 1.1, "talking": false }, { "costume": "suit", "pose": "point-left", "emotion": "serious-expert", "x": 1340, "y": 640, "scale": 1.2, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "book-stack", "x": 1030, "y": 760, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Later tests, like the Wechsler scales we still use, did something clever. They pinned the average score to exactly one hundred, and measured everyone else as a distance from that middle.", "scene": "explainer", "prop": "test-paper", "emotion": "serious-expert" },
+        { "vo": "Score one hundred, you're dead center. Every fifteen points is one step away from average. Step out far enough in either direction, and far fewer people are standing there with you.", "scene": "diagramCard", "diagram": "bell-curve", "highlight": "100", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Binet himself warned, never treat this number as fixed, or as the full measure of a child. Good advice, and we'll keep it in mind the whole way up. Let's start at the lower end of the curve.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "1 — IQ ~70",
+      "beats": [
+        { "vo": "We'll start around seventy. On paper, this is below average. In real life, it means abstract, school-style problems, the ones full of symbols and word tricks, take more effort, and more support.", "scene": "story", "room": "living-room", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "IQ ~ 70", "subtitle": "below average",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "iq-report", "x": 1200, "y": 540, "scale": 0.95, "appearAt": 4, "args": { "value": 70, "tone": "#AEDCEF", "label": "SCORE" } } ] },
+        { "vo": "But a score is not a person. Plenty of people here live fully independent lives, hold down jobs, raise families, and run circles around the rest of us in kindness, patience, and street-smart common sense.", "scene": "explainer", "prop": "jigsaw-piece", "emotion": "serious-expert" },
+        { "vo": "On the map, they sit out here, to the left. Give them concrete, hands-on, step-by-step tasks instead of abstract puzzles, and watch them thrive.", "scene": "diagramCard", "diagram": "bell-curve", "highlight": "70", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "A low score on a reasoning test says almost nothing about a good life. Move in just a bit, and you reach the level most of us quietly live in without ever thinking about it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — IQ ~85",
+      "beats": [
+        { "vo": "Around eighty-five. Low average. Daily life? Totally manageable. Work, bills, relationships, driving, all handled without drama. The friction only shows up with heavy abstract or academic work.", "scene": "story", "room": "kitchen", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "IQ ~ 85", "subtitle": "low average",
+          "mascots": [ { "costume": "hoodie", "pose": "hands-hips", "emotion": "happy-talk", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "iq-report", "x": 1230, "y": 540, "scale": 0.95, "appearAt": 4, "args": { "value": 85, "tone": "#AEDCEF", "label": "SCORE" } } ] },
+        { "vo": "Dense paperwork, higher math, fast theoretical learning, these feel like a steeper hill. But break the same task into clear, concrete steps, and it clicks into place just fine.", "scene": "explainer", "prop": "book-stack", "emotion": "serious-expert" },
+        { "vo": "On the curve, they sit just left of center, a huge, capable chunk of the whole population.", "scene": "diagramCard", "diagram": "bell-curve", "highlight": "85", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And one short step to the right sits the exact middle of everybody. The level most of the planet calls home.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — IQ 100",
+      "beats": [
+        { "vo": "One hundred. The dead center of the curve. If you got your number and it landed somewhere near here, congratulations, you are gloriously, statistically normal, like roughly half the planet.", "scene": "story", "room": "office", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "IQ 100", "subtitle": "average — this is most of us",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "happy-talk", "x": 620, "y": 600, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "iq-report", "x": 1230, "y": 540, "scale": 0.95, "appearAt": 4, "args": { "value": 100, "tone": "#74C25E", "label": "SCORE" } } ] },
+        { "vo": "Gather up the scores from ninety to a hundred and ten, and you've captured about half of everyone alive. This is the water we all swim in. The default setting of being human.", "scene": "statCard", "value": 50, "suffix": "%", "pictogram": "crowd", "fraction": 0.5, "emotion": "excited" },
+        { "vo": "Right under the peak, where the curve is tallest and most crowded. Average has a bad reputation it does not deserve. It means perfectly, fully capable of a rich and clever life.", "scene": "diagramCard", "diagram": "bell-curve", "highlight": "100", "emotion": "happy-talk", "withMascot": true },
+        { "vo": "From here, every step to the right gets a little lonelier, as the curve starts to thin out. Let's take the first one.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — IQ 115",
+      "beats": [
+        { "vo": "One fifteen. One full step above average. This is the colleague who seems to just get it a beat before everyone else, who reads something once and already sees how the pieces connect.", "scene": "story", "room": "office", "emotion": "smug", "camera": "slowZoom", "chapterStart": true, "title": "IQ 115", "subtitle": "above average",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "smug", "x": 580, "y": 600, "scale": 1.3, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "iq-report", "x": 1250, "y": 540, "scale": 0.95, "appearAt": 4, "args": { "value": 115, "tone": "#F9C32E", "label": "SCORE" } }, { "name": "lightbulb", "x": 980, "y": 440, "scale": 0.55, "appearAt": 8 } ] },
+        { "vo": "School tended to come easier. Complex, demanding jobs feel comfortable. They're not rare, roughly one in six people, but in any given room, they're usually the quick study.", "scene": "explainer", "prop": "lightbulb", "emotion": "serious-expert" },
+        { "vo": "On the curve, one clear step to the right of the middle. Still plenty of company out here.", "scene": "diagramCard", "diagram": "bell-curve", "highlight": "115", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "But being fast with ideas is just one talent among many. Push two more steps out, though, and things get genuinely uncommon.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — IQ 130",
+      "beats": [
+        { "vo": "One thirty. Now we're in rare air, often labeled gifted. Abstract reasoning that feels effortless. Patterns that leap out. A mind that can hold a tangle of ideas and calmly start to untangle it.", "scene": "story", "room": "science-lab", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "IQ 130", "subtitle": "gifted — top 2%",
+          "mascots": [ { "costume": "hoodie", "pose": "arms-out-presenting", "emotion": "excited", "x": 580, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "iq-report", "x": 1250, "y": 540, "scale": 0.9, "appearAt": 4, "args": { "value": 130, "tone": "#F9C32E", "label": "SCORE" } }, { "name": "chess-knight", "x": 1000, "y": 700, "scale": 0.7, "appearAt": 8 } ] },
+        { "vo": "Only about two people in a hundred score this high. It's roughly the cutoff for societies like Mensa. On the curve, you're way out toward the thin edge.", "scene": "statCard", "value": 2, "suffix": "%", "pictogram": "none", "emotion": "excited" },
+        { "vo": "Out here, in the tail. But here's the myth worth killing. Gifted does not mean happy, successful, or wise. It means good at a particular test.", "scene": "diagramCard", "diagram": "bell-curve", "highlight": "130", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Plenty of brilliant scorers feel lost, bored, or stuck. A high number opens a door. It does not walk you through it. And it gets rarer still.", "scene": "closeUp", "subject": "face", "emotion": "confused" }
+      ]
+    },
+    {
+      "name": "6 — IQ 145",
+      "beats": [
+        { "vo": "One forty-five. Highly gifted. Now we're down to maybe one person in a thousand. Reasoning at this level can be genuinely dazzling, solving in seconds what others grind at for hours.", "scene": "story", "room": "science-lab", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "IQ 145", "subtitle": "highly gifted",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "excited", "x": 580, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "iq-report", "x": 1250, "y": 540, "scale": 0.9, "appearAt": 4, "args": { "value": 145, "tone": "#C6A8EC", "label": "SCORE" } }, { "name": "gears", "x": 1000, "y": 640, "scale": 0.6, "appearAt": 8 } ] },
+        { "vo": "But it comes with a quiet catch. When a mind runs this differently, it can be hard to find people who think like you do. Many describe feeling a little out of step with the world around them.", "scene": "explainer", "prop": "gears", "emotion": "serious-expert" },
+        { "vo": "Far out on the right tail now, where the curve is almost touching the floor. Very few neighbors this way.", "scene": "diagramCard", "diagram": "bell-curve", "highlight": "145", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And raw horsepower still needs a road. Without drive and direction, even a spectacular engine just sits there and idles. Which brings us to the very edge of the map.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — IQ 160",
+      "beats": [
+        { "vo": "One sixty and beyond. The word people reach for here is genius, though that's really a nickname, not a true cutoff. We're now talking about a vanishingly tiny sliver of all humanity.", "scene": "story", "room": "science-lab", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "IQ 160+", "subtitle": "'genius' — ultra rare",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 580, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "iq-report", "x": 1250, "y": 540, "scale": 0.9, "appearAt": 4, "args": { "value": 160, "tone": "#F9C32E", "label": "SCORE" } } ] },
+        { "vo": "Rarer than one in thirty thousand. And the scores get shaky this far out, because there are barely enough people left to compare against. The test itself is running out of room.", "scene": "statCard", "value": 1, "suffix": " in 30,000", "pictogram": "none", "emotion": "serious-expert" },
+        { "vo": "Here's the twist. Psychologist Lewis Terman tracked gifted kids for their whole lives. Most did well, but none reshaped the world. Meanwhile, two boys he screened out for scoring too low grew up to win Nobel Prizes.", "scene": "explainer", "prop": "trophy", "emotion": "serious-expert" },
+        { "vo": "A sky-high score is not a golden ticket. Real genius also needs creativity, grit, and luck that no test can see. So what does that number actually buy you?", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "8 — What it predicts",
+      "beats": [
+        { "vo": "So is IQ useless? Not at all. It's one of the better single predictors we have of how someone does in school, and in complex, demanding jobs. On average, across big groups, it genuinely matters.", "scene": "story", "room": "office", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "WHAT IT PREDICTS", "subtitle": "and what it can't",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 600, "y": 600, "scale": 1.25, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "iq-report", "x": 1050, "y": 540, "scale": 0.75, "appearAt": 4, "args": { "value": "?", "tone": "#6E92EA", "label": "SCORE" } }, { "name": "trophy", "x": 1320, "y": 600, "scale": 0.85, "appearAt": 8 } ] },
+        { "vo": "But it isn't fixed, or sacred. Across the twentieth century, average scores climbed about three points every single decade, just from better schooling, health, and food. We literally kept having to make the test harder.", "scene": "diagramCard", "diagram": "flynn-effect", "emotion": "excited", "withMascot": true },
+        { "vo": "And notice that word, average. IQ predicts broad trends across thousands of people. It is nearly useless for predicting any single human being, including you.", "scene": "explainer", "prop": "brain", "emotion": "serious-expert" },
+        { "vo": "It also measures just one slice of the mind. Not your creativity, your emotional smarts, your street sense, your gift for actually connecting with people. You know, the things that run a life.", "scene": "diagramCard", "diagram": "multi-intelligence", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "A number on a reasoning test is a tiny window onto an enormous house. Which brings us right back to that hall full of people.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So here's the honest takeaway. Your IQ is a position on a curve, measuring one kind of thinking, on one kind of day. It's real, it's interesting, and it is nowhere near the whole story of a mind.", "scene": "explainer", "prop": "brain", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "Remember that hall full of people? Every single dot on that bell curve, low, middle, or impossibly high, is a whole person. Funny, kind, creative, and brave in ways no test will ever manage to score.", "scene": "story", "room": "classroom", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 560, "y": 640, "scale": 1.15, "talking": true }, { "costume": "tee", "pose": "wave", "emotion": "happy-talk", "x": 1360, "y": 650, "scale": 1.1, "flip": true } ],
+          "props": [ { "name": "heart", "x": 980, "y": 400, "scale": 0.8, "appearAt": 8 } ] },
+        { "vo": "So be gentle with the number, yours and everyone else's. Curious where you'd land? Drop your guess in the comments, and tell me one kind of smart that no test could ever capture.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

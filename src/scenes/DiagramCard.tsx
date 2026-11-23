@@ -688,8 +688,119 @@ const ChaseCycle: React.FC<{ labels: string[] }> = ({ labels }) => {
   );
 };
 
+/** The IQ bell curve (mean 100, SD 15) with one level highlighted.
+ *  `highlight` is the IQ value as a string, e.g. "130". */
+const BellCurve: React.FC<{ highlight: string }> = ({ highlight }) => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [8, 48], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
+  const hv = Number(highlight) || 100;
+  const cx = CANVAS.width * 0.56;
+  const base = 760;
+  const peak = 430;
+  const sx = 150; // px per 1 SD (15 pts)
+  const xOf = (iq: number) => cx + ((iq - 100) / 15) * sx;
+  const yOf = (iq: number) => base - Math.exp(-(((iq - 100) / 15) ** 2) / 2) * peak;
+  const pts: string[] = [];
+  for (let iq = 48; iq <= 152; iq += 2) pts.push(`${pts.length ? 'L' : 'M'} ${xOf(iq)} ${yOf(iq)}`);
+  const curve = pts.join(' ');
+  // shaded band ±7.5 pts around the highlighted level
+  const band: string[] = [`M ${xOf(hv - 7.5)} ${base}`];
+  for (let iq = hv - 7.5; iq <= hv + 7.5; iq += 1.5) band.push(`L ${xOf(iq)} ${yOf(iq)}`);
+  band.push(`L ${xOf(hv + 7.5)} ${base} Z`);
+  const ticks = [55, 70, 85, 100, 115, 130, 145];
+  return (
+    <g>
+      <line x1={xOf(48)} y1={base} x2={xOf(152)} y2={base} {...lg} />
+      {ticks.map((t) => (
+        <g key={t}>
+          <line x1={xOf(t)} y1={base} x2={xOf(t)} y2={base + 16} {...sm} />
+          <text x={xOf(t)} y={base + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={34} fill={COLORS.outline} opacity={0.7}>{t}</text>
+        </g>
+      ))}
+      {draw > 0.4 && <path d={band.join(' ')} fill={COLORS.yellow} opacity={0.55} />}
+      <path d={curve} fill="none" stroke={COLORS.blueDiagram} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={2600} strokeDashoffset={2600 * (1 - draw)} />
+      {draw > 0.9 && (
+        <g>
+          <line x1={xOf(hv)} y1={base} x2={xOf(hv)} y2={yOf(hv)} stroke={COLORS.red} strokeWidth={STROKE.lg} strokeDasharray="4 16" strokeLinecap="round" />
+          <circle cx={xOf(hv)} cy={yOf(hv)} r={18} fill={COLORS.red} {...lg} />
+          <g transform={`translate(${xOf(hv)} ${yOf(hv) - 70})`}>
+            <rect x={-96} y={-52} width={192} height={74} rx={16} fill={COLORS.white} {...lg} />
+            <text x={0} y={0} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={54} fill={COLORS.outline}>IQ {hv}</text>
+          </g>
+        </g>
+      )}
+    </g>
+  );
+};
+
+/** The Flynn effect: average scores climbed through the 20th century (re-normed). */
+const FlynnEffect: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const x0 = CANVAS.width * 0.38;
+  const y0 = 820;
+  const w = 920;
+  const h = 480;
+  const line = `M ${x0} ${y0} L ${x0 + w * 0.2} ${y0 - h * 0.28} L ${x0 + w * 0.45} ${y0 - h * 0.42} L ${x0 + w * 0.7} ${y0 - h * 0.72} L ${x0 + w} ${y0 - h * 0.92}`;
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + w} y2={y0} {...lg} />
+      <line x1={x0} y1={y0} x2={x0} y2={y0 - h} {...lg} />
+      <text x={x0 - 30} y={y0 - h / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={34} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 30} ${y0 - h / 2})`}>AVG SCORE</text>
+      {['1920', '1970', '2020'].map((yr, i) => (
+        <text key={yr} x={x0 + (w / 2) * i} y={y0 + 50} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={34} fill={COLORS.outline} opacity={0.75}>{yr}</text>
+      ))}
+      <path d={line} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={1600} strokeDashoffset={1600 * (1 - draw)} />
+      {draw > 0.95 && (
+        <g transform={`translate(${x0 + w * 0.5} ${y0 - h * 0.42 - 70})`}>
+          <rect x={-170} y={-44} width={340} height={84} rx={18} fill={COLORS.yellow} {...lg} />
+          <text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>+3 pts / decade</text>
+        </g>
+      )}
+    </g>
+  );
+};
+
+/** Many intelligences — IQ measures mainly ONE slice of the mind. */
+const MultiIntelligence: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const spokes = [
+    { label: 'LOGICAL', on: true, color: COLORS.yellow },
+    { label: 'CREATIVE', on: false, color: COLORS.pink },
+    { label: 'EMOTIONAL', on: false, color: COLORS.red },
+    { label: 'PRACTICAL', on: false, color: COLORS.greenLeaf },
+    { label: 'SOCIAL', on: false, color: COLORS.sky },
+  ];
+  const R = 300;
+  return (
+    <g>
+      {spokes.map((s, i) => {
+        const a = (-90 + (i / spokes.length) * 360) * (Math.PI / 180);
+        const x = cx + Math.cos(a) * R;
+        const y = cy + Math.sin(a) * R;
+        const pop = springIn(frame, fps, 10 + i * 4, { damping: 13 });
+        return (
+          <g key={s.label}>
+            <line x1={cx} y1={cy} x2={x} y2={y} stroke={COLORS.outline} strokeWidth={STROKE.lg} opacity={0.4} />
+            <g transform={`translate(${x} ${y}) scale(${Math.min(1, pop)})`}>
+              <circle r={92} fill={s.color} opacity={s.on ? 1 : 0.45} {...lg} />
+              <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={s.label.length > 8 ? 26 : 30} fill={COLORS.outline}>{s.label}</text>
+              {s.on && <text x={0} y={128} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.redDark}>← IQ measures this</text>}
+            </g>
+          </g>
+        );
+      })}
+      <circle cx={cx} cy={cy} r={86} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy + 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>MIND</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -715,6 +826,9 @@ export const DiagramCard: React.FC<{
     'secure-base': COLORS.greenLeaf,
     'push-pull': COLORS.yellow,
     'chase-cycle': COLORS.pink,
+    'bell-curve': COLORS.blueDiagram,
+    'flynn-effect': COLORS.greenLeaf,
+    'multi-intelligence': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -747,6 +861,9 @@ export const DiagramCard: React.FC<{
         {diagram === 'secure-base' && <SecureBase labels={labels} />}
         {diagram === 'push-pull' && <PushPull labels={labels} />}
         {diagram === 'chase-cycle' && <ChaseCycle labels={labels} />}
+        {diagram === 'bell-curve' && <BellCurve highlight={highlight} />}
+        {diagram === 'flynn-effect' && <FlynnEffect />}
+        {diagram === 'multi-intelligence' && <MultiIntelligence />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

@@ -1,0 +1,371 @@
+{
+  "slug": "iq-levels",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 15,
+    "NEW": 19
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38,
+        44
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        0,
+        44
+      ]
+    },
+    {
+      "name": "bell-curve",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ]
+    },
+    {
+      "name": "flynn-effect",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        39
+      ]
+    },
+    {
+      "name": "multi-intelligence",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        41
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        6,
+        29
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19,
+        26,
+        27,
+        30,
+        39
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        4,
+        5,
+        14,
+        18,
+        20,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        10,
+        13,
+        17,
+        21,
+        25,
+        33,
+        42
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        2,
+        3,
+        6,
+        7,
+        8,
+        11,
+        12,
+        15,
+        16,
+        23,
+        24,
+        28,
+        31,
+        32,
+        34,
+        35,
+        36,
+        37,
+        38,
+        40,
+        41,
+        43
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "hands-hips",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        10,
+        34,
+        38
+      ]
+    },
+    {
+      "name": "point-left",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        1,
+        22,
+        30
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        44
+      ]
+    },
+    {
+      "name": "book-stack",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6,
+        15
+      ]
+    },
+    {
+      "name": "brain",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        40,
+        43
+      ]
+    },
+    {
+      "name": "chess-knight",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "gears",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        30,
+        31
+      ]
+    },
+    {
+      "name": "heart",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        44
+      ]
+    },
+    {
+      "name": "iq-report",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38
+      ]
+    },
+    {
+      "name": "jigsaw-piece",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "lightbulb",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        22,
+        23
+      ]
+    },
+    {
+      "name": "test-paper",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        7
+      ]
+    },
+    {
+      "name": "trophy",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        36,
+        38
+      ]
+    },
+    {
+      "name": "classroom",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        6,
+        44
+      ]
+    },
+    {
+      "name": "kitchen",
+      "type": "room",
+      "status": "exists",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "living-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "office",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        18,
+        22,
+        38
+      ]
+    },
+    {
+      "name": "science-lab",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        26,
+        30,
+        34
+      ]
+    }
+  ]
+}
