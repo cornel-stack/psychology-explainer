@@ -15,7 +15,7 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 7 | The Psychology of People Who Don't Use Social Media | `offline-minds` | 9:28 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45171460861 | ✅ delivered |
 | 8 | Why Your Brain Never Stops Thinking | `restless-brain` | 8:36 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45188999266 | ✅ delivered |
 | 9 | Every Sleep Glitch You Might Experience | `sleep-glitches` | 12:22 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45251536929 | ✅ delivered |
-| 10 | The Psychology of People With a High IQ | `high-iq` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45262862461 | ⏳ rendering |
+| 10 | The Psychology of People With a High IQ | `high-iq` | 8:36 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45262862461 | ✅ delivered |
 | 11 | The Psychology of People Who Imagine Fake Scenarios All Day | `daydreamers` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45265024741 | ⏳ rendering |
 
 _Continuing through the backlog one by one — new rows appended as each render completes._
