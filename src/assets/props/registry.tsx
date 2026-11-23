@@ -16,6 +16,7 @@ import * as Iq from './iq';
 import * as Man from './manipulation';
 import * as Off from './offline';
 import * as Rest from './restless';
+import * as Slp from './sleep';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -167,6 +168,25 @@ export const PROPS: Record<string, React.FC<any>> = {
   'breathing-balloon': Rest.BreathingBalloon,
   'grounding-hand': Rest.GroundingHand,
   'off-switch': Rest.OffSwitch,
+  // sleep-glitches props (all new)
+  'falling-void': Slp.FallingVoid,
+  'shadow-figure': Slp.ShadowFigure,
+  'phantom-faces': Slp.PhantomFaces,
+  'boom-burst': Slp.BoomBurst,
+  'nested-dream': Slp.NestedDream,
+  'lucid-hand': Slp.LucidHand,
+  'walking-slippers': Slp.WalkingSlippers,
+  'sleep-mumble': Slp.SleepMumble,
+  'scream-burst': Slp.ScreamBurst,
+  'tetris-blocks': Slp.TetrisBlocks,
+  'fog-cloud': Slp.FogCloud,
+  'micro-flicker': Slp.MicroFlicker,
+  'dream-boxing': Slp.DreamBoxing,
+  'deja-reel': Slp.DejaReel,
+  'dream-stairs': Slp.DreamStairs,
+  'dream-bubble': Slp.DreamBubble,
+  'moon-face': Slp.MoonFace,
+  'eeg-strip': Slp.EegStrip,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

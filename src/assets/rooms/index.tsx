@@ -44,7 +44,11 @@ export type RoomName =
   | 'insomnia-bedroom'
   | 'mind-control-room'
   | 'thought-void'
-  | 'calm-shore';
+  | 'calm-shore'
+  | 'dream-bedroom'
+  | 'sleep-lab'
+  | 'dreamscape'
+  | 'liminal-hallway';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -1039,6 +1043,217 @@ export const CalmShore: React.FC = () => {
   );
 };
 
+/** Dream bedroom: a warped, floating version of a bedroom — tilted bed, drifting
+ *  furniture, a melting clock, a window onto a two-moon dream sky. */
+export const DreamBedroom: React.FC = () => {
+  const f = useCurrentFrame();
+  const floatY = Math.sin(f / 22) * 10;
+  const floatY2 = Math.sin(f / 18 + 1) * 12;
+  return (
+    <g>
+      <WallFloor wall={COLORS.lavender} floor={COLORS.lavenderDark} floorY={840} stripe={false} />
+      {/* dreamy wallpaper: soft stripes + swirls break up the flat lavender */}
+      {Array.from({ length: 24 }).map((_, i) => (
+        <rect key={i} x={i * 84} y={0} width={42} height={600} fill={shade(COLORS.lavender, 0.09)} opacity={0.7} />
+      ))}
+      {Array.from({ length: 5 }).map((_, r) =>
+        Array.from({ length: 10 }).map((_, c) => (
+          <path key={`${r}-${c}`} d={`M ${60 + c * 200 + (r % 2) * 100} ${70 + r * 110} q 36 -36 72 0 q -36 36 -72 0 Z`} fill={shade(COLORS.lavender, 0.16)} stroke={shade(COLORS.lavender, 0.22)} strokeWidth={STROKE.sm} opacity={0.6} />
+        )),
+      )}
+      {/* wainscot band on the lower wall */}
+      <rect x={0} y={600} width={CANVAS.width} height={240} fill={shade(COLORS.lavender, 0.16)} />
+      <rect x={0} y={600} width={CANVAS.width} height={14} fill={COLORS.lavenderDark} />
+      {/* window onto a two-moon dream sky */}
+      <g transform="translate(330 290)">
+        <rect x={-150} y={-150} width={300} height={320} rx={16} fill={COLORS.purpleDeep} {...xl} />
+        <circle cx={-60} cy={-70} r={46} fill={COLORS.yellowSoft} {...lg} />
+        <circle cx={70} cy={30} r={28} fill={COLORS.pink} {...lg} />
+        {[[-100, 60], [40, -110], [110, 100], [-30, 20]].map(([x, y], i) => (
+          <path key={i} d={`M ${x} ${y - 8} l 3 6 l 6 3 l -6 3 l -3 6 l -3 -6 l -6 -3 l 6 -3 Z`} fill={COLORS.white} />
+        ))}
+        <line x1={0} y1={-150} x2={0} y2={170} {...std} />
+        <line x1={-150} y1={10} x2={150} y2={10} {...std} />
+      </g>
+      {/* floating melting clock */}
+      <g transform={`translate(1480 ${300 + floatY})`}>
+        <path d="M -90 -80 Q 90 -90 90 10 Q 90 90 40 140 Q 20 100 0 140 Q -10 90 -90 70 Z" fill={COLORS.white} {...xl} />
+        <circle cx={0} cy={-6} r={10} fill={COLORS.red} />
+        <line x1={0} y1={-6} x2={30} y2={-40} {...std} />
+        <line x1={0} y1={-6} x2={-6} y2={70} {...std} />
+      </g>
+      {/* floating books + stars */}
+      <g transform={`translate(1050 ${360 + floatY2}) rotate(-12)`}>
+        <rect x={-50} y={-34} width={100} height={68} rx={8} fill={COLORS.sky} {...lg} />
+        <rect x={-50} y={-34} width={20} height={68} fill={shade(COLORS.sky, 0.2)} />
+      </g>
+      {[[760, 200], [1700, 230], [900, 150]].map(([x, y], i) => (
+        <path key={i} d={`M ${x} ${y - 14} l 5 11 l 11 5 l -11 5 l -5 11 l -5 -11 l -11 -5 l 11 -5 Z`} fill={COLORS.yellow} opacity={0.8} />
+      ))}
+      {/* a tilted, floating bed */}
+      <g transform={`translate(720 ${720 + floatY}) rotate(-5)`}>
+        <ellipse cx={0} cy={150} rx={360} ry={50} fill={COLORS.lavenderDark} opacity={0.5} />
+        <rect x={-320} y={-30} width={640} height={190} rx={28} fill={COLORS.pink} {...xl} />
+        <rect x={-320} y={-110} width={200} height={120} rx={28} fill={COLORS.pink} {...xl} />
+        <rect x={-300} y={-70} width={140} height={60} rx={20} fill={COLORS.white} opacity={0.7} {...std} />
+        <rect x={-150} y={-10} width={460} height={140} rx={22} fill={COLORS.lavender} {...std} />
+      </g>
+    </g>
+  );
+};
+
+/** Sleep lab: a clinical room with a sensor bed, an EEG cart + wires, a wall
+ *  monitor of brain waves, an observation window and tiled floor. */
+export const SleepLab: React.FC = () => {
+  const f = useCurrentFrame();
+  const wave = Array.from({ length: 44 }).map((_, i) => `${i ? 'L' : 'M'} ${-160 + i * 8} ${-Math.sin(i / 2 + f / 7) * 22}`).join(' ');
+  return (
+    <g>
+      <WallFloor wall={COLORS.greenTeal} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+      <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.greenTeal, 0.08)} />
+      {/* floor tiles */}
+      {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={i * 200} y={842} width={2} height={CANVAS.height - 842} fill={shade(COLORS.whiteShade, 0.2)} />)}
+      {/* observation window */}
+      <g transform="translate(300 300)">
+        <rect x={-150} y={-120} width={300} height={240} rx={12} fill={COLORS.purpleDeep} {...xl} />
+        <rect x={-150} y={-120} width={300} height={240} rx={12} fill={COLORS.sky} opacity={0.2} />
+        <line x1={-150} y1={0} x2={150} y2={0} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.4} />
+      </g>
+      {/* wall monitor with a hypnogram */}
+      <g transform="translate(980 300)">
+        <rect x={-180} y={-130} width={360} height={260} rx={16} fill={COLORS.shirtDarker} {...xl} />
+        <rect x={-156} y={-104} width={312} height={208} rx={8} fill={COLORS.purpleDeep} {...lg} />
+        <path d="M -140 -60 L -70 -60 L -70 -10 L 0 -10 L 0 40 L 70 40 L 70 -30 L 140 -30" fill="none" stroke={COLORS.ledGreen} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+      {/* EEG cart + live wave + wires */}
+      <g transform="translate(1600 440)">
+        <rect x={-150} y={-150} width={300} height={220} rx={16} fill={COLORS.shirtDark} {...xl} />
+        <rect x={-126} y={-126} width={252} height={150} rx={8} fill={COLORS.purpleDeep} {...lg} />
+        <path d={wave} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <rect x={-150} y={70} width={300} height={40} rx={10} fill={shade(COLORS.shirtDark, 0.2)} />
+        <circle cx={-110} cy={150} r={20} fill={COLORS.ledGrey} {...lg} />
+        <circle cx={110} cy={150} r={20} fill={COLORS.ledGrey} {...lg} />
+        {/* wires trailing to the bed */}
+        <path d="M -150 -40 Q -400 100 -560 240" fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <path d="M -150 0 Q -420 140 -540 270" fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      </g>
+      {/* sensor bed */}
+      <g transform="translate(760 740)">
+        <rect x={-300} y={0} width={600} height={120} rx={20} fill={COLORS.sky} {...xl} />
+        <rect x={-300} y={-70} width={170} height={90} rx={20} fill={COLORS.white} {...lg} />
+        <rect x={-300} y={0} width={600} height={30} rx={14} fill={shade(COLORS.sky, 0.16)} />
+        <rect x={-290} y={120} width={30} height={70} fill={COLORS.ledGrey} {...lg} />
+        <rect x={260} y={120} width={30} height={70} fill={COLORS.ledGrey} {...lg} />
+      </g>
+    </g>
+  );
+};
+
+/** Dreamscape: a surreal floating world — gradient sky, two moons, floating
+ *  islands, an impossible staircase, drifting clouds, stars and a lone door. */
+export const Dreamscape: React.FC = () => {
+  const f = useCurrentFrame();
+  const d1 = Math.sin(f / 20) * 10;
+  const d2 = Math.sin(f / 26 + 2) * 12;
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+      <rect x={0} y={0} width={CANVAS.width} height={620} fill={COLORS.wallNight} />
+      <rect x={0} y={420} width={CANVAS.width} height={260} fill={COLORS.pink} opacity={0.2} />
+      {/* two moons */}
+      <circle cx={1500} cy={210} r={120} fill={COLORS.yellowSoft} {...lg} />
+      {[[1460, 180], [1540, 240], [1510, 170]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={14 + i * 4} fill={shade(COLORS.yellowSoft, 0.12)} />)}
+      <circle cx={360} cy={150} r={56} fill={COLORS.pink} {...lg} />
+      {/* stars + sparkles */}
+      {[[180, 260], [620, 120], [900, 220], [1180, 120], [1720, 360], [1780, 120], [240, 420], [1040, 340], [1360, 420]].map(([x, y], i) => (
+        <path key={i} d={`M ${x} ${y - 10} l 4 8 l 8 4 l -8 4 l -4 8 l -4 -8 l -8 -4 l 8 -4 Z`} fill={COLORS.white} opacity={0.8} />
+      ))}
+      {/* drifting clouds */}
+      {([[620, 520, d1], [1240, 620, d2]] as [number, number, number][]).map(([x, y, dd], i) => (
+        <g key={i} transform={`translate(${x + dd} ${y})`} opacity={0.5}>
+          {[[-70, 0, 50], [0, -18, 60], [66, 0, 48]].map(([cx, cy, r], k) => <circle key={k} cx={cx} cy={cy} r={r} fill={COLORS.lavender} />)}
+        </g>
+      ))}
+      {/* a lone floating door */}
+      <g transform={`translate(1680 640 ) translate(0 ${d2})`}>
+        <rect x={-70} y={-150} width={140} height={300} rx={10} fill={COLORS.wood} {...xl} />
+        <rect x={-50} y={-130} width={100} height={120} rx={8} fill={shade(COLORS.wood, 0.14)} />
+        <circle cx={44} cy={30} r={10} fill={COLORS.yellow} {...sm} />
+      </g>
+      {/* an impossible staircase */}
+      <g transform={`translate(240 ${560 + d1})`}>
+        {Array.from({ length: 6 }).map((_, i) => {
+          const x = i * 48; const y = -i * 30;
+          return (
+            <g key={i}>
+              <path d={`M ${x} ${y} l 48 0 l 0 34 l -48 0 Z`} fill={COLORS.sky} {...lg} />
+              <path d={`M ${x} ${y} l 20 -16 l 48 0 l -20 16 Z`} fill={shade(COLORS.sky, 0.16)} {...sm} />
+            </g>
+          );
+        })}
+      </g>
+      {/* floating grassy islands (the ground the mascot stands on) */}
+      {([[700, 900, 1.0], [1300, 940, 0.8]] as [number, number, number][]).map(([x, y, s], i) => (
+        <g key={i} transform={`translate(${x} ${y}) scale(${s})`}>
+          <path d="M -280 0 Q 0 -70 280 0 Q 220 80 0 86 Q -220 80 -280 0 Z" fill={COLORS.woodDark} {...xl} />
+          <path d="M -280 0 Q 0 -70 280 0 Q 160 10 0 14 Q -160 10 -280 0 Z" fill={COLORS.greenLeaf} {...lg} />
+        </g>
+      ))}
+    </g>
+  );
+};
+
+/** Liminal hallway: an uncanny, endlessly repeating corridor of doors with a
+ *  patterned carpet and a flickering light — the deja-vu dream space. */
+export const LiminalHallway: React.FC = () => {
+  const f = useCurrentFrame();
+  const flick = Math.sin(f / 3) > 0.6 ? 0.4 : 0.9;
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.bgCreamDark} />
+      {/* receding vanishing-point walls */}
+      <path d="M 0 0 L 760 300 L 760 780 L 0 1080 Z" fill={shade(COLORS.wood, 0.1)} />
+      <path d="M 1920 0 L 1160 300 L 1160 780 L 1920 1080 Z" fill={shade(COLORS.wood, 0.1)} />
+      <rect x={760} y={300} width={400} height={480} fill={shade(COLORS.wood, 0.2)} />
+      {/* ceiling + patterned carpet */}
+      <path d="M 0 0 L 1920 0 L 1160 300 L 760 300 Z" fill={shade(COLORS.bgCreamDark, 0.08)} />
+      <path d="M 0 1080 L 1920 1080 L 1160 780 L 760 780 Z" fill={COLORS.wood} />
+      {Array.from({ length: 7 }).map((_, i) => (
+        <path key={i} d={`M ${200 + i * 230} 1080 L ${780 + i * 55} 790 L ${835 + i * 55} 790 L ${300 + i * 230} 1080 Z`} fill={shade(COLORS.wood, 0.16)} opacity={0.6} />
+      ))}
+      {/* repeating doors down each wall */}
+      {[0, 1, 2, 3].map((i) => {
+        const s = 1 - i * 0.22;
+        const lx = 120 + i * 180; const rx = 1800 - i * 180; const y = 440 - i * 40;
+        const h = 300 * s; const w = 120 * s;
+        return (
+          <g key={i}>
+            {[lx, rx].map((x, k) => (
+              <g key={k}>
+                <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={8} fill={COLORS.wood} {...lg} />
+                <rect x={x - w / 2 + 8} y={y - h / 2 + 8} width={w - 16} height={h / 2 - 12} rx={6} fill={shade(COLORS.wood, 0.14)} />
+                <circle cx={x + (k ? -w / 2 + 16 : w / 2 - 16)} cy={y} r={6 * s} fill={COLORS.yellow} />
+              </g>
+            ))}
+          </g>
+        );
+      })}
+      {/* flickering ceiling lights */}
+      {[500, 960, 1420].map((x, i) => (
+        <g key={i}>
+          <rect x={x - 50} y={70 + i * 10} width={100} height={18} rx={8} fill={COLORS.white} opacity={0.6} />
+          <ellipse cx={x} cy={140 + i * 10} rx={130} ry={60} fill={COLORS.yellowSoft} opacity={0.12 * (i === 1 ? flick : 0.8)} />
+        </g>
+      ))}
+      {/* EXIT sign that never gets closer */}
+      <g transform="translate(960 360)">
+        <rect x={-54} y={-24} width={108} height={48} rx={8} fill={COLORS.greenDark} {...sm} />
+        <text x={0} y={12} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.white}>EXIT</text>
+      </g>
+    </g>
+  );
+};
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -1068,6 +1283,10 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'mind-control-room': MindControlRoom,
   'thought-void': ThoughtVoid,
   'calm-shore': CalmShore,
+  'dream-bedroom': DreamBedroom,
+  'sleep-lab': SleepLab,
+  dreamscape: Dreamscape,
+  'liminal-hallway': LiminalHallway,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

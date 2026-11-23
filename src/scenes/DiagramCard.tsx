@@ -1182,8 +1182,174 @@ const AttentionSpotlight: React.FC = () => {
   );
 };
 
+/** Hypnogram: a night of sleep cycling through the stages, REM periods marked. */
+const Hypnogram: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const x0 = CANVAS.width * 0.36;
+  const y0 = 300;
+  const w = 960;
+  const rows = ['AWAKE', 'REM', 'LIGHT', 'DEEP'];
+  const rh = 110;
+  // stage index per segment across the night
+  const seq = [0, 2, 3, 2, 1, 2, 3, 2, 1, 2, 1, 0];
+  const seg = w / seq.length;
+  const path = seq.map((s, i) => `${i ? 'L' : 'M'} ${x0 + i * seg} ${y0 + s * rh + rh / 2} L ${x0 + (i + 1) * seg} ${y0 + s * rh + rh / 2}`).join(' ');
+  return (
+    <g>
+      {rows.map((r, i) => (
+        <g key={r}>
+          <rect x={x0} y={y0 + i * rh} width={w} height={rh} fill={i === 1 ? COLORS.lavender : COLORS.bgCreamDark} opacity={i === 1 ? 0.3 : 0.4} />
+          <text x={x0 - 20} y={y0 + i * rh + rh / 2 + 12} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>{r}</text>
+        </g>
+      ))}
+      <path d={path} fill="none" stroke={COLORS.blueDiagram} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={3000} strokeDashoffset={3000 * (1 - draw)} />
+      {/* REM markers */}
+      {seq.map((s, i) => (s === 1 && draw > 0.9 ? <circle key={i} cx={x0 + (i + 0.5) * seg} cy={y0 + rh + rh / 2} r={12} fill={COLORS.pink} {...sm} /> : null))}
+      <text x={x0 + w / 2} y={y0 + 4 * rh + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={32} fill={COLORS.outline}>one night · ~90-min cycles</text>
+    </g>
+  );
+};
+
+/** The hypnagogic threshold: a borderland band between awake and asleep where
+ *  most glitches happen. */
+const SleepThreshold: React.FC = () => {
+  const frame = useCurrentFrame();
+  const y = CANVAS.height * 0.46 + Math.sin(frame / 18) * 20;
+  const cx = CANVAS.width * 0.56;
+  return (
+    <g>
+      <rect x={cx - 460} y={200} width={920} height={200} rx={20} fill={COLORS.sky} opacity={0.3} />
+      <text x={cx - 420} y={310} fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>AWAKE</text>
+      <rect x={cx - 460} y={400} width={920} height={160} rx={20} fill={COLORS.yellow} opacity={0.4} />
+      <text x={cx - 440} y={492} fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.redDark}>THE BORDERLAND</text>
+      <rect x={cx - 460} y={560} width={920} height={200} rx={20} fill={COLORS.purpleDeep} opacity={0.4} />
+      <text x={cx - 420} y={670} fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>ASLEEP</text>
+      {/* dashed threshold lines */}
+      <line x1={cx - 460} y1={400} x2={cx + 460} y2={400} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="6 14" opacity={0.5} />
+      <line x1={cx - 460} y1={560} x2={cx + 460} y2={560} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="6 14" opacity={0.5} />
+      {/* a little head hovering at the threshold */}
+      <g transform={`translate(${cx + 300} ${y})`}>
+        <circle r={48} fill={COLORS.white} {...xl} />
+        <path d="M -22 -6 q 10 -8 20 0 M 4 -6 q 10 -8 20 0" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+        <path d="M -14 22 q 14 6 28 0" fill="none" {...sm} />
+      </g>
+      <text x={cx} y={820} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>glitches live in the gap</text>
+    </g>
+  );
+};
+
+/** The REM switch: in dreaming, the BODY is switched off (atonia) while the DREAM
+ *  plays — glitches are this switch misfiring. */
+const RemSwitch: React.FC = () => {
+  const frame = useCurrentFrame();
+  const flip = interpolate(frame, [12, 20], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const Switch: React.FC<{ x: number; label: string; on: boolean }> = ({ x, label, on }) => {
+    const knob = on ? interpolate(flip, [0, 1], [-70, 70]) : -70;
+    return (
+      <g transform={`translate(${x} ${CANVAS.height * 0.46})`}>
+        <rect x={-150} y={-180} width={300} height={360} rx={30} fill={COLORS.white} {...xl} />
+        <rect x={-110} y={-40} width={220} height={110} rx={55} fill={on ? COLORS.greenLeaf : COLORS.ledGrey} opacity={0.6} {...lg} />
+        <circle cx={knob} cy={15} r={54} fill={COLORS.white} {...lg} />
+        <circle cx={0} cy={130} r={22} fill={on ? COLORS.ledGreen : COLORS.red} {...lg} />
+        <text x={0} y={-110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={54} fill={COLORS.outline}>{label}</text>
+      </g>
+    );
+  };
+  return (
+    <g>
+      <Switch x={CANVAS.width * 0.44} label="DREAM" on />
+      <Switch x={CANVAS.width * 0.68} label="BODY" on={false} />
+      <text x={CANVAS.width * 0.56} y={CANVAS.height * 0.82} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>body off, so you don't act it out</text>
+    </g>
+  );
+};
+
+/** Dream layers: nested levels going down — awake → dream → dream-in-dream. */
+const DreamLayers: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const labels = ['AWAKE?', 'A DREAM', 'DREAM IN A DREAM'];
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.44;
+  return (
+    <g>
+      {[0, 1, 2, 3].map((i) => {
+        const r = 320 - i * 90;
+        const pop = springIn(frame, fps, 8 + i * 6, { damping: 13 });
+        const cols = [COLORS.sky, COLORS.lavender, COLORS.pink, COLORS.yellowSoft];
+        return <circle key={i} cx={cx} cy={cy} r={r * Math.min(1, pop)} fill="none" stroke={cols[i]} strokeWidth={STROKE.xl} />;
+      })}
+      {labels.map((l, i) => (
+        <text key={i} x={cx} y={cy - 320 + i * 90 + 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={i === 0 ? 34 : 30} fill={COLORS.outline}>{l}</text>
+      ))}
+      <text x={cx} y={cy + 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>↓</text>
+    </g>
+  );
+};
+
+/** Mind × Body sleep grid: 4 states — highlight one (sleep paralysis, sleepwalking…). */
+const MindBodySleep: React.FC<{ highlight: string }> = ({ highlight }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const pop = springIn(frame, fps, 14, { damping: 12 });
+  const gx = CANVAS.width * 0.42;
+  const gy = 220;
+  const cs = 300;
+  const quads = [
+    { key: 'paralysis', col: 1, row: 0, label: 'SLEEP PARALYSIS', sub: 'mind on · body off', color: COLORS.red },
+    { key: 'awake', col: 0, row: 0, label: 'AWAKE', sub: 'mind on · body on', color: COLORS.yellow },
+    { key: 'asleep', col: 0, row: 1, label: 'ASLEEP', sub: 'mind off · body off', color: COLORS.sky },
+    { key: 'sleepwalk', col: 1, row: 1, label: 'SLEEPWALKING', sub: 'mind off · body on', color: COLORS.greenLeaf },
+  ];
+  return (
+    <g>
+      <text x={gx - 48} y={gy + cs} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline} transform={`rotate(-90 ${gx - 48} ${gy + cs})`}>BODY on →</text>
+      <text x={gx + cs} y={gy + 2 * cs + 64} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>MIND on →</text>
+      {quads.map((q) => {
+        const on = q.key === highlight;
+        const x = gx + q.col * cs; const y = gy + q.row * cs;
+        return (
+          <g key={q.key} transform={`translate(${x + cs / 2} ${y + cs / 2}) scale(${on ? 1 + 0.03 * Math.min(1, pop) : 1})`}>
+            <rect x={-cs / 2 + 8} y={-cs / 2 + 8} width={cs - 16} height={cs - 16} rx={22} fill={q.color} opacity={on ? 1 : 0.4} {...lg} />
+            <text x={0} y={-6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={q.label.length > 10 ? 32 : 40} fill={COLORS.outline} opacity={on ? 1 : 0.7}>{q.label}</text>
+            <text x={0} y={44} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={26} fill={COLORS.outline} opacity={on ? 0.85 : 0.5}>{q.sub}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+/** Night terror vs nightmare comparison. */
+const TerrorVsNightmare: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const rows = [['stage', 'DEEP (NREM)', 'REM'], ['timing', 'early night', 'late night'], ['memory', 'none', 'vivid'], ['you', 'scream, asleep', 'wake up scared']];
+  const cx = CANVAS.width * 0.56;
+  const colW = 300;
+  const y0 = 240;
+  const rh = 110;
+  const pop = springIn(frame, fps, 10, { damping: 13 });
+  return (
+    <g transform={`scale(${0.9 + 0.1 * Math.min(1, pop)})`} style={{ transformOrigin: 'center' }}>
+      <rect x={cx - 60} y={y0 - 80} width={colW} height={rh * 4 + 80} rx={18} fill={COLORS.red} opacity={0.25} />
+      <rect x={cx - 60 + colW} y={y0 - 80} width={colW} height={rh * 4 + 80} rx={18} fill={COLORS.sky} opacity={0.3} />
+      <text x={cx - 60 + colW / 2} y={y0 - 30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.redDark}>NIGHT TERROR</text>
+      <text x={cx - 60 + colW * 1.5} y={y0 - 30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.blueDiagramDark}>NIGHTMARE</text>
+      {rows.map((r, i) => (
+        <g key={i}>
+          <text x={cx - 80} y={y0 + i * rh + 50} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.outline}>{r[0]}</text>
+          <text x={cx - 60 + colW / 2} y={y0 + i * rh + 50} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>{r[1]}</text>
+          <text x={cx - 60 + colW * 1.5} y={y0 + i * rh + 50} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>{r[2]}</text>
+        </g>
+      ))}
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1224,6 +1390,12 @@ export const DiagramCard: React.FC<{
     'window-of-now': COLORS.greenLeaf,
     'dial-not-switch': COLORS.lavender,
     'attention-spotlight': COLORS.yellow,
+    hypnogram: COLORS.blueDiagram,
+    'sleep-threshold': COLORS.yellow,
+    'rem-switch': COLORS.greenLeaf,
+    'dream-layers': COLORS.lavender,
+    'mind-body-sleep': COLORS.sky,
+    'terror-vs-nightmare': COLORS.red,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -1271,6 +1443,12 @@ export const DiagramCard: React.FC<{
         {diagram === 'window-of-now' && <WindowOfNow />}
         {diagram === 'dial-not-switch' && <DialNotSwitch />}
         {diagram === 'attention-spotlight' && <AttentionSpotlight />}
+        {diagram === 'hypnogram' && <Hypnogram />}
+        {diagram === 'sleep-threshold' && <SleepThreshold />}
+        {diagram === 'rem-switch' && <RemSwitch />}
+        {diagram === 'dream-layers' && <DreamLayers />}
+        {diagram === 'mind-body-sleep' && <MindBodySleep highlight={highlight} />}
+        {diagram === 'terror-vs-nightmare' && <TerrorVsNightmare />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

@@ -1,0 +1,215 @@
+{
+  "title": "Every Sleep Glitch You Might Experience (and What They Mean)",
+  "slug": "sleep-glitches",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "You're drifting off. Safe, warm, almost gone. And then your whole body lurches, like you just missed a step on a staircase that was never there. Your heart pounds. You're wide awake again.", "scene": "story", "room": "dream-bedroom", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "EVERY SLEEP GLITCH", "subtitle": "the weird things your sleeping brain does",
+          "mascots": [ { "costume": "pajamas", "pose": "sleeping-lying", "emotion": "scared", "x": 720, "y": 640, "scale": 1.3, "talking": false } ],
+          "props": [ { "name": "falling-void", "x": 1200, "y": 400, "scale": 0.8, "appearAt": 6 } ] },
+        { "vo": "That jolt is just the first of many strange things your brain does at the border of sleep. A whole hidden world of glitches, most of them completely normal, and almost none of them talked about.", "scene": "story", "room": "dream-bedroom", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.46, 1.2] },
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "confused", "x": 700, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "moon-face", "x": 1250, "y": 340, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "You'll spend about a third of your entire life asleep. And in that third, your brain runs some truly bizarre software. Tonight, we're reading the error logs.", "scene": "statCard", "value": 33, "suffix": "%", "pictogram": "crowd", "fraction": 0.33, "emotion": "serious-expert" },
+        { "vo": "Sleep was never a simple off switch. It's a staged journey, light sleep, deep sleep, and dreaming REM, looping all night. And a glitch is just that machinery, misfiring for a moment.", "scene": "explainer", "prop": "eeg-strip", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Fifteen sleep glitches you might just recognize, from the harmless to the genuinely spooky, and what each one actually means. Try not to watch this one right before bed. Let's go.", "scene": "explainer", "prop": "moon-face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's tonight's menu of weirdness. We'll travel from the edge of sleep, down into the dream, and back out to the groggy morning. Count how many you've felt.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["THE JOLT", "PARALYSIS", "PHANTOMS", "THE BANG", "FALSE WAKE", "LUCID", "SLEEPWALK", "SLEEP TALK", "NIGHT TERROR", "TETRIS", "THE FOG", "MICROSLEEP", "DREAM FIGHTS", "DÉJÀ RÊVÉ", "RERUNS"] }
+      ]
+    },
+    {
+      "name": "1 — Hypnic jerk",
+      "beats": [
+        { "vo": "The hypnic jerk. That falling jolt we opened with. As you drift off, your muscles relax and your breathing slows, and sometimes your brain misreads the shutdown as actually falling.", "scene": "story", "room": "dream-bedroom", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE JOLT", "subtitle": "hypnic jerk",
+          "mascots": [ { "costume": "pajamas", "pose": "sleeping-lying", "emotion": "scared", "x": 720, "y": 640, "scale": 1.3, "talking": false } ],
+          "props": [ { "name": "falling-void", "x": 1200, "y": 420, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "So it jerks your muscles awake to catch you, a reflex left over from primate ancestors who slept in trees, where falling was a very real way to die.", "scene": "explainer", "prop": "falling-void", "emotion": "serious-expert" },
+        { "vo": "It happens right here, in the borderland, the fuzzy few minutes between awake and asleep where most of tonight's glitches live.", "scene": "diagramCard", "diagram": "sleep-threshold", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Around seventy percent of people get these. Totally harmless. Just your inner tree-ape, making sure you don't plummet to your doom in bed. The next one is far creepier.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Sleep paralysis",
+      "beats": [
+        { "vo": "Sleep paralysis. You wake up, fully conscious, and you cannot move a single muscle. You can't speak. You can't even call out. And very often, you feel you are not alone in the room.", "scene": "story", "room": "liminal-hallway", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "PARALYSIS", "subtitle": "awake, but frozen",
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "terrified", "x": 600, "y": 660, "scale": 1.15, "talking": true } ],
+          "props": [ { "name": "shadow-figure", "x": 1250, "y": 560, "scale": 0.85, "appearAt": 6 } ] },
+        { "vo": "Here's why. In dreaming sleep, your brain paralyses your body on purpose, so you don't physically act out your dreams. In sleep paralysis, your mind wakes up, but that paralysis switch hasn't flipped back off yet.", "scene": "diagramCard", "diagram": "mind-body-sleep", "highlight": "paralysis", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And the dreaming brain, still half-on, fills the dark with a figure. A shadow, an intruder, a weight on your chest. Cultures worldwide invented demons to explain it. It is not a demon. It's a REM dream, leaking into the waking room.", "scene": "explainer", "prop": "shadow-figure", "emotion": "serious-expert" },
+        { "vo": "Terrifying, but harmless, and it passes in seconds. About one in twelve people will feel it at least once. The same half-dreaming state can paint things while your eyes are open.", "scene": "statCard", "value": 8, "suffix": "%", "pictogram": "crowd", "fraction": 0.1, "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "3 — Hypnagogic hallucinations",
+      "beats": [
+        { "vo": "Hypnagogic hallucinations. As you tip over the edge into sleep, the dreaming can start before you're fully under. So you see faces, patterns, and flashes, or hear your name called, with your eyes closed.", "scene": "story", "room": "dream-bedroom", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "PHANTOMS", "subtitle": "dreams with your eyes open",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "confused", "x": 700, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "phantom-faces", "x": 1200, "y": 420, "scale": 0.9, "appearAt": 4 } ] },
+        { "vo": "They're usually fleeting and fragmentary. A floating shape, a sudden sound, a sense of movement. Your brain is simply booting up the dream projector a few minutes early.", "scene": "explainer", "prop": "phantom-faces", "emotion": "serious-expert" },
+        { "vo": "They're incredibly common, and perfectly benign. The same thing on the way out of sleep, as you wake, gets its own tongue-twisting name: hypnopompic. One of these phantoms, though, is a sound.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And it is loud.", "scene": "story", "room": "dream-bedroom", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.46, 1.25] },
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "scared", "x": 700, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "boom-burst", "x": 1200, "y": 400, "scale": 0.5, "appearAt": 2 } ] }
+      ]
+    },
+    {
+      "name": "4 — Exploding head syndrome",
+      "beats": [
+        { "vo": "Exploding head syndrome. The name sounds like a horror film, but nothing actually explodes. As you fall asleep, you hear a sudden, enormous crash. A bomb, a gunshot, a cymbal, right inside your skull.", "scene": "story", "room": "dream-bedroom", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "THE BANG", "subtitle": "exploding head syndrome",
+          "mascots": [ { "costume": "pajamas", "pose": "startled", "emotion": "terrified", "x": 700, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "boom-burst", "x": 1220, "y": 440, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "There's no pain, and no real sound. The leading idea is that as your brain powers down for sleep, the auditory neurons don't switch off smoothly, and instead fire off one last, giant burst of noise.", "scene": "explainer", "prop": "boom-burst", "emotion": "serious-expert" },
+        { "vo": "It's startling, and weirdly lonely, because there's no one to share the bang with. But despite the dramatic name, it's considered harmless. From loud, to a dream so real you'd swear you woke up.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "Except you didn't.", "scene": "diagramCard", "diagram": "sleep-threshold", "emotion": "confused", "withMascot": true }
+      ]
+    },
+    {
+      "name": "5 — False awakening",
+      "beats": [
+        { "vo": "The false awakening. You wake up. You get out of bed, make coffee, get dressed for work. And then you actually wake up, still in bed. The whole morning was a dream.", "scene": "story", "room": "liminal-hallway", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "FALSE WAKE", "subtitle": "a dream of waking up",
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "confused", "x": 600, "y": 660, "scale": 1.15, "talking": true } ],
+          "props": [ { "name": "nested-dream", "x": 1250, "y": 500, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "Sometimes it loops. You wake, from waking, from waking, each one feeling completely real. A dream inside a dream inside a dream.", "scene": "diagramCard", "diagram": "dream-layers", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Your dreaming brain is a flawless set designer. It can build your exact bedroom, right down to the light switch, so convincingly that you have no reason to question it. Until a detail is just slightly off.", "scene": "explainer", "prop": "nested-dream", "emotion": "serious-expert" },
+        { "vo": "And noticing that wrong detail is a kind of superpower. Because if you realise you're dreaming, you don't have to just watch. You can take the controls.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "6 — Lucid dreaming",
+      "beats": [
+        { "vo": "Lucid dreaming. The rare, delicious moment when, inside the dream, you suddenly realise, wait, I'm dreaming. And unlike every other glitch here, this one you can actually learn to trigger.", "scene": "story", "room": "dreamscape", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "LUCID", "subtitle": "taking the controls",
+          "mascots": [ { "costume": "pajamas", "pose": "arms-out-presenting", "emotion": "excited", "x": 560, "y": 700, "scale": 1.0, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "lucid-hand", "x": 1200, "y": 480, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "The classic trick is a reality check. In dreams, text scrambles, light switches don't work, and your hands look wrong, often with too many fingers. Build the habit of checking by day, and it bleeds into your dreams.", "scene": "explainer", "prop": "lucid-hand", "emotion": "serious-expert" },
+        { "vo": "Scientists have proven it's real. Lucid dreamers signalled with deliberate, pre-agreed eye movements, from inside a dream, while hooked to sensors in a lab. A message, sent out from the dreaming world.", "scene": "statCard", "value": 55, "suffix": "%", "pictogram": "crowd", "fraction": 0.5, "emotion": "excited" },
+        { "vo": "Once lucid, some people fly, visit anyone, or face a recurring nightmare down and defeat it. The ultimate glitch, turned into a gift. But the dreaming brain can also move your real body.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "7 — Sleepwalking",
+      "beats": [
+        { "vo": "Sleepwalking. Your body gets up, walks around, even opens doors and eats, while your conscious mind is fast asleep. Eyes open, nobody home.", "scene": "story", "room": "dream-bedroom", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "SLEEPWALK", "subtitle": "the body walks, the mind sleeps",
+          "mascots": [ { "costume": "pajamas", "pose": "startled", "emotion": "sleepy", "x": 640, "y": 640, "scale": 1.3, "talking": false } ],
+          "props": [ { "name": "walking-slippers", "x": 1200, "y": 720, "scale": 0.9, "appearAt": 4 } ] },
+        { "vo": "It's the exact mirror of sleep paralysis. There, the mind woke but the body stayed frozen. Here, the body wakes up and starts moving, but the mind stays deep asleep.", "scene": "diagramCard", "diagram": "mind-body-sleep", "highlight": "sleepwalk", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "It happens in the deepest sleep, early in the night, which is why sleepwalkers almost never remember a thing. It's commonest in children, and most of them simply grow out of it.", "scene": "explainer", "prop": "walking-slippers", "emotion": "serious-expert" },
+        { "vo": "And that old myth? It is perfectly safe to wake a sleepwalker. They'll just be confused. The real risk is letting them wander. Some sleepers don't walk, though. They talk.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Sleep talking",
+      "beats": [
+        { "vo": "Sleep talking. From a single mumbled word, to a full, bizarre monologue, to an entire argument with someone who absolutely is not there. And you will never remember a word of it.", "scene": "story", "room": "dream-bedroom", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "SLEEP TALK", "subtitle": "nonsense in the night",
+          "mascots": [ { "costume": "pajamas", "pose": "sleeping-lying", "emotion": "sleepy", "x": 700, "y": 650, "scale": 1.3, "talking": false } ],
+          "props": [ { "name": "sleep-mumble", "x": 1220, "y": 420, "scale": 0.82, "appearAt": 4 } ] },
+        { "vo": "Most of it is garbled nonsense, because the language part of your brain is running without the editor awake to supervise it. It can happen in any stage of sleep.", "scene": "explainer", "prop": "sleep-mumble", "emotion": "serious-expert" },
+        { "vo": "It's harmless, if occasionally very embarrassing when a partner reports the transcript back to you over breakfast. But some things that happen in deep sleep are not so gentle.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "Some of them scream.", "scene": "diagramCard", "diagram": "terror-vs-nightmare", "emotion": "scared", "withMascot": true }
+      ]
+    },
+    {
+      "name": "9 — Night terrors",
+      "beats": [
+        { "vo": "Night terrors. And these are not nightmares. A person, usually a child, sits bolt upright and screams in pure panic, eyes wide open, heart racing, utterly inconsolable. And in the morning, they remember nothing at all.", "scene": "story", "room": "dream-bedroom", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "NIGHT TERROR", "subtitle": "screaming, still asleep",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "terrified", "x": 700, "y": 640, "scale": 1.3, "talking": false } ],
+          "props": [ { "name": "scream-burst", "x": 1200, "y": 420, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "That's the key difference. A nightmare is a scary story you watch in REM, late at night, and remember. A night terror is a raw panic alarm going off in deep sleep, early in the night, with no story and no memory.", "scene": "explainer", "prop": "scream-burst", "emotion": "serious-expert" },
+        { "vo": "They're frightening to witness, but the person isn't actually suffering a bad dream. They're simply stuck between sleep stages. Most children grow out of them completely.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "Now, from the terrors of the night, to the quiet hum of the day leaking into your dreams.", "scene": "story", "room": "dreamscape", "emotion": "neutral", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "confused", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "tetris-blocks", "x": 1150, "y": 420, "scale": 0.8, "appearAt": 2 } ] }
+      ]
+    },
+    {
+      "name": "10 — The Tetris effect",
+      "beats": [
+        { "vo": "The Tetris effect. Do any one thing for hours, and it hijacks your dreams. Play too much Tetris, and you'll see the blocks falling behind your closed eyes as you drift off, and tumbling through your dreams all night.", "scene": "story", "room": "dreamscape", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "TETRIS", "subtitle": "your day, on repeat",
+          "mascots": [ { "costume": "pajamas", "pose": "sleeping-lying", "emotion": "sleepy", "x": 620, "y": 720, "scale": 1.0, "talking": false } ],
+          "props": [ { "name": "tetris-blocks", "x": 1200, "y": 440, "scale": 0.9, "appearAt": 4 } ] },
+        { "vo": "It's named from a study where players dreamed of falling blocks, but it's universal. A long day of driving, skiing, or scrolling bleeds straight into the night. It's your brain filing away the day.", "scene": "explainer", "prop": "tetris-blocks", "emotion": "serious-expert" },
+        { "vo": "This is memory consolidation in action. Sleep replays and sorts what you practised, baking it in. Which is also, quietly, why a good night's sleep makes you better at a new skill. Then comes the morning.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "And the fog.", "scene": "diagramCard", "diagram": "hypnogram", "emotion": "sleepy", "withMascot": true }
+      ]
+    },
+    {
+      "name": "11 — Sleep inertia",
+      "beats": [
+        { "vo": "Sleep inertia. The fog. You wake up, but your brain hasn't finished booting. For fifteen to thirty minutes, you're groggy, clumsy, and genuinely worse at thinking than if you'd pulled an all-nighter.", "scene": "story", "room": "dream-bedroom", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE FOG", "subtitle": "sleep inertia",
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "sleepy", "x": 700, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "fog-cloud", "x": 1200, "y": 400, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "It's worst when an alarm rips you out of deep sleep, before your brain was ready to surface. Different regions wake at different speeds, and the slow, logical parts come online last.", "scene": "explainer", "prop": "fog-cloud", "emotion": "serious-expert" },
+        { "vo": "It's also why that mid-afternoon nap can leave you feeling worse. Sleep too long, you crash into deep sleep, and wake up in the fog. The fix? Keep naps under about twenty minutes. A worse version happens awake.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "With your eyes open.", "scene": "story", "room": "sleep-lab", "emotion": "sleepy", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "micro-flicker", "x": 1150, "y": 440, "scale": 0.7, "appearAt": 2 } ] }
+      ]
+    },
+    {
+      "name": "12 — Microsleep",
+      "beats": [
+        { "vo": "Microsleep. When you're badly sleep-deprived, your brain stops asking permission. It just forces tiny naps, a few seconds long, with your eyes wide open. You can have one and not even know it happened.", "scene": "story", "room": "sleep-lab", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "MICROSLEEP", "subtitle": "asleep with your eyes open",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "micro-flicker", "x": 1180, "y": 440, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "Small patches of your brain literally flicker offline to grab the sleep you've denied them, while the rest of you keeps going. In a boring meeting, it's harmless.", "scene": "explainer", "prop": "micro-flicker", "emotion": "serious-expert" },
+        { "vo": "Behind the wheel of a car, it is lethal. A three-second microsleep at highway speed means travelling the length of a football field, with absolutely no one driving. This is the one glitch to take deadly seriously. Never drive tired.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "Most glitches are harmless. That one can kill. And a rarer one makes you fight your dreams for real.", "scene": "diagramCard", "diagram": "rem-switch", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "13 — REM behaviour disorder",
+      "beats": [
+        { "vo": "REM behaviour disorder. Remember that switch that paralyses your body while you dream, so you don't act dreams out? In some people, that switch breaks. And they do act them out, fully, physically, while asleep.", "scene": "story", "room": "dream-bedroom", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "DREAM FIGHTS", "subtitle": "acting out the dream",
+          "mascots": [ { "costume": "pajamas", "pose": "fist-up", "emotion": "annoyed", "x": 680, "y": 640, "scale": 1.3, "talking": false } ],
+          "props": [ { "name": "dream-boxing", "x": 1200, "y": 440, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "People have thrown punches, kicked, leapt out of bed, and shouted, all while dreaming they were fighting off an attacker, sometimes injuring themselves or a startled partner in the process.", "scene": "explainer", "prop": "dream-boxing", "emotion": "serious-expert" },
+        { "vo": "Unlike almost everything else on this list, this one matters medically. It mostly appears later in life, and can be an early warning sign for certain neurological conditions. So this is the glitch that genuinely deserves a doctor.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "From a glitch of the body, to a glitch of pure memory. One that feels almost magical.", "scene": "story", "room": "liminal-hallway", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "confused", "x": 600, "y": 660, "scale": 1.1, "talking": true } ],
+          "props": [ { "name": "deja-reel", "x": 1200, "y": 480, "scale": 0.6, "appearAt": 2 } ] }
+      ]
+    },
+    {
+      "name": "14 — Déjà rêvé",
+      "beats": [
+        { "vo": "Déjà rêvé. French for already dreamed. It's the uncanny, powerful feeling that this exact moment, happening right now, already happened in one of your dreams. And it's the cousin of déjà vu.", "scene": "story", "room": "liminal-hallway", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "DÉJÀ RÊVÉ", "subtitle": "'I dreamed this'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 600, "y": 660, "scale": 1.15, "talking": true } ],
+          "props": [ { "name": "deja-reel", "x": 1220, "y": 500, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "It feels like proof that you dreamed the future. It almost certainly isn't. It's most likely a memory glitch, where a scene triggers a vague, dreamlike sense of familiarity, which your brain then labels, I must have dreamed this.", "scene": "explainer", "prop": "deja-reel", "emotion": "serious-expert" },
+        { "vo": "Researchers can even trigger the feeling on demand by electrically stimulating memory regions of the brain. Spooky, but it's a quirk of recognition, not a window into fate.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And speaking of things that happen more than once, some dreams just will not quit.", "scene": "story", "room": "dreamscape", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "scared", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "dream-stairs", "x": 1150, "y": 440, "scale": 0.8, "appearAt": 2 } ] }
+      ]
+    },
+    {
+      "name": "15 — Recurring dreams",
+      "beats": [
+        { "vo": "Recurring dreams. The same ones, visiting again and again, often for years. Being chased. Falling. Your teeth crumbling out. Walking into an exam you never studied for, suddenly, with no clothes on.", "scene": "story", "room": "dreamscape", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "RERUNS", "subtitle": "recurring dreams",
+          "mascots": [ { "costume": "pajamas", "pose": "idle", "emotion": "scared", "x": 560, "y": 700, "scale": 1.0, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "dream-stairs", "x": 1200, "y": 440, "scale": 0.85, "appearAt": 4 } ] },
+        { "vo": "These themes are weirdly universal, shared across cultures and continents, which hints they're wired deep into us. The popular idea is that a recurring dream is an unresolved worry, knocking, asking to be dealt with.", "scene": "explainer", "prop": "dream-stairs", "emotion": "serious-expert" },
+        { "vo": "They often spike during stressful times, and tend to fade once the underlying stress is resolved. Not a prophecy. More like your brain's unread notifications, piling up until you finally look.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "Fifteen glitches, from the jolt to the rerun. So what do we do with all this beautiful weirdness?", "scene": "story", "room": "dream-bedroom", "emotion": "happy-talk", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "pajamas", "pose": "sitting-up-in-bed", "emotion": "happy-talk", "x": 700, "y": 640, "scale": 1.3, "talking": true } ],
+          "props": [ { "name": "moon-face", "x": 1240, "y": 360, "scale": 0.7, "appearAt": 2 } ] }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "Here's the comforting truth. Almost every one of these is completely normal. A sign of a brain doing its wonderfully complicated job of shutting down, dreaming, and booting back up, with the occasional typo.", "scene": "explainer", "prop": "moon-face", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "A few deserve attention, acting out your dreams, or falling asleep at the wheel. But most are just the strange, secret theatre your mind performs every single night, whether you remember the show or not.", "scene": "story", "room": "dream-bedroom", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "pajamas", "pose": "sleeping-lying", "emotion": "sleepy", "x": 720, "y": 650, "scale": 1.3, "talking": false } ],
+          "props": [ { "name": "moon-face", "x": 1240, "y": 360, "scale": 0.72, "appearAt": 6 } ] },
+        { "vo": "So, which of the fifteen have you felt? And what is the strangest thing your brain has ever done as you fell asleep? Tell me in the comments. And send this to the person who talks in their sleep.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and sweet dreams. I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

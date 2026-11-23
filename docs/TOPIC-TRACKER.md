@@ -35,7 +35,7 @@ Glitches.
 6. 🟡 Every Manipulation Tactic Explained — *built (`manipulation-tactics`), 15 tactics + counters; awaiting CI render*
 7. ⬜ The Psychology of People With a High IQ
 8. 🟡 **Every Attachment Style Explained** — *built (`attachment-styles`), awaiting CI render*
-9. ⬜ Every Sleep Glitch You Might Experience
+9. 🟡 Every Sleep Glitch You Might Experience — *built (`sleep-glitches`), 28 bespoke assets (biggest art set); awaiting CI render*
 10. ✅ Every Cognitive Bias Ruining Your Decisions — *done (`cognitive-biases`)*
 11. ⬜ The Psychology of People Who Imagine Fake Scenarios All Day
 12. ⬜ Why Your Brain Fears 3 AM
