@@ -1,0 +1,413 @@
+{
+  "slug": "jealousy-signs",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 16,
+    "NEW": 21
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        8,
+        11,
+        14,
+        17,
+        26,
+        29,
+        32,
+        38,
+        42
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        8,
+        11,
+        14,
+        20,
+        23,
+        26,
+        35
+      ]
+    },
+    {
+      "name": "comparison-envy",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "how-to-respond",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        39
+      ]
+    },
+    {
+      "name": "jealousy-roots",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "warm-cold-map",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        11,
+        14,
+        26,
+        29
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        8,
+        17,
+        26,
+        32
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        11
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        4,
+        11,
+        38,
+        40,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        32,
+        34,
+        37
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        20,
+        23
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        2,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        35,
+        36,
+        39,
+        41
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        35
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        8,
+        14,
+        20,
+        23
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        0,
+        26
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        0,
+        11,
+        38
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35
+      ]
+    },
+    {
+      "name": "point-left",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        1,
+        8
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        42
+      ]
+    },
+    {
+      "name": "backhanded-gift",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "copycat-twins",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "deflate-balloon",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8,
+        9,
+        38
+      ]
+    },
+    {
+      "name": "envy-thermometer",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        33
+      ]
+    },
+    {
+      "name": "fake-smile-mask",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        11,
+        12
+      ]
+    },
+    {
+      "name": "frost-shoulder",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "gossip-cloud",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20,
+        21
+      ]
+    },
+    {
+      "name": "green-monster",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        1,
+        3,
+        35,
+        42
+      ]
+    },
+    {
+      "name": "hidden-grin",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23,
+        24
+      ]
+    },
+    {
+      "name": "red-pen",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29,
+        30
+      ]
+    },
+    {
+      "name": "scoreboard",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "side-eye",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        32,
+        41
+      ]
+    },
+    {
+      "name": "break-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        5,
+        14,
+        20,
+        35
+      ]
+    },
+    {
+      "name": "celebration",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        8,
+        11,
+        26,
+        38,
+        42
+      ]
+    },
+    {
+      "name": "coffee-catchup",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17,
+        23,
+        29,
+        32
+      ]
+    }
+  ]
+}

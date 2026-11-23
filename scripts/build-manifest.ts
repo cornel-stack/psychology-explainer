@@ -76,6 +76,10 @@ const NEW_ASSETS = new Set([
   'thinker-nook', 'signpost-crossroads', 'overthink-stairwell', 'misty-clearing',
   'ponder-cloud', 'replay-tape', 'whatif-signs', 'stuck-compass', 'multiplying-worry', 'disaster-dominoes', 'rumination-drum', 'overthink-gauge', 'tight-knot', 'brake-lever', 'step-back-frame', 'one-small-step',
   'overthink-ladder', 'thought-vs-action', 'whatif-branches', 'spiral-funnel',
+  // jealousy-signs (all new)
+  'break-room', 'celebration', 'coffee-catchup',
+  'green-monster', 'backhanded-gift', 'deflate-balloon', 'copycat-twins', 'scoreboard', 'fake-smile-mask', 'gossip-cloud', 'hidden-grin', 'frost-shoulder', 'red-pen', 'envy-thermometer', 'side-eye',
+  'comparison-envy', 'warm-cold-map', 'jealousy-roots', 'how-to-respond',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

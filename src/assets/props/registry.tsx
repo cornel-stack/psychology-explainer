@@ -21,6 +21,7 @@ import * as Hiq from './highiq';
 import * as Dd from './daydream';
 import * as F3 from './fear3am';
 import * as Ot from './overthink';
+import * as Jl from './jealousy';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -247,6 +248,19 @@ export const PROPS: Record<string, React.FC<any>> = {
   'brake-lever': Ot.BrakeLever,
   'step-back-frame': Ot.StepBackFrame,
   'one-small-step': Ot.OneSmallStep,
+  // jealousy-signs props (all new)
+  'green-monster': Jl.GreenMonster,
+  'backhanded-gift': Jl.BackhandedGift,
+  'deflate-balloon': Jl.DeflateBalloon,
+  'copycat-twins': Jl.CopycatTwins,
+  scoreboard: Jl.Scoreboard,
+  'fake-smile-mask': Jl.FakeSmileMask,
+  'gossip-cloud': Jl.GossipCloud,
+  'hidden-grin': Jl.HiddenGrin,
+  'frost-shoulder': Jl.FrostShoulder,
+  'red-pen': Jl.RedPen,
+  'envy-thermometer': Jl.EnvyThermometer,
+  'side-eye': Jl.SideEye,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

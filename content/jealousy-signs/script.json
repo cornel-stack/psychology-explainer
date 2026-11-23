@@ -1,0 +1,157 @@
+{
+  "title": "Signs Someone Is Secretly Jealous of You",
+  "slug": "jealousy-signs",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "You share some good news. A promotion, a new relationship, a small win. And a particular person gives you a smile that just doesn't reach their eyes, and a congratulations that lands a little flat, a little cold.", "scene": "story", "room": "celebration", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "SIGNS SOMEONE'S SECRETLY JEALOUS", "subtitle": "the quiet tells of envy",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 560, "y": 700, "scale": 1.0, "talking": false }, { "costume": "suit", "pose": "arms-crossed", "emotion": "annoyed", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "fake-smile-mask", "x": 1360, "y": 360, "scale": 0.55, "appearAt": 8 } ] },
+        { "vo": "Secret jealousy almost never announces itself. People rarely say, I envy you. Instead it leaks out, sideways, in a dozen small behaviours that are easy to feel, but hard to name. So let's name them.", "scene": "story", "room": "celebration", "emotion": "confused", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 600, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "green-monster", "x": 1180, "y": 420, "scale": 0.55, "appearAt": 4 } ] },
+        { "vo": "One important rule first. These are patterns, not proof. A single off day means nothing. But if you see a cluster of these, again and again, from the same person, it's worth paying attention.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Ten quiet signs that someone is secretly jealous of you, why it happens, and how to handle it with your head held high. Let's go.", "scene": "explainer", "prop": "green-monster", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here are the ten tells. Some are verbal, some are in the body, and a few are things they do only when you're not looking. Watch for the person who keeps showing up on this list.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["BACKHANDED 'NICE'", "DOWNPLAYS WINS", "FAKE SMILE", "ONE-UPPING", "COPIES YOU", "GOSSIP", "LOVES YOUR FAILS", "COLD SHOULDER", "NITPICKING", "THE SIDE-EYE"] }
+      ]
+    },
+    {
+      "name": "1 — Backhanded compliments",
+      "beats": [
+        { "vo": "Sign one. The backhanded compliment. On the surface, it's praise. Underneath, there's a tiny, deniable sting. Wow, you actually pulled that off. That's amazing, for someone with no experience.", "scene": "story", "room": "break-room", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE BACKHANDED 'NICE'", "subtitle": "a compliment with a barb",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 680, "scale": 1.0 }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 680, "scale": 1.0, "flip": true, "talking": true, "lookDir": "left" } ],
+          "props": [ { "name": "backhanded-gift", "x": 1020, "y": 460, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "It lets them look supportive while quietly taking you down a peg. If a compliment consistently leaves you feeling slightly worse about yourself, that was the design, not an accident.", "scene": "explainer", "prop": "backhanded-gift", "emotion": "serious-expert" },
+        { "vo": "They can't quite bring themselves to be simply, warmly happy for you. Which shows up most clearly the moment you share a genuine win.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Downplays wins",
+      "beats": [
+        { "vo": "Sign two. They downplay your wins. You're thrilled about something, and they instantly let the air out of it. Oh, isn't everyone doing that now? I heard that company isn't even that good.", "scene": "story", "room": "celebration", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "DOWNPLAYS YOUR WINS", "subtitle": "'it's not that big a deal'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 700, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "shrug", "emotion": "smug", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "deflate-balloon", "x": 1020, "y": 440, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "Your good news makes them feel a little smaller, so they shrink it back down to a size they can cope with. A supportive person inflates your joy. A jealous one quietly reaches for a pin.", "scene": "explainer", "prop": "deflate-balloon", "emotion": "serious-expert" },
+        { "vo": "And if they can't deflate it with words, they'll try to fake their way through it with a face.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Fake smile",
+      "beats": [
+        { "vo": "Sign three. The fake smile. When you share your news, you get a smile, but it's all mouth, and no eyes. A real, happy smile crinkles the whole face. A forced one is just the lips, stretched politely over gritted teeth.", "scene": "story", "room": "celebration", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "THE FAKE SMILE", "subtitle": "all mouth, no eyes",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 560, "y": 700, "scale": 1.0 }, { "costume": "suit", "pose": "idle", "emotion": "annoyed", "x": 1360, "y": 700, "scale": 1.0, "flip": true } ],
+          "props": [ { "name": "fake-smile-mask", "x": 1040, "y": 440, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "Our true feelings leak out through tiny expressions we can't fully control. A flash of a tight jaw, a delay before the congratulations, a smile that vanishes the instant you look away. The body rarely lies as well as the mouth does.", "scene": "explainer", "prop": "fake-smile-mask", "emotion": "serious-expert" },
+        { "vo": "Behind that strained smile is often a scoreboard, and on it, they are quietly, desperately keeping score.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — One-upping",
+      "beats": [
+        { "vo": "Sign four. The one-upper. Whatever you've done, they've done it bigger, first, or harder. You ran a 5K? They once ran a marathon. You're tired? They haven't slept in a week. Your story is just a launchpad for theirs.", "scene": "story", "room": "break-room", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "ONE-UPPING", "subtitle": "always bigger, first, harder",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 560, "y": 680, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "point-right", "emotion": "smug", "x": 1360, "y": 680, "scale": 1.0, "flip": true, "lookDir": "right" } ],
+          "props": [ { "name": "scoreboard", "x": 1030, "y": 460, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "It isn't really conversation. It's competition. They experience your success as a threat to their own standing, so they can't just let your moment be yours. They have to climb on top of it.", "scene": "diagramCard", "diagram": "comparison-envy", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Some take it further than talk. They don't just compete with you. They try to become you.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Copies you",
+      "beats": [
+        { "vo": "Sign five. The copycat. Suddenly, they're dressing like you, using your phrases, adopting your hobbies, chasing the goals you just told them about. Imitation can be flattery. Mixed with envy, it's something stranger.", "scene": "story", "room": "coffee-catchup", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "COPIES YOU", "subtitle": "imitation, laced with resentment",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 680, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "copycat-twins", "x": 1180, "y": 460, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "They want what you have so badly that they try to copy their way into it, while often resenting you the whole time for having it first. Admiration and envy, tangled up together.", "scene": "explainer", "prop": "copycat-twins", "emotion": "serious-expert" },
+        { "vo": "And to your face, they might seem fine. It's what they say when you're not in the room that tells the real story.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Gossip",
+      "beats": [
+        { "vo": "Sign six. They badmouth you behind your back. Warm and smiling to your face, then quietly critical to everyone else. You start hearing, from other people, little digs and doubts that trace straight back to them.", "scene": "story", "room": "break-room", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE GOSSIP", "subtitle": "sweet to your face, sour behind it",
+          "mascots": [ { "costume": "suit", "pose": "idle", "emotion": "smug", "x": 620, "y": 680, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "gossip-cloud", "x": 1200, "y": 440, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "By chipping away at your reputation, they try to level a playing field that envy tells them is unfair. If they're this two-faced about you, it's rarely about you at all. It's about how you make them feel.", "scene": "explainer", "prop": "gossip-cloud", "emotion": "serious-expert" },
+        { "vo": "And nothing reveals that feeling quite like the moment you stumble.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Loves your fails",
+      "beats": [
+        { "vo": "Sign seven. They light up at your failures. When something goes wrong for you, you catch it. A flicker of something that looks almost like relief, or quiet delight, before they arrange their face into sympathy.", "scene": "story", "room": "coffee-catchup", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "LOVES YOUR FAILS", "subtitle": "a flicker of delight",
+          "mascots": [ { "costume": "suit", "pose": "idle", "emotion": "smug", "x": 620, "y": 680, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "hidden-grin", "x": 1200, "y": 460, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "There's a word for it. Schadenfreude, pleasure at another's misfortune. For the envious, your setback is a comfort, because for once, the gap between you feels a little smaller.", "scene": "explainer", "prop": "hidden-grin", "emotion": "serious-expert" },
+        { "vo": "Flip it around, and the same person who warms up at your lows, goes strangely cold at your highs.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Cold shoulder",
+      "beats": [
+        { "vo": "Sign eight. The cold shoulder after a win. You'd expect a good friend to be closest when things go well for you. The secretly jealous do the opposite. They get distant, quiet, or busy, right when you're flying highest.", "scene": "story", "room": "celebration", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE COLD SHOULDER", "subtitle": "distant when you win",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 700, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "arms-crossed", "emotion": "annoyed", "x": 1380, "y": 700, "scale": 1.0, "flip": true, "lookDir": "left" } ],
+          "props": [ { "name": "frost-shoulder", "x": 1040, "y": 460, "scale": 0.55, "appearAt": 4 } ] },
+        { "vo": "Their warmth toward you runs exactly opposite to your success. When you struggle, they're wonderfully supportive. When you win, they frost over. Map it out, and the pattern is unmistakable.", "scene": "diagramCard", "diagram": "warm-cold-map", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Up close, that chill often takes the form of relentless, exhausting criticism.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "9 — Nitpicking",
+      "beats": [
+        { "vo": "Sign nine. Nothing is ever quite good enough. They find the one flaw in your brilliant work. The single typo. The thing you could've done better. Praise is rare and grudging. Criticism is detailed and endless.", "scene": "story", "room": "coffee-catchup", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "THE NITPICKING", "subtitle": "never quite good enough",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 560, "y": 680, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "red-pen", "x": 1180, "y": 460, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "By keeping the focus on your flaws, they keep your shine turned down to a level they can tolerate. Honest feedback helps you grow. A permanent red pen is just envy, dressed up as high standards.", "scene": "explainer", "prop": "red-pen", "emotion": "serious-expert" },
+        { "vo": "And often, they don't even need words. Their body says it all.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "10 — The side-eye",
+      "beats": [
+        { "vo": "Sign ten. The tells. Watch the body. The subtle side-eye that sizes you up. Arms that cross the moment you start to shine. The flat, two-word congrats. The sudden fascination with their phone whenever you speak.", "scene": "story", "room": "coffee-catchup", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE SIDE-EYE", "subtitle": "the body always leaks",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 560, "y": 680, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "side-eye", "x": 1180, "y": 460, "scale": 0.7, "appearAt": 4 } ] },
+        { "vo": "These little tells slip out below conscious control. One on its own is nothing. But a consistent chill in the body language, aimed at you, when nobody can quite be blamed for it, speaks louder than any words.", "scene": "explainer", "prop": "envy-thermometer", "emotion": "serious-expert" },
+        { "vo": "So that's the what. But the much kinder, much more useful question, is the why.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Why it happens",
+      "beats": [
+        { "vo": "Here's the thing that changes everything. Their jealousy is not about you. It's about them. Envy is what happens when someone compares themselves to you, and feels like they come up short.", "scene": "story", "room": "break-room", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "WHY IT HAPPENS", "subtitle": "it was never about you",
+          "mascots": [ { "costume": "suit", "pose": "idle", "emotion": "sleepy", "x": 620, "y": 680, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "green-monster", "x": 1200, "y": 440, "scale": 0.6, "appearAt": 4 } ] },
+        { "vo": "It's built from two things. A painful comparison, and a deep, often hidden insecurity. You simply hold up a mirror to a gap they already feel inside. The green-eyed monster was theirs long before you arrived.", "scene": "diagramCard", "diagram": "jealousy-roots", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Which means their envy is really a backhanded compliment. It's evidence that, to them, you have something worth wanting. So how do you carry that, without becoming bitter yourself?", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "How to respond",
+      "beats": [
+        { "vo": "You respond with three quiet moves. First, and most important, do not dim your own light to make them comfortable. Shrinking yourself doesn't fix their insecurity. It just robs the world of your shine.", "scene": "story", "room": "celebration", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "HOW TO RESPOND", "subtitle": "don't dim your light",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "happy-talk", "x": 600, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "deflate-balloon", "x": 1200, "y": 460, "scale": 0.5, "appearAt": 4 } ] },
+        { "vo": "Second, a little compassion. Envy is a form of suffering, and the person feeling it is usually in some quiet pain. You don't have to fix it, but understanding it stops you from taking it personally.", "scene": "diagramCard", "diagram": "how-to-respond", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And third, hold your boundaries. Share less with the ones who can't be glad for you, and more with the ones who can. Keep the friends who cheer the loudest when you win. Quietly let the rest drift.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So, two last reminders. One, check yourself. Before labelling anyone, make sure you're not reading your own insecurity into a perfectly innocent face. We've all been the jealous one, too.", "scene": "explainer", "prop": "side-eye", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "And two, don't let a few envious people turn you cynical. Most of the humans in your life genuinely want you to win. Spot the quiet green-eyed ones, protect your peace, and then go keep shining anyway.", "scene": "story", "room": "celebration", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 600, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "green-monster", "x": 1200, "y": 420, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "So, have you felt one of these from someone? Which sign gave them away? Tell me in the comments. And send this to the friend who actually, genuinely celebrates you.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself, and the people around you, a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

@@ -1788,8 +1788,103 @@ const SpiralFunnel: React.FC = () => {
   );
 };
 
+/** Comparison → envy: they size themselves against you and come up short. */
+const ComparisonEnvy: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const pulse = 0.5 + 0.4 * Math.abs(Math.sin(frame / 8));
+  return (
+    <g>
+      {/* YOU, tall + a trophy glow */}
+      <g transform={`translate(${cx - 220} ${cy})`}>
+        <circle cx={0} cy={-120} r={56} fill={COLORS.white} {...xl} />
+        <path d="M -70 80 Q 0 -70 70 80 Z" fill={COLORS.sky} {...xl} />
+        <circle cx={0} cy={-200} r={30} fill={COLORS.yellow} opacity={pulse} />
+        <text x={0} y={140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>YOU</text>
+      </g>
+      {/* measuring ruler between them */}
+      <rect x={cx - 120} y={cy - 10} width={240} height={30} rx={8} fill={COLORS.yellowSoft} {...lg} />
+      {Array.from({ length: 9 }).map((_, i) => <line key={i} x1={cx - 110 + i * 28} y1={cy - 10} x2={cx - 110 + i * 28} y2={cy + 4} stroke={COLORS.outline} strokeWidth={STROKE.sm} />)}
+      {/* THEM, shorter + green */}
+      <g transform={`translate(${cx + 220} ${cy + 30})`}>
+        <circle cx={0} cy={-90} r={50} fill={COLORS.greenLeaf} {...xl} />
+        <path d="M -60 60 Q 0 -50 60 60 Z" fill={COLORS.greenLeaf} {...xl} />
+        <circle cx={-16} cy={-94} r={6} fill={COLORS.outline} /><circle cx={16} cy={-94} r={6} fill={COLORS.outline} />
+        <path d="M -16 -66 l 32 0" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+        <text x={0} y={110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>THEM</text>
+      </g>
+      <text x={cx} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>envy = comparison + insecurity</text>
+    </g>
+  );
+};
+
+/** Warm/cold map: their warmth toward you falls as your success rises. */
+const WarmColdMap: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const x0 = CANVAS.width * 0.36; const y0 = 760; const w = 900; const h = 420;
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + w} y2={y0} {...lg} />
+      <line x1={x0} y1={y0} x2={x0} y2={y0 - h} {...lg} />
+      <text x={x0 + w / 2} y={y0 + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={32} fill={COLORS.outline}>YOUR SUCCESS →</text>
+      <text x={x0 - 30} y={y0 - h / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={32} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 30} ${y0 - h / 2})`}>THEIR WARMTH</text>
+      <path d={`M ${x0} ${y0 - h * 0.85} L ${x0 + w} ${y0 - h * 0.1}`} fill="none" stroke={COLORS.blueDiagram} strokeWidth={STROKE.xl} strokeLinecap="round" strokeDasharray={1400} strokeDashoffset={1400 * (1 - draw)} />
+      {draw > 0.95 && <g><g transform={`translate(${x0 + 60} ${y0 - h * 0.78})`}><circle r={16} fill={COLORS.red} /><path d="M -8 -8 l 16 16 m 0 -16 l -16 16" stroke={COLORS.white} strokeWidth={STROKE.sm} /></g><text x={x0 + 120} y={y0 - h * 0.82} fontFamily={fontFamily} fontWeight={700} fontSize={28} fill={COLORS.redDark}>warm when you struggle</text><text x={x0 + w - 60} y={y0 - h * 0.1 - 30} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={28} fill={COLORS.blueDiagramDark}>cold when you win</text></g>}
+    </g>
+  );
+};
+
+/** Jealousy's roots: insecurity + comparison feed the green-eyed monster. */
+const JealousyRoots: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const p = springIn(frame, fps, 12, { damping: 13 });
+  return (
+    <g>
+      <g transform={`translate(${cx - 220} ${cy + 120}) scale(${Math.min(1, p)})`}><rect x={-140} y={-50} width={280} height={100} rx={20} fill={COLORS.sky} {...lg} /><text x={0} y={12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>INSECURITY</text></g>
+      <g transform={`translate(${cx + 220} ${cy + 120}) scale(${Math.min(1, p)})`}><rect x={-150} y={-50} width={300} height={100} rx={20} fill={COLORS.yellow} {...lg} /><text x={0} y={12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>COMPARISON</text></g>
+      <path d={`M ${cx - 180} ${cy + 70} Q ${cx - 60} ${cy} ${cx} ${cy - 60} M ${cx + 180} ${cy + 70} Q ${cx + 60} ${cy} ${cx} ${cy - 60}`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} opacity={0.5} />
+      <g transform={`translate(${cx} ${cy - 130}) scale(0.9)`}>
+        <circle r={86} fill={COLORS.greenLeaf} {...xl} />
+        <circle cx={-26} cy={-6} r={16} fill={COLORS.white} /><circle cx={26} cy={-6} r={16} fill={COLORS.white} />
+        <circle cx={-22} cy={-4} r={8} fill={COLORS.greenDark} /><circle cx={30} cy={-4} r={8} fill={COLORS.greenDark} />
+        <path d="M -40 -34 l 28 10 M 40 -34 l -28 10" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      </g>
+      <text x={cx} y={cy - 240} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>it's about them, not you</text>
+    </g>
+  );
+};
+
+/** How to respond: don't shrink — three calm moves. */
+const HowToRespond: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const moves = [
+    { t: "don't dim your light", c: COLORS.yellow },
+    { t: 'a little compassion', c: COLORS.pink },
+    { t: 'keep your boundaries', c: COLORS.sky },
+  ];
+  const x = CANVAS.width * 0.56; const y0 = 260; const h = 150; const gap = 30;
+  return (
+    <g>
+      {moves.map((m, i) => {
+        const pop = springIn(frame, fps, 10 + i * 8, { damping: 13 });
+        return (
+          <g key={i} transform={`translate(${x} ${y0 + i * (h + gap)}) scale(${Math.min(1, pop)})`}>
+            <rect x={-360} y={0} width={720} height={h} rx={24} fill={m.c} {...lg} />
+            <g transform={`translate(${-300} ${h / 2})`}><circle r={34} fill={COLORS.white} {...sm} /><path d="M -16 2 l 12 14 l 20 -26" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" /></g>
+            <text x={-220} y={h / 2 + 16} fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>{m.t}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1855,6 +1950,10 @@ export const DiagramCard: React.FC<{
     'thought-vs-action': COLORS.greenLeaf,
     'whatif-branches': COLORS.sky,
     'spiral-funnel': COLORS.red,
+    'comparison-envy': COLORS.greenLeaf,
+    'warm-cold-map': COLORS.sky,
+    'jealousy-roots': COLORS.greenLeaf,
+    'how-to-respond': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -1927,6 +2026,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'thought-vs-action' && <ThoughtVsAction />}
         {diagram === 'whatif-branches' && <WhatifBranches />}
         {diagram === 'spiral-funnel' && <SpiralFunnel />}
+        {diagram === 'comparison-envy' && <ComparisonEnvy />}
+        {diagram === 'warm-cold-map' && <WarmColdMap />}
+        {diagram === 'jealousy-roots' && <JealousyRoots />}
+        {diagram === 'how-to-respond' && <HowToRespond />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

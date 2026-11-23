@@ -40,7 +40,7 @@ Glitches.
 11. 🟡 The Psychology of People Who Imagine Fake Scenarios All Day — *built (`daydreamers`), 22 bespoke assets; awaiting CI render*
 12. 🟡 Why Your Brain Fears 3 AM — *built (`fear-3am`), 22 bespoke assets; awaiting CI render*
 13. 🟡 Every Level of Overthinking Explained — *built (`overthinking-levels`), 21 bespoke assets; awaiting CI render*
-14. ⬜ Signs Someone Is Secretly Jealous of You
+14. 🟡 Signs Someone Is Secretly Jealous of You — *built (`jealousy-signs`), 21 bespoke assets; awaiting CI render*
 15. ⬜ Every Mental Complex Explained
 
 > We've been shipping by the "Every X" list grammar (our strongest format). The
@@ -72,7 +72,7 @@ detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 36 Feel Someone Watching · 37 Can't Stop Thinking About Someone · 38 Procrastinates ·
 39 Why We Dream · 40 Feels Foggy · 41 Why You Cry.
 
-**Signs & Decoders (42–46):** 42 Signs Someone Is Lying · 43 Secretly Jealous ·
+**Signs & Decoders (42–46):** 42 Signs Someone Is Lying · 43 Secretly Jealous 🟡 ·
 44 Read Anyone Like a Book · 45 More Attractive Than You Think · 46 Gaslighting.
 
 *(Series "Glitches" exists in the Overview but has no numbered rows yet; sleep/
