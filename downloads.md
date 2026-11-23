@@ -17,11 +17,9 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 9 | Every Sleep Glitch You Might Experience | `sleep-glitches` | 12:22 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45251536929 | ✅ delivered |
 | 10 | The Psychology of People With a High IQ | `high-iq` | 8:36 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45262862461 | ✅ delivered |
 | 11 | The Psychology of People Who Imagine Fake Scenarios All Day | `daydreamers` | 7:40 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45265024741 | ✅ delivered |
-
 | 12 | Why Your Brain Fears 3 AM | `fear-3am` | 7:41 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45269110911 | ✅ delivered |
-
 | 13 | Every Level of Overthinking Explained | `overthinking-levels` | 7:11 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45274510119 | ✅ delivered |
+| 14 | Signs Someone Is Secretly Jealous of You | `jealousy-signs` | 8:01 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45278710843 | ✅ delivered |
+| 15 | Every Mental Complex Explained | `mental-complexes` | ~12 min | _dispatching…_ | ⏳ rendering |
 
-| 14 | Signs Someone Is Secretly Jealous of You | `jealousy-signs` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45278710843 | ⏳ rendering |
-
-_Continuing through the backlog one by one — new rows appended as each render completes._
+_This completes the first-15 tier. New rows appended as each render completes._
