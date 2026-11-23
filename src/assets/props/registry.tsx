@@ -20,6 +20,7 @@ import * as Slp from './sleep';
 import * as Hiq from './highiq';
 import * as Dd from './daydream';
 import * as F3 from './fear3am';
+import * as Ot from './overthink';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -233,6 +234,19 @@ export const PROPS: Record<string, React.FC<any>> = {
   'wolf-howl': F3.WolfHowl,
   'worry-notebook': F3.WorryNotebook,
   'sunrise-relief': F3.SunriseRelief,
+  // overthinking-levels props (all new)
+  'ponder-cloud': Ot.PonderCloud,
+  'replay-tape': Ot.ReplayTape,
+  'whatif-signs': Ot.WhatIfSigns,
+  'stuck-compass': Ot.StuckCompass,
+  'multiplying-worry': Ot.MultiplyingWorry,
+  'disaster-dominoes': Ot.DisasterDominoes,
+  'rumination-drum': Ot.RuminationDrum,
+  'overthink-gauge': Ot.OverthinkGauge,
+  'tight-knot': Ot.TightKnot,
+  'brake-lever': Ot.BrakeLever,
+  'step-back-frame': Ot.StepBackFrame,
+  'one-small-step': Ot.OneSmallStep,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

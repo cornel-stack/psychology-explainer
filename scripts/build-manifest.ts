@@ -72,6 +72,10 @@ const NEW_ASSETS = new Set([
   'witching-bedroom', 'night-street', 'brain-nightshift', 'dawn-window',
   'clock-3am', 'worry-monster', 'cortisol-gauge', 'amygdala-alarm', 'prefrontal-asleep', 'cold-thermometer', 'silence-ring', 'lone-streetlight', 'lonely-window', 'catastrophe-snowball', 'wolf-howl', 'worry-notebook', 'sunrise-relief',
   'circadian-low', 'cortisol-curve', 'night-brain', 'molehill-mountain', 'dawn-vs-dark',
+  // overthinking-levels (all new)
+  'thinker-nook', 'signpost-crossroads', 'overthink-stairwell', 'misty-clearing',
+  'ponder-cloud', 'replay-tape', 'whatif-signs', 'stuck-compass', 'multiplying-worry', 'disaster-dominoes', 'rumination-drum', 'overthink-gauge', 'tight-knot', 'brake-lever', 'step-back-frame', 'one-small-step',
+  'overthink-ladder', 'thought-vs-action', 'whatif-branches', 'spiral-funnel',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

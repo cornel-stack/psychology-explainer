@@ -213,6 +213,10 @@ const ROOM_DEMO: Record<string, { pose: any; emotion: any; props?: any[] }> = {
   'night-street': { pose: 'idle', emotion: 'scared', props: [{ name: 'wolf-howl', x: 1150, y: 560, scale: 0.6 }] },
   'brain-nightshift': { pose: 'idle', emotion: 'serious-expert', props: [{ name: 'amygdala-alarm', x: 1150, y: 760, scale: 0.5 }] },
   'dawn-window': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'sunrise-relief', x: 1000, y: 620, scale: 0.6 }] },
+  'thinker-nook': { pose: 'idle', emotion: 'serious-expert', props: [{ name: 'ponder-cloud', x: 1150, y: 420, scale: 0.6 }] },
+  'signpost-crossroads': { pose: 'shrug', emotion: 'confused', props: [{ name: 'stuck-compass', x: 1100, y: 500, scale: 0.6 }] },
+  'overthink-stairwell': { pose: 'idle', emotion: 'scared', props: [{ name: 'tight-knot', x: 900, y: 500, scale: 0.6 }] },
+  'misty-clearing': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'one-small-step', x: 1150, y: 640, scale: 0.6 }] },
 };
 
 export const RoomStill: React.FC<{ room: RoomName }> = ({ room }) => {

@@ -1,0 +1,337 @@
+{
+  "slug": "overthinking-levels",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 12,
+    "NEW": 21
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29,
+        33,
+        38
+      ]
+    },
+    {
+      "name": "overthink-ladder",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        6,
+        18
+      ]
+    },
+    {
+      "name": "spiral-funnel",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "thought-vs-action",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        34
+      ]
+    },
+    {
+      "name": "whatif-branches",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        17
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        4,
+        5,
+        32,
+        33,
+        36,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        8,
+        11,
+        15,
+        19,
+        27,
+        31
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        12,
+        13,
+        16,
+        20,
+        21,
+        23,
+        28
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        2,
+        5,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34,
+        35,
+        37
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "terrified",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        24,
+        25
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        5,
+        13,
+        21,
+        29,
+        33
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "disaster-dominoes",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        26
+      ]
+    },
+    {
+      "name": "multiplying-worry",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "one-small-step",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        35,
+        38
+      ]
+    },
+    {
+      "name": "overthink-gauge",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "ponder-cloud",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        37
+      ]
+    },
+    {
+      "name": "replay-tape",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "rumination-drum",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "step-back-frame",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        33
+      ]
+    },
+    {
+      "name": "stuck-compass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "tight-knot",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "whatif-signs",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "misty-clearing",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        33,
+        38
+      ]
+    },
+    {
+      "name": "overthink-stairwell",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        1,
+        21,
+        25,
+        29
+      ]
+    },
+    {
+      "name": "signpost-crossroads",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        13,
+        17
+      ]
+    },
+    {
+      "name": "thinker-nook",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        5,
+        9
+      ]
+    }
+  ]
+}

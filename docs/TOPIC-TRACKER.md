@@ -39,7 +39,7 @@ Glitches.
 10. ✅ Every Cognitive Bias Ruining Your Decisions — *done (`cognitive-biases`)*
 11. 🟡 The Psychology of People Who Imagine Fake Scenarios All Day — *built (`daydreamers`), 22 bespoke assets; awaiting CI render*
 12. 🟡 Why Your Brain Fears 3 AM — *built (`fear-3am`), 22 bespoke assets; awaiting CI render*
-13. ⬜ Every Level of Overthinking Explained
+13. 🟡 Every Level of Overthinking Explained — *built (`overthinking-levels`), 21 bespoke assets; awaiting CI render*
 14. ⬜ Signs Someone Is Secretly Jealous of You
 15. ⬜ Every Mental Complex Explained
 
@@ -60,7 +60,7 @@ detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 18 Types of Lie.
 
 **Every Level Of (19–24):** 19 IQ 🟡 · 20 Consciousness · 21 Dreaming ·
-22 Overthinking · 23 Attractiveness · 24 Self-Awareness. *(Hottest grammar in late
+22 Overthinking 🟡 · 23 Attractiveness · 24 Self-Awareness. *(Hottest grammar in late
 2026 — seven figures in weeks; good for browse reach early.)*
 
 **Psychology Of People Who (25–33):** 25 Don't Use Social Media 🟡 · 26 High IQ ·

@@ -60,7 +60,11 @@ export type RoomName =
   | 'witching-bedroom'
   | 'night-street'
   | 'brain-nightshift'
-  | 'dawn-window';
+  | 'dawn-window'
+  | 'thinker-nook'
+  | 'signpost-crossroads'
+  | 'overthink-stairwell'
+  | 'misty-clearing';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -1730,6 +1734,128 @@ export const DawnWindow: React.FC = () => (
   </g>
 );
 
+/** Thinker nook: a warm bay-window seat for pondering — cushions, a mug, a small
+ *  stack of books, a plant, soft lamplight. Where healthy reflection happens. */
+export const ThinkerNook: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.yellowSoft} floor={COLORS.wood} floorY={820} stripe={false} />
+    {Array.from({ length: 24 }).map((_, i) => (
+      <rect key={i} x={i * 84} y={0} width={42} height={560} fill={shade(COLORS.yellowSoft, 0.08)} opacity={0.6} />
+    ))}
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={COLORS.bgCream} />
+    {/* big bay window with a calm sky */}
+    <g transform="translate(720 350)">
+      <rect x={-320} y={-260} width={640} height={420} rx={20} fill={COLORS.sky} {...xl} />
+      <rect x={-320} y={-260} width={640} height={160} fill={shade(COLORS.sky, -0.05)} />
+      <circle cx={180} cy={-150} r={50} fill={COLORS.yellow} {...lg} />
+      {[[-200, -180], [-60, -210], [60, -140]].map(([x, y], i) => <g key={i}>{[[-40, 0, 30], [0, -12, 38], [40, 0, 30]].map(([cx, cy, r], k) => <circle key={k} cx={x + cx} cy={y + cy} r={r} fill={COLORS.white} opacity={0.9} />)}</g>)}
+      <path d="M -320 60 Q 0 20 320 60 L 320 160 L -320 160 Z" fill={COLORS.greenLeaf} />
+      {[-320, -107, 107, 320].map((x, i) => <line key={i} x1={x} y1={-260} x2={x} y2={160} {...std} />)}
+      <line x1={-320} y1={-50} x2={320} y2={-50} {...std} />
+      {/* window seat with cushions */}
+      <rect x={-320} y={150} width={640} height={70} rx={16} fill={COLORS.lavender} {...xl} />
+      <rect x={-280} y={110} width={120} height={70} rx={20} fill={COLORS.pink} {...std} />
+      <rect x={-120} y={110} width={120} height={70} rx={20} fill={COLORS.greenTeal} {...std} />
+    </g>
+    {/* floor lamp */}
+    <g transform="translate(1560 420)"><path d="M -70 0 L 70 0 L 44 -90 L -44 -90 Z" fill={COLORS.yellow} {...xl} /><rect x={-8} y={0} width={16} height={330} fill={COLORS.woodDark} {...lg} /><ellipse cx={0} cy={338} rx={70} ry={20} fill={COLORS.woodDark} {...lg} /></g>
+    <ellipse cx={1480} cy={760} rx={200} ry={80} fill={COLORS.yellowSoft} opacity={0.25} />
+    {/* side table with mug + books */}
+    <g transform="translate(1320 760)">
+      <rect x={-90} y={0} width={180} height={30} rx={8} fill={COLORS.woodDark} {...lg} />
+      <rect x={-80} y={30} width={20} height={70} fill={COLORS.woodDark} /><rect x={60} y={30} width={20} height={70} fill={COLORS.woodDark} />
+      {[COLORS.red, COLORS.sky].map((c, i) => <rect key={i} x={-70} y={-16 - i * 18} width={90} height={18} rx={4} fill={c} {...sm} />)}
+      <g transform="translate(50 -20)"><path d="M -26 -18 L 26 -18 L 20 24 L -20 24 Z" fill={COLORS.white} {...lg} /><path d="M 26 -8 q 22 0 22 20 q 0 14 -20 14" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} /></g>
+    </g>
+    {/* potted plant */}
+    <g transform="translate(130 650)"><path d="M 0 -20 Q -50 -110 -16 -160 Q 6 -110 0 -20 Z" fill={COLORS.greenLeaf} {...lg} /><path d="M 0 -20 Q 50 -120 20 -172 Q -4 -110 0 -20 Z" fill={COLORS.greenLeaf} {...lg} /><path d="M -56 0 L 56 0 L 40 110 L -40 110 Z" fill={COLORS.red} {...xl} /></g>
+  </g>
+);
+
+/** Signpost crossroads: a surreal junction where many paths diverge under a big
+ *  sky, each with a signpost — the overwhelm of endless options. */
+export const SignpostCrossroads: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.sky} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.sky, -0.05)} />
+    <circle cx={1600} cy={200} r={80} fill={COLORS.yellow} {...lg} />
+    {[[300, 160], [700, 120], [1100, 200]].map(([x, y], i) => <g key={i}>{[[-50, 0, 36], [0, -14, 46], [50, 0, 36]].map(([cx, cy, r], k) => <circle key={k} cx={x + cx} cy={y + cy} r={r} fill={COLORS.white} opacity={0.9} />)}</g>)}
+    {/* hills */}
+    <path d="M 0 620 Q 480 540 960 600 Q 1440 540 1920 620 L 1920 760 L 0 760 Z" fill={COLORS.greenTeal} opacity={0.7} />
+    <rect x={0} y={700} width={CANVAS.width} height={CANVAS.height - 700} fill={COLORS.greenLeaf} />
+    {/* diverging paths from a central point */}
+    {([[-700, 1.0], [-250, 1.0], [250, 1.0], [760, 1.0]] as [number, number][]).map(([dx], i) => (
+      <path key={i} d={`M ${960 + dx} 1080 Q ${960 + dx / 2} 820 960 720 L 1000 720 Q ${1000 + dx / 2} 820 ${1000 + dx} 1080 Z`} fill={COLORS.wood} opacity={0.8} />
+    ))}
+    {/* central signpost cluster */}
+    <g transform="translate(1500 560)">
+      <rect x={-12} y={-30} width={24} height={280} rx={10} fill={COLORS.woodDark} {...xl} />
+      {[[-1, -10], [1, 30], [-1, 70]].map(([d, y], i) => (
+        <g key={i} transform={`translate(0 ${y})`}><path d={d > 0 ? `M -8 -20 L 110 -20 L 134 0 L 110 20 L -8 20 Z` : `M 8 -20 L -110 -20 L -134 0 L -110 20 L 8 20 Z`} fill={[COLORS.red, COLORS.yellow, COLORS.sky][i]} {...lg} /></g>
+      ))}
+    </g>
+  </g>
+);
+
+/** Overthink stairwell: a zig-zag staircase descending into ever-darker levels. */
+export const OverthinkStairwell: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.wallNight} />
+    {/* walls getting darker as we go down */}
+    {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={0} y={i * 216} width={CANVAS.width} height={216} fill={shade(COLORS.purpleDeep, i * 0.08)} opacity={0.6} />)}
+    {/* descending zig-zag staircase on the right */}
+    {Array.from({ length: 8 }).map((_, i) => {
+      const x = 1720 - i * 150; const y = 180 + i * 110;
+      return (
+        <g key={i}>
+          <path d={`M ${x} ${y} l 150 0 l 0 60 l -150 0 Z`} fill={shade(COLORS.lavender, i * 0.08)} {...lg} />
+          <path d={`M ${x} ${y} l 40 -30 l 150 0 l -40 30 Z`} fill={shade(COLORS.lavender, i * 0.08 + 0.1)} {...sm} />
+          <path d={`M ${x + 150} ${y} l 40 -30 l 0 60 l -40 30 Z`} fill={shade(COLORS.lavender, i * 0.08 + 0.18)} {...sm} />
+        </g>
+      );
+    })}
+    {/* a dim hanging bulb + rail */}
+    <line x1={400} y1={0} x2={400} y2={120} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+    <circle cx={400} cy={140} r={26} fill={COLORS.yellowSoft} opacity={0.5} />
+    <ellipse cx={400} cy={440} rx={260} ry={340} fill={COLORS.yellowSoft} opacity={0.06} />
+    {/* railing */}
+    <path d="M 60 300 L 700 900" stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" opacity={0.5} />
+    {[0, 1, 2, 3].map((i) => <line key={i} x1={120 + i * 150} y1={300 + i * 140} x2={120 + i * 150} y2={420 + i * 140} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} opacity={0.4} />)}
+    {/* "DEEPER" arrow */}
+    <g transform="translate(300 760)"><path d="M 0 -40 L 0 40 M -24 16 L 0 40 L 24 16" fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" opacity={0.6} /></g>
+  </g>
+);
+
+/** Misty clearing: a calm, open grassy clearing in soft morning light — the way
+ *  back out of the spiral. */
+export const MistyClearing: React.FC = () => {
+  const f = useCurrentFrame();
+  const drift = Math.sin(f / 24) * 14;
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.sky} />
+      <rect x={0} y={280} width={CANVAS.width} height={360} fill={COLORS.yellowSoft} opacity={0.4} />
+      <circle cx={960} cy={420} r={100} fill={COLORS.yellow} opacity={0.85} />
+      <circle cx={960} cy={420} r={150} fill={COLORS.yellowSoft} opacity={0.3} />
+      {/* soft distant trees */}
+      {[220, 520, 1400, 1720].map((x, i) => <g key={i} opacity={0.5}><rect x={x - 12} y={560} width={24} height={120} fill={COLORS.woodDark} /><circle cx={x} cy={540} r={70} fill={COLORS.greenDark} /></g>)}
+      {/* ground */}
+      <path d="M 0 660 Q 480 600 960 650 Q 1440 600 1920 660 L 1920 1080 L 0 1080 Z" fill={COLORS.greenDark} opacity={0.7} />
+      <rect x={0} y={780} width={CANVAS.width} height={CANVAS.height - 780} fill={COLORS.greenLeaf} />
+      {/* drifting mist bands */}
+      {[620, 740, 860].map((y, i) => (
+        <g key={i} transform={`translate(${drift * (i % 2 ? 1 : -1)} 0)`} opacity={0.4}>
+          {[200, 700, 1200, 1700].map((x, k) => <ellipse key={k} cx={x} cy={y} rx={200} ry={30} fill={COLORS.white} />)}
+        </g>
+      ))}
+      {/* a few gentle flowers */}
+      {[[300, 920, COLORS.pink], [1600, 940, COLORS.red], [760, 980, COLORS.yellow]].map(([x, y, c], i) => (
+        <g key={i} transform={`translate(${x} ${y})`}><line x1={0} y1={0} x2={0} y2={40} stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" />{[0, 1, 2, 3, 4].map((k) => <circle key={k} cx={Math.cos(k * 1.26) * 16} cy={Math.sin(k * 1.26) * 16} r={11} fill={c as string} {...sm} />)}<circle r={9} fill={COLORS.yellowDark} /></g>
+      ))}
+    </g>
+  );
+};
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -1775,6 +1901,10 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'night-street': NightStreet,
   'brain-nightshift': BrainNightshift,
   'dawn-window': DawnWindow,
+  'thinker-nook': ThinkerNook,
+  'signpost-crossroads': SignpostCrossroads,
+  'overthink-stairwell': OverthinkStairwell,
+  'misty-clearing': MistyClearing,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

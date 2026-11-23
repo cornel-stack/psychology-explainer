@@ -1689,8 +1689,107 @@ const DawnVsDark: React.FC = () => {
   );
 };
 
+/** The overthinking ladder — 7 escalating rungs, the current level lit. */
+const OverthinkLadder: React.FC<{ highlight: string }> = ({ highlight }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const rungs = [
+    { key: 'ponder', label: 'THE PONDER', color: COLORS.greenLeaf },
+    { key: 'replay', label: 'THE REPLAY', color: COLORS.greenTeal },
+    { key: 'whatif', label: 'THE WHAT-IFS', color: COLORS.sky },
+    { key: 'paralysis', label: 'ANALYSIS PARALYSIS', color: COLORS.yellow },
+    { key: 'spiral', label: 'THE SPIRAL', color: COLORS.yellowDark },
+    { key: 'catastrophe', label: 'CATASTROPHIZING', color: COLORS.hoodie },
+    { key: 'rumination', label: 'RUMINATION', color: COLORS.red },
+  ];
+  const active = Math.max(0, rungs.findIndex((r) => r.key === highlight));
+  const x = CANVAS.width * 0.4; const w = 760; const h = 86; const gap = 16; const y0 = 150;
+  const pop = springIn(frame, fps, 12, { damping: 12 });
+  return (
+    <g>
+      {rungs.map((r, i) => {
+        const y = y0 + (rungs.length - 1 - i) * (h + gap);
+        const on = i === active;
+        return (
+          <g key={r.key} transform={`translate(${x} ${y}) scale(${on ? 1 + 0.04 * Math.min(1, pop) : 1})`} transform-origin={`${x + w / 2} ${y + h / 2}`}>
+            <rect x={0} y={0} width={w + i * 20} height={h} rx={18} fill={r.color} opacity={on ? 1 : 0.55} {...lg} />
+            <text x={30} y={h / 2 + 16} fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>{r.label}</text>
+            {on && <g transform={`translate(${w + i * 20 - 54} ${h / 2})`}><circle r={28} fill={COLORS.white} {...sm} /><text x={0} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>{i + 1}</text></g>}
+          </g>
+        );
+      })}
+      <text x={x - 30} y={y0 + 4 * (h + gap)} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline} transform={`rotate(-90 ${x - 30} ${y0 + 4 * (h + gap)})`}>↑ worse</text>
+    </g>
+  );
+};
+
+/** Thinking spins in place; one small action breaks the loop. */
+const ThoughtVsAction: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [10, 60], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  return (
+    <g>
+      {/* thinking loop */}
+      <circle cx={cx - 240} cy={cy} r={160} fill="none" stroke={COLORS.red} strokeWidth={STROKE.xl} strokeDasharray="4 22" strokeLinecap="round" opacity={0.6} />
+      {(() => { const a = frame / 20; return <circle cx={cx - 240 + Math.cos(a) * 160} cy={cy + Math.sin(a) * 160} r={22} fill={COLORS.red} {...lg} />; })()}
+      <text x={cx - 240} y={cy + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>THINK</text>
+      <text x={cx - 240} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.redDark}>goes nowhere</text>
+      {/* action arrow breaking out */}
+      <path d={`M ${cx - 80} ${cy} L ${cx + 300} ${cy}`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" strokeDasharray={500} strokeDashoffset={500 * (1 - draw)} />
+      {draw > 0.9 && <path d={`M ${cx + 300} ${cy} l -30 -18 l 8 18 l -8 18 z`} fill={COLORS.greenDark} />}
+      <g transform={`translate(${cx + 180} ${cy})`}><circle r={60} fill={COLORS.greenLeaf} {...xl} /><text x={0} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>DO</text></g>
+      <text x={cx + 180} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={30} fill={COLORS.greenDark}>breaks the loop</text>
+    </g>
+  );
+};
+
+/** What-if branches, each splitting into worse and worse outcomes (all ✗). */
+const WhatifBranches: React.FC = () => {
+  const frame = useCurrentFrame();
+  const draw = interpolate(frame, [8, 54], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cx = CANVAS.width * 0.56; const topY = CANVAS.height * 0.2;
+  const node = (x: number, y: number, show: number, bad: boolean) => (draw > show ? (
+    <g><circle cx={x} cy={y} r={bad ? 34 : 44} fill={bad ? COLORS.red : COLORS.sky} {...lg} />{bad ? <path d={`M ${x - 14} ${y - 14} l 28 28 m 0 -28 l -28 28`} stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" /> : <text x={x} y={y + 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>?</text>}</g>
+  ) : null);
+  return (
+    <g>
+      <path d={`M ${cx} ${topY + 44} L ${cx - 260} ${topY + 200} M ${cx} ${topY + 44} L ${cx + 260} ${topY + 200}`} stroke={COLORS.outline} strokeWidth={STROKE.lg} opacity={draw > 0.3 ? 0.5 : 0} />
+      <path d={`M ${cx - 260} ${topY + 240} L ${cx - 380} ${topY + 400} M ${cx - 260} ${topY + 240} L ${cx - 160} ${topY + 400} M ${cx + 260} ${topY + 240} L ${cx + 160} ${topY + 400} M ${cx + 260} ${topY + 240} L ${cx + 380} ${topY + 400}`} stroke={COLORS.outline} strokeWidth={STROKE.sm} opacity={draw > 0.6 ? 0.5 : 0} />
+      {node(cx, topY, 0, false)}
+      {node(cx - 260, topY + 220, 0.3, false)}
+      {node(cx + 260, topY + 220, 0.3, false)}
+      {node(cx - 380, topY + 420, 0.6, true)}
+      {node(cx - 160, topY + 420, 0.6, true)}
+      {node(cx + 160, topY + 420, 0.6, true)}
+      {node(cx + 380, topY + 420, 0.6, true)}
+      <text x={cx} y={topY + 540} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>every branch ends in disaster</text>
+    </g>
+  );
+};
+
+/** A downward funnel of escalating overthinking — narrower and darker. */
+const SpiralFunnel: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const topY = 200;
+  const bands = [COLORS.greenLeaf, COLORS.yellow, COLORS.hoodie, COLORS.red, COLORS.redDark];
+  const a = frame / 18;
+  return (
+    <g>
+      {bands.map((c, i) => {
+        const w = 500 - i * 90; const y = topY + i * 110;
+        return <path key={i} d={`M ${cx - w / 2} ${y} L ${cx + w / 2} ${y} L ${cx + (w - 90) / 2} ${y + 110} L ${cx - (w - 90) / 2} ${y + 110} Z`} fill={c} opacity={0.8} {...lg} />;
+      })}
+      {/* a token spiralling down */}
+      {(() => { const i = Math.min(4, Math.floor((frame / 24) % 5)); const w = 420 - i * 90; const y = topY + i * 110 + 55; return <circle cx={cx + Math.sin(a) * (w / 2 - 20)} cy={y} r={18} fill={COLORS.white} {...lg} />; })()}
+      <text x={cx} y={topY - 30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>the spiral down</text>
+      <text x={cx} y={topY + 5 * 110 + 50} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={36} fill={COLORS.redDark}>harder to climb out</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1752,6 +1851,10 @@ export const DiagramCard: React.FC<{
     'night-brain': COLORS.red,
     'molehill-mountain': COLORS.purpleDeep,
     'dawn-vs-dark': COLORS.yellow,
+    'overthink-ladder': COLORS.yellow,
+    'thought-vs-action': COLORS.greenLeaf,
+    'whatif-branches': COLORS.sky,
+    'spiral-funnel': COLORS.red,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -1820,6 +1923,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'night-brain' && <NightBrain />}
         {diagram === 'molehill-mountain' && <MolehillMountain />}
         {diagram === 'dawn-vs-dark' && <DawnVsDark />}
+        {diagram === 'overthink-ladder' && <OverthinkLadder highlight={highlight} />}
+        {diagram === 'thought-vs-action' && <ThoughtVsAction />}
+        {diagram === 'whatif-branches' && <WhatifBranches />}
+        {diagram === 'spiral-funnel' && <SpiralFunnel />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

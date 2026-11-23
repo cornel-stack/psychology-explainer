@@ -1,0 +1,126 @@
+{
+  "title": "Every Level of Overthinking Explained",
+  "slug": "overthinking-levels",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "A thought walks into your head. A small one. Did that text sound rude? And instead of answering it and moving on, your mind grabs it, and starts to climb. Up, and up, into a tower of worry you never meant to build.", "scene": "story", "room": "thinker-nook", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY LEVEL OF OVERTHINKING", "subtitle": "from healthy to harmful",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 640, "y": 650, "scale": 1.15, "talking": true } ],
+          "props": [ { "name": "overthink-gauge", "x": 1180, "y": 440, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "Overthinking isn't one thing. It's a staircase, with seven steps, and each one takes you further from the ground. The trick is knowing which step you're standing on, so you can climb back down before you reach the basement.", "scene": "story", "room": "overthink-stairwell", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.15] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 560, "y": 680, "scale": 1.0, "talking": true } ],
+          "props": [] },
+        { "vo": "And you are far from alone on these stairs. In one well-known survey, around seventy-three percent of adults aged twenty-five to thirty-five called themselves overthinkers. If your brain won't shut up, you're in a very crowded club.", "scene": "statCard", "value": 73, "suffix": "%", "pictogram": "crowd", "fraction": 0.7, "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Let's climb the seven levels of overthinking, from the harmless bottom step to the quicksand at the top, and then find the way back out. Let's go.", "scene": "explainer", "prop": "overthink-gauge", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's the whole staircase. The first step is actually good for you. Each one after that is a little stickier. Find the step where you usually get stuck.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["THE PONDER", "THE REPLAY", "THE WHAT-IFS", "PARALYSIS", "THE SPIRAL", "CATASTROPHIZE", "RUMINATION", "THE WAY BACK"] }
+      ]
+    },
+    {
+      "name": "1 — The Ponder",
+      "beats": [
+        { "vo": "Level one. The Ponder. And good news, this one isn't overthinking at all. It's just thinking. Weighing a real decision, turning a problem over, and then, crucially, actually reaching a conclusion.", "scene": "story", "room": "thinker-nook", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "THE PONDER", "subtitle": "healthy thinking (level 1)",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 640, "y": 650, "scale": 1.15, "talking": true } ],
+          "props": [ { "name": "ponder-cloud", "x": 1180, "y": 440, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "This is the whole point of a thinking brain. It's reflective, it's productive, and most importantly, it ends. You consider, you decide, you move on. On the staircase, this is solid ground.", "scene": "diagramCard", "diagram": "overthink-ladder", "highlight": "ponder", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So pondering is healthy. The trouble starts the moment the thinking refuses to end, and instead of looking forward to a decision, it turns around, and starts looking back.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "That's step two.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — The Replay",
+      "beats": [
+        { "vo": "Level two. The Replay. Now you're stuck re-watching the past. That cringey thing you said. The meeting that went sideways. You rewind it, play it, and rewind it again, writing the perfect comeback five hours too late.", "scene": "story", "room": "thinker-nook", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "THE REPLAY", "subtitle": "re-running the past (level 2)",
+          "mascots": [ { "costume": "hoodie", "pose": "facepalm", "emotion": "annoyed", "x": 640, "y": 650, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "replay-tape", "x": 1180, "y": 440, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "It feels like you're learning from it. You're not. The past is already set. Replaying a scene you can't change doesn't fix it. It just lets you feel the sting of it, over and over, on a loop.", "scene": "explainer", "prop": "replay-tape", "emotion": "serious-expert" },
+        { "vo": "A little reflection on the past is useful. An endless director's cut of your most embarrassing moments is not. And if the past won't trap you, the mind has another direction to run. Forward.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "Into every possible future.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "3 — The What-Ifs",
+      "beats": [
+        { "vo": "Level three. The What-Ifs. Now you're time-travelling the other way, into the future, and the future your brain builds is almost never a nice place. What if it goes wrong? What if they say no? What if, what if, what if.", "scene": "story", "room": "signpost-crossroads", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE WHAT-IFS", "subtitle": "future worst-cases (level 3)",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "whatif-signs", "x": 1180, "y": 480, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "Each what-if sprouts two more, and every single branch somehow leads to disaster. You're not planning. You're just pre-living a hundred bad futures, almost none of which will ever actually happen.", "scene": "diagramCard", "diagram": "whatif-branches", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "A bit of planning for what-ifs is wise. But drowning in them just means you suffer the imaginary catastrophe now, and then, usually, suffer nothing at all later, because it never comes.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And when every path looks terrifying, you do the only logical thing. You freeze.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "4 — Paralysis",
+      "beats": [
+        { "vo": "Level four. Analysis paralysis. Now there are so many options, and so many angles, that you can't choose any of them. The compass just spins. You research, you compare, you deliberate, and you decide, precisely, nothing.", "scene": "story", "room": "signpost-crossroads", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "PARALYSIS", "subtitle": "too many options (level 4)",
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "stuck-compass", "x": 1180, "y": 500, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "Psychologists call it choice overload. Past a certain point, more options don't free you, they trap you, because now every choice means a dozen roads not taken, and the fear of picking wrong freezes you in place.", "scene": "diagramCard", "diagram": "overthink-ladder", "highlight": "paralysis", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So you wait for perfect certainty that never arrives, while the chance quietly passes. Not deciding, it turns out, is also a decision. Usually the worst one.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And from a frozen mind, one small worry can suddenly start to multiply.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "5 — The Spiral",
+      "beats": [
+        { "vo": "Level five. The Spiral. This is where it gets physical. One worry splits into two, two into four, and now you're not thinking about one problem, you're thinking about all of them, at once, feeding each other.", "scene": "story", "room": "overthink-stairwell", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE SPIRAL", "subtitle": "it multiplies (level 5)",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "multiplying-worry", "x": 1180, "y": 460, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "The thinking and the anxiety start pulling each other downward. The more anxious you feel, the more you overthink. The more you overthink, the more anxious you feel. And down the funnel you go.", "scene": "diagramCard", "diagram": "spiral-funnel", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Each loop makes the next one feel more urgent, and more true. The spiral has a nasty gift for picking up speed, right up until a single worry becomes the end of the world.", "scene": "closeUp", "subject": "face", "emotion": "scared" },
+        { "vo": "Which is level six.", "scene": "closeUp", "subject": "face", "emotion": "terrified" }
+      ]
+    },
+    {
+      "name": "6 — Catastrophize",
+      "beats": [
+        { "vo": "Level six. Catastrophizing. The spiral reaches its destination. A tiny setback, link by link, becomes total ruin. A typo in an email becomes, I'll be fired, becomes, I'll lose my home, becomes, I'll die alone.", "scene": "story", "room": "overthink-stairwell", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "CATASTROPHIZE", "subtitle": "it's all going to end (level 6)",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "terrified", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "disaster-dominoes", "x": 1180, "y": 480, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "Each domino knocks over a bigger one, until the whole future collapses in your mind. And it all feels one hundred percent certain, even though the first domino, the actual real event, was tiny.", "scene": "explainer", "prop": "disaster-dominoes", "emotion": "serious-expert" },
+        { "vo": "Your brain mistakes a vivid, scary story for an accurate prediction. It isn't one. It's just fear, wearing the costume of logic, and knocking over imaginary dominoes.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "And if you live up here long enough, you reach the final, stickiest level of all.", "scene": "closeUp", "subject": "face", "emotion": "scared" }
+      ]
+    },
+    {
+      "name": "7 — Rumination",
+      "beats": [
+        { "vo": "Level seven. Rumination. The quicksand. This is overthinking that has lost all purpose. It's not solving anything, or planning anything. It's just the same dark thoughts, churning, on an endless loop, with no exit.", "scene": "story", "room": "overthink-stairwell", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "RUMINATION", "subtitle": "the quicksand (level 7)",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 560, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "rumination-drum", "x": 1180, "y": 460, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "The word comes from how a cow chews cud, bringing the same thing back up, again and again. Of all the levels, this is the one most tightly linked to depression and anxiety. The loop tightens, like a knot.", "scene": "explainer", "prop": "tight-knot", "emotion": "serious-expert" },
+        { "vo": "If you live down here a lot, that is genuinely worth talking to someone about, a friend, or a professional. This isn't a step you have to climb out of alone.", "scene": "closeUp", "subject": "face", "emotion": "neutral" },
+        { "vo": "So. Seven levels down. Now, finally, the way back up.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "The way back",
+      "beats": [
+        { "vo": "The way back up. The first step is simply to notice the step you're on. Just naming it, oh, I'm catastrophizing, or, this is just a replay, instantly puts a little space between you and the thought.", "scene": "story", "room": "misty-clearing", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "THE WAY BACK",
+ "subtitle": "how to climb down",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 600, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "step-back-frame", "x": 1180, "y": 480, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "Then, the golden rule. Thinking is not doing. Overthinking spins in place forever. One small action, a single text, a first draft, a ten-minute start, breaks the loop that a thousand hours of thought never could.", "scene": "diagramCard", "diagram": "thought-vs-action", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Set a time limit on a worry, then pull the brake and change the channel. Ask if it'll matter in a year. And when you're frozen, remember, good enough and started beats perfect and never.", "scene": "explainer", "prop": "one-small-step", "emotion": "serious-expert" },
+        { "vo": "You don't have to win the argument in your head. You just have to step off the staircase, and put one foot back on the ground.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So the goal was never to stop thinking. A good ponder is a superpower. The goal is to catch yourself climbing, to notice which step you're on, and to choose to walk back down before the thinking starts thinking you.", "scene": "explainer", "prop": "ponder-cloud", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "Your mind is a brilliant tool. It was just never meant to run all night with no one holding the handrail. A little thinking builds things. Too much just builds a taller, lonelier staircase.", "scene": "story", "room": "misty-clearing", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 600, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "one-small-step", "x": 1180, "y": 640, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "So, which level do you get stuck on? The replay? The what-ifs? The spiral? Drop your number in the comments. And send this to the friend who is, right now, absolutely overthinking whether to send it back.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}
