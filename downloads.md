@@ -20,6 +20,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 
 | 12 | Why Your Brain Fears 3 AM | `fear-3am` | 7:41 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45269110911 | ✅ delivered |
 
-| 13 | Every Level of Overthinking Explained | `overthinking-levels` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45274510119 | ⏳ rendering |
+| 13 | Every Level of Overthinking Explained | `overthinking-levels` | 7:11 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45274510119 | ✅ delivered |
 
 _Continuing through the backlog one by one — new rows appended as each render completes._
