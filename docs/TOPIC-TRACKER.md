@@ -31,7 +31,7 @@ Glitches.
 2. 🟡 Every Level of IQ Explained — *built (`iq-levels`), 7 levels + "not your worth" spine; awaiting CI render*
 3. 🟡 The Psychology of People Who Don't Use Social Media — *built (`offline-minds`), nature-doc angle, 9 traits; awaiting CI render*
 4. ✅ Every Psychological Defense Mechanism Explained — *done (`defense-mechanisms`)*
-5. ⬜ Why Your Brain Never Stops Thinking (and the Off Switch)
+5. 🟡 Why Your Brain Never Stops Thinking (and the Off Switch) — *built (`restless-brain`), 100% bespoke art; awaiting CI render*
 6. 🟡 Every Manipulation Tactic Explained — *built (`manipulation-tactics`), 15 tactics + counters; awaiting CI render*
 7. ⬜ The Psychology of People With a High IQ
 8. 🟡 **Every Attachment Style Explained** — *built (`attachment-styles`), awaiting CI render*
@@ -68,7 +68,7 @@ detail from the `Topics` and `Competition` sheets of the xlsx when planning one.
 30 Struggle to Make Friends · 31 Keep House Spotless · 32 Prefer Being Alone ·
 33 Who Cheat.
 
-**Why Your Brain (34–41):** 34 Never Stops Thinking · 35 Fears 3 AM ·
+**Why Your Brain (34–41):** 34 Never Stops Thinking 🟡 · 35 Fears 3 AM ·
 36 Feel Someone Watching · 37 Can't Stop Thinking About Someone · 38 Procrastinates ·
 39 Why We Dream · 40 Feels Foggy · 41 Why You Cry.
 

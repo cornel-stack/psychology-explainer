@@ -997,8 +997,193 @@ const AttentionEconomy: React.FC = () => {
   );
 };
 
+/** The default mode network: the brain's resting network lights up when you do
+ *  "nothing" — resting is not the same as off. */
+const DefaultModeNetwork: React.FC = () => {
+  const frame = useCurrentFrame();
+  const pulse = 0.6 + 0.4 * Math.abs(Math.sin(frame / 10));
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.44;
+  const nodes = [[-150, -60], [0, -140], [150, -70], [-90, 80], [90, 90], [0, 0]];
+  return (
+    <g>
+      {/* brain silhouette */}
+      <path d={`M ${cx - 220} ${cy} Q ${cx - 260} ${cy - 150} ${cx - 120} ${cy - 180} Q ${cx - 80} ${cy - 250} ${cx + 10} ${cy - 220} Q ${cx + 110} ${cy - 255} ${cx + 160} ${cy - 175} Q ${cx + 285} ${cy - 140} ${cx + 230} ${cy - 10} Q ${cx + 260} ${cy + 130} ${cx + 130} ${cy + 170} Q ${cx + 40} ${cy + 250} ${cx - 60} ${cy + 185} Q ${cx - 215} ${cy + 170} ${cx - 220} ${cy} Z`} fill={COLORS.pink} opacity={0.4} {...xl} />
+      {/* connections */}
+      {nodes.map((a, i) => nodes.slice(i + 1).map((b, j) => (
+        <line key={`${i}-${j}`} x1={cx + a[0]} y1={cy + a[1]} x2={cx + b[0]} y2={cy + b[1]} stroke={COLORS.red} strokeWidth={STROKE.sm} opacity={0.4 * pulse} />
+      )))}
+      {/* glowing nodes */}
+      {nodes.map((n, i) => (
+        <g key={i} transform={`translate(${cx + n[0]} ${cy + n[1]})`}>
+          <circle r={34} fill={COLORS.yellow} opacity={0.3 * pulse} />
+          <circle r={18} fill={COLORS.red} {...lg} />
+        </g>
+      ))}
+      <text x={cx} y={cy + 250} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>resting ≠ off</text>
+    </g>
+  );
+};
+
+/** Rumination loop: trigger → thought → feeling → thought, tightening forever. */
+const RuminationLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.44;
+  const r = 230;
+  const nodes = [
+    { label: 'TRIGGER', color: COLORS.yellow },
+    { label: 'THOUGHT', color: COLORS.sky },
+    { label: 'FEELING', color: COLORS.red },
+  ];
+  const a = (frame / 30) * Math.PI * 2;
+  const tx = cx + Math.cos(a - Math.PI / 2) * r;
+  const ty = cy + Math.sin(a - Math.PI / 2) * r;
+  return (
+    <g>
+      {[r, r * 0.66, r * 0.34].map((rr, i) => (
+        <circle key={i} cx={cx} cy={cy} r={rr} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="4 20" opacity={0.4 - i * 0.1} />
+      ))}
+      {nodes.map((n, i) => {
+        const ang = (-90 + i * 120) * (Math.PI / 180);
+        return (
+          <g key={n.label} transform={`translate(${cx + Math.cos(ang) * r} ${cy + Math.sin(ang) * r})`}>
+            <circle r={92} fill={n.color} {...lg} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>{n.label}</text>
+          </g>
+        );
+      })}
+      <circle cx={tx} cy={ty} r={22} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy + 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={36} fill={COLORS.outline} opacity={0.6}>stuck</text>
+    </g>
+  );
+};
+
+/** Ironic process: push a thought DOWN, and it rebounds bigger (the white bear). */
+const IronicProcess: React.FC = () => {
+  const frame = useCurrentFrame();
+  const t = (frame % 90) / 90;
+  const push = t < 0.5;
+  const size = push ? 1 : 1 + (t - 0.5) * 2.4;
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.5;
+  return (
+    <g>
+      {/* lid being pushed */}
+      <g transform={`translate(${cx} ${cy - 150 + (push ? t * 60 : 0)})`}>
+        <rect x={-180} y={-30} width={360} height={40} rx={14} fill={COLORS.shirtDark} {...xl} />
+        <rect x={-30} y={-90} width={60} height={60} rx={10} fill={COLORS.woodDark} {...lg} />
+        <text x={0} y={-44} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>don't think!</text>
+      </g>
+      {/* the thought (a bear head) growing as it rebounds */}
+      <g transform={`translate(${cx} ${cy + 70}) scale(${Math.min(2.2, size)})`} style={{ transformOrigin: 'center' }}>
+        <circle cx={-44} cy={-40} r={20} fill={COLORS.white} {...lg} />
+        <circle cx={44} cy={-40} r={20} fill={COLORS.white} {...lg} />
+        <circle r={60} fill={COLORS.white} {...xl} />
+        <ellipse cx={0} cy={18} rx={28} ry={22} fill={COLORS.whiteShade} {...sm} />
+        <circle cx={-22} cy={-10} r={7} fill={COLORS.outline} />
+        <circle cx={22} cy={-10} r={7} fill={COLORS.outline} />
+        <ellipse cx={0} cy={6} rx={9} ry={7} fill={COLORS.outline} />
+      </g>
+      <text x={cx} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>the white bear rebounds</text>
+    </g>
+  );
+};
+
+/** Window of now: the mind yanked between PAST regret and FUTURE worry, barely NOW. */
+const WindowOfNow: React.FC = () => {
+  const frame = useCurrentFrame();
+  const pull = Math.sin(frame / 18);
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  const headX = cx + pull * 230;
+  return (
+    <g>
+      {/* band */}
+      <rect x={cx - 440} y={cy - 40} width={880} height={80} rx={40} fill={COLORS.bgCreamDark} {...lg} />
+      <rect x={cx - 110} y={cy - 40} width={220} height={80} rx={40} fill={COLORS.greenLeaf} opacity={0.7} {...lg} />
+      <text x={cx - 330} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.purpleDeep}>PAST</text>
+      <text x={cx} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.greenDark}>NOW</text>
+      <text x={cx + 330} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.redDark}>FUTURE</text>
+      <text x={cx - 330} y={cy - 80} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={28} fill={COLORS.outline} opacity={0.7}>regret</text>
+      <text x={cx + 330} y={cy - 80} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={28} fill={COLORS.outline} opacity={0.7}>worry</text>
+      {/* the mind, dragged off NOW */}
+      <g transform={`translate(${headX} ${cy})`}>
+        <circle r={54} fill={COLORS.white} {...xl} />
+        <circle cx={-18} cy={-8} r={8} fill={COLORS.outline} />
+        <circle cx={18} cy={-8} r={8} fill={COLORS.outline} />
+        <path d="M -18 20 q 18 -12 36 0" fill="none" {...sm} />
+      </g>
+      <path d={`M ${headX - 60} ${cy} H ${cx - 150}`} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="3 12" opacity={0.5} />
+    </g>
+  );
+};
+
+/** Dial, not a switch: the mind has a volume dial (loud→quiet), not an on/off button. */
+const DialNotSwitch: React.FC = () => {
+  const frame = useCurrentFrame();
+  const turn = interpolate(frame, [20, 70], [40, -120], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
+  const cx = CANVAS.width * 0.56;
+  const cy = CANVAS.height * 0.46;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={170} fill={COLORS.white} {...xl} />
+      <circle cx={cx} cy={cy} r={170} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.sm} transform={`scale(0.9)`} transform-origin={`${cx} ${cy}`} />
+      {/* tick arc */}
+      {Array.from({ length: 11 }).map((_, i) => {
+        const a = (-130 + i * 26) * (Math.PI / 180);
+        return <line key={i} x1={cx + Math.cos(a) * 140} y1={cy + Math.sin(a) * 140} x2={cx + Math.cos(a) * 168} y2={cy + Math.sin(a) * 168} stroke={COLORS.outline} strokeWidth={STROKE.sm} />;
+      })}
+      {/* knob + pointer */}
+      <circle cx={cx} cy={cy} r={96} fill={COLORS.lavender} {...lg} />
+      <line x1={cx} y1={cy} x2={cx + Math.cos((turn - 90) * Math.PI / 180) * 80} y2={cy + Math.sin((turn - 90) * Math.PI / 180) * 80} stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <circle cx={cx} cy={cy} r={16} fill={COLORS.outline} />
+      <text x={cx - 190} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.redDark}>LOUD</text>
+      <text x={cx + 190} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.greenDark}>QUIET</text>
+      <text x={cx} y={cy + 260} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>a dial, not a switch</text>
+    </g>
+  );
+};
+
+/** Attention spotlight: in the dark swirl of thoughts, you can aim the beam at one anchor. */
+const AttentionSpotlight: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const aim = springIn(frame, fps, 20, { damping: 14 });
+  const cx = CANVAS.width * 0.56;
+  const topX = cx - 40;
+  const topY = CANVAS.height * 0.2;
+  const tgtX = cx - 120 + aim * 120;
+  const tgtY = CANVAS.height * 0.66;
+  return (
+    <g>
+      {/* scattered dim thoughts */}
+      {[[cx - 320, 360, '?'], [cx + 300, 320, '!'], [cx + 220, 560, '…'], [cx - 260, 600, '?!']].map(([x, y, t], i) => (
+        <g key={i} opacity={0.35}>
+          <circle cx={x as number} cy={y as number} r={40} fill={COLORS.lavender} {...sm} />
+          <text x={x as number} y={(y as number) + 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>{t}</text>
+        </g>
+      ))}
+      {/* the lamp */}
+      <g transform={`translate(${topX} ${topY})`}>
+        <rect x={-50} y={-40} width={100} height={50} rx={14} fill={COLORS.shirtDark} {...xl} />
+        <rect x={-24} y={-70} width={48} height={34} rx={10} fill={COLORS.ledGrey} {...lg} />
+      </g>
+      {/* beam to the anchor */}
+      <path d={`M ${topX - 44} ${topY + 10} L ${tgtX - 110} ${tgtY} L ${tgtX + 110} ${tgtY} L ${topX + 44} ${topY + 10} Z`} fill={COLORS.yellowSoft} opacity={0.5} />
+      {/* the anchor (breath dot), lit */}
+      <g transform={`translate(${tgtX} ${tgtY})`}>
+        <circle r={60} fill={COLORS.yellow} opacity={0.35} />
+        <circle r={38} fill={COLORS.sky} {...lg} />
+        <text x={0} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>now</text>
+      </g>
+      <text x={cx} y={CANVAS.height * 0.86} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>aim the beam</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -1033,6 +1218,12 @@ export const DiagramCard: React.FC<{
     'dopamine-loop': COLORS.sky,
     'comparison-trap': COLORS.yellow,
     'attention-economy': COLORS.greenLeaf,
+    'default-mode-network': COLORS.pink,
+    'rumination-loop': COLORS.red,
+    'ironic-process': COLORS.lavender,
+    'window-of-now': COLORS.greenLeaf,
+    'dial-not-switch': COLORS.lavender,
+    'attention-spotlight': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -1074,6 +1265,12 @@ export const DiagramCard: React.FC<{
         {diagram === 'dopamine-loop' && <DopamineLoop />}
         {diagram === 'comparison-trap' && <ComparisonTrap />}
         {diagram === 'attention-economy' && <AttentionEconomy />}
+        {diagram === 'default-mode-network' && <DefaultModeNetwork />}
+        {diagram === 'rumination-loop' && <RuminationLoop />}
+        {diagram === 'ironic-process' && <IronicProcess />}
+        {diagram === 'window-of-now' && <WindowOfNow />}
+        {diagram === 'dial-not-switch' && <DialNotSwitch />}
+        {diagram === 'attention-spotlight' && <AttentionSpotlight />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

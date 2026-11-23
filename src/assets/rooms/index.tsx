@@ -40,7 +40,11 @@ export type RoomName =
   | 'classroom'
   | 'science-lab'
   | 'digital-wilderness'
-  | 'reading-nook';
+  | 'reading-nook'
+  | 'insomnia-bedroom'
+  | 'mind-control-room'
+  | 'thought-void'
+  | 'calm-shore';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -864,6 +868,155 @@ export const ReadingNook: React.FC = () => (
   </g>
 );
 
+/** Insomnia bedroom: pitch-dark room, a big glowing alarm clock reading 2:00, a
+ *  moonlit window, and faint thought-scribbles drifting over the bed. */
+export const InsomniaBedroom: React.FC = () => {
+  const f = useCurrentFrame();
+  const glow = 0.7 + 0.2 * Math.sin(f / 6);
+  return (
+    <g>
+      <WallFloor wall={COLORS.wallNightDark} floor={shade(COLORS.purpleDeep, 0.2)} floorY={840} stripe={false} />
+      {/* moonlit window */}
+      <g transform="translate(330 300)"><WindowNight /></g>
+      {/* faint restless thought-scribbles near the ceiling */}
+      {[[720, 170], [980, 120], [1180, 200]].map(([x, y], i) => (
+        <path key={i} d={`M ${x} ${y} q 30 -30 60 0 t 60 0 t 60 0`} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.3} />
+      ))}
+      {/* bed */}
+      <g transform="translate(720 720)">
+        <rect x={-320} y={-30} width={640} height={190} rx={28} fill={shade(COLORS.lavender, 0.3)} {...xl} />
+        <rect x={-320} y={-110} width={200} height={120} rx={28} fill={shade(COLORS.lavender, 0.24)} {...xl} />
+        <rect x={-300} y={-70} width={140} height={60} rx={20} fill={COLORS.whiteShade} opacity={0.5} {...std} />
+        <rect x={-150} y={-10} width={460} height={140} rx={22} fill={shade(COLORS.sky, 0.3)} {...std} />
+      </g>
+      {/* nightstand + a big glowing digital clock reading 2:00 */}
+      <g transform="translate(1480 700)">
+        <rect x={-110} y={60} width={220} height={180} rx={14} fill={COLORS.woodDark} {...xl} />
+        <ellipse cx={0} cy={0} rx={150} ry={70} fill={COLORS.red} opacity={0.14 * glow} />
+        <rect x={-96} y={-44} width={192} height={92} rx={14} fill={COLORS.shirtDarker} {...lg} />
+        <text x={0} y={30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={72} fill={COLORS.red} opacity={glow}>2:00</text>
+      </g>
+    </g>
+  );
+};
+
+/** Mind control room: the inside of the head as an engine room — a console of
+ *  gauges, a brain-wave monitor, levers and blinking lights, pipes overhead. */
+export const MindControlRoom: React.FC = () => {
+  const f = useCurrentFrame();
+  const blink = Math.sin(f / 5) > 0 ? 1 : 0.4;
+  const wave = Array.from({ length: 40 }).map((_, i) => `${i ? 'L' : 'M'} ${-180 + i * 9} ${-Math.sin(i / 2 + f / 6) * 26}`).join(' ');
+  return (
+    <g>
+      <WallFloor wall={shade(COLORS.greenTeal, 0.3)} floor={COLORS.shirtDark} floorY={820} stripe={false} />
+      {/* overhead pipes */}
+      {[90, 150].map((y, i) => <rect key={i} x={0} y={y} width={CANVAS.width} height={20} rx={8} fill={COLORS.ledGrey} opacity={0.6} />)}
+      {[300, 760, 1600].map((x, i) => <rect key={i} x={x} y={90} width={24} height={120} fill={COLORS.ledGrey} opacity={0.5} />)}
+      {/* "MIND HQ" sign */}
+      <g transform="translate(300 320)">
+        <rect x={-130} y={-50} width={260} height={100} rx={16} fill={COLORS.yellow} {...xl} />
+        <text x={0} y={16} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={48} fill={COLORS.outline}>MIND HQ</text>
+      </g>
+      {/* brain-wave monitor */}
+      <g transform="translate(1480 360)">
+        <rect x={-210} y={-150} width={420} height={300} rx={20} fill={COLORS.shirtDarker} {...xl} />
+        <rect x={-182} y={-122} width={364} height={244} rx={10} fill={COLORS.purpleDeep} {...lg} />
+        <path d={wave} fill="none" stroke={COLORS.ledGreen} strokeWidth={STROKE.lg} strokeLinecap="round" transform="translate(0 0)" />
+        <text x={0} y={100} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.ledGreen} opacity={0.8}>STILL ON</text>
+      </g>
+      {/* the console across the floor */}
+      <rect x={0} y={700} width={CANVAS.width} height={160} fill={COLORS.ledGrey} {...xl} />
+      <rect x={0} y={700} width={CANVAS.width} height={40} fill={shade(COLORS.ledGrey, 0.18)} />
+      {/* gauges */}
+      {[140, 320, 1700].map((x, i) => (
+        <g key={i} transform={`translate(${x} 770)`}>
+          <circle r={48} fill={COLORS.white} {...lg} />
+          <line x1={0} y1={0} x2={Math.sin(f / 20 + i) * 30} y2={-Math.cos(f / 20 + i) * 30} stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+          <circle r={8} fill={COLORS.outline} />
+        </g>
+      ))}
+      {/* blinking warning lights */}
+      {[900, 1020, 1140].map((x, i) => (
+        <circle key={i} cx={x} cy={740} r={16} fill={i % 2 ? COLORS.red : COLORS.yellow} opacity={i % 2 ? blink : 1 - blink + 0.4} {...sm} />
+      ))}
+      {/* levers */}
+      {[1000, 1120].map((x, i) => (
+        <g key={i} transform={`translate(${x} 800)`}>
+          <rect x={-8} y={0} width={16} height={60} fill={COLORS.shirtDark} />
+          <line x1={0} y1={0} x2={i ? 24 : -24} y2={-50} stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" />
+          <circle cx={i ? 24 : -24} cy={-50} r={16} fill={COLORS.red} {...lg} />
+        </g>
+      ))}
+    </g>
+  );
+};
+
+/** Thought void: a surreal, dark headspace — a soft glowing horizon, a receding
+ *  grid floor, and pale thought-shapes drifting among stars. */
+export const ThoughtVoid: React.FC = () => {
+  const f = useCurrentFrame();
+  return (
+    <g>
+      <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.purpleDeep} />
+      {/* soft glow horizon */}
+      <ellipse cx={960} cy={700} rx={1100} ry={300} fill={COLORS.wallNight} opacity={0.6} />
+      <ellipse cx={960} cy={720} rx={700} ry={160} fill={COLORS.lavender} opacity={0.18} />
+      {/* receding grid floor */}
+      {Array.from({ length: 9 }).map((_, i) => (
+        <line key={i} x1={960 + (i - 4) * 70} y1={760} x2={960 + (i - 4) * 420} y2={1080} stroke={COLORS.lavender} strokeWidth={STROKE.sm} opacity={0.22} />
+      ))}
+      {[0, 1, 2, 3].map((i) => (
+        <line key={i} x1={0} y1={790 + i * i * 22} x2={CANVAS.width} y2={790 + i * i * 22} stroke={COLORS.lavender} strokeWidth={STROKE.sm} opacity={0.22} />
+      ))}
+      {/* stars */}
+      {[[160, 140], [480, 90], [820, 200], [1200, 120], [1560, 180], [1760, 90], [300, 260], [1400, 300]].map(([x, y], i) => (
+        <path key={i} d={`M ${x} ${y - 10} l 3 7 l 7 3 l -7 3 l -3 7 l -3 -7 l -7 -3 l 7 -3 Z`} fill={COLORS.white} opacity={0.7} />
+      ))}
+      {/* drifting pale thought-shapes */}
+      {([[300, 360, COLORS.sky, '?'], [1500, 420, COLORS.pink, '!'], [1180, 300, COLORS.yellowSoft, '…']] as [number, number, string, string][]).map(([x, y, c, t], i) => {
+        const dy = Math.sin(f / 20 + i * 2) * 14;
+        return (
+          <g key={i} transform={`translate(${x} ${y + dy})`} opacity={0.55}>
+            <path d="M -70 0 Q -84 -54 -30 -54 Q -10 -84 30 -60 Q 84 -64 70 0 Q 80 46 20 46 Q 0 70 -36 48 Q -84 46 -70 0 Z" fill={c} {...lg} />
+            <text x={-6} y={18} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={44} fill={COLORS.outline}>{t}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+/** Calm shore: a still dawn lake with a soft rising sun, distant hills, gentle
+ *  reeds and a quiet reflection — the place the mind finally settles. */
+export const CalmShore: React.FC = () => {
+  const f = useCurrentFrame();
+  const shimmer = Math.sin(f / 18) * 6;
+  return (
+    <g>
+      {/* dawn sky gradient (banded flats) */}
+      <rect x={0} y={0} width={CANVAS.width} height={760} fill={COLORS.sky} />
+      <rect x={0} y={360} width={CANVAS.width} height={400} fill={COLORS.yellowSoft} opacity={0.45} />
+      {/* soft rising sun */}
+      <circle cx={960} cy={560} r={120} fill={COLORS.yellow} opacity={0.9} />
+      <circle cx={960} cy={560} r={180} fill={COLORS.yellowSoft} opacity={0.3} />
+      {/* distant hills */}
+      <path d="M 0 640 Q 500 560 960 620 Q 1500 560 1920 640 L 1920 760 L 0 760 Z" fill={COLORS.greenTeal} opacity={0.6} />
+      {/* still water */}
+      <rect x={0} y={760} width={CANVAS.width} height={CANVAS.height - 760} fill={COLORS.skyDark} />
+      <rect x={0} y={760} width={CANVAS.width} height={120} fill={COLORS.sky} opacity={0.5} />
+      {/* sun reflection + shimmer lines */}
+      <ellipse cx={960} cy={820} rx={90} ry={40} fill={COLORS.yellow} opacity={0.4} />
+      {[820, 900, 980, 1040].map((y, i) => (
+        <path key={i} d={`M ${400 + shimmer} ${y} q 120 10 240 0 t 240 0 t 240 0`} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.3} />
+      ))}
+      {/* reeds on the near shore */}
+      {[120, 180, 230, 1760, 1820].map((x, i) => (
+        <path key={i} d={`M ${x} 1080 Q ${x + (i % 2 ? 16 : -16)} 900 ${x + (i % 2 ? 8 : -8)} 840`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      ))}
+    </g>
+  );
+};
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -889,6 +1042,10 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'science-lab': ScienceLab,
   'digital-wilderness': DigitalWilderness,
   'reading-nook': ReadingNook,
+  'insomnia-bedroom': InsomniaBedroom,
+  'mind-control-room': MindControlRoom,
+  'thought-void': ThoughtVoid,
+  'calm-shore': CalmShore,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

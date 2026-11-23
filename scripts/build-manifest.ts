@@ -52,6 +52,10 @@ const NEW_ASSETS = new Set([
   'digital-wilderness', 'reading-nook',
   'glowing-phone', 'scroll-feed', 'comparison-mirror', 'fomo-ghost', 'highlight-reel', 'notification-swarm', 'seed-sprout', 'binoculars',
   'dopamine-loop', 'comparison-trap', 'attention-economy',
+  // restless-brain (all new)
+  'insomnia-bedroom', 'mind-control-room', 'thought-void', 'calm-shore',
+  'frazzled-clock', 'thought-swarm', 'stuck-radio', 'overheating-brain', 'hamster-wheel', 'monkey-mind', 'broken-record', 'thought-spiral', 'white-bear', 'mental-tabs', 'tangled-yarn', 'breathing-balloon', 'grounding-hand', 'off-switch',
+  'default-mode-network', 'rumination-loop', 'ironic-process', 'window-of-now', 'dial-not-switch', 'attention-spotlight',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

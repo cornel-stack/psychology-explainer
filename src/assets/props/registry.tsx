@@ -15,6 +15,7 @@ import * as Att from './attachment';
 import * as Iq from './iq';
 import * as Man from './manipulation';
 import * as Off from './offline';
+import * as Rest from './restless';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -151,6 +152,21 @@ export const PROPS: Record<string, React.FC<any>> = {
   'notification-swarm': Off.NotificationSwarm,
   'seed-sprout': Off.SeedSprout,
   binoculars: Off.Binoculars,
+  // restless-brain props (all new, no reuse)
+  'frazzled-clock': Rest.FrazzledClock,
+  'thought-swarm': Rest.ThoughtSwarm,
+  'stuck-radio': Rest.StuckRadio,
+  'overheating-brain': Rest.OverheatingBrain,
+  'hamster-wheel': Rest.HamsterWheel,
+  'monkey-mind': Rest.MonkeyMind,
+  'broken-record': Rest.BrokenRecord,
+  'thought-spiral': Rest.ThoughtSpiral,
+  'white-bear': Rest.WhiteBear,
+  'mental-tabs': Rest.MentalTabs,
+  'tangled-yarn': Rest.TangledYarn,
+  'breathing-balloon': Rest.BreathingBalloon,
+  'grounding-hand': Rest.GroundingHand,
+  'off-switch': Rest.OffSwitch,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

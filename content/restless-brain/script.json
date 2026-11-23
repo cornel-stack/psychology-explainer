@@ -1,0 +1,141 @@
+{
+  "title": "Why Your Brain Never Stops Thinking (and the Off Switch)",
+  "slug": "restless-brain",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "It's two in the morning. You are exhausted. You have done everything right. And your brain has chosen this exact moment to replay an embarrassing thing you said in two thousand and nine.", "scene": "story", "room": "insomnia-bedroom", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "WHY YOUR BRAIN NEVER STOPS", "subtitle": "and where the off switch went",
+          "mascots": [ { "costume": "hoodie", "pose": "sitting-up-in-bed", "emotion": "scared", "x": 680, "y": 640, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "thought-swarm", "x": 1120, "y": 340, "scale": 0.95, "appearAt": 6 } ] },
+        { "vo": "You beg it to stop. Please. Just be quiet. But there's no button to press. The thinking just rolls on, like a radio you can't switch off, blaring in an empty house all night.", "scene": "story", "room": "insomnia-bedroom", "emotion": "annoyed", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "sitting-up-in-bed", "emotion": "annoyed", "x": 680, "y": 640, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "stuck-radio", "x": 1180, "y": 420, "scale": 0.72, "appearAt": 4 } ] },
+        { "vo": "By some estimates, you think around six thousand separate thoughts every single day. Almost none of them were invited. So why can't you just make it stop?", "scene": "statCard", "value": 6000, "suffix": "", "pictogram": "none", "emotion": "serious-expert" },
+        { "vo": "Here's the twist that changes everything. The brain has no off switch. It was never built with one. But it does have something else. A volume dial. And almost no one is taught where it is.", "scene": "closeUp", "subject": "face", "emotion": "confused" },
+        { "vo": "Welcome to Dear Brain. Today, why the mind never shuts up, the strange shapes that noise takes, and how to actually turn the volume down. Let's go find that dial.", "scene": "explainer", "prop": "off-switch", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's the plan. First, why the engine never idles. Then the zoo of restless thoughts it produces. And finally, the off switch, which turns out to be a dial. Watch for the one that sounds like your two a.m.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["THE IDLE ENGINE", "SURVIVAL MACHINE", "MONKEY MIND", "THE BROKEN RECORD", "TIME TRAVEL", "THE WHITE BEAR", "3 A.M.", "THE DIAL", "ANCHOR THE BEAM", "YOU ARE NOT IT"] }
+      ]
+    },
+    {
+      "name": "1 — The idle engine",
+      "beats": [
+        { "vo": "Start here. You might assume that when you rest and do nothing, your brain powers down too. It does the exact opposite. A whole network switches on the moment you stop.", "scene": "story", "room": "mind-control-room", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "THE IDLE ENGINE", "subtitle": "the brain is never off",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "overheating-brain", "x": 1080, "y": 460, "scale": 0.75, "appearAt": 6 } ] },
+        { "vo": "Scientists call it the default mode network. It lights up when you daydream, remember, worry, and narrate your own life to yourself. Doing nothing is when your brain gets loudest.", "scene": "diagramCard", "diagram": "default-mode-network", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So the engine never truly idles. Even parked, in bed, eyes closed, it keeps revving. That's not a malfunction. That is the factory setting of being a human being.", "scene": "explainer", "prop": "overheating-brain", "emotion": "serious-expert" },
+        { "vo": "Which raises a very reasonable question. Why on earth would evolution build a mind that can't rest? The answer is that it kept you alive.", "scene": "closeUp", "subject": "face", "emotion": "confused" }
+      ]
+    },
+    {
+      "name": "2 — Survival machine",
+      "beats": [
+        { "vo": "Picture two ancestors. One is relaxed, fully present, enjoying the moment. The other lies awake rehearsing everything that could go wrong. The rustle in the grass. The winter coming. The rival next door.", "scene": "story", "room": "mind-control-room", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "THE SURVIVAL MACHINE", "subtitle": "overthinking kept us alive",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 600, "y": 640, "scale": 1.2, "talking": true } ],
+          "props": [ { "name": "mental-tabs", "x": 1120, "y": 480, "scale": 0.68, "appearAt": 4 } ] },
+        { "vo": "Guess which one is your ancestor. The anxious one, who imagined the threat before it arrived, survived to pass on their restless, planning, worrying brain. Calm often got eaten.", "scene": "story", "room": "thought-void", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 560, "y": 660, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "hamster-wheel", "x": 1150, "y": 520, "scale": 0.72, "appearAt": 4 } ] },
+        { "vo": "So your brain has a powerful negativity bias. It treats every worry like a survival emergency, running on a wheel, solving problems that aren't here, just in case. It's not broken. It's overprotective.", "scene": "explainer", "prop": "hamster-wheel", "emotion": "serious-expert" },
+        { "vo": "A survival gift, running in a world it wasn't designed for. And when that restless engine spins freely, it produces a whole zoo of strange thoughts. Meet the first one.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — The monkey mind",
+      "beats": [
+        { "vo": "The monkey mind. An ancient name for a familiar feeling. Your attention swinging wildly from branch to branch, thought to thought, never landing anywhere for more than a few seconds.", "scene": "story", "room": "thought-void", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE MONKEY MIND", "subtitle": "swinging thought to thought",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 540, "y": 660, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "monkey-mind", "x": 1150, "y": 500, "scale": 0.8, "appearAt": 4 } ] },
+        { "vo": "Dinner, then that email, then a song lyric, then your childhood, then dinner again. The monkey never sits still. And it's busier than you think.", "scene": "explainer", "prop": "monkey-mind", "emotion": "serious-expert" },
+        { "vo": "One Harvard study pinged thousands of people at random, and found their minds were wandering, away from whatever they were doing, nearly half of their waking lives. And a wandering mind, it turned out, was an unhappier one.", "scene": "statCard", "value": 47, "suffix": "%", "pictogram": "crowd", "fraction": 0.5, "emotion": "serious-expert" },
+        { "vo": "Half your life, somewhere else. The monkey is loud. But it's at least always moving. The next thought is far worse, because it gets stuck.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — The broken record",
+      "beats": [
+        { "vo": "Rumination. The broken record. Where the monkey leaps away, this one does the opposite. It drops the needle on one painful thought, and plays it, again, and again, and again.", "scene": "story", "room": "thought-void", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "THE BROKEN RECORD", "subtitle": "rumination, stuck on repeat",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 540, "y": 660, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "broken-record", "x": 1150, "y": 520, "scale": 0.75, "appearAt": 4 } ] },
+        { "vo": "It feels productive, like you're solving something. You're not. You're just circling the same drain. A trigger sparks a thought, the thought sparks a feeling, and the feeling feeds the thought right back in.", "scene": "diagramCard", "diagram": "rumination-loop", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Round and round, pulling you downward, tighter each loop. This is the spiral that psychologists link most closely to anxiety and depression. Not the thinking. The repeating.", "scene": "explainer", "prop": "thought-spiral", "emotion": "serious-expert" },
+        { "vo": "The record never reaches an answer, because it was never really a question. And notice where all this replaying drags you. Never, ever to right now.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Time travel",
+      "beats": [
+        { "vo": "Mental time travel. Your brain is a time machine that mostly visits two destinations. The past, for regret. And the future, for worry. It almost never stops in the present.", "scene": "story", "room": "thought-void", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "TIME TRAVEL", "subtitle": "anywhere but now",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 540, "y": 660, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "tangled-yarn", "x": 1150, "y": 500, "scale": 0.72, "appearAt": 4 } ] },
+        { "vo": "It replays old conversations, editing in the perfect comeback. Then it fast-forwards to imagined disasters that mostly never happen. Dragged backward and forward, you miss the only moment you ever actually live in.", "scene": "diagramCard", "diagram": "window-of-now", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "This time-travelling is a genuine superpower. It's how we plan, learn, and invent. But left on autopilot, it quietly steals the present, one worried minute at a time.", "scene": "explainer", "prop": "tangled-yarn", "emotion": "serious-expert" },
+        { "vo": "Now, if you've ever tried to fix all this by simply ordering your brain to stop, you've met our next character. And you already know it doesn't work.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — The white bear",
+      "beats": [
+        { "vo": "Quick experiment. For the next ten seconds, whatever you do, do not think about a white bear. Do not picture its fur, its nose, its little round ears. So. What are you thinking about?", "scene": "story", "room": "thought-void", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE WHITE BEAR", "subtitle": "why 'just stop' backfires",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 540, "y": 660, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "white-bear", "x": 1180, "y": 540, "scale": 0.72, "appearAt": 8 } ] },
+        { "vo": "This is the ironic process, discovered by psychologist Daniel Wegner. Try to suppress a thought, and part of your mind has to keep checking whether it's gone, which keeps shoving it right back in front of you.", "scene": "diagramCard", "diagram": "ironic-process", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So telling an anxious brain to just stop thinking is like pressing an accelerator you believe is the brake. The harder you push the thought down, the bigger the bear comes bouncing back up.", "scene": "explainer", "prop": "white-bear", "emotion": "serious-expert" },
+        { "vo": "Suppression is a losing game. Which is the whole reason the off switch doesn't exist. But before we find the dial, let's visit the hour when every one of these is cranked to maximum.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Three a.m.",
+      "beats": [
+        { "vo": "Three a.m. The witching hour of the overthinker. The same worry that felt manageable at noon becomes a catastrophe in the dark. Why does the volume spike at night?", "scene": "story", "room": "insomnia-bedroom", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "3 A.M.", "subtitle": "why it's worst at night",
+          "mascots": [ { "costume": "hoodie", "pose": "sitting-up-in-bed", "emotion": "scared", "x": 680, "y": 640, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "frazzled-clock", "x": 1200, "y": 400, "scale": 0.7, "appearAt": 4, "args": { "time": 3 } } ] },
+        { "vo": "Two reasons. First, there are no distractions left. No work, no people, no screens to drown the signal, so the brain's background noise becomes the only show in town.", "scene": "story", "room": "insomnia-bedroom", "emotion": "scared", "camera": { "zoomTo": [0.5, 0.5, 1.2] },
+          "mascots": [ { "costume": "hoodie", "pose": "sitting-up-in-bed", "emotion": "scared", "x": 680, "y": 640, "scale": 1.25, "talking": true } ],
+          "props": [ { "name": "thought-swarm", "x": 1120, "y": 360, "scale": 0.9, "appearAt": 4 } ] },
+        { "vo": "Second, a tired brain is a worse problem-solver with weaker brakes. Exhausted, it loses perspective, so molehills reliably become mountains. The thoughts aren't truer at night. You're just less able to argue back.", "scene": "explainer", "prop": "overheating-brain", "emotion": "serious-expert" },
+        { "vo": "So that three a.m. spiral isn't wisdom. It's a tired engine with the brakes worn thin. Which, at last, brings us to the thing the whole title promised. The off switch.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — The dial",
+      "beats": [
+        { "vo": "And here's the reveal. There is no off switch. Stop hunting for one. You cannot force a healthy brain to stop thinking, any more than you can force your heart to stop beating. That was never the goal.", "scene": "story", "room": "calm-shore", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "THE DIAL", "subtitle": "not off — just quieter",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 600, "y": 660, "scale": 1.1, "talking": true } ],
+          "props": [ { "name": "off-switch", "x": 1180, "y": 520, "scale": 0.7, "appearAt": 6 } ] },
+        { "vo": "What you actually have is a volume dial. You can't delete the thoughts, but you can turn their grip down, from a deafening roar, to background noise you barely notice.", "scene": "diagramCard", "diagram": "dial-not-switch", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And the first turn of that dial is a mental move therapists call defusion. You stop being inside the thought, and start watching it from a step back. It's not I am a failure. It's, ah, there's that failure thought again.", "scene": "explainer", "prop": "breathing-balloon", "emotion": "serious-expert" },
+        { "vo": "You are the sky. The thoughts are just weather passing through. That small distance is the difference between drowning in the storm, and simply watching it rain. Now, how do you actually reach for the dial?", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "9 — Anchor the beam",
+      "beats": [
+        { "vo": "You reach it through attention. Think of focus as a spotlight. For the overthinker, it's swinging around wildly, lighting up every dark worry. The skill is learning to aim the beam, on purpose.", "scene": "story", "room": "calm-shore", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "ANCHOR THE BEAM", "subtitle": "come back to now",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 600, "y": 660, "scale": 1.1, "talking": true } ],
+          "props": [ { "name": "breathing-balloon", "x": 1180, "y": 500, "scale": 0.72, "appearAt": 4 } ] },
+        { "vo": "Point it at an anchor in the present. The breath moving in and out. Your feet on the floor. And when the monkey drags the beam away, which it will, a hundred times, you gently bring it back. That returning is the entire exercise.", "scene": "diagramCard", "diagram": "attention-spotlight", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Or drop into your senses. Name five things you can see, four you can hear, three you can touch. It yanks the spotlight out of your head, and back into the actual room, where the imagined disasters simply aren't.", "scene": "explainer", "prop": "grounding-hand", "emotion": "serious-expert" },
+        { "vo": "Name the feeling to tame it. Lose yourself in flow. Move your body. Step into nature. Every one of these is just a different hand, reaching for the same dial. Which leaves one last thing to say.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "The most freeing idea in all of this is four small words. You are not your thoughts. You are the one noticing them. The thinker, not the thought. The sky, not the weather.", "scene": "explainer", "prop": "breathing-balloon", "emotion": "serious-expert", "chapterStart": true },
+        { "vo": "Your restless brain was never a defect. It's a brilliant, overprotective survival machine that loves you a little too loudly. You don't need to silence it. You just need to learn, slowly, where the dial is.", "scene": "story", "room": "calm-shore", "emotion": "happy-talk", "camera": "slowZoom",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 600, "y": 660, "scale": 1.1, "talking": true } ],
+          "props": [ { "name": "off-switch", "x": 1180, "y": 520, "scale": 0.7, "appearAt": 8, "args": { "on": true } } ] },
+        { "vo": "So, what does your brain replay at three a.m.? Tell me in the comments, you're in very loud company. And send this to the person whose mind you know never, ever stops.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" },
+        { "vo": "This is Dear Brain. If you want to understand yourself a little better each week, subscribe, and I'll see you in the next one.", "scene": "endScreen", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "slug": "restless-brain",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 10,
+    "NEW": 24
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        6,
+        10,
+        11,
+        14,
+        18,
+        22,
+        26,
+        30,
+        31,
+        34,
+        38,
+        43
+      ]
+    },
+    {
+      "name": "attention-spotlight",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        39
+      ]
+    },
+    {
+      "name": "default-mode-network",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "dial-not-switch",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        35
+      ]
+    },
+    {
+      "name": "ironic-process",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "rumination-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "window-of-now",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        18
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        6,
+        9,
+        14,
+        22,
+        26
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        5,
+        37,
+        38,
+        41,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        13,
+        17,
+        21,
+        25,
+        29,
+        33
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        10,
+        11,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        2,
+        6,
+        7,
+        8,
+        12,
+        15,
+        16,
+        19,
+        20,
+        23,
+        24,
+        27,
+        28,
+        32,
+        34,
+        35,
+        36,
+        39,
+        40,
+        42
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        6,
+        10,
+        11,
+        14,
+        18,
+        22,
+        26,
+        34,
+        38,
+        43
+      ]
+    },
+    {
+      "name": "sitting-up-in-bed",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "breathing-balloon",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        36,
+        38,
+        42
+      ]
+    },
+    {
+      "name": "broken-record",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "frazzled-clock",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "grounding-hand",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        40
+      ]
+    },
+    {
+      "name": "hamster-wheel",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11,
+        12
+      ]
+    },
+    {
+      "name": "mental-tabs",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "monkey-mind",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        15
+      ]
+    },
+    {
+      "name": "off-switch",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        34,
+        43
+      ]
+    },
+    {
+      "name": "overheating-brain",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6,
+        8,
+        32
+      ]
+    },
+    {
+      "name": "stuck-radio",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "tangled-yarn",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        24
+      ]
+    },
+    {
+      "name": "thought-spiral",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "thought-swarm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        31
+      ]
+    },
+    {
+      "name": "white-bear",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        28
+      ]
+    },
+    {
+      "name": "calm-shore",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        34,
+        38,
+        43
+      ]
+    },
+    {
+      "name": "insomnia-bedroom",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "mind-control-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        6,
+        10
+      ]
+    },
+    {
+      "name": "thought-void",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        11,
+        14,
+        18,
+        22,
+        26
+      ]
+    }
+  ]
+}
