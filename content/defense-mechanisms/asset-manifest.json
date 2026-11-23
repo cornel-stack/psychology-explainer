@@ -2,8 +2,8 @@
   "slug": "defense-mechanisms",
   "generated": "by scripts/build-manifest.ts",
   "counts": {
-    "exists": 19,
-    "NEW": 26
+    "exists": 22,
+    "NEW": 54
   },
   "assets": [
     {
@@ -44,6 +44,28 @@
         76,
         77,
         82
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        11,
+        16,
+        17,
+        21,
+        41,
+        42,
+        62
       ]
     },
     {
@@ -94,10 +116,10 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        6,
         11,
         17,
         21,
+        27,
         36,
         37
       ]
@@ -108,8 +130,13 @@
       "status": "exists",
       "beats": [
         1,
+        11,
+        17,
+        21,
         24,
-        44
+        41,
+        44,
+        62
       ]
     },
     {
@@ -120,7 +147,6 @@
         16,
         41,
         66,
-        67,
         69,
         72,
         74,
@@ -134,6 +160,9 @@
       "beats": [
         4,
         10,
+        16,
+        42,
+        67,
         70,
         71,
         75,
@@ -155,6 +184,7 @@
         30,
         35,
         40,
+        42,
         45,
         50,
         52,
@@ -175,6 +205,7 @@
         5,
         31,
         32,
+        36,
         61,
         62
       ]
@@ -220,7 +251,6 @@
       "status": "exists",
       "beats": [
         26,
-        27,
         57
       ]
     },
@@ -229,12 +259,23 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
+        6,
         12,
         15,
+        21,
         22,
-        42,
         46,
         47
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        6,
+        17,
+        21
       ]
     },
     {
@@ -244,8 +285,51 @@
       "beats": [
         16,
         41,
+        62
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
         66,
-        71
+        76
+      ]
+    },
+    {
+      "name": "cover-eyes",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "fist-up",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        27,
+        37,
+        72
+      ]
+    },
+    {
+      "name": "hands-hips",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        22,
+        67
       ]
     },
     {
@@ -253,23 +337,15 @@
       "type": "pose",
       "status": "exists",
       "beats": [
-        0,
-        5,
         17,
         21,
-        27,
-        31,
         32,
+        41,
         42,
         52,
         56,
         57,
-        61,
-        62,
-        67,
-        72,
-        77,
-        82
+        62
       ]
     },
     {
@@ -279,10 +355,22 @@
       "beats": [
         11,
         12,
-        22,
-        37,
+        36,
         47,
-        51
+        51,
+        71
+      ]
+    },
+    {
+      "name": "reach-down",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        0,
+        31,
+        42,
+        61,
+        82
       ]
     },
     {
@@ -291,7 +379,7 @@
       "status": "exists",
       "beats": [
         1,
-        6,
+        11,
         46
       ]
     },
@@ -304,19 +392,12 @@
       ]
     },
     {
-      "name": "startled",
-      "type": "pose",
-      "status": "exists",
-      "beats": [
-        36
-      ]
-    },
-    {
       "name": "wave",
       "type": "pose",
       "status": "exists",
       "beats": [
-        76
+        16,
+        77
       ]
     },
     {
@@ -324,9 +405,62 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        16,
-        17,
         18
+      ]
+    },
+    {
+      "name": "baby-bottle",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        27
+      ]
+    },
+    {
+      "name": "bad-letter",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        5,
+        46,
+        82
+      ]
+    },
+    {
+      "name": "book-stack",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        51,
+        52
+      ]
+    },
+    {
+      "name": "bouquet",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        41,
+        62
+      ]
+    },
+    {
+      "name": "broken-heart",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        71
+      ]
+    },
+    {
+      "name": "cigarette",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
       ]
     },
     {
@@ -334,11 +468,18 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        41,
-        42,
         43,
         76,
         77
+      ]
+    },
+    {
+      "name": "door",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        32,
+        37
       ]
     },
     {
@@ -346,8 +487,7 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        66,
-        67
+        66
       ]
     },
     {
@@ -356,18 +496,41 @@
       "status": "NEW",
       "beats": [
         71,
-        72,
         73
       ]
     },
     {
-      "name": "envelope",
+      "name": "flatline-screen",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        56
+      ]
+    },
+    {
+      "name": "gift-box",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        42,
+        62
+      ]
+    },
+    {
+      "name": "group-chat-phone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "heart",
       "type": "prop",
       "status": "exists",
       "beats": [
-        0,
-        5,
-        82
+        16,
+        77
       ]
     },
     {
@@ -376,7 +539,35 @@
       "status": "NEW",
       "beats": [
         31,
+        32,
         33
+      ]
+    },
+    {
+      "name": "magazine-pile",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        1,
+        82
+      ]
+    },
+    {
+      "name": "megaphone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        41,
+        67
+      ]
+    },
+    {
+      "name": "mirror",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
       ]
     },
     {
@@ -384,7 +575,6 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        51,
         52,
         53
       ]
@@ -394,9 +584,16 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        26,
         27,
         28
+      ]
+    },
+    {
+      "name": "photo-stack",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        31
       ]
     },
     {
@@ -404,9 +601,39 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        11,
-        12,
         13
+      ]
+    },
+    {
+      "name": "punching-bag",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        72
+      ]
+    },
+    {
+      "name": "puppy",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        37
+      ]
+    },
+    {
+      "name": "red-flag",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "running-shoe",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        72
       ]
     },
     {
@@ -414,7 +641,6 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        56,
         57,
         58
       ]
@@ -430,12 +656,20 @@
       ]
     },
     {
+      "name": "sink",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        61
+      ]
+    },
+    {
       "name": "soap-bubbles",
       "type": "prop",
       "status": "NEW",
       "beats": [
         61,
-        62,
         63
       ]
     },
@@ -444,9 +678,26 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        46,
         47,
         48
+      ]
+    },
+    {
+      "name": "speech-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        5,
+        11,
+        16,
+        17,
+        21,
+        36,
+        37,
+        42,
+        46,
+        56,
+        76
       ]
     },
     {
@@ -454,9 +705,26 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        21,
         22,
         23
+      ]
+    },
+    {
+      "name": "teddy-bear",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "thought-bubble",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        1,
+        12,
+        47
       ]
     },
     {
@@ -464,8 +732,6 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        36,
-        37,
         38
       ]
     },
@@ -474,7 +740,17 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
+        66,
+        67,
         68
+      ]
+    },
+    {
+      "name": "whiteboard",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        51
       ]
     },
     {
@@ -482,8 +758,7 @@
       "type": "room",
       "status": "NEW",
       "beats": [
-        71,
-        72
+        71
       ]
     },
     {
@@ -501,7 +776,8 @@
       "status": "NEW",
       "beats": [
         66,
-        67
+        67,
+        72
       ]
     },
     {
@@ -528,6 +804,7 @@
         17,
         26,
         27,
+        37,
         46,
         47,
         82
@@ -540,8 +817,7 @@
       "beats": [
         11,
         12,
-        36,
-        37
+        36
       ]
     },
     {

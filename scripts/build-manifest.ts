@@ -32,6 +32,11 @@ const NEW_ASSETS = new Set([
   'pacifier', 'open-book', 'sealed-jar', 'soap-bubbles', 'dumbbell', 'sticky-note', 'comedy-mask', 'volcano',
   'pressure-gauge', 'diploma',
   'defense-shield', 'iceberg', 'maturity-ladder', 'redirect-arrow', 'pressure-valve',
+  // literal story props + 2nd-character costume + action poses (remake)
+  'bad-letter', 'magazine-pile', 'cigarette', 'red-flag', 'mirror', 'baby-bottle', 'gift-box',
+  'bouquet', 'book-stack', 'whiteboard', 'flatline-screen', 'door', 'punching-bag', 'broken-heart',
+  'sink', 'megaphone', 'running-shoe', 'tee',
+  'cover-eyes', 'cower', 'cheer', 'facepalm', 'arms-crossed', 'fist-up', 'hands-hips', 'reach-down',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

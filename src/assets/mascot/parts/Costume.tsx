@@ -7,7 +7,7 @@
 import React from 'react';
 import { COLORS, STROKE, strokeProps, shade } from '../../../lib/style';
 
-export type Costume = 'pajamas' | 'labcoat' | 'suit' | 'hoodie';
+export type Costume = 'pajamas' | 'labcoat' | 'suit' | 'hoodie' | 'tee';
 
 const xl = strokeProps(STROKE.xl);
 const lg = strokeProps(STROKE.lg);
@@ -115,6 +115,23 @@ export const Costume: React.FC<{ costume: Costume; showLegs?: boolean; stride?: 
           <path d="M 0 132 L -13 152 L -6 244 L 0 256 L 6 244 L 13 152 Z" fill={COLORS.red} {...sm} />
           <path d="M -30 120 L -8 202 M 30 120 L 8 202" fill="none" {...sm} />
           <BrandBadge x={-46} y={178} scale={0.8} />
+        </g>
+      );
+    case 'tee':
+      // the "other person" — a distinct teal t-shirt so two characters never blur
+      return (
+        <g>
+          {showLegs && <Legs legFill={COLORS.wood} shoe={COLORS.outline} stride={stride} />}
+          <path d={TORSO} fill={COLORS.greenTeal} {...xl} />
+          {/* short-sleeve cuffs */}
+          <path d="M -98 138 Q -120 150 -112 178 L -84 172 Q -92 150 -88 140 Z" fill={shade(COLORS.greenTeal, 0.18)} {...sm} />
+          <path d="M 98 138 Q 120 150 112 178 L 84 172 Q 92 150 88 140 Z" fill={shade(COLORS.greenTeal, 0.18)} {...sm} />
+          {/* inner-shade (two-tone) */}
+          <path d="M -70 250 Q 0 276 70 250 L 66 288 Q 0 300 -66 288 Z" fill={shade(COLORS.greenTeal, 0.22)} opacity={0.6} />
+          {/* round neckline */}
+          <path d="M -34 116 Q 0 150 34 116" fill="none" {...sm} />
+          {/* simple chest stripe */}
+          <path d="M -86 196 Q 0 214 86 196" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" />
         </g>
       );
     case 'hoodie':

@@ -18,7 +18,15 @@ export type Pose =
   | 'startled'
   | 'hands-on-wheel'
   | 'wave'
-  | 'walking';
+  | 'walking'
+  | 'cover-eyes'
+  | 'cower'
+  | 'cheer'
+  | 'facepalm'
+  | 'arms-crossed'
+  | 'fist-up'
+  | 'hands-hips'
+  | 'reach-down';
 
 type Pt = [number, number];
 const PEEK = STROKE.xl / 2; // 7 — matches head/torso outer-black band
@@ -70,6 +78,22 @@ const POSES: Record<Pose, ArmSet> = {
   'hands-on-wheel': { L: [SHOULDER_L, [-70, 236], [-78, 300]], R: [SHOULDER_R, [70, 236], [78, 300]] },
   wave: { L: [SHOULDER_L, [-106, 238], [-112, 300]], R: [SHOULDER_R, [128, 86], [150, 8]] },
   walking: { L: [SHOULDER_L, [-100, 236], [-108, 296]], R: [SHOULDER_R, [100, 236], [108, 296]] },
+  // both hands raised to the face edges — "I won't look at this" (denial)
+  'cover-eyes': { L: [SHOULDER_L, [-126, 86], [-104, -6]], R: [SHOULDER_R, [126, 86], [104, -6]] },
+  // forearms up, palms out, flinching back from a threat
+  cower: { L: [SHOULDER_L, [-120, 78], [-96, -14]], R: [SHOULDER_R, [120, 78], [96, -14]] },
+  // both fists thrown up high and wide — triumph
+  cheer: { L: [SHOULDER_L, [-120, 54], [-158, -52]], R: [SHOULDER_R, [120, 54], [158, -52]] },
+  // one hand to the temple (exasperation), other hanging
+  facepalm: { L: [SHOULDER_L, [-104, 240], [-110, 298]], R: [SHOULDER_R, [112, 92], [108, 34]] },
+  // forearms crossed over the chest — closed off / skeptical
+  'arms-crossed': { L: [SHOULDER_L, [-34, 196], [84, 210]], R: [SHOULDER_R, [34, 196], [-84, 210]] },
+  // one fist raised high (anger), other on hip
+  'fist-up': { L: [SHOULDER_L, [-112, 206], [-152, 196]], R: [SHOULDER_R, [120, 58], [122, -44]] },
+  // both hands on hips — defiant / confident stance
+  'hands-hips': { L: [SHOULDER_L, [-116, 206], [-156, 196]], R: [SHOULDER_R, [116, 206], [156, 196]] },
+  // both hands reaching down low in front (placing/hiding something on a table)
+  'reach-down': { L: [SHOULDER_L, [-96, 250], [-70, 320]], R: [SHOULDER_R, [96, 250], [70, 320]] },
 };
 
 export const Arms: React.FC<{ pose: Pose; sleeve: string; frame?: number }> = ({ pose, sleeve, frame = 0 }) => {
@@ -92,4 +116,4 @@ export const Arms: React.FC<{ pose: Pose; sleeve: string; frame?: number }> = ({
 
 /** sleeve color helper used by Mascot. */
 export const sleeveColor = (costume: string): string =>
-  costume === 'labcoat' ? COLORS.white : costume === 'pajamas' ? COLORS.yellow : costume === 'suit' ? COLORS.navy : COLORS.hoodie;
+  costume === 'labcoat' ? COLORS.white : costume === 'pajamas' ? COLORS.yellow : costume === 'suit' ? COLORS.navy : costume === 'tee' ? COLORS.greenTeal : COLORS.hoodie;

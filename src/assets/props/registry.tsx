@@ -10,6 +10,7 @@ import * as Bub from './bubbles';
 import * as Feel from './feelings';
 import * as Bias from './biases';
 import * as Def from './defenses';
+import * as Sty from './story';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -92,6 +93,24 @@ export const PROPS: Record<string, React.FC<any>> = {
   volcano: Def.Volcano,
   'pressure-gauge': Def.PressureGauge,
   diploma: Def.Diploma,
+  // literal story props (draw exactly what the narration says)
+  'bad-letter': Sty.BadLetter,
+  'magazine-pile': Sty.MagazinePile,
+  cigarette: Sty.Cigarette,
+  'red-flag': Sty.RedFlag,
+  mirror: Sty.Mirror,
+  'baby-bottle': Sty.BabyBottle,
+  'gift-box': Sty.GiftBox,
+  bouquet: Sty.Bouquet,
+  'book-stack': Sty.BookStack,
+  whiteboard: Sty.Whiteboard,
+  'flatline-screen': Sty.FlatlineScreen,
+  door: Sty.Door,
+  'punching-bag': Sty.PunchingBag,
+  'broken-heart': Sty.BrokenHeart,
+  sink: Sty.Sink,
+  megaphone: Sty.Megaphone,
+  'running-shoe': Sty.RunningShoe,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

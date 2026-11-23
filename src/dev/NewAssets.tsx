@@ -8,6 +8,7 @@ import { AbsoluteFill } from 'remotion';
 import { COLORS, CANVAS } from '../lib/style';
 import { fontFamily } from '../lib/fonts';
 import { Stage, Place } from '../scenes/common';
+import { Mascot } from '../assets/mascot/Mascot';
 import { PROPS } from '../assets/props/registry';
 import { StoryScene } from '../scenes/StoryScene';
 import { RoomName } from '../assets/rooms';
@@ -61,6 +62,42 @@ const PropSheet: React.FC<{ title: string; names: string[]; cols: number }> = ({
 };
 
 export const DefensePropsSheet: React.FC = () => <PropSheet title="NEW PROPS — defense mechanisms" names={DEF_PROPS} cols={6} />;
+
+const STORY_PROPS = ['bad-letter', 'magazine-pile', 'cigarette', 'red-flag', 'mirror', 'baby-bottle', 'gift-box', 'bouquet', 'book-stack', 'whiteboard', 'flatline-screen', 'door', 'punching-bag', 'broken-heart', 'sink', 'megaphone', 'running-shoe'];
+export const StoryPropsSheet: React.FC = () => <PropSheet title="NEW PROPS — literal story (remake)" names={STORY_PROPS} cols={6} />;
+
+const NEW_POSES = ['cover-eyes', 'cower', 'cheer', 'facepalm', 'arms-crossed', 'fist-up', 'hands-hips', 'reach-down'];
+/** Pose board — the new action poses on the hoodie mascot + the 'tee' 2nd character. */
+export const PoseBoard: React.FC = () => {
+  const cols = 4;
+  const rows = Math.ceil((NEW_POSES.length + 2) / cols);
+  const cw = CANVAS.width / cols;
+  const ch = (CANVAS.height - HEADER) / rows;
+  const cells: { label: string; costume: any; pose: any; emotion: any }[] = [
+    ...NEW_POSES.map((p) => ({ label: p, costume: 'hoodie' as const, pose: p, emotion: p === 'cheer' ? 'excited' : p === 'cover-eyes' || p === 'cower' ? 'scared' : p === 'fist-up' ? 'annoyed' : 'neutral' })),
+    { label: "tee (2nd char)", costume: 'tee', pose: 'idle', emotion: 'happy-talk' },
+    { label: "suit (authority)", costume: 'suit', pose: 'point-right', emotion: 'annoyed' },
+  ];
+  return (
+    <AbsoluteFill style={{ backgroundColor: COLORS.bgCream }}>
+      <div style={{ position: 'absolute', left: 40, top: 22, fontFamily, fontWeight: 800, fontSize: 40, color: COLORS.outline }}>NEW POSES + 2ND CHARACTER</div>
+      {cells.map((c, i) => {
+        const cx = cw * (i % cols) + cw / 2;
+        const cy = HEADER + ch * Math.floor(i / cols) + (ch - LABEL_BAND) / 2 + 60;
+        return <Mascot key={i} costume={c.costume} pose={c.pose} emotion={c.emotion} x={cx} y={cy} scale={0.62} seed={i + 2} />;
+      })}
+      {cells.map((c, i) => {
+        const cx = cw * (i % cols);
+        const cy = HEADER + ch * Math.floor(i / cols) + ch - LABEL_BAND + 24;
+        return (
+          <div key={i} style={{ position: 'absolute', left: cx, top: cy, width: cw, textAlign: 'center', fontFamily, fontWeight: 700, fontSize: 26, color: COLORS.outline }}>
+            {c.label}
+          </div>
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
 
 export const BiasPropsSheet: React.FC = () => {
   const names = BIAS_PROPS;

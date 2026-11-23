@@ -153,8 +153,8 @@ export const Mascot: React.FC<MascotProps> = ({
     const seated = pose === 'sitting-up-in-bed';
     const armPose: ArmPose = SPECIAL.includes(pose) ? 'idle' : (pose as ArmPose);
     const startled = pose === 'startled';
-    const lean = startled ? -8 : 0;
-    const hatLift = startled ? -10 : 0;
+    const lean = startled ? -8 : pose === 'cower' ? 9 : pose === 'fist-up' ? -6 : 0;
+    const hatLift = startled || pose === 'cower' ? -10 : 0;
     const headTilt = emotion === 'sleepy' ? 8 : 0;
     body = (
       <g transform={`rotate(${lean})`}>
@@ -172,6 +172,18 @@ export const Mascot: React.FC<MascotProps> = ({
         <g transform={`translate(${jitter} ${headBob}) rotate(${headTilt})`}>
           <Head />
           <Face spec={spec} talk={talk} blinking={blinking} frame={frame} fps={fps} look={look} />
+          {/* cover-eyes: hands pressed over the eyes, drawn OVER the face so the
+              "I won't look at this" gesture reads clearly (head occludes raised arms) */}
+          {pose === 'cover-eyes' && (
+            <g>
+              {[-1, 1].map((s) => (
+                <g key={s}>
+                  <ellipse cx={s * 48} cy={-6} rx={34} ry={40} fill={COLORS.skin} {...strokeProps(STROKE.xl)} />
+                  <path d={`M ${s * 48 - 20} -24 l 40 0 M ${s * 48 - 20} -6 l 40 0 M ${s * 48 - 20} 12 l 40 0`} stroke={COLORS.skinShade} strokeWidth={STROKE.sm} strokeLinecap="round" />
+                </g>
+              ))}
+            </g>
+          )}
           {accessory !== 'none' && (
             <g transform={`translate(0 ${hatLift + idleBob(frame - 3, 2, 10)})`}>
               <Accessory variant={accessory} frame={frame} />

@@ -9,7 +9,7 @@ import { SAMPLE_BEATS } from './dev/samples';
 import { MotionReel, MOTION_REEL_FRAMES } from './dev/MotionReel';
 import { JointTest } from './dev/JointTest';
 import { MainVideo, calcVideoMetadata } from './Video';
-import { NewPropsSheet, BiasPropsSheet, DefensePropsSheet, RoomStill } from './dev/NewAssets';
+import { NewPropsSheet, BiasPropsSheet, DefensePropsSheet, StoryPropsSheet, PoseBoard, RoomStill } from './dev/NewAssets';
 import { DiagramCard } from './scenes/DiagramCard';
 import { Thumbnail, THUMBS_BY_SLUG } from './dev/Thumbnail';
 
@@ -58,6 +58,9 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="CardNewProps" component={NewPropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
       <Composition id="CardBiasProps" component={BiasPropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
       <Composition id="CardDefenseProps" component={DefensePropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
+      <Composition id="CardStoryProps" component={StoryPropsSheet} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
+      <Composition id="CardPoseBoard" component={PoseBoard} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} />
+      <Composition id="BeatStill" component={SceneRouter as React.FC} durationInFrames={90} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} defaultProps={{ beat: { vo: '', scene: 'story', room: 'living-room', mascots: [] } } as never} />
       {NEW_ROOMS.map((room) => (
         <Composition key={room} id={`Room-${room}`} component={RoomStill as React.FC} durationInFrames={60} fps={CANVAS.fps} width={CANVAS.width} height={CANVAS.height} defaultProps={{ room } as never} />
       ))}
