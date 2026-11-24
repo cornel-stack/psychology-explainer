@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'prefer-alone': {
+    A: { lines: ['PEOPLE WHO', 'PREFER BEING', 'ALONE'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '9', prop: 'solo-battery' },
+    B: { lines: ['IT’S NOT', 'LONELINESS —', 'IT’S SOLITUDE'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'quiet-bubble' },
+    C: { lines: ['9 SIGNS', 'YOU LOVE', 'YOUR OWN COMPANY'], accent: COLORS.greenLeaf, bg: COLORS.wallNight, emotion: 'happy-talk', textColor: COLORS.white, badge: '9', prop: 'owl-watch' },
+  },
   'logical-fallacies': {
     A: { lines: ['EVERY', 'LOGICAL', 'FALLACY'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '12', prop: 'straw-dummy' },
     B: { lines: ['12 TRICKS', 'THAT FOOL', 'YOUR LOGIC'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'red-herring' },

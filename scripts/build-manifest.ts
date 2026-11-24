@@ -101,6 +101,10 @@ const NEW_ASSETS = new Set([
   'debate-stage', 'courtroom-mind', 'clarity-studio',
   'straw-dummy', 'mud-sling', 'slippery-slide', 'two-doors', 'authority-stamp', 'band-wagon', 'red-herring', 'circle-loop', 'one-to-all', 'heart-tug', 'mirror-back', 'false-link',
   'argument-anatomy', 'attack-argument', 'correlation-causation', 'spot-it-checklist',
+  // prefer-being-alone (all new)
+  'cozy-den', 'forest-path-solo', 'draining-party',
+  'solo-battery', 'deep-roots-pair', 'self-compass', 'inner-garden', 'energy-gate', 'quiet-bubble', 'owl-watch', 'self-anchor', 'recharge-glow',
+  'introvert-battery', 'quality-quantity', 'solitude-vs-loneliness', 'social-budget',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

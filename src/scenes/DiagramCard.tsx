@@ -2364,8 +2364,89 @@ const SpotItChecklist: React.FC = () => {
   );
 };
 
+/** introvert-battery: drains in a crowd, fills back up alone. */
+const IntrovertBattery: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const Batt = ({ x, fill, col, lab }: { x: number; fill: number; col: string; lab: string }) => (
+    <g transform={`translate(${x} ${cy})`}>
+      <rect x={-60} y={-110} width={120} height={220} rx={16} fill={COLORS.white} {...xl} />
+      <rect x={-22} y={-128} width={44} height={20} rx={6} fill={COLORS.outline} />
+      <rect x={-46} y={110 - fill * 200} width={92} height={fill * 200} rx={8} fill={col} />
+      <text x={0} y={160} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{lab}</text>
+    </g>
+  );
+  return (
+    <g>
+      <Batt x={cx - 150} fill={0.2} col={COLORS.red} lab="IN A CROWD" />
+      <Batt x={cx + 150} fill={0.95} col={COLORS.greenLeaf} lab="ALONE" />
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>solitude recharges them</text>
+    </g>
+  );
+};
+
+/** quality-quantity: a few deep bonds vs a scatter of shallow ones. */
+const QualityQuantity: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  return (
+    <g>
+      {/* deep few */}
+      <g transform={`translate(${cx - 180} ${cy})`}>
+        <circle cx={0} cy={0} r={70} fill={COLORS.greenLeaf} {...xl} />
+        <circle cx={0} cy={0} r={46} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} />
+        <circle cx={-120} cy={0} r={46} fill={COLORS.greenTeal} {...lg} />
+        <line x1={-74} y1={0} x2={-46} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.lg} />
+        <text x={-60} y={130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a few, deep</text>
+      </g>
+      {/* shallow many */}
+      <g transform={`translate(${cx + 220} ${cy})`}>
+        {Array.from({ length: 11 }).map((_, i) => { const a = (i / 11) * Math.PI * 2; const r = 90 + (i % 2) * 24; return <circle key={i} cx={Math.cos(a) * r} cy={Math.sin(a) * r} r={16} fill={COLORS.sky} opacity={0.6} {...sm} />; })}
+        <text x={0} y={150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>many, shallow</text>
+      </g>
+      <text x={cx + 20} y={cy + 210} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>they choose the left</text>
+    </g>
+  );
+};
+
+/** solitude-vs-loneliness: same aloneness, two very different feelings. */
+const SolitudeVsLoneliness: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.42;
+  const Face = ({ x, c, happy, lab, sub }: { x: number; c: string; happy: boolean; lab: string; sub: string }) => (
+    <g transform={`translate(${x} ${cy})`}>
+      <circle cx={0} cy={0} r={86} fill={c} {...xl} />
+      <circle cx={-28} cy={-14} r={9} fill={COLORS.outline} /><circle cx={28} cy={-14} r={9} fill={COLORS.outline} />
+      {happy ? <path d="M -28 28 Q 0 54 28 28" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+             : <path d="M -28 40 Q 0 16 28 40" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />}
+      <text x={0} y={132} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>{lab}</text>
+      <text x={0} y={166} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>{sub}</text>
+    </g>
+  );
+  return (
+    <g>
+      <Face x={cx - 150} c={COLORS.greenLeaf} happy lab="SOLITUDE" sub="chosen" />
+      <Face x={cx + 180} c={COLORS.sky} happy={false} lab="LONELINESS" sub="painful" />
+      <text x={cx + 15} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>alone, but not the same</text>
+    </g>
+  );
+};
+
+/** social-budget: a meter of social energy that gets spent and needs refilling. */
+const SocialBudget: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const lvl = 0.5 + 0.4 * Math.sin(frame / 24);
+  return (
+    <g>
+      <rect x={cx - 240} y={cy - 36} width={480} height={72} rx={36} fill={COLORS.white} {...xl} />
+      <rect x={cx - 228} y={cy - 24} width={456 * lvl} height={48} rx={24} fill={lvl > 0.4 ? COLORS.greenLeaf : COLORS.red} />
+      <text x={cx} y={cy - 80} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>SOCIAL BATTERY</text>
+      <text x={cx - 300} y={cy + 110} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>people spend it</text>
+      <text x={cx + 120} y={cy + 110} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>solitude refills it</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2455,6 +2536,10 @@ export const DiagramCard: React.FC<{
     'attack-argument': COLORS.greenLeaf,
     'correlation-causation': COLORS.red,
     'spot-it-checklist': COLORS.yellow,
+    'introvert-battery': COLORS.greenLeaf,
+    'quality-quantity': COLORS.greenTeal,
+    'solitude-vs-loneliness': COLORS.sky,
+    'social-budget': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2551,6 +2636,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'attack-argument' && <AttackArgument />}
         {diagram === 'correlation-causation' && <CorrelationCausation />}
         {diagram === 'spot-it-checklist' && <SpotItChecklist />}
+        {diagram === 'introvert-battery' && <IntrovertBattery />}
+        {diagram === 'quality-quantity' && <QualityQuantity />}
+        {diagram === 'solitude-vs-loneliness' && <SolitudeVsLoneliness />}
+        {diagram === 'social-budget' && <SocialBudget />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

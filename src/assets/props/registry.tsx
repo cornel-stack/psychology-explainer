@@ -27,6 +27,7 @@ import * as Pt from './personalities';
 import * as Cs from './consciousness';
 import * as Pr from './procrastination';
 import * as Fl from './fallacies';
+import * as So from './solitude';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -333,6 +334,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'heart-tug': Fl.HeartTug,
   'mirror-back': Fl.MirrorBack,
   'false-link': Fl.FalseLink,
+  // prefer-being-alone trait props (all new)
+  'solo-battery': So.SoloBattery,
+  'deep-roots-pair': So.DeepRootsPair,
+  'self-compass': So.SelfCompass,
+  'inner-garden': So.InnerGarden,
+  'energy-gate': So.EnergyGate,
+  'quiet-bubble': So.QuietBubble,
+  'owl-watch': So.OwlWatch,
+  'self-anchor': So.SelfAnchor,
+  'recharge-glow': So.RechargeGlow,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

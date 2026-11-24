@@ -85,7 +85,10 @@ export type RoomName =
   | 'fresh-start-desk'
   | 'debate-stage'
   | 'courtroom-mind'
-  | 'clarity-studio';
+  | 'clarity-studio'
+  | 'cozy-den'
+  | 'forest-path-solo'
+  | 'draining-party';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2417,6 +2420,84 @@ export const ClarityStudio: React.FC = () => (
   </g>
 );
 
+/** Cozy den: a warm solo haven — armchair, reading lamp, full bookshelf, tea and
+ *  a sleeping cat. The restorative home of someone who loves their own company. */
+export const CozyDen: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.wood, 0.14)} floor={COLORS.woodDark} floorY={760} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={200} fill={shade(COLORS.wood, 0.08)} />
+    {/* window with warm evening */}
+    <g transform="translate(330 300)"><rect x={-140} y={-170} width={280} height={300} rx={14} fill={shade(COLORS.yellowDark, 0.1)} {...xl} /><circle cx={0} cy={30} r={56} fill={COLORS.yellow} {...sm} /><line x1={-140} y1={-20} x2={140} y2={-20} stroke={shade(COLORS.wood, 0.14)} strokeWidth={STROKE.lg} /><line x1={0} y1={-170} x2={0} y2={130} stroke={shade(COLORS.wood, 0.14)} strokeWidth={STROKE.lg} /></g>
+    {/* bookshelf */}
+    <g transform="translate(1680 440)"><rect x={-130} y={-260} width={260} height={460} rx={10} fill={COLORS.woodDark} {...xl} />{[0, 1, 2, 3].map((r) => <g key={r}><rect x={-112} y={-232 + r * 116} width={224} height={100} fill={shade(COLORS.wood, 0.08)} />{Array.from({ length: 7 }).map((_, c) => <rect key={c} x={-104 + c * 31} y={-226 + r * 116} width={24} height={90} rx={3} fill={[COLORS.red, COLORS.yellow, COLORS.sky, COLORS.greenLeaf, COLORS.lavender, COLORS.pink, COLORS.greenTeal][(r + c) % 7]} {...sm} />)}</g>)}</g>
+    {/* rug */}
+    <ellipse cx={900} cy={880} rx={560} ry={90} fill={COLORS.red} opacity={0.3} />
+    {/* armchair */}
+    <g transform="translate(820 660)">
+      <rect x={-150} y={-40} width={300} height={160} rx={30} fill={COLORS.red} {...xl} />
+      <rect x={-190} y={-20} width={70} height={150} rx={26} fill={shade(COLORS.red, 0.14)} {...lg} />
+      <rect x={120} y={-20} width={70} height={150} rx={26} fill={shade(COLORS.red, 0.14)} {...lg} />
+      <rect x={-120} y={-120} width={240} height={100} rx={26} fill={shade(COLORS.red, 0.08)} {...xl} />
+      <rect x={-70} y={-70} width={90} height={60} rx={14} fill={COLORS.yellowSoft} {...std} />
+    </g>
+    {/* floor lamp */}
+    <g transform="translate(1180 540)"><rect x={-8} y={0} width={16} height={220} fill={COLORS.ledGrey} {...sm} /><path d="M -56 0 L 56 0 L 36 -70 L -36 -70 Z" fill={COLORS.yellow} {...lg} /><ellipse cx={0} cy={240} rx={50} ry={14} fill={COLORS.woodDark} /></g>
+    {/* side table + tea + plant */}
+    <g transform="translate(1080 720)"><rect x={-44} y={0} width={88} height={90} rx={8} fill={COLORS.wood} {...lg} /><g transform="translate(0 -14)"><rect x={-24} y={-20} width={48} height={34} rx={6} fill={COLORS.sky} {...sm} /><path d="M 24 -12 q 16 2 12 16" fill="none" stroke={COLORS.sky} strokeWidth={STROKE.sm} /></g></g>
+    {/* sleeping cat on the rug */}
+    <g transform="translate(560 860)"><ellipse cx={0} cy={0} rx={64} ry={30} fill={shade(COLORS.outline, 0.35)} {...lg} /><circle cx={-50} cy={-8} r={22} fill={shade(COLORS.outline, 0.35)} {...sm} /><path d="M -62 -24 l 6 -14 l 10 10 Z M -40 -24 l 6 -14 l 8 12 Z" fill={shade(COLORS.outline, 0.35)} /><path d="M 58 -6 q 26 -10 18 -30" fill="none" stroke={shade(COLORS.outline, 0.35)} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+  </g>
+);
+
+/** Forest path: a peaceful solitary walk among trees — the quiet recharge of
+ *  being alone in nature. */
+export const ForestPathSolo: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.greenDark} floorY={700} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={240} fill={shade(COLORS.sky, 0.12)} />
+    <circle cx={1560} cy={200} r={80} fill={COLORS.yellowSoft} {...sm} />
+    {/* rolling ground layers */}
+    <path d="M 0 700 Q 480 620 960 700 Q 1440 780 1920 680 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenDark, 0.1)} />
+    {/* the winding path */}
+    <path d="M 860 1080 Q 960 820 900 720 Q 860 660 960 600 L 1040 600 Q 960 680 1010 740 Q 1070 840 1060 1080 Z" fill={shade(COLORS.wood, 0.1)} {...lg} />
+    {/* trees at varying depth */}
+    {([[200, 0.9], [520, 0.7], [1360, 0.8], [1700, 1.0], [700, 0.5], [1180, 0.55]] as [number, number][]).map(([x, s], i) => (
+      <g key={i} transform={`translate(${x} ${700 - s * 40}) scale(${s})`}>
+        <rect x={-24} y={-120} width={48} height={200} rx={10} fill={COLORS.woodDark} {...lg} />
+        <circle cx={0} cy={-170} r={90} fill={shade(COLORS.greenLeaf, -0.04)} {...xl} />
+        <circle cx={-56} cy={-130} r={60} fill={shade(COLORS.greenLeaf, 0.08)} {...lg} />
+        <circle cx={56} cy={-130} r={60} fill={shade(COLORS.greenLeaf, 0.08)} {...lg} />
+      </g>
+    ))}
+    {/* a lone bench */}
+    <g transform="translate(340 780)"><rect x={-70} y={-20} width={140} height={16} rx={4} fill={COLORS.wood} {...lg} /><rect x={-70} y={-70} width={140} height={16} rx={4} fill={COLORS.wood} {...lg} /><rect x={-60} y={-4} width={14} height={50} fill={COLORS.woodDark} /><rect x={46} y={-4} width={14} height={50} fill={COLORS.woodDark} /></g>
+    {/* bushes */}
+    {[1480, 60, 1180].map((x, i) => <g key={i} transform={`translate(${x} 820)`}><circle cx={-24} cy={0} r={34} fill={shade(COLORS.greenLeaf, -0.08)} {...lg} /><circle cx={24} cy={-6} r={40} fill={shade(COLORS.greenLeaf, -0.04)} {...lg} /></g>)}
+  </g>
+);
+
+/** Draining party: a loud, crowded gathering — bright, busy, and exhausting for
+ *  someone who'd rather be home. The contrast room. */
+export const DrainingParty: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.purpleDeep} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.purpleDeep, -0.05)} opacity={0.5} />)}
+    {/* bunting + disco */}
+    {Array.from({ length: 13 }).map((_, i) => <path key={i} d={`M ${i * 160} 0 L ${i * 160 + 80} 60 L ${i * 160 + 160} 0 Z`} fill={[COLORS.red, COLORS.yellow, COLORS.sky, COLORS.greenLeaf, COLORS.pink][i % 5]} {...sm} />)}
+    <g transform="translate(960 180)"><circle r={48} fill={COLORS.lavender} {...lg} />{[0, 45, 90, 135].map((a) => <line key={a} x1={-48} y1={0} x2={48} y2={0} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.5} transform={`rotate(${a})`} />)}</g>
+    {/* confetti */}
+    {Array.from({ length: 24 }).map((_, i) => <rect key={i} x={80 + (i * 83) % 1760} y={260 + (i * 97) % 300} width={14} height={14} rx={3} fill={[COLORS.red, COLORS.yellow, COLORS.sky, COLORS.greenLeaf, COLORS.pink][i % 5]} transform={`rotate(${i * 30} ${88 + (i * 83) % 1760} ${267 + (i * 97) % 300})`} />)}
+    {/* crowd of figures with chatter bubbles */}
+    {([[260, COLORS.yellowSoft], [520, COLORS.sky], [780, COLORS.pink], [1140, COLORS.greenLeaf], [1400, COLORS.lavender], [1660, COLORS.yellowSoft]] as [number, string][]).map(([x, c], i) => (
+      <g key={i} transform={`translate(${x} 840)`}>
+        <circle cx={0} cy={-70} r={46} fill={c} {...xl} /><circle cx={-16} cy={-76} r={6} fill={COLORS.outline} /><circle cx={16} cy={-76} r={6} fill={COLORS.outline} />
+        <path d={`M -56 90 Q 0 -10 56 90 Z`} fill={shade(c, 0.1)} {...xl} />
+        <g transform="translate(40 -120)"><rect x={-26} y={-20} width={52} height={34} rx={8} fill={COLORS.white} {...sm} /><circle cx={-10} cy={-3} r={3} fill={COLORS.outline} /><circle cx={2} cy={-3} r={3} fill={COLORS.outline} /><circle cx={14} cy={-3} r={3} fill={COLORS.outline} /></g>
+      </g>
+    ))}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2487,6 +2568,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'debate-stage': DebateStage,
   'courtroom-mind': CourtroomMind,
   'clarity-studio': ClarityStudio,
+  'cozy-den': CozyDen,
+  'forest-path-solo': ForestPathSolo,
+  'draining-party': DrainingParty,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
