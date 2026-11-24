@@ -28,6 +28,7 @@ import * as Cs from './consciousness';
 import * as Pr from './procrastination';
 import * as Fl from './fallacies';
 import * as So from './solitude';
+import * as In from './intelligences';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -344,6 +345,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'owl-watch': So.OwlWatch,
   'self-anchor': So.SelfAnchor,
   'recharge-glow': So.RechargeGlow,
+  // types-of-intelligence emblems (all new)
+  'word-quill': In.WordQuill,
+  'logic-numbers': In.LogicNumbers,
+  'spatial-cube': In.SpatialCube,
+  'music-emblem': In.MusicEmblem,
+  'body-motion': In.BodyMotion,
+  'people-link': In.PeopleLink,
+  'inner-lantern': In.InnerLantern,
+  'nature-leaf': In.NatureLeaf,
+  'big-question': In.BigQuestion,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

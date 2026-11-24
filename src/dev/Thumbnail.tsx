@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'types-of-intelligence': {
+    A: { lines: ['EVERY TYPE', 'OF', 'INTELLIGENCE'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '9', prop: 'logic-numbers' },
+    B: { lines: ['9 KINDS', 'OF SMART', '(WHICH ARE YOU?)'], accent: COLORS.pink, bg: COLORS.blueDiagram, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'music-emblem' },
+    C: { lines: ['SMART IS', 'NOT ONE', 'THING'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'spatial-cube' },
+  },
   'prefer-alone': {
     A: { lines: ['PEOPLE WHO', 'PREFER BEING', 'ALONE'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '9', prop: 'solo-battery' },
     B: { lines: ['IT’S NOT', 'LONELINESS —', 'IT’S SOLITUDE'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'quiet-bubble' },

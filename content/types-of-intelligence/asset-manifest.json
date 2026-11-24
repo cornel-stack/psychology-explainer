@@ -1,0 +1,300 @@
+{
+  "slug": "types-of-intelligence",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 9,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        15,
+        21,
+        24,
+        30
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        9,
+        36
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        12,
+        18,
+        21,
+        27
+      ]
+    },
+    {
+      "name": "intelligence-wheel",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "not-one-number",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "spiky-profile",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        33
+      ]
+    },
+    {
+      "name": "strength-finder",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        35
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        30
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        15,
+        18
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        5,
+        6,
+        12,
+        15,
+        21,
+        27,
+        33,
+        35,
+        36,
+        39,
+        40
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        13,
+        16,
+        19,
+        22,
+        24,
+        25,
+        28,
+        31,
+        34,
+        37,
+        38
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "fist-up",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        9,
+        12,
+        15,
+        21,
+        24,
+        27,
+        30
+      ]
+    },
+    {
+      "name": "big-question",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        30,
+        31,
+        37
+      ]
+    },
+    {
+      "name": "body-motion",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "inner-lantern",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24,
+        25,
+        39
+      ]
+    },
+    {
+      "name": "logic-numbers",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "music-emblem",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        16
+      ]
+    },
+    {
+      "name": "nature-leaf",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27,
+        28
+      ]
+    },
+    {
+      "name": "people-link",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "spatial-cube",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "word-quill",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "creative-studio",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        12,
+        15,
+        18
+      ]
+    },
+    {
+      "name": "mind-gallery",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        6,
+        9,
+        21,
+        36
+      ]
+    },
+    {
+      "name": "open-nature",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        24,
+        27,
+        30
+      ]
+    }
+  ]
+}

@@ -105,6 +105,10 @@ const NEW_ASSETS = new Set([
   'cozy-den', 'forest-path-solo', 'draining-party',
   'solo-battery', 'deep-roots-pair', 'self-compass', 'inner-garden', 'energy-gate', 'quiet-bubble', 'owl-watch', 'self-anchor', 'recharge-glow',
   'introvert-battery', 'quality-quantity', 'solitude-vs-loneliness', 'social-budget',
+  // types-of-intelligence (all new)
+  'mind-gallery', 'creative-studio', 'open-nature',
+  'word-quill', 'logic-numbers', 'spatial-cube', 'music-emblem', 'body-motion', 'people-link', 'inner-lantern', 'nature-leaf', 'big-question',
+  'intelligence-wheel', 'not-one-number', 'spiky-profile', 'strength-finder',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

@@ -1,0 +1,138 @@
+{
+  "title": "Every Type of Intelligence Explained",
+  "slug": "types-of-intelligence",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Think of the person you'd call the smartest you know. Now think of someone who can fix any engine, calm any crying baby, or walk into a forest and name every single bird. Are they not also, somehow, brilliant? For a hundred years we've crammed intelligence into one narrow box. It was always far too small.", "scene": "story", "room": "mind-gallery", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY TYPE OF INTELLIGENCE", "subtitle": "smart is not one thing",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 760, "y": 760, "scale": 1.0, "talking": true } ] },
+        { "vo": "We've been taught that intelligence is a single number, your IQ, the thing a school test measures. But that one score only ever captured a thin slice of what a human mind can actually do. Whole oceans of brilliance were falling straight through the net, uncounted and unseen.", "scene": "diagramCard", "diagram": "not-one-number", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "In 1983, the psychologist Howard Gardner proposed a bigger, kinder idea. That intelligence isn't one thing you have more or less of. It's many different things, a whole wheel of distinct abilities. One mind, many kinds of smart, each with its own kind of genius.", "scene": "diagramCard", "diagram": "intelligence-wheel", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "One honest note up front. Gardner's theory is beloved by teachers, but it's also debated by scientists, some say these are really talents, not separate intelligences. So hold it loosely, as a useful, humane lens, not a hard fact. But the heart of it is undeniable. Smart comes in many shapes.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Nine different types of intelligence. As we go, you'll almost certainly spot the one or two where you quietly shine, maybe ones a classroom never had a test for. Let's find your kind of smart.", "scene": "explainer", "prop": "big-question", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here are the nine kinds of smart we'll explore. Word, logic, picture, music, body, people, self, nature, and meaning. Notice that a typical school really only tests, and rewards, the first two. Which means seven whole kinds of brilliance barely get a mention. Let's give them one.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["WORD", "LOGIC", "PICTURE", "MUSIC", "BODY", "PEOPLE", "SELF", "NATURE", "MEANING"] }
+      ]
+    },
+    {
+      "name": "1 — Linguistic",
+      "beats": [
+        { "vo": "Type one. Linguistic intelligence, or word smart. This is a sensitivity to language, the sound, rhythm and meaning of words, and a gift for using them. The writer, the poet, the lawyer, the person who always finds the perfect phrase, or tells a story that holds the whole room silent.", "scene": "story", "room": "mind-gallery", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "1 — WORD SMART", "subtitle": "linguistic intelligence",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "word-quill", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Word-smart people often think in language. They love reading, wordplay, learning new languages, and debate. It's one of the two kinds of smart our schools adore, so if this is you, you probably already got told you were clever. Hold that thought, because most of the others weren't so lucky.", "scene": "explainer", "prop": "word-quill", "emotion": "serious-expert" },
+        { "vo": "You see it in the friend who texts in perfect little paragraphs, the one who wins every argument not by shouting but by finding exactly the right words. Language is their instrument, and they play it beautifully, shaping how the rest of us see the world.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Logical",
+      "beats": [
+        { "vo": "Type two. Logical-mathematical intelligence, or logic smart. This is the capacity for reasoning, spotting patterns, and working with numbers and abstract ideas. The scientist, the engineer, the coder, the chess player, anyone who loves untangling a knotty problem with pure, step-by-step logic.", "scene": "story", "room": "mind-gallery", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "2 — LOGIC SMART", "subtitle": "logical-mathematical intelligence",
+          "mascots": [ { "costume": "labcoat", "pose": "idle", "emotion": "serious-expert", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "logic-numbers", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "This is the other darling of the school system, and the thing IQ tests lean on most heavily. Logic-smart minds crave systems, proofs, and the satisfying click of a solution. They ask why and how relentlessly, and they're happiest when the messy world finally resolves into a clean, elegant rule.", "scene": "explainer", "prop": "logic-numbers", "emotion": "serious-expert" },
+        { "vo": "Here's the crucial thing, though. These first two, word and logic, are not the whole of intelligence. They're just the two we happened to build an entire education system around. The next seven are every bit as real, and often far more visible out in the actual world.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Spatial",
+      "beats": [
+        { "vo": "Type three. Spatial intelligence, or picture smart. The ability to think in images, to mentally rotate objects, read maps, and see how things fit together in space. The architect, the sculptor, the surgeon, the pilot, the person who can glance at a flat-pack box and just see the finished furniture.", "scene": "story", "room": "creative-studio", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "3 — PICTURE SMART", "subtitle": "spatial intelligence",
+          "mascots": [ { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "spatial-cube", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Picture-smart people navigate the world visually. They doodle to think, remember faces and places easily, and can picture a whole three-dimensional object in their mind and spin it around. It's a kind of genius that a word-based test can barely even see, yet we rely on it everywhere.", "scene": "explainer", "prop": "spatial-cube", "emotion": "serious-expert" },
+        { "vo": "If you were the kid who covered every margin in drawings, or who always knew the way home without a map, this is your quiet superpower. The whole visual world, every building, every film, every design, was dreamed up first inside a picture-smart mind.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Musical",
+      "beats": [
+        { "vo": "Type four. Musical intelligence, or music smart. A deep sensitivity to rhythm, pitch, melody and tone. Obviously the musician and the composer, but also anyone who gets a song stuck in their head instantly, taps out rhythms without thinking, or just feels music in their body more than most.", "scene": "story", "room": "creative-studio", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "4 — MUSIC SMART", "subtitle": "musical intelligence",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "music-emblem", "x": 1400, "y": 420, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Gardner pointed out that musical ability appears incredibly early, and lights up its own distinct regions of the brain, which is a big part of why he counted it as a true intelligence rather than just a hobby. Rhythm and pitch are their own language, as structured and complex as any other.", "scene": "explainer", "prop": "music-emblem", "emotion": "serious-expert" },
+        { "vo": "You know this person. They hear a song once and can hum it perfectly. They feel when a room is out of tune. Music isn't decoration for them, it's a way of understanding the world, patterns in sound the rest of us only half-hear.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Bodily",
+      "beats": [
+        { "vo": "Type five. Bodily-kinesthetic intelligence, or body smart. The genius of physical control, using your body with precision, grace and skill. The dancer, the athlete, the surgeon's steady hands, the craftsperson, the person who learns anything far faster by actually doing it than by reading about it.", "scene": "story", "room": "creative-studio", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "5 — BODY SMART", "subtitle": "bodily-kinesthetic intelligence",
+          "mascots": [ { "costume": "tee", "pose": "fist-up", "emotion": "excited", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "body-motion", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "We badly underrate this one, often sticking the body and the mind in separate boxes. But the coordination of a gymnast, or the touch of a master carpenter, is pure intelligence, just expressed through muscle and motion instead of words. The body, it turns out, is extraordinarily clever.", "scene": "explainer", "prop": "body-motion", "emotion": "serious-expert" },
+        { "vo": "If you fidgeted through every lesson, learn best with your hands, and think more clearly while walking, your intelligence simply lives in motion. In a world obsessed with sitting still and writing things down, that brilliance is far too easily, and unfairly, overlooked.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Interpersonal",
+      "beats": [
+        { "vo": "Type six. Interpersonal intelligence, or people smart. The ability to read, understand, and connect with other people, their moods, motivations and feelings. The great teacher, the therapist, the leader, the friend who always seems to know exactly what to say, and when to just stay quiet.", "scene": "story", "room": "mind-gallery", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "6 — PEOPLE SMART", "subtitle": "interpersonal intelligence",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 760, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "people-link", "x": 980, "y": 460, "scale": 0.45, "appearAt": 8 } ] },
+        { "vo": "People-smart individuals pick up on tiny social signals the rest of us miss, a flicker of hurt, an unspoken tension. They build trust easily and soothe conflict naturally. In a world that runs entirely on relationships, this may be one of the most powerful kinds of intelligence of all.", "scene": "explainer", "prop": "people-link", "emotion": "serious-expert" },
+        { "vo": "No test at school ever graded you on this. But the person who can walk into a tense room and gently change its whole temperature is doing something genuinely sophisticated. Reading people well is a skill as deep and real as reading any book.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Intrapersonal",
+      "beats": [
+        { "vo": "Type seven. Intrapersonal intelligence, or self smart. The quieter twin of people smart. This is deep self-knowledge, an accurate understanding of your own emotions, values, strengths and limits. Knowing why you feel what you feel, and what you actually, truly want.", "scene": "story", "room": "open-nature", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "7 — SELF SMART", "subtitle": "intrapersonal intelligence",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 740, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "inner-lantern", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It's the intelligence behind wisdom, good decisions, and emotional stability. Self-smart people reflect deeply, set goals that genuinely fit them, and aren't easily knocked off course, because they carry a steady, honest inner compass. They know themselves, and they trust what they know.", "scene": "explainer", "prop": "inner-lantern", "emotion": "serious-expert" },
+        { "vo": "It's invisible from the outside, and no exam will ever score it. But the person who truly understands themselves has an enormous, quiet advantage in life. They chase the right goals, avoid the wrong people, and rarely betray themselves to please a crowd.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Naturalistic",
+      "beats": [
+        { "vo": "Type eight. Naturalistic intelligence, or nature smart. The ability to recognise, understand and categorise the living world, plants, animals, weather, landscapes. The naturalist, the gardener, the farmer, the chef who knows every ingredient, the person utterly at home and alert out in the wild.", "scene": "story", "room": "open-nature", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "8 — NATURE SMART", "subtitle": "naturalistic intelligence",
+          "mascots": [ { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 740, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "nature-leaf", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "For almost all of human history, this intelligence was a matter of life and death, knowing which berry heals and which one kills, reading the sky for a coming storm, tracking the herd. It's an ancient, finely-tuned sensitivity to the patterns of the natural world, and some people still have it in abundance.", "scene": "explainer", "prop": "nature-leaf", "emotion": "serious-expert" },
+        { "vo": "Today you see it in the person who names every tree on the walk, keeps every plant alive, or just feels calm and clear-headed the moment they step outside. They're reading a language written in leaves and weather, one our city lives have mostly made us forget.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "9 — Existential",
+      "beats": [
+        { "vo": "And type nine, the newest and most debated. Existential intelligence, or meaning smart. A tendency to grapple with the very biggest questions. Why are we here? What happens when we die? What does any of this actually mean? The philosopher, the deep theologian, the quiet child who asks questions that stop adults cold.", "scene": "story", "room": "open-nature", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "9 — MEANING SMART", "subtitle": "existential intelligence",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 740, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "big-question", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Gardner himself has been cautious about this one, calling it only a candidate intelligence. But many of us know the type instantly. The person who isn't satisfied with how things work, and always needs to understand why they exist at all. The ones who look up at the stars and feel the enormous, dizzying questions.", "scene": "explainer", "prop": "big-question", "emotion": "serious-expert" },
+        { "vo": "They can seem like dreamers, lost in thought. But grappling with meaning is how humans have produced philosophy, religion, art, and our deepest sense of purpose. The drive to ask why we're here may be one of the most profoundly human intelligences of them all.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Your Spiky Profile",
+      "beats": [
+        { "vo": "Now, here's the part that changes how you see everyone. Nobody has just one of these. You have all nine, each turned up to a different level, like a sound mixing board. Together they make your profile, and crucially, that profile is spiky. Tall in some places, short in others.", "scene": "diagramCard", "diagram": "spiky-profile", "emotion": "happy-talk", "withMascot": true },
+        { "vo": "This is the whole point. There's no such thing as a smart person and a dumb person, just different shapes. The kid who failed every maths test might have towering people smarts and body smarts. We just never built a classroom that could see them. Everyone is a genius at something.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Find and Grow Yours",
+      "beats": [
+        { "vo": "So how do you use all this? First, find your spikes. Think back over your life, not to your grades, but to the moments you lost all track of time, learned something frighteningly fast, or felt completely and effortlessly yourself. Those moments are pointing straight at your strongest intelligences.", "scene": "diagramCard", "diagram": "strength-finder", "emotion": "happy-talk", "withMascot": true },
+        { "vo": "Then, lean in. Build your life, your work, your hobbies, around your tall spikes, not your short ones. The world tells us to grind endlessly on our weaknesses. But you'll go far further, and be far happier, pouring your energy into the kinds of smart where you already shine.", "scene": "story", "room": "mind-gallery", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "FIND YOUR SPIKES", "subtitle": "and build on them",
+          "mascots": [ { "costume": "labcoat", "pose": "arms-out-presenting", "emotion": "happy-talk", "x": 760, "y": 760, "scale": 1.0, "talking": true } ] },
+        { "vo": "And one last, important caveat. This does not mean you must only ever be taught in your style, that popular learning styles idea actually isn't supported by the evidence, and Gardner himself rejects it. The point isn't a magic teaching method. It's simply this. Your mind is broad, and you are smart in more ways than you were ever told.", "scene": "explainer", "prop": "big-question", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So if you ever sat in a classroom feeling slow, or stupid, or like you just didn't fit, please hear this. There is a very good chance you were simply brilliant in a way that particular room had no test for. Your intelligence was real. It just didn't happen to be one of the only two they were grading.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Intelligence was never a single ladder, with you stuck on some rung. It's a wide, bright landscape, and every one of us is standing tall somewhere on it. The real task of a life isn't to be smart. It's to find where your particular genius lives, and then go all in on it.", "scene": "explainer", "prop": "inner-lantern", "emotion": "happy-talk" },
+        { "vo": "Tell me in the comments which kinds of smart are your tallest spikes. I'd genuinely love to see the beautiful range of this audience. Thank you, as always, for thinking this through with me. I'm Dear Brain. Go be brilliant, in your own particular way.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

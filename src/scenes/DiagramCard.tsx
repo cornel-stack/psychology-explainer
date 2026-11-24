@@ -2445,8 +2445,89 @@ const SocialBudget: React.FC = () => {
   );
 };
 
+/** intelligence-wheel: one mind, many spokes of intelligence. */
+const IntelligenceWheel: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.57; const cy = CANVAS.height * 0.46; const R = 190;
+  const cols = [COLORS.sky, COLORS.blueDiagram, COLORS.lavender, COLORS.pink, COLORS.red, COLORS.yellowDark, COLORS.greenTeal, COLORS.greenLeaf, COLORS.purpleDeep];
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} opacity={0.3} strokeDasharray="4 10" />
+      {cols.map((c, i) => {
+        const a = -Math.PI / 2 + (i / cols.length) * Math.PI * 2;
+        const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R;
+        const p = springIn(frame - i * 4, 10);
+        return <g key={i}><line x1={cx} y1={cy} x2={x} y2={y} stroke={shade(c, -0.05)} strokeWidth={STROKE.sm} opacity={0.5} /><g transform={`translate(${x} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}><circle r={42} fill={c} {...lg} /></g></g>;
+      })}
+      <circle cx={cx} cy={cy} r={58} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>YOU</text>
+      <text x={cx} y={cy + R + 96} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>smart is not one thing</text>
+    </g>
+  );
+};
+
+/** not-one-number: a single IQ score crossed out beside a rainbow of abilities. */
+const NotOneNumber: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const bars = [COLORS.sky, COLORS.pink, COLORS.red, COLORS.yellowDark, COLORS.greenLeaf, COLORS.purpleDeep];
+  return (
+    <g>
+      <g transform={`translate(${cx - 230} ${cy})`} opacity={0.6}>
+        <rect x={-90} y={-50} width={180} height={100} rx={12} fill={COLORS.white} {...xl} />
+        <text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.outline}>IQ</text>
+        <line x1={-96} y1={-56} x2={96} y2={56} stroke={COLORS.red} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        <text x={0} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>one number</text>
+      </g>
+      <g transform={`translate(${cx + 170} ${cy})`}>
+        {bars.map((c, i) => { const h = 50 + ((i * 37) % 90); const p = springIn(frame - i * 5, 10); return <rect key={i} x={-150 + i * 52} y={40 - h * p} width={40} height={h * p} rx={6} fill={c} {...lg} />; })}
+        <text x={-20} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>many kinds</text>
+      </g>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>a test can't catch all of it</text>
+    </g>
+  );
+};
+
+/** spiky-profile: two people, two very different shapes of strength. */
+const SpikyProfile: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const profile = (vals: number[], col: string, ox: number) => (
+    <g transform={`translate(${ox} 0)`}>
+      {vals.map((v, i) => { const p = springIn(frame - i * 4, 10); return <rect key={i} x={cx - 150 + i * 44} y={cy - v * p} width={30} height={v * p} rx={5} fill={col} {...sm} />; })}
+    </g>
+  );
+  return (
+    <g>
+      {profile([40, 120, 60, 150, 70, 100], COLORS.sky, -16)}
+      {profile([130, 50, 140, 40, 110, 60], COLORS.red, 16)}
+      <text x={cx} y={cy + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>everyone's shape is different</text>
+      <text x={cx} y={cy - 190} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>your spiky profile</text>
+    </g>
+  );
+};
+
+/** strength-finder: spotlight your top few and grow them. */
+const StrengthFinder: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const vals = [60, 150, 70, 130, 50, 90];
+  const cols = [COLORS.sky, COLORS.yellow, COLORS.pink, COLORS.greenLeaf, COLORS.lavender, COLORS.red];
+  const top = [1, 3];
+  return (
+    <g>
+      {vals.map((v, i) => {
+        const p = springIn(frame - i * 4, 10); const isTop = top.includes(i);
+        return <g key={i}>{isTop && <circle cx={cx - 140 + i * 50} cy={cy - v - 24} r={16} fill={COLORS.yellow} opacity={0.5 + 0.4 * Math.sin(frame / 6)} />}<rect x={cx - 160 + i * 50} y={cy - v * p} width={36} height={v * p} rx={6} fill={cols[i]} {...(isTop ? lg : sm)} opacity={isTop ? 1 : 0.55} /></g>;
+      })}
+      <line x1={cx - 170} y1={cy} x2={cx + 150} y2={cy} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={cx} y={cy + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>find your spikes, then grow them</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2540,6 +2621,10 @@ export const DiagramCard: React.FC<{
     'quality-quantity': COLORS.greenTeal,
     'solitude-vs-loneliness': COLORS.sky,
     'social-budget': COLORS.greenLeaf,
+    'intelligence-wheel': COLORS.lavender,
+    'not-one-number': COLORS.sky,
+    'spiky-profile': COLORS.yellow,
+    'strength-finder': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2640,6 +2725,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'quality-quantity' && <QualityQuantity />}
         {diagram === 'solitude-vs-loneliness' && <SolitudeVsLoneliness />}
         {diagram === 'social-budget' && <SocialBudget />}
+        {diagram === 'intelligence-wheel' && <IntelligenceWheel />}
+        {diagram === 'not-one-number' && <NotOneNumber />}
+        {diagram === 'spiky-profile' && <SpikyProfile />}
+        {diagram === 'strength-finder' && <StrengthFinder />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

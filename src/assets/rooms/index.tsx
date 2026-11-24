@@ -88,7 +88,10 @@ export type RoomName =
   | 'clarity-studio'
   | 'cozy-den'
   | 'forest-path-solo'
-  | 'draining-party';
+  | 'draining-party'
+  | 'mind-gallery'
+  | 'creative-studio'
+  | 'open-nature';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2498,6 +2501,79 @@ export const DrainingParty: React.FC = () => (
   </g>
 );
 
+/** Mind gallery: a museum of minds — arched alcoves, plinths and spotlights, each
+ *  celebrating a different kind of intelligence. */
+export const MindGallery: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.lavender, 0.06)} />
+    {/* arched alcoves with colour swatches */}
+    {([[300, COLORS.sky], [700, COLORS.pink], [1220, COLORS.greenLeaf], [1620, COLORS.yellowDark]] as [number, string][]).map(([x, c], i) => (
+      <g key={i} transform={`translate(${x} 330)`}>
+        <path d="M -130 180 L -130 -40 Q -130 -180 0 -180 Q 130 -180 130 -40 L 130 180 Z" fill={shade(COLORS.lavender, 0.1)} {...lg} />
+        <path d="M -96 180 L -96 -40 Q -96 -150 0 -150 Q 96 -150 96 -40 L 96 180 Z" fill={shade(c, 0.1)} {...sm} />
+        <circle cx={0} cy={-20} r={44} fill={c} {...lg} />
+      </g>
+    ))}
+    {/* spotlights */}
+    {[500, 960, 1420].map((x, i) => <g key={i}><path d={`M ${x} 0 L ${x - 70} 420 L ${x + 70} 420 Z`} fill={COLORS.yellowSoft} opacity={0.14} /></g>)}
+    {/* row of plinths */}
+    {[500, 960, 1420].map((x, i) => (
+      <g key={i} transform={`translate(${x} 720)`}>
+        <rect x={-70} y={0} width={140} height={150} rx={6} fill={COLORS.ledGrey} {...xl} />
+        <rect x={-86} y={-16} width={172} height={28} rx={6} fill={shade(COLORS.ledGrey, 0.14)} {...lg} />
+        <circle cx={0} cy={-56} r={34} fill={[COLORS.red, COLORS.blueDiagram, COLORS.greenTeal][i]} {...lg} />
+      </g>
+    ))}
+    {/* banner */}
+    <g transform="translate(960 150)"><rect x={-200} y={-50} width={400} height={100} rx={14} fill={COLORS.purpleDeep} {...xl} /><text x={0} y={14} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={44} fill={COLORS.white}>MANY MINDS</text></g>
+  </g>
+);
+
+/** Creative studio: a maker's space for the hands-on intelligences — an easel, a
+ *  keyboard, instruments and sculpture. */
+export const CreativeStudio: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCreamDark} floor={COLORS.wood} floorY={820} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.bgCreamDark, 0.05)} opacity={0.6} />)}
+    {/* easel with a painting */}
+    <g transform="translate(360 520)">
+      <rect x={-90} y={-180} width={180} height={200} rx={8} fill={COLORS.white} {...xl} />
+      <circle cx={-30} cy={-120} r={30} fill={COLORS.yellow} {...sm} /><path d="M -80 10 L -20 -70 L 40 10 Z" fill={COLORS.greenLeaf} {...sm} />
+      <path d="M -70 20 L -40 300 M 70 20 L 40 300 M 0 10 L 0 300" stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" />
+    </g>
+    {/* keyboard */}
+    <g transform="translate(960 700)"><rect x={-150} y={0} width={300} height={70} rx={8} fill={shade(COLORS.outline, 0.3)} {...xl} />{Array.from({ length: 11 }).map((_, i) => <rect key={i} x={-140 + i * 26} y={8} width={22} height={54} rx={3} fill={COLORS.white} stroke={COLORS.outline} strokeWidth={STROKE.sm} />)}{Array.from({ length: 10 }).map((_, i) => <rect key={i} x={-128 + i * 26} y={8} width={12} height={32} fill={COLORS.outline} />)}<rect x={-150} y={70} width={30} height={120} fill={COLORS.woodDark} /><rect x={120} y={70} width={30} height={120} fill={COLORS.woodDark} /></g>
+    {/* guitar on wall */}
+    <g transform="translate(1600 360) rotate(16)"><ellipse cx={0} cy={60} rx={70} ry={86} fill={COLORS.red} {...xl} /><circle cx={0} cy={50} r={22} fill={COLORS.woodDark} /><rect x={-10} y={-170} width={20} height={160} rx={6} fill={COLORS.woodDark} {...lg} /></g>
+    {/* a small sculpture bust */}
+    <g transform="translate(1300 720)"><rect x={-50} y={40} width={100} height={60} rx={6} fill={COLORS.ledGrey} {...lg} /><circle cx={0} cy={0} r={40} fill={COLORS.whiteShade} {...xl} /><path d="M -40 40 Q 0 -10 40 40 Z" fill={COLORS.whiteShade} {...lg} /></g>
+  </g>
+);
+
+/** Open nature: a wide outdoor scene at dusk — hills, a tree, a pond, a telescope
+ *  and the first stars, for the naturalistic and existential minds. */
+export const OpenNature: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.08)} floor={COLORS.greenDark} floorY={720} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.purpleDeep, 0.0)} opacity={0.5} />
+    {/* dusk gradient + stars */}
+    <circle cx={1560} cy={220} r={70} fill={COLORS.yellowSoft} {...sm} />
+    {Array.from({ length: 16 }).map((_, i) => <path key={i} d={`M ${120 + (i * 113) % 1700} ${80 + (i * 61) % 240} l 2 5 l 5 2 l -5 2 l -2 5 l -2 -5 l -5 -2 l 5 -2 Z`} fill={COLORS.white} opacity={0.8} />)}
+    {/* rolling hills */}
+    <path d="M 0 720 Q 420 620 900 720 Q 1400 800 1920 680 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenDark, 0.08)} />
+    {/* a big tree */}
+    <g transform="translate(360 660)"><rect x={-30} y={-120} width={60} height={240} rx={12} fill={COLORS.woodDark} {...xl} /><circle cx={0} cy={-180} r={110} fill={shade(COLORS.greenLeaf, -0.06)} {...xl} /><circle cx={-70} cy={-140} r={70} fill={shade(COLORS.greenLeaf, 0.06)} {...lg} /><circle cx={70} cy={-140} r={70} fill={shade(COLORS.greenLeaf, 0.06)} {...lg} /></g>
+    {/* pond */}
+    <ellipse cx={760} cy={960} rx={280} ry={70} fill={COLORS.sky} opacity={0.6} {...lg} />
+    {/* telescope */}
+    <g transform="translate(1340 760) rotate(-32)"><rect x={-30} y={-18} width={200} height={56} rx={20} fill={COLORS.navy} {...xl} /><rect x={160} y={-26} width={42} height={72} rx={10} fill={shade(COLORS.navy, 0.2)} {...lg} /></g>
+    <path d="M 1300 820 L 1420 820 L 1400 700 L 1320 700 Z" fill={COLORS.woodDark} {...lg} />
+    {/* bushes */}
+    {[1660, 980].map((x, i) => <g key={i} transform={`translate(${x} 860)`}><circle cx={-24} cy={0} r={34} fill={shade(COLORS.greenLeaf, -0.08)} {...lg} /><circle cx={24} cy={-6} r={40} fill={shade(COLORS.greenLeaf, -0.04)} {...lg} /></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2571,6 +2647,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'cozy-den': CozyDen,
   'forest-path-solo': ForestPathSolo,
   'draining-party': DrainingParty,
+  'mind-gallery': MindGallery,
+  'creative-studio': CreativeStudio,
+  'open-nature': OpenNature,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
