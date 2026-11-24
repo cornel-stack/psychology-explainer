@@ -22,9 +22,9 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 14 | Signs Someone Is Secretly Jealous of You | `jealousy-signs` | 8:01 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45278710843 | ✅ delivered |
 | 15 | Every Mental Complex Explained | `mental-complexes` | 13:01 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45283604889 | ✅ delivered |
 | 16 | Every Personality Type Explained | `personality-types` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45474110932 | ✅ render OK |
-| 17 | Every Level of Consciousness Explained | `levels-of-consciousness` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45491496663 | ⏳ re-render (10-15min) |
-| 18 | Why Your Brain Procrastinates | `procrastination-brain` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45491504280 | ⏳ re-render (10-15min) |
-| 19 | Every Logical Fallacy Explained | `logical-fallacies` | ~14 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45491510635 | ⏳ re-render (10-15min) |
+| 17 | Every Level of Consciousness Explained | `levels-of-consciousness` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45491496663 | ✅ render OK (10-15min) |
+| 18 | Why Your Brain Procrastinates | `procrastination-brain` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45491504280 | ✅ render OK (10-15min) |
+| 19 | Every Logical Fallacy Explained | `logical-fallacies` | ~14 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45491510635 | ✅ render OK (10-15min) |
 | 20 | The Psychology of People Who Prefer Being Alone | `prefer-alone` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45488052419 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. From #20 on, videos are sized to 10–15 min._
