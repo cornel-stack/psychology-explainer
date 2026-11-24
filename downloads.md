@@ -24,6 +24,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 16 | Every Personality Type Explained | `personality-types` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45474110932 | ✅ render OK |
 | 17 | Every Level of Consciousness Explained | `levels-of-consciousness` | ~8 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45476457063 | ✅ render OK |
 | 18 | Why Your Brain Procrastinates | `procrastination-brain` | ~6 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45480198287 | ✅ render OK |
-| 19 | Every Logical Fallacy Explained | `logical-fallacies` | ~8 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45483514154 | ⏳ rendering |
+| 19 | Every Logical Fallacy Explained | `logical-fallacies` | ~8 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45483514154 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Now continuing into the broader catalogue._
