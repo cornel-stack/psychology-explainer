@@ -27,6 +27,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 19 | Every Logical Fallacy Explained | `logical-fallacies` | ~14 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45491510635 | ✅ render OK (10-15min) |
 | 20 | The Psychology of People Who Prefer Being Alone | `prefer-alone` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45488052419 | ✅ render OK |
 | 21 | Every Type of Intelligence Explained | `types-of-intelligence` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45496271928 | ✅ render OK |
-| 22 | Every Cognitive Distortion Explained | `cognitive-distortions` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45501592167 | ⏳ rendering |
+| 22 | Every Cognitive Distortion Explained | `cognitive-distortions` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45501592167 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
