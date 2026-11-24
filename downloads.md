@@ -29,5 +29,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 21 | Every Type of Intelligence Explained | `types-of-intelligence` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45496271928 | ✅ render OK |
 | 22 | Every Cognitive Distortion Explained | `cognitive-distortions` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45501592167 | ✅ render OK |
 | 23 | Every Emotion Explained | `basic-emotions` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45506343773 | ✅ render OK |
+| 24 | Every Type of Love Explained | `types-of-love` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45510382101 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
