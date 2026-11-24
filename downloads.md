@@ -22,6 +22,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 14 | Signs Someone Is Secretly Jealous of You | `jealousy-signs` | 8:01 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45278710843 | ✅ delivered |
 | 15 | Every Mental Complex Explained | `mental-complexes` | 13:01 | https://github.com/cornel-stack/psychology-explainer/actions/runs/45283604889 | ✅ delivered |
 | 16 | Every Personality Type Explained | `personality-types` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45474110932 | ✅ render OK |
-| 17 | Every Level of Consciousness Explained | `levels-of-consciousness` | ~8 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45476457063 | ⏳ rendering |
+| 17 | Every Level of Consciousness Explained | `levels-of-consciousness` | ~8 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45476457063 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Now continuing into the broader catalogue._
