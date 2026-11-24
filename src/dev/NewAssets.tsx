@@ -235,6 +235,9 @@ const ROOM_DEMO: Record<string, { pose: any; emotion: any; props?: any[] }> = {
   'procrastination-desk': { pose: 'facepalm', emotion: 'annoyed', props: [{ name: 'now-gremlin', x: 1340, y: 420, scale: 0.55 }] },
   'deadline-cliff': { pose: 'cower', emotion: 'scared', props: [{ name: 'deadline-beast', x: 1300, y: 460, scale: 0.55 }] },
   'fresh-start-desk': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'two-min-timer', x: 1340, y: 420, scale: 0.55 }] },
+  'debate-stage': { pose: 'point-right', emotion: 'annoyed', props: [{ name: 'straw-dummy', x: 1340, y: 440, scale: 0.55 }] },
+  'courtroom-mind': { pose: 'arms-crossed', emotion: 'serious-expert', props: [{ name: 'authority-stamp', x: 1340, y: 440, scale: 0.5 }] },
+  'clarity-studio': { pose: 'arms-out-presenting', emotion: 'happy-talk', props: [{ name: 'circle-loop', x: 1360, y: 440, scale: 0.5 }] },
 };
 
 export const RoomStill: React.FC<{ room: RoomName }> = ({ room }) => {

@@ -97,6 +97,10 @@ const NEW_ASSETS = new Set([
   'procrastination-desk', 'deadline-cliff', 'fresh-start-desk',
   'dread-doc', 'now-gremlin', 'future-self-ghost', 'relief-bubble', 'deadline-beast', 'scroll-trap', 'shame-fog', 'two-min-timer', 'kind-note',
   'present-vs-future', 'limbic-vs-cortex', 'avoidance-loop', 'do-it-ladder',
+  // logical-fallacies (all new)
+  'debate-stage', 'courtroom-mind', 'clarity-studio',
+  'straw-dummy', 'mud-sling', 'slippery-slide', 'two-doors', 'authority-stamp', 'band-wagon', 'red-herring', 'circle-loop', 'one-to-all', 'heart-tug', 'mirror-back', 'false-link',
+  'argument-anatomy', 'attack-argument', 'correlation-causation', 'spot-it-checklist',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

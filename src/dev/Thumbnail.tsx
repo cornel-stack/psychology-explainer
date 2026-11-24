@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'logical-fallacies': {
+    A: { lines: ['EVERY', 'LOGICAL', 'FALLACY'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '12', prop: 'straw-dummy' },
+    B: { lines: ['12 TRICKS', 'THAT FOOL', 'YOUR LOGIC'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'red-herring' },
+    C: { lines: ['SPOT THE', 'FLAW IN ANY', 'ARGUMENT'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '?', prop: 'two-doors' },
+  },
   'procrastination-brain': {
     A: { lines: ['WHY YOU', 'PROCRASTINATE', '(IT’S NOT LAZINESS)'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'now-gremlin' },
     B: { lines: ['THE REAL', 'REASON YOU', 'PUT IT OFF'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'scared', textColor: COLORS.white, badge: '?', prop: 'deadline-beast' },

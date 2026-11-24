@@ -2274,8 +2274,98 @@ const DoItLadder: React.FC = () => {
   );
 };
 
+/** argument-anatomy: a claim held up by evidence and reasoning. */
+const ArgumentAnatomy: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.3;
+  return (
+    <g>
+      <g transform={`translate(${cx} ${cy}) scale(${springIn(frame, 10)})`} style={{ transformOrigin: 'center' }}>
+        <rect x={-150} y={-44} width={300} height={88} rx={12} fill={COLORS.sky} {...xl} />
+        <text x={0} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>CLAIM</text>
+      </g>
+      {([['EVIDENCE', -180, COLORS.greenLeaf], ['REASONING', 180, COLORS.yellow]] as [string, number, string][]).map(([lab, dx, col], i) => (
+        <g key={lab}>
+          <line x1={cx + dx} y1={cy + 200} x2={cx + dx * 0.3} y2={cy + 60} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+          <path d={`M ${cx + dx * 0.3} ${cy + 60} l -12 24 l 24 0 Z`} fill={COLORS.outline} />
+          <g transform={`translate(${cx + dx} ${cy + 240}) scale(${springIn(frame - 10 - i * 6, 10)})`} style={{ transformOrigin: 'center' }}>
+            <rect x={-140} y={-44} width={280} height={88} rx={12} fill={col} {...xl} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{lab}</text>
+          </g>
+        </g>
+      ))}
+      <text x={cx} y={cy + 400} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>knock out a leg, the claim falls</text>
+    </g>
+  );
+};
+
+/** attack-argument: play the ball (the argument), not the player (the person). */
+const AttackArgument: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  return (
+    <g>
+      {/* the player (person) — crossed out */}
+      <g transform={`translate(${cx - 170} ${cy})`} opacity={0.55}>
+        <circle cx={0} cy={-40} r={40} fill={COLORS.white} {...lg} />
+        <circle cx={-14} cy={-46} r={6} fill={COLORS.outline} /><circle cx={14} cy={-46} r={6} fill={COLORS.outline} />
+        <path d={`M -36 56 Q 0 -4 36 56 Z`} fill={shade(COLORS.white, 0.1)} {...xl} />
+        <line x1={-56} y1={-96} x2={56} y2={72} stroke={COLORS.red} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        <text x={0} y={104} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>the person</text>
+      </g>
+      {/* the ball (argument) — the real target */}
+      <g transform={`translate(${cx + 170} ${cy})`}>
+        <circle cx={0} cy={0} r={70} fill={COLORS.greenLeaf} {...xl} />
+        <path d="M -70 0 h 140 M 0 -70 v 140" stroke={COLORS.outline} strokeWidth={STROKE.sm} opacity={0.5} />
+        <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>ARGUMENT</text>
+      </g>
+      <text x={cx} y={cy + 180} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>play the ball, not the player</text>
+    </g>
+  );
+};
+
+/** correlation-causation: two lines rise together, but one didn't cause the other. */
+const CorrelationCausation: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.42;
+  const pts = (off: number) => Array.from({ length: 40 }).map((_, i) => `${cx - 260 + i * 13} ${cy + 60 - i * 3 + off + Math.sin(i / 3) * 14}`).join(' ');
+  return (
+    <g>
+      <polyline points={pts(0)} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <polyline points={pts(50)} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <g transform={`translate(${cx} ${cy + 180})`}>
+        <circle r={52} fill={COLORS.white} {...xl} />
+        <text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={54} fill={COLORS.red}>≠</text>
+      </g>
+      <text x={cx} y={cy + 290} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>moving together isn't causing</text>
+    </g>
+  );
+};
+
+/** spot-it-checklist: quick red-flags that a fallacy is afoot. */
+const SpotItChecklist: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.24;
+  const items = ['Attacking the person?', 'Only two options?', 'Tugging emotions?', 'Dodging the point?'];
+  return (
+    <g>
+      <rect x={cx - 280} y={cy - 40} width={560} height={420} rx={16} fill={COLORS.white} {...xl} />
+      {items.map((t, i) => {
+        const p = springIn(frame - i * 10, 12);
+        const y = cy + 40 + i * 86;
+        return (
+          <g key={t} opacity={p}>
+            <rect x={cx - 240} y={y - 30} width={44} height={44} rx={8} fill={COLORS.greenLeaf} {...lg} />
+            <path d={`M ${cx - 232} ${y - 8} l 12 12 l 20 -26`} fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+            <text x={cx - 170} y={y} fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>{t}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 430} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>if yes — pause and check</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2361,6 +2451,10 @@ export const DiagramCard: React.FC<{
     'limbic-vs-cortex': COLORS.red,
     'avoidance-loop': COLORS.sky,
     'do-it-ladder': COLORS.greenLeaf,
+    'argument-anatomy': COLORS.sky,
+    'attack-argument': COLORS.greenLeaf,
+    'correlation-causation': COLORS.red,
+    'spot-it-checklist': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2453,6 +2547,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'limbic-vs-cortex' && <LimbicVsCortex />}
         {diagram === 'avoidance-loop' && <AvoidanceLoop />}
         {diagram === 'do-it-ladder' && <DoItLadder />}
+        {diagram === 'argument-anatomy' && <ArgumentAnatomy />}
+        {diagram === 'attack-argument' && <AttackArgument />}
+        {diagram === 'correlation-causation' && <CorrelationCausation />}
+        {diagram === 'spot-it-checklist' && <SpotItChecklist />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

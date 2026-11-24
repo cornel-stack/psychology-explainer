@@ -1,0 +1,137 @@
+{
+  "title": "Every Logical Fallacy Explained",
+  "slug": "logical-fallacies",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Every single day, you're being argued with. By the news, by adverts, by that one relative at dinner, by your own anxious thoughts at 2 AM. And a huge amount of it is quietly, cleverly, wrong. Not lying exactly, but broken, flawed reasoning dressed up to look convincing. These are logical fallacies.", "scene": "story", "room": "debate-stage", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY LOGICAL FALLACY", "subtitle": "the tricks that fool your logic",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 760, "scale": 0.95, "talking": true }, { "costume": "suit", "pose": "point-left", "emotion": "smug", "x": 1360, "y": 760, "scale": 0.95, "flip": true, "lookDir": "left" } ] },
+        { "vo": "First, what even is an argument? Not a shouting match. A claim, held up by legs of evidence and reasoning. A good argument stands because its legs are solid. A fallacy is a sneaky way to make a claim look like it's standing, when really, it has no legs at all.", "scene": "diagramCard", "diagram": "argument-anatomy", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Welcome to Dear Brain. Twelve of the most common logical fallacies, the ones hiding in your feed, your arguments, and your own head. Learn to spot them, and you'll never see a debate the same way again. And gently, you'll catch yourself using them too. Let's go.", "scene": "explainer", "prop": "red-herring", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here's our rogues' gallery. Twelve ways an argument can trick you. Some attack the wrong target, some offer fake choices, some just tug at your heart until you stop thinking. See how many you recognise from the last conversation you had online.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["STRAWMAN", "AD HOMINEM", "SLIPPERY SLOPE", "FALSE DILEMMA", "AUTHORITY", "BANDWAGON", "RED HERRING", "CIRCULAR", "HASTY GENERAL.", "EMOTION", "TU QUOQUE", "FALSE CAUSE"] }
+      ]
+    },
+    {
+      "name": "1 — Strawman",
+      "beats": [
+        { "vo": "Number one, and the most common of all. The strawman. Instead of arguing against what someone actually said, you swap it for a weaker, sillier version, a man made of straw, then triumphantly knock that down. I think we should fund more parks. Oh, so you want to bankrupt the whole country?", "scene": "story", "room": "debate-stage", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "1 — THE STRAWMAN", "subtitle": "attacking a fake version",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 560, "y": 760, "scale": 0.95, "talking": true }, { "costume": "suit", "pose": "fist-up", "emotion": "smug", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "straw-dummy", "x": 1020, "y": 480, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It feels like a win, but you never touched their real point. The giveaway, if someone's argument suddenly sounds absurd and extreme, check whether that's really what they said, or a stuffed dummy they built just to burn. Argue with the real thing, not the straw.", "scene": "explainer", "prop": "straw-dummy", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "2 — Ad Hominem",
+      "beats": [
+        { "vo": "Number two. The ad hominem, Latin for, to the person. When you can't beat the argument, you attack the arguer instead. Well, of course you'd say that, you didn't even go to college. Notice it dodges the point entirely, and just slings mud at the human holding it.", "scene": "story", "room": "debate-stage", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "2 — AD HOMINEM", "subtitle": "attack the person, not the point",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 560, "y": 760, "scale": 0.95, "talking": true }, { "costume": "suit", "pose": "point-right", "emotion": "annoyed", "x": 1360, "y": 760, "scale": 0.95, "flip": true, "lookDir": "right" } ],
+          "props": [ { "name": "mud-sling", "x": 1020, "y": 480, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Here's the rule that beats it. In any argument, play the ball, not the player. The ball is the idea, which can be true or false on its own. Who's holding it, whether you like them, whether they're a hypocrite, is completely beside the point.", "scene": "diagramCard", "diagram": "attack-argument", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "3 — Slippery Slope",
+      "beats": [
+        { "vo": "Number three. The slippery slope. The claim that one small, reasonable step must inevitably trigger a chain reaction, sliding all the way down to disaster. If we let students redo one test, next they'll expect to redo everything, and soon no one will ever learn anything, ever.", "scene": "story", "room": "debate-stage", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "3 — SLIPPERY SLOPE", "subtitle": "one step to catastrophe",
+          "mascots": [ { "costume": "hoodie", "pose": "startled", "emotion": "scared", "x": 560, "y": 760, "scale": 0.95, "talking": true }, { "costume": "suit", "pose": "idle", "emotion": "smug", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "slippery-slide", "x": 1020, "y": 480, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Each step down the slope needs its own proof, and usually there isn't any. The chain just assumes the worst at every link. One small, sensible change does not automatically doom us to the bottom of the hill. Ask, is each step here actually likely, or just scary?", "scene": "explainer", "prop": "slippery-slide", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "4 — False Dilemma",
+      "beats": [
+        { "vo": "Number four. The false dilemma. You're handed just two options, usually one terrible and one they want, when in reality there are many more. You're either with us, or you're against us. Love it or leave it. The whole trick is quietly hiding every other door in the room.", "scene": "story", "room": "courtroom-mind", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "4 — FALSE DILEMMA", "subtitle": "only two choices?",
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 560, "y": 780, "scale": 0.95, "talking": true }, { "costume": "suit", "pose": "hands-hips", "emotion": "smug", "x": 1360, "y": 780, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "two-doors", "x": 1020, "y": 500, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Real life almost always has a third door, and a fourth, and a maybe. Whenever someone forces you to pick between only two extremes, pause and ask, is that genuinely all there is? Or are they just not showing me the rest of the options?", "scene": "explainer", "prop": "two-doors", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "5 — Appeal to Authority",
+      "beats": [
+        { "vo": "Number five. The appeal to authority. Treating something as true just because an important-sounding person said it. A celebrity endorses a supplement. A confident voice says, trust me, I'm a doctor, about something far outside their actual field. The crown does the arguing.", "scene": "story", "room": "courtroom-mind", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "5 — APPEAL TO AUTHORITY", "subtitle": "'because they said so'",
+          "mascots": [ { "costume": "suit", "pose": "arms-crossed", "emotion": "smug", "x": 560, "y": 780, "scale": 0.95, "talking": true, "accessory": "halo" }, { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 1360, "y": 780, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "authority-stamp", "x": 1020, "y": 500, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "One fair caveat. Trusting a real expert, in their real field, is sensible, not a fallacy. The flaw is when authority replaces evidence, or the expert is talking outside their lane. Ask, are they actually qualified on this, and what's the evidence, not just, who said it?", "scene": "explainer", "prop": "authority-stamp", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "6 — Bandwagon",
+      "beats": [
+        { "vo": "Number six. The bandwagon. It must be true, because everybody believes it. Everyone's buying this, so it has to be good. Millions of people can't all be wrong. It feels safe to follow the crowd, so this one slips past us constantly.", "scene": "story", "room": "debate-stage", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "6 — THE BANDWAGON", "subtitle": "'everyone thinks so'",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 560, "y": 760, "scale": 0.95, "talking": true }, { "costume": "tee", "pose": "cheer", "emotion": "excited", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "band-wagon", "x": 1020, "y": 480, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But popularity is not proof. Huge numbers of people have believed completely false things throughout history. How many people agree tells you what's fashionable, not what's true. The real question is never, who else believes this, but simply, what's the actual evidence?", "scene": "explainer", "prop": "band-wagon", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "7 — Red Herring",
+      "beats": [
+        { "vo": "Number seven. The red herring. A distraction, something irrelevant dragged across the trail to pull you off the scent. You ask a politician about rising prices, and suddenly they're passionately talking about the flag. The original question quietly vanishes.", "scene": "story", "room": "courtroom-mind", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "7 — THE RED HERRING", "subtitle": "a shiny distraction",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 780, "scale": 0.95, "talking": true }, { "costume": "suit", "pose": "point-right", "emotion": "smug", "x": 1360, "y": 780, "scale": 0.95, "flip": true, "lookDir": "right" } ],
+          "props": [ { "name": "red-herring", "x": 1020, "y": 500, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "The red herring wins by changing the subject so smoothly you forget what you were asking. The defence is simple but powerful. Just notice the swerve, and gently steer back. That's interesting, but it doesn't answer my question. So, back to the prices.", "scene": "explainer", "prop": "red-herring", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "8 — Circular Reasoning",
+      "beats": [
+        { "vo": "Number eight. Circular reasoning. The argument that quietly assumes the very thing it's trying to prove, going round and round. This rule is correct because it's the rule. He's trustworthy because he says he's trustworthy. The conclusion is just hiding inside the premise.", "scene": "story", "room": "debate-stage", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "8 — CIRCULAR REASONING", "subtitle": "true because it's true",
+          "mascots": [ { "costume": "suit", "pose": "idle", "emotion": "smug", "x": 560, "y": 760, "scale": 0.95, "talking": true }, { "costume": "hoodie", "pose": "facepalm", "emotion": "annoyed", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "circle-loop", "x": 1020, "y": 480, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It sounds like a reason, but it never actually leaves the starting point. No independent evidence ever enters the loop. To break it, ask, but how do we know that first part is true? If the only answer circles straight back to the conclusion, you've found the trap.", "scene": "explainer", "prop": "circle-loop", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "9 — Hasty Generalisation",
+      "beats": [
+        { "vo": "Number nine. The hasty generalisation. Taking one or two examples and stamping them onto everyone. I met two rude people from that city, so everyone there is rude. My grandad smoked and lived to ninety, so smoking's clearly fine. A tiny sample, treated as the whole truth.", "scene": "story", "room": "debate-stage", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "9 — HASTY GENERALISATION", "subtitle": "one example, big conclusion",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "annoyed", "x": 560, "y": 760, "scale": 0.95, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "one-to-all", "x": 1120, "y": 480, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "A few vivid cases feel convincing, but they're not enough to support a sweeping rule. It's the engine behind a lot of stereotypes. The fix is to ask, how big and fair is this sample, really? A couple of stories is an anecdote, not evidence about everyone.", "scene": "explainer", "prop": "one-to-all", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "10 — Appeal to Emotion",
+      "beats": [
+        { "vo": "Number ten. The appeal to emotion. Skipping logic entirely and going straight for your feelings, fear, pity, pride, outrage, to win you over. Think of the children. If you really cared, you'd agree. The goal is to make you feel so much that you stop thinking.", "scene": "story", "room": "courtroom-mind", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "10 — APPEAL TO EMOTION", "subtitle": "feelings instead of reasons",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 560, "y": 780, "scale": 0.95, "talking": true }, { "costume": "suit", "pose": "reach-down", "emotion": "happy-talk", "x": 1360, "y": 780, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "heart-tug", "x": 1020, "y": 500, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "To be fair, emotions aren't the enemy. The best causes should move us. The fallacy is when feeling is used instead of a reason, not alongside one. So when a message floods you with emotion, pause and ask, underneath all this feeling, is there actually an argument here?", "scene": "explainer", "prop": "heart-tug", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "11 — Tu Quoque",
+      "beats": [
+        { "vo": "Number eleven. The tu quoque, or, you too. Deflecting a criticism by flinging it straight back, instead of answering it. A parent says, you really shouldn't smoke. The teen fires back, well, you smoke! Which may be true, but it does absolutely nothing to make smoking good for them.", "scene": "story", "room": "debate-stage", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "11 — TU QUOQUE", "subtitle": "'well, you do it too!'",
+          "mascots": [ { "costume": "suit", "pose": "point-right", "emotion": "annoyed", "x": 560, "y": 760, "scale": 0.95, "talking": true, "lookDir": "right" }, { "costume": "hoodie", "pose": "arms-crossed", "emotion": "smug", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "mirror-back", "x": 1020, "y": 480, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Pointing out hypocrisy can feel like a knockout blow, but it's a dodge. Whether the other person practises what they preach has no bearing on whether their point is correct. A hypocrite can still be completely right. Answer the argument, not the messenger's track record.", "scene": "explainer", "prop": "mirror-back", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "12 — False Cause",
+      "beats": [
+        { "vo": "Number twelve. The false cause. Seeing two things happen together, and assuming one must have caused the other. The rooster crows, then the sun rises, so the rooster must summon the dawn. I wore my lucky socks, and we won, so the socks did it. Correlation, mistaken for cause.", "scene": "story", "room": "courtroom-mind", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "12 — FALSE CAUSE", "subtitle": "correlation isn't cause",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 560, "y": 780, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "false-link", "x": 1120, "y": 500, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Two things can rise and fall together for all sorts of reasons. Pure coincidence, or some third hidden cause driving both. Just because B follows A does not mean A caused B. Before you connect the dots, always ask, could this just be a coincidence, or something else entirely?", "scene": "diagramCard", "diagram": "correlation-causation", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "Your Shield",
+      "beats": [
+        { "vo": "So how do you armour yourself against all twelve? You don't need to memorise Latin names. You just need a few quick red flags. When an argument feels off, run this little checklist, and the trick usually jumps right out at you.", "scene": "diagramCard", "diagram": "spot-it-checklist", "emotion": "happy-talk", "withMascot": true },
+        { "vo": "And one last, humble note. Spotting a fallacy means the argument was weak, not that the conclusion is automatically false. Even a terribly argued point can happen to be true. So use this gently. Not to win fights, but to think more clearly, and to argue a little more honestly yourself. I'm Dear Brain. Go forth and reason well.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    }
+  ]
+}

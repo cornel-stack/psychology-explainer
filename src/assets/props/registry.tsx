@@ -26,6 +26,7 @@ import * as Cx from './complexes';
 import * as Pt from './personalities';
 import * as Cs from './consciousness';
 import * as Pr from './procrastination';
+import * as Fl from './fallacies';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -319,6 +320,19 @@ export const PROPS: Record<string, React.FC<any>> = {
   'shame-fog': Pr.ShameFog,
   'two-min-timer': Pr.TwoMinTimer,
   'kind-note': Pr.KindNote,
+  // logical-fallacies emblems (all new)
+  'straw-dummy': Fl.StrawDummy,
+  'mud-sling': Fl.MudSling,
+  'slippery-slide': Fl.SlipperySlide,
+  'two-doors': Fl.TwoDoors,
+  'authority-stamp': Fl.AuthorityStamp,
+  'band-wagon': Fl.BandWagon,
+  'red-herring': Fl.RedHerring,
+  'circle-loop': Fl.CircleLoop,
+  'one-to-all': Fl.OneToAll,
+  'heart-tug': Fl.HeartTug,
+  'mirror-back': Fl.MirrorBack,
+  'false-link': Fl.FalseLink,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

@@ -82,7 +82,10 @@ export type RoomName =
   | 'clarity-summit'
   | 'procrastination-desk'
   | 'deadline-cliff'
-  | 'fresh-start-desk';
+  | 'fresh-start-desk'
+  | 'debate-stage'
+  | 'courtroom-mind'
+  | 'clarity-studio';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2345,6 +2348,75 @@ export const FreshStartDesk: React.FC = () => (
   </g>
 );
 
+/** Debate stage: two podiums facing off under lights, a scoreboard and a dim
+ *  audience — where arguments (and fallacies) are thrown. */
+export const DebateStage: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.purpleDeep} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.purpleDeep, -0.05)} opacity={0.5} />)}
+    {/* stage lights */}
+    {[360, 960, 1560].map((x, i) => <g key={i}><line x1={x} y1={0} x2={x} y2={60} {...sm} /><path d={`M ${x - 40} 60 L ${x + 40} 60 L ${x + 24} 100 L ${x - 24} 100 Z`} fill={COLORS.yellowDark} {...lg} /><path d={`M ${x} 100 L ${x - 160} 560 L ${x + 160} 560 Z`} fill={COLORS.yellowSoft} opacity={0.12} /></g>)}
+    {/* scoreboard */}
+    <g transform="translate(960 230)"><rect x={-150} y={-70} width={300} height={130} rx={14} fill={shade(COLORS.outline, 0.3)} {...xl} /><text x={0} y={18} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={60} fill={COLORS.ledGreen}>VS</text></g>
+    {/* two podiums */}
+    {[560, 1360].map((x, i) => (
+      <g key={i} transform={`translate(${x} 700)`}>
+        <rect x={-90} y={0} width={180} height={150} rx={10} fill={[COLORS.red, COLORS.blueDiagram][i]} {...xl} />
+        <rect x={-104} y={-18} width={208} height={30} rx={8} fill={shade([COLORS.red, COLORS.blueDiagram][i], 0.14)} {...lg} />
+        <rect x={-30} y={-80} width={60} height={70} rx={8} fill={COLORS.white} {...sm} />
+      </g>
+    ))}
+    {/* audience silhouettes */}
+    {Array.from({ length: 12 }).map((_, i) => <circle key={i} cx={120 + i * 150} cy={1010} r={54} fill={shade(COLORS.woodDark, -0.12)} {...lg} />)}
+  </g>
+);
+
+/** Courtroom of the mind: judge's bench, scales of justice and wood panelling —
+ *  where a claim stands trial. */
+export const CourtroomMind: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wood} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {Array.from({ length: 8 }).map((_, i) => <rect key={i} x={80 + i * 230} y={60} width={180} height={420} rx={10} fill={shade(COLORS.wood, -0.06)} {...sm} />)}
+    {/* scales of justice */}
+    <g transform="translate(960 250)">
+      <line x1={0} y1={-60} x2={0} y2={60} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <line x1={-120} y1={-50} x2={120} y2={-50} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      {[-120, 120].map((x, i) => <g key={i}><line x1={x} y1={-50} x2={x} y2={-4} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d={`M ${x - 36} -4 a 36 20 0 0 0 72 0 Z`} fill={COLORS.yellow} {...lg} /></g>)}
+      <circle cx={0} cy={-64} r={10} fill={COLORS.yellowDark} {...sm} />
+    </g>
+    {/* judge's bench */}
+    <g transform="translate(960 760)">
+      <rect x={-260} y={-60} width={520} height={200} rx={12} fill={shade(COLORS.woodDark, 0.08)} {...xl} />
+      <rect x={-200} y={-30} width={400} height={60} rx={8} fill={shade(COLORS.wood, 0.1)} {...sm} />
+      {/* gavel */}
+      <g transform="translate(150 -74) rotate(-20)"><rect x={-10} y={-10} width={20} height={70} rx={6} fill={COLORS.woodDark} {...sm} /><rect x={-30} y={-34} width={60} height={34} rx={8} fill={shade(COLORS.wood, 0.12)} {...lg} /></g>
+    </g>
+    {/* witness box */}
+    <g transform="translate(300 780)"><rect x={-80} y={-40} width={160} height={160} rx={10} fill={COLORS.wood} {...xl} /><rect x={-60} y={-24} width={120} height={40} rx={6} fill={shade(COLORS.wood, 0.12)} /></g>
+  </g>
+);
+
+/** Clarity studio: a clean thinking space with a tidy argument on the whiteboard —
+ *  where good reasoning gets built. */
+export const ClarityStudio: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCream} floor={COLORS.wood} floorY={800} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={240} fill={shade(COLORS.bgCream, -0.04)} />
+    {/* whiteboard with a clean argument */}
+    <g transform="translate(560 300)">
+      <rect x={-300} y={-180} width={600} height={360} rx={14} fill={COLORS.white} {...xl} />
+      <rect x={-200} y={-130} width={400} height={50} rx={10} fill={COLORS.sky} {...sm} />
+      <text x={0} y={-96} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.outline}>CLAIM</text>
+      {[-150, 0, 150].map((x, i) => <g key={i}><line x1={0} y1={-80} x2={x} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><rect x={x - 70} y={0} width={140} height={44} rx={8} fill={[COLORS.greenLeaf, COLORS.yellow, COLORS.lavender][i]} {...sm} /></g>)}
+      <text x={0} y={120} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={22} fill={COLORS.outline}>reasons &amp; evidence</text>
+    </g>
+    {/* desk + plant + lamp */}
+    <rect x={0} y={760} width={CANVAS.width} height={40} fill={shade(COLORS.wood, 0.12)} {...lg} />
+    <g transform="translate(1500 680)"><path d="M -40 10 L 40 10 L 30 70 L -30 70 Z" fill={COLORS.red} {...lg} />{[-24, 0, 24].map((lx) => <path key={lx} d={`M ${lx} 10 q ${lx} -70 ${lx * 0.4} -130`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+    <g transform="translate(1180 700)"><rect x={-12} y={-80} width={24} height={100} rx={6} fill={COLORS.ledGrey} {...lg} /><path d="M -50 -80 L 50 -80 L 30 -120 L -30 -120 Z" fill={COLORS.yellowDark} {...lg} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2412,6 +2484,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'procrastination-desk': ProcrastinationDesk,
   'deadline-cliff': DeadlineCliff,
   'fresh-start-desk': FreshStartDesk,
+  'debate-stage': DebateStage,
+  'courtroom-mind': CourtroomMind,
+  'clarity-studio': ClarityStudio,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
