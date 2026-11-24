@@ -1,0 +1,270 @@
+{
+  "slug": "procrastination-brain",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 9,
+    "NEW": 19
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        3,
+        5,
+        9,
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "avoidance-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "do-it-ladder",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "limbic-vs-cortex",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "present-vs-future",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        2,
+        9,
+        16,
+        19,
+        20
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        4,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        15,
+        17,
+        18
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        9,
+        14
+      ]
+    },
+    {
+      "name": "terrified",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        3,
+        12,
+        14
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5,
+        9,
+        16
+      ]
+    },
+    {
+      "name": "deadline-beast",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "dread-doc",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "future-self-ghost",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "kind-note",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16,
+        19
+      ]
+    },
+    {
+      "name": "now-gremlin",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        0,
+        2,
+        8
+      ]
+    },
+    {
+      "name": "relief-bubble",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "scroll-trap",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "shame-fog",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        15
+      ]
+    },
+    {
+      "name": "two-min-timer",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "deadline-cliff",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "fresh-start-desk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "procrastination-desk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        3,
+        5,
+        9,
+        14
+      ]
+    }
+  ]
+}

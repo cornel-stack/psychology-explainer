@@ -93,6 +93,10 @@ const NEW_ASSETS = new Set([
   'awareness-shaft', 'the-deep', 'flow-river', 'clarity-summit',
   'dormant-orb', 'dream-spiral', 'autopilot-wind', 'radar-ping', 'self-mirror', 'meta-lens', 'flow-current', 'open-sky', 'dimmer-switch', 'veil-figure',
   'awareness-ladder', 'mind-floors', 'flow-channel', 'spectrum-line',
+  // why-your-brain-procrastinates (all new)
+  'procrastination-desk', 'deadline-cliff', 'fresh-start-desk',
+  'dread-doc', 'now-gremlin', 'future-self-ghost', 'relief-bubble', 'deadline-beast', 'scroll-trap', 'shame-fog', 'two-min-timer', 'kind-note',
+  'present-vs-future', 'limbic-vs-cortex', 'avoidance-loop', 'do-it-ladder',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

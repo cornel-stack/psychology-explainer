@@ -2185,8 +2185,97 @@ const SpectrumLine: React.FC = () => {
   );
 };
 
+/** present-vs-future: a seesaw where the near, vivid NOW outweighs a faint LATER. */
+const PresentVsFuture: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const tilt = -12 + 2 * Math.sin(frame / 20);
+  return (
+    <g>
+      <path d={`M ${cx} ${cy} l -60 120 l 120 0 Z`} fill={COLORS.wood} {...xl} />
+      <g transform={`translate(${cx} ${cy}) rotate(${tilt})`}>
+        <rect x={-280} y={-12} width={560} height={24} rx={12} fill={shade(COLORS.wood, 0.12)} {...xl} />
+        <circle cx={-210} cy={-70} r={66} fill={COLORS.yellow} {...xl} />
+        <text x={-210} y={-62} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>NOW</text>
+        <circle cx={210} cy={-40} r={40} fill={COLORS.lavender} opacity={0.7} {...lg} />
+        <text x={210} y={-32} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>LATER</text>
+      </g>
+      <text x={cx} y={cy + 210} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>the near always feels bigger</text>
+    </g>
+  );
+};
+
+/** limbic-vs-cortex: a tug-of-war the impulsive limbic brain usually wins. */
+const LimbicVsCortex: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const pull = -40 + 10 * Math.sin(frame / 10);
+  return (
+    <g>
+      <line x1={cx - 230} y1={cy} x2={cx + 230} y2={cy} stroke={COLORS.wood} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <circle cx={cx + pull} cy={cy} r={12} fill={COLORS.red} {...sm} />
+      <g transform={`translate(${cx - 250} ${cy})`}>
+        <circle r={74} fill={COLORS.red} {...xl} />
+        <text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.white}>LIMBIC</text>
+        <text x={0} y={26} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.white}>"now!"</text>
+      </g>
+      <g transform={`translate(${cx + 250} ${cy})`}>
+        <circle r={74} fill={COLORS.blueDiagram} {...xl} />
+        <text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.white}>CORTEX</text>
+        <text x={0} y={26} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.white}>"later"</text>
+      </g>
+      <text x={cx} y={cy + 190} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={36} fill={COLORS.outline}>an unfair fight</text>
+    </g>
+  );
+};
+
+/** avoidance-loop: task → dread → avoid → relief → (bigger task). */
+const AvoidanceLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44; const R = 150;
+  const nodes: [string, string][] = [['TASK', COLORS.sky], ['DREAD', COLORS.red], ['AVOID', COLORS.yellowDark], ['RELIEF', COLORS.greenLeaf]];
+  const dot = (frame % 120) / 120;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeDasharray="4 16" opacity={0.5} />
+      {nodes.map(([lab, col], i) => {
+        const a = -Math.PI / 2 + (i / 4) * Math.PI * 2;
+        const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R;
+        return <g key={lab} transform={`translate(${x} ${y})`}><circle r={56} fill={col} {...lg} /><text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{lab}</text></g>;
+      })}
+      {(() => { const a = -Math.PI / 2 + dot * Math.PI * 2; return <circle cx={cx + Math.cos(a) * R} cy={cy + Math.sin(a) * R} r={12} fill={COLORS.outline} />; })()}
+      <text x={cx} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>relief</text>
+      <text x={cx} y={cy + 34} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>trains it</text>
+      <text x={cx} y={cy + R + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>the avoidance loop</text>
+    </g>
+  );
+};
+
+/** do-it-ladder: shrink it → two-minute start → momentum. */
+const DoItLadder: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.62;
+  const steps: [string, string][] = [['SHRINK IT', COLORS.sky], ['START 2 MIN', COLORS.greenTeal], ['MOMENTUM', COLORS.greenLeaf]];
+  return (
+    <g>
+      {steps.map(([lab, col], i) => {
+        const p = springIn(frame - i * 8, 12);
+        const x = cx - 220 + i * 200; const y = cy - i * 130;
+        return (
+          <g key={lab} transform={`translate(${x} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <rect x={-96} y={-40} width={192} height={80} rx={12} fill={col} {...xl} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{lab}</text>
+            {i < 2 && <path d={`M 100 -20 l 70 -70`} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>small beats the monster</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2268,6 +2357,10 @@ export const DiagramCard: React.FC<{
     'mind-floors': COLORS.sky,
     'flow-channel': COLORS.greenLeaf,
     'spectrum-line': COLORS.yellow,
+    'present-vs-future': COLORS.yellow,
+    'limbic-vs-cortex': COLORS.red,
+    'avoidance-loop': COLORS.sky,
+    'do-it-ladder': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2356,6 +2449,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'mind-floors' && <MindFloors />}
         {diagram === 'flow-channel' && <FlowChannel />}
         {diagram === 'spectrum-line' && <SpectrumLine />}
+        {diagram === 'present-vs-future' && <PresentVsFuture />}
+        {diagram === 'limbic-vs-cortex' && <LimbicVsCortex />}
+        {diagram === 'avoidance-loop' && <AvoidanceLoop />}
+        {diagram === 'do-it-ladder' && <DoItLadder />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

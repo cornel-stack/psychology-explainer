@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'procrastination-brain': {
+    A: { lines: ['WHY YOU', 'PROCRASTINATE', '(IT’S NOT LAZINESS)'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'now-gremlin' },
+    B: { lines: ['THE REAL', 'REASON YOU', 'PUT IT OFF'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'scared', textColor: COLORS.white, badge: '?', prop: 'deadline-beast' },
+    C: { lines: ['HOW TO', 'FINALLY', 'JUST START'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '!', prop: 'two-min-timer' },
+  },
   'levels-of-consciousness': {
     A: { lines: ['EVERY LEVEL', 'OF', 'CONSCIOUSNESS'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '8', prop: 'open-sky' },
     B: { lines: ['HOW', 'AWAKE ARE', 'YOU REALLY?'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'dream-spiral' },

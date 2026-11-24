@@ -25,6 +25,7 @@ import * as Jl from './jealousy';
 import * as Cx from './complexes';
 import * as Pt from './personalities';
 import * as Cs from './consciousness';
+import * as Pr from './procrastination';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -308,6 +309,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'open-sky': Cs.OpenSky,
   'dimmer-switch': Cs.DimmerSwitch,
   'veil-figure': Cs.VeilFigure,
+  // why-your-brain-procrastinates props (all new)
+  'dread-doc': Pr.DreadDoc,
+  'now-gremlin': Pr.NowGremlin,
+  'future-self-ghost': Pr.FutureSelfGhost,
+  'relief-bubble': Pr.ReliefBubble,
+  'deadline-beast': Pr.DeadlineBeast,
+  'scroll-trap': Pr.ScrollTrap,
+  'shame-fog': Pr.ShameFog,
+  'two-min-timer': Pr.TwoMinTimer,
+  'kind-note': Pr.KindNote,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

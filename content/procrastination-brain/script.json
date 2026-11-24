@@ -1,0 +1,86 @@
+{
+  "title": "Why Your Brain Procrastinates",
+  "slug": "procrastination-brain",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "You know exactly what you need to do. It's important. The deadline is real. And yet here you are, suddenly reorganising a drawer, deep in your phone, making a third coffee. Doing absolutely anything except the one thing that actually matters. So what is your brain playing at?", "scene": "story", "room": "procrastination-desk", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "WHY YOUR BRAIN PROCRASTINATES", "subtitle": "it's not what you think",
+          "mascots": [ { "costume": "hoodie", "pose": "facepalm", "emotion": "annoyed", "x": 720, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "now-gremlin", "x": 1300, "y": 430, "scale": 0.5, "appearAt": 8 } ] },
+        { "vo": "Here's the first surprise, backed by the research. Procrastination has almost nothing to do with laziness, or poor time management. Chronic procrastinators often work incredibly hard, just on the wrong things. It's not a character flaw. It's your brain, trying to protect you.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Today, why your brain puts things off, even when you desperately don't want it to. The hidden emotional logic underneath, the unfair fight inside your head, and exactly how to finally break the spell. Let's get into it.", "scene": "explainer", "prop": "now-gremlin", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "1 — Not Laziness, Feeling",
+      "beats": [
+        { "vo": "So if it isn't laziness, what is it? The modern answer from psychology is clear. Procrastination is not a time-management problem. It's an emotion-management problem. You're not avoiding the task. You're avoiding a feeling the task gives you.", "scene": "story", "room": "procrastination-desk", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "IT'S ABOUT A FEELING", "subtitle": "not laziness, emotion",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 720, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "dread-doc", "x": 1280, "y": 440, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Boredom. Anxiety. Self-doubt. The fear it won't be good enough. The task stirs up something uncomfortable, and avoiding it makes that bad feeling vanish, instantly. The more a task makes you squirm, boring, hard, or scary, the more powerfully your brain wants to flee it.", "scene": "explainer", "prop": "dread-doc", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "2 — Present vs Future Self",
+      "beats": [
+        { "vo": "To understand why fleeing wins, meet the two versions of you. There's present you, who has to feel the discomfort right now. And future you, who'll have to deal with the consequences later. The trouble is, these two can barely feel each other.", "scene": "story", "room": "procrastination-desk", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "PRESENT YOU vs FUTURE YOU", "subtitle": "a tug across time",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 620, "y": 760, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "sleepy", "x": 1360, "y": 760, "scale": 0.9, "flip": true } ],
+          "props": [ { "name": "future-self-ghost", "x": 1360, "y": 430, "scale": 0.45, "appearAt": 8 } ] },
+        { "vo": "Your brain steeply discounts the future. A reward or a cost that's far away feels faint and unreal, while anything happening right now feels huge. So present you grabs the immediate relief, and hands the bill to future you, who always seems like a vague stranger.", "scene": "diagramCard", "diagram": "present-vs-future", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "3 — The Brain Battle",
+      "beats": [
+        { "vo": "Zoom in, and this plays out as a genuine battle between two brain systems. On one side, the limbic system, old, emotional, impulsive, screaming for comfort right now. On the other, the prefrontal cortex, your calm, far-sighted planner, quietly pointing at your goals.", "scene": "diagramCard", "diagram": "limbic-vs-cortex", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "It's an unfair fight. The limbic system is powerful, ancient, and lightning fast, while your thoughtful planner is slower and tires easily, especially when you're stressed or depleted. So that impulsive little voice, give me fun, right now, usually gets the first word.", "scene": "explainer", "prop": "now-gremlin", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "4 — The Relief Trap",
+      "beats": [
+        { "vo": "Now here's the cruel twist that locks it all in place. The moment you give up and avoid the task, you feel a rush of sweet relief. The anxiety drops. You feel better, instantly. And your brain files that away as a lesson worth repeating.", "scene": "story", "room": "procrastination-desk", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "THE RELIEF TRAP", "subtitle": "why it keeps happening",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 720, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "relief-bubble", "x": 1300, "y": 440, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "That's negative reinforcement, and it's a trap. Task brings dread, you avoid, you feel relief, so the avoiding grows stronger. Round and round, the loop tightens, while the task just sits there, getting bigger and more terrifying with every lap.", "scene": "diagramCard", "diagram": "avoidance-loop", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And nothing feeds that loop like a device engineered to be the perfect escape hatch, right there in your pocket.", "scene": "explainer", "prop": "scroll-trap", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "5 — The Deadline Beast",
+      "beats": [
+        { "vo": "So if avoiding feels so good, what ever makes us start? Usually, one thing. Panic. As the deadline finally looms close enough to feel real, a monster wakes up. Suddenly the pain of not doing the task roars past the discomfort of doing it.", "scene": "story", "room": "deadline-cliff", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "THE DEADLINE BEAST", "subtitle": "panic finally wins",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "terrified", "x": 640, "y": 900, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "deadline-beast", "x": 1300, "y": 460, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "That's why you can pull a frantic all-nighter and somehow get it done. But it's a miserable way to work, and it quietly teaches your brain an awful rule, that you only start when you're scared. The panic becomes the only engine you trust.", "scene": "explainer", "prop": "deadline-beast", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "6 — The Guilt Spiral",
+      "beats": [
+        { "vo": "And there's a darker loop hiding underneath. After you procrastinate, you don't just feel relief. You feel guilt. You call yourself lazy, useless, a mess. That self-attack makes you feel even worse, which gives your brain one more bad feeling it urgently wants to escape.", "scene": "story", "room": "procrastination-desk", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE GUILT SPIRAL", "subtitle": "how shame feeds it",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "sleepy", "x": 720, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "shame-fog", "x": 1300, "y": 440, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "So you procrastinate to escape the guilt, from procrastinating. It's a spiral that feeds on self-criticism. Which points at something surprising. The harsh inner voice you think is motivating you is actually pouring fuel on the exact fire you're trying to put out.", "scene": "explainer", "prop": "shame-fog", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "7 — The Way Out",
+      "beats": [
+        { "vo": "So how do you actually escape? It starts, strangely, with kindness. Studies show people who forgive themselves for procrastinating go on to procrastinate less next time. Self-compassion isn't soft. It's the thing that finally quiets the panic and lets you begin.", "scene": "story", "room": "fresh-start-desk", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "THE WAY OUT", "subtitle": "kindness, then one small step",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 700, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "kind-note", "x": 1320, "y": 430, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Then you cheat the battle. Don't try to do the whole scary task. Shrink it until the first step is laughably small, and promise yourself just two minutes. The limbic brain stops panicking, because two minutes isn't a threat. And starting is the entire war.", "scene": "diagramCard", "diagram": "do-it-ladder", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Because here's the secret. Motivation doesn't come first and then you act. It's the other way around. You take one tiny action, and the motivation shows up to meet you. Open the document. Write one ugly sentence. Momentum is built, not summoned.", "scene": "explainer", "prop": "two-min-timer", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So the next time you catch yourself putting something off, try this. Instead of lazy, idiot, what's wrong with me, pause and ask, what feeling am I avoiding here? That one gentle question turns a character flaw back into a solvable puzzle.", "scene": "explainer", "prop": "kind-note", "emotion": "happy-talk" },
+        { "vo": "You are not lazy, and you are not broken. Your brain is just a little too good at protecting you from a bad feeling in the moment. Be kind to it, make the first step tiny, and begin before you feel ready. That's the whole trick. I'm Dear Brain. Now go write that one ugly sentence.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

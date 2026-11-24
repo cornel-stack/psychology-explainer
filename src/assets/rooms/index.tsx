@@ -79,7 +79,10 @@ export type RoomName =
   | 'awareness-shaft'
   | 'the-deep'
   | 'flow-river'
-  | 'clarity-summit';
+  | 'clarity-summit'
+  | 'procrastination-desk'
+  | 'deadline-cliff'
+  | 'fresh-start-desk';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2268,6 +2271,80 @@ export const ClaritySummit: React.FC = () => (
   </g>
 );
 
+/** Procrastination desk: the guilty workstation — laptop with the dreaded task,
+ *  snacks, phone, a ticking clock and a deadline circled in red. */
+export const ProcrastinationDesk: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={COLORS.wood} floorY={720} stripe={false} />
+    {/* wallpaper stripes break up the flat wall */}
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 120} y={0} width={60} height={560} fill={shade(COLORS.lavender, -0.05)} opacity={0.6} />)}
+    <rect x={0} y={560} width={CANVAS.width} height={160} fill={shade(COLORS.lavender, 0.06)} />
+    {/* an ignored "DO IT" poster + sticky notes */}
+    <g transform="translate(980 230) rotate(-4)"><rect x={-110} y={-80} width={220} height={160} rx={10} fill={COLORS.yellowSoft} {...xl} /><text x={0} y={16} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={54} fill={COLORS.outline} opacity={0.5}>DO IT</text></g>
+    {[[1240, 180], [1320, 250], [1180, 300]].map(([x, y], i) => <rect key={i} x={x} y={y} width={70} height={64} rx={4} fill={[COLORS.pink, COLORS.sky, COLORS.greenLeaf][i]} transform={`rotate(${i * 8 - 8} ${x + 35} ${y + 32})`} {...sm} />)}
+    {/* a small shelf */}
+    <rect x={520} y={420} width={260} height={16} rx={4} fill={shade(COLORS.wood, 0.1)} {...lg} />
+    {[560, 640, 720].map((x, i) => <rect key={i} x={x} y={360} width={30} height={60} rx={4} fill={[COLORS.red, COLORS.sky, COLORS.greenLeaf][i]} {...sm} />)}
+    {/* wall clock */}
+    <g transform="translate(300 240)"><circle r={80} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-54} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={40} y2={14} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle r={7} fill={COLORS.outline} /></g>
+    {/* deadline calendar, circled in red */}
+    <g transform="translate(1600 250)"><rect x={-90} y={-100} width={180} height={190} rx={10} fill={COLORS.white} {...xl} /><rect x={-90} y={-100} width={180} height={44} rx={10} fill={COLORS.red} {...sm} />{Array.from({ length: 3 }).map((_, r) => Array.from({ length: 4 }).map((_, c) => <rect key={`${r}-${c}`} x={-74 + c * 40} y={-40 + r * 42} width={28} height={28} rx={4} fill={shade(COLORS.white, 0.05)} stroke={shade(COLORS.lavender, -0.1)} strokeWidth={STROKE.sm} />))}<circle cx={46} cy={44} r={22} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} /></g>
+    {/* long desk */}
+    <rect x={0} y={700} width={CANVAS.width} height={60} fill={shade(COLORS.wood, 0.12)} {...xl} />
+    <rect x={0} y={760} width={CANVAS.width} height={320} fill={COLORS.wood} />
+    {/* laptop with the dread glow */}
+    <g transform="translate(760 640)"><rect x={-110} y={-80} width={220} height={150} rx={12} fill={shade(COLORS.outline, 0.3)} {...xl} /><rect x={-94} y={-64} width={188} height={118} rx={6} fill={COLORS.red} opacity={0.6} /><rect x={-140} y={70} width={280} height={22} rx={8} fill={shade(COLORS.outline, 0.25)} {...lg} /></g>
+    {/* mug */}
+    <g transform="translate(1080 680)"><rect x={-30} y={-34} width={60} height={60} rx={8} fill={COLORS.sky} {...lg} /><path d="M 30 -22 q 24 2 18 24 q -6 12 -18 8" fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} /></g>
+    {/* phone */}
+    <g transform="translate(1240 690)"><rect x={-26} y={-44} width={52} height={88} rx={10} fill={shade(COLORS.outline, 0.3)} {...lg} /><rect x={-20} y={-36} width={40} height={64} rx={4} fill={COLORS.sky} /></g>
+    {/* snack bowl + crumpled paper */}
+    <g transform="translate(470 700)"><path d="M -44 0 a 44 20 0 0 0 88 0 Z" fill={COLORS.yellowDark} {...lg} /><ellipse cx={0} cy={0} rx={44} ry={12} fill={COLORS.yellow} {...sm} /></g>
+    {[1420, 1500].map((x, i) => <circle key={i} cx={x} cy={740} r={20} fill={COLORS.whiteShade} {...sm} />)}
+  </g>
+);
+
+/** Deadline cliff: a dark storm wall of countdown advancing on a tiny edge — the
+ *  looming pressure that finally spurs panic-action. */
+export const DeadlineCliff: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.04)} floor={shade(COLORS.purpleDeep, 0.2)} floorY={840} stripe={false} />
+    {/* advancing storm wall from the right */}
+    <path d="M 1920 0 L 1100 0 Q 1240 300 1080 560 Q 1260 820 1120 1080 L 1920 1080 Z" fill={shade(COLORS.purpleDeep, -0.16)} {...xl} />
+    {Array.from({ length: 5 }).map((_, i) => <g key={i} transform={`translate(${1300 + i * 120} ${120 + (i % 3) * 170})`}><ellipse rx={90} ry={48} fill={shade(COLORS.purpleDeep, -0.22)} {...lg} /><ellipse cx={70} cy={10} rx={60} ry={36} fill={shade(COLORS.purpleDeep, -0.22)} {...sm} /></g>)}
+    {/* lightning */}
+    <path d="M 1500 260 l -40 150 l 34 0 l -30 150 l 90 -210 l -36 0 l 40 -90 Z" fill={COLORS.yellow} {...sm} />
+    {/* rain streaks */}
+    {Array.from({ length: 16 }).map((_, i) => <line key={i} x1={1120 + i * 48} y1={200 + (i % 5) * 90} x2={1100 + i * 48} y2={260 + (i % 5) * 90} stroke={COLORS.sky} strokeWidth={STROKE.sm} opacity={0.4} />)}
+    {/* the cliff edge + countdown banner */}
+    <path d="M 0 1080 L 0 720 L 560 720 Q 640 720 640 820 L 640 1080 Z" fill={shade(COLORS.purpleDeep, 0.1)} {...xl} />
+    <g transform="translate(300 420)"><rect x={-180} y={-60} width={360} height={120} rx={16} fill={COLORS.red} {...xl} /><text x={0} y={18} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={60} fill={COLORS.white}>00:10</text></g>
+    {/* a few flying calendar pages */}
+    {[[520, 520], [760, 360], [880, 600]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y}) rotate(${i * 24 - 20})`}><rect x={-26} y={-32} width={52} height={64} rx={6} fill={COLORS.white} {...sm} /></g>)}
+  </g>
+);
+
+/** Fresh-start desk: a calm, tidy, dawn-lit workstation — the way out, where one
+ *  small step feels doable. */
+export const FreshStartDesk: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCream} floor={COLORS.wood} floorY={720} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={160} fill={shade(COLORS.bgCream, -0.04)} />
+    {/* window with dawn */}
+    <g transform="translate(360 300)"><rect x={-150} y={-180} width={300} height={320} rx={16} fill={COLORS.sky} {...xl} /><circle cx={0} cy={40} r={70} fill={COLORS.yellow} {...sm} /><line x1={-150} y1={-20} x2={150} y2={-20} stroke={COLORS.bgCream} strokeWidth={STROKE.lg} /><line x1={0} y1={-180} x2={0} y2={140} stroke={COLORS.bgCream} strokeWidth={STROKE.lg} /></g>
+    {/* tidy desk */}
+    <rect x={0} y={700} width={CANVAS.width} height={60} fill={shade(COLORS.wood, 0.12)} {...xl} />
+    <rect x={0} y={760} width={CANVAS.width} height={320} fill={COLORS.wood} />
+    {/* neat laptop (calm) */}
+    <g transform="translate(900 650)"><rect x={-100} y={-72} width={200} height={138} rx={12} fill={shade(COLORS.outline, 0.3)} {...xl} /><rect x={-86} y={-58} width={172} height={106} rx={6} fill={COLORS.greenTeal} /><rect x={-128} y={66} width={256} height={20} rx={8} fill={shade(COLORS.outline, 0.25)} {...lg} /></g>
+    {/* potted plant */}
+    <g transform="translate(1500 650)"><path d="M -40 10 L 40 10 L 30 70 L -30 70 Z" fill={COLORS.red} {...lg} />{[-24, 0, 24].map((lx) => <path key={lx} d={`M ${lx} 10 q ${lx * 1.2} -70 ${lx * 0.4} -130`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+    {/* a checklist with one checked box + warm tea */}
+    <g transform="translate(1180 680)"><rect x={-50} y={-56} width={100} height={110} rx={8} fill={COLORS.white} {...lg} /><rect x={-38} y={-40} width={20} height={20} rx={4} fill={COLORS.greenLeaf} {...sm} /><path d="M -34 -30 l 6 6 l 10 -12" fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" />{[0, 28].map((y) => <line key={y} x1={-10} y1={-30 + y} x2={34} y2={-30 + y} stroke={shade(COLORS.bgCream, -0.1)} strokeWidth={STROKE.sm} />)}</g>
+    <g transform="translate(680 700)"><rect x={-28} y={-30} width={56} height={54} rx={8} fill={COLORS.yellowSoft} {...lg} /><path d="M 28 -18 q 22 2 16 22 q -6 10 -16 6" fill="none" stroke={COLORS.yellowSoft} strokeWidth={STROKE.lg} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2332,6 +2409,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'the-deep': TheDeep,
   'flow-river': FlowRiver,
   'clarity-summit': ClaritySummit,
+  'procrastination-desk': ProcrastinationDesk,
+  'deadline-cliff': DeadlineCliff,
+  'fresh-start-desk': FreshStartDesk,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
