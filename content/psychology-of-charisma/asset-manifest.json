@@ -1,0 +1,327 @@
+{
+  "slug": "psychology-of-charisma",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 10,
+    "NEW": 21
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        9,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "charisma-learnable",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "charisma-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        33
+      ]
+    },
+    {
+      "name": "presence-dial",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "warmth-competence-grid",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        18,
+        21,
+        30
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        5,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        35,
+        37,
+        38
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        7,
+        10,
+        12,
+        13,
+        16,
+        19,
+        22,
+        25,
+        27,
+        28,
+        31,
+        33,
+        34,
+        36
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        18,
+        30
+      ]
+    },
+    {
+      "name": "hands-hips",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        15,
+        21,
+        27
+      ]
+    },
+    {
+      "name": "reach-down",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "char-authentic",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27,
+        28
+      ]
+    },
+    {
+      "name": "char-compass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        34,
+        35
+      ]
+    },
+    {
+      "name": "char-competence",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "char-enthusiasm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        30,
+        31
+      ]
+    },
+    {
+      "name": "char-listening",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        16
+      ]
+    },
+    {
+      "name": "char-openbody",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24,
+        25
+      ]
+    },
+    {
+      "name": "char-presence",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "char-shine",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "char-story",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "char-warmth",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        10,
+        37
+      ]
+    },
+    {
+      "name": "connection-lounge",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        9,
+        18,
+        30
+      ]
+    },
+    {
+      "name": "fireside-circle",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        15,
+        21,
+        27
+      ]
+    },
+    {
+      "name": "spotlight-stage",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        6,
+        12,
+        24
+      ]
+    }
+  ]
+}

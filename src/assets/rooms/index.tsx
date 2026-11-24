@@ -100,7 +100,10 @@ export type RoomName =
   | 'heart-lab'
   | 'love-gallery'
   | 'cozy-hearth'
-  | 'blossom-garden';
+  | 'blossom-garden'
+  | 'connection-lounge'
+  | 'spotlight-stage'
+  | 'fireside-circle';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2796,6 +2799,85 @@ export const BlossomGarden: React.FC = () => (
   </g>
 );
 
+/** Connection lounge: a warm social space — facing sofas, soft lamps, plants and
+ *  string lights, where people are drawn together. */
+export const ConnectionLounge: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.14)} floor={COLORS.wood} floorY={760} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={200} fill={shade(COLORS.yellowDark, 0.08)} />
+    {/* string lights */}
+    <path d="M 0 60 Q 480 150 960 70 Q 1440 -10 1920 80" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 10 }).map((_, i) => <circle key={i} cx={100 + i * 190} cy={92 + 28 * Math.sin(i)} r={11} fill={COLORS.yellow} {...sm} />)}
+    {/* big framed warm picture */}
+    <g transform="translate(960 270)"><rect x={-120} y={-100} width={240} height={200} rx={10} fill={COLORS.bgCream} {...xl} /><circle cx={0} cy={-20} r={44} fill={COLORS.yellow} {...sm} /><path d="M -120 100 L -40 20 L 20 60 L 90 -10 L 120 20 L 120 100 Z" fill={COLORS.greenLeaf} {...sm} /></g>
+    {/* window with warm evening on the right */}
+    <g transform="translate(1620 290)"><rect x={-130} y={-150} width={260} height={280} rx={14} fill={shade(COLORS.yellowDark, 0.12)} {...xl} /><circle cx={0} cy={30} r={50} fill={COLORS.yellow} {...sm} /><line x1={-130} y1={-10} x2={130} y2={-10} stroke={shade(COLORS.yellowDark, 0.14)} strokeWidth={STROKE.lg} /><line x1={0} y1={-150} x2={0} y2={130} stroke={shade(COLORS.yellowDark, 0.14)} strokeWidth={STROKE.lg} /></g>
+    {/* a shelf of books + a small clock on the left */}
+    <g transform="translate(300 300)"><rect x={-90} y={0} width={180} height={14} rx={4} fill={shade(COLORS.wood, 0.1)} {...lg} />{[-72, -46, -20, 6, 32].map((x, i) => <rect key={i} x={x} y={-58} width={20} height={58} rx={3} fill={[COLORS.red, COLORS.sky, COLORS.greenLeaf, COLORS.yellow, COLORS.lavender][i]} {...sm} />)}</g>
+    <g transform="translate(300 160)"><circle r={44} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-28} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><line x1={0} y1={0} x2={20} y2={8} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+    {/* two facing sofas */}
+    {([[420, false, COLORS.red], [1500, true, COLORS.blueDiagram]] as [number, boolean, string][]).map(([x, flip, c], i) => (
+      <g key={i} transform={`translate(${x} 650) scale(${flip ? -1 : 1} 1)`}>
+        <rect x={-150} y={-20} width={300} height={130} rx={24} fill={c} {...xl} />
+        <rect x={-186} y={-4} width={56} height={130} rx={22} fill={shade(c, 0.12)} {...lg} />
+        <rect x={130} y={-4} width={56} height={130} rx={22} fill={shade(c, 0.12)} {...lg} />
+        <rect x={-120} y={-80} width={240} height={66} rx={20} fill={shade(c, 0.06)} {...xl} />
+        <rect x={-70} y={-54} width={70} height={54} rx={14} fill={COLORS.yellowSoft} {...std} />
+      </g>
+    ))}
+    {/* coffee table + plant */}
+    <g transform="translate(960 760)"><ellipse cx={0} cy={0} rx={130} ry={34} fill={shade(COLORS.wood, 0.14)} {...xl} /><rect x={-14} y={24} width={28} height={70} fill={COLORS.woodDark} /><g transform="translate(0 -12)"><rect x={-22} y={-18} width={44} height={30} rx={6} fill={COLORS.sky} {...sm} /></g></g>
+    <g transform="translate(1760 640)"><path d="M -36 10 L 36 10 L 28 70 L -28 70 Z" fill={COLORS.red} {...lg} />{[-22, 0, 22].map((lx) => <path key={lx} d={`M ${lx} 10 q ${lx} -60 ${lx * 0.4} -120`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+  </g>
+);
+
+/** Spotlight stage: a performer's stage with curtains, a mic and a warm spotlight —
+ *  presence under the lights. */
+export const SpotlightStage: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.purpleDeep} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.purpleDeep, -0.05)} opacity={0.5} />)}
+    {/* side curtains */}
+    <path d="M 0 0 L 240 0 Q 180 400 220 760 Q 100 700 0 760 Z" fill={COLORS.redDark} {...xl} />
+    <path d="M 1920 0 L 1680 0 Q 1740 400 1700 760 Q 1820 700 1920 760 Z" fill={COLORS.redDark} {...xl} />
+    {/* spotlight beam */}
+    <g transform="translate(960 0)"><line x1={0} y1={0} x2={0} y2={60} {...sm} /><path d="M -50 60 L 50 60 L 30 100 L -30 100 Z" fill={COLORS.yellowDark} {...lg} /><path d="M 0 100 L -280 820 L 280 820 Z" fill={COLORS.yellowSoft} opacity={0.16} /></g>
+    <ellipse cx={960} cy={900} rx={300} ry={70} fill={COLORS.yellowSoft} opacity={0.18} />
+    {/* mic stand */}
+    <g transform="translate(960 560)"><rect x={-6} y={0} width={12} height={300} fill={COLORS.ledGrey} {...sm} /><circle cx={0} cy={-14} r={26} fill={shade(COLORS.outline, 0.3)} {...lg} />{[-12, 0, 12].map((y) => <line key={y} x1={-18} y1={-14 + y} x2={18} y2={-14 + y} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.5} />)}</g>
+    {/* audience silhouettes */}
+    {Array.from({ length: 11 }).map((_, i) => <circle key={i} cx={160 + i * 160} cy={1020} r={52} fill={shade(COLORS.woodDark, -0.12)} {...lg} />)}
+  </g>
+);
+
+/** Fireside circle: an intimate campfire at night — logs to sit on, warm glow and
+ *  a sky of stars, where stories and connection happen. */
+export const FiresideCircle: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.06)} floor={COLORS.greenDark} floorY={720} stripe={false} />
+    {/* lighter horizon glow band splits the flat night */}
+    <rect x={0} y={0} width={CANVAS.width} height={240} fill={shade(COLORS.purpleDeep, -0.06)} opacity={0.6} />
+    <rect x={0} y={480} width={CANVAS.width} height={240} fill={shade(COLORS.purpleDeep, 0.14)} opacity={0.6} />
+    {/* moon with glow + big and small stars */}
+    <circle cx={1560} cy={200} r={120} fill={COLORS.yellowSoft} opacity={0.22} />
+    <circle cx={1560} cy={200} r={66} fill={COLORS.yellowSoft} {...sm} />
+    {Array.from({ length: 30 }).map((_, i) => { const s = 2 + (i % 3) * 2; const x = 90 + (i * 127) % 1760; const y = 70 + (i * 83) % 420; return <path key={i} d={`M ${x} ${y - s * 2} l ${s} ${s * 2} l ${s * 2} ${s} l ${-s * 2} ${s} l ${-s} ${s * 2} l ${-s} ${-s * 2} l ${-s * 2} ${-s} l ${s * 2} ${-s} Z`} fill={COLORS.white} opacity={0.8} />; })}
+    {/* distant tree silhouettes */}
+    {[160, 420, 1720, 1860].map((x, i) => <g key={i} transform={`translate(${x} 560)`}><rect x={-14} y={-60} width={28} height={180} fill={shade(COLORS.purpleDeep, -0.1)} /><circle cx={0} cy={-80} r={70} fill={shade(COLORS.purpleDeep, -0.1)} /></g>)}
+    {/* hills */}
+    <path d="M 0 720 Q 480 640 960 720 Q 1440 790 1920 690 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenDark, 0.08)} />
+    {/* warm glow */}
+    <ellipse cx={960} cy={900} rx={440} ry={180} fill={COLORS.yellowSoft} opacity={0.18} />
+    {/* campfire */}
+    <g transform="translate(960 900)">
+      {[-70, 70].map((x, i) => <rect key={i} x={x - 50} y={10} width={100} height={22} rx={10} fill={COLORS.woodDark} {...lg} transform={`rotate(${i ? 20 : -20} ${x} 20)`} />)}
+      <path d="M -40 10 q -20 -90 20 -130 q -10 50 20 60 q 20 -30 10 -70 q 40 50 30 140 Z" fill={COLORS.yellow} {...xl} /><path d="M -14 10 q -10 -60 14 -90 q 20 40 4 90 Z" fill={COLORS.red} {...sm} />
+    </g>
+    {/* logs to sit on */}
+    {[480, 1440].map((x, i) => <g key={i} transform={`translate(${x} 860)`}><rect x={-70} y={-16} width={140} height={32} rx={14} fill={COLORS.wood} {...xl} /><ellipse cx={-70} cy={0} rx={12} ry={16} fill={shade(COLORS.wood, -0.1)} /></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2881,6 +2963,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'love-gallery': LoveGallery,
   'cozy-hearth': CozyHearth,
   'blossom-garden': BlossomGarden,
+  'connection-lounge': ConnectionLounge,
+  'spotlight-stage': SpotlightStage,
+  'fireside-circle': FiresideCircle,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

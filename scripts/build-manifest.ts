@@ -121,6 +121,10 @@ const NEW_ASSETS = new Set([
   'love-gallery', 'cozy-hearth', 'blossom-garden',
   'love-eros', 'love-philia', 'love-storge', 'love-agape', 'love-ludus', 'love-pragma', 'love-philautia', 'love-mania', 'love-triangle-prop', 'love-compass',
   'sternberg-triangle', 'loves-wheel', 'love-over-time', 'self-love-first',
+  // psychology-of-charisma (all new)
+  'connection-lounge', 'spotlight-stage', 'fireside-circle',
+  'char-presence', 'char-warmth', 'char-competence', 'char-listening', 'char-shine', 'char-story', 'char-openbody', 'char-authentic', 'char-enthusiasm', 'char-grid-prop', 'char-compass',
+  'warmth-competence-grid', 'charisma-loop', 'presence-dial', 'charisma-learnable',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

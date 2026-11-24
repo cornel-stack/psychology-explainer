@@ -32,6 +32,7 @@ import * as In from './intelligences';
 import * as Di from './distortions';
 import * as Eb from './emotions_basic';
 import * as Lv from './loves';
+import * as Ch from './charisma';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -393,6 +394,18 @@ export const PROPS: Record<string, React.FC<any>> = {
   'love-mania': Lv.LoveMania,
   'love-triangle-prop': Lv.LoveTriangle,
   'love-compass': Lv.LoveCompass,
+  // charisma emblems (all new)
+  'char-presence': Ch.CharPresence,
+  'char-warmth': Ch.CharWarmth,
+  'char-competence': Ch.CharCompetence,
+  'char-listening': Ch.CharListening,
+  'char-shine': Ch.CharShine,
+  'char-story': Ch.CharStory,
+  'char-openbody': Ch.CharOpenBody,
+  'char-authentic': Ch.CharAuthentic,
+  'char-enthusiasm': Ch.CharEnthusiasm,
+  'char-grid-prop': Ch.CharGrid,
+  'char-compass': Ch.CharCompass,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

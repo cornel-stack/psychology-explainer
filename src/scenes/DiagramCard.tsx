@@ -2768,8 +2768,81 @@ const SelfLoveFirst: React.FC = () => {
   );
 };
 
+/** warmth-competence-grid: the two axes of charisma; magnetic is the top-right. */
+const WarmthCompetenceGrid: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44; const S = 150;
+  const quads: [string, number, number, string][] = [['IMPRESSIVE,\nbut cold', -1, -1, COLORS.sky], ['MAGNETIC', 1, -1, COLORS.yellow], ['FORGETTABLE', -1, 1, COLORS.ledGrey], ['LIKED,\nnot respected', 1, 1, COLORS.pink]];
+  return (
+    <g>
+      {quads.map(([lab, qx, qy, c], i) => {
+        const p = springIn(frame - i * 6, 10); const x = cx + qx * (S / 2 + 6); const y = cy + qy * (S / 2 + 6);
+        return (
+          <g key={lab} transform={`translate(${x} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <rect x={-S / 2 + 4} y={-S / 2 + 4} width={S - 8} height={S - 8} rx={12} fill={shade(c, i === 1 ? 0.0 : 0.16)} {...lg} />
+            {lab.split('\n').map((ln, j) => <text key={j} x={0} y={-4 + j * 24} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={i === 1 ? 24 : 18} fill={COLORS.outline}>{ln}</text>)}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + S + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>competence →</text>
+      <text x={cx - S - 56} y={cy} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline} transform={`rotate(-90 ${cx - S - 56} ${cy})`}>warmth →</text>
+    </g>
+  );
+};
+
+/** charisma-loop: give attention → they feel valued → they're drawn to you. */
+const CharismaLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44; const R = 150;
+  const nodes: [string, string][] = [['you give\nattention', COLORS.yellow], ['they feel\nvalued', COLORS.pink], ['they light\nup', COLORS.greenLeaf], ["you're\nmagnetic", COLORS.sky]];
+  const dot = (frame % 120) / 120;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeDasharray="4 16" opacity={0.5} />
+      {nodes.map(([lab, c], i) => { const a = -Math.PI / 2 + (i / 4) * Math.PI * 2; const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R; return <g key={i} transform={`translate(${x} ${y})`}><circle r={62} fill={c} {...lg} />{lab.split('\n').map((ln, j) => <text key={j} x={0} y={-4 + j * 22} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{ln}</text>)}</g>; })}
+      {(() => { const a = -Math.PI / 2 + dot * Math.PI * 2; return <circle cx={cx + Math.cos(a) * R} cy={cy + Math.sin(a) * R} r={12} fill={COLORS.outline} />; })()}
+      <text x={cx} y={cy + R + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>charisma is a loop</text>
+    </g>
+  );
+};
+
+/** presence-dial: a distracted half-here vs a fully present you. */
+const PresenceDial: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const t = 0.5 + 0.45 * Math.sin(frame / 24);
+  const ang = Math.PI * (1 - t);
+  const nx = cx + Math.cos(ang) * 150; const ny = cy + 40 - Math.sin(ang) * 150;
+  return (
+    <g>
+      <path d={`M ${cx - 150} ${cy + 40} A 150 150 0 0 1 ${cx + 150} ${cy + 40}`} fill="none" stroke={COLORS.greenTeal} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <line x1={cx} y1={cy + 40} x2={nx} y2={ny} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <circle cx={cx} cy={cy + 40} r={14} fill={COLORS.outline} />
+      <text x={cx - 170} y={cy + 100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>distracted</text>
+      <text x={cx + 170} y={cy + 100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>fully here</text>
+      <text x={cx} y={cy - 140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>presence is the foundation</text>
+    </g>
+  );
+};
+
+/** charisma-learnable: a growth bar from awkward to magnetic. */
+const CharismaLearnable: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const p = 0.3 + 0.6 * springIn(frame, 40);
+  return (
+    <g>
+      <rect x={cx - 260} y={cy - 30} width={520} height={60} rx={30} fill={COLORS.white} {...xl} />
+      <rect x={cx - 248} y={cy - 18} width={496 * p} height={36} rx={18} fill={COLORS.yellow} />
+      <text x={cx - 250} y={cy + 90} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>awkward</text>
+      <text x={cx + 150} y={cy + 90} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>magnetic</text>
+      <text x={cx} y={cy - 80} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>nobody is born with it</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2879,6 +2952,10 @@ export const DiagramCard: React.FC<{
     'loves-wheel': COLORS.red,
     'love-over-time': COLORS.pink,
     'self-love-first': COLORS.greenTeal,
+    'warmth-competence-grid': COLORS.yellow,
+    'charisma-loop': COLORS.pink,
+    'presence-dial': COLORS.greenTeal,
+    'charisma-learnable': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2995,6 +3072,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'loves-wheel' && <LovesWheel />}
         {diagram === 'love-over-time' && <LoveOverTime />}
         {diagram === 'self-love-first' && <SelfLoveFirst />}
+        {diagram === 'warmth-competence-grid' && <WarmthCompetenceGrid />}
+        {diagram === 'charisma-loop' && <CharismaLoop />}
+        {diagram === 'presence-dial' && <PresenceDial />}
+        {diagram === 'charisma-learnable' && <CharismaLearnable />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />
