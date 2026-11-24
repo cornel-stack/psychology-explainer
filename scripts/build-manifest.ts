@@ -113,6 +113,10 @@ const NEW_ASSETS = new Set([
   'thought-funhouse', 'foggy-mind', 'reframe-room',
   'all-or-nothing', 'over-generalize', 'mental-filter', 'discount-positive', 'mind-reading', 'catastrophize', 'emotion-reasoning', 'should-statements', 'labeling', 'personalization', 'distortion-lens', 'reframe-glasses',
   'cbt-triangle', 'distortion-vs-reality', 'catch-check-change', 'thought-spiral',
+  // basic-emotions (all new)
+  'emotion-atrium', 'mood-weather', 'heart-lab',
+  'emo-joy', 'emo-trust', 'emo-fear', 'emo-surprise', 'emo-sadness', 'emo-disgust', 'emo-anger', 'emo-anticipation', 'emotion-wheel-prop', 'emotion-compass',
+  'emotion-wheel-map', 'emotions-job', 'opposite-emotions', 'emotion-blends',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

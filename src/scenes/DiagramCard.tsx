@@ -2603,8 +2603,100 @@ const ThoughtSpiral: React.FC = () => {
   );
 };
 
+/** emotion-wheel-map: the eight basic emotions around the wheel. */
+const EmotionWheelMap: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.57; const cy = CANVAS.height * 0.46; const R = 185;
+  const spokes: [string, string][] = [['JOY', COLORS.yellow], ['TRUST', COLORS.greenLeaf], ['FEAR', COLORS.purpleDeep], ['SURPRISE', COLORS.sky], ['SADNESS', COLORS.blueDiagram], ['DISGUST', COLORS.greenDark], ['ANGER', COLORS.red], ['ANTICIPATION', COLORS.yellowDark]];
+  return (
+    <g>
+      {spokes.map(([lab, c], i) => {
+        const a = -Math.PI / 2 + (i / 8) * Math.PI * 2;
+        const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R;
+        const p = springIn(frame - i * 4, 10);
+        return <g key={lab}><g transform={`translate(${cx + Math.cos(a) * R * 0.5} ${cy + Math.sin(a) * R * 0.5}) rotate(${(a * 180) / Math.PI + 90})`}><ellipse rx={26} ry={R * 0.44} fill={c} opacity={0.7 * p} {...sm} /></g><g transform={`translate(${x} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}><circle r={40} fill={c} {...lg} /></g><text x={cx + Math.cos(a) * (R + 56)} y={cy + Math.sin(a) * (R + 56) + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline} opacity={p}>{lab}</text></g>;
+      })}
+      <circle cx={cx} cy={cy} r={46} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>8 basics</text>
+    </g>
+  );
+};
+
+/** emotions-job: every emotion is a signal with a purpose. */
+const EmotionsJob: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.55; const cy = CANVAS.height * 0.24;
+  const rows: [string, string, string][] = [['FEAR', 'protects you', COLORS.purpleDeep], ['ANGER', 'defends your limits', COLORS.red], ['SADNESS', 'calls for support', COLORS.blueDiagram], ['JOY', 'says do more of this', COLORS.yellow], ['DISGUST', 'keeps you from harm', COLORS.greenDark]];
+  return (
+    <g>
+      {rows.map(([e, job, c], i) => {
+        const p = springIn(frame - i * 7, 10); const y = cy + i * 100;
+        return (
+          <g key={e} opacity={p}>
+            <rect x={cx - 240} y={y - 32} width={170} height={64} rx={12} fill={c} {...lg} /><text x={cx - 155} y={y + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.white}>{e}</text>
+            <path d="M 0 0 l 40 0 m -12 -10 l 12 10 l -12 10" transform={`translate(${cx - 64} ${y})`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+            <text x={cx + 10} y={y + 8} fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{job}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 540} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>every feeling is a messenger</text>
+    </g>
+  );
+};
+
+/** opposite-emotions: the wheel's four opposite pairs. */
+const OppositeEmotions: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.42;
+  const pairs: [string, string, string, string][] = [['JOY', 'SADNESS', COLORS.yellow, COLORS.blueDiagram], ['TRUST', 'DISGUST', COLORS.greenLeaf, COLORS.greenDark], ['FEAR', 'ANGER', COLORS.purpleDeep, COLORS.red], ['SURPRISE', 'ANTICIPATION', COLORS.sky, COLORS.yellowDark]];
+  return (
+    <g>
+      {pairs.map(([a, b, ca, cb], i) => {
+        const p = springIn(frame - i * 6, 10); const y = cy - 150 + i * 100;
+        return (
+          <g key={a} opacity={p}>
+            <g transform={`translate(${cx - 180} ${y})`}><circle r={34} fill={ca} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{a}</text></g>
+            <text x={cx} y={y + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>↔</text>
+            <g transform={`translate(${cx + 180} ${y})`}><circle r={34} fill={cb} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{b}</text></g>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 270} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>every feeling has its opposite</text>
+    </g>
+  );
+};
+
+/** emotion-blends: two basics combine into a richer feeling. */
+const EmotionBlends: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.55; const cy = CANVAS.height * 0.26;
+  const blends: [string, string, string, string, string, string][] = [
+    ['JOY', 'TRUST', 'LOVE', COLORS.yellow, COLORS.greenLeaf, COLORS.pink],
+    ['JOY', 'ANTICIPATION', 'OPTIMISM', COLORS.yellow, COLORS.yellowDark, COLORS.greenLeaf],
+    ['FEAR', 'SURPRISE', 'ALARM', COLORS.purpleDeep, COLORS.sky, COLORS.red],
+    ['SADNESS', 'DISGUST', 'REMORSE', COLORS.blueDiagram, COLORS.greenDark, COLORS.lavender],
+  ];
+  return (
+    <g>
+      {blends.map(([a, b, r, ca, cb, cr], i) => {
+        const p = springIn(frame - i * 8, 10); const y = cy + i * 120;
+        return (
+          <g key={r} opacity={p}>
+            <g transform={`translate(${cx - 230} ${y})`}><circle r={30} fill={ca} {...sm} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>{a}</text></g>
+            <text x={cx - 160} y={y + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>+</text>
+            <g transform={`translate(${cx - 90} ${y})`}><circle r={30} fill={cb} {...sm} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>{b}</text></g>
+            <text x={cx - 10} y={y + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>=</text>
+            <g transform={`translate(${cx + 130} ${y})`}><rect x={-100} y={-30} width={200} height={60} rx={14} fill={cr} {...lg} /><text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{r}</text></g>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 500} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>mix them, and feelings bloom</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2706,6 +2798,10 @@ export const DiagramCard: React.FC<{
     'distortion-vs-reality': COLORS.red,
     'catch-check-change': COLORS.greenLeaf,
     'thought-spiral': COLORS.red,
+    'emotion-wheel-map': COLORS.pink,
+    'emotions-job': COLORS.sky,
+    'opposite-emotions': COLORS.lavender,
+    'emotion-blends': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2814,6 +2910,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'distortion-vs-reality' && <DistortionVsReality />}
         {diagram === 'catch-check-change' && <CatchCheckChange />}
         {diagram === 'thought-spiral' && <ThoughtSpiral />}
+        {diagram === 'emotion-wheel-map' && <EmotionWheelMap />}
+        {diagram === 'emotions-job' && <EmotionsJob />}
+        {diagram === 'opposite-emotions' && <OppositeEmotions />}
+        {diagram === 'emotion-blends' && <EmotionBlends />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

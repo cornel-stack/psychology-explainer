@@ -1,0 +1,135 @@
+{
+  "title": "Every Emotion Explained",
+  "slug": "basic-emotions",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "They run your whole life, and most of us were never taught how they work. They decide what you chase and what you flee, who you love and what you fear, how your whole day feels. Emotions. We treat them like weather that just happens to us. But every single one is a message, with a job to do.", "scene": "story", "room": "emotion-atrium", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY EMOTION EXPLAINED", "subtitle": "what your feelings are for",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 760, "y": 760, "scale": 1.0, "talking": true } ] },
+        { "vo": "The psychologist Robert Plutchik mapped it out beautifully. Underneath all our thousands of moods sit eight basic emotions, like primary colours. Joy and sadness. Trust and disgust. Fear and anger. Surprise and anticipation. Every feeling you've ever had is some mix of these.", "scene": "diagramCard", "diagram": "emotion-wheel-map", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And here's the reframe that changes everything. There are no bad emotions. Each one evolved to protect you or guide you. Fear keeps you safe. Anger defends what matters. Sadness calls for help. Even the painful ones are messengers, carrying information you actually need.", "scene": "diagramCard", "diagram": "emotions-job", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So the goal was never to feel only good. It's to understand what each emotion is telling you, and to stop being quite so afraid of your own inner world. An emotion you understand is an ally. One you don't becomes a tyrant.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. All eight basic emotions, what each one is secretly for, how they blend into the rich feelings you know by name, and how to finally work with them, instead of being dragged around by them. Let's begin.", "scene": "explainer", "prop": "emotion-compass", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here are our eight. Four opposing pairs, each a tool your ancestors needed to survive. As we go through them, notice there's no villain here. Even the ones that feel awful are on your side. They're just not always very good at how they say it.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["JOY", "TRUST", "FEAR", "SURPRISE", "SADNESS", "DISGUST", "ANGER", "ANTICIPATION"] }
+      ]
+    },
+    {
+      "name": "1 — Joy",
+      "beats": [
+        { "vo": "First, joy. The warm, bright, expansive feeling of things going well. A good laugh, a win, a hug, a sunny morning. It feels like a reward, and that's exactly what it is, nature's way of saying, yes, this, whatever you just did, do more of it.", "scene": "story", "room": "mood-weather", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "1 — JOY", "subtitle": "'do more of this'",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 740, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emo-joy", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Joy isn't just a pleasant bonus. It broadens your mind, builds your bonds, and makes you more creative, open and generous. It's the glue of friendship and the fuel of play. When you feel it, your brain is quietly learning what a good life looks like for you.", "scene": "explainer", "prop": "emo-joy", "emotion": "serious-expert" },
+        { "vo": "The trick with joy is simply to actually notice it. We let the good moments rush by unmarked, then wonder why life feels grey. So when joy shows up, pause, just for a second, and really let it land. Savouring it is how you teach your brain to find the way back.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Trust",
+      "beats": [
+        { "vo": "Second, trust. The quiet, open feeling of safety with another person. The sense that you can lower your guard, lean on them, let them in. It's less dramatic than the others, but it's the invisible foundation of every close relationship you have.", "scene": "story", "room": "emotion-atrium", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "2 — TRUST", "subtitle": "safe to let them in",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 760, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ] },
+        { "vo": "Trust is what lets humans do the thing we're best at, cooperate. It let your ancestors share food, raise children together, and survive in groups. Without it, there's no friendship, no love, no team. It's the emotion that turns a crowd of strangers into a community.", "scene": "explainer", "prop": "emo-trust", "emotion": "serious-expert" },
+        { "vo": "Its opposite, as we'll see, is disgust, the push to keep something out. So trust is the pull to let something in. The healthy path runs between them. Open enough to connect deeply, discerning enough to know who has truly earned a place inside your walls.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Fear",
+      "beats": [
+        { "vo": "Third, fear. The sharp, electric alarm of danger. Your heart pounds, your focus narrows, your body floods with energy to fight, flee, or freeze. It feels terrible on purpose, because it has the single most important job of all, keeping you alive.", "scene": "story", "room": "mood-weather", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "3 — FEAR", "subtitle": "the alarm that protects you",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 740, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emo-fear", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Fear is a smoke alarm, brilliant at its job but not very smart. It can't tell a real threat from an imagined one, so it blares just as loudly at a public speech as at a predator. The problem isn't that you feel fear. It's that the alarm is often far too sensitive.", "scene": "explainer", "prop": "emo-fear", "emotion": "serious-expert" },
+        { "vo": "So the skill is to thank the alarm, then check if there's a real fire. Is this danger, or just discomfort? Courage was never the absence of fear. It's feeling the alarm blaring, deciding the thing matters more, and stepping forward anyway.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Surprise",
+      "beats": [
+        { "vo": "Fourth, surprise. The briefest emotion of all, a split-second jolt when the world does something you didn't expect. Eyebrows fly up, eyes go wide, everything freezes for an instant. It lasts barely a moment before it hands off to another feeling.", "scene": "story", "room": "emotion-atrium", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "4 — SURPRISE", "subtitle": "the great reset",
+          "mascots": [ { "costume": "hoodie", "pose": "startled", "emotion": "scared", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emo-surprise", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Its job is a lightning-fast reset. Something broke your expectations, so surprise instantly clears your mind and throws all your attention at the new thing. It's the brain shouting, stop, pay attention, update, because whatever just happened, you didn't see it coming.", "scene": "explainer", "prop": "emo-surprise", "emotion": "serious-expert" },
+        { "vo": "That's why surprise is the gateway to learning. The jolt of being wrong is uncomfortable, but it's exactly the moment your brain is most ready to update. And which way surprise tips next, into delight or into fear, often colours the whole memory that follows.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Sadness",
+      "beats": [
+        { "vo": "Fifth, sadness. The heavy, slow, inward pull of loss. Low energy, a lump in the throat, the urge to withdraw. We treat it as the enemy, something to fix immediately. But sadness, felt properly, is one of the most important and healing emotions you have.", "scene": "story", "room": "mood-weather", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "5 — SADNESS", "subtitle": "the emotion of loss",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 740, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emo-sadness", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Sadness does two quiet, vital things. It slows you down so you can process a loss and adjust to a changed world. And its tears and heavy face send a signal to others, I'm hurting, come close. Sadness is how we grieve, and how we call our people to our side.", "scene": "explainer", "prop": "emo-sadness", "emotion": "serious-expert" },
+        { "vo": "So the kindest thing is often not to fight it, but to let it move through you. Sadness that's felt tends to pass like weather. Sadness that's bottled up just waits, and leaks out sideways. Let yourself be sad, and reach for someone. That's the whole point of it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Disgust",
+      "beats": [
+        { "vo": "Sixth, disgust. The visceral recoil from something rotten. The wrinkled nose, the curled lip, the urge to get away, now. It began as a brilliant survival tool, keeping our ancestors from eating spoiled food or touching disease. A gut-level no, keep that out.", "scene": "story", "room": "heart-lab", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "6 — DISGUST", "subtitle": "the gut-level 'no'",
+          "mascots": [ { "costume": "labcoat", "pose": "idle", "emotion": "annoyed", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emo-disgust", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But disgust didn't stay in the stomach. It climbed up into our morals. That same recoil we feel at rotten meat, we also feel at cruelty, betrayal and injustice. Moral disgust is your values, speaking in the oldest language your body knows. A deep, physical, that is wrong.", "scene": "explainer", "prop": "emo-disgust", "emotion": "serious-expert" },
+        { "vo": "The watch-out is that disgust can misfire badly, aimed at people who are merely different, not dangerous. So it's worth asking, is this actually harmful, or just unfamiliar? Disgust is a powerful guard. But even a good guard needs you to check who it's keeping out.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Anger",
+      "beats": [
+        { "vo": "Seventh, anger. The hot, surging push against a wrong. Jaw tight, heart pounding, energy flooding your muscles. We're taught anger is dangerous and shameful, something to swallow. But at its core, anger is simply the emotion that defends what you care about.", "scene": "story", "room": "mood-weather", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "7 — ANGER", "subtitle": "the guardian of your limits",
+          "mascots": [ { "costume": "hoodie", "pose": "fist-up", "emotion": "annoyed", "x": 740, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emo-anger", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Anger flares when a boundary is crossed, a value is trampled, or something unjust happens. It gives you the energy and courage to stand up, to say no, to protect yourself and the people you love. Behind most anger is something tender, a hurt, a fear, a line that was crossed.", "scene": "explainer", "prop": "emo-anger", "emotion": "serious-expert" },
+        { "vo": "The skill isn't to kill your anger, it's to listen to it, then choose how to act. Anger is information, telling you something's wrong. But it's a terrible decision-maker. Feel the fire, let it tell you what you value, then respond from your values, not from the heat.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Anticipation",
+      "beats": [
+        { "vo": "Eighth, anticipation. The forward-leaning pull toward what's coming. The buzz before a holiday, the nerves before a test, the planning, the imagining, the bracing. It's the only basic emotion aimed squarely at the future, and it's what makes us such relentless planners.", "scene": "story", "room": "emotion-atrium", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "8 — ANTICIPATION", "subtitle": "leaning into the future",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emo-anticipation", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Anticipation prepares you. It gets you ready for what's ahead, gathering resources, rehearsing, bracing for impact. Tilted toward good things, it becomes excitement and hope. Tilted toward bad ones, it becomes dread and anxiety. Same forward lean, two very different flavours.", "scene": "explainer", "prop": "emo-anticipation", "emotion": "serious-expert" },
+        { "vo": "The skill is to aim it well. Unchecked, anticipation runs off into worst-case worry. But pointed on purpose, it becomes planning, hope, and the delicious thrill of looking forward. You can't stop your mind leaning into tomorrow. But you can choose what it leans toward.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Opposites",
+      "beats": [
+        { "vo": "Now watch how they fit together. Plutchik arranged the eight as four opposing pairs, like a colour wheel. Joy sits across from sadness. Trust across from disgust. Fear across from anger. Surprise across from anticipation. Each one makes more sense in the light of its opposite.", "scene": "diagramCard", "diagram": "opposite-emotions", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And you usually can't feel two opposites at full strength at once. It's hard to be purely joyful and purely sad in the very same instant, or to trust and be disgusted at the same breath. They sit at the two ends of one dial, and most of life is spent somewhere along it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Blends",
+      "beats": [
+        { "vo": "Here's where it gets beautiful. Just like primary colours, these eight emotions blend, and the mixes are the rich feelings you actually live in. Joy plus trust makes love. Joy plus anticipation makes optimism. Fear plus surprise makes alarm, or at its best, awe.", "scene": "diagramCard", "diagram": "emotion-blends", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Suddenly the whole messy palette of human feeling makes sense. Sadness and disgust blend into remorse. Anger and anticipation into determination. Almost every complicated feeling you've struggled to name is really two or three of these basic colours, mixed together inside you.", "scene": "explainer", "prop": "emotion-wheel-prop", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "How to Feel Well",
+      "beats": [
+        { "vo": "So how do you actually get good at all this? Not by controlling your emotions, you can't, but by relating to them well. And it starts with a skill so simple it sounds silly. Naming them. Just saying, quietly, I'm feeling anxious right now. I'm feeling hurt.", "scene": "story", "room": "heart-lab", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "HOW TO FEEL WELL", "subtitle": "name it, allow it, listen",
+          "mascots": [ { "costume": "labcoat", "pose": "point-right", "emotion": "happy-talk", "x": 760, "y": 760, "scale": 1.0, "talking": true, "lookDir": "right" } ] },
+        { "vo": "Brain scans show this really works. The simple act of putting a feeling into words, called naming the emotion, actually calms the brain's alarm centre. You don't have to fix the feeling. Just accurately naming it already turns the volume down. Name it, to tame it.", "scene": "explainer", "prop": "emotion-compass", "emotion": "serious-expert" },
+        { "vo": "Then allow it, and listen. Let the emotion be there without panicking or bottling it, and ask what it's trying to tell you. Fear, what's the danger? Anger, what line got crossed? Sadness, what did I lose? Emotions are messengers. Hear them out, and they calm down and move on.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "Remember too that every emotion has a volume dial. The same feeling runs from a whisper to a roar. Annoyance is anger, turned low. Rage is anger, turned up. Learning to notice a feeling early, while it's still quiet, is how you work with it, long before it runs the show.", "scene": "explainer", "prop": "emotion-compass", "emotion": "happy-talk" },
+        { "vo": "A gentle note before we go. This is understanding, not therapy. If your emotions feel overwhelming, or strangely flat and numb, for a long stretch of time, that is worth talking to a professional about. Getting support isn't weakness. It's one of the wisest things a person can do.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "But here's the heart of it. You were never meant to feel only joy. A full life runs through all eight of these, the bright and the dark alike, each one here to teach you something true. You are not too emotional. You are beautifully, usefully, humanly built to feel. I'm Dear Brain.", "scene": "explainer", "prop": "emotion-wheel-prop", "emotion": "happy-talk" },
+        { "vo": "Tell me in the comments which emotion you find the hardest to sit with. For so many of us it's sadness, or anger. Naming it is the first step to befriending it. Thank you, truly, for feeling your way through this with me. I'm Dear Brain. Be gentle with your heart out there.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

@@ -94,7 +94,10 @@ export type RoomName =
   | 'open-nature'
   | 'thought-funhouse'
   | 'foggy-mind'
-  | 'reframe-room';
+  | 'reframe-room'
+  | 'emotion-atrium'
+  | 'mood-weather'
+  | 'heart-lab';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2649,6 +2652,73 @@ export const ReframeRoom: React.FC = () => (
   </g>
 );
 
+/** Emotion atrium: a bright hall with the colour-wheel of feelings on the floor
+ *  and eight arched alcoves — the gallery of human emotion. */
+export const EmotionAtrium: React.FC = () => {
+  const cols = [COLORS.yellow, COLORS.greenLeaf, COLORS.greenDark, COLORS.blueDiagram, COLORS.purpleDeep, COLORS.sky, COLORS.red, COLORS.yellowDark];
+  return (
+    <g>
+      <WallFloor wall={COLORS.bgCream} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+      <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.bgCream, -0.04)} />
+      {/* arches tinted by emotion */}
+      {cols.slice(0, 5).map((c, i) => (
+        <g key={i} transform={`translate(${200 + i * 380} 320)`}>
+          <path d="M -120 170 L -120 -40 Q -120 -170 0 -170 Q 120 -170 120 -40 L 120 170 Z" fill={shade(c, 0.16)} {...lg} />
+          <circle cx={0} cy={-20} r={40} fill={c} {...lg} />
+        </g>
+      ))}
+      {/* the emotion wheel medallion on the floor */}
+      <g transform="translate(960 940)">
+        <ellipse rx={260} ry={64} fill={shade(COLORS.whiteShade, -0.05)} {...lg} />
+        {cols.map((c, i) => <g key={i} transform={`rotate(${i * 45})`}><ellipse cx={0} cy={-36} rx={20} ry={38} fill={c} opacity={0.8} {...sm} /></g>)}
+        <circle cx={0} cy={0} r={22} fill={COLORS.white} {...lg} />
+      </g>
+      <g transform="translate(960 150)"><rect x={-210} y={-50} width={420} height={100} rx={14} fill={COLORS.purpleDeep} {...xl} /><text x={0} y={14} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={42} fill={COLORS.white}>HOW YOU FEEL</text></g>
+    </g>
+  );
+};
+
+/** Mood weather: a wide sky split into emotional weather — sun, storm, rain and a
+ *  rainbow — feelings as the inner climate. */
+export const MoodWeather: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.greenLeaf} floorY={760} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.sky, 0.1)} />
+    {/* sun (joy) */}
+    <g transform="translate(260 220)"><circle r={76} fill={COLORS.yellow} {...sm} />{Array.from({ length: 10 }).map((_, i) => <line key={i} x1={0} y1={-90} x2={0} y2={-116} stroke={COLORS.yellow} strokeWidth={STROKE.sm} transform={`rotate(${i * 36})`} strokeLinecap="round" />)}</g>
+    {/* storm cloud + lightning (anger) */}
+    <g transform="translate(760 200)"><ellipse cx={0} cy={0} rx={120} ry={56} fill={shade(COLORS.outline, 0.3)} {...xl} /><ellipse cx={80} cy={14} rx={80} ry={44} fill={shade(COLORS.outline, 0.3)} {...lg} /><path d="M -10 50 l -28 70 l 24 0 l -20 70 l 60 -100 l -24 0 l 30 -60 Z" fill={COLORS.yellow} {...sm} /></g>
+    {/* rain cloud (sadness) */}
+    <g transform="translate(1250 180)"><ellipse cx={0} cy={0} rx={110} ry={50} fill={COLORS.blueDiagram} {...xl} />{[-50, -10, 30, 70].map((x, i) => <line key={i} x1={x} y1={50} x2={x - 8} y2={120} stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.7} />)}</g>
+    {/* rainbow (hope) */}
+    {[COLORS.red, COLORS.yellow, COLORS.greenLeaf, COLORS.sky].map((c, i) => <path key={i} d={`M ${1500 - i * 16} 760 A ${300 - i * 16} ${300 - i * 16} 0 0 1 ${1900 - i * 16} 760`} fill="none" stroke={c} strokeWidth={STROKE.xl} />)}
+    {/* rolling ground */}
+    <path d="M 0 760 Q 480 690 960 760 Q 1440 820 1920 720 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenLeaf, 0.08)} />
+    {[200, 700, 1300, 1700].map((x, i) => <g key={i} transform={`translate(${x} 880)`}><circle cx={-20} cy={0} r={30} fill={shade(COLORS.greenLeaf, -0.08)} {...lg} /><circle cx={22} cy={-6} r={36} fill={shade(COLORS.greenLeaf, -0.04)} {...lg} /></g>)}
+  </g>
+);
+
+/** Heart lab: a laboratory of feelings — a heart specimen under a dome, beakers of
+ *  coloured emotion, and charts on the wall. */
+export const HeartLab: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.whiteShade} floorY={820} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.greenTeal, 0.06)} opacity={0.5} />)}
+    {/* wall chart of the wheel */}
+    <g transform="translate(340 280)"><rect x={-140} y={-140} width={280} height={280} rx={12} fill={COLORS.white} {...xl} />{[COLORS.yellow, COLORS.greenLeaf, COLORS.blueDiagram, COLORS.red, COLORS.purpleDeep, COLORS.sky, COLORS.greenDark, COLORS.yellowDark].map((c, i) => <g key={i} transform={`rotate(${i * 45})`}><ellipse cx={0} cy={-70} rx={20} ry={36} fill={c} {...sm} /></g>)}<circle cx={0} cy={0} r={24} fill={COLORS.whiteShade} {...lg} /></g>
+    {/* heart specimen under a glass dome */}
+    <g transform="translate(960 640)">
+      <rect x={-110} y={60} width={220} height={40} rx={10} fill={COLORS.ledGrey} {...xl} />
+      <path d="M -100 60 A 100 120 0 0 1 100 60 Z" fill={COLORS.sky} opacity={0.25} {...lg} />
+      <path d="M 0 40 C -56 -14 -88 -44 -52 -78 C -28 -100 0 -70 0 -48 C 0 -70 28 -100 52 -78 C 88 -44 56 -14 0 40 Z" fill={COLORS.red} {...xl} />
+    </g>
+    {/* beakers of coloured emotion */}
+    {([[1480, COLORS.yellow], [1600, COLORS.blueDiagram], [1720, COLORS.greenLeaf]] as [number, string][]).map(([x, c], i) => (
+      <g key={i} transform={`translate(${x} 720)`}><path d="M -30 -50 L -30 -20 L -46 40 Q -50 70 -16 70 L 16 70 Q 50 70 46 40 L 30 -20 L 30 -50 Z" fill={COLORS.white} {...lg} /><path d="M -40 20 L 40 20 L 30 55 Q 30 60 16 60 L -16 60 Q -30 60 -30 55 Z" fill={c} {...sm} /><rect x={-34} y={-58} width={68} height={12} rx={4} fill={COLORS.ledGrey} /></g>
+    ))}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2728,6 +2798,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'thought-funhouse': ThoughtFunhouse,
   'foggy-mind': FoggyMind,
   'reframe-room': ReframeRoom,
+  'emotion-atrium': EmotionAtrium,
+  'mood-weather': MoodWeather,
+  'heart-lab': HeartLab,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

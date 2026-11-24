@@ -30,6 +30,7 @@ import * as Fl from './fallacies';
 import * as So from './solitude';
 import * as In from './intelligences';
 import * as Di from './distortions';
+import * as Eb from './emotions_basic';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -369,6 +370,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'personalization': Di.Personalization,
   'distortion-lens': Di.DistortionLens,
   'reframe-glasses': Di.ReframeGlasses,
+  // basic-emotions emblems (all new)
+  'emo-joy': Eb.EmoJoy,
+  'emo-trust': Eb.EmoTrust,
+  'emo-fear': Eb.EmoFear,
+  'emo-surprise': Eb.EmoSurprise,
+  'emo-sadness': Eb.EmoSadness,
+  'emo-disgust': Eb.EmoDisgust,
+  'emo-anger': Eb.EmoAnger,
+  'emo-anticipation': Eb.EmoAnticipation,
+  'emotion-wheel-prop': Eb.EmotionWheel,
+  'emotion-compass': Eb.EmotionCompass,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

@@ -1,0 +1,345 @@
+{
+  "slug": "basic-emotions",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 13,
+    "NEW": 21
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        9,
+        12,
+        15,
+        18,
+        24,
+        27
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        21,
+        34
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "emotion-blends",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "emotion-wheel-map",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "emotions-job",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "opposite-emotions",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        21,
+        24
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        6,
+        27
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        5,
+        9,
+        27,
+        34,
+        37,
+        39,
+        40
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        31,
+        36
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        12,
+        15
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        30,
+        32,
+        33,
+        35,
+        38
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "fist-up",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        18,
+        21,
+        27
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        34
+      ]
+    },
+    {
+      "name": "startled",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "emo-anger",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24,
+        25
+      ]
+    },
+    {
+      "name": "emo-anticipation",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27,
+        28
+      ]
+    },
+    {
+      "name": "emo-disgust",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "emo-fear",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "emo-joy",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "emo-sadness",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "emo-surprise",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        16
+      ]
+    },
+    {
+      "name": "emo-trust",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "emotion-compass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        35,
+        37
+      ]
+    },
+    {
+      "name": "emotion-wheel-prop",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        33,
+        39
+      ]
+    },
+    {
+      "name": "emotion-atrium",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        9,
+        15,
+        27
+      ]
+    },
+    {
+      "name": "heart-lab",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        21,
+        34
+      ]
+    },
+    {
+      "name": "mood-weather",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        6,
+        12,
+        18,
+        24
+      ]
+    }
+  ]
+}
