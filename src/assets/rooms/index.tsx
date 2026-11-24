@@ -70,7 +70,12 @@ export type RoomName =
   | 'coffee-catchup'
   | 'masquerade-hall'
   | 'pedestal-gallery'
-  | 'analysis-room';
+  | 'analysis-room'
+  | 'personality-atrium'
+  | 'analyst-lab'
+  | 'diplomat-garden'
+  | 'sentinel-hall'
+  | 'explorer-workshop';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2036,6 +2041,138 @@ export const AnalysisRoom: React.FC = () => (
   </g>
 );
 
+/** Personality atrium: a grand hall of four colour-coded family doors with a
+ *  compass medallion on the floor — the entrance to the sixteen types. */
+export const PersonalityAtrium: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+    <rect x={0} y={760} width={CANVAS.width} height={80} fill={shade(COLORS.lavender, 0.08)} />
+    {/* bunting across the top */}
+    {Array.from({ length: 13 }).map((_, i) => (
+      <path key={i} d={`M ${i * 160} 0 L ${i * 160 + 80} 70 L ${i * 160 + 160} 0 Z`} fill={[COLORS.purpleDeep, COLORS.greenLeaf, COLORS.blueDiagram, COLORS.yellow][i % 4]} {...sm} />
+    ))}
+    {/* four family doors */}
+    {([[300, COLORS.purpleDeep], [740, COLORS.greenLeaf], [1180, COLORS.blueDiagram], [1620, COLORS.yellowDark]] as [number, string][]).map(([x, c], i) => (
+      <g key={i} transform={`translate(${x} 470)`}>
+        <path d="M -110 290 L -110 -60 Q -110 -200 0 -200 Q 110 -200 110 -60 L 110 290 Z" fill={shade(c, 0.18)} {...xl} />
+        <path d="M -82 290 L -82 -50 Q -82 -168 0 -168 Q 82 -168 82 -50 L 82 290 Z" fill={c} {...lg} />
+        <circle cx={60} cy={70} r={12} fill={COLORS.yellowSoft} {...sm} />
+      </g>
+    ))}
+    {/* compass medallion on the floor */}
+    <g transform="translate(960 930)">
+      <ellipse rx={220} ry={56} fill={shade(COLORS.whiteShade, -0.06)} {...lg} />
+      <ellipse rx={150} ry={38} fill="none" stroke={COLORS.lavenderDark} strokeWidth={STROKE.sm} />
+      <path d="M 0 -30 L 14 0 L 0 30 L -14 0 Z" fill={COLORS.purpleDeep} {...sm} />
+      <path d="M -150 0 L 150 0" stroke={COLORS.lavenderDark} strokeWidth={STROKE.sm} />
+    </g>
+  </g>
+);
+
+/** Analyst lab: a strategist's den — a node strategy board, a telescope, a
+ *  chessboard and a bookshelf in deep violet. */
+export const AnalystLab: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.04)} floor={shade(COLORS.purpleDeep, 0.22)} floorY={840} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.purpleDeep, -0.06)} opacity={0.5} />)}
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.purpleDeep, 0.12)} />
+    {/* strategy node-board */}
+    <g transform="translate(330 300)">
+      <rect x={-180} y={-150} width={360} height={300} rx={12} fill={COLORS.blueDiagram} {...xl} />
+      {([[-110, -80], [40, -100], [120, 30], [-60, 70], [-140, 40]] as [number, number][]).map(([x, y], i, a) => (
+        <g key={i}>{i < a.length - 1 && <line x1={x} y1={y} x2={a[i + 1][0]} y2={a[i + 1][1]} stroke={COLORS.yellow} strokeWidth={STROKE.sm} />}<circle cx={x} cy={y} r={16} fill={COLORS.white} {...sm} /></g>
+      ))}
+    </g>
+    {/* telescope */}
+    <g transform="translate(960 640) rotate(-30)">
+      <rect x={-30} y={-18} width={220} height={60} rx={20} fill={COLORS.navy} {...xl} />
+      <rect x={180} y={-26} width={44} height={76} rx={10} fill={shade(COLORS.navy, 0.2)} {...lg} />
+      <rect x={-20} y={40} width={16} height={180} fill={COLORS.woodDark} {...sm} transform="rotate(14)" />
+    </g>
+    <path d="M 900 820 L 1020 820 L 1000 700 L 920 700 Z" fill={COLORS.woodDark} {...lg} />
+    {/* bookshelf */}
+    <g transform="translate(1680 460)"><rect x={-130} y={-250} width={260} height={440} rx={10} fill={COLORS.navyDark} {...xl} />{[0, 1, 2].map((r) => <g key={r}><rect x={-112} y={-220 + r * 148} width={224} height={126} fill={shade(COLORS.navy, 0.14)} />{Array.from({ length: 7 }).map((_, c) => <rect key={c} x={-104 + c * 31} y={-214 + r * 148} width={24} height={114} rx={3} fill={[COLORS.lavender, COLORS.yellow, COLORS.sky, COLORS.pink, COLORS.greenLeaf][(r + c) % 5]} {...sm} />)}</g>)}</g>
+  </g>
+);
+
+/** Diplomat garden: a warm conservatory — a sunny window, hanging plants, a
+ *  round table and string lights, all in gentle green. */
+export const DiplomatGarden: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.greenTeal, 0.1)} opacity={0.4} />
+    {/* sunny arched window */}
+    <g transform="translate(360 320)">
+      <path d="M -150 190 L -150 -40 Q -150 -190 0 -190 Q 150 -190 150 -40 L 150 190 Z" fill={COLORS.sky} {...xl} />
+      <circle cx={70} cy={-40} r={46} fill={COLORS.yellow} {...sm} />
+      <line x1={-150} y1={30} x2={150} y2={30} stroke={COLORS.greenDark} strokeWidth={STROKE.sm} /><line x1={0} y1={-190} x2={0} y2={190} stroke={COLORS.greenDark} strokeWidth={STROKE.sm} />
+    </g>
+    {/* string lights */}
+    <path d="M 0 40 Q 480 140 960 60 Q 1440 -20 1920 80" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 10 }).map((_, i) => <circle key={i} cx={100 + i * 190} cy={90 + 30 * Math.sin(i)} r={10} fill={COLORS.yellowSoft} {...sm} />)}
+    {/* hanging plants */}
+    {[760, 1120].map((x, i) => (
+      <g key={i} transform={`translate(${x} 150)`}>
+        <path d="M -40 0 L 40 0 L 30 50 L -30 50 Z" fill={COLORS.wood} {...lg} />
+        {[-26, 0, 26].map((lx) => <path key={lx} d={`M ${lx} 50 q ${lx} 70 ${lx * 0.4} 150`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />)}
+      </g>
+    ))}
+    {/* round table */}
+    <g transform="translate(1480 760)"><ellipse cx={0} cy={0} rx={160} ry={46} fill={shade(COLORS.wood, 0.14)} {...xl} /><rect x={-16} y={30} width={32} height={120} fill={COLORS.woodDark} {...lg} /><circle cx={0} cy={-6} r={30} fill={COLORS.greenLeaf} {...sm} /></g>
+    {/* potted fern */}
+    <g transform="translate(940 780)"><path d="M -44 0 L 44 0 L 34 70 L -34 70 Z" fill={COLORS.red} {...lg} />{[-30, -10, 10, 30].map((lx) => <path key={lx} d={`M ${lx} 0 q ${lx * 1.2} -80 ${lx * 0.5} -140`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+  </g>
+);
+
+/** Sentinel hall: an orderly archive — a wall of filing drawers, framed
+ *  certificates, a big clock and a ledger desk, all neat blues. */
+export const SentinelHall: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.sky, 0.08)} />
+    {/* wall of filing drawers */}
+    <g transform="translate(300 420)">
+      <rect x={-180} y={-280} width={360} height={560} rx={10} fill={COLORS.blueDiagram} {...xl} />
+      {Array.from({ length: 4 }).map((_, r) => Array.from({ length: 2 }).map((_, c) => (
+        <g key={`${r}-${c}`} transform={`translate(${-88 + c * 176} ${-216 + r * 140})`}><rect x={-80} y={-50} width={160} height={100} rx={8} fill={shade(COLORS.blueDiagram, 0.14)} {...lg} /><rect x={-26} y={-14} width={52} height={20} rx={8} fill={COLORS.white} {...sm} /></g>
+      )))}
+    </g>
+    {/* framed certificates */}
+    {[860, 1080].map((x, i) => <g key={i} transform={`translate(${x} 240)`}><rect x={-80} y={-60} width={160} height={120} rx={8} fill={COLORS.bgCream} {...xl} /><path d="M -40 36 l 14 14 l 30 -40" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" /><rect x={-54} y={-40} width={108} height={10} rx={5} fill={COLORS.whiteShade} /></g>)}
+    {/* big clock */}
+    <g transform="translate(1400 250)"><circle r={80} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-52} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={38} y2={10} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle r={8} fill={COLORS.outline} /></g>
+    {/* ledger desk */}
+    <g transform="translate(1540 760)"><rect x={-200} y={0} width={400} height={120} rx={12} fill={COLORS.woodDark} {...xl} /><rect x={-180} y={110} width={40} height={90} fill={shade(COLORS.woodDark, -0.1)} /><rect x={140} y={110} width={40} height={90} fill={shade(COLORS.woodDark, -0.1)} /><rect x={-120} y={-44} width={110} height={54} rx={6} fill={COLORS.white} {...lg} /><rect x={20} y={-30} width={80} height={40} rx={6} fill={COLORS.red} {...sm} /></g>
+  </g>
+);
+
+/** Explorer workshop: a maker's garage — a pegboard of tools, a workbench, a
+ *  skateboard and a guitar, in warm amber. */
+export const ExplorerWorkshop: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.yellowSoft} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.yellowSoft, -0.06)} />
+    {/* pegboard with tools */}
+    <g transform="translate(360 300)">
+      <rect x={-190} y={-170} width={380} height={340} rx={10} fill={shade(COLORS.wood, 0.1)} {...xl} />
+      {Array.from({ length: 5 }).map((_, r) => Array.from({ length: 6 }).map((_, c) => <circle key={`${r}-${c}`} cx={-150 + c * 60} cy={-130 + r * 70} r={5} fill={COLORS.woodDark} />))}
+      {/* a hammer + wrench outline */}
+      <rect x={-150} y={-120} width={18} height={100} rx={6} fill={COLORS.red} {...lg} /><rect x={-170} y={-130} width={58} height={26} rx={6} fill={shade(COLORS.outline, 0.3)} {...sm} />
+      <rect x={30} y={-120} width={16} height={110} rx={6} fill={COLORS.sky} {...lg} /><circle cx={38} cy={-120} r={22} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} />
+      <path d="M 120 -110 l 10 50 l -40 0 Z" fill={COLORS.greenLeaf} {...sm} />
+    </g>
+    {/* string of bulbs */}
+    <path d="M 560 60 Q 1200 160 1860 60" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 7 }).map((_, i) => <circle key={i} cx={640 + i * 180} cy={100 + 20 * Math.sin(i)} r={9} fill={COLORS.yellow} {...sm} />)}
+    {/* workbench */}
+    <g transform="translate(1180 760)"><rect x={-260} y={0} width={520} height={90} rx={10} fill={COLORS.wood} {...xl} /><rect x={-240} y={80} width={40} height={120} fill={COLORS.woodDark} /><rect x={200} y={80} width={40} height={120} fill={COLORS.woodDark} /><rect x={-180} y={-44} width={70} height={50} rx={6} fill={COLORS.red} {...sm} /><circle cx={60} cy={-16} r={24} fill={COLORS.sky} {...lg} /></g>
+    {/* skateboard leaning */}
+    <g transform="translate(1720 720) rotate(70)"><rect x={-110} y={-22} width={220} height={44} rx={22} fill={COLORS.purpleDeep} {...xl} /><circle cx={-60} cy={34} r={16} fill={COLORS.outline} {...sm} /><circle cx={60} cy={34} r={16} fill={COLORS.outline} {...sm} /></g>
+    {/* guitar */}
+    <g transform="translate(900 740) rotate(-18)"><ellipse cx={0} cy={0} rx={70} ry={90} fill={COLORS.yellowDark} {...xl} /><circle cx={0} cy={-10} r={22} fill={COLORS.woodDark} /><rect x={-10} y={-230} width={20} height={150} rx={6} fill={COLORS.woodDark} {...lg} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2091,6 +2228,11 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'masquerade-hall': MasqueradeHall,
   'pedestal-gallery': PedestalGallery,
   'analysis-room': AnalysisRoom,
+  'personality-atrium': PersonalityAtrium,
+  'analyst-lab': AnalystLab,
+  'diplomat-garden': DiplomatGarden,
+  'sentinel-hall': SentinelHall,
+  'explorer-workshop': ExplorerWorkshop,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

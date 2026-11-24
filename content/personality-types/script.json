@@ -1,0 +1,200 @@
+{
+  "title": "Every Personality Type Explained",
+  "slug": "personality-types",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "There's a four-letter code that millions of people now use to describe themselves. INTJ. ENFP. ISFJ. You've seen it in dating bios and office icebreakers. Sixteen little boxes, each claiming to capture a whole human being. But where do they come from, and what do they actually mean?", "scene": "story", "room": "personality-atrium", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY PERSONALITY TYPE", "subtitle": "the sixteen types, explained",
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 760, "y": 720, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1280, "y": 720, "scale": 1.0, "flip": true } ] },
+        { "vo": "Every type is built from four simple dials. Where you get your energy. How you take in the world. How you make decisions. And how you like to plan. Flip those four switches, and you get two to the fourth, sixteen combinations. That's the whole machine.", "scene": "diagramCard", "diagram": "four-axes", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "One honest rule before we start. This is a framework, not a fact. Psychologists prefer other models for hard science, and almost nobody is a pure type. Think of these as sixteen flavours of human, a shared language and a mirror. A tendency, never a cage.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. All sixteen personality types, sorted into four families. Their gifts, their blind spots, and the quiet logic that makes each one tick. Let's find yours.", "scene": "explainer", "prop": "protagonist-beacon", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Four Families",
+      "beats": [
+        { "vo": "To keep sixteen straight, we group them into four families, by what they care about most. The Analysts, who live for ideas and strategy. The Diplomats, who live for people and meaning. The Sentinels, who live for order and duty. And the Explorers, who live for action and the moment.", "scene": "diagramCard", "diagram": "four-families", "emotion": "happy-talk", "withMascot": true },
+        { "vo": "Here they all are. Sixteen types, four families, one of them very probably you. Keep a mental note of which ones feel like looking in a mirror, and which feel like describing someone you love, or someone who drives you up the wall.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["ARCHITECT", "LOGICIAN", "COMMANDER", "DEBATER", "ADVOCATE", "MEDIATOR", "PROTAGONIST", "CAMPAIGNER", "LOGISTICIAN", "DEFENDER", "EXECUTIVE", "CONSUL", "VIRTUOSO", "ADVENTURER", "ENTREPRENEUR", "ENTERTAINER"] }
+      ]
+    },
+    {
+      "name": "Family — Analysts",
+      "beats": [
+        { "vo": "First, the Analysts. Intuitive thinkers, driven by competence, logic and big ideas. They want to understand the system, master it, and improve it. They can seem distant, but it's usually because they're three steps deep in a problem you haven't noticed yet.", "scene": "closeUp", "subject": "object", "prop": "logic-gears", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "1 — INTJ Architect",
+      "beats": [
+        { "vo": "The INTJ, the Architect. Strategic, independent, and allergic to inefficiency. Give them a goal and they'll quietly design a ten-step plan to reach it, then execute while everyone else is still talking. They live in the long game, and they usually see the ending first.", "scene": "story", "room": "analyst-lab", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "INTJ — THE ARCHITECT", "subtitle": "the strategist with a plan",
+          "mascots": [ { "costume": "suit", "pose": "arms-crossed", "emotion": "serious-expert", "x": 720, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "architect-plan", "x": 1240, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their superpower is vision. Their blind spot is other people. Because the plan in their head is so clear, they can forget that no one else can see it, and bulldoze the very feelings that would have helped the plan land. The best Architects learn that people are part of the system too.", "scene": "explainer", "prop": "architect-plan", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "2 — INTP Logician",
+      "beats": [
+        { "vo": "The INTP, the Logician. The inventor and the theorist. Where the Architect wants to execute a plan, the Logician just wants to understand, for the sheer joy of it. They collect ideas like puzzle pieces, turning each one over, asking but why, long after everyone else has moved on.", "scene": "story", "room": "analyst-lab", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "INTP — THE LOGICIAN", "subtitle": "the curious theorist",
+          "mascots": [ { "costume": "labcoat", "pose": "idle", "emotion": "happy-talk", "x": 720, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "logic-gears", "x": 1240, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their gift is originality, seeing the clever connection no one else spots. Their trap is the gap between thinking and doing. A Logician can build a flawless theory in their head and never quite get around to testing it in the world. For them, growth means finishing, not just imagining.", "scene": "explainer", "prop": "logic-gears", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "3 — ENTJ Commander",
+      "beats": [
+        { "vo": "The ENTJ, the Commander. Take everything the Architect plans, and add a megaphone and a room full of people to lead. Bold, decisive and strategic, the Commander sees a goal and instantly starts organising everyone around them to go and get it. Natural, unapologetic leaders.", "scene": "story", "room": "analyst-lab", "emotion": "smug", "camera": "slowZoom", "chapterStart": true, "title": "ENTJ — THE COMMANDER", "subtitle": "the natural leader",
+          "mascots": [ { "costume": "suit", "pose": "hands-hips", "emotion": "smug", "x": 720, "y": 700, "scale": 1.0, "talking": true }, { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 1360, "y": 720, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "command-flag", "x": 1080, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Their strength is momentum. They make things happen. Their cost is that in the sprint toward efficiency, feelings can look like obstacles. A great Commander learns that the fastest route to a goal usually runs straight through the hearts of the people they're leading.", "scene": "explainer", "prop": "command-flag", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "4 — ENTP Debater",
+      "beats": [
+        { "vo": "The ENTP, the Debater. Quick, playful, and in love with a good argument. The Debater can take any side of any topic, often just to see the idea from a new angle. They're the friend who says, okay, but devil's advocate, right as everyone thought the conversation was over.", "scene": "story", "room": "analyst-lab", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "ENTP — THE DEBATER", "subtitle": "the devil's advocate",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "excited", "x": 720, "y": 700, "scale": 1.0, "talking": true, "lookDir": "right" }, { "costume": "tee", "pose": "facepalm", "emotion": "annoyed", "x": 1360, "y": 720, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "debate-sparks", "x": 1080, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Their brilliance is mental fireworks, a fountain of ideas and angles. Their weakness is follow-through and tact. A Debater can win the argument and lose the room, or spin up ten exciting projects and finish none. Their growth is choosing one spark, and tending it into a fire.", "scene": "explainer", "prop": "debate-sparks", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Family — Diplomats",
+      "beats": [
+        { "vo": "Next, the Diplomats. Intuitive feelers, guided by empathy, values and meaning. Where Analysts ask is it true, Diplomats ask is it kind, is it right, does it matter. They're the glue in friendships and the conscience in the room, forever trying to make the world a little more humane.", "scene": "closeUp", "subject": "object", "prop": "protagonist-beacon", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "5 — INFJ Advocate",
+      "beats": [
+        { "vo": "The INFJ, the Advocate. Quiet, deep, and quietly on fire about making things better. Said to be the rarest type, the Advocate pairs soft-spoken warmth with surprisingly firm convictions. They seem to read people effortlessly, sensing the feeling in a room before a word is said.", "scene": "story", "room": "diplomat-garden", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "INFJ — THE ADVOCATE", "subtitle": "the quiet idealist",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 760, "y": 710, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "advocate-candle", "x": 1280, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their gift is insight paired with purpose, a rare mix of dreamer and doer. Their danger is burnout. An Advocate absorbs everyone's pain and pours out their own light to warm others, until there's nothing left in the candle. Their lesson is that they are allowed to be cared for too.", "scene": "explainer", "prop": "advocate-candle", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "6 — INFP Mediator",
+      "beats": [
+        { "vo": "The INFP, the Mediator. A gentle idealist with a rich inner world. Guided by a deep core of personal values, the Mediator is forever seeking meaning, beauty and authenticity. They feel things profoundly, and quietly hope to make the world match the better version they can picture.", "scene": "story", "room": "diplomat-garden", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "INFP — THE MEDIATOR", "subtitle": "the dreamer of meaning",
+          "mascots": [ { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 710, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "mediator-quill", "x": 1280, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their strength is depth and genuine compassion. Their struggle is the gap between the ideal and the real. A Mediator can love the perfect version of a project, or a person, so much that the messy actual one disappoints them. Growth means letting good-enough reality in the door.", "scene": "explainer", "prop": "mediator-quill", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "7 — ENFJ Protagonist",
+      "beats": [
+        { "vo": "The ENFJ, the Protagonist. Warm, charismatic and genuinely inspiring. The Protagonist is the mentor, the coach, the friend who believes in you until you believe it too. They read people beautifully and use it to lift them, lighting up a room and gently pulling everyone toward their best.", "scene": "story", "room": "diplomat-garden", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "ENFJ — THE PROTAGONIST", "subtitle": "the inspiring mentor",
+          "mascots": [ { "costume": "suit", "pose": "arms-out-presenting", "emotion": "happy-talk", "x": 760, "y": 700, "scale": 1.0, "talking": true }, { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 1360, "y": 720, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "protagonist-beacon", "x": 1100, "y": 450, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Their gift is drawing the best out of others. Their blind spot is themselves. A Protagonist can be so tuned to everyone else's needs that their own go quietly unmet, and they tie their worth to how much they're helping. Their growth is turning that warm light inward, too.", "scene": "explainer", "prop": "protagonist-beacon", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "8 — ENFP Campaigner",
+      "beats": [
+        { "vo": "The ENFP, the Campaigner. A bright, bubbling free spirit, bursting with possibility. The Campaigner sees potential everywhere, in people, in projects, in a random idea at 2 AM. Enthusiastic and warm, they connect with almost anyone, and can turn a dull afternoon into an adventure.", "scene": "story", "room": "diplomat-garden", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "ENFP — THE CAMPAIGNER", "subtitle": "the enthusiastic free spirit",
+          "mascots": [ { "costume": "tee", "pose": "cheer", "emotion": "excited", "x": 760, "y": 710, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "campaigner-spark", "x": 1280, "y": 460, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their magic is possibility and connection. Their kryptonite is the boring middle. A Campaigner loves the spark of a new beginning but can fizzle when a dream turns into daily grind, leaving a trail of half-started adventures. Their growth is staying for the unglamorous part.", "scene": "explainer", "prop": "campaigner-spark", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Family — Sentinels",
+      "beats": [
+        { "vo": "Now the Sentinels. Practical, grounded, and the reason anything actually works. Sensing judgers, they value order, loyalty, structure and getting things done. While the dreamers dream, the Sentinels quietly keep the lights on, the trains running, and their promises kept.", "scene": "closeUp", "subject": "object", "prop": "defender-shield", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "9 — ISTJ Logistician",
+      "beats": [
+        { "vo": "The ISTJ, the Logistician. Dependable, thorough, and true to their word. The Logistician deals in facts, not vibes. If they said they'd do it, it's done, properly, on time. They're the quiet backbone of families and institutions, trusted precisely because they never make a fuss.", "scene": "story", "room": "sentinel-hall", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "ISTJ — THE LOGISTICIAN", "subtitle": "the dependable backbone",
+          "mascots": [ { "costume": "suit", "pose": "idle", "emotion": "neutral", "x": 760, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "logistician-ledger", "x": 1280, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their strength is rock-solid reliability. Their limit is flexibility. Because the tried-and-true way has always worked, a Logistician can dig in against a better new one, mistaking change for chaos. Their growth is trusting that some rules are meant to be gently rewritten.", "scene": "explainer", "prop": "logistician-ledger", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "10 — ISFJ Defender",
+      "beats": [
+        { "vo": "The ISFJ, the Defender. Warm, loyal, and endlessly attentive to the people they love. The Defender remembers your birthday, your allergy, the thing you mentioned once in passing. They protect and provide quietly, meeting needs before you've even noticed you had them.", "scene": "story", "room": "sentinel-hall", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "ISFJ — THE DEFENDER", "subtitle": "the warm protector",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 710, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "defender-shield", "x": 1280, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their gift is devoted, practical care. Their danger is self-erasure. A Defender gives and gives, remembers everyone, and quietly swallows their own needs until resentment or exhaustion leaks out sideways. Their growth is learning that asking for help is not a failure of love.", "scene": "explainer", "prop": "defender-shield", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "11 — ESTJ Executive",
+      "beats": [
+        { "vo": "The ESTJ, the Executive. The organiser-in-chief. Where the Logistician keeps their own promises, the Executive steps up to run the whole operation. Decisive and dependable, they bring order to chaos, set the standard, and happily take charge when someone needs to.", "scene": "story", "room": "sentinel-hall", "emotion": "smug", "camera": "slowZoom", "chapterStart": true, "title": "ESTJ — THE EXECUTIVE", "subtitle": "the organiser-in-chief",
+          "mascots": [ { "costume": "suit", "pose": "hands-hips", "emotion": "smug", "x": 760, "y": 700, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "neutral", "x": 1360, "y": 720, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "executive-clipboard", "x": 1100, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Their strength is order and follow-through. Their blind spot is rigidity. Convinced there's a right way to do things, usually their way, an Executive can bristle at new methods and tread on feelings while enforcing the rules. Their growth is bending the rule to fit the human.", "scene": "explainer", "prop": "executive-clipboard", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "12 — ESFJ Consul",
+      "beats": [
+        { "vo": "The ESFJ, the Consul. The host, the connector, the heart of the community. Sociable and caring, the Consul thrives on harmony and belonging, remembering everyone's name and making sure no one is left out. Where there's a gathering that just works, a Consul usually built it.", "scene": "story", "room": "sentinel-hall", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "ESFJ — THE CONSUL", "subtitle": "the heart of the group",
+          "mascots": [ { "costume": "tee", "pose": "wave", "emotion": "happy-talk", "x": 760, "y": 710, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "consul-host", "x": 1280, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their gift is warmth that holds a group together. Their soft spot is approval. Because harmony matters so much, a Consul can over-read criticism and bend themselves out of shape to keep everyone happy. Their growth is knowing their worth isn't a vote the room keeps taking.", "scene": "explainer", "prop": "consul-host", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Family — Explorers",
+      "beats": [
+        { "vo": "Finally, the Explorers. Spontaneous, practical and gloriously in the moment. Sensing perceivers, they're masters of the here and now, craving action, novelty and hands-on experience. Flexible and bold, they're the ones who improvise brilliantly while everyone else is still planning.", "scene": "closeUp", "subject": "object", "prop": "entertainer-mic", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "13 — ISTP Virtuoso",
+      "beats": [
+        { "vo": "The ISTP, the Virtuoso. The quiet master of how things work. Give a Virtuoso a broken engine, a tricky problem, or a crisis, and they come alive, calm hands, sharp eyes, figuring it out by doing. They say little and fix much, learning the world by taking it apart.", "scene": "story", "room": "explorer-workshop", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "ISTP — THE VIRTUOSO", "subtitle": "the hands-on master",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 760, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "virtuoso-wrench", "x": 1300, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their strength is cool, practical mastery under pressure. Their blind spot is the long term. A Virtuoso loves the immediate puzzle but can go quiet and dodge the big conversations, the plans, the commitments. Their growth is staying present for the people, not just the problems.", "scene": "explainer", "prop": "virtuoso-wrench", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "14 — ISFP Adventurer",
+      "beats": [
+        { "vo": "The ISFP, the Adventurer. A gentle artist living fully in the present. The Adventurer feels the world through colour, texture, music and mood, and follows beauty wherever it leads. Quiet and warm, they say less and sense more, with a spontaneous streak that resists any box.", "scene": "story", "room": "explorer-workshop", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "ISFP — THE ADVENTURER", "subtitle": "the gentle artist",
+          "mascots": [ { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "adventurer-brush", "x": 1300, "y": 470, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their gift is authenticity and a tender eye for beauty. Their struggle is planning and conflict. An Adventurer can drift from moment to moment, avoiding the hard conversation and the far-off goal. Their growth is trusting that a little structure protects the freedom they love.", "scene": "explainer", "prop": "adventurer-brush", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "15 — ESTP Entrepreneur",
+      "beats": [
+        { "vo": "The ESTP, the Entrepreneur. Bold, energetic, and built for action. The Entrepreneur doesn't overthink, they move, reading the room in an instant and seizing the opening while others hesitate. Charming risk-takers, they thrive on the edge where the stakes are real and the clock is ticking.", "scene": "story", "room": "explorer-workshop", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "ESTP — THE ENTREPRENEUR", "subtitle": "the bold risk-taker",
+          "mascots": [ { "costume": "suit", "pose": "fist-up", "emotion": "excited", "x": 760, "y": 700, "scale": 1.0, "talking": true }, { "costume": "hoodie", "pose": "startled", "emotion": "scared", "x": 1360, "y": 720, "scale": 0.95, "flip": true } ],
+          "props": [ { "name": "entrepreneur-dice", "x": 1100, "y": 460, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "Their strength is decisive, electric momentum. Their risk is leaping before looking. An Entrepreneur can chase the thrill into trouble, treating a serious decision like a roll of the dice. Their growth is pausing, just long enough to check that the bold move is also the wise one.", "scene": "explainer", "prop": "entrepreneur-dice", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "16 — ESFP Entertainer",
+      "beats": [
+        { "vo": "The ESFP, the Entertainer. Spontaneous, generous, and allergic to a dull moment. The Entertainer turns ordinary life into a party, pulling people together with warmth and infectious fun. They live out loud, feel everything in the moment, and love to light up a room.", "scene": "story", "room": "explorer-workshop", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "ESFP — THE ENTERTAINER", "subtitle": "the life of the party",
+          "mascots": [ { "costume": "tee", "pose": "cheer", "emotion": "excited", "x": 760, "y": 710, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "entertainer-mic", "x": 1300, "y": 460, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "Their gift is joy, the ability to make people feel alive. Their blind spot is the serious and the still. An Entertainer can dodge hard feelings and long plans by chasing the next bit of fun. Their growth is learning that sitting with the quiet, heavy moments is its own kind of courage.", "scene": "explainer", "prop": "entertainer-mic", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Whole Human",
+      "beats": [
+        { "vo": "Now, here's the part the quizzes often skip. Under the four letters sits an older, subtler idea from Carl Jung. Everyone runs all four mental functions, thinking, feeling, sensing, intuition. Your type isn't which ones you have. It's the order you reach for them in.", "scene": "diagramCard", "diagram": "cognitive-stack", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Which is exactly why a type is a tendency, not a cage. You are a dial, not a box. Most of us sit somewhere along each spectrum, not jammed at the ends, and we flex with mood, age and the room we're in. A healthy Architect grows warmer. A healthy Entertainer grows deeper.", "scene": "diagramCard", "diagram": "type-not-a-box", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So enjoy your four letters. Use them as a mirror, a shortcut, a bit of language for the beautiful, baffling machine that is you. Just don't let them become a wall. You are not a type. You're a whole, changing human, and the type was only ever a doorway in. I'm Dear Brain. Go be gloriously yourself.", "scene": "explainer", "prop": "campaigner-spark", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

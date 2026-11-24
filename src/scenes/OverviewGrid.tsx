@@ -45,24 +45,30 @@ export const defaultGridItems = (labels: string[]): GridItem[] => {
     { pose: 'wave', emotion: 'happy-talk' },
     { pose: 'arms-out-presenting', emotion: 'excited', prop: 'sparkles' },
   ];
-  return labels.slice(0, 15).map((label, i) => ({ label, color: COLORS_CYCLE[i % COLORS_CYCLE.length], ...recipes[i % recipes.length] }));
+  return labels.slice(0, 16).map((label, i) => ({ label, color: COLORS_CYCLE[i % COLORS_CYCLE.length], ...recipes[i % recipes.length] }));
 };
 
-const COLS = 5;
-const ROWS = 3;
 const MX = CANVAS.width * 0.05;
 const MY = CANVAS.height * 0.05;
-const CELL_W = (CANVAS.width - 2 * MX) / COLS;
-const CELL_H = (CANVAS.height - 2 * MY) / ROWS;
-const R = Math.min(CELL_W * 0.38, (CELL_H - 80) / 2);
 
-export const cellLayout = (i: number) => {
-  const c = i % COLS;
-  const r = Math.floor(i / COLS);
-  const cx = MX + CELL_W * (c + 0.5);
-  const badgeCy = MY + CELL_H * r + R + 14;
-  const labelY = badgeCy + R + 16 + 30;
-  return { cx, badgeCy, labelY };
+/** Grid shape by item count: default 5×3 (≤15); 4×4 for a full 16-item roll-call. */
+const gridDims = (n: number) => {
+  const cols = n > 15 ? 4 : 5;
+  const rows = n > 15 ? 4 : 3;
+  const cellW = (CANVAS.width - 2 * MX) / cols;
+  const cellH = (CANVAS.height - 2 * MY) / rows;
+  const r = Math.min(cellW * 0.38, (cellH - 80) / 2);
+  return { cols, cellW, cellH, r };
+};
+
+export const cellLayout = (i: number, n = 15) => {
+  const { cols, cellW, cellH, r } = gridDims(n);
+  const c = i % cols;
+  const row = Math.floor(i / cols);
+  const cx = MX + cellW * (c + 0.5);
+  const badgeCy = MY + cellH * row + r + 14;
+  const labelY = badgeCy + r + 16 + 30;
+  return { cx, badgeCy, labelY, R: r, CELL_W: cellW };
 };
 
 export const OverviewGrid: React.FC<{ items: string[] | GridItem[]; chapterStart?: boolean }> = ({ items, chapterStart }) => {
@@ -79,7 +85,7 @@ export const OverviewGrid: React.FC<{ items: string[] | GridItem[]; chapterStart
       <AbsoluteFill style={{ transform: `translateY(${groupBob}px)` }}>
         <svg width={CANVAS.width} height={CANVAS.height} viewBox={`0 0 ${CANVAS.width} ${CANVAS.height}`} style={{ position: 'absolute', inset: 0 }}>
           {list.map((it, i) => {
-            const { cx, badgeCy, labelY } = cellLayout(i);
+            const { cx, badgeCy, labelY, R, CELL_W } = cellLayout(i, list.length);
             const pop = springIn(frame, fps, i * 2);
             const fs = Math.min(32, (CELL_W * 0.96) / (it.label.length * 0.52));
             return (
@@ -98,7 +104,7 @@ export const OverviewGrid: React.FC<{ items: string[] | GridItem[]; chapterStart
           })}
         </svg>
         {list.map((it, i) => {
-          const { cx, badgeCy } = cellLayout(i);
+          const { cx, badgeCy, R } = cellLayout(i, list.length);
           const pop = springIn(frame, fps, i * 2);
           if (pop < 0.3) return null;
           const Comp = it.prop ? PROPS[it.prop] : null;

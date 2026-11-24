@@ -76,7 +76,7 @@ function checkBeat(where: string, beat: Record<string, unknown>) {
       break;
     case 'overviewGrid':
       if (!Array.isArray(beat.items) || beat.items.length === 0) errors.push(`${where}: overviewGrid needs items[]`);
-      else if (beat.items.length > 15) errors.push(`${where}: overviewGrid has ${beat.items.length} items (max 15)`);
+      else if (beat.items.length > 16) errors.push(`${where}: overviewGrid has ${beat.items.length} items (max 16)`);
       break;
     case 'endScreen':
       break;

@@ -1963,8 +1963,121 @@ const TwoSidesCoin: React.FC = () => {
   );
 };
 
+/** four-axes: the four preference dials that build a type (I-E, S-N, T-F, J-P). */
+const FourAxes: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.58; const cy = CANVAS.height * 0.4;
+  const rows: [string, string, string, number, string][] = [
+    ['MIND', 'I', 'E', 0.32, COLORS.purpleDeep],
+    ['ENERGY', 'S', 'N', 0.68, COLORS.greenLeaf],
+    ['NATURE', 'T', 'F', 0.4, COLORS.blueDiagram],
+    ['TACTICS', 'J', 'P', 0.6, COLORS.yellowDark],
+  ];
+  return (
+    <g>
+      {rows.map(([lab, a, b, pos, col], i) => {
+        const y = cy - 160 + i * 106;
+        const prog = springIn(frame - i * 6, 10);
+        const x1 = cx - 180, x2 = cx + 180;
+        const kx = x1 + (x2 - x1) * (0.5 + (pos - 0.5) * prog);
+        return (
+          <g key={lab}>
+            <text x={x1 - 150} y={y + 10} fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{lab}</text>
+            <text x={x1 - 34} y={y + 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={shade(col, -0.1)}>{a}</text>
+            <text x={x2 + 34} y={y + 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={shade(col, -0.1)}>{b}</text>
+            <rect x={x1} y={y - 12} width={360} height={24} rx={12} fill={shade(col, 0.24)} {...lg} />
+            <circle cx={kx} cy={y} r={26} fill={col} {...lg} />
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 250} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>four dials, sixteen types</text>
+    </g>
+  );
+};
+
+/** four-families: the 2×2 map — Analysts, Diplomats, Sentinels, Explorers. */
+const FourFamilies: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const quads: [string, number, number, string][] = [
+    ['ANALYSTS', -1, -1, COLORS.purpleDeep],
+    ['DIPLOMATS', 1, -1, COLORS.greenLeaf],
+    ['SENTINELS', -1, 1, COLORS.blueDiagram],
+    ['EXPLORERS', 1, 1, COLORS.yellowDark],
+  ];
+  const s = 150;
+  return (
+    <g>
+      {quads.map(([lab, qx, qy, col], i) => {
+        const p = springIn(frame - i * 7, 10);
+        const x = cx + qx * s - s + 8; const y = cy + qy * s - s + 8;
+        return (
+          <g key={lab} transform={`translate(${cx + qx * (s + 8)} ${cy + qy * (s + 8)}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <rect x={-s + 6} y={-s + 6} width={2 * s - 12} height={2 * s - 12} rx={18} fill={shade(col, 0.2)} {...xl} />
+            <text x={0} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={shade(col, -0.2)}>{lab}</text>
+            <text x={0} y={48} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.white}>×4</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+/** cognitive-stack: a little tower of four function blocks, dominant on top. */
+const CognitiveStack: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.3;
+  const blocks: [string, number, string][] = [
+    ['DOMINANT', 1.0, COLORS.yellowDark],
+    ['AUXILIARY', 0.8, COLORS.greenLeaf],
+    ['TERTIARY', 0.6, COLORS.sky],
+    ['INFERIOR', 0.42, COLORS.lavender],
+  ];
+  return (
+    <g>
+      {blocks.map(([lab, w, col], i) => {
+        const p = springIn(frame - i * 8, 12);
+        const bw = 320 * w;
+        const y = cy + i * 92;
+        return (
+          <g key={lab} transform={`translate(${cx} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <rect x={-bw / 2} y={0} width={bw} height={78} rx={12} fill={col} {...xl} />
+            <text x={0} y={52} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{lab}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 92 * 4 + 50} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={36} fill={COLORS.outline}>everyone runs all four</text>
+    </g>
+  );
+};
+
+/** type-not-a-box: a spectrum dial (you) vs a rigid cage — a tendency, not a label. */
+const TypeNotABox: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const sweep = 0.5 + 0.32 * Math.sin(frame / 20);
+  const ang = Math.PI * (1 - sweep);
+  const nx = cx - 180 + Math.cos(ang) * 120; const ny = cy + 40 - Math.sin(ang) * 120;
+  return (
+    <g>
+      {/* the spectrum gauge */}
+      <path d={`M ${cx - 300} ${cy + 40} A 120 120 0 0 1 ${cx - 60} ${cy + 40}`} fill="none" stroke={COLORS.greenTeal} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <line x1={cx - 180} y1={cy + 40} x2={nx} y2={ny} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <circle cx={cx - 180} cy={cy + 40} r={14} fill={COLORS.outline} />
+      <text x={cx - 180} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>a dial</text>
+      {/* the rigid box, crossed out */}
+      <g transform={`translate(${cx + 160} ${cy - 20})`} opacity={0.6}>
+        <rect x={-80} y={-80} width={160} height={160} rx={10} fill={shade(COLORS.redDark, 0.3)} {...xl} />
+        <line x1={-80} y1={-80} x2={80} y2={80} stroke={COLORS.red} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        <text x={0} y={120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>not a box</text>
+      </g>
+      <text x={cx - 40} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={38} fill={COLORS.outline}>a tendency, not a cage</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2038,6 +2151,10 @@ export const DiagramCard: React.FC<{
     'overcompensate-arc': COLORS.sky,
     'hidden-roots': COLORS.greenLeaf,
     'two-sides-coin': COLORS.sky,
+    'four-axes': COLORS.purpleDeep,
+    'four-families': COLORS.greenTeal,
+    'cognitive-stack': COLORS.yellow,
+    'type-not-a-box': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2118,6 +2235,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'overcompensate-arc' && <OvercompensateArc />}
         {diagram === 'hidden-roots' && <HiddenRoots />}
         {diagram === 'two-sides-coin' && <TwoSidesCoin />}
+        {diagram === 'four-axes' && <FourAxes />}
+        {diagram === 'four-families' && <FourFamilies />}
+        {diagram === 'cognitive-stack' && <CognitiveStack />}
+        {diagram === 'type-not-a-box' && <TypeNotABox />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

@@ -223,6 +223,11 @@ const ROOM_DEMO: Record<string, { pose: any; emotion: any; props?: any[] }> = {
   'masquerade-hall': { pose: 'idle', emotion: 'smug', props: [{ name: 'god-throne', x: 1180, y: 600, scale: 0.6 }] },
   'pedestal-gallery': { pose: 'hands-hips', emotion: 'smug', props: [{ name: 'pedestal-strut', x: 1250, y: 620, scale: 0.6 }] },
   'analysis-room': { pose: 'idle', emotion: 'serious-expert', props: [{ name: 'guilt-weight', x: 1150, y: 520, scale: 0.6 }] },
+  'personality-atrium': { pose: 'arms-out-presenting', emotion: 'happy-talk', props: [{ name: 'protagonist-beacon', x: 1300, y: 560, scale: 0.6 }] },
+  'analyst-lab': { pose: 'idle', emotion: 'serious-expert', props: [{ name: 'architect-plan', x: 1300, y: 600, scale: 0.6 }] },
+  'diplomat-garden': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'advocate-candle', x: 1300, y: 600, scale: 0.6 }] },
+  'sentinel-hall': { pose: 'hands-hips', emotion: 'neutral', props: [{ name: 'defender-shield', x: 1150, y: 600, scale: 0.6 }] },
+  'explorer-workshop': { pose: 'idle', emotion: 'excited', props: [{ name: 'virtuoso-wrench', x: 1400, y: 600, scale: 0.6 }] },
 };
 
 export const RoomStill: React.FC<{ room: RoomName }> = ({ room }) => {

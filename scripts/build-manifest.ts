@@ -84,6 +84,11 @@ const NEW_ASSETS = new Set([
   'masquerade-hall', 'pedestal-gallery', 'analysis-room',
   'shrinking-figure', 'pedestal-strut', 'god-throne', 'savior-ring', 'hero-spotlight', 'martyr-cross', 'guilt-weight', 'targeted-figure', 'victim-cloud', 'napoleon-hat', 'glass-slipper', 'never-grow-up', 'parent-photo', 'unheard-warning', 'dodged-summit',
   'complex-core', 'overcompensate-arc', 'hidden-roots', 'two-sides-coin',
+  // personality-types (all new)
+  'personality-atrium', 'analyst-lab', 'diplomat-garden', 'sentinel-hall', 'explorer-workshop',
+  'architect-plan', 'logic-gears', 'command-flag', 'debate-sparks', 'advocate-candle', 'mediator-quill', 'protagonist-beacon', 'campaigner-spark',
+  'logistician-ledger', 'defender-shield', 'executive-clipboard', 'consul-host', 'virtuoso-wrench', 'adventurer-brush', 'entrepreneur-dice', 'entertainer-mic',
+  'four-axes', 'four-families', 'cognitive-stack', 'type-not-a-box',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

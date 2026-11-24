@@ -1,0 +1,511 @@
+{
+  "slug": "personality-types",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 18,
+    "NEW": 31
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        11,
+        13,
+        16,
+        20,
+        27,
+        34,
+        38
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        7,
+        11,
+        20,
+        25,
+        29,
+        38
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        0,
+        13,
+        18,
+        22,
+        29,
+        31,
+        36,
+        40
+      ]
+    },
+    {
+      "name": "cognitive-stack",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        42
+      ]
+    },
+    {
+      "name": "four-axes",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "four-families",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "type-not-a-box",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        43
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        9
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        13,
+        20,
+        22,
+        38,
+        40
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        3,
+        4,
+        5,
+        9,
+        18,
+        20,
+        27,
+        31,
+        36,
+        44
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        11,
+        25,
+        29,
+        34
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        6,
+        7,
+        8,
+        10,
+        12,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        23,
+        24,
+        26,
+        28,
+        30,
+        32,
+        33,
+        35,
+        37,
+        39,
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        11,
+        29
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        20,
+        22,
+        40
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "fist-up",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "hands-hips",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        11,
+        29
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        11,
+        16,
+        18,
+        25,
+        27,
+        29,
+        34,
+        36
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "startled",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        31
+      ]
+    },
+    {
+      "name": "adventurer-brush",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        36,
+        37
+      ]
+    },
+    {
+      "name": "advocate-candle",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16,
+        17
+      ]
+    },
+    {
+      "name": "architect-plan",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "campaigner-spark",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        23,
+        44
+      ]
+    },
+    {
+      "name": "command-flag",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11,
+        12
+      ]
+    },
+    {
+      "name": "consul-host",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        31,
+        32
+      ]
+    },
+    {
+      "name": "debate-sparks",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13,
+        14
+      ]
+    },
+    {
+      "name": "defender-shield",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24,
+        27,
+        28
+      ]
+    },
+    {
+      "name": "entertainer-mic",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        33,
+        40,
+        41
+      ]
+    },
+    {
+      "name": "entrepreneur-dice",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        38,
+        39
+      ]
+    },
+    {
+      "name": "executive-clipboard",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29,
+        30
+      ]
+    },
+    {
+      "name": "logic-gears",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6,
+        9,
+        10
+      ]
+    },
+    {
+      "name": "logistician-ledger",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        26
+      ]
+    },
+    {
+      "name": "mediator-quill",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "protagonist-beacon",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        15,
+        20,
+        21
+      ]
+    },
+    {
+      "name": "virtuoso-wrench",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        34,
+        35
+      ]
+    },
+    {
+      "name": "analyst-lab",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        7,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "name": "diplomat-garden",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        16,
+        18,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "explorer-workshop",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        34,
+        36,
+        38,
+        40
+      ]
+    },
+    {
+      "name": "personality-atrium",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "sentinel-hall",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        25,
+        27,
+        29,
+        31
+      ]
+    }
+  ]
+}

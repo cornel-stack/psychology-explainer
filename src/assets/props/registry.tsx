@@ -23,6 +23,7 @@ import * as F3 from './fear3am';
 import * as Ot from './overthink';
 import * as Jl from './jealousy';
 import * as Cx from './complexes';
+import * as Pt from './personalities';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -278,6 +279,23 @@ export const PROPS: Record<string, React.FC<any>> = {
   'parent-photo': Cx.ParentPhoto,
   'unheard-warning': Cx.UnheardWarning,
   'dodged-summit': Cx.DodgedSummit,
+  // personality-types emblems (all new)
+  'architect-plan': Pt.ArchitectPlan,
+  'logic-gears': Pt.LogicGears,
+  'command-flag': Pt.CommandFlag,
+  'debate-sparks': Pt.DebateSparks,
+  'advocate-candle': Pt.AdvocateCandle,
+  'mediator-quill': Pt.MediatorQuill,
+  'protagonist-beacon': Pt.ProtagonistBeacon,
+  'campaigner-spark': Pt.CampaignerSpark,
+  'logistician-ledger': Pt.LogisticianLedger,
+  'defender-shield': Pt.DefenderShield,
+  'executive-clipboard': Pt.ExecutiveClipboard,
+  'consul-host': Pt.ConsulHost,
+  'virtuoso-wrench': Pt.VirtuosoWrench,
+  'adventurer-brush': Pt.AdventurerBrush,
+  'entrepreneur-dice': Pt.EntrepreneurDice,
+  'entertainer-mic': Pt.EntertainerMic,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
