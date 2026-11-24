@@ -1,0 +1,340 @@
+{
+  "slug": "cognitive-distortions",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 12,
+    "NEW": 20
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "catch-check-change",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        35
+      ]
+    },
+    {
+      "name": "cbt-triangle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "thought-spiral",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        14,
+        26
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        4,
+        35,
+        36,
+        39,
+        41,
+        42
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        37,
+        38,
+        40
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        11,
+        23,
+        29,
+        32
+      ]
+    },
+    {
+      "name": "terrified",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        8,
+        17,
+        20,
+        32
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        11,
+        14,
+        23,
+        29
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "all-or-nothing",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "catastrophize",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20,
+        21
+      ]
+    },
+    {
+      "name": "discount-positive",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        15
+      ]
+    },
+    {
+      "name": "distortion-lens",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "emotion-reasoning",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23,
+        24
+      ]
+    },
+    {
+      "name": "labeling",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29,
+        30
+      ]
+    },
+    {
+      "name": "mental-filter",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11,
+        12
+      ]
+    },
+    {
+      "name": "mind-reading",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "over-generalize",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "personalization",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        32,
+        33
+      ]
+    },
+    {
+      "name": "reframe-glasses",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        37,
+        39,
+        41
+      ]
+    },
+    {
+      "name": "should-statements",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        27
+      ]
+    },
+    {
+      "name": "foggy-mind",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        8,
+        14,
+        20,
+        26,
+        32
+      ]
+    },
+    {
+      "name": "reframe-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        36
+      ]
+    },
+    {
+      "name": "thought-funhouse",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        5,
+        11,
+        17,
+        23,
+        29
+      ]
+    }
+  ]
+}

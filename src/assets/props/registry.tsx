@@ -29,6 +29,7 @@ import * as Pr from './procrastination';
 import * as Fl from './fallacies';
 import * as So from './solitude';
 import * as In from './intelligences';
+import * as Di from './distortions';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -355,6 +356,19 @@ export const PROPS: Record<string, React.FC<any>> = {
   'inner-lantern': In.InnerLantern,
   'nature-leaf': In.NatureLeaf,
   'big-question': In.BigQuestion,
+  // cognitive-distortions emblems (all new)
+  'all-or-nothing': Di.AllOrNothing,
+  'over-generalize': Di.OverGeneralize,
+  'mental-filter': Di.MentalFilter,
+  'discount-positive': Di.DiscountPositive,
+  'mind-reading': Di.MindReading,
+  'catastrophize': Di.Catastrophize,
+  'emotion-reasoning': Di.EmotionReasoning,
+  'should-statements': Di.ShouldStatements,
+  'labeling': Di.Labeling,
+  'personalization': Di.Personalization,
+  'distortion-lens': Di.DistortionLens,
+  'reframe-glasses': Di.ReframeGlasses,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

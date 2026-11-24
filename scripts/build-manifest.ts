@@ -109,6 +109,10 @@ const NEW_ASSETS = new Set([
   'mind-gallery', 'creative-studio', 'open-nature',
   'word-quill', 'logic-numbers', 'spatial-cube', 'music-emblem', 'body-motion', 'people-link', 'inner-lantern', 'nature-leaf', 'big-question',
   'intelligence-wheel', 'not-one-number', 'spiky-profile', 'strength-finder',
+  // cognitive-distortions (all new)
+  'thought-funhouse', 'foggy-mind', 'reframe-room',
+  'all-or-nothing', 'over-generalize', 'mental-filter', 'discount-positive', 'mind-reading', 'catastrophize', 'emotion-reasoning', 'should-statements', 'labeling', 'personalization', 'distortion-lens', 'reframe-glasses',
+  'cbt-triangle', 'distortion-vs-reality', 'catch-check-change', 'thought-spiral',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

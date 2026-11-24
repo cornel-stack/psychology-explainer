@@ -91,7 +91,10 @@ export type RoomName =
   | 'draining-party'
   | 'mind-gallery'
   | 'creative-studio'
-  | 'open-nature';
+  | 'open-nature'
+  | 'thought-funhouse'
+  | 'foggy-mind'
+  | 'reframe-room';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2574,6 +2577,78 @@ export const OpenNature: React.FC = () => (
   </g>
 );
 
+/** Thought funhouse: a hall of warped mirrors, each bending a plain thought into
+ *  a distorted one — the mind's trick house. */
+export const ThoughtFunhouse: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.purpleDeep} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.purpleDeep, -0.05)} opacity={0.5} />)}
+    {/* row of warped mirror frames */}
+    {([[300, COLORS.sky], [740, COLORS.pink], [1180, COLORS.greenLeaf], [1620, COLORS.yellowDark]] as [number, string][]).map(([x, c], i) => (
+      <g key={i} transform={`translate(${x} 400)`}>
+        <path d="M -110 280 Q -150 0 -110 -220 Q 0 -260 110 -220 Q 150 0 110 280 Q 0 240 -110 280 Z" fill={shade(COLORS.outline, 0.3)} {...xl} />
+        <path d="M -82 240 Q -118 0 -82 -184 Q 0 -214 82 -184 Q 118 0 82 240 Q 0 206 -82 240 Z" fill={shade(c, 0.12)} {...sm} />
+        {/* a wobbly distorted reflection */}
+        <g transform={`scale(${i % 2 ? 1.3 : 0.7} ${i % 2 ? 0.7 : 1.3})`}><circle cx={0} cy={-30} r={34} fill={COLORS.white} {...lg} /><circle cx={-12} cy={-36} r={5} fill={COLORS.outline} /><circle cx={12} cy={-36} r={5} fill={COLORS.outline} /><path d="M -34 48 Q 0 -6 34 48 Z" fill={shade(COLORS.white, 0.1)} {...xl} /></g>
+      </g>
+    ))}
+    {/* carnival bunting */}
+    {Array.from({ length: 13 }).map((_, i) => <path key={i} d={`M ${i * 160} 0 L ${i * 160 + 80} 54 L ${i * 160 + 160} 0 Z`} fill={[COLORS.red, COLORS.yellow, COLORS.sky][i % 3]} {...sm} />)}
+  </g>
+);
+
+/** Foggy mind: a dim, grey internal headspace clouded by distorted thoughts —
+ *  how the world looks through the lens. */
+export const FoggyMind: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.ledGrey, 0.12)} floor={shade(COLORS.ledGrey, -0.1)} floorY={860} stripe={false} />
+    {/* darker upper band + lighter mid band to split the flat grey */}
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.ledGrey, -0.05)} opacity={0.7} />
+    <rect x={0} y={380} width={CANVAS.width} height={200} fill={shade(COLORS.ledGrey, 0.05)} opacity={0.5} />
+    {/* many drifting fog banks covering the space */}
+    {([[220, 160, 0.6], [640, 120, 0.5], [1080, 180, 0.6], [1500, 140, 0.5], [1760, 300, 0.5], [120, 360, 0.5], [500, 440, 0.5], [900, 400, 0.45], [1300, 460, 0.5], [1680, 520, 0.5]] as [number, number, number][]).map(([x, y, o], i) => (
+      <g key={i} transform={`translate(${x} ${y})`} opacity={o}>
+        <ellipse cx={0} cy={0} rx={160} ry={64} fill={COLORS.whiteShade} {...lg} />
+        <ellipse cx={96} cy={14} rx={104} ry={52} fill={COLORS.whiteShade} {...sm} />
+        <ellipse cx={-96} cy={10} rx={94} ry={46} fill={COLORS.whiteShade} {...sm} />
+      </g>
+    ))}
+    {/* dark drifting storm patches */}
+    {([[380, 300], [1180, 320], [1620, 240]] as [number, number][]).map(([x, y], i) => <ellipse key={i} cx={x} cy={y} rx={120} ry={56} fill={shade(COLORS.outline, 0.15)} opacity={0.4} {...lg} />)}
+    {/* tangled dark thought scribbles */}
+    {[300, 760, 1180, 1620].map((x, i) => <path key={i} d={`M ${x} 640 q 60 -50 10 -100 q -50 -40 20 -90 q 50 -30 -10 -80`} fill="none" stroke={shade(COLORS.outline, 0.2)} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.6} />)}
+    {/* a dim lone lamp of clarity */}
+    <g transform="translate(960 560)"><rect x={-8} y={0} width={16} height={300} fill={shade(COLORS.outline, 0.25)} {...sm} /><circle cx={0} cy={-10} r={46} fill={COLORS.yellowSoft} opacity={0.6} /><rect x={-24} y={-30} width={48} height={30} rx={8} fill={COLORS.yellow} {...lg} /></g>
+  </g>
+);
+
+/** Reframe room: a calm therapy space — two chairs, a whiteboard turning a
+ *  distorted thought into a balanced one. The place the lens comes off. */
+export const ReframeRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.wood} floorY={820} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.greenTeal, 0.08)} />
+    {/* whiteboard: distorted -> balanced */}
+    <g transform="translate(560 300)">
+      <rect x={-300} y={-170} width={600} height={340} rx={14} fill={COLORS.white} {...xl} />
+      <rect x={-250} y={-130} width={200} height={70} rx={10} fill={shade(COLORS.red, 0.3)} {...sm} /><text x={-150} y={-88} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={24} fill={COLORS.red}>"I failed"</text>
+      <path d="M -40 -96 l 80 0 m -20 -14 l 20 14 l -20 14" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <rect x={50} y={-130} width={230} height={70} rx={10} fill={shade(COLORS.greenLeaf, 0.3)} {...sm} /><text x={165} y={-88} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={20} fill={COLORS.greenDark}>"this one didn't work"</text>
+      <text x={0} y={60} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.outline}>catch · check · change</text>
+      {[[-180, 110], [0, 110], [180, 110]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={20} fill={[COLORS.sky, COLORS.yellow, COLORS.greenLeaf][i]} {...sm} />)}
+    </g>
+    {/* two facing chairs */}
+    {[[1300, false], [1620, true]].map(([x, flip], i) => (
+      <g key={i} transform={`translate(${x} 700) scale(${flip ? -1 : 1} 1)`}>
+        <rect x={-60} y={-20} width={120} height={120} rx={20} fill={[COLORS.red, COLORS.blueDiagram][i]} {...xl} />
+        <rect x={-60} y={-90} width={120} height={80} rx={20} fill={shade([COLORS.red, COLORS.blueDiagram][i], 0.1)} {...lg} />
+      </g>
+    ))}
+    {/* plant + soft lamp */}
+    <g transform="translate(1480 740)"><path d="M -36 10 L 36 10 L 28 70 L -28 70 Z" fill={COLORS.red} {...lg} />{[-22, 0, 22].map((lx) => <path key={lx} d={`M ${lx} 10 q ${lx} -60 ${lx * 0.4} -120`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2650,6 +2725,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'mind-gallery': MindGallery,
   'creative-studio': CreativeStudio,
   'open-nature': OpenNature,
+  'thought-funhouse': ThoughtFunhouse,
+  'foggy-mind': FoggyMind,
+  'reframe-room': ReframeRoom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

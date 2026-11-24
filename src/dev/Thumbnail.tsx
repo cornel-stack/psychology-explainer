@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'cognitive-distortions': {
+    A: { lines: ['EVERY', 'COGNITIVE', 'DISTORTION'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '10', prop: 'distortion-lens' },
+    B: { lines: ['10 LIES', 'YOUR BRAIN', 'TELLS YOU'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'catastrophize' },
+    C: { lines: ['STOP', 'BELIEVING', 'EVERY THOUGHT'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '?', prop: 'reframe-glasses' },
+  },
   'types-of-intelligence': {
     A: { lines: ['EVERY TYPE', 'OF', 'INTELLIGENCE'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '9', prop: 'logic-numbers' },
     B: { lines: ['9 KINDS', 'OF SMART', '(WHICH ARE YOU?)'], accent: COLORS.pink, bg: COLORS.blueDiagram, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'music-emblem' },

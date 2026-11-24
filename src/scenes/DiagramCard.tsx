@@ -2526,8 +2526,85 @@ const StrengthFinder: React.FC = () => {
   );
 };
 
+/** cbt-triangle: thoughts, feelings and actions all pull on each other. */
+const CbtTriangle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44; const R = 160;
+  const nodes: [string, string, number][] = [['THOUGHT', COLORS.sky, -90], ['FEELING', COLORS.pink, 30], ['ACTION', COLORS.greenLeaf, 150]];
+  const pts = nodes.map(([, , a]) => [cx + Math.cos((a * Math.PI) / 180) * R, cy + Math.sin((a * Math.PI) / 180) * R]);
+  return (
+    <g>
+      {pts.map((p, i) => { const q = pts[(i + 1) % 3]; return <line key={i} x1={p[0]} y1={p[1]} x2={q[0]} y2={q[1]} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.4} />; })}
+      {nodes.map(([lab, col], i) => { const p = pts[i]; const s = springIn(frame - i * 6, 10); return <g key={lab} transform={`translate(${p[0]} ${p[1]}) scale(${s})`} style={{ transformOrigin: 'center' }}><circle r={64} fill={col} {...xl} /><text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{lab}</text></g>; })}
+      <text x={cx} y={cy + R + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>change a thought, change it all</text>
+    </g>
+  );
+};
+
+/** distortion-vs-reality: a plain fact beside its blown-up, warped version. */
+const DistortionVsReality: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  return (
+    <g>
+      <g transform={`translate(${cx - 180} ${cy})`}>
+        <circle r={54} fill={COLORS.greenLeaf} {...xl} />
+        <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>fact</text>
+        <text x={0} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>reality</text>
+      </g>
+      <text x={cx} y={cy + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>→</text>
+      <g transform={`translate(${cx + 200} ${cy})`}>
+        <path d="M 0 -150 C 130 -120 130 120 0 150 C -130 120 -130 -120 0 -150 Z" fill={shade(COLORS.red, 0.3)} {...xl} />
+        <text x={0} y={-6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.red}>DISASTER</text>
+        <text x={0} y={26} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>the distortion</text>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>same fact, warped</text>
+    </g>
+  );
+};
+
+/** catch-check-change: the three-step reframe. */
+const CatchCheckChange: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const steps: [string, string, string][] = [['1', 'CATCH', 'the thought'], ['2', 'CHECK', 'the evidence'], ['3', 'CHANGE', 'to balanced']];
+  return (
+    <g>
+      {steps.map(([n, lab, sub], i) => {
+        const p = springIn(frame - i * 10, 12); const y = cy - 150 + i * 150;
+        return (
+          <g key={lab} transform={`translate(${cx} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <circle cx={-180} cy={0} r={38} fill={[COLORS.sky, COLORS.yellow, COLORS.greenLeaf][i]} {...lg} /><text x={-180} y={12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>{n}</text>
+            <text x={-110} y={-4} fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>{lab}</text>
+            <text x={-110} y={30} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{sub}</text>
+            {i < 2 && <line x1={-180} y1={40} x2={-180} y2={112} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="4 8" />}
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+/** thought-spiral: a distortion spirals down — until a reframe brakes it. */
+const ThoughtSpiral: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.57; const cy = CANVAS.height * 0.4;
+  const pts = Array.from({ length: 50 }).map((_, i) => { const a = i * 0.5; const r = 150 - i * 2.6; return `${cx + Math.cos(a) * r},${cy + i * 5 + Math.sin(a) * r}`; });
+  const brake = springIn(frame - 20, 14);
+  return (
+    <g>
+      <polyline points={pts.join(' ')} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.7} />
+      <circle cx={cx + 150} cy={cy} r={12} fill={COLORS.red} />
+      <g transform={`translate(${cx} ${cy + 250}) scale(${brake})`} style={{ transformOrigin: 'center' }}>
+        <rect x={-120} y={-34} width={240} height={68} rx={16} fill={COLORS.greenLeaf} {...xl} />
+        <text x={0} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>REFRAME</text>
+      </g>
+      <text x={cx} y={cy - 170} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>catch it before it spirals</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2625,6 +2702,10 @@ export const DiagramCard: React.FC<{
     'not-one-number': COLORS.sky,
     'spiky-profile': COLORS.yellow,
     'strength-finder': COLORS.greenLeaf,
+    'cbt-triangle': COLORS.sky,
+    'distortion-vs-reality': COLORS.red,
+    'catch-check-change': COLORS.greenLeaf,
+    'thought-spiral': COLORS.red,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2729,6 +2810,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'not-one-number' && <NotOneNumber />}
         {diagram === 'spiky-profile' && <SpikyProfile />}
         {diagram === 'strength-finder' && <StrengthFinder />}
+        {diagram === 'cbt-triangle' && <CbtTriangle />}
+        {diagram === 'distortion-vs-reality' && <DistortionVsReality />}
+        {diagram === 'catch-check-change' && <CatchCheckChange />}
+        {diagram === 'thought-spiral' && <ThoughtSpiral />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

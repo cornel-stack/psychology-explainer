@@ -1,0 +1,142 @@
+{
+  "title": "Every Cognitive Distortion Explained",
+  "slug": "cognitive-distortions",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Your brain lies to you. Not out of malice, but out of habit. All day long it quietly bends reality, one small failure becomes you're a total failure, one worried guess becomes a certain catastrophe. These sneaky little thinking traps have a name. Cognitive distortions. And they shape your whole mood.", "scene": "story", "room": "thought-funhouse", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY COGNITIVE DISTORTION", "subtitle": "the thinking traps that fool you",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 760, "y": 760, "scale": 1.0, "talking": true } ] },
+        { "vo": "Here's the key idea behind all of this, the foundation of cognitive therapy. Your thoughts, your feelings and your actions are all wired together in a loop. A distorted thought creates a painful feeling, which drives an unhelpful action. But flip it around, and changing the thought can change everything.", "scene": "diagramCard", "diagram": "cbt-triangle", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "One thing to hold onto as we go. Everyone does these. Every single person. They're normal mental shortcuts that simply misfire. Spotting yours is not a sign that you're broken or stupid. It's the first, most powerful step toward thinking more clearly, and feeling a whole lot better.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Ten of the most common cognitive distortions, the lies your mind tells, how to catch each one in the act, and the simple method to turn them around. This one might just change how you talk to yourself. Let's begin.", "scene": "explainer", "prop": "distortion-lens", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here are the ten traps we'll walk through. As we go, quietly notice which ones feel a little too familiar, the ones that sound exactly like the voice in your own head on a bad day. Those are the ones worth catching. Let's meet them one by one.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["ALL-OR-NOTHING", "OVERGENERALISE", "MENTAL FILTER", "DISCOUNT GOOD", "MIND-READING", "CATASTROPHISE", "EMOTIONAL REASON", "SHOULDS", "LABELLING", "PERSONALISING"] }
+      ]
+    },
+    {
+      "name": "1 — All-or-Nothing",
+      "beats": [
+        { "vo": "Number one. All-or-nothing thinking, also called black-and-white thinking. You see everything in absolutes, with no shades of grey in between. If you're not a total success, you're a complete failure. If the diet isn't perfect, it's ruined, so you might as well give up entirely.", "scene": "story", "room": "thought-funhouse", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "1 — ALL-OR-NOTHING", "subtitle": "black-and-white thinking",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "all-or-nothing", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "The trouble is, almost nothing in real life is actually black or white. It's nearly always grey. You can have a great day with one bad moment in it. A project can be flawed and still genuinely good. The word to watch for is always the absolute, perfect, ruined, total, never.", "scene": "explainer", "prop": "all-or-nothing", "emotion": "serious-expert" },
+        { "vo": "The reframe is to hunt for the grey. One missed workout doesn't erase a month of them. One awkward sentence doesn't make the whole conversation a disaster. Ask yourself, is this really all or nothing? Or did I just delete every shade in between?", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Overgeneralisation",
+      "beats": [
+        { "vo": "Number two. Overgeneralisation. You take a single event and turn it into a never-ending pattern. One rejection becomes, I'll always be alone. One mistake at work becomes, I never get anything right. The tell is those sweeping words. Always. Never. Everyone. Nobody.", "scene": "story", "room": "foggy-mind", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "2 — OVERGENERALISATION", "subtitle": "'this always happens'",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "sleepy", "x": 760, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "over-generalize", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "One bad experience feels like solid proof of a lifelong rule, but it's a sample size of one. Your brain is pattern-matching far too eagerly, mistaking a single dot for a whole line stretching into the future. One no is not a forever. It's just one no.", "scene": "explainer", "prop": "over-generalize", "emotion": "serious-expert" },
+        { "vo": "To catch it, challenge the absolute directly. Always? Really, every single time, with no exceptions ever? Usually, just saying the word out loud reveals how shaky it is. Swap always and never for sometimes and this time, and the whole thought deflates.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Mental Filter",
+      "beats": [
+        { "vo": "Number three. The mental filter. Out of a whole day, you fixate on the one negative thing and filter out everything good, like a drop of ink darkening an entire glass of water. You give a great presentation, get nine compliments and one critique, and obsess only over the critique.", "scene": "story", "room": "thought-funhouse", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "3 — THE MENTAL FILTER", "subtitle": "only seeing the bad",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "mental-filter", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Your attention becomes a filter that only lets the bad stuff through, and then you judge the whole day by that one dark drop. It's not that the good things didn't happen. It's that your mind quietly refused to let you keep them, straining them out before you could feel them.", "scene": "explainer", "prop": "mental-filter", "emotion": "serious-expert" },
+        { "vo": "The reframe is to widen the lens on purpose. Ask, what else happened today? Deliberately name the good things the filter threw away. You're not ignoring the negative, you're just refusing to let it be the entire story, when it was really only one line of it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Discounting the Positive",
+      "beats": [
+        { "vo": "Number four, the mental filter's meaner cousin. Discounting the positive. Here, you don't just ignore the good things, you actively argue them away. You get a compliment and think, they're just being nice. You succeed and think, that was pure luck, anyone could've done it.", "scene": "story", "room": "foggy-mind", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "4 — DISCOUNTING THE GOOD", "subtitle": "'that doesn't count'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 760, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "discount-positive", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It's especially cruel because it makes your successes impossible to enjoy, and your self-criticism impossible to argue with. Every bit of evidence that you're capable gets instantly disqualified. No win is ever allowed to land, so the harsh story about yourself stays perfectly intact.", "scene": "explainer", "prop": "discount-positive", "emotion": "serious-expert" },
+        { "vo": "To fight it, practise simply accepting the good. When someone compliments you, try just saying thank you, and letting it in, instead of batting it away. Let your wins actually count. You collect evidence against yourself so easily. Start collecting a little for yourself, too.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Mind-Reading",
+      "beats": [
+        { "vo": "Number five. Jumping to conclusions, usually as mind-reading. You assume you know exactly what other people are thinking, and it's always bad. They didn't text back? They're angry at me. Someone glanced away? They think I'm boring. You treat a guess about their mind as a hard, proven fact.", "scene": "story", "room": "thought-funhouse", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "5 — MIND-READING", "subtitle": "'I know what they think'",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "mind-reading", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But you cannot actually read minds, and your anxious guesses are usually far darker than the truth. That silence probably means they're busy, tired, or lost in their own worries, which usually have nothing at all to do with you. You're filling a gap with fear, then believing the fear.", "scene": "explainer", "prop": "mind-reading", "emotion": "serious-expert" },
+        { "vo": "The reframe is to treat your guess as just one theory among many, and then look for actual evidence. What else could that silence mean? And if it truly matters, you can do the radical thing. Just ask them, instead of quietly convicting them in your own head.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Catastrophising",
+      "beats": [
+        { "vo": "Number six. Catastrophising. Blowing things wildly out of proportion, always imagining the worst possible outcome. A tiny mistake at work becomes, I'll be fired, I'll lose the house, I'll end up with nothing. A small headache becomes something terrible. The snowball becomes an avalanche in seconds.", "scene": "story", "room": "foggy-mind", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "6 — CATASTROPHISING", "subtitle": "always the worst case",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "terrified", "x": 760, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "catastrophize", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Your mind leaps straight to the catastrophe and skips every ordinary, likely outcome in between. It's exhausting, and it floods your body with stress over disasters that almost never actually arrive. You end up suffering the worst-case scenario a hundred times, when it usually happens zero.", "scene": "explainer", "prop": "catastrophize", "emotion": "serious-expert" },
+        { "vo": "The reframe is to ask three calm questions. What's the worst that could happen? What's the best? And what's most likely? That middle, realistic answer is almost always where life lands. Then add, and could I actually cope with it? You almost always can.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Emotional Reasoning",
+      "beats": [
+        { "vo": "Number seven, and one of the sneakiest. Emotional reasoning. You take a feeling as proof of a fact. I feel like a failure, therefore I must be one. I feel guilty, so I must have done something wrong. I feel anxious, so something must truly be dangerous. The feeling becomes the evidence.", "scene": "story", "room": "thought-funhouse", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "7 — EMOTIONAL REASONING", "subtitle": "'I feel it, so it's true'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "emotion-reasoning", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But feelings are not facts. They're real, and they matter, but they're often based on distorted thoughts in the first place, so they make terrible evidence. Feeling stupid does not make you stupid. Feeling unlovable does not make it true. The emotion is information, not a verdict.", "scene": "explainer", "prop": "emotion-reasoning", "emotion": "serious-expert" },
+        { "vo": "The reframe is to gently separate the two. Say, I feel like a failure, and that's painful, but a feeling isn't proof. What do the actual facts say? Honour the emotion, let it be there, but stop letting it act as judge, jury and witness all at once.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Should Statements",
+      "beats": [
+        { "vo": "Number eight. Should-statements. You run your life on a rigid rulebook of shoulds, musts, and ought-tos. I should always be productive. I must never let anyone down. I ought to have it all figured out by now. A long list of impossible rules you never actually agreed to.", "scene": "story", "room": "foggy-mind", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "8 — SHOULD-STATEMENTS", "subtitle": "the tyranny of 'should'",
+          "mascots": [ { "costume": "hoodie", "pose": "facepalm", "emotion": "annoyed", "x": 760, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "should-statements", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "When you aim a should at yourself and fall short, you feel guilt and shame. When you aim it at others, who should know better, you feel anger and bitterness. Either way, these rigid rules just manufacture a steady, low-grade misery, and they rarely actually motivate you.", "scene": "explainer", "prop": "should-statements", "emotion": "serious-expert" },
+        { "vo": "The reframe is to soften should into a gentler, truer word. I should go to the gym becomes, it would be good for me to go, and I can choose to. Swap the harsh rule for a kind preference, and you trade guilt for actual, freely-chosen motivation.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "9 — Labelling",
+      "beats": [
+        { "vo": "Number nine. Labelling. You take one action or mistake and turn it into a fixed, permanent identity. Instead of, I made a mistake, you think, I am an idiot. Instead of, that didn't go well, you decide, I'm a failure. A single event becomes a brand you stamp on your whole self.", "scene": "story", "room": "thought-funhouse", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "9 — LABELLING", "subtitle": "'I AM a failure'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "labeling", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It's devastating, because a mistake is something you did, but a label is something you are, and that feels permanent and hopeless. You are a whole, complex, changing human being. No single word, especially a cruel one, could ever possibly capture all of that.", "scene": "explainer", "prop": "labeling", "emotion": "serious-expert" },
+        { "vo": "The reframe is to describe the behaviour, not brand the person. Not, I'm a loser, but, I didn't handle that one situation well. Keep the mistake specific and temporary. You are not your worst moment, and you are certainly not the harshest word you call yourself.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "10 — Personalising",
+      "beats": [
+        { "vo": "Number ten. Personalisation. You make everything about you, taking the blame for things that were never fully in your control. A friend is quiet, and you're sure you upset them. A project fails, and you carry all the fault alone, ignoring every other factor and person involved.", "scene": "story", "room": "foggy-mind", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "10 — PERSONALISING", "subtitle": "'it's all my fault'",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "sleepy", "x": 760, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "personalization", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It feels almost noble, like taking responsibility, but it's really a distortion that quietly crushes you under a weight that was never all yours to carry. Most outcomes have many causes. Your mood, their mood, luck, timing, other people. You're usually just one thread in a much bigger tapestry.", "scene": "explainer", "prop": "personalization", "emotion": "serious-expert" },
+        { "vo": "The reframe is to share out the responsibility fairly. Ask, what else contributed here, besides me? Draw a quick mental pie chart of all the causes. You'll almost always find your slice is far smaller than the whole, heavy pie you were trying to carry alone.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "How to Reframe",
+      "beats": [
+        { "vo": "So how do you fight back against all ten? You don't need to memorise them. You just need one simple, repeatable method. Three steps. Catch the thought. Check the evidence. Change it to something more balanced. Catch, check, change. That's the whole toolkit.", "scene": "diagramCard", "diagram": "catch-check-change", "emotion": "happy-talk", "withMascot": true },
+        { "vo": "First, catch it. Just notice the thought that soured your mood, and name the distortion. Ah, that's catastrophising. That one act of naming instantly loosens its grip, because now you're watching the thought, instead of being trapped inside it.", "scene": "story", "room": "reframe-room", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "CATCH, CHECK, CHANGE", "subtitle": "the reframe in 3 steps",
+          "mascots": [ { "costume": "labcoat", "pose": "point-right", "emotion": "happy-talk", "x": 760, "y": 740, "scale": 1.0, "talking": true, "lookDir": "right" } ] },
+        { "vo": "Then check it, like a fair detective. What's the actual evidence for this thought, and against it? Would I say this to a good friend? Finally, change it. Not to fake, forced positivity, but to something more accurate and kind. I failed becomes, that attempt didn't work, and I can try again.", "scene": "explainer", "prop": "reframe-glasses", "emotion": "serious-expert" },
+        { "vo": "And the real magic is in the timing. A distorted thought, left alone, spirals down fast, pulling your whole mood with it. But catch it early, right at the top, and one small reframe can stop the entire slide before it even begins. The earlier you catch it, the easier it falls.", "scene": "diagramCard", "diagram": "thought-spiral", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "Here's the hopeful truth underneath all of this. These distortions are just habits, deep, well-worn grooves of thought. And like any habit, with a bit of patient practice, they can be gently rewired. Every time you catch one and reframe it, you wear a new, kinder groove a little deeper.", "scene": "explainer", "prop": "reframe-glasses", "emotion": "happy-talk" },
+        { "vo": "A caring, honest note before we finish. This is understanding, not therapy, and definitely not a diagnosis. These ideas come from cognitive behavioural therapy, which genuinely helps. But if distorted thinking is tangled up with real depression or anxiety, please reach out to a professional. You deserve real support, not just a video.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "But start here, today, with one small thing. The next time that harsh voice pipes up, pause and ask, is that actually true, or is it just a distortion? That single question is the beginning of a quieter, kinder mind. You don't have to believe everything you think. I'm Dear Brain. Be gentle with yourself in there.", "scene": "explainer", "prop": "reframe-glasses", "emotion": "happy-talk" },
+        { "vo": "Tell me in the comments which of the ten is your own most familiar trap. Naming it out loud, where others can nod along, takes away so much of its power. Thank you for spending this time with me. I'm Dear Brain. Go easy on yourself out there.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}
