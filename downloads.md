@@ -25,5 +25,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 17 | Every Level of Consciousness Explained | `levels-of-consciousness` | ~8 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45476457063 | ✅ render OK |
 | 18 | Why Your Brain Procrastinates | `procrastination-brain` | ~6 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45480198287 | ✅ render OK |
 | 19 | Every Logical Fallacy Explained | `logical-fallacies` | ~8 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45483514154 | ✅ render OK |
+| 20 | The Psychology of People Who Prefer Being Alone | `prefer-alone` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45488052419 | ⏳ rendering |
 
-_First-15 tier complete (all ✅). Now continuing into the broader catalogue._
+_First-15 tier complete (all ✅). Broader catalogue in progress. From #20 on, videos are sized to 10–15 min._
