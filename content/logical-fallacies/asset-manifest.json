@@ -2,8 +2,8 @@
   "slug": "logical-fallacies",
   "generated": "by scripts/build-manifest.ts",
   "counts": {
-    "exists": 17,
-    "NEW": 26
+    "exists": 19,
+    "NEW": 27
   },
   "assets": [
     {
@@ -11,7 +11,7 @@
       "type": "accessory",
       "status": "exists",
       "beats": [
-        12
+        17
       ]
     },
     {
@@ -20,18 +20,27 @@
       "status": "exists",
       "beats": [
         0,
-        4,
-        6,
+        1,
+        5,
         8,
-        10,
-        12,
+        11,
         14,
-        16,
-        18,
+        17,
         20,
-        22,
-        24,
-        26
+        23,
+        26,
+        29,
+        32,
+        35,
+        38
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        42
       ]
     },
     {
@@ -40,15 +49,15 @@
       "status": "exists",
       "beats": [
         0,
-        4,
-        6,
+        5,
         8,
-        10,
-        12,
-        16,
-        18,
-        22,
-        24
+        11,
+        14,
+        17,
+        23,
+        26,
+        32,
+        35
       ]
     },
     {
@@ -56,7 +65,7 @@
       "type": "costume",
       "status": "NEW",
       "beats": [
-        14
+        20
       ]
     },
     {
@@ -64,7 +73,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        1
+        2
       ]
     },
     {
@@ -72,7 +81,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        7
+        9
       ]
     },
     {
@@ -80,7 +89,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        27
+        39
       ]
     },
     {
@@ -88,7 +97,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        28
+        41
       ]
     },
     {
@@ -96,11 +105,11 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        4,
-        6,
-        18,
-        20,
-        24
+        5,
+        8,
+        26,
+        29,
+        35
       ]
     },
     {
@@ -109,10 +118,10 @@
       "status": "exists",
       "beats": [
         0,
-        10,
-        12,
-        16,
-        26
+        14,
+        17,
+        23,
+        38
       ]
     },
     {
@@ -120,7 +129,7 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        14
+        20
       ]
     },
     {
@@ -128,11 +137,15 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        2,
+        1,
         3,
-        14,
-        22,
-        28
+        4,
+        20,
+        32,
+        41,
+        42,
+        45,
+        46
       ]
     },
     {
@@ -140,8 +153,8 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        12,
-        20
+        17,
+        29
       ]
     },
     {
@@ -149,8 +162,8 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        6,
-        8
+        8,
+        11
       ]
     },
     {
@@ -158,20 +171,33 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        1,
-        5,
+        2,
+        6,
         7,
         9,
-        11,
+        10,
+        12,
         13,
         15,
-        17,
+        16,
+        18,
         19,
         21,
-        23,
+        22,
+        24,
         25,
         27,
-        29
+        28,
+        30,
+        31,
+        33,
+        34,
+        36,
+        37,
+        39,
+        40,
+        43,
+        44
       ]
     },
     {
@@ -179,7 +205,7 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        22
+        32
       ]
     },
     {
@@ -188,13 +214,13 @@
       "status": "exists",
       "beats": [
         0,
-        4,
-        8,
-        10,
-        12,
-        16,
-        18,
-        24
+        5,
+        11,
+        14,
+        17,
+        23,
+        26,
+        35
       ]
     },
     {
@@ -202,8 +228,16 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        12,
-        24
+        17,
+        35
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        42
       ]
     },
     {
@@ -211,7 +245,7 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        14
+        20
       ]
     },
     {
@@ -219,7 +253,7 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        6
+        8
       ]
     },
     {
@@ -227,7 +261,7 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        18
+        26
       ]
     },
     {
@@ -235,7 +269,7 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        4
+        5
       ]
     },
     {
@@ -243,7 +277,7 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        10
+        14
       ]
     },
     {
@@ -252,13 +286,14 @@
       "status": "exists",
       "beats": [
         0,
-        4,
-        8,
-        12,
-        16,
-        18,
-        22,
-        26
+        1,
+        5,
+        11,
+        17,
+        23,
+        26,
+        32,
+        38
       ]
     },
     {
@@ -274,10 +309,10 @@
       "type": "pose",
       "status": "exists",
       "beats": [
-        6,
-        16,
-        20,
-        24
+        8,
+        23,
+        29,
+        35
       ]
     },
     {
@@ -285,7 +320,7 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        22
+        32
       ]
     },
     {
@@ -293,7 +328,7 @@
       "type": "pose",
       "status": "exists",
       "beats": [
-        10
+        14
       ]
     },
     {
@@ -301,7 +336,7 @@
       "type": "pose",
       "status": "exists",
       "beats": [
-        8
+        11
       ]
     },
     {
@@ -309,64 +344,12 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        12,
-        13
+        17,
+        18
       ]
     },
     {
       "name": "band-wagon",
-      "type": "prop",
-      "status": "NEW",
-      "beats": [
-        14,
-        15
-      ]
-    },
-    {
-      "name": "circle-loop",
-      "type": "prop",
-      "status": "NEW",
-      "beats": [
-        18,
-        19
-      ]
-    },
-    {
-      "name": "false-link",
-      "type": "prop",
-      "status": "NEW",
-      "beats": [
-        26
-      ]
-    },
-    {
-      "name": "heart-tug",
-      "type": "prop",
-      "status": "NEW",
-      "beats": [
-        22,
-        23
-      ]
-    },
-    {
-      "name": "mirror-back",
-      "type": "prop",
-      "status": "NEW",
-      "beats": [
-        24,
-        25
-      ]
-    },
-    {
-      "name": "mud-sling",
-      "type": "prop",
-      "status": "NEW",
-      "beats": [
-        6
-      ]
-    },
-    {
-      "name": "one-to-all",
       "type": "prop",
       "status": "NEW",
       "beats": [
@@ -375,13 +358,67 @@
       ]
     },
     {
+      "name": "circle-loop",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        27,
+        43
+      ]
+    },
+    {
+      "name": "false-link",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        38
+      ]
+    },
+    {
+      "name": "heart-tug",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        32,
+        33
+      ]
+    },
+    {
+      "name": "mirror-back",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        35,
+        36
+      ]
+    },
+    {
+      "name": "mud-sling",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "one-to-all",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29,
+        30
+      ]
+    },
+    {
       "name": "red-herring",
       "type": "prop",
       "status": "NEW",
       "beats": [
-        2,
-        16,
-        17
+        3,
+        23,
+        24,
+        45
       ]
     },
     {
@@ -389,8 +426,8 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        8,
-        9
+        11,
+        12
       ]
     },
     {
@@ -398,8 +435,8 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        4,
-        5
+        5,
+        6
       ]
     },
     {
@@ -407,8 +444,16 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        10,
-        11
+        14,
+        15
+      ]
+    },
+    {
+      "name": "clarity-studio",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        42
       ]
     },
     {
@@ -416,11 +461,11 @@
       "type": "room",
       "status": "NEW",
       "beats": [
-        10,
-        12,
-        16,
-        22,
-        26
+        14,
+        17,
+        23,
+        32,
+        38
       ]
     },
     {
@@ -429,13 +474,14 @@
       "status": "NEW",
       "beats": [
         0,
-        4,
-        6,
+        1,
+        5,
         8,
-        14,
-        18,
+        11,
         20,
-        24
+        26,
+        29,
+        35
       ]
     }
   ]

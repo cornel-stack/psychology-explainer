@@ -2,7 +2,7 @@
   "slug": "procrastination-brain",
   "generated": "by scripts/build-manifest.ts",
   "counts": {
-    "exists": 9,
+    "exists": 12,
     "NEW": 19
   },
   "assets": [
@@ -12,12 +12,22 @@
       "status": "exists",
       "beats": [
         0,
-        3,
-        5,
-        9,
-        12,
-        14,
-        16
+        2,
+        4,
+        7,
+        13,
+        16,
+        18,
+        21,
+        24
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        30
       ]
     },
     {
@@ -25,7 +35,7 @@
       "type": "costume",
       "status": "NEW",
       "beats": [
-        5
+        7
       ]
     },
     {
@@ -33,7 +43,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        10
+        14
       ]
     },
     {
@@ -41,7 +51,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        17
+        27
       ]
     },
     {
@@ -49,7 +59,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        7
+        10
       ]
     },
     {
@@ -57,7 +67,7 @@
       "type": "diagram",
       "status": "NEW",
       "beats": [
-        6
+        8
       ]
     },
     {
@@ -73,7 +83,7 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        5
+        7
       ]
     },
     {
@@ -81,11 +91,28 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        2,
+        3,
+        13,
+        24,
+        30,
+        33,
+        35,
+        36
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        6,
         9,
-        16,
-        19,
-        20
+        12,
+        15,
+        20,
+        23,
+        26,
+        29
       ]
     },
     {
@@ -93,7 +120,7 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        3
+        4
       ]
     },
     {
@@ -102,16 +129,20 @@
       "status": "exists",
       "beats": [
         1,
-        4,
-        6,
-        7,
+        5,
         8,
         10,
         11,
-        13,
-        15,
+        14,
         17,
-        18
+        19,
+        22,
+        25,
+        27,
+        28,
+        31,
+        32,
+        34
       ]
     },
     {
@@ -119,9 +150,11 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        5,
-        9,
-        14
+        2,
+        7,
+        13,
+        16,
+        21
       ]
     },
     {
@@ -129,7 +162,7 @@
       "type": "emotion",
       "status": "exists",
       "beats": [
-        12
+        18
       ]
     },
     {
@@ -137,9 +170,9 @@
       "type": "pose",
       "status": "NEW",
       "beats": [
-        3,
-        12,
-        14
+        4,
+        18,
+        21
       ]
     },
     {
@@ -155,9 +188,19 @@
       "type": "pose",
       "status": "exists",
       "beats": [
-        5,
-        9,
-        16
+        2,
+        7,
+        13,
+        16,
+        24
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        30
       ]
     },
     {
@@ -165,8 +208,8 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        12,
-        13
+        18,
+        19
       ]
     },
     {
@@ -174,8 +217,8 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        3,
-        4
+        4,
+        5
       ]
     },
     {
@@ -183,7 +226,8 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        5
+        7,
+        31
       ]
     },
     {
@@ -191,8 +235,10 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        16,
-        19
+        24,
+        25,
+        32,
+        33
       ]
     },
     {
@@ -201,8 +247,8 @@
       "status": "NEW",
       "beats": [
         0,
-        2,
-        8
+        3,
+        11
       ]
     },
     {
@@ -210,7 +256,7 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        9
+        13
       ]
     },
     {
@@ -218,7 +264,8 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        11
+        16,
+        17
       ]
     },
     {
@@ -226,8 +273,8 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        14,
-        15
+        21,
+        22
       ]
     },
     {
@@ -235,7 +282,9 @@
       "type": "prop",
       "status": "NEW",
       "beats": [
-        18
+        28,
+        30,
+        35
       ]
     },
     {
@@ -243,7 +292,7 @@
       "type": "room",
       "status": "NEW",
       "beats": [
-        12
+        18
       ]
     },
     {
@@ -251,7 +300,8 @@
       "type": "room",
       "status": "NEW",
       "beats": [
-        16
+        24,
+        30
       ]
     },
     {
@@ -260,10 +310,12 @@
       "status": "NEW",
       "beats": [
         0,
-        3,
-        5,
-        9,
-        14
+        2,
+        4,
+        7,
+        13,
+        16,
+        21
       ]
     }
   ]
