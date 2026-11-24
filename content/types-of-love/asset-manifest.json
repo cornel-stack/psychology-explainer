@@ -1,0 +1,315 @@
+{
+  "slug": "types-of-love",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 9,
+    "NEW": 21
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        32
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        21,
+        32
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        9,
+        12
+      ]
+    },
+    {
+      "name": "love-over-time",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "loves-wheel",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "self-love-first",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "sternberg-triangle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        6,
+        18
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        5,
+        6,
+        9,
+        12,
+        15,
+        21,
+        24,
+        32,
+        34,
+        36,
+        37
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        7,
+        10,
+        13,
+        16,
+        19,
+        21,
+        22,
+        25,
+        28,
+        29,
+        30,
+        31,
+        33,
+        35
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        9,
+        12,
+        21,
+        24,
+        32
+      ]
+    },
+    {
+      "name": "reach-down",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "love-agape",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        16,
+        36
+      ]
+    },
+    {
+      "name": "love-compass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        34
+      ]
+    },
+    {
+      "name": "love-eros",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "love-ludus",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "love-mania",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27,
+        28
+      ]
+    },
+    {
+      "name": "love-philautia",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "love-philia",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "love-pragma",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        31
+      ]
+    },
+    {
+      "name": "love-storge",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "love-triangle-prop",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        33
+      ]
+    },
+    {
+      "name": "blossom-garden",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        6,
+        15,
+        24
+      ]
+    },
+    {
+      "name": "cozy-hearth",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        12,
+        21,
+        32
+      ]
+    },
+    {
+      "name": "love-gallery",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        9,
+        18,
+        27
+      ]
+    }
+  ]
+}

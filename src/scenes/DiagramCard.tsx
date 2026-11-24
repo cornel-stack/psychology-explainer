@@ -2695,8 +2695,81 @@ const EmotionBlends: React.FC = () => {
   );
 };
 
+/** sternberg-triangle: intimacy + passion + commitment make the kinds of love. */
+const SternbergTriangle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const verts: [string, string, number, number][] = [['INTIMACY', COLORS.sky, 0, -170], ['PASSION', COLORS.red, 150, 100], ['COMMITMENT', COLORS.greenLeaf, -150, 100]];
+  return (
+    <g>
+      <path d={`M ${cx} ${cy - 170} L ${cx + 150} ${cy + 100} L ${cx - 150} ${cy + 100} Z`} fill={COLORS.pink} opacity={0.2} {...xl} />
+      {verts.map(([lab, c, dx, dy], i) => { const p = springIn(frame - i * 7, 10); return <g key={lab}><g transform={`translate(${cx + dx} ${cy + dy}) scale(${p})`} style={{ transformOrigin: 'center' }}><circle r={48} fill={c} {...lg} /></g><text x={cx + dx} y={cy + dy + (dy < 0 ? -62 : 76)} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{lab}</text></g>; })}
+      <text x={cx} y={cy + 20} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>all three =</text>
+      <text x={cx} y={cy + 48} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.red}>lasting love</text>
+      <text x={cx} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>Sternberg's triangle</text>
+    </g>
+  );
+};
+
+/** loves-wheel: the eight Greek loves around a heart. */
+const LovesWheel: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.57; const cy = CANVAS.height * 0.46; const R = 180;
+  const loves: [string, string][] = [['EROS', COLORS.red], ['PHILIA', COLORS.yellow], ['STORGE', COLORS.greenLeaf], ['AGAPE', COLORS.pink], ['LUDUS', COLORS.sky], ['PRAGMA', COLORS.blueDiagram], ['PHILAUTIA', COLORS.greenTeal], ['MANIA', COLORS.purpleDeep]];
+  return (
+    <g>
+      {loves.map(([lab, c], i) => {
+        const a = -Math.PI / 2 + (i / 8) * Math.PI * 2; const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R; const p = springIn(frame - i * 4, 10);
+        return <g key={lab}><g transform={`translate(${x} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}><circle r={40} fill={c} {...lg} /></g><text x={cx + Math.cos(a) * (R + 54)} y={cy + Math.sin(a) * (R + 54) + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline} opacity={p}>{lab}</text></g>;
+      })}
+      <g transform={`translate(${cx} ${cy}) scale(0.5)`}><path d="M 0 40 C -56 -14 -88 -44 -52 -78 C -28 -100 0 -70 0 -48 C 0 -70 28 -100 52 -78 C 88 -44 56 -14 0 40 Z" fill={COLORS.red} {...xl} /></g>
+    </g>
+  );
+};
+
+/** love-over-time: hot passion fades as warm companionship grows. */
+const LoveOverTime: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44; const W = 440;
+  const x0 = cx - W / 2, y0 = cy + 120;
+  const passion = Array.from({ length: 40 }).map((_, i) => { const t = i / 39; const y = y0 - 200 * Math.exp(-t * 3) - 10; return `${x0 + t * W},${y}`; });
+  const compan = Array.from({ length: 40 }).map((_, i) => { const t = i / 39; const y = y0 - (40 + 150 * (1 - Math.exp(-t * 2))); return `${x0 + t * W},${y}`; });
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + W} y2={y0} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <polyline points={passion.join(' ')} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <polyline points={compan.join(' ')} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 + 60} y={y0 - 210} fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.red}>passion</text>
+      <text x={x0 + W - 150} y={y0 - 200} fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.greenDark}>companionship</text>
+      <text x={cx} y={y0 + 46} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>over time →</text>
+      <text x={cx} y={cy - 160} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>spark cools, roots deepen</text>
+    </g>
+  );
+};
+
+/** self-love-first: you can't pour from an empty cup. */
+const SelfLoveFirst: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.42;
+  const fill = 0.3 + 0.4 * (0.5 + 0.5 * Math.sin(frame / 22));
+  return (
+    <g>
+      {/* the cup */}
+      <g transform={`translate(${cx - 120} ${cy})`}>
+        <path d="M -60 -60 L 60 -60 L 46 90 Q 44 110 0 110 Q -44 110 -46 90 Z" fill={COLORS.white} {...xl} />
+        <path d={`M -54 ${90 - fill * 150} L 54 ${90 - fill * 150} L 46 90 Q 44 108 0 108 Q -44 108 -46 90 Z`} fill={COLORS.pink} />
+        <path d="M 58 -40 q 44 10 30 60 q -10 30 -40 24" fill="none" stroke={COLORS.white} strokeWidth={STROKE.xl} />
+        <text x={0} y={160} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>fill yours first</text>
+      </g>
+      {/* pouring out to others */}
+      <path d={`M ${cx - 30} ${cy + 20} q 120 20 220 -10`} fill="none" stroke={COLORS.pink} strokeWidth={STROKE.lg} strokeLinecap="round" strokeDasharray="6 10" />
+      {[0, 1, 2].map((i) => <g key={i} transform={`translate(${cx + 130 + i * 70} ${cy - 10 - i * 4}) scale(0.34)`}><path d="M 0 40 C -56 -14 -88 -44 -52 -78 C -28 -100 0 -70 0 -48 C 0 -70 28 -100 52 -78 C 88 -44 56 -14 0 40 Z" fill={COLORS.red} {...lg} /></g>)}
+      <text x={cx} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>you can't pour from empty</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2802,6 +2875,10 @@ export const DiagramCard: React.FC<{
     'emotions-job': COLORS.sky,
     'opposite-emotions': COLORS.lavender,
     'emotion-blends': COLORS.yellow,
+    'sternberg-triangle': COLORS.pink,
+    'loves-wheel': COLORS.red,
+    'love-over-time': COLORS.pink,
+    'self-love-first': COLORS.greenTeal,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2914,6 +2991,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'emotions-job' && <EmotionsJob />}
         {diagram === 'opposite-emotions' && <OppositeEmotions />}
         {diagram === 'emotion-blends' && <EmotionBlends />}
+        {diagram === 'sternberg-triangle' && <SternbergTriangle />}
+        {diagram === 'loves-wheel' && <LovesWheel />}
+        {diagram === 'love-over-time' && <LoveOverTime />}
+        {diagram === 'self-love-first' && <SelfLoveFirst />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

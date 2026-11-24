@@ -97,7 +97,10 @@ export type RoomName =
   | 'reframe-room'
   | 'emotion-atrium'
   | 'mood-weather'
-  | 'heart-lab';
+  | 'heart-lab'
+  | 'love-gallery'
+  | 'cozy-hearth'
+  | 'blossom-garden';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2719,6 +2722,80 @@ export const HeartLab: React.FC = () => (
   </g>
 );
 
+/** Love gallery: a warm hall of hearts — arched alcoves and a heart medallion,
+ *  celebrating the many ways to love. */
+export const LoveGallery: React.FC = () => {
+  const cols = [COLORS.red, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.purpleDeep];
+  return (
+    <g>
+      <WallFloor wall={COLORS.pink} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+      <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.pink, 0.06)} />
+      {cols.map((c, i) => (
+        <g key={i} transform={`translate(${200 + i * 380} 320)`}>
+          <path d="M -120 170 L -120 -40 Q -120 -170 0 -170 Q 120 -170 120 -40 L 120 170 Z" fill={shade(COLORS.pink, 0.1)} {...lg} />
+          <path d={`M 0 ${30} C -40 -8 -62 -30 -36 -54 C -20 -70 0 -48 0 -34 C 0 -48 20 -70 36 -54 C 62 -30 40 -8 0 30 Z`} fill={c} {...xl} transform="translate(0 -10)" />
+        </g>
+      ))}
+      {/* heart medallion on the floor */}
+      <g transform="translate(960 930)"><ellipse rx={220} ry={54} fill={shade(COLORS.whiteShade, -0.05)} {...lg} /><g transform="scale(0.5)"><path d="M 0 40 C -56 -14 -88 -44 -52 -78 C -28 -100 0 -70 0 -48 C 0 -70 28 -100 52 -78 C 88 -44 56 -14 0 40 Z" fill={COLORS.red} {...xl} /></g></g>
+      <g transform="translate(960 150)"><rect x={-200} y={-50} width={400} height={100} rx={14} fill={COLORS.red} {...xl} /><text x={0} y={14} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={40} fill={COLORS.white}>WAYS TO LOVE</text></g>
+    </g>
+  );
+};
+
+/** Cozy hearth: a warm family home — fireplace, framed photos and a soft sofa,
+ *  the home of storge, philia and pragma. */
+export const CozyHearth: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.wood, 0.14)} floor={COLORS.woodDark} floorY={760} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={200} fill={shade(COLORS.wood, 0.08)} />
+    {/* fireplace */}
+    <g transform="translate(360 480)">
+      <rect x={-150} y={-180} width={300} height={360} rx={10} fill={shade(COLORS.outline, 0.35)} {...xl} />
+      <rect x={-100} y={-40} width={200} height={220} rx={8} fill={COLORS.outline} />
+      <path d="M -40 180 q -20 -90 20 -130 q -10 50 20 60 q 20 -30 10 -70 q 40 50 30 140 Z" fill={COLORS.yellow} {...sm} /><path d="M -14 180 q -10 -60 14 -90 q 20 40 4 90 Z" fill={COLORS.red} {...sm} />
+      <rect x={-170} y={-200} width={340} height={40} rx={8} fill={shade(COLORS.wood, 0.1)} {...lg} />
+    </g>
+    {/* mantel photos */}
+    {[260, 460].map((x, i) => <g key={i} transform={`translate(${x} 250)`}><rect x={-44} y={-40} width={88} height={80} rx={6} fill={COLORS.white} {...lg} /><circle cx={0} cy={-6} r={18} fill={[COLORS.sky, COLORS.pink][i]} {...sm} /></g>)}
+    {/* sofa */}
+    <g transform="translate(1180 640)">
+      <rect x={-220} y={-30} width={440} height={150} rx={28} fill={COLORS.red} {...xl} />
+      <rect x={-260} y={-10} width={70} height={150} rx={26} fill={shade(COLORS.red, 0.12)} {...lg} /><rect x={190} y={-10} width={70} height={150} rx={26} fill={shade(COLORS.red, 0.12)} {...lg} />
+      <rect x={-180} y={-100} width={360} height={80} rx={24} fill={shade(COLORS.red, 0.06)} {...xl} />
+      {[-90, 90].map((x, i) => <rect key={i} x={x - 45} y={-60} width={90} height={70} rx={16} fill={[COLORS.yellowSoft, COLORS.sky][i]} {...std} />)}
+    </g>
+    {/* warm rug + lamp */}
+    <ellipse cx={1180} cy={900} rx={420} ry={70} fill={COLORS.yellowSoft} opacity={0.4} />
+    <g transform="translate(1760 560)"><rect x={-8} y={0} width={16} height={200} fill={COLORS.ledGrey} {...sm} /><path d="M -50 0 L 50 0 L 34 -66 L -34 -66 Z" fill={COLORS.yellow} {...lg} /></g>
+    {/* window with warm evening on the right wall */}
+    <g transform="translate(1600 290)"><rect x={-130} y={-150} width={260} height={280} rx={14} fill={shade(COLORS.yellowDark, 0.12)} {...xl} /><circle cx={0} cy={30} r={50} fill={COLORS.yellow} {...sm} /><line x1={-130} y1={-10} x2={130} y2={-10} stroke={shade(COLORS.wood, 0.14)} strokeWidth={STROKE.lg} /><line x1={0} y1={-150} x2={0} y2={130} stroke={shade(COLORS.wood, 0.14)} strokeWidth={STROKE.lg} /></g>
+    {/* a heart-framed wall picture + hanging shelf with books */}
+    <g transform="translate(900 250)"><rect x={-56} y={-56} width={112} height={112} rx={10} fill={COLORS.bgCream} {...xl} /><path d="M 0 24 C -26 -2 -42 -18 -24 -38 C -12 -50 0 -32 0 -20 C 0 -32 12 -50 24 -38 C 42 -18 26 -2 0 24 Z" fill={COLORS.red} {...sm} /></g>
+    <g transform="translate(1180 360)"><rect x={-90} y={0} width={180} height={14} rx={4} fill={shade(COLORS.wood, 0.1)} {...lg} />{[-70, -44, -18, 8].map((x, i) => <rect key={i} x={x} y={-56} width={20} height={56} rx={3} fill={[COLORS.red, COLORS.sky, COLORS.greenLeaf, COLORS.yellow][i]} {...sm} />)}</g>
+  </g>
+);
+
+/** Blossom garden: a romantic garden in bloom — a flower arch, rose bushes and
+ *  drifting petals, the home of eros and agape. */
+export const BlossomGarden: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.08)} floor={COLORS.greenLeaf} floorY={760} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={260} fill={shade(COLORS.pink, 0.16)} opacity={0.4} />
+    <circle cx={1580} cy={210} r={80} fill={COLORS.yellowSoft} {...sm} />
+    {/* flower arch */}
+    <g transform="translate(560 420)">
+      <path d="M -200 340 L -200 0 Q -200 -200 0 -200 Q 200 -200 200 0 L 200 340" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.xl} />
+      {Array.from({ length: 16 }).map((_, i) => { const t = i / 15; const a = Math.PI * (1 - t); const x = Math.cos(a) * 200; const y = -Math.sin(a) * 200; return <g key={i} transform={`translate(${x} ${y})`}>{[0, 72, 144, 216, 288].map((d) => <ellipse key={d} cx={0} cy={-10} rx={9} ry={16} fill={[COLORS.pink, COLORS.red, COLORS.yellow][i % 3]} {...sm} transform={`rotate(${d})`} />)}<circle r={7} fill={COLORS.yellowDark} /></g>; })}
+    </g>
+    {/* rolling ground + rose bushes */}
+    <path d="M 0 760 Q 480 700 960 760 Q 1440 810 1920 730 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenLeaf, 0.08)} />
+    {[1300, 1600, 1150].map((x, i) => <g key={i} transform={`translate(${x} 840)`}><circle cx={-24} cy={0} r={38} fill={shade(COLORS.greenLeaf, -0.08)} {...lg} /><circle cx={24} cy={-8} r={44} fill={shade(COLORS.greenLeaf, -0.04)} {...lg} />{[[-24, -6], [24, -14], [4, 10]].map(([px, py], j) => <circle key={j} cx={px} cy={py} r={10} fill={[COLORS.red, COLORS.pink, COLORS.yellow][j]} {...sm} />)}</g>)}
+    {/* drifting petals */}
+    {Array.from({ length: 12 }).map((_, i) => <ellipse key={i} cx={200 + (i * 151) % 1600} cy={120 + (i * 83) % 420} rx={10} ry={6} fill={COLORS.pink} opacity={0.6} transform={`rotate(${i * 40} ${200 + (i * 151) % 1600} ${120 + (i * 83) % 420})`} />)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2801,6 +2878,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'emotion-atrium': EmotionAtrium,
   'mood-weather': MoodWeather,
   'heart-lab': HeartLab,
+  'love-gallery': LoveGallery,
+  'cozy-hearth': CozyHearth,
+  'blossom-garden': BlossomGarden,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

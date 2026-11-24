@@ -1,0 +1,125 @@
+{
+  "title": "Every Type of Love Explained",
+  "slug": "types-of-love",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "We use one small word for a thousand different things. I love pizza. I love my best friend. I love my country. I love you. One word, stretched to cover the wild crush, the quiet family bond, the lifelong marriage, and the ache for a stranger's kindness. No wonder we get so confused about it.", "scene": "story", "room": "love-gallery", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY TYPE OF LOVE", "subtitle": "the many ways we love",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 760, "y": 760, "scale": 1.0, "talking": true } ] },
+        { "vo": "The ancient Greeks were wiser than us here. They didn't have one word for love, they had many, each capturing a different flavour of the heart. Passionate love. Deep friendship. Family bonds. Selfless compassion. Playful flirtation. And more. Eight distinct kinds, in total.", "scene": "diagramCard", "diagram": "loves-wheel", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Modern psychology adds its own map. Robert Sternberg said love is built from three ingredients. Intimacy, the closeness. Passion, the spark. And commitment, the choice to stay. Mix them in different amounts, and you get every kind of love there is, from a fling to a lifelong bond.", "scene": "diagramCard", "diagram": "sternberg-triangle", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So love was never one thing you either have or don't. It's a whole spectrum of connection. And knowing which kind you're feeling, or missing, can make sense of almost everything, from why the butterflies faded to why your oldest friendship feels like home.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. The eight types of love the Greeks named, how they feel, how they fade and deepen, and the one kind that quietly makes all the others possible. Whatever love you're in, or longing for, let's understand it. Let's begin.", "scene": "explainer", "prop": "love-compass", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Overview",
+      "beats": [
+        { "vo": "Here are the eight. Eros, philia, storge, agape, ludus, pragma, philautia, and mania. Some you'll know intimately, others you might be missing without realising. As we go, notice which ones fill your life, and which ones you might want more of.", "scene": "overviewGrid", "emotion": "happy-talk",
+          "items": ["EROS", "PHILIA", "STORGE", "AGAPE", "LUDUS", "PRAGMA", "PHILAUTIA", "MANIA"] }
+      ]
+    },
+    {
+      "name": "1 — Eros",
+      "beats": [
+        { "vo": "First, eros. Passionate, romantic love. Named for the Greek god of desire, this is the big one, the intoxicating rush, the racing heart, the butterflies, the ache to be close to someone. It's thrilling, consuming, and it feels, in the moment, like the only love that matters.", "scene": "story", "room": "blossom-garden", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "1 — EROS", "subtitle": "passionate love",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 740, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "love-eros", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Eros is a storm of brain chemistry, dopamine and adrenaline flooding you, which is why new love feels almost like a drug, and a little like madness. The Greeks actually saw eros as slightly dangerous, a kind of divine madness that could overwhelm your reason entirely.", "scene": "explainer", "prop": "love-eros", "emotion": "serious-expert" },
+        { "vo": "And here's the catch they understood. Eros, by its very nature, cannot last at full intensity. No nervous system could survive it. It's the spark that lights the fire, glorious and necessary, but it was always meant to hand over to something deeper, which we'll come to.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Philia",
+      "beats": [
+        { "vo": "Second, philia. The love between true friends. Aristotle called it the highest form of love, higher even than eros, because it's freely chosen and based on genuine respect. It's loyalty, shared values, and the deep comfort of someone who truly knows you and stays anyway.", "scene": "story", "room": "love-gallery", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "2 — PHILIA", "subtitle": "deep friendship",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 760, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 760, "scale": 0.95, "flip": true } ] },
+        { "vo": "Philia is the love we underrate most. We build our whole lives around romance, then wonder why we feel lonely, when a deep friendship can be the most stable, nourishing love of all. No games, no fading spark, just two people who've chosen each other, again and again.", "scene": "explainer", "prop": "love-philia", "emotion": "serious-expert" },
+        { "vo": "If you have even one or two true friends, the kind you could call at 3 AM, you are genuinely rich. Philia asks for time and honesty, not grand gestures. And it often outlasts every romance, quietly holding your life together in the background.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Storge",
+      "beats": [
+        { "vo": "Third, storge. Familial love. The natural, almost effortless affection that flows between parents and children, and among family. It's not chosen or earned, it simply grows from closeness and time, from years of shared meals, old jokes, and simply belonging to the same people.", "scene": "story", "room": "cozy-hearth", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "3 — STORGE", "subtitle": "family love",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 740, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 760, "scale": 0.7, "flip": true } ] },
+        { "vo": "Storge is patient and forgiving in a way other loves rarely are. It's the love that endures arguments, distance and difference, the deep assumption that family will show up when it truly counts. For many of us, it's the very first love we ever know, the template for all the rest.", "scene": "explainer", "prop": "love-storge", "emotion": "serious-expert" },
+        { "vo": "It's worth saying gently, family love isn't guaranteed, and not everyone gets it safely. But the beautiful thing about storge is that it can also be built, with chosen family, the people who become home even without shared blood. Belonging, it turns out, can be created.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Agape",
+      "beats": [
+        { "vo": "Fourth, agape. The highest and most selfless love of all. Universal, unconditional compassion, love extended even to strangers, even to those who can never repay it. It's the kind behind charity, kindness to a stranger, and caring about people you will never meet.", "scene": "story", "room": "blossom-garden", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "4 — AGAPE", "subtitle": "selfless love",
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "happy-talk", "x": 740, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "love-agape", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Agape asks for nothing back, which makes it the hardest love to give, and the most powerful. It's a decision more than a feeling, a choice to will the good of another, simply because they matter. Nearly every religion and moral code places this love at its very summit.", "scene": "explainer", "prop": "love-agape", "emotion": "serious-expert" },
+        { "vo": "And beautifully, research backs the ancient wisdom. Giving love freely, kindness, generosity, service, reliably makes the giver happier and healthier too. Agape isn't a sacrifice that drains you. Pointed well, it's one of the surest paths to a meaningful life.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Ludus",
+      "beats": [
+        { "vo": "Fifth, ludus. Playful love. The light, teasing, flirtatious energy of a new crush, the butterflies of early dating, the banter, the games, the fun. It's love without the weight, dancing, laughing, teasing, the delicious uncertainty of does-he, does-she, before anything gets serious.", "scene": "story", "room": "love-gallery", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "5 — LUDUS", "subtitle": "playful love",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "love-ludus", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Ludus keeps love young. It's the flirting and playfulness that spark new romance, but also, crucially, the teasing and fun that keep long relationships alive. Couples who keep playing together, who still flirt after decades, are tapping this exact energy. Play isn't childish. It's glue.", "scene": "explainer", "prop": "love-ludus", "emotion": "serious-expert" },
+        { "vo": "Its shadow, though, is love that never grows up. Ludus alone, chasing the thrill forever and fleeing the moment things get real, becomes the player's game, all spark and no substance. Delightful as a beginning. A little lonely as a whole life.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Pragma",
+      "beats": [
+        { "vo": "Sixth, pragma. Enduring, mature love. The deep, settled understanding that grows over many years between committed partners. The Greeks had a lovely phrase for it, not falling in love, but standing in love. It's patience, compromise, and the quiet choice to keep building a life together.", "scene": "story", "room": "cozy-hearth", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "6 — PRAGMA", "subtitle": "enduring love",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 620, "y": 740, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 740, "scale": 1.0, "flip": true } ] },
+        { "vo": "Pragma is what eros can mature into, if you let it. The fireworks settle into a warm, steady hearth. It's less dramatic, so we undervalue it, but it's arguably the deepest love of all, two people who've weathered real years together and chosen, through all of it, to stay.", "scene": "explainer", "prop": "love-pragma", "emotion": "serious-expert" },
+        { "vo": "The old couple finishing each other's sentences, still holding hands after fifty years, that's pragma. It can't be rushed or faked, because it's literally made of shared time. It's not the love that sweeps you off your feet. It's the love that quietly builds you a home.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "7 — Philautia",
+      "beats": [
+        { "vo": "Seventh, and the foundation of them all, philautia. Self-love. Now, the Greeks warned of its unhealthy form, vanity and self-obsession. But healthy philautia is different. It's self-respect, self-compassion, treating yourself with the same kindness you'd give a good friend.", "scene": "story", "room": "blossom-garden", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "7 — PHILAUTIA", "subtitle": "self-love",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 740, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "love-philautia", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "And this one isn't optional, because it's the source the others flow from. It's very hard to truly let someone love you if you secretly believe you're unlovable. Hard to set boundaries if you don't value your own needs. Philautia is the soil all other loves grow in.", "scene": "diagramCard", "diagram": "self-love-first", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "You cannot pour from an empty cup. Filling your own, through rest, self-kindness, and treating yourself as worthy, isn't selfish. It's exactly what gives you the fullness to love everyone else well. Loving yourself is where loving others quietly begins.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "8 — Mania",
+      "beats": [
+        { "vo": "Eighth, and the shadow, mania. Obsessive love. This is love turned possessive and consuming, the desperate, jealous, all-or-nothing kind. The constant need for reassurance, the spiralling jealousy, the sense that you'll fall apart without this person. It feels like the deepest love of all. It usually isn't.", "scene": "story", "room": "love-gallery", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "8 — MANIA", "subtitle": "obsessive love",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "scared", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "love-mania", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Mania usually grows from a lack of the seventh love, philautia. When your whole sense of worth rides on another person, love curdles into terror of losing them. It's not really about loving them, it's about needing them to feel okay. And that need can quietly become a cage, for both of you.", "scene": "explainer", "prop": "love-mania", "emotion": "serious-expert" },
+        { "vo": "A gentle, honest word. If love ever feels controlling, frightening, or like you're disappearing into someone else, that's worth taking seriously, and worth talking to someone about. Real love expands you. It should never, ever make you smaller. That's the line to remember.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Love Over Time",
+      "beats": [
+        { "vo": "Now, how do these fit together over a lifetime? Here's the pattern that saves so many relationships from heartbreak. The hot spark of eros naturally cools, usually within the first couple of years. Most people panic, thinking the love is dying. But look closer at what's actually happening.", "scene": "diagramCard", "diagram": "love-over-time", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "As passion cools, something else is meant to grow. Companionship. Pragma. Deep trust and attachment. The fireworks fade precisely so the warm, steady fire can take their place. The couples who last aren't the ones who keep the spark burning forever. They're the ones who let it become roots.", "scene": "explainer", "prop": "love-pragma", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Weaving Them",
+      "beats": [
+        { "vo": "And the real secret? The best loves aren't just one of these. They're a weave of many. The happiest long marriages blend eros, the spark, with philia, true friendship, with pragma, deep commitment, and a good dose of ludus, play, to keep it all fun. Many loves, braided into one.", "scene": "story", "room": "cozy-hearth", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "THE BEST LOVE IS A WEAVE", "subtitle": "many loves in one",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 740, "scale": 1.0, "talking": true }, { "costume": "suit", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 740, "scale": 1.0, "flip": true } ] },
+        { "vo": "So if a relationship feels like it's missing something, you can now ask a far better question than, is this love? You can ask, which kind of love is thin here? Not enough friendship? Lost the play? Faded intimacy? Naming the gap is the first step to filling it.", "scene": "explainer", "prop": "love-triangle-prop", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So here's the quiet reassurance in all of this. If your grand romance faded, you didn't fail at love. The eros simply cooled, as it always does, and maybe you just weren't shown how to grow the next kind. And if romance is missing entirely right now, you are not loveless.", "scene": "explainer", "prop": "love-compass", "emotion": "happy-talk" },
+        { "vo": "Look again, and you'll find love everywhere. In the friend who always answers. In the family that shows up. In the stranger's small kindness. In the quiet, growing kindness you learn to show yourself. Love was never just one grand thing. It's a hundred small ones, all around you.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "So go and notice them all. Tend the friendships. Call your family. Be kind to a stranger. And please, fill your own cup first. A life rich in every kind of love, not just the romantic kind, is one of the fullest lives there is. I'm Dear Brain. Go love, in all its forms.", "scene": "explainer", "prop": "love-agape", "emotion": "happy-talk" },
+        { "vo": "Tell me in the comments which of the eight loves your life is richest in, and which you'd like to grow. I have a soft spot for philia, a good friend is everything. Thank you, truly, for spending this time with me. I'm Dear Brain. Be gentle, and go love well.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

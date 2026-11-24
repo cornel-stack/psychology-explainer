@@ -117,6 +117,10 @@ const NEW_ASSETS = new Set([
   'emotion-atrium', 'mood-weather', 'heart-lab',
   'emo-joy', 'emo-trust', 'emo-fear', 'emo-surprise', 'emo-sadness', 'emo-disgust', 'emo-anger', 'emo-anticipation', 'emotion-wheel-prop', 'emotion-compass',
   'emotion-wheel-map', 'emotions-job', 'opposite-emotions', 'emotion-blends',
+  // types-of-love (all new)
+  'love-gallery', 'cozy-hearth', 'blossom-garden',
+  'love-eros', 'love-philia', 'love-storge', 'love-agape', 'love-ludus', 'love-pragma', 'love-philautia', 'love-mania', 'love-triangle-prop', 'love-compass',
+  'sternberg-triangle', 'loves-wheel', 'love-over-time', 'self-love-first',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

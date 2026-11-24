@@ -250,6 +250,9 @@ const ROOM_DEMO: Record<string, { pose: any; emotion: any; props?: any[] }> = {
   'emotion-atrium': { pose: 'arms-out-presenting', emotion: 'happy-talk', props: [{ name: 'emo-joy', x: 1360, y: 420, scale: 0.5 }] },
   'mood-weather': { pose: 'idle', emotion: 'confused', props: [{ name: 'emotion-compass', x: 760, y: 440, scale: 0.5 }] },
   'heart-lab': { pose: 'idle', emotion: 'serious-expert', props: [{ name: 'emo-trust', x: 1360, y: 440, scale: 0.5 }] },
+  'love-gallery': { pose: 'arms-out-presenting', emotion: 'happy-talk', props: [{ name: 'love-eros', x: 1360, y: 420, scale: 0.5 }] },
+  'cozy-hearth': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'love-storge', x: 760, y: 440, scale: 0.5 }] },
+  'blossom-garden': { pose: 'idle', emotion: 'happy-talk', props: [{ name: 'love-agape', x: 1360, y: 440, scale: 0.5 }] },
 };
 
 export const RoomStill: React.FC<{ room: RoomName }> = ({ room }) => {

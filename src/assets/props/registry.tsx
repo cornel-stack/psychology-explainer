@@ -31,6 +31,7 @@ import * as So from './solitude';
 import * as In from './intelligences';
 import * as Di from './distortions';
 import * as Eb from './emotions_basic';
+import * as Lv from './loves';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -381,6 +382,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'emo-anticipation': Eb.EmoAnticipation,
   'emotion-wheel-prop': Eb.EmotionWheel,
   'emotion-compass': Eb.EmotionCompass,
+  // types-of-love emblems (all new)
+  'love-eros': Lv.LoveEros,
+  'love-philia': Lv.LovePhilia,
+  'love-storge': Lv.LoveStorge,
+  'love-agape': Lv.LoveAgape,
+  'love-ludus': Lv.LoveLudus,
+  'love-pragma': Lv.LovePragma,
+  'love-philautia': Lv.LovePhilautia,
+  'love-mania': Lv.LoveMania,
+  'love-triangle-prop': Lv.LoveTriangle,
+  'love-compass': Lv.LoveCompass,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

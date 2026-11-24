@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'types-of-love': {
+    A: { lines: ['EVERY', 'TYPE OF', 'LOVE'], accent: COLORS.yellow, bg: COLORS.red, emotion: 'happy-talk', textColor: COLORS.white, badge: '8', prop: 'love-eros' },
+    B: { lines: ['THE 8', 'KINDS OF', 'LOVE'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'love-compass' },
+    C: { lines: ['WHY THE', 'SPARK', 'FADES'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'love-pragma' },
+  },
   'basic-emotions': {
     A: { lines: ['EVERY', 'EMOTION', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '8', prop: 'emotion-wheel-prop' },
     B: { lines: ['WHAT YOUR', 'FEELINGS', 'ARE FOR'], accent: COLORS.pink, bg: COLORS.blueDiagram, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'emo-joy' },
