@@ -1,0 +1,318 @@
+{
+  "slug": "levels-of-consciousness",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 14,
+    "NEW": 19
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        12,
+        18
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "pajamas",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        14,
+        21
+      ]
+    },
+    {
+      "name": "awareness-ladder",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "flow-channel",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "mind-floors",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "spectrum-line",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        14
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        18,
+        21
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        3,
+        4,
+        12,
+        18,
+        20,
+        25
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        6,
+        9,
+        11,
+        13,
+        15,
+        16,
+        17,
+        19,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        8,
+        10
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        12,
+        14,
+        16,
+        18
+      ]
+    },
+    {
+      "name": "sleeping-lying",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "walking",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "autopilot-wind",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10,
+        11
+      ]
+    },
+    {
+      "name": "dimmer-switch",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "dormant-orb",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "dream-spiral",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "flow-current",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        20
+      ]
+    },
+    {
+      "name": "meta-lens",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16,
+        17
+      ]
+    },
+    {
+      "name": "open-sky",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        21,
+        22
+      ]
+    },
+    {
+      "name": "radar-ping",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "self-mirror",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        15
+      ]
+    },
+    {
+      "name": "veil-figure",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "awareness-shaft",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        10,
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "name": "clarity-summit",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "flow-river",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "the-deep",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        5,
+        8
+      ]
+    }
+  ]
+}

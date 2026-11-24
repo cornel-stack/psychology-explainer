@@ -75,7 +75,11 @@ export type RoomName =
   | 'analyst-lab'
   | 'diplomat-garden'
   | 'sentinel-hall'
-  | 'explorer-workshop';
+  | 'explorer-workshop'
+  | 'awareness-shaft'
+  | 'the-deep'
+  | 'flow-river'
+  | 'clarity-summit';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2173,6 +2177,97 @@ export const ExplorerWorkshop: React.FC = () => (
   </g>
 );
 
+/** Awareness shaft: a cross-section tower of stacked floors — the ladder of
+ *  consciousness, dark at the base and bright at the top. */
+export const AwarenessShaft: React.FC = () => {
+  const bands = [
+    shade(COLORS.purpleDeep, -0.16), shade(COLORS.purpleDeep, 0.02), COLORS.lavender,
+    COLORS.sky, COLORS.greenTeal, COLORS.yellowSoft, COLORS.yellow,
+  ];
+  return (
+    <g>
+      <WallFloor wall={COLORS.wallNight} floor={COLORS.woodDark} floorY={1020} stripe={false} />
+      {/* stacked floors */}
+      {bands.map((c, i) => (
+        <g key={i}>
+          <rect x={440} y={60 + i * 136} width={1040} height={132} fill={c} {...lg} />
+          <rect x={440} y={60 + i * 136} width={1040} height={20} fill={shade(c, -0.08)} />
+          <text x={470} y={150 + i * 136} fontFamily="Baloo 2" fontWeight={800} fontSize={40} fill={COLORS.outline} opacity={0.5}>{bands.length - i}</text>
+        </g>
+      ))}
+      {/* side scaffolding / shaft rails */}
+      <rect x={400} y={40} width={40} height={972} fill={COLORS.ledGrey} {...xl} />
+      <rect x={1480} y={40} width={40} height={972} fill={COLORS.ledGrey} {...xl} />
+      {Array.from({ length: 7 }).map((_, i) => <line key={i} x1={420} y1={120 + i * 136} x2={1500} y2={120 + i * 136} stroke={shade(COLORS.ledGrey, -0.1)} strokeWidth={STROKE.sm} opacity={0.4} />)}
+      {/* a little up-arrow glow at the top */}
+      <path d="M 960 20 l 40 48 l -24 0 l 0 40 l -32 0 l 0 -40 l -24 0 Z" fill={COLORS.yellow} {...sm} />
+    </g>
+  );
+};
+
+/** The deep: dark water, drifting bubbles and faint light shafts — the
+ *  unconscious floor, below all awareness. */
+export const TheDeep: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={shade(COLORS.purpleDeep, -0.2)} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.purpleDeep, -0.08)} opacity={0.6} />
+    {/* light shafts from the surface */}
+    {[300, 820, 1360].map((x, i) => <path key={i} d={`M ${x} 0 L ${x + 90} 0 L ${x + 220} 1080 L ${x - 10} 1080 Z`} fill={COLORS.sky} opacity={0.07} />)}
+    {/* drifting bubbles */}
+    {Array.from({ length: 22 }).map((_, i) => <circle key={i} cx={120 + (i * 83) % 1760} cy={120 + (i * 137) % 820} r={6 + (i % 4) * 5} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.sm} opacity={0.35} />)}
+    {/* sea floor + weeds */}
+    <path d="M 0 980 Q 480 920 960 980 Q 1440 1030 1920 960 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.purpleDeep, -0.28)} {...xl} />
+    {[260, 720, 1180, 1620].map((x, i) => <path key={i} d={`M ${x} 1000 q -24 -80 6 -150 q 24 70 -6 150`} fill={shade(COLORS.greenDark, -0.1)} {...sm} />)}
+  </g>
+);
+
+/** Flow river: a bright channel sweeping between green banks — being carried,
+ *  effortless, by the current of absorbed action. */
+export const FlowRiver: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.greenLeaf} floorY={760} stripe={false} />
+    {/* lighter upper-sky band to split the flat blue */}
+    <rect x={0} y={0} width={CANVAS.width} height={260} fill={shade(COLORS.sky, 0.12)} />
+    <circle cx={1540} cy={200} r={94} fill={COLORS.yellow} {...sm} />
+    {Array.from({ length: 10 }).map((_, i) => <line key={i} x1={1540} y1={200} x2={1540} y2={60} stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.25} transform={`rotate(${i * 36} 1540 200)`} strokeLinecap="round" />)}
+    {/* far mountain range across the width (fills the lower sky) */}
+    <path d="M 0 760 L 0 560 L 240 440 L 460 600 L 700 420 L 960 580 L 1240 430 L 1520 600 L 1760 470 L 1920 580 L 1920 760 Z" fill={shade(COLORS.lavender, -0.04)} {...lg} />
+    <path d="M 700 420 L 760 470 L 720 510 L 660 470 Z" fill={COLORS.white} opacity={0.7} />
+    <path d="M 1240 430 L 1300 480 L 1260 520 L 1200 480 Z" fill={COLORS.white} opacity={0.7} />
+    {/* rolling near hills */}
+    <path d="M 0 760 Q 300 650 620 760 Z" fill={shade(COLORS.greenLeaf, 0.12)} />
+    <path d="M 1200 760 Q 1560 640 1920 760 Z" fill={shade(COLORS.greenLeaf, 0.12)} />
+    {/* the river channel */}
+    <path d="M 760 760 Q 900 920 820 1080 L 1120 1080 Q 1040 920 1160 760 Z" fill={COLORS.skyDark} {...xl} />
+    <path d="M 820 820 Q 940 940 880 1060 M 1020 820 Q 940 940 1020 1060" fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.5} />
+    {/* reeds on the banks */}
+    {[200, 360, 1560, 1720].map((x, i) => <path key={i} d={`M ${x} 900 q -16 -90 4 -170 q 16 80 -4 170`} fill={COLORS.greenDark} {...sm} />)}
+    {/* clouds + birds */}
+    {[[280, 150], [860, 100], [1180, 180]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><ellipse rx={84} ry={38} fill={COLORS.white} {...sm} /><ellipse cx={64} cy={10} rx={54} ry={30} fill={COLORS.white} {...sm} /></g>)}
+    {[[520, 300], [1000, 340]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q 20 -18 40 0 q 20 -18 40 0`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />)}
+  </g>
+);
+
+/** Clarity summit: a mountaintop at dawn, clear sky and distant peaks — the
+ *  highest, most lucid rung of awareness. */
+export const ClaritySummit: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.yellowSoft} />
+    <rect x={0} y={0} width={CANVAS.width} height={420} fill={shade(COLORS.sky, 0.1)} opacity={0.5} />
+    {/* rising sun + rays */}
+    <circle cx={960} cy={420} r={130} fill={COLORS.yellow} {...sm} />
+    {Array.from({ length: 16 }).map((_, i) => <line key={i} x1={960} y1={420} x2={960} y2={180} stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.3} transform={`rotate(${i * 22.5} 960 420)`} strokeLinecap="round" />)}
+    {/* distant peaks in cloud */}
+    <path d="M 0 700 L 260 480 L 460 700 Z" fill={shade(COLORS.lavender, -0.06)} {...lg} />
+    <path d="M 1420 700 L 1660 470 L 1920 700 Z" fill={shade(COLORS.lavender, -0.06)} {...lg} />
+    <path d="M 0 720 Q 480 660 960 720 Q 1440 780 1920 700" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} opacity={0.5} />
+    {/* foreground summit */}
+    <path d="M 0 1080 L 0 820 L 700 560 L 960 700 L 1260 540 L 1920 840 L 1920 1080 Z" fill={shade(COLORS.purpleDeep, 0.14)} {...xl} />
+    <path d="M 700 560 L 820 640 L 760 700 L 640 650 Z" fill={COLORS.white} opacity={0.7} />
+    <path d="M 1260 540 L 1360 620 L 1300 680 L 1200 630 Z" fill={COLORS.white} opacity={0.7} />
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2233,6 +2328,10 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'diplomat-garden': DiplomatGarden,
   'sentinel-hall': SentinelHall,
   'explorer-workshop': ExplorerWorkshop,
+  'awareness-shaft': AwarenessShaft,
+  'the-deep': TheDeep,
+  'flow-river': FlowRiver,
+  'clarity-summit': ClaritySummit,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

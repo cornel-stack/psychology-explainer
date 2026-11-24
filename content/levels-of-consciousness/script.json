@@ -1,0 +1,104 @@
+{
+  "title": "Every Level of Consciousness Explained",
+  "slug": "levels-of-consciousness",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Right now, you're somewhere on a scale. Not fully asleep, not in pure, blazing focus, but somewhere in between. Because consciousness isn't a light that's simply on or off. It's a dial, and all day long, without noticing, you slide up and down it. So let's climb the whole thing, from the bottom rung to the very top.", "scene": "story", "room": "awareness-shaft", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "EVERY LEVEL OF CONSCIOUSNESS", "subtitle": "the ladder of awareness",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 760, "y": 880, "scale": 0.95, "talking": true } ] },
+        { "vo": "Think of it as one sliding scale. At one end, the deep dark of a coma or dreamless sleep. At the other, those rare, crystal-clear moments when you feel completely, luminously awake. Most of life happens somewhere in the middle of this dial, drifting.", "scene": "diagramCard", "diagram": "spectrum-line", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "One honest note first. This is a map, not a measuring tape. These levels aren't a strict clinical scale, they're a useful way to see the territory. Real awareness is fluid, and you'll recognise yourself flickering between several of these in a single afternoon.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Eight levels of consciousness, from the lights-out dark all the way up to the summit of clarity. Where each one happens, what it feels like, and how to climb a rung when you want to. Let's begin at the bottom.", "scene": "explainer", "prop": "open-sky", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "The Ladder",
+      "beats": [
+        { "vo": "Here's the whole climb at a glance. From the unconscious dark, up through dreaming and autopilot, into being truly present, then aware of yourself, then aware of your own mind, and finally into flow and those rare peak moments. Each rung, a little more awake than the last.", "scene": "diagramCard", "diagram": "awareness-ladder", "emotion": "happy-talk", "withMascot": true }
+      ]
+    },
+    {
+      "name": "1 — Unconscious",
+      "beats": [
+        { "vo": "We start at the very bottom. The unconscious. Deep, dreamless sleep. Anaesthesia. A coma. Here, the lights are simply out. There's no you watching, no sense of time, no inner world at all. For all the richness of the mind, this floor is where it goes completely quiet.", "scene": "story", "room": "the-deep", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 1 — THE UNCONSCIOUS", "subtitle": "lights out",
+          "mascots": [ { "costume": "pajamas", "pose": "sleeping-lying", "emotion": "sleepy", "x": 780, "y": 820, "scale": 1.0 } ],
+          "props": [ { "name": "dormant-orb", "x": 1240, "y": 480, "scale": 0.55, "appearAt": 8 } ] },
+        { "vo": "But here's the strange part. Even with the lights out up top, the basement is busy. Because your mind has floors. A thin, bright layer of conscious awareness sits on a much deeper, hidden ocean, still processing, still running, far below anything you can feel.", "scene": "diagramCard", "diagram": "mind-floors", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So even in the dark, the machinery hums on. And in one special state, that hidden world lights up into a private cinema, while your body stays fast asleep.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Dreaming",
+      "beats": [
+        { "vo": "Level two. Dreaming. Now there's awareness, vivid, emotional, sometimes wilder than waking life, but it's turned entirely inward. Cut off from the outside world, your brain spins whole realities out of memory and feeling. You're conscious, just not of the room you're lying in.", "scene": "story", "room": "the-deep", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 2 — DREAMING", "subtitle": "awareness turned inward",
+          "mascots": [ { "costume": "pajamas", "pose": "sleeping-lying", "emotion": "sleepy", "x": 720, "y": 820, "scale": 1.0 } ],
+          "props": [ { "name": "dream-spiral", "x": 1220, "y": 460, "scale": 0.6, "appearAt": 6 } ] },
+        { "vo": "It's proof that consciousness doesn't need the outside world at all. Awareness can burn brightly with the curtains fully closed. Which raises the question for the rest of our climb, how awake are we really, even when our eyes are open?", "scene": "explainer", "prop": "dream-spiral", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "3 — Autopilot",
+      "beats": [
+        { "vo": "Level three. Autopilot. You're awake, eyes open, moving through the world, and almost entirely checked out. You drive home and remember none of it. You read a page and take in nothing. The body runs the routine while your attention wanders off somewhere else entirely.", "scene": "story", "room": "awareness-shaft", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 3 — AUTOPILOT", "subtitle": "awake, but checked out",
+          "mascots": [ { "costume": "suit", "pose": "walking", "emotion": "sleepy", "x": 760, "y": 880, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "autopilot-wind", "x": 1260, "y": 520, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "This is the brain's default mode, its mind-wandering setting, and we spend nearly half our waking hours here. It's efficient, but it's thin. Life on autopilot can pass in a blur, which is exactly why the next rung up feels like waking from a second kind of sleep.", "scene": "explainer", "prop": "autopilot-wind", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "4 — Present",
+      "beats": [
+        { "vo": "Level four. Presence. Suddenly you're here. You notice the warmth of the cup, the sound of the rain, the look on a friend's face. The autopilot switches off and the world sharpens into high definition. This is situational awareness, consciousness pointed fully at the now.", "scene": "story", "room": "awareness-shaft", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 4 — PRESENT", "subtitle": "here, and now",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 880, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "radar-ping", "x": 1260, "y": 520, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "It sounds simple, but presence is genuinely rare, and it's the whole aim of practices like mindfulness. Just being fully here, in this moment, instead of lost in the last one or the next. And once you're truly here, something new becomes possible. You can turn and look at yourself.", "scene": "explainer", "prop": "radar-ping", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "5 — Self-Aware",
+      "beats": [
+        { "vo": "Level five. Self-awareness. Now you're not just aware of the world, you're aware of yourself in it. You catch your reflection and think, that's me. You notice how you're coming across, that you're nervous, that you just said something odd. You become an object in your own awareness.", "scene": "story", "room": "awareness-shaft", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 5 — SELF-AWARE", "subtitle": "'that's me'",
+          "mascots": [ { "costume": "tee", "pose": "idle", "emotion": "confused", "x": 760, "y": 880, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "self-mirror", "x": 1240, "y": 500, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "It's a cognitive superpower. It lets you grow, apologise, and see yourself through others' eyes. But turned up too high, it curdles into self-consciousness, that painful spotlight where you can't stop watching yourself. The gift and the curse are the very same skill.", "scene": "explainer", "prop": "self-mirror", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "6 — Metacognition",
+      "beats": [
+        { "vo": "Level six. Metacognition. The mind folds back on itself, and now you're aware of your own thinking. You catch yourself mid-worry and think, why am I so anxious about this? You notice a bias, question a belief, watch a thought arrive. This is thinking about thinking.", "scene": "story", "room": "awareness-shaft", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 6 — METACOGNITION", "subtitle": "thinking about thinking",
+          "mascots": [ { "costume": "labcoat", "pose": "idle", "emotion": "serious-expert", "x": 760, "y": 880, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "meta-lens", "x": 1240, "y": 500, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "This is the engine of wisdom and real change. You can't edit a thought you can't see, and metacognition is what lets you step back and choose a better one. But notice something. All this watching still has a watcher inside it, busy, narrating. The next levels are about that voice going quiet.", "scene": "explainer", "prop": "meta-lens", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "7 — Flow",
+      "beats": [
+        { "vo": "Level seven. Flow. Here, something beautiful happens. You're so completely absorbed in what you're doing that the self-conscious narrator simply dissolves. The climber on the rock, the musician mid-solo, the coder who looks up and three hours have vanished. There's no you, just the doing.", "scene": "story", "room": "flow-river", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 7 — FLOW", "subtitle": "the self dissolves",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 560, "y": 820, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "flow-current", "x": 1340, "y": 500, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The psychologist who named it, Mihály Csíkszentmihályi, found flow lives in a narrow channel. Too easy, and you drift into boredom. Too hard, and you tip into anxiety. But right at the edge of your ability, challenge and skill in balance, time melts and the self goes quiet.", "scene": "diagramCard", "diagram": "flow-channel", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Flow is paradise for a reason. It's a taste of consciousness without the exhausting weight of self-monitoring. And it points, like an arrow, toward the highest rung of all.", "scene": "explainer", "prop": "flow-current", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "8 — Peak",
+      "beats": [
+        { "vo": "Level eight. The peak. The rarest air. Those sudden, overwhelming moments of clarity and connection, standing on a mountaintop, holding a newborn, lost in music, when the boundary between you and everything else seems to thin, and the whole thing feels, briefly, perfect.", "scene": "story", "room": "clarity-summit", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "LEVEL 8 — THE PEAK", "subtitle": "the view from the summit",
+          "mascots": [ { "costume": "tee", "pose": "arms-out-presenting", "emotion": "excited", "x": 780, "y": 900, "scale": 0.95, "talking": true } ],
+          "props": [ { "name": "open-sky", "x": 1320, "y": 480, "scale": 0.55, "appearAt": 6 } ] },
+        { "vo": "The psychologist Abraham Maslow called these peak experiences. You can't force them, but you can leave the door open, through presence, through awe, through flow. They don't last, and they're not meant to. They're a glimpse of the view, before you climb back down to living.", "scene": "explainer", "prop": "open-sky", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Watcher",
+      "beats": [
+        { "vo": "So here's the thing to carry down the mountain. Consciousness was never a switch, flicked on in the morning and off at night. It's a dial, and you're turning it all day, from autopilot to presence, from self-conscious to flow, often without ever noticing your hand on the knob.", "scene": "explainer", "prop": "dimmer-switch", "emotion": "serious-expert" },
+        { "vo": "And through every single level, from the deepest dark to the brightest peak, something quiet stays constant. The simple fact of awareness itself. The watcher behind your eyes, present in the dream and the daydream, the panic and the flow. That still, noticing presence is the most you there is.", "scene": "explainer", "prop": "veil-figure", "emotion": "serious-expert" },
+        { "vo": "You can't live at the summit. Nobody can. But now you know the whole climb is there, and you can choose to step up a rung. Put the phone down and really be here. That's the beginning of a more awake life. I'm Dear Brain. Thanks for climbing with me. Stay present out there.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

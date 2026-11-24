@@ -89,6 +89,10 @@ const NEW_ASSETS = new Set([
   'architect-plan', 'logic-gears', 'command-flag', 'debate-sparks', 'advocate-candle', 'mediator-quill', 'protagonist-beacon', 'campaigner-spark',
   'logistician-ledger', 'defender-shield', 'executive-clipboard', 'consul-host', 'virtuoso-wrench', 'adventurer-brush', 'entrepreneur-dice', 'entertainer-mic',
   'four-axes', 'four-families', 'cognitive-stack', 'type-not-a-box',
+  // levels-of-consciousness (all new)
+  'awareness-shaft', 'the-deep', 'flow-river', 'clarity-summit',
+  'dormant-orb', 'dream-spiral', 'autopilot-wind', 'radar-ping', 'self-mirror', 'meta-lens', 'flow-current', 'open-sky', 'dimmer-switch', 'veil-figure',
+  'awareness-ladder', 'mind-floors', 'flow-channel', 'spectrum-line',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

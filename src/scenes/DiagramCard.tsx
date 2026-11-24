@@ -2076,8 +2076,117 @@ const TypeNotABox: React.FC = () => {
   );
 };
 
+/** awareness-ladder: the rungs of consciousness, dark base to bright summit. */
+const AwarenessLadder: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.58; const cy = CANVAS.height * 0.5;
+  const rungs: [string, string][] = [
+    ['UNCONSCIOUS', shade(COLORS.purpleDeep, -0.1)],
+    ['DREAMING', COLORS.lavender],
+    ['AUTOPILOT', COLORS.sky],
+    ['PRESENT', COLORS.greenTeal],
+    ['SELF-AWARE', COLORS.greenLeaf],
+    ['META', COLORS.yellowDark],
+    ['PEAK', COLORS.yellow],
+  ];
+  return (
+    <g>
+      {rungs.map(([lab, col], i) => {
+        const p = springIn(frame - i * 6, 10);
+        const y = cy + 210 - i * 64;
+        const w = 150 + i * 44;
+        return (
+          <g key={lab} transform={`translate(${cx} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <rect x={-w / 2} y={-26} width={w} height={48} rx={10} fill={col} {...lg} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{lab}</text>
+          </g>
+        );
+      })}
+      <path d={`M ${cx + 280} ${cy + 220} L ${cx + 280} ${cy - 230}`} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" markerEnd="" />
+      <path d={`M ${cx + 280} ${cy - 230} l -14 26 l 28 0 Z`} fill={COLORS.outline} />
+      <text x={cx + 300} y={cy - 10} fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline} transform={`rotate(90 ${cx + 300} ${cy - 10})`}>more aware</text>
+    </g>
+  );
+};
+
+/** mind-floors: the three storeys of mind — a sliver conscious, a vast unconscious. */
+const MindFloors: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.2;
+  const floors: [string, number, string][] = [
+    ['CONSCIOUS', 90, COLORS.yellow],
+    ['SUBCONSCIOUS', 150, COLORS.sky],
+    ['UNCONSCIOUS', 330, shade(COLORS.purpleDeep, 0.02)],
+  ];
+  let yy = cy;
+  return (
+    <g>
+      {floors.map(([lab, h, col], i) => {
+        const p = springIn(frame - i * 8, 12);
+        const y = yy; yy += h;
+        return (
+          <g key={lab} transform={`translate(${cx} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <rect x={-230} y={0} width={460} height={h - 10} rx={10} fill={col} {...xl} />
+            <text x={0} y={h / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>{lab}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 600} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>most of you is underwater</text>
+    </g>
+  );
+};
+
+/** flow-channel: challenge × skill — flow runs the diagonal between anxiety & boredom. */
+const FlowChannel: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const x0 = cx - 230, y0 = cy + 230, S = 440;
+  return (
+    <g>
+      <path d={`M ${x0} ${y0} L ${x0} ${y0 - S}`} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <path d={`M ${x0} ${y0} L ${x0 + S} ${y0}`} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      {/* zones */}
+      <path d={`M ${x0} ${y0} L ${x0} ${y0 - S} L ${x0 + S * 0.62} ${y0 - S} Z`} fill={COLORS.red} opacity={0.3} />
+      <path d={`M ${x0} ${y0} L ${x0 + S} ${y0} L ${x0 + S} ${y0 - S * 0.62} Z`} fill={COLORS.sky} opacity={0.3} />
+      <path d={`M ${x0} ${y0} L ${x0 + S * 0.62} ${y0 - S} L ${x0 + S} ${y0 - S} L ${x0 + S} ${y0 - S * 0.62} Z`} fill={COLORS.greenLeaf} opacity={0.5} />
+      <text x={x0 + 120} y={y0 - S + 60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={shade(COLORS.red, -0.1)}>ANXIETY</text>
+      <text x={x0 + S - 110} y={y0 - 36} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={shade(COLORS.skyDark, -0.1)}>BOREDOM</text>
+      <text x={x0 + S * 0.66} y={y0 - S * 0.5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline} transform={`rotate(-32 ${x0 + S * 0.66} ${y0 - S * 0.5})`}>FLOW</text>
+      <text x={x0 - 20} y={y0 - S - 14} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>challenge</text>
+      <text x={x0 + S} y={y0 + 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>skill</text>
+    </g>
+  );
+};
+
+/** spectrum-line: the continuum from off to peak, with a gliding marker. */
+const SpectrumLine: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const x0 = cx - 360, x1 = cx + 360;
+  const ticks = ['COMA', 'DROWSY', 'AWAKE', 'ALERT', 'FLOW', 'PEAK'];
+  const t = 0.5 + 0.45 * Math.sin(frame / 26);
+  const mx = x0 + (x1 - x0) * t;
+  return (
+    <g>
+      <defs>
+        <linearGradient id="specg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor={shade(COLORS.purpleDeep, -0.1)} />
+          <stop offset="0.5" stopColor={COLORS.sky} />
+          <stop offset="1" stopColor={COLORS.yellow} />
+        </linearGradient>
+      </defs>
+      <rect x={x0} y={cy - 16} width={x1 - x0} height={32} rx={16} fill="url(#specg)" {...lg} />
+      {ticks.map((t2, i) => {
+        const x = x0 + ((x1 - x0) / (ticks.length - 1)) * i;
+        return <g key={t2}><line x1={x} y1={cy - 24} x2={x} y2={cy + 24} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><text x={x} y={cy + 56} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>{t2}</text></g>;
+      })}
+      <circle cx={mx} cy={cy} r={22} fill={COLORS.white} {...xl} />
+      <text x={cx} y={cy - 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>one sliding scale</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2155,6 +2264,10 @@ export const DiagramCard: React.FC<{
     'four-families': COLORS.greenTeal,
     'cognitive-stack': COLORS.yellow,
     'type-not-a-box': COLORS.greenLeaf,
+    'awareness-ladder': COLORS.lavender,
+    'mind-floors': COLORS.sky,
+    'flow-channel': COLORS.greenLeaf,
+    'spectrum-line': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -2239,6 +2352,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'four-families' && <FourFamilies />}
         {diagram === 'cognitive-stack' && <CognitiveStack />}
         {diagram === 'type-not-a-box' && <TypeNotABox />}
+        {diagram === 'awareness-ladder' && <AwarenessLadder />}
+        {diagram === 'mind-floors' && <MindFloors />}
+        {diagram === 'flow-channel' && <FlowChannel />}
+        {diagram === 'spectrum-line' && <SpectrumLine />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

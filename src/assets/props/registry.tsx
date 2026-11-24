@@ -24,6 +24,7 @@ import * as Ot from './overthink';
 import * as Jl from './jealousy';
 import * as Cx from './complexes';
 import * as Pt from './personalities';
+import * as Cs from './consciousness';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -296,6 +297,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'adventurer-brush': Pt.AdventurerBrush,
   'entrepreneur-dice': Pt.EntrepreneurDice,
   'entertainer-mic': Pt.EntertainerMic,
+  // levels-of-consciousness props (all new)
+  'dormant-orb': Cs.DormantOrb,
+  'dream-spiral': Cs.DreamSpiral,
+  'autopilot-wind': Cs.AutopilotWind,
+  'radar-ping': Cs.RadarPing,
+  'self-mirror': Cs.SelfMirror,
+  'meta-lens': Cs.MetaLens,
+  'flow-current': Cs.FlowCurrent,
+  'open-sky': Cs.OpenSky,
+  'dimmer-switch': Cs.DimmerSwitch,
+  'veil-figure': Cs.VeilFigure,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
