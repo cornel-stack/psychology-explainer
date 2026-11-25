@@ -34,6 +34,7 @@ import * as Eb from './emotions_basic';
 import * as Lv from './loves';
 import * as Ch from './charisma';
 import * as Hb from './habits';
+import * as Im from './impostor';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -418,6 +419,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'stack-blocks': Hb.StackBlocks,
   'identity-badge': Hb.IdentityBadge,
   'compound-seed': Hb.CompoundSeed,
+  // impostor-syndrome emblems (all new)
+  'fraud-mask': Im.FraudMask,
+  'discount-win': Im.DiscountWin,
+  'found-out': Im.FoundOut,
+  'wider-shore': Im.WiderShore,
+  'evidence-folder': Im.EvidenceFolder,
+  'type-perfectionist': Im.TypePerfectionist,
+  'type-expert': Im.TypeExpert,
+  'type-soloist': Im.TypeSoloist,
+  'type-genius': Im.TypeGenius,
+  'type-superhero': Im.TypeSuperhero,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

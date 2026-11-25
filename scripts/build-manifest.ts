@@ -129,6 +129,10 @@ const NEW_ASSETS = new Set([
   'habit-brain-paths', 'routine-kitchen', 'habit-studio',
   'autopilot-brain', 'habit-loop-prop', 'craving-magnet', 'swap-routine', 'obvious-cue', 'easy-ramp', 'satisfying-check', 'stack-blocks', 'identity-badge', 'compound-seed',
   'habit-loop-diagram', 'reward-timing', 'four-laws', 'compound-growth',
+  // impostor-syndrome (all new)
+  'impostor-office', 'exposure-spotlight', 'reframe-desk',
+  'fraud-mask', 'discount-win', 'found-out', 'wider-shore', 'evidence-folder', 'type-perfectionist', 'type-expert', 'type-soloist', 'type-genius', 'type-superhero',
+  'impostor-cycle', 'competence-confidence-gap', 'five-types', 'feelings-vs-facts',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

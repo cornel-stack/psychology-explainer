@@ -106,7 +106,10 @@ export type RoomName =
   | 'fireside-circle'
   | 'habit-brain-paths'
   | 'routine-kitchen'
-  | 'habit-studio';
+  | 'habit-studio'
+  | 'impostor-office'
+  | 'exposure-spotlight'
+  | 'reframe-desk';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2945,6 +2948,65 @@ export const HabitStudio: React.FC = () => (
   </g>
 );
 
+/** Impostor office: a successful workplace — a wall of awards and a diploma, a
+ *  tidy desk — where someone secretly feels like a fraud. */
+export const ImpostorOffice: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.blueDiagram} floor={COLORS.woodDark} floorY={760} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.blueDiagram, -0.05)} opacity={0.4} />)}
+    {/* framed diploma */}
+    <g transform="translate(340 260)"><rect x={-110} y={-80} width={220} height={160} rx={8} fill={COLORS.bgCream} {...xl} /><rect x={-84} y={-52} width={168} height={14} rx={6} fill={COLORS.whiteShade} /><rect x={-84} y={-24} width={120} height={12} rx={6} fill={COLORS.whiteShade} /><circle cx={66} cy={40} r={22} fill={COLORS.red} {...sm} /><path d="M 66 62 l -8 24 l 8 -8 l 8 8 Z" fill={COLORS.red} /></g>
+    {/* wall of awards / trophies + star plaques */}
+    {([[760, COLORS.yellow], [980, COLORS.sky], [1200, COLORS.greenLeaf]] as [number, string][]).map(([x, c], i) => (
+      <g key={i} transform={`translate(${x} 230)`}><rect x={-56} y={-50} width={112} height={100} rx={8} fill={COLORS.white} {...lg} /><path d="M 0 -30 L 10 -8 L 34 -6 L 16 10 L 22 32 L 0 20 L -22 32 L -16 10 L -34 -6 L -10 -8 Z" fill={c} {...sm} /></g>
+    ))}
+    {/* window */}
+    <g transform="translate(1600 280)"><rect x={-120} y={-150} width={240} height={280} rx={12} fill={shade(COLORS.sky, 0.14)} {...xl} /><circle cx={0} cy={30} r={48} fill={COLORS.yellow} {...sm} /><line x1={-120} y1={-10} x2={120} y2={-10} stroke={COLORS.blueDiagram} strokeWidth={STROKE.lg} /><line x1={0} y1={-150} x2={0} y2={130} stroke={COLORS.blueDiagram} strokeWidth={STROKE.lg} /></g>
+    {/* desk + laptop + mug */}
+    <rect x={0} y={700} width={CANVAS.width} height={40} fill={shade(COLORS.wood, 0.12)} {...xl} />
+    <rect x={0} y={740} width={CANVAS.width} height={320} fill={COLORS.wood} />
+    <g transform="translate(560 650)"><rect x={-96} y={-66} width={192} height={120} rx={10} fill={shade(COLORS.outline, 0.3)} {...xl} /><rect x={-82} y={-52} width={164} height={92} rx={6} fill={COLORS.sky} /><rect x={-120} y={54} width={240} height={20} rx={8} fill={shade(COLORS.outline, 0.25)} {...lg} /></g>
+    <g transform="translate(820 690)"><rect x={-28} y={-30} width={56} height={54} rx={8} fill={COLORS.red} {...lg} /><path d="M 28 -18 q 18 2 12 18" fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} /></g>
+  </g>
+);
+
+/** Exposure spotlight: a stark stage where the fear of being "found out" lives —
+ *  one harsh light, a lectern, a silent audience. */
+export const ExposureSpotlight: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.04)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.purpleDeep, -0.06)} opacity={0.5} />)}
+    {/* harsh spotlight */}
+    <g transform="translate(960 0)"><line x1={0} y1={0} x2={0} y2={50} {...sm} /><path d="M -44 50 L 44 50 L 26 86 L -26 86 Z" fill={COLORS.ledGrey} {...lg} /><path d="M 0 86 L -230 840 L 230 840 Z" fill={COLORS.white} opacity={0.14} /></g>
+    <ellipse cx={960} cy={900} rx={260} ry={60} fill={COLORS.white} opacity={0.12} />
+    {/* lectern */}
+    <g transform="translate(960 600)"><path d="M -60 160 L 60 160 L 40 0 L -40 0 Z" fill={COLORS.wood} {...xl} /><rect x={-70} y={-10} width={140} height={30} rx={8} fill={shade(COLORS.wood, 0.14)} {...lg} /></g>
+    {/* silent audience of eyes */}
+    {Array.from({ length: 12 }).map((_, i) => <g key={i} transform={`translate(${130 + i * 150} 1010)`}><circle r={54} fill={shade(COLORS.woodDark, -0.12)} {...lg} /><circle cx={-16} cy={-10} r={8} fill={COLORS.white} /><circle cx={16} cy={-10} r={8} fill={COLORS.white} /></g>)}
+  </g>
+);
+
+/** Reframe desk: a calm space to rebuild self-worth — a board of real wins, a
+ *  mirror and a warm lamp. */
+export const ReframeDesk: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.wood} floorY={800} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={240} fill={shade(COLORS.greenTeal, 0.08)} />
+    {/* evidence board of pinned wins */}
+    <g transform="translate(560 300)">
+      <rect x={-300} y={-180} width={600} height={340} rx={14} fill={shade(COLORS.wood, 0.1)} {...xl} />
+      <text x={0} y={-130} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={28} fill={COLORS.white}>THE EVIDENCE</text>
+      {Array.from({ length: 6 }).map((_, i) => { const x = -200 + (i % 3) * 200; const y = -60 + Math.floor(i / 3) * 110; return <g key={i} transform={`translate(${x} ${y}) rotate(${(i % 2 ? 1 : -1) * 4})`}><rect x={-80} y={-44} width={160} height={88} rx={6} fill={[COLORS.yellowSoft, COLORS.white, COLORS.sky][i % 3]} {...lg} /><circle cx={0} cy={-44} r={8} fill={COLORS.red} />{[-24, -2, 20].map((ly) => <line key={ly} x1={-56} y1={ly} x2={56} y2={ly} stroke={shade(COLORS.outline, 0.3)} strokeWidth={STROKE.sm} opacity={0.4} />)}</g>; })}
+    </g>
+    {/* mirror */}
+    <g transform="translate(1600 420)"><rect x={-90} y={-180} width={180} height={360} rx={90} fill={COLORS.sky} {...xl} /><rect x={-70} y={-160} width={140} height={320} rx={70} fill={shade(COLORS.sky, 0.14)} /></g>
+    {/* desk + plant + lamp */}
+    <rect x={0} y={760} width={CANVAS.width} height={40} fill={shade(COLORS.wood, 0.12)} {...lg} />
+    <g transform="translate(1180 700)"><path d="M -36 10 L 36 10 L 28 60 L -28 60 Z" fill={COLORS.red} {...lg} />{[-22, 0, 22].map((lx) => <path key={lx} d={`M ${lx} 10 q ${lx} -60 ${lx * 0.4} -110`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+    <g transform="translate(1340 620)"><rect x={-8} y={0} width={16} height={180} fill={COLORS.ledGrey} {...sm} /><path d="M -48 0 L 48 0 L 32 -62 L -32 -62 Z" fill={COLORS.yellow} {...lg} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3036,6 +3098,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'habit-brain-paths': HabitBrainPaths,
   'routine-kitchen': RoutineKitchen,
   'habit-studio': HabitStudio,
+  'impostor-office': ImpostorOffice,
+  'exposure-spotlight': ExposureSpotlight,
+  'reframe-desk': ReframeDesk,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

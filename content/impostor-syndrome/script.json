@@ -1,0 +1,125 @@
+{
+  "title": "Impostor Syndrome: Why You Feel Like a Fraud",
+  "slug": "impostor-syndrome",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "You got the job. You passed the exam. People praise your work. And yet, somewhere inside, a quiet voice insists it's all a fluke. That you've somehow fooled everyone, and that any day now, they'll finally see the truth, that you have no idea what you're doing. If that voice is familiar, this one's for you.", "scene": "story", "room": "impostor-office", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "IMPOSTOR SYNDROME", "subtitle": "why you feel like a fraud",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "scared", "x": 760, "y": 720, "scale": 1.0, "talking": true } ] },
+        { "vo": "It's called impostor syndrome, and the first thing to know is just how common it is. Studies estimate that around seventy percent of people feel it at some point. Which means the room you're intimidated by is probably full of other people, quietly certain that they're the fraud.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "And here's the cruel twist. It tends to hit capable, hard-working people the hardest. The ones who care, who are growing, who are brave enough to stretch into something new. Some of the most accomplished people on earth have confessed to feeling exactly like frauds, waiting to be exposed.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "The real engine of it is a strange cycle. You succeed, but instead of feeling proud, you think, phew, I got away with it again. That triggers a fear of being caught, so you overwork, and succeed once more, which, maddeningly, only deepens the fear. Round and round it goes.", "scene": "diagramCard", "diagram": "impostor-cycle", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Welcome to Dear Brain. What impostor syndrome actually is, the five different faces it wears, why it feels so convincingly true even when it's false, and how to finally quiet that voice and own your own success. Let's begin.", "scene": "explainer", "prop": "fraud-mask", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "What It Is",
+      "beats": [
+        { "vo": "So what's really happening? At its core, impostor syndrome is a glitch in how you explain your own results. When something goes well, you credit luck, timing, charm, or an easy task. When something goes badly, you credit yourself. Heads, it wasn't me. Tails, I'm a fraud.", "scene": "story", "room": "impostor-office", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "THE CORE GLITCH", "subtitle": "discount the wins, keep the losses",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "discount-win", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Because of this, no amount of success can ever actually fix the feeling. Every win gets quietly disqualified before it can count. You could win an award and genuinely believe the judges made a mistake. The evidence of your competence is pouring in, and a filter in your mind refuses to let it land.", "scene": "explainer", "prop": "discount-win", "emotion": "serious-expert" },
+        { "vo": "This is why you can't logic your way out of it with achievements alone. You've been collecting achievements for years, and the fraud feeling is still there. The problem was never a lack of evidence. It's a broken filter that throws the good evidence away. That filter is what we need to fix.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "The Five Types",
+      "beats": [
+        { "vo": "Impostor syndrome doesn't look the same in everyone. The psychologist Pauline Clance, who first named it, identified five distinct types, five different masks the same fear tends to wear. See which of these sounds uncomfortably like the voice in your own head.", "scene": "diagramCard", "diagram": "five-types", "emotion": "happy-talk", "withMascot": true }
+      ]
+    },
+    {
+      "name": "1 — The Perfectionist",
+      "beats": [
+        { "vo": "Type one, the Perfectionist. You set impossibly high standards, and then measure yourself against them mercilessly. If you score ninety-nine percent, all you can see is the missing one. Anything short of flawless feels like total failure, and proof that you're not good enough after all.", "scene": "story", "room": "impostor-office", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "1 — THE PERFECTIONIST", "subtitle": "99% feels like failure",
+          "mascots": [ { "costume": "hoodie", "pose": "facepalm", "emotion": "annoyed", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "type-perfectionist", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "The Perfectionist is never satisfied, so they never feel competent, because competence, to them, means perfect, and perfect never comes. The way out is to redefine success as excellent, or even just done, rather than flawless. Progress, not perfection, is a standard a human can actually meet.", "scene": "explainer", "prop": "type-perfectionist", "emotion": "serious-expert" },
+        { "vo": "Try to notice the moment your eye skips past everything that went right, and locks onto the single tiny flaw. That skip is the whole illness in miniature. Deliberately make yourself name three things that went well, before you're allowed to mention the one that didn't. Re-train where your attention lands.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — The Expert",
+      "beats": [
+        { "vo": "Type two, the Expert. You feel you must know everything before you're allowed to feel competent, or to call yourself qualified. You hoard courses and certificates, terrified that one unanswered question will expose you as a fraud who was only pretending to know their stuff.", "scene": "story", "room": "impostor-office", "emotion": "scared", "camera": "slowZoom", "chapterStart": true, "title": "2 — THE EXPERT", "subtitle": "never knows 'enough'",
+          "mascots": [ { "costume": "labcoat", "pose": "idle", "emotion": "scared", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "type-expert", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But no one knows everything, and they never will. Real experts aren't people who know it all, they're people comfortable saying, I don't know that yet, let me find out. Not knowing something isn't fraud. It's just the honest starting line of learning it.", "scene": "explainer", "prop": "type-expert", "emotion": "serious-expert" },
+        { "vo": "Here's a quiet reframe. You will never feel ready enough, because ready is a feeling that arrives after you act, not before. So stop waiting for the day you finally know enough. Apply for the thing, speak up in the meeting, take the role, while still learning. That's not faking it. That's how everyone does it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — The Soloist",
+      "beats": [
+        { "vo": "Type three, the Soloist. You believe you have to do everything entirely on your own, because asking for help would reveal that you can't cut it. So you struggle in silence, drowning quietly, convinced that needing anyone else is simply more proof that you don't belong here.", "scene": "story", "room": "impostor-office", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "3 — THE SOLOIST", "subtitle": "'asking for help = fraud'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "type-soloist", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But asking for help isn't weakness, it's one of the most competent things a person can do. No one succeeds alone. The people you admire lean on mentors, teams and friends constantly. Reaching out doesn't expose you as a fraud. It's exactly how capable people actually get things done.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — The Natural Genius",
+      "beats": [
+        { "vo": "Type four, the Natural Genius. Somewhere along the way, you came to believe that if you're truly talented, things should come easily. So the moment something is hard, or takes real practice, you feel a stab of shame, certain it means you're secretly not that smart or gifted after all.", "scene": "story", "room": "impostor-office", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "4 — THE NATURAL GENIUS", "subtitle": "'it should be effortless'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "annoyed", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "type-genius", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But struggle isn't the opposite of ability, it's how ability is built. Everyone good at anything was once bad at it and pushed through the hard, clumsy middle. Needing to work at something doesn't make you a fraud. It makes you exactly like every expert who ever lived.", "scene": "explainer", "prop": "type-genius", "emotion": "serious-expert" },
+        { "vo": "The real trap here is avoidance. Because hard things feel threatening to your identity as a natural, you quietly dodge them, and stay small. The cure is to actively seek out the difficult thing, and reframe the struggle as the whole point. You're not failing when it's hard. You're finally growing.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — The Superhero",
+      "beats": [
+        { "vo": "Type five, the Superhero. To silence the fraud feeling, you try to prove your worth by doing more than everyone else. You take on too much, work the longest hours, never say no. If you can just carry enough, achieve enough, maybe, finally, you'll feel like you've earned your place.", "scene": "story", "room": "exposure-spotlight", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "5 — THE SUPERHERO", "subtitle": "overworks to prove worth",
+          "mascots": [ { "costume": "suit", "pose": "idle", "emotion": "sleepy", "x": 760, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "type-superhero", "x": 1320, "y": 460, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But it's a trap that leads straight to burnout, because the feeling of being a fraud was never about how much you do. You could work a hundred hours a week and still feel it. Your worth was never something you had to earn through sheer exhaustion. It was there all along.", "scene": "explainer", "prop": "type-superhero", "emotion": "serious-expert" },
+        { "vo": "So the brave move for the Superhero is, strangely, to do less. To say no. To leave at a reasonable hour, and let the world keep turning without you. Each time you prove to yourself that you're still enough, even when you're not overdelivering, you slowly loosen the knot tying your worth to your output.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "The Competence Paradox",
+      "beats": [
+        { "vo": "Now, here's the piece that makes it all feel so convincing. There's a genuine gap between how competent you actually are, and how competent you feel. Your real skill is often far higher than your confidence, and that gap is exactly where the impostor lives.", "scene": "diagramCard", "diagram": "competence-confidence-gap", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And bizarrely, learning more can make it worse. The more you know about a field, the more you can see how vast it is, and how much you still don't know. The beginner feels confident because they can't yet see the depths. The expert feels like a fraud precisely because they finally can.", "scene": "explainer", "prop": "wider-shore", "emotion": "serious-expert" },
+        { "vo": "So that nagging sense of not knowing enough? It isn't evidence that you're a fraud. It's often evidence of the opposite, that you know enough to grasp how much there is to know. The feeling of inadequacy can be a strange, backhanded sign of real growth.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Who Gets It",
+      "beats": [
+        { "vo": "It also helps to know this isn't a personal flaw in you. Impostor syndrome flares up most in specific situations. Starting a new job. Being promoted. Any time you're stretching into something unfamiliar. The fear isn't proof you don't belong. It's just the feeling of growing.", "scene": "story", "room": "impostor-office", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "IT'S NOT A FLAW IN YOU", "subtitle": "it's about the situation",
+          "mascots": [ { "costume": "hoodie", "pose": "shrug", "emotion": "confused", "x": 760, "y": 720, "scale": 1.0, "talking": true } ] },
+        { "vo": "And it hits even harder when you're the only one like you in the room, the first in your family, the only one of your background on the team. With no one who looks like you to point to, your brain whispers that maybe you're the mistake. You're not. You're the pioneer.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Name and Normalise",
+      "beats": [
+        { "vo": "So how do you actually loosen its grip? The first step is almost absurdly simple. Name it. The moment you can say, ah, this is just impostor syndrome, a known, common pattern, and not the truth, you create a tiny crack of distance between you and the feeling.", "scene": "story", "room": "reframe-desk", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "NAME IT, THEN SHARE IT", "subtitle": "it loses power in the light",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 740, "scale": 1.0, "talking": true } ] },
+        { "vo": "Then, talk about it. This feeling thrives in secret, convincing you that you're uniquely fraudulent. But say it out loud to a trusted friend or colleague, and you'll almost always hear the same stunned reply, wait, you feel that way? I thought it was just me. The secret, shared, dissolves.", "scene": "explainer", "prop": "fraud-mask", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Weigh the Evidence",
+      "beats": [
+        { "vo": "Next, fix the broken filter by actively collecting the evidence it keeps throwing out. Keep a file, a note, a folder, call it whatever you like, and in it, save your wins. Kind feedback. Things you're proud of. Problems you solved. Build a case file for your own competence.", "scene": "story", "room": "reframe-desk", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "BUILD YOUR CASE FILE", "subtitle": "collect the real proof",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "happy-talk", "x": 760, "y": 740, "scale": 1.0, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "evidence-folder", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Then, when the fraud feeling strikes, remember the most important sentence in all of this. A feeling is not a fact. I feel like a fraud is just a feeling, and feelings make terrible evidence. So weigh it honestly against the real record, the actual proof, and let the facts outweigh the fear.", "scene": "diagramCard", "diagram": "feelings-vs-facts", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "And finally, practise owning your wins. When you succeed, resist the reflex to credit luck. Try, just try, saying, I worked hard for that, and I earned it. It'll feel uncomfortable and arrogant at first. Do it anyway. You're slowly teaching that broken filter to finally let the good through.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So the next time that voice tells you you're a fraud about to be exposed, try to meet it with a little compassion, and a little evidence. Remember that it lies, that it tends to haunt capable people, and that the discomfort you feel is very often just the growing pains of becoming more.", "scene": "explainer", "prop": "evidence-folder", "emotion": "happy-talk" },
+        { "vo": "You don't have to wait until the voice is gone to move forward. It may never fully vanish, and that's okay. The goal was never to feel one hundred percent certain. It's to act with courage anyway, to do the thing while the fear quietly rides along in the passenger seat.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Because here is the truth that voice will never tell you. Frauds don't lie awake worrying that they're frauds. The very fact that you care this much, that you're terrified of not being good enough, is itself quiet proof of how much you genuinely do. You belong here. I'm Dear Brain.", "scene": "explainer", "prop": "evidence-folder", "emotion": "happy-talk" },
+        { "vo": "Tell me in the comments, which of the five types are you? For me, it's a toss-up between the Perfectionist and the Expert. And remember, if you felt seen by this, so did thousands of other perfectly capable people watching alongside you. Thank you for being here. I'm Dear Brain. You've got this.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

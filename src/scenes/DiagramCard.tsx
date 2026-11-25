@@ -2917,8 +2917,84 @@ const CompoundGrowth: React.FC = () => {
   );
 };
 
+/** impostor-cycle: success → "I fooled them" → fear → overwork → success. */
+const ImpostorCycle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44; const R = 155;
+  const nodes: [string, string][] = [['SUCCESS', COLORS.greenLeaf], ['"I fooled\nthem"', COLORS.sky], ['FEAR of\nexposure', COLORS.red], ['OVERWORK', COLORS.yellowDark]];
+  const dot = (frame % 120) / 120;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeDasharray="4 16" opacity={0.5} />
+      {nodes.map(([lab, c], i) => { const a = -Math.PI / 2 + (i / 4) * Math.PI * 2; const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R; return <g key={i} transform={`translate(${x} ${y})`}><circle r={60} fill={c} {...lg} />{lab.split('\n').map((ln, j) => <text key={j} x={0} y={-4 + j * 20} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{ln}</text>)}</g>; })}
+      {(() => { const a = -Math.PI / 2 + dot * Math.PI * 2; return <circle cx={cx + Math.cos(a) * R} cy={cy + Math.sin(a) * R} r={12} fill={COLORS.outline} />; })()}
+      <text x={cx} y={cy + R + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the impostor cycle</text>
+    </g>
+  );
+};
+
+/** competence-confidence-gap: you're more capable than you feel. */
+const CompetenceConfidenceGap: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const comp = springIn(frame, 20), conf = springIn(frame - 8, 20);
+  return (
+    <g>
+      <rect x={cx - 180} y={cy + 40 - 200 * comp} width={120} height={200 * comp} rx={10} fill={COLORS.greenLeaf} {...xl} />
+      <text x={cx - 120} y={cy + 76} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>your real</text>
+      <text x={cx - 120} y={cy + 100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>competence</text>
+      <rect x={cx + 60} y={cy + 40 - 90 * conf} width={120} height={90 * conf} rx={10} fill={COLORS.red} {...xl} />
+      <text x={cx + 120} y={cy + 76} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>how you</text>
+      <text x={cx + 120} y={cy + 100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>feel</text>
+      <path d={`M ${cx - 60} ${cy - 170} L ${cx + 60} ${cy - 60}`} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="6 8" />
+      <text x={cx} y={cy - 120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline} transform={`rotate(-14 ${cx} ${cy - 120})`}>the gap</text>
+      <text x={cx} y={cy - 210} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>more capable than you feel</text>
+    </g>
+  );
+};
+
+/** five-types: the five faces of impostor syndrome. */
+const FiveTypes: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.54; const cy = CANVAS.height * 0.2;
+  const rows: [string, string, string][] = [['PERFECTIONIST', '99% feels like failure', COLORS.greenLeaf], ['EXPERT', 'never knows "enough"', COLORS.sky], ['SOLOIST', "can't ask for help", COLORS.yellowDark], ['GENIUS', 'shame when it’s hard', COLORS.pink], ['SUPERHERO', 'overworks to prove it', COLORS.red]];
+  return (
+    <g>
+      {rows.map(([lab, sub, c], i) => {
+        const p = springIn(frame - i * 7, 10); const y = cy + i * 110;
+        return (
+          <g key={lab} opacity={p}>
+            <circle cx={cx - 230} cy={y} r={34} fill={c} {...lg} />
+            <text x={cx - 160} y={y - 4} fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>{lab}</text>
+            <text x={cx - 160} y={y + 24} fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>{sub}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 560} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>five faces of the fraud fear</text>
+    </g>
+  );
+};
+
+/** feelings-vs-facts: weigh the feeling against the evidence. */
+const FeelingsVsFacts: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.4;
+  const tilt = 10 - 20 * springIn(frame - 10, 30);
+  return (
+    <g>
+      <path d={`M ${cx} ${cy + 60} l -40 120 l 80 0 Z`} fill={COLORS.wood} {...xl} />
+      <g transform={`translate(${cx} ${cy + 60}) rotate(${tilt})`}>
+        <rect x={-240} y={-10} width={480} height={20} rx={10} fill={shade(COLORS.wood, 0.12)} {...xl} />
+        <g transform="translate(-180 -60)"><circle r={54} fill={COLORS.red} {...lg} /><text x={0} y={-2} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.white}>FEELING</text><text x={0} y={18} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={12} fill={COLORS.white}>"fraud"</text></g>
+        <g transform="translate(180 -60)"><circle r={60} fill={COLORS.greenLeaf} {...lg} /><text x={0} y={-2} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>FACTS</text><text x={0} y={18} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={12} fill={COLORS.outline}>your wins</text></g>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>a feeling is not a fact</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3036,6 +3112,10 @@ export const DiagramCard: React.FC<{
     'reward-timing': COLORS.red,
     'four-laws': COLORS.greenLeaf,
     'compound-growth': COLORS.greenLeaf,
+    'impostor-cycle': COLORS.sky,
+    'competence-confidence-gap': COLORS.greenLeaf,
+    'five-types': COLORS.lavender,
+    'feelings-vs-facts': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3160,6 +3240,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'reward-timing' && <RewardTiming />}
         {diagram === 'four-laws' && <FourLaws />}
         {diagram === 'compound-growth' && <CompoundGrowth />}
+        {diagram === 'impostor-cycle' && <ImpostorCycle />}
+        {diagram === 'competence-confidence-gap' && <CompetenceConfidenceGap />}
+        {diagram === 'five-types' && <FiveTypes />}
+        {diagram === 'feelings-vs-facts' && <FeelingsVsFacts />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

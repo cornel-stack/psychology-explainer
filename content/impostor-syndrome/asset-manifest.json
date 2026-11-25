@@ -1,0 +1,304 @@
+{
+  "slug": "impostor-syndrome",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 13,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        9,
+        13,
+        15,
+        22,
+        24,
+        26
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "competence-confidence-gap",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "feelings-vs-facts",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "five-types",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "impostor-cycle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "annoyed",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        9,
+        15
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        8,
+        24,
+        26,
+        29,
+        31,
+        32
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        14,
+        21,
+        28
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        11
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        6,
+        10,
+        12,
+        16,
+        18,
+        19,
+        20,
+        23,
+        25,
+        27,
+        30
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        13,
+        17
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        11,
+        13,
+        15,
+        17,
+        24
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "discount-win",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "evidence-folder",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        29,
+        31
+      ]
+    },
+    {
+      "name": "fraud-mask",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        25
+      ]
+    },
+    {
+      "name": "type-expert",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11,
+        12
+      ]
+    },
+    {
+      "name": "type-genius",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        16
+      ]
+    },
+    {
+      "name": "type-perfectionist",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "type-soloist",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "type-superhero",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "wider-shore",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "exposure-spotlight",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "impostor-office",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        5,
+        9,
+        11,
+        13,
+        15,
+        22
+      ]
+    },
+    {
+      "name": "reframe-desk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        24,
+        26
+      ]
+    }
+  ]
+}
