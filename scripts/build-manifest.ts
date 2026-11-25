@@ -185,6 +185,10 @@ const NEW_ASSETS = new Set([
   'waiting-room', 'blank-room', 'maker-workshop',
   'dragging-clock', 'grasping-void', 'bored-fidget', 'shock-vs-boredom', 'numbing-scroll', 'boredom-lightbulb', 'wander-cloud', 'explore-compass', 'rest-vs-boredom', 'engage-choice',
   'boredom-equation', 'shock-choice', 'boredom-creativity', 'tolerance-eroding',
+  // deja-vu (all new)
+  'deja-street', 'repeating-corridor', 'memory-lab',
+  'deja-recognition', 'familiarity-glow', 'recollection-blank', 'memory-mismatch', 'brain-factchecker', 'layout-echo', 'temporal-lobe', 'jamais-vu', 'deja-loop', 'healthy-glitch',
+  'two-memory-systems', 'deja-glitch', 'factcheck-flag', 'layout-match',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

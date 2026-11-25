@@ -48,6 +48,7 @@ import * as Ch2 from './chills';
 import * as Cg from './cringe';
 import * as St from './selftalk';
 import * as Bo from './boredom';
+import * as Dj from './dejavu';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -586,6 +587,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'explore-compass': Bo.ExploreCompass,
   'rest-vs-boredom': Bo.RestVsBoredom,
   'engage-choice': Bo.EngageChoice,
+  // deja-vu emblems (all new)
+  'deja-recognition': Dj.DejaRecognition,
+  'familiarity-glow': Dj.FamiliarityGlow,
+  'recollection-blank': Dj.RecollectionBlank,
+  'memory-mismatch': Dj.MemoryMismatch,
+  'brain-factchecker': Dj.BrainFactchecker,
+  'layout-echo': Dj.LayoutEcho,
+  'temporal-lobe': Dj.TemporalLobe,
+  'jamais-vu': Dj.JamaisVu,
+  'deja-loop': Dj.DejaLoop,
+  'healthy-glitch': Dj.HealthyGlitch,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

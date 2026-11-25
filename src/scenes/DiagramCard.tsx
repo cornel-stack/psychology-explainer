@@ -4111,8 +4111,81 @@ const ToleranceEroding: React.FC = () => {
   );
 };
 
+/** two-memory-systems: familiarity and recollection, normally firing together. */
+const TwoMemorySystems: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const sysBox = (x: number, title: string, sub: string, c: string) => (
+    <g transform={`translate(${x} ${cy})`}><rect x={-120} y={-60} width={240} height={120} rx={16} fill={shade(c, 0.12)} {...xl} /><text x={0} y={-16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>{title}</text><text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>{sub}</text></g>
+  );
+  return (
+    <g>
+      {sysBox(cx - 150, 'FAMILIARITY', '"I know this"', COLORS.yellow)}
+      {sysBox(cx + 150, 'RECOLLECTION', 'where & when', COLORS.sky)}
+      <text x={cx} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>usually they agree</text>
+      <text x={cx} y={cy - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>memory has two systems</text>
+    </g>
+  );
+};
+
+/** deja-glitch: familiarity ON, recollection OFF = déjà vu. */
+const DejaGlitch: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const g = 0.5 + 0.5 * Math.sin(frame / 5);
+  return (
+    <g>
+      {/* familiarity ON */}
+      <g transform={`translate(${cx - 160} ${cy})`}><circle cx={0} cy={0} r={58} fill={COLORS.yellow} opacity={0.5 + g * 0.4} {...xl} /><text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>familiar</text><text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.greenDark}>ON</text></g>
+      {/* recollection OFF */}
+      <g transform={`translate(${cx + 160} ${cy})`}><circle cx={0} cy={0} r={58} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.xl} strokeDasharray="6 10" /><text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>recall</text><text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.red}>OFF</text></g>
+      <text x={cx} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>≠</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>familiar, but nothing to recall</text>
+      <text x={cx} y={cy + 140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.lavenderDark}>= déjà vu</text>
+    </g>
+  );
+};
+
+/** factcheck-flag: the brain flags a false familiarity (a feature, not a bug). */
+const FactcheckFlag: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const steps = [['false "familiar"', COLORS.yellow], ['brain checks', COLORS.sky], ['"that\'s wrong!"', COLORS.red]];
+  return (
+    <g>
+      {steps.map(([lab, c], i) => {
+        const p = springIn(frame - i * 7, 12); const x = cx - 240 + i * 240;
+        return <g key={i}><g transform={`translate(${x} ${cy}) scale(${0.7 + 0.3 * p})`}><rect x={-96} y={-40} width={192} height={80} rx={14} fill={shade(c as string, 0.1)} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{lab as string}</text></g>{i < 2 && <path d={`M ${x + 100} ${cy} l 38 0 l -10 -8 m 10 8 l -10 8`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" opacity={p} />}</g>;
+      })}
+      <text x={cx} y={cy - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>maybe your memory is working well</text>
+    </g>
+  );
+};
+
+/** layout-match: a new scene with an old forgotten layout triggers familiarity. */
+const LayoutMatch: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const g = 0.5 + 0.5 * Math.sin(frame / 5);
+  const roomShape = (x: number, c: string, solid: boolean, lab: string) => (
+    <g transform={`translate(${x} ${cy})`} opacity={solid ? 1 : 0.4}>
+      <rect x={-80} y={-60} width={160} height={120} rx={8} fill={solid ? COLORS.sky : 'none'} stroke={solid ? COLORS.outline : COLORS.lavender} strokeWidth={solid ? STROKE.lg : STROKE.lg} />
+      <rect x={-56} y={20} width={50} height={38} rx={4} fill={solid ? COLORS.white : COLORS.lavender} />
+      <circle cx={40} cy={-20} r={20} fill={solid ? COLORS.yellow : COLORS.lavender} />
+      <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{lab}</text>
+    </g>
+  );
+  return (
+    <g>
+      {roomShape(cx - 170, COLORS.lavender, false, 'old, forgotten')}
+      <text x={cx} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline} opacity={g}>≈</text>
+      {roomShape(cx + 170, COLORS.sky, true, 'new, same shape')}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>same layout sparks the feeling</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4286,6 +4359,10 @@ export const DiagramCard: React.FC<{
     'shock-choice': COLORS.red,
     'boredom-creativity': COLORS.greenLeaf,
     'tolerance-eroding': COLORS.sky,
+    'two-memory-systems': COLORS.sky,
+    'deja-glitch': COLORS.lavender,
+    'factcheck-flag': COLORS.red,
+    'layout-match': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4466,6 +4543,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'shock-choice' && <ShockChoice />}
         {diagram === 'boredom-creativity' && <BoredomCreativity />}
         {diagram === 'tolerance-eroding' && <ToleranceEroding />}
+        {diagram === 'two-memory-systems' && <TwoMemorySystems />}
+        {diagram === 'deja-glitch' && <DejaGlitch />}
+        {diagram === 'factcheck-flag' && <FactcheckFlag />}
+        {diagram === 'layout-match' && <LayoutMatch />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

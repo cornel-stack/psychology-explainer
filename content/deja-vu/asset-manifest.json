@@ -1,0 +1,228 @@
+{
+  "slug": "deja-vu",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 5,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        16,
+        17,
+        25
+      ]
+    },
+    {
+      "name": "deja-glitch",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "factcheck-flag",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "layout-match",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "two-memory-systems",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7,
+        23
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        16,
+        21
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        23,
+        25,
+        27,
+        28
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        22,
+        24,
+        26
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        16,
+        17,
+        25
+      ]
+    },
+    {
+      "name": "brain-factchecker",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        19
+      ]
+    },
+    {
+      "name": "deja-loop",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        6,
+        24
+      ]
+    },
+    {
+      "name": "deja-recognition",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "familiarity-glow",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "healthy-glitch",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "jamais-vu",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "layout-echo",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "memory-mismatch",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "recollection-blank",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "temporal-lobe",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "deja-street",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        5
+      ]
+    },
+    {
+      "name": "memory-lab",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17,
+        25
+      ]
+    },
+    {
+      "name": "repeating-corridor",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    }
+  ]
+}

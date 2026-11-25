@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'deja-vu': {
+    A: { lines: ['THE', 'PSYCHOLOGY', 'OF DÉJÀ VU'], accent: COLORS.lavender, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'deja-recognition' },
+    B: { lines: ['WHY YOU FEEL', "LIKE YOU'VE", 'BEEN HERE BEFORE'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'terrified', textColor: COLORS.white, badge: '!', prop: 'deja-loop' },
+    C: { lines: ["IT'S NOT A", 'GLITCH —', "IT'S A FEATURE"], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '✓', prop: 'brain-factchecker' },
+  },
   'boredom': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF BOREDOM'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'sleepy', textColor: COLORS.outline, badge: '?', prop: 'dragging-clock' },
     B: { lines: ['WHY BOREDOM', 'IS SECRETLY', 'GOOD FOR YOU'], accent: COLORS.greenLeaf, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'boredom-lightbulb' },

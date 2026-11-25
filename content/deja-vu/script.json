@@ -1,0 +1,416 @@
+{
+  "title": "The Psychology of Déjà Vu",
+  "slug": "deja-vu",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You walk into a room you've never visited, in a city you've never been, and suddenly, a chill. You've been here before. You know this moment. You feel, with absolute certainty, that this exact scene has already happened. And yet, you also know, that's impossible. Welcome to one of the strangest glitches in the human mind. Déjà vu.",
+          "scene": "story",
+          "room": "deja-street",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "déjà vu",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 540,
+              "y": 740,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "For centuries, people have blamed it on past lives, premonitions, even glitches in the matrix. It's eerie, fleeting, and almost impossible to put into words. But modern neuroscience has finally started to crack it, and the real explanation is far stranger, and far more wonderful, than any ghost story.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So let's unravel it. What déjà vu actually is, the clever theory of how your two memory systems create it, why it might secretly be a sign that your brain is working brilliantly, and the uncanny feeling that you can predict what happens next. Haven't you, somehow, seen all this before? Let's find out why.",
+          "scene": "explainer",
+          "prop": "deja-recognition",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What It Actually Is",
+      "beats": [
+        {
+          "vo": "First, let's define it precisely, because the definition holds the key. Déjà vu, from the French for already seen, isn't just thinking something feels familiar. It's a very specific, contradictory experience. You feel, intensely, that a brand-new moment is a repeat, while at the same time knowing full well that it isn't.",
+          "scene": "explainer",
+          "prop": "deja-recognition",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHAT IT ACTUALLY IS",
+          "subtitle": "a feeling at war with a fact"
+        },
+        {
+          "vo": "That's the crucial part, the conflict. It's not a false memory that fools you. You're never actually convinced you've lived this before. Instead, you get a powerful feeling of familiarity, slammed right up against the certain knowledge that it's new. That clash, feeling versus fact, is the uncanny signature of déjà vu.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Who Gets It",
+      "beats": [
+        {
+          "vo": "Before we explain it, who actually experiences this? The answer is, most of us. Around two-thirds of people report having had déjà vu. If you've felt it, you're in very normal company. But there are some fascinating patterns in who gets it, and when.",
+          "scene": "story",
+          "room": "deja-street",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHO GETS IT",
+          "subtitle": "most of us, especially the young",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 540,
+              "y": 740,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "deja-loop",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Curiously, déjà vu is reported most by young people, in their teens and twenties, and it fades as we get older, which is a big hint we'll come back to. It also strikes more when we're tired, stressed, or travelling somewhere new. Hold onto that, more common in the young, and in novel places. It's going to matter.",
+          "scene": "explainer",
+          "prop": "deja-loop",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Two Memory Systems",
+      "beats": [
+        {
+          "vo": "To understand déjà vu, you need to know that remembering isn't one thing, it's two. Your brain has two separate systems for recognising the past. The first is familiarity, a vague, wordless sense of I know this, a glow of recognition, with no details attached to it at all.",
+          "scene": "diagramCard",
+          "diagram": "two-memory-systems",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "TWO MEMORY SYSTEMS",
+          "subtitle": "familiarity vs recollection"
+        },
+        {
+          "vo": "The second is recollection, the full retrieval of the actual memory, where you were, when it happened, all the specifics. Normally, these two work together. You see a friend, you feel familiarity, and recollection instantly supplies, that's Sam, from work. Feeling and fact arrive hand in hand. Usually.",
+          "scene": "explainer",
+          "prop": "familiarity-glow",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Glitch",
+      "beats": [
+        {
+          "vo": "And now we can explain déjà vu. The leading theory is that it's a momentary mismatch between those two systems. Something about the new scene sets off a strong, sudden jolt of familiarity. But when your brain reaches for the matching memory, recollection comes back completely empty. There's simply nothing there.",
+          "scene": "diagramCard",
+          "diagram": "deja-glitch",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE GLITCH",
+          "subtitle": "familiar, but no memory"
+        },
+        {
+          "vo": "So you're left holding a powerful feeling of I've been here, with zero memory to back it up, and the clear knowledge that you haven't. Familiarity fired, recollection didn't, and your conscious mind knows it's new. That three-way contradiction is déjà vu. A feeling of memory, with no memory underneath it.",
+          "scene": "explainer",
+          "prop": "recollection-blank",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Double-Take",
+      "beats": [
+        {
+          "vo": "There's another intriguing idea about what sparks that false familiarity, a neural double-take. Your brain processes what you see through more than one pathway, normally in sync. But if one pathway lags a split-second behind the other, the delayed signal can arrive feeling like a memory of something that only just happened.",
+          "scene": "explainer",
+          "prop": "memory-mismatch",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE DOUBLE-TAKE",
+          "subtitle": "a split-second out of sync"
+        },
+        {
+          "vo": "It'd be like hearing a faint echo of a word a heartbeat after you said it, and mistaking the echo for an old memory. The present moment gets stamped, by accident, as the past. Scientists still debate the details, but they point the same way, déjà vu is a timing or signalling hiccup, not a message from beyond.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Maybe Your Brain Is Fine",
+      "beats": [
+        {
+          "vo": "Here's where it gets beautiful. You'd think a false signal of familiarity would be a bug. But recent brain research suggests the opposite. When people have déjà vu in scanners, it's not just the memory regions lighting up, it's the frontal, decision-making parts of the brain, the bits that check and resolve conflicts.",
+          "scene": "diagramCard",
+          "diagram": "factcheck-flag",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "MAYBE YOUR BRAIN IS FINE",
+          "subtitle": "it's fact-checking itself"
+        },
+        {
+          "vo": "In other words, déjà vu may be the sound of your brain catching its own mistake. It notices the false familiarity, raises a flag, and says, hang on, that signal is wrong, you haven't been here. The eerie feeling is your memory system fact-checking itself, in real time. Far from a malfunction, it may mean your memory works well.",
+          "scene": "explainer",
+          "prop": "brain-factchecker",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Layout Trick",
+      "beats": [
+        {
+          "vo": "But what triggers that false flash of familiarity in the first place? One brilliant answer comes from experiments using virtual reality. Researchers found that if you show someone a new scene that has the same spatial layout as a place they saw earlier, but have since forgotten, it reliably triggers déjà vu.",
+          "scene": "diagramCard",
+          "diagram": "layout-match",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE LAYOUT TRICK",
+          "subtitle": "a forgotten shape returns"
+        },
+        {
+          "vo": "So imagine a hotel lobby arranged just like your old school hall, a layout you don't consciously remember. Your brain recognises the shape, and fires familiarity, but since you can't recall the original, there's no memory to explain it. Déjà vu. It's an echo of a forgotten place, surfacing as a feeling with no name.",
+          "scene": "story",
+          "room": "repeating-corridor",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 540,
+              "y": 920,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "layout-echo",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "They Can Trigger It",
+      "beats": [
+        {
+          "vo": "Here's how we know the layout idea isn't just a guess, scientists have learned to trigger déjà vu almost on demand. In the lab, they build virtual rooms that secretly share the shape of an earlier one, then watch volunteers walk in and report that uncanny, been-here-before shiver, right on cue.",
+          "scene": "story",
+          "room": "memory-lab",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THEY CAN TRIGGER IT",
+          "subtitle": "déjà vu, made to order",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 540,
+              "y": 920,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "layout-echo",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Being able to summon a feeling this slippery, in a controlled experiment, is a big deal. It turns a spooky mystery into something you can actually study, measure, and explain. And every time they do it, the ghost-story explanations get a little quieter, and the elegant memory-mismatch story gets a little louder.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Where It Lives",
+      "beats": [
+        {
+          "vo": "We even know roughly where in the brain déjà vu is generated. The clue came from an unexpected place, epilepsy. People with a certain kind of seizure, in a region called the temporal lobe, often experience intense déjà vu right before a seizure, as a kind of warning aura.",
+          "scene": "story",
+          "room": "memory-lab",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHERE IT LIVES",
+          "subtitle": "deep in the temporal lobe",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 540,
+              "y": 920,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "temporal-lobe",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "That pointed scientists straight to the temporal lobe, home of the brain's memory machinery, as the source of the feeling. A brief burst of misfiring there, in an everyday brain, may be enough to spark that fleeting sense of recognition. So déjà vu lives deep in your memory centre, a tiny, momentary flicker in the circuitry.",
+          "scene": "explainer",
+          "prop": "temporal-lobe",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Why It Fades With Age",
+      "beats": [
+        {
+          "vo": "Remember how déjà vu is most common in the young, and fades as we age? That fits the fact-checking theory beautifully. The idea is that younger brains are better at spotting the mismatch and flagging it, so they feel déjà vu more often. It takes a sharp memory-checker to even notice the error.",
+          "scene": "explainer",
+          "prop": "brain-factchecker",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHY IT FADES WITH AGE",
+          "subtitle": "a young brain catches more errors"
+        },
+        {
+          "vo": "As that checking system gradually weakens with age, the false-familiarity errors may still happen, but the brain stops catching them, so you feel déjà vu less. If that's right, it flips the whole thing on its head. Frequent déjà vu isn't a sign of a faulty memory. It might be a sign of a particularly vigilant one.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Opposite: Jamais Vu",
+      "beats": [
+        {
+          "vo": "If familiarity can fire when it shouldn't, can it also fail to fire when it should? Absolutely, and it has a name too, jamais vu, never seen. It's déjà vu's eerie mirror image, when something perfectly familiar suddenly feels completely strange and alien.",
+          "scene": "explainer",
+          "prop": "jamais-vu",
+          "emotion": "confused",
+          "chapterStart": true,
+          "title": "THE OPPOSITE: JAMAIS VU",
+          "subtitle": "when the familiar turns alien"
+        },
+        {
+          "vo": "You've probably felt it. Stare at a common word, like the, over and over, and suddenly it looks misspelled, foreign, wrong, even though you know it's fine. That's jamais vu, familiarity switching off for something it should recognise. Same machinery as déjà vu, running in reverse. Two sides of one strange, wonderful coin.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "So Should I Worry?",
+      "beats": [
+        {
+          "vo": "So, is déjà vu something to worry about? For the vast majority of people, absolutely not. It's a completely normal, harmless quirk of a healthy brain, and quite possibly, as we saw, a sign that your memory's error-checking is working just fine. It's not a premonition, a past life, or a warning.",
+          "scene": "diagramCard",
+          "diagram": "two-memory-systems",
+          "emotion": "happy-talk",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "SO SHOULD I WORRY?",
+          "subtitle": "almost always, no"
+        },
+        {
+          "vo": "And here's a lovely final twist. Déjà vu often comes with a spooky feeling that you can predict what happens next. But when researchers test this, you can't. The sense of prediction is itself part of the illusion, your brain so sure it's reliving the past that it feels like it knows the future. It doesn't. It's just that convincing.",
+          "scene": "explainer",
+          "prop": "deja-loop",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time that uncanny shiver runs through you, and the world feels, for a heartbeat, like a rerun, don't reach for ghosts or prophecies. Smile, and marvel. You're watching your own brain, live, catching a tiny error in its memory files, and flagging it so fast you feel it as a shiver. That's not a glitch. That's genius.",
+          "scene": "story",
+          "room": "memory-lab",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "NOT A GLITCH — GENIUS",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 540,
+              "y": 920,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "One honest, caring note. Ordinary déjà vu, now and then, is completely benign. But if you get it very frequently and intensely, especially alongside things like zoning out, a strange rising feeling or smell, confusion, or lost time, that can rarely signal a temporal-lobe issue, and it's worth mentioning to a doctor.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "For nearly everyone else, déjà vu is just one of the quiet wonders of having a human brain, a mind so busy recognising the world that, just occasionally, it recognises something that was never there. A harmless little hiccup in the vast, miraculous machinery of memory. Rare, fleeting, and genuinely magical.",
+          "scene": "explainer",
+          "prop": "healthy-glitch",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, when does déjà vu hit you hardest, in new places, when you're tired, out of nowhere? And have you ever felt its weird cousin, jamais vu, with a word that stopped making sense? Thank you, truly, for spending this time with me. If this gave you a pleasant shiver, subscribe and stay a while. I'm Dear Brain.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

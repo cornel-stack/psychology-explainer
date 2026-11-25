@@ -148,7 +148,10 @@ export type RoomName =
   | 'thinking-desk'
   | 'waiting-room'
   | 'blank-room'
-  | 'maker-workshop';
+  | 'maker-workshop'
+  | 'deja-street'
+  | 'repeating-corridor'
+  | 'memory-lab';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4020,6 +4023,81 @@ export const MakerWorkshop: React.FC = () => (
   </g>
 );
 
+/** Déjà street: a dusk street corner with a faint doubled "echo" of itself — the
+ *  uncanny sense you've stood here before. */
+export const DejaStreet: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.skyEnd, 0.02)} floor={shade(COLORS.purpleDeep, 0.16)} floorY={820} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.skyEnd, 0.08)} />
+    {/* dusk sun low */}
+    <circle cx={1500} cy={300} r={80} fill={COLORS.yellowSoft} opacity={0.8} />
+    {/* a row of buildings */}
+    {[120, 420, 720, 1180, 1480, 1780].map((x, i) => <g key={i} transform={`translate(${x} 0)`}><rect x={-120} y={200 + (i % 3) * 40} width={240} height={420} rx={6} fill={shade([COLORS.lavender, COLORS.blueDiagram, COLORS.purpleDeep][i % 3], 0.06)} {...lg} />{[0, 1, 2, 3].map((r) => [0, 1, 2].map((c) => <rect key={`${r}-${c}`} x={-90 + c * 70} y={250 + (i % 3) * 40 + r * 80} width={44} height={56} rx={4} fill={COLORS.yellowSoft} opacity={0.6} />))}</g>)}
+    {/* a faint ghost-echo of the same corner, offset */}
+    <g transform="translate(50 20)" opacity={0.22}>
+      <rect x={820} y={520} width={300} height={300} rx={8} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.lg} />
+      <rect x={900} y={600} width={60} height={120} rx={6} fill={COLORS.lavender} />
+    </g>
+    {/* a street lamp + a corner shop */}
+    <g transform="translate(300 540)"><rect x={-8} y={0} width={16} height={280} fill={COLORS.outline} /><rect x={-40} y={-30} width={80} height={40} rx={10} fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={300} rx={120} ry={30} fill={COLORS.yellowSoft} opacity={0.14} /></g>
+    <g transform="translate(960 620)"><rect x={-180} y={0} width={360} height={200} rx={8} fill={shade(COLORS.red, 0.04)} {...xl} /><rect x={-160} y={-40} width={320} height={44} rx={8} fill={COLORS.red} {...lg} /><text x={0} y={-8} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={26} fill={COLORS.white}>CAFÉ</text><rect x={-120} y={40} width={100} height={120} rx={6} fill={COLORS.sky} opacity={0.6} /><rect x={20} y={40} width={100} height={120} rx={6} fill={COLORS.sky} opacity={0.6} /></g>
+    {/* pavement line */}
+    <line x1={0} y1={900} x2={CANVAS.width} y2={900} stroke={shade(COLORS.purpleDeep, 0.26)} strokeWidth={STROKE.lg} opacity={0.6} />
+  </g>
+);
+
+/** Repeating corridor: a hotel corridor of identical doors receding into the
+ *  distance — the archetypal liminal, déjà-vu space. */
+export const RepeatingCorridor: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.red, 0.06)} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    {/* vanishing-point perspective walls */}
+    <path d="M 0 0 L 760 320 L 760 760 L 0 1080 Z" fill={shade(COLORS.red, 0.02)} opacity={0.6} />
+    <path d="M 1920 0 L 1160 320 L 1160 760 L 1920 1080 Z" fill={shade(COLORS.red, 0.02)} opacity={0.6} />
+    <rect x={760} y={320} width={400} height={440} fill={shade(COLORS.red, 0.1)} {...lg} />
+    {/* receding ceiling lights down the middle */}
+    {[0, 1, 2, 3].map((i) => <ellipse key={i} cx={960} cy={120 + i * 70} rx={60 - i * 12} ry={16 - i * 3} fill={COLORS.yellowSoft} opacity={0.5} />)}
+    {/* identical doors on the left wall, receding */}
+    {[0, 1, 2].map((i) => { const s = 1 - i * 0.28; return <g key={i} transform={`translate(${120 + i * 230} ${480 - i * 50})`}><rect x={-60 * s} y={-150 * s} width={120 * s} height={300 * s} rx={6} fill={COLORS.wood} {...lg} /><circle cx={40 * s} cy={0} r={8 * s} fill={COLORS.yellowDark} /><rect x={-40 * s} y={-130 * s} width={80 * s} height={30 * s} rx={4} fill={COLORS.white} opacity={0.5} /></g>; })}
+    {/* identical doors on the right wall */}
+    {[0, 1, 2].map((i) => { const s = 1 - i * 0.28; return <g key={i} transform={`translate(${1800 - i * 230} ${480 - i * 50})`}><rect x={-60 * s} y={-150 * s} width={120 * s} height={300 * s} rx={6} fill={COLORS.wood} {...lg} /><circle cx={-40 * s} cy={0} r={8 * s} fill={COLORS.yellowDark} /><rect x={-40 * s} y={-130 * s} width={80 * s} height={30 * s} rx={4} fill={COLORS.white} opacity={0.5} /></g>; })}
+    {/* a patterned carpet runner receding */}
+    <path d="M 820 1080 L 900 760 L 1020 760 L 1100 1080 Z" fill={shade(COLORS.red, 0.04)} {...lg} />
+    {[0, 1, 2, 3].map((i) => <rect key={i} x={900 + i * 2} y={780 + i * 70} width={120 - i * 8} height={10} rx={3} fill={COLORS.yellowSoft} opacity={0.5} />)}
+    {/* a framed picture on each near wall */}
+    {[300, 1620].map((x, i) => <g key={i} transform={`translate(${x} 320)`}><rect x={-50} y={-66} width={100} height={132} rx={6} fill={COLORS.woodDark} {...lg} /><rect x={-38} y={-52} width={76} height={104} rx={4} fill={shade(COLORS.sky, 0.06)} /></g>)}
+  </g>
+);
+
+/** Memory lab: a research room with brain scans on screens — where the science of
+ *  déjà vu is studied. */
+export const MemoryLab: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.blueDiagram, 0.14)} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+    {/* vertical wall panels to break the flat wall */}
+    {Array.from({ length: 16 }).map((_, i) => <rect key={`pn${i}`} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.blueDiagram, 0.08)} opacity={0.6} />)}
+    {/* a top shelf of equipment boxes + a wall clock + a poster */}
+    <g transform="translate(960 110)"><rect x={-900} y={0} width={1800} height={12} rx={4} fill={shade(COLORS.blueDiagram, -0.04)} opacity={0.6} /></g>
+    {[120, 300, 1560, 1780].map((x, i) => <rect key={`eq${i}`} x={x - 40} y={60} width={80} height={46} rx={6} fill={shade(COLORS.blueDiagram, 0.04)} {...sm} />)}
+    <g transform="translate(960 560)"><rect x={-70} y={-60} width={140} height={120} rx={10} fill={COLORS.white} {...lg} /><path d="M -46 20 Q -64 -20 -30 -30 Q -16 -46 8 -34 Q 34 -42 40 -20 Q 54 -8 42 10 Q 46 30 18 34 Q 0 46 -22 34 Q -48 32 -46 20 Z" fill={COLORS.pink} {...sm} /></g>
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={620} stroke={shade(COLORS.blueDiagram, 0.06)} strokeWidth={STROKE.sm} opacity={0.3} />)}
+    {/* a bank of monitors showing brain scans + waveforms */}
+    {[300, 620, 1300, 1620].map((x, i) => (
+      <g key={i} transform={`translate(${x} 320)`}>
+        <rect x={-130} y={-100} width={260} height={200} rx={10} fill={COLORS.outline} {...xl} />
+        <rect x={-116} y={-86} width={232} height={172} rx={6} fill={shade(COLORS.sky, 0.0)} />
+        {i % 2 === 0
+          ? <g><path d="M -50 10 Q -70 -40 -30 -52 Q -16 -72 10 -58 Q 40 -70 46 -40 Q 66 -28 52 2 Q 58 30 22 36 Q 0 50 -24 36 Q -54 34 -50 10 Z" fill={COLORS.pink} {...lg} /><circle cx={6} cy={-10} r={14} fill={COLORS.yellow} opacity={0.7} /></g>
+          : <polyline points="-110,0 -80,-30 -60,20 -30,-40 0,30 30,-20 60,10 90,-30 110,0" fill="none" stroke={COLORS.ledGreen} strokeWidth={STROKE.lg} strokeLinecap="round" />}
+      </g>
+    ))}
+    {/* a desk with a keyboard + notes */}
+    <g transform="translate(960 800)"><rect x={-360} y={-20} width={720} height={40} rx={8} fill={COLORS.wood} {...xl} /><rect x={-120} y={-44} width={240} height={30} rx={6} fill={shade(COLORS.outline, 0.3)} {...lg} /><rect x={160} y={-40} width={90} height={56} rx={6} fill={COLORS.white} {...lg} /><g transform="translate(-260 -40)"><rect x={-40} y={-50} width={80} height={54} rx={6} fill={COLORS.outline} /><rect x={-32} y={-42} width={64} height={38} rx={3} fill={COLORS.sky} /></g></g>
+    {/* a wheeled chair */}
+    <g transform="translate(960 980)"><rect x={-60} y={-20} width={120} height={50} rx={16} fill={COLORS.greenLeaf} {...xl} /><rect x={-6} y={30} width={12} height={50} fill={COLORS.outline} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4153,6 +4231,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'waiting-room': WaitingRoom,
   'blank-room': BlankRoom,
   'maker-workshop': MakerWorkshop,
+  'deja-street': DejaStreet,
+  'repeating-corridor': RepeatingCorridor,
+  'memory-lab': MemoryLab,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
