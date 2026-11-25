@@ -160,7 +160,10 @@ export type RoomName =
   | 'start-line-dawn'
   | 'task-pile-desk'
   | 'reaching-hands-room'
-  | 'calm-garden-gate';
+  | 'calm-garden-gate'
+  | 'busy-crossing'
+  | 'apartment-window-night'
+  | 'two-cups-table';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4319,6 +4322,79 @@ export const CalmGardenGate: React.FC = () => (
   </g>
 );
 
+/** Busy crossing: a packed pedestrian crossing where everyone streams past and one
+ *  figure stands still, unseen — lonely in the crowd. */
+export const BusyCrossing: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.bgCreamDark, 0.04)} floor={shade(COLORS.ledGrey, 0.1)} floorY={820} stripe={false} />
+    {/* a backdrop of tall grey buildings */}
+    {[120, 420, 720, 1200, 1500, 1800].map((x, i) => <g key={i} transform={`translate(${x} 0)`}><rect x={-120} y={120 + (i % 3) * 40} width={240} height={560} rx={6} fill={shade(COLORS.ledGrey, 0.08 + (i % 2) * 0.04)} {...lg} />{[0, 1, 2, 3].map((r) => [0, 1, 2].map((c) => <rect key={`${r}-${c}`} x={-90 + c * 70} y={170 + (i % 3) * 40 + r * 90} width={44} height={56} rx={4} fill={shade(COLORS.sky, 0.04)} opacity={0.6} />))}</g>)}
+    {/* zebra-crossing stripes on the floor */}
+    {Array.from({ length: 9 }).map((_, i) => <rect key={i} x={120 + i * 200} y={840} width={100} height={200} rx={4} fill={COLORS.white} opacity={0.5} />)}
+    {/* a streaming crowd of faceless grey commuters */}
+    {[200, 360, 520, 1380, 1560, 1720].map((x, i) => <g key={i} transform={`translate(${x} 760) scale(${0.9 + (i % 2) * 0.1})`} opacity={0.6}><circle cx={0} cy={-46} r={34} fill={shade(COLORS.ledGrey, 0.08)} {...xl} /><path d="M -40 80 Q 0 -8 40 80 Z" fill={shade(COLORS.ledGrey, 0.1)} {...xl} />{i % 2 === 0 && <rect x={28} y={-20} width={16} height={60} rx={4} fill={shade(COLORS.ledGrey, -0.04)} />}</g>)}
+    {/* blurred motion streaks */}
+    {[300, 460, 1440, 1640].map((x, i) => <line key={i} x1={x - 40} y1={700 + (i % 2) * 40} x2={x + 40} y2={700 + (i % 2) * 40} stroke={shade(COLORS.ledGrey, 0.14)} strokeWidth={STROKE.lg} opacity={0.4} />)}
+  </g>
+);
+
+/** Apartment window at night: a single warm-lit window in a dark building full of
+ *  other lit windows — the image of modern loneliness. */
+export const ApartmentWindowNight: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wallNightDark} floor={shade(COLORS.purpleDeep, 0.2)} floorY={900} stripe={false} />
+    {/* a facade of many apartment windows, mostly cool/blue, each its own island */}
+    {Array.from({ length: 5 }).map((_, r) => Array.from({ length: 10 }).map((_, c) => {
+      const x = 110 + c * 185;
+      const y = 90 + r * 150;
+      const lit = (r * 10 + c) % 3 !== 0;
+      return (
+        <g key={`${r}-${c}`} transform={`translate(${x} ${y})`}>
+          <rect x={-70} y={-56} width={140} height={112} rx={8} fill={shade(COLORS.wallNight, 0.1)} {...lg} />
+          <rect x={-56} y={-42} width={112} height={84} rx={4} fill={lit ? shade(COLORS.sky, -0.02) : shade(COLORS.wallNight, 0.04)} opacity={lit ? 0.5 : 1} />
+          {lit && <rect x={-20} y={-10} width={24} height={30} rx={3} fill={COLORS.outline} opacity={0.3} />}
+        </g>
+      );
+    }))}
+    {/* the one warm window — our lonely figure's */}
+    <g transform="translate(960 420)">
+      <rect x={-96} y={-80} width={192} height={160} rx={10} fill={COLORS.wallNight} {...xl} />
+      <rect x={-78} y={-62} width={156} height={124} rx={6} fill={COLORS.yellowSoft} />
+      {/* small silhouette gazing out */}
+      <g transform="translate(0 30)"><circle cx={0} cy={-30} r={26} fill={shade(COLORS.wallNight, 0.1)} {...lg} /><path d="M -34 40 Q 0 -8 34 40 Z" fill={shade(COLORS.wallNight, 0.1)} {...lg} /></g>
+      <line x1={0} y1={-80} x2={0} y2={80} stroke={shade(COLORS.wallNight, 0.2)} strokeWidth={STROKE.lg} />
+    </g>
+    {/* a cold moon */}
+    <circle cx={1660} cy={180} r={56} fill={COLORS.lavender} opacity={0.8} />
+    {Array.from({ length: 10 }).map((_, i) => <circle key={i} cx={(i * 211) % 1880} cy={40 + (i * 53) % 120} r={2.5} fill={COLORS.white} opacity={0.6} />)}
+  </g>
+);
+
+/** Two cups table: a cosy little table set for two with warm drinks — genuine,
+ *  one-to-one connection (the hopeful resolution). */
+export const TwoCupsTable: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.12)} floor={COLORS.wood} floorY={820} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.yellowDark, 0.06)} />
+    {/* warm string lights */}
+    <path d="M 0 80 Q 480 160 960 90 Q 1440 20 1920 90" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 10 }).map((_, i) => <circle key={i} cx={100 + i * 190} cy={100 + 26 * Math.sin(i)} r={11} fill={COLORS.yellow} {...sm} />)}
+    {/* a window with a cosy evening */}
+    <g transform="translate(300 320)"><rect x={-130} y={-150} width={260} height={300} rx={14} fill={shade(COLORS.yellowDark, 0.14)} {...xl} /><circle cx={0} cy={40} r={50} fill={COLORS.yellow} {...sm} /><line x1={-130} y1={0} x2={130} y2={0} stroke={shade(COLORS.yellowDark, 0.16)} strokeWidth={STROKE.lg} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.yellowDark, 0.16)} strokeWidth={STROKE.lg} /></g>
+    {/* framed art */}
+    {[1500, 1700].map((x, i) => <g key={i} transform={`translate(${x} 280)`}><rect x={-56} y={-56} width={112} height={112} rx={8} fill={COLORS.white} {...lg} /><path d="M -40 30 Q 0 -30 40 30" fill="none" stroke={[COLORS.pink, COLORS.sky][i]} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>)}
+    {/* the small round table for two */}
+    <g transform="translate(960 820)">
+      <ellipse cx={0} cy={40} rx={260} ry={60} fill={COLORS.woodDark} {...xl} />
+      <ellipse cx={0} cy={20} rx={240} ry={52} fill={shade(COLORS.wood, 0.1)} {...lg} />
+      {/* two steaming cups facing each other */}
+      {[-120, 120].map((x, i) => <g key={i} transform={`translate(${x} 10)`}><rect x={-30} y={-30} width={60} height={50} rx={10} fill={[COLORS.pink, COLORS.sky][i]} {...xl} /><path d="M 30 -16 q 26 8 0 34" fill="none" stroke={[COLORS.pink, COLORS.sky][i]} strokeWidth={STROKE.lg} /><path d="M -10 -44 q -8 -12 0 -24 M 10 -44 q -8 -12 0 -24" fill="none" stroke={COLORS.whiteShade} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.7} /></g>)}
+      {/* a little vase in the middle */}
+      <g transform="translate(0 -4)"><rect x={-12} y={-24} width={24} height={30} rx={6} fill={COLORS.greenTeal} {...sm} /><circle cx={-8} cy={-32} r={8} fill={COLORS.pink} /><circle cx={8} cy={-30} r={8} fill={COLORS.yellow} /><circle cx={0} cy={-40} r={8} fill={COLORS.red} /></g>
+    </g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4464,6 +4540,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'task-pile-desk': TaskPileDesk,
   'reaching-hands-room': ReachingHandsRoom,
   'calm-garden-gate': CalmGardenGate,
+  'busy-crossing': BusyCrossing,
+  'apartment-window-night': ApartmentWindowNight,
+  'two-cups-table': TwoCupsTable,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

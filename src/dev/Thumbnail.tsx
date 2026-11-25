@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'loneliness': {
+    A: { lines: ['THE', 'PSYCHOLOGY', 'OF LONELINESS'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'tearful', textColor: COLORS.white, badge: '?', prop: 'lonely-in-crowd' },
+    B: { lines: ['WHY YOU FEEL', 'ALONE IN', 'A CROWD'], accent: COLORS.lavender, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'connection-gap' },
+    C: { lines: ['LONELINESS', 'IS A SIGNAL,', 'NOT A FLAW'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '♥', prop: 'social-hunger' },
+  },
   'cant-say-no': {
     A: { lines: ["WHY YOU", "CAN'T SAY", 'NO'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'silent-no' },
     B: { lines: ['PEOPLE-', 'PLEASING ISN\'T', 'KINDNESS'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'fawn-appease' },

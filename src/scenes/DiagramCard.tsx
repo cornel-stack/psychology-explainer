@@ -4432,8 +4432,83 @@ const BoundaryReframe: React.FC = () => {
   );
 };
 
+/** connection-gap-diagram: loneliness = desired connection minus actual. */
+const ConnectionGapDiagram: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const p = springIn(frame, 26);
+  return (
+    <g>
+      {/* desired bar (tall) */}
+      <g transform={`translate(${cx - 150} ${cy})`}><rect x={-50} y={40 - 200 * p} width={100} height={200 * p} rx={10} fill={COLORS.sky} {...lg} /><text x={0} y={74} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>want</text></g>
+      {/* actual bar (short) */}
+      <g transform={`translate(${cx + 40} ${cy})`}><rect x={-50} y={40 - 80 * p} width={100} height={80 * p} rx={10} fill={COLORS.ledGrey} {...lg} /><text x={0} y={74} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>have</text></g>
+      {/* the gap bracket */}
+      <g transform={`translate(${cx + 160} ${cy})`} opacity={p}><line x1={0} y1={-160} x2={0} y2={-40} stroke={COLORS.pink} strokeWidth={STROKE.lg} /><path d="M 0 -160 l -8 12 m 8 -12 l 8 12 M 0 -40 l -8 -12 m 8 12 l 8 -12" fill="none" stroke={COLORS.pink} strokeWidth={STROKE.lg} strokeLinecap="round" /><text x={28} y={-96} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.pinkDark}>the gap</text></g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>loneliness is the gap, not the number</text>
+    </g>
+  );
+};
+
+/** loneliness-signal: like hunger/thirst/pain, it's a drive to reconnect. */
+const LonelinessSignal: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const signals: [string, string][] = [['hunger', 'eat'], ['thirst', 'drink'], ['pain', 'protect'], ['loneliness', 'reconnect']];
+  return (
+    <g>
+      {signals.map(([s, drive], i) => {
+        const y = cy - 90 + i * 60; const hot = i === 3; const p = springIn(frame - i * 5, 12);
+        return (
+          <g key={i} transform={`translate(${cx} ${y})`} opacity={p}>
+            <rect x={-220} y={-24} width={200} height={48} rx={10} fill={hot ? shade(COLORS.sky, 0.1) : shade(COLORS.white, 0.1)} {...lg} /><text x={-120} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>{s}</text>
+            <path d="M -14 0 l 34 0 l -10 -8 m 10 8 l -10 8" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" />
+            <rect x={30} y={-24} width={190} height={48} rx={10} fill={hot ? COLORS.sky : shade(COLORS.white, 0.1)} {...lg} /><text x={125} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>{drive}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>it's a signal, like hunger</text>
+    </g>
+  );
+};
+
+/** loneliness-health: chronic loneliness risk compared to smoking. */
+const LonelinessHealth: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const bars: [string, number, string][] = [['obesity', 0.6, COLORS.yellow], ['smoking', 0.95, COLORS.outline], ['loneliness', 0.92, COLORS.red]];
+  return (
+    <g>
+      {bars.map(([lab, v, c], i) => {
+        const p = springIn(frame - i * 6, 14); const h = 240 * v * p; const x = cx - 230 + i * 160;
+        return <g key={i} transform={`translate(${x} ${cy})`}><rect x={-56} y={60 - h} width={112} height={h} rx={10} fill={c} {...lg} /><text x={0} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>{lab}</text></g>;
+      })}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>chronic loneliness harms like smoking</text>
+    </g>
+  );
+};
+
+/** loneliness-cycle: lonely → threat-vigilant → withdraw → more lonely. */
+const LonelinessCycle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const R = 130;
+  const a = (frame / 30) % (Math.PI * 2);
+  const nodes = [['feel lonely', COLORS.sky], ['scan for\nrejection', COLORS.red], ['pull away', COLORS.ledGrey], ['more\nisolated', COLORS.red]];
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.yellowDark} strokeWidth={STROKE.lg} strokeDasharray="4 16" />
+      <g transform={`translate(${cx + Math.cos(a) * R} ${cy + Math.sin(a) * R})`}><circle cx={0} cy={0} r={8} fill={COLORS.yellowDark} /></g>
+      {nodes.map(([lab, c], i) => {
+        const ang = -Math.PI / 2 + (i / 4) * Math.PI * 2; const x = cx + Math.cos(ang) * R; const y = cy + Math.sin(ang) * R;
+        return <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={0} r={54} fill={c as string} {...lg} />{(lab as string).split('\n').map((ln, j) => <text key={j} x={0} y={-4 + j * 16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.outline}>{ln}</text>)}</g>;
+      })}
+      <text x={cx} y={cy - R - 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>a trap that feeds itself</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4623,6 +4698,10 @@ export const DiagramCard: React.FC<{
     'no-social-threat': COLORS.red,
     'pleasing-cost': COLORS.yellow,
     'boundary-reframe': COLORS.greenLeaf,
+    'connection-gap-diagram': COLORS.lavender,
+    'loneliness-signal': COLORS.sky,
+    'loneliness-health': COLORS.red,
+    'loneliness-cycle': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4819,6 +4898,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'no-social-threat' && <NoSocialThreat />}
         {diagram === 'pleasing-cost' && <PleasingCost />}
         {diagram === 'boundary-reframe' && <BoundaryReframe />}
+        {diagram === 'connection-gap-diagram' && <ConnectionGapDiagram />}
+        {diagram === 'loneliness-signal' && <LonelinessSignal />}
+        {diagram === 'loneliness-health' && <LonelinessHealth />}
+        {diagram === 'loneliness-cycle' && <LonelinessCycle />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

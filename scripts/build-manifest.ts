@@ -201,6 +201,10 @@ const NEW_ASSETS = new Set([
   'task-pile-desk', 'reaching-hands-room', 'calm-garden-gate',
   'silent-no', 'juggle-everyone', 'fawn-appease', 'earn-love', 'no-threat-alarm', 'resentment-pot', 'pour-empty-cup', 'guilt-after-no', 'boundary-gate', 'kind-firm-no',
   'fawn-response', 'no-social-threat', 'pleasing-cost', 'boundary-reframe',
+  // loneliness (all new)
+  'busy-crossing', 'apartment-window-night', 'two-cups-table',
+  'lonely-in-crowd', 'connection-gap', 'social-hunger', 'alone-not-lonely', 'loneliness-body', 'loneliness-trap-spiral', 'threat-goggles', 'first-hello-hand', 'give-connect', 'open-up-bridge',
+  'connection-gap-diagram', 'loneliness-signal', 'loneliness-health', 'loneliness-cycle',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

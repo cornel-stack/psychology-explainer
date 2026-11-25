@@ -1,0 +1,226 @@
+{
+  "slug": "loneliness",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        13,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "connection-gap-diagram",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "loneliness-cycle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "loneliness-health",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "loneliness-signal",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        19,
+        21,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        13,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "alone-not-lonely",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "connection-gap",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        15
+      ]
+    },
+    {
+      "name": "first-hello-hand",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "give-connect",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "loneliness-body",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "loneliness-trap-spiral",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "lonely-in-crowd",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "open-up-bridge",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20,
+        23
+      ]
+    },
+    {
+      "name": "social-hunger",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "threat-goggles",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13,
+        14
+      ]
+    },
+    {
+      "name": "apartment-window-night",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "busy-crossing",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "two-cups-table",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        19,
+        21
+      ]
+    }
+  ]
+}

@@ -52,6 +52,7 @@ import * as Dj from './dejavu';
 import * as Bm from './babymemory';
 import * as Rg from './regret';
 import * as Sn from './sayno';
+import * as Lo from './loneliness';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -634,6 +635,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'guilt-after-no': Sn.GuiltAfterNo,
   'boundary-gate': Sn.BoundaryGate,
   'kind-firm-no': Sn.KindFirmNo,
+  // loneliness emblems (all new)
+  'lonely-in-crowd': Lo.LonelyInCrowd,
+  'connection-gap': Lo.ConnectionGap,
+  'social-hunger': Lo.SocialHunger,
+  'alone-not-lonely': Lo.AloneNotLonely,
+  'loneliness-body': Lo.LonelinessBody,
+  'loneliness-trap-spiral': Lo.LonelinessTrapSpiral,
+  'threat-goggles': Lo.ThreatGoggles,
+  'first-hello-hand': Lo.FirstHelloHand,
+  'give-connect': Lo.GiveConnect,
+  'open-up-bridge': Lo.OpenUpBridge,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
