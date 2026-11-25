@@ -173,6 +173,10 @@ const NEW_ASSETS = new Set([
   'live-concert', 'headphone-nook', 'grand-awe',
   'spine-shiver', 'goosebumps-arm', 'soundwave-heart', 'music-reward-brain', 'anticipation-peak', 'expectation-break', 'brain-wiring', 'awe-chills', 'chill-playlist', 'chills-meter',
   'music-reward-loop', 'two-dopamine-hits', 'expectation-violation', 'who-gets-chills',
+  // cringe-attacks (all new)
+  'shower-room', 'awkward-party', 'calm-reframe-room',
+  'cringe-replay', 'self-audience', 'burned-in-memory', 'social-threat-alarm', 'shower-ambush', 'idle-mind-surfacing', 'spotlight-nobody', 'exaggerate-magnifier', 'cringe-means-care', 'defuse-float',
+  'memory-sticky', 'social-survival', 'mind-wander-surfacing', 'spotlight-reality',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

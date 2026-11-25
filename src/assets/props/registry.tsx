@@ -45,6 +45,7 @@ import * as Ly from './lying';
 import * as Sp from './spotless';
 import * as No from './nostalgia';
 import * as Ch2 from './chills';
+import * as Cg from './cringe';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -550,6 +551,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'awe-chills': Ch2.AweChills,
   'chill-playlist': Ch2.ChillPlaylist,
   'chills-meter': Ch2.ChillsMeter,
+  // cringe-attacks emblems (all new)
+  'cringe-replay': Cg.CringeReplay,
+  'self-audience': Cg.SelfAudience,
+  'burned-in-memory': Cg.BurnedInMemory,
+  'social-threat-alarm': Cg.SocialThreatAlarm,
+  'shower-ambush': Cg.ShowerAmbush,
+  'idle-mind-surfacing': Cg.IdleMindSurfacing,
+  'spotlight-nobody': Cg.SpotlightNobody,
+  'exaggerate-magnifier': Cg.ExaggerateMagnifier,
+  'cringe-means-care': Cg.CringeMeansCare,
+  'defuse-float': Cg.DefuseFloat,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

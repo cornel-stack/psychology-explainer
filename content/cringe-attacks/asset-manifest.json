@@ -1,0 +1,221 @@
+{
+  "slug": "cringe-attacks",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 15
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        17,
+        19,
+        21,
+        23
+      ]
+    },
+    {
+      "name": "memory-sticky",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "mind-wander-surfacing",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "spotlight-reality",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19,
+        21,
+        23,
+        25,
+        26
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        17
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        20,
+        22,
+        24
+      ]
+    },
+    {
+      "name": "terrified",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        17,
+        19,
+        21,
+        23
+      ]
+    },
+    {
+      "name": "burned-in-memory",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "cringe-means-care",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19,
+        20,
+        25
+      ]
+    },
+    {
+      "name": "cringe-replay",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        9
+      ]
+    },
+    {
+      "name": "defuse-float",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "exaggerate-magnifier",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "self-audience",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        17,
+        18
+      ]
+    },
+    {
+      "name": "shower-ambush",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "social-threat-alarm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "spotlight-nobody",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "awkward-party",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        7,
+        17
+      ]
+    },
+    {
+      "name": "calm-reframe-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        19,
+        21
+      ]
+    },
+    {
+      "name": "shower-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        23
+      ]
+    }
+  ]
+}

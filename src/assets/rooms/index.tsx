@@ -139,7 +139,10 @@ export type RoomName =
   | 'vinyl-room'
   | 'live-concert'
   | 'headphone-nook'
-  | 'grand-awe';
+  | 'grand-awe'
+  | 'shower-room'
+  | 'awkward-party'
+  | 'calm-reframe-room';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3792,6 +3795,70 @@ export const GrandAwe: React.FC = () => (
   </g>
 );
 
+/** Shower room: a tiled bathroom with a running shower — the classic place an old
+ *  cringe ambushes you out of nowhere. */
+export const ShowerRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.whiteShade} floorY={860} stripe={false} />
+    {/* wall tiles */}
+    {Array.from({ length: 11 }).map((_, r) => <line key={`h${r}`} x1={0} y1={70 + r * 80} x2={CANVAS.width} y2={70 + r * 80} stroke={shade(COLORS.sky, -0.06)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    {Array.from({ length: 13 }).map((_, c) => <line key={`v${c}`} x1={c * 160} y1={0} x2={c * 160} y2={600} stroke={shade(COLORS.sky, -0.06)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* floor tiles */}
+    {Array.from({ length: 13 }).map((_, i) => <line key={`f${i}`} x1={i * 160} y1={860} x2={i * 160 - 120} y2={1080} stroke={shade(COLORS.whiteShade, -0.06)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    <line x1={0} y1={960} x2={CANVAS.width} y2={960} stroke={shade(COLORS.whiteShade, -0.06)} strokeWidth={STROKE.sm} opacity={0.5} />
+    {/* shower stall with glass panel */}
+    <rect x={1120} y={120} width={640} height={740} rx={16} fill={shade(COLORS.sky, 0.06)} opacity={0.4} {...xl} />
+    {/* shower head + streams */}
+    <g transform="translate(1440 180)"><rect x={-10} y={-30} width={20} height={40} fill={COLORS.ledGrey} {...lg} /><rect x={-54} y={10} width={108} height={26} rx={10} fill={shade(COLORS.ledGrey, 0.1)} {...xl} />{Array.from({ length: 10 }).map((_, i) => <line key={i} x1={-46 + i * 10} y1={40} x2={-52 + i * 10} y2={560} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.5} />)}</g>
+    {/* steam clouds at the top */}
+    {[1300, 1500, 1660].map((x, i) => <ellipse key={i} cx={x} cy={200 + (i % 2) * 40} rx={70} ry={30} fill={COLORS.white} opacity={0.3} />)}
+    {/* a towel rail + towel on the left */}
+    <g transform="translate(300 420)"><rect x={-90} y={0} width={180} height={14} rx={6} fill={COLORS.ledGrey} {...lg} /><rect x={-70} y={14} width={90} height={160} rx={10} fill={COLORS.pink} {...xl} /></g>
+    {/* a sink + mirror */}
+    <g transform="translate(560 640)"><rect x={-70} y={0} width={140} height={60} rx={12} fill={COLORS.white} {...xl} /><rect x={-50} y={60} width={100} height={110} rx={8} fill={shade(COLORS.sky, 0.04)} {...lg} /></g>
+    <g transform="translate(560 420)"><rect x={-70} y={-90} width={140} height={160} rx={12} fill={shade(COLORS.sky, 0.1)} {...xl} /><rect x={-56} y={-76} width={112} height={132} rx={8} fill={COLORS.white} opacity={0.5} /></g>
+    {/* bath mat */}
+    <ellipse cx={600} cy={980} rx={200} ry={40} fill={shade(COLORS.pink, 0.04)} opacity={0.7} />
+  </g>
+);
+
+/** Awkward party: a social gathering with balloons and a crowd — the scene of the
+ *  original blunder. */
+export const AwkwardParty: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.lavender, 0.06)} />
+    {/* bunting + a banner */}
+    <path d="M 0 80 Q 480 150 960 90 Q 1440 30 1920 90" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 11 }).map((_, i) => <path key={i} d={`M ${90 + i * 174} ${100 + 24 * Math.sin(i)} l 22 0 l -11 24 Z`} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.greenLeaf][i % 4]} {...sm} />)}
+    <g transform="translate(960 230)"><rect x={-130} y={-40} width={260} height={80} rx={12} fill={COLORS.pink} {...xl} /><text x={0} y={14} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={36} fill={COLORS.white}>PARTY</text></g>
+    {/* balloons */}
+    {[180, 360, 1560, 1740].map((x, i) => <g key={i} transform={`translate(${x} 320)`}><ellipse cx={0} cy={0} rx={40} ry={50} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf][i]} {...lg} /><path d="M 0 50 l 0 90" stroke={COLORS.outline} strokeWidth={STROKE.sm} /></g>)}
+    {/* snack table */}
+    <g transform="translate(960 640)"><rect x={-200} y={0} width={400} height={30} rx={8} fill={COLORS.wood} {...xl} /><rect x={-200} y={-28} width={400} height={30} rx={10} fill={COLORS.white} {...lg} />{[-140, -60, 40, 130].map((x, i) => <g key={i} transform={`translate(${x} -18)`}><ellipse cx={0} cy={0} rx={30} ry={11} fill={[COLORS.greenLeaf, COLORS.red, COLORS.yellow, COLORS.sky][i]} {...sm} /></g>)}</g>
+    {/* a mingling crowd of guests, and one lone awkward figure */}
+    {[260, 420, 1480, 1660].map((x, i) => <g key={i} transform={`translate(${x} 780)`}><circle cx={0} cy={-40} r={38} fill={[COLORS.yellowSoft, COLORS.sky, COLORS.greenLeaf, COLORS.pink][i]} {...xl} /><circle cx={-13} cy={-46} r={6} fill={COLORS.outline} /><circle cx={13} cy={-46} r={6} fill={COLORS.outline} /><path d="M -14 -28 Q 0 -16 14 -28" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><path d={`M -40 80 Q 0 0 40 80 Z`} fill={shade([COLORS.yellowSoft, COLORS.sky, COLORS.greenLeaf, COLORS.pink][i], 0.08)} {...lg} /></g>)}
+  </g>
+);
+
+/** Calm reframe room: a warm, serene nook — the gentle place where you make peace
+ *  with the cringe. */
+export const CalmReframeRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.1)} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={580} width={CANVAS.width} height={260} fill={shade(COLORS.greenTeal, 0.04)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={580} stroke={shade(COLORS.greenTeal, 0.04)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* a big window with soft daylight */}
+    <g transform="translate(400 330)"><rect x={-140} y={-160} width={280} height={320} rx={14} fill={COLORS.sky} {...xl} /><line x1={0} y1={-160} x2={0} y2={160} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-140} y1={0} x2={140} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><circle cx={70} cy={-90} r={40} fill={COLORS.white} opacity={0.7} /></g>
+    {/* calming wall art */}
+    {[1360, 1560, 1760].map((x, i) => <g key={i} transform={`translate(${x} 260)`}><rect x={-56} y={-56} width={112} height={112} rx={8} fill={COLORS.white} {...lg} /><path d={`M -40 30 Q 0 -30 40 30`} fill="none" stroke={[COLORS.pink, COLORS.sky, COLORS.yellow][i]} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>)}
+    {/* a cosy armchair + warm lamp + plant */}
+    <g transform="translate(960 800)"><rect x={-150} y={-50} width={300} height={190} rx={30} fill={COLORS.greenLeaf} {...xl} /><rect x={-190} y={-30} width={60} height={170} rx={22} fill={shade(COLORS.greenLeaf, 0.1)} {...lg} /><rect x={130} y={-30} width={60} height={170} rx={22} fill={shade(COLORS.greenLeaf, 0.1)} {...lg} /><rect x={-80} y={-20} width={90} height={70} rx={14} fill={COLORS.pink} {...lg} transform="rotate(-6 -35 15)" /></g>
+    <g transform="translate(1340 700)"><rect x={-6} y={0} width={12} height={160} fill={COLORS.woodDark} /><path d="M -40 0 L 40 0 L 28 -56 L -28 -56 Z" fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={168} rx={60} ry={14} fill={COLORS.yellowSoft} opacity={0.25} /></g>
+    <g transform="translate(640 780)"><rect x={-30} y={0} width={60} height={70} rx={10} fill={COLORS.red} {...lg} /><path d="M 0 0 q -46 -50 -24 -110 M 0 0 q 0 -60 0 -120 M 0 0 q 46 -50 24 -104" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-24} cy={-110} r={14} fill={COLORS.greenLeaf} /><circle cx={0} cy={-120} r={16} fill={COLORS.greenLeaf} /><circle cx={24} cy={-104} r={14} fill={COLORS.greenLeaf} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3916,6 +3983,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'live-concert': LiveConcert,
   'headphone-nook': HeadphoneNook,
   'grand-awe': GrandAwe,
+  'shower-room': ShowerRoom,
+  'awkward-party': AwkwardParty,
+  'calm-reframe-room': CalmReframeRoom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

@@ -3858,8 +3858,94 @@ const WhoGetsChills: React.FC = () => {
   );
 };
 
+/** memory-sticky: emotional moments get consolidated far stronger than neutral ones. */
+const MemorySticky: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const g = 0.6 + 0.4 * Math.sin(frame / 6);
+  return (
+    <g>
+      {/* neutral memory — faint */}
+      <g transform={`translate(${cx - 150} ${cy})`} opacity={0.45}>
+        <rect x={-70} y={-54} width={140} height={108} rx={10} fill={COLORS.white} {...lg} />
+        <line x1={-50} y1={-20} x2={50} y2={-20} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} /><line x1={-50} y1={4} x2={30} y2={4} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} />
+        <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>neutral: fades</text>
+      </g>
+      {/* emotional memory — bold, glowing, amygdala-tagged */}
+      <g transform={`translate(${cx + 150} ${cy})`}>
+        <rect x={-74} y={-58} width={148} height={116} rx={10} fill={COLORS.red} {...xl} />
+        {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M ${Math.cos((i / 6) * Math.PI * 2) * 86} ${Math.sin((i / 6) * Math.PI * 2) * 72} l ${Math.cos((i / 6) * Math.PI * 2) * 14} ${Math.sin((i / 6) * Math.PI * 2) * 12}`} stroke={COLORS.yellow} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={g} />)}
+        <text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.white}>!</text>
+        <text x={0} y={94} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>emotional: burned in</text>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>feeling glues a memory in place</text>
+    </g>
+  );
+};
+
+/** social-survival: a social blunder trips an ancient "exile" alarm. */
+const SocialSurvival: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const steps = [['a blunder', COLORS.yellow], ['"they\'ll reject me"', COLORS.red], ['belonging alarm', COLORS.red], ['burned-in warning', COLORS.outline]];
+  return (
+    <g>
+      {steps.map(([lab, c], i) => {
+        const p = springIn(frame - i * 6, 12); const x = cx - 300 + i * 200;
+        return (
+          <g key={i}>
+            <g transform={`translate(${x} ${cy}) scale(${0.7 + 0.3 * p})`}><rect x={-80} y={-40} width={160} height={80} rx={14} fill={i < 1 ? COLORS.white : shade(c as string, 0.1)} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{lab as string}</text></g>
+            {i < 3 && <path d={`M ${x + 82} ${cy} l 34 0 l -10 -8 m 10 8 l -10 8`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" opacity={p} />}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the tribe-brain treats it as danger</text>
+    </g>
+  );
+};
+
+/** mind-wander-surfacing: at rest, the default mode surfaces old cringes. */
+const MindWanderSurfacing: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  return (
+    <g>
+      {/* a resting brain */}
+      <path d="M -70 14 Q -86 -44 -40 -58 Q -24 -86 12 -70 Q 50 -82 60 -48 Q 86 -32 68 6 Q 74 42 30 48 Q 0 68 -32 50 Q -72 46 -70 14 Z" fill={COLORS.lavender} {...xl} transform={`translate(${cx} ${cy})`} />
+      <text x={cx} y={cy + 4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>idle brain</text>
+      {/* old cringe bubbles floating up around it */}
+      {[0, 1, 2, 3, 4].map((i) => { const p = ((frame + i * 24) % 100) / 100; const ang = -Math.PI / 2 + (i - 2) * 0.5; const r = 110 + p * 80; const x = cx + Math.cos(ang) * r; const y = cy + Math.sin(ang) * r - p * 30; return <g key={i} transform={`translate(${x} ${y})`} opacity={0.4 + (1 - p) * 0.5}><circle cx={0} cy={0} r={22 - p * 6} fill={COLORS.red} opacity={0.5} {...sm} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.white}>!</text></g>; })}
+      <text x={cx} y={cy - 160} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a wandering mind digs them up</text>
+    </g>
+  );
+};
+
+/** spotlight-reality: you think everyone remembers; they forgot in minutes. */
+const SpotlightReality: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  return (
+    <g>
+      {/* YOUR view: a huge glaring memory */}
+      <g transform={`translate(${cx - 150} ${cy})`}>
+        <circle cx={0} cy={0} r={64} fill={COLORS.red} {...xl} />
+        <text x={0} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.white}>!</text>
+        <text x={0} y={104} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>to you: enormous</text>
+      </g>
+      <text x={cx} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>vs</text>
+      {/* THEIR view: a tiny dot, mostly forgotten */}
+      <g transform={`translate(${cx + 150} ${cy})`}>
+        <circle cx={0} cy={0} r={64} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} strokeDasharray="5 7" />
+        <circle cx={0} cy={0} r={7} fill={COLORS.ledGrey} opacity={0.6} />
+        <text x={0} y={104} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>to them: forgotten</text>
+      </g>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>you're your only audience</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4021,6 +4107,10 @@ export const DiagramCard: React.FC<{
     'two-dopamine-hits': COLORS.sky,
     'expectation-violation': COLORS.yellow,
     'who-gets-chills': COLORS.greenLeaf,
+    'memory-sticky': COLORS.red,
+    'social-survival': COLORS.yellow,
+    'mind-wander-surfacing': COLORS.lavender,
+    'spotlight-reality': COLORS.sky,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4189,6 +4279,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'two-dopamine-hits' && <TwoDopamineHits />}
         {diagram === 'expectation-violation' && <ExpectationViolation />}
         {diagram === 'who-gets-chills' && <WhoGetsChills />}
+        {diagram === 'memory-sticky' && <MemorySticky />}
+        {diagram === 'social-survival' && <SocialSurvival />}
+        {diagram === 'mind-wander-surfacing' && <MindWanderSurfacing />}
+        {diagram === 'spotlight-reality' && <SpotlightReality />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />
