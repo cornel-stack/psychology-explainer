@@ -3944,8 +3944,98 @@ const SpotlightReality: React.FC = () => {
   );
 };
 
+/** inner-speech-origin: out-loud child speech internalises into silent inner speech. */
+const InnerSpeechOrigin: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const g = 0.5 + 0.5 * Math.sin(frame / 6);
+  return (
+    <g>
+      {/* child, talking out loud */}
+      <g transform={`translate(${cx - 180} ${cy})`}>
+        <circle cx={0} cy={0} r={48} fill={COLORS.white} {...xl} />
+        <ellipse cx={0} cy={18} rx={9} ry={6} fill={COLORS.outline} />
+        <g transform="translate(60 -42)"><rect x={-34} y={-20} width={70} height={38} rx={10} fill={COLORS.sky} {...sm} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.white}>out loud</text></g>
+        <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>child</text>
+      </g>
+      <path d={`M ${cx - 90} ${cy} l 60 0 l -12 -10 m 12 10 l -12 10`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      {/* adult, inner speech */}
+      <g transform={`translate(${cx + 180} ${cy})`}>
+        <circle cx={0} cy={0} r={48} fill={COLORS.white} {...xl} />
+        <g opacity={0.6 + g * 0.4}><rect x={-30} y={-22} width={60} height={38} rx={12} fill={COLORS.lavender} {...sm} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.white}>...</text></g>
+        <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>inner voice</text>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>out-loud speech goes inward</text>
+    </g>
+  );
+};
+
+/** self-talk-performance: self-talk raises performance. */
+const SelfTalkPerformance: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const bars: [string, number, string][] = [['silent', 0.5, COLORS.ledGrey], ['self-talk', 0.85, COLORS.greenLeaf]];
+  return (
+    <g>
+      {bars.map(([lab, v, c], i) => {
+        const p = springIn(frame - i * 8, 14); const h = 240 * v * p; const x = cx - 110 + i * 220;
+        return <g key={i} transform={`translate(${x} ${cy})`}><rect x={-56} y={50 - h} width={112} height={h} rx={10} fill={c} {...lg} /><text x={0} y={84} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{lab}</text></g>;
+      })}
+      <path d={`M ${cx - 110} ${cy - 70} Q ${cx} ${cy - 190} ${cx + 110} ${cy - 160}`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.sm} strokeDasharray="5 8" />
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>self-talk lifts performance</text>
+    </g>
+  );
+};
+
+/** name-distance: "I" sits close & anxious; "you / [name]" steps back & calms. */
+const NameDistance: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const g = 0.5 + 0.5 * Math.sin(frame / 5);
+  return (
+    <g>
+      {/* 'I' — right up close to a stressful blob */}
+      <g transform={`translate(${cx - 180} ${cy})`}>
+        <circle cx={-30} cy={0} r={40} fill={COLORS.red} opacity={0.5 + g * 0.3} />
+        <g transform="translate(28 0)"><circle cx={0} cy={0} r={30} fill={COLORS.white} {...lg} /><ellipse cx={0} cy={10} rx={6} ry={8} fill={COLORS.outline} /><path d="M -12 -6 Q -6 -12 0 -6 M 0 -6 Q 6 -12 12 -6" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+        <text x={0} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>"I'm panicking"</text>
+        <text x={0} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>up close</text>
+      </g>
+      {/* 'you / name' — stepped back, calmer */}
+      <g transform={`translate(${cx + 180} ${cy})`}>
+        <circle cx={-70} cy={0} r={30} fill={COLORS.red} opacity={0.3} />
+        <g transform="translate(20 0)"><circle cx={0} cy={0} r={30} fill={COLORS.white} {...lg} /><circle cx={-10} cy={-2} r={4} fill={COLORS.outline} /><circle cx={10} cy={-2} r={4} fill={COLORS.outline} /><path d="M -10 10 Q 0 16 10 10" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+        <text x={0} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>"you've got this"</text>
+        <text x={0} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>a step back</text>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>use your name to gain distance</text>
+    </g>
+  );
+};
+
+/** critic-vs-coach: the same moment, two inner voices, two outcomes. */
+const CriticVsCoach: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const side = (gx: number, title: string, c: string, voice: string, outcome: string) => (
+    <g transform={`translate(${gx} ${cy})`}>
+      <circle cx={0} cy={-40} r={44} fill={c} {...xl} />
+      <text x={0} y={-34} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.white}>{title}</text>
+      <g transform="translate(0 30)"><rect x={-96} y={-20} width={192} height={40} rx={10} fill={shade(c, 0.12)} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{voice}</text></g>
+      <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{outcome}</text>
+    </g>
+  );
+  return (
+    <g>
+      {side(cx - 180, 'CRITIC', COLORS.red, '"you always fail"', 'anxiety ↑')}
+      {side(cx + 180, 'COACH', COLORS.greenLeaf, '"try again, kindly"', 'resilience ↑')}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the tone of the voice matters</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4111,6 +4201,10 @@ export const DiagramCard: React.FC<{
     'social-survival': COLORS.yellow,
     'mind-wander-surfacing': COLORS.lavender,
     'spotlight-reality': COLORS.sky,
+    'inner-speech-origin': COLORS.sky,
+    'self-talk-performance': COLORS.greenLeaf,
+    'name-distance': COLORS.yellow,
+    'critic-vs-coach': COLORS.pink,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4283,6 +4377,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'social-survival' && <SocialSurvival />}
         {diagram === 'mind-wander-surfacing' && <MindWanderSurfacing />}
         {diagram === 'spotlight-reality' && <SpotlightReality />}
+        {diagram === 'inner-speech-origin' && <InnerSpeechOrigin />}
+        {diagram === 'self-talk-performance' && <SelfTalkPerformance />}
+        {diagram === 'name-distance' && <NameDistance />}
+        {diagram === 'critic-vs-coach' && <CriticVsCoach />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

@@ -142,7 +142,10 @@ export type RoomName =
   | 'grand-awe'
   | 'shower-room'
   | 'awkward-party'
-  | 'calm-reframe-room';
+  | 'calm-reframe-room'
+  | 'mirror-pep-talk'
+  | 'locker-room'
+  | 'thinking-desk';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3859,6 +3862,76 @@ export const CalmReframeRoom: React.FC = () => (
   </g>
 );
 
+/** Mirror pep-talk: a vanity with a bulb-framed mirror — the classic stage for
+ *  giving yourself a pep talk. */
+export const MirrorPepTalk: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.pink, 0.04)} floor={COLORS.wood} floorY={860} stripe={false} />
+    <rect x={0} y={600} width={CANVAS.width} height={260} fill={shade(COLORS.pink, -0.02)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={600} stroke={shade(COLORS.pink, -0.04)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* the big bulb-framed vanity mirror */}
+    <g transform="translate(960 380)">
+      <rect x={-260} y={-280} width={520} height={560} rx={20} fill={COLORS.white} {...xl} />
+      <rect x={-210} y={-230} width={420} height={460} rx={12} fill={shade(COLORS.sky, 0.04)} />
+      {/* bulbs around the frame */}
+      {Array.from({ length: 24 }).map((_, i) => { let x = 0, y = 0; if (i < 7) { x = -210 + i * 70; y = -256; } else if (i < 12) { x = 236; y = -256 + (i - 6) * 92; } else if (i < 19) { x = 236 - (i - 12) * 70; y = 256; } else { x = -236; y = 256 - (i - 18) * 92; } return <circle key={i} cx={x} cy={y} r={14} fill={COLORS.yellowSoft} {...sm} />; })}
+      {/* a faint reflection: a cheering figure */}
+      <g opacity={0.5}><circle cx={0} cy={-40} r={60} fill={COLORS.white} {...lg} /><path d="M -40 -40 L -80 -90 M 40 -40 L 80 -90" stroke={COLORS.skin} strokeWidth={STROKE.xl} strokeLinecap="round" /><path d="M -56 120 Q 0 -8 56 120 Z" fill={shade(COLORS.hoodie, 0.04)} {...lg} /></g>
+    </g>
+    {/* the vanity counter with makeup/products */}
+    <g transform="translate(960 720)"><rect x={-320} y={0} width={640} height={40} rx={8} fill={COLORS.wood} {...xl} />{[-260, -210, 220, 270].map((x, i) => <rect key={i} x={x - 14} y={-44} width={28} height={48} rx={6} fill={[COLORS.red, COLORS.sky, COLORS.greenLeaf, COLORS.yellow][i]} {...sm} />)}</g>
+    {/* a stool */}
+    <g transform="translate(960 960)"><ellipse cx={0} cy={-10} rx={70} ry={20} fill={COLORS.pink} {...xl} /><rect x={-56} y={0} width={14} height={90} fill={COLORS.woodDark} /><rect x={42} y={0} width={14} height={90} fill={COLORS.woodDark} /></g>
+  </g>
+);
+
+/** Locker room: a sports changing room with benches and lockers — where athletes
+ *  psych themselves up with self-talk. */
+export const LockerRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.blueDiagram, 0.12)} floor={COLORS.whiteShade} floorY={860} stripe={false} />
+    {/* bank of lockers */}
+    {Array.from({ length: 9 }).map((_, i) => <g key={i} transform={`translate(${160 + i * 200} 300)`}><rect x={-80} y={-240} width={160} height={480} rx={8} fill={[COLORS.sky, COLORS.blueDiagram][i % 2]} {...xl} /><line x1={-80} y1={0} x2={80} y2={0} stroke={shade(COLORS.blueDiagram, -0.08)} strokeWidth={STROKE.lg} /><circle cx={52} cy={-120} r={8} fill={COLORS.outline} /><circle cx={52} cy={120} r={8} fill={COLORS.outline} /><rect x={-30} y={-190} width={60} height={20} rx={4} fill={COLORS.white} opacity={0.6} /><rect x={-30} y={70} width={60} height={20} rx={4} fill={COLORS.white} opacity={0.6} /></g>)}
+    {/* floor tiles */}
+    {Array.from({ length: 13 }).map((_, i) => <line key={i} x1={i * 160} y1={860} x2={i * 160 - 120} y2={1080} stroke={shade(COLORS.whiteShade, -0.05)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    <line x1={0} y1={960} x2={CANVAS.width} y2={960} stroke={shade(COLORS.whiteShade, -0.05)} strokeWidth={STROKE.sm} opacity={0.5} />
+    {/* a wooden bench */}
+    <g transform="translate(960 820)"><rect x={-300} y={0} width={600} height={30} rx={8} fill={COLORS.wood} {...xl} /><rect x={-280} y={30} width={24} height={90} fill={COLORS.woodDark} /><rect x={256} y={30} width={24} height={90} fill={COLORS.woodDark} /></g>
+    {/* a towel + a water bottle + a ball on the bench */}
+    <g transform="translate(700 790)"><rect x={-40} y={-30} width={80} height={30} rx={8} fill={COLORS.red} {...lg} /></g>
+    <g transform="translate(1180 770)"><rect x={-16} y={-50} width={32} height={60} rx={10} fill={COLORS.sky} {...lg} /><rect x={-10} y={-64} width={20} height={16} rx={4} fill={COLORS.outline} /></g>
+    <circle cx={900} cy={990} r={34} fill={COLORS.white} {...xl} /><path d="M 874 978 Q 900 968 926 978 M 884 1004 Q 900 994 916 1004" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+    {/* motivational wall sign */}
+    <g transform="translate(960 160)"><rect x={-150} y={-44} width={300} height={80} rx={12} fill={COLORS.yellow} {...xl} /><text x={0} y={14} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={34} fill={COLORS.outline}>YOU GOT THIS</text></g>
+  </g>
+);
+
+/** Thinking desk: a work desk with a sticky-note problem and a rubber duck — talking
+ *  a problem out loud. */
+export const ThinkingDesk: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.08)} floor={COLORS.wood} floorY={820} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.greenTeal, 0.03)} />
+    {/* a wall of sticky notes + a whiteboard */}
+    <g transform="translate(360 300)"><rect x={-160} y={-150} width={320} height={300} rx={10} fill={COLORS.white} {...xl} />{[[-90, -80], [20, -70], [-40, 20], [80, 40], [-110, 90]].map(([x, y], i) => <rect key={i} x={x - 30} y={y - 26} width={60} height={56} rx={4} fill={[COLORS.yellow, COLORS.pink, COLORS.sky, COLORS.greenLeaf, COLORS.yellow][i]} {...sm} transform={`rotate(${i * 7 - 14} ${x} ${y})`} />)}</g>
+    {/* a window */}
+    <g transform="translate(1600 300)"><rect x={-140} y={-150} width={280} height={300} rx={12} fill={COLORS.sky} {...xl} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-140} y1={0} x2={140} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /></g>
+    {/* the desk */}
+    <g transform="translate(960 820)">
+      <rect x={-420} y={-20} width={840} height={40} rx={8} fill={COLORS.woodDark} {...xl} />
+      <rect x={-340} y={-20} width={40} height={180} fill={COLORS.wood} /><rect x={300} y={-20} width={40} height={180} fill={COLORS.wood} />
+      {/* laptop */}
+      <g transform="translate(-180 -30)"><rect x={-70} y={-50} width={140} height={54} rx={6} fill={COLORS.outline} /><rect x={-60} y={-42} width={120} height={38} rx={3} fill={COLORS.sky} /><rect x={-80} y={4} width={160} height={14} rx={4} fill={shade(COLORS.outline, 0.3)} /></g>
+      {/* a coffee mug */}
+      <g transform="translate(60 -30)"><rect x={-24} y={-36} width={48} height={44} rx={8} fill={COLORS.red} {...lg} /><path d="M 24 -24 q 22 6 0 28" fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} /></g>
+      {/* the rubber duck, confidant */}
+      <g transform="translate(220 -40)"><ellipse cx={0} cy={18} rx={34} ry={24} fill={COLORS.yellow} {...xl} /><circle cx={-4} cy={-10} r={18} fill={COLORS.yellow} {...xl} /><circle cx={-9} cy={-14} r={3} fill={COLORS.outline} /><path d="M -20 -10 l -16 4 l 16 5 Z" fill={shade(COLORS.yellowDark, 0.1)} {...sm} /></g>
+    </g>
+    {/* desk chair back */}
+    <g transform="translate(960 1000)"><rect x={-70} y={-20} width={140} height={60} rx={16} fill={COLORS.greenLeaf} {...xl} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3986,6 +4059,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'shower-room': ShowerRoom,
   'awkward-party': AwkwardParty,
   'calm-reframe-room': CalmReframeRoom,
+  'mirror-pep-talk': MirrorPepTalk,
+  'locker-room': LockerRoom,
+  'thinking-desk': ThinkingDesk,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

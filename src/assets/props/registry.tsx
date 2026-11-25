@@ -46,6 +46,7 @@ import * as Sp from './spotless';
 import * as No from './nostalgia';
 import * as Ch2 from './chills';
 import * as Cg from './cringe';
+import * as St from './selftalk';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -562,6 +563,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'exaggerate-magnifier': Cg.ExaggerateMagnifier,
   'cringe-means-care': Cg.CringeMeansCare,
   'defuse-float': Cg.DefuseFloat,
+  // talking-to-yourself emblems (all new)
+  'talking-aloud': St.TalkingAloud,
+  'kid-private-speech': St.KidPrivateSpeech,
+  'inner-voice-bubble': St.InnerVoiceBubble,
+  'rubber-duck': St.RubberDuck,
+  'lost-keys-found': St.LostKeysFound,
+  'hype-coach': St.HypeCoach,
+  'name-megaphone': St.NameMegaphone,
+  'inner-critic': St.InnerCritic,
+  'inner-coach': St.InnerCoach,
+  'quiet-mind': St.QuietMind,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

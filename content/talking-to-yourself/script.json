@@ -1,0 +1,401 @@
+{
+  "title": "Why You Talk to Yourself",
+  "slug": "talking-to-yourself",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You're alone in the kitchen, muttering, right, keys, phone, wallet. Or in the mirror, whispering, okay, you've got this. Or mid-task, narrating every step out loud. And then you catch yourself, and a little voice goes, uh oh, am I losing it? Talking to myself again. Good news. You are not losing it. Quite the opposite.",
+          "scene": "story",
+          "room": "mirror-pep-talk",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY YOU TALK TO",
+          "subtitle": "yourself",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 540,
+              "y": 920,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Talking to yourself, out loud or silently, is one of the most common, normal and useful things the human mind does. Far from a sign of madness, it's a sign of a sophisticated brain using one of its best tools. And once you understand it, you can use it on purpose, to focus, to calm down, and to perform better.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So let's clear the stigma away completely. Where this habit comes from, why it's secretly a superpower, the clever name-trick that calms your nerves, and the one thing that makes self-talk help you or harm you. By the end, you'll never feel the least bit weird muttering to yourself again. Let's have a word with ourselves.",
+          "scene": "explainer",
+          "prop": "talking-aloud",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "It's Completely Normal",
+      "beats": [
+        {
+          "vo": "First, the reassurance, because it really matters. Practically everyone talks to themselves. Studies suggest the vast majority of people do it regularly, whether out loud or as a running inner monologue in their head. It is not a symptom, it is not strange, and it does not mean anything whatsoever is wrong with you.",
+          "scene": "explainer",
+          "prop": "inner-voice-bubble",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "IT'S COMPLETELY NORMAL",
+          "subtitle": "almost everyone does it"
+        },
+        {
+          "vo": "In fact, we tend to do it more when a task is hard, when we're stressed, or when we're learning something new, which is a giant clue. If talking to ourselves pops up exactly when the brain is working its hardest, it's probably not a glitch. It's a tool the mind reaches for precisely when it needs help.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And it crosses every age and culture. Toddlers do it, elite athletes do it, your grandparents do it. We've almost certainly been muttering to ourselves for as long as we've had language. The only reason it feels embarrassing is a silly modern myth that sane people keep quiet. The truth is, the quiet mind is the unusual one.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Where It Begins",
+      "beats": [
+        {
+          "vo": "To understand it, we have to go back to childhood. Watch a small child play, and you'll hear them narrating constantly, now the car goes here, no, not there. The psychologist Lev Vygotsky called this private speech, and he realised it's how children learn to guide and control themselves, by talking themselves through a task.",
+          "scene": "diagramCard",
+          "diagram": "inner-speech-origin",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHERE IT BEGINS",
+          "subtitle": "from kids talking out loud"
+        },
+        {
+          "vo": "As we grow up, that out-loud chatter doesn't disappear. It mostly goes underground, becoming the silent inner voice in your head. That inner monologue is one of the most powerful tools you have for thinking, planning and self-control. So talking to yourself out loud is simply that childhood tool resurfacing when you need it most.",
+          "scene": "explainer",
+          "prop": "kid-private-speech",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Your Thinking Tool",
+      "beats": [
+        {
+          "vo": "So what does all this self-talk actually do for you? A huge amount. It helps you organise messy thoughts into order. It lets you hold a plan in mind, step by step. It directs your attention to what matters. Speaking your thoughts, even silently, turns a swirling fog of ideas into a clear, single line you can actually follow and act on.",
+          "scene": "story",
+          "room": "thinking-desk",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "YOUR THINKING TOOL",
+          "subtitle": "it organises the mind",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 620,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "inner-voice-bubble",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Think of your working memory as a small, cluttered desk. Self-talk is like narrating as you tidy it, this goes here, that comes next. It externalises the thinking, so your brain doesn't have to juggle everything silently at once. That's why, when a problem gets knotty, talking it through out loud can make the answer appear.",
+          "scene": "explainer",
+          "prop": "rubber-duck",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Pause Button",
+      "beats": [
+        {
+          "vo": "Self-talk does something else quietly heroic, it helps you stop. The gap between an urge and an action, the moment you don't send the angry text or grab the extra biscuit, is often filled with words. Hold on, is this wise? Inner speech is a big part of how we talk ourselves out of our worst impulses.",
+          "scene": "explainer",
+          "prop": "inner-voice-bubble",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE PAUSE BUTTON",
+          "subtitle": "self-talk powers self-control"
+        },
+        {
+          "vo": "This is why young children, before their inner voice is fully formed, struggle so with impulse control, they can't yet talk themselves down. As that inner narrator develops, so do patience and willpower. So the voice in your head isn't just a commentator. It's also the brake pedal, and the wise friend saying, careful now.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Talk It Out",
+      "beats": [
+        {
+          "vo": "There's a famous trick programmers swear by, called rubber-duck debugging. When they're stuck, they explain the problem, out loud, step by step, to a little rubber duck on their desk. And astonishingly often, halfway through explaining it to the duck, they spot the answer themselves. Any listener, real or imagined, works.",
+          "scene": "explainer",
+          "prop": "rubber-duck",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "TALK IT OUT",
+          "subtitle": "explaining it solves it"
+        },
+        {
+          "vo": "It works because putting a fuzzy problem into clear words forces your brain to slow down and lay it out, exposing the gap you kept skipping over. And it's not just problems. Research shows that simply saying the name of what you're looking for, keys, keys, keys, helps you find it faster. Talking to yourself sharpens your senses.",
+          "scene": "explainer",
+          "prop": "lost-keys-found",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Your Own Hype Coach",
+      "beats": [
+        {
+          "vo": "Now for one of the most powerful uses of all, motivation. Ever muttered come on, you can do this before something scary? You're using motivational self-talk, and it genuinely works. It's not wishful thinking. It measurably boosts performance, which is exactly why athletes, performers, and surgeons do it deliberately.",
+          "scene": "diagramCard",
+          "diagram": "self-talk-performance",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "YOUR OWN HYPE COACH",
+          "subtitle": "self-talk boosts performance"
+        },
+        {
+          "vo": "Study after study finds that the right self-talk improves focus, effort, and results, in sport, in exams, in hard tasks of all kinds. You essentially become your own coach, in your corner, pumping you up. So that little pep talk before the big moment isn't silly. It's one of the most effective, free performance tools you own. Use it.",
+          "scene": "story",
+          "room": "locker-room",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "cheer",
+              "emotion": "excited",
+              "x": 620,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "hype-coach",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Name Trick",
+      "beats": [
+        {
+          "vo": "Here's a genuinely brilliant trick, backed by research, that you can start using today. When you talk to yourself in a stressful moment, change one tiny word. Instead of saying, I can do this, I need to calm down, use your own name, or the word you. Come on, Sam, you've got this. You can handle this.",
+          "scene": "diagramCard",
+          "diagram": "name-distance",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE NAME TRICK",
+          "subtitle": "talk to yourself like a friend"
+        },
+        {
+          "vo": "The psychologist Ethan Kross found that this distanced self-talk, using your name or you instead of I, creates a little psychological distance from your own panic. It's the difference between being lost in the storm, and stepping back to coach yourself through it. It reliably lowers anxiety and improves performance. One word. Big effect.",
+          "scene": "explainer",
+          "prop": "name-megaphone",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Wiser Adviser",
+      "beats": [
+        {
+          "vo": "And here's why that name-trick runs so deep. Have you noticed you give far better advice to your friends than you ever take yourself? When it's your problem, you're too tangled in the feelings to think clearly. Psychologists call this Solomon's paradox, we're wise for others, foolish for ourselves.",
+          "scene": "story",
+          "room": "mirror-pep-talk",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE WISER ADVISER",
+          "subtitle": "advise yourself like a friend",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 540,
+              "y": 920,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "name-megaphone",
+              "x": 1400,
+              "y": 460,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Distanced self-talk is the fix. By talking to yourself by name, you trick your brain into treating your problem like a friend's, and suddenly that calm, wise adviser inside you can speak. So when you're stuck or upset, ask, what would I tell a friend in this exact situation? Then say it, to yourself, and actually listen.",
+          "scene": "explainer",
+          "prop": "inner-coach",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Critic Or Coach",
+      "beats": [
+        {
+          "vo": "But here's the crucial catch, the one thing that decides whether self-talk helps you or hurts you, its tone. Because that inner voice can speak to you in two very different ways. It can be a vicious inner critic, you idiot, you always mess this up, everyone saw. Or it can be a kind inner coach, okay, that was tough, let's try again.",
+          "scene": "diagramCard",
+          "diagram": "critic-vs-coach",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "CRITIC OR COACH",
+          "subtitle": "tone changes everything"
+        },
+        {
+          "vo": "Harsh, critical self-talk is strongly linked to anxiety and low mood, it kicks you when you're already down. Warm, coach-style self-talk builds resilience and calm. The content of the voice shapes your whole emotional world. So the goal isn't to silence the voice. It's to gently make it kinder. Fire the critic. Hire the coach.",
+          "scene": "explainer",
+          "prop": "inner-coach",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Not Everyone Narrates",
+      "beats": [
+        {
+          "vo": "Now, a fascinating twist that surprises almost everyone. Not all of us have a chatty inner voice at all. Some people have a near-constant inner monologue narrating their life. Others have very little, or none, a recently named condition sometimes called anendophasia. And until recently, each group assumed everyone was just like them.",
+          "scene": "explainer",
+          "prop": "quiet-mind",
+          "emotion": "confused",
+          "chapterStart": true,
+          "title": "NOT EVERYONE NARRATES",
+          "subtitle": "some minds are quiet"
+        },
+        {
+          "vo": "If you have a quiet inner world, don't worry, you're not thinking less, just differently, maybe more in pictures, feelings, or pure concepts. And if your head is a non-stop radio talk show, that's perfectly normal too. There's no right way to have a mind. The inner voice is just one of several instruments we think with.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Talk To Yourself Well",
+      "beats": [
+        {
+          "vo": "So, how do you use this superpower well? First, give yourself permission. Stop apologising for muttering through a task or hyping yourself up. It's smart, so lean into it. Narrate the tricky jobs. Talk through your decisions out loud. You'll think more clearly, and remember more.",
+          "scene": "story",
+          "room": "mirror-pep-talk",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "TALK TO YOURSELF WELL",
+          "subtitle": "a tool you can wield",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 540,
+              "y": 920,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "name-megaphone",
+              "x": 1400,
+              "y": 460,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Second, in stressful moments, coach yourself by name. And third, keep an ear on the tone. When you catch the inner critic sneering, pause, and consciously rephrase it the way a kind friend would. Over time, you can genuinely retrain that voice to be an ally instead of a bully. It's the most important conversation you'll ever have.",
+          "scene": "explainer",
+          "prop": "inner-coach",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time you catch yourself chatting away in an empty room, don't feel embarrassed for a second. Smile, and know that you're using a tool honed since you were a toddler stacking blocks, a tool that helps you think, focus, find your keys, calm your nerves, and cheer yourself on. Talking to yourself isn't a bug. It's a feature.",
+          "scene": "story",
+          "room": "thinking-desk",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "IT'S A FEATURE, NOT A BUG",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 620,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "One honest, gentle note. The self-talk we've described is you, talking to you, and it's healthy. If you ever hear voices that feel like they come from outside you, or from someone other than yourself, especially if distressing or commanding, that's different, and worth talking to a professional. There's good help, and no shame in it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But for the everyday muttering, the mirror pep talks, the narrated to-do lists, be proud of them. You're not talking to yourself because you're alone or odd. You're doing it because, deep down, you are your own lifelong companion, your own thinker, coach and friend. So make that voice a kind one. You listen to it more than anyone's.",
+          "scene": "explainer",
+          "prop": "inner-coach",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, team constant inner monologue, or team quiet mind? And what's the phrase you catch yourself saying out loud the most? Thank you, truly, for spending this time with me. If this made you feel a little less weird, and a little more amazed, subscribe and stay a while. I'm Dear Brain.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

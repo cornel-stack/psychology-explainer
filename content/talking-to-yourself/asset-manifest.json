@@ -1,0 +1,229 @@
+{
+  "slug": "talking-to-yourself",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        12,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "critic-vs-coach",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "inner-speech-origin",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "name-distance",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "self-talk-performance",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        19,
+        21,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        18,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "hype-coach",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "inner-coach",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16,
+        20,
+        23
+      ]
+    },
+    {
+      "name": "inner-voice-bubble",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        7
+      ]
+    },
+    {
+      "name": "kid-private-speech",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "lost-keys-found",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "name-megaphone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        19
+      ]
+    },
+    {
+      "name": "quiet-mind",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "rubber-duck",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "talking-aloud",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "locker-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "mirror-pep-talk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        19
+      ]
+    },
+    {
+      "name": "thinking-desk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        7,
+        21
+      ]
+    }
+  ]
+}

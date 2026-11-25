@@ -177,6 +177,10 @@ const NEW_ASSETS = new Set([
   'shower-room', 'awkward-party', 'calm-reframe-room',
   'cringe-replay', 'self-audience', 'burned-in-memory', 'social-threat-alarm', 'shower-ambush', 'idle-mind-surfacing', 'spotlight-nobody', 'exaggerate-magnifier', 'cringe-means-care', 'defuse-float',
   'memory-sticky', 'social-survival', 'mind-wander-surfacing', 'spotlight-reality',
+  // talking-to-yourself (all new)
+  'mirror-pep-talk', 'locker-room', 'thinking-desk',
+  'talking-aloud', 'kid-private-speech', 'inner-voice-bubble', 'rubber-duck', 'lost-keys-found', 'hype-coach', 'name-megaphone', 'inner-critic', 'inner-coach', 'quiet-mind',
+  'inner-speech-origin', 'self-talk-performance', 'name-distance', 'critic-vs-coach',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
