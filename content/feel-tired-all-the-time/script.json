@@ -1,0 +1,302 @@
+{
+  "title": "Why You Feel Tired All the Time",
+  "slug": "feel-tired-all-the-time",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You went to bed early. You slept a full eight hours. And yet you wake up, drag yourself out of bed, and within an hour you're already exhausted. Not sleepy, exactly. Just drained. Flat. Running on empty. So you drink more coffee, promise yourself an earlier night, and wonder what on earth is wrong with you.",
+          "scene": "story",
+          "room": "groggy-morning",
+          "emotion": "sleepy",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY YOU FEEL",
+          "subtitle": "tired all the time",
+          "mascots": [
+            { "costume": "pajamas", "pose": "idle", "emotion": "sleepy", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Here's the thing almost nobody tells you. If you're tired all the time despite sleeping enough, the problem usually isn't your sleep at all. Modern tiredness is often not about the body being under-rested. It's about the mind and the heart being over-drained. And you can't fix that kind of tired with another nap.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So let's figure out where your energy is actually going. The three different kinds of tired, the hidden mental and emotional drains quietly running you down all day, why your rest might not be resting you, and the kinds of recharge that actually work. Let's find out why you're so tired.",
+          "scene": "explainer",
+          "prop": "charged-but-drained",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "It's Not About Sleep",
+      "beats": [
+        {
+          "vo": "Start with the big misconception. We treat tiredness as one thing, a single fuel gauge that only sleep can refill. But fatigue actually comes in different flavours, and sleep only truly fixes one of them.",
+          "scene": "diagramCard",
+          "diagram": "rest-vs-energy",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "IT'S NOT ABOUT SLEEP",
+          "subtitle": "three kinds of tired"
+        },
+        {
+          "vo": "There's physical tiredness, your body aching after real exertion. There's mental tiredness, your mind foggy after hours of focus and decisions. And there's emotional tiredness, that heavy feeling after a day of stress, worry, or holding yourself together. Three different drains, and only one is really about your muscles.",
+          "scene": "explainer",
+          "prop": "three-tireds",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And here's the modern trap. For most of human history, tiredness was mainly physical. You worked the land, you walked for miles, your body was exhausted, and sleep restored it. But most of us today barely move. Our tiredness has shifted. It's become overwhelmingly mental and emotional, the kind sleep alone can't touch.",
+          "scene": "diagramCard",
+          "diagram": "fatigue-types",
+          "emotion": "serious-expert",
+          "withMascot": true
+        },
+        {
+          "vo": "So you lie in bed, physically rested, but mentally and emotionally running on fumes. Your body got its eight hours. Your mind never clocked off. That's why you can sleep and sleep and still wake up feeling like you've already run a marathon. You're refilling the wrong tank.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Mental Drain",
+      "beats": [
+        {
+          "vo": "So let's follow where that mental energy actually leaks away. And the first big culprit is something sneaky, because it never feels like hard work. It's the sheer number of tiny decisions your brain makes all day long.",
+          "scene": "diagramCard",
+          "diagram": "energy-leaks",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE MENTAL DRAIN",
+          "subtitle": "a thousand tiny choices"
+        },
+        {
+          "vo": "Your brain is metabolically expensive, and every choice costs something. What to wear, what to reply, which tab to open, what to eat, which notification to answer. Psychologists call it decision fatigue. By mid-afternoon, you've made thousands of micro-choices, and your mental fuel is quietly, invisibly spent.",
+          "scene": "explainer",
+          "prop": "decision-drain",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Then there's task-switching. Every time you jump from an email to a message to a meeting to your phone, a piece of your attention stays stuck on the last thing. Researchers call it attention residue. You're never fully on any one task, so you end the day foggy and depleted, feeling like you were busy all day but somehow achieved nothing.",
+          "scene": "explainer",
+          "prop": "attention-residue",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is the strange exhaustion of modern life. You can spend eight hours barely moving from a chair and feel completely wiped out. Not because your body did anything, but because your attention was pulled in forty directions, and your brain never got a single moment of real, undivided quiet.",
+          "scene": "story",
+          "room": "buzzing-office",
+          "emotion": "sleepy",
+          "mascots": [
+            { "costume": "suit", "pose": "facepalm", "emotion": "sleepy", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "There's also the invisible load you carry in the background. Remembering the birthdays, tracking the groceries, planning the week, holding a running list of everything that mustn't be forgotten. None of it looks like work, and nobody sees it. But that mental weight hums away all day, draining the battery before you've even started.",
+          "scene": "explainer",
+          "prop": "attention-residue",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Tired But Wired",
+      "beats": [
+        {
+          "vo": "On top of that sits a bigger, quieter drain: low-grade, chronic stress. Not a dramatic crisis, just the constant background hum of deadlines, notifications, bills, and things left undone. And your body responds to it as though it's danger.",
+          "scene": "explainer",
+          "prop": "tired-but-wired",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "TIRED BUT WIRED",
+          "subtitle": "stuck in low-grade stress"
+        },
+        {
+          "vo": "When you're stressed, your body pumps out cortisol and adrenaline, keeping you in a mild, all-day version of fight-or-flight. That takes an enormous amount of energy to sustain. Over weeks and months, it wears you down in a way that has a perfect, maddening name: tired, but wired.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's that state where you're utterly exhausted, but you still can't properly switch off. You collapse onto the sofa drained, yet your mind keeps racing. You crawl into bed shattered, and lie there staring at the ceiling. Your body is running its engine hard all day, so even when you stop, it doesn't know how to idle.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And caffeine quietly makes this worse. That endless coffee doesn't give you energy, it just blocks the signal that tells you you're tired, while piling even more stress chemistry on top. So you feel more wired, sleep a little worse, wake up more tired, and reach for more coffee. It's a loop that slowly digs the hole deeper.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Emotional Tax",
+      "beats": [
+        {
+          "vo": "Now for one of the most underrated drains of all, and one that leaves no visible trace: emotional labour. The quiet, constant effort of managing your feelings and your face for other people.",
+          "scene": "explainer",
+          "prop": "mask-fatigue",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE EMOTIONAL TAX",
+          "subtitle": "the cost of holding it together"
+        },
+        {
+          "vo": "Think about how much of your day is spent performing. Being pleasant to the difficult customer. Staying patient with the kids when you're fried. Smiling in the meeting while you're falling apart inside. Masking your anxiety so no one worries. Holding it all together looks like nothing, but it is genuinely, deeply tiring work.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And suppressing emotion has a real, measured cost. Studies show that bottling up what you feel actually drains your mental resources and leaves you more depleted. So if you spend your days being who everyone needs you to be, it makes complete sense that you'd come home with nothing left in the tank. That tiredness is earned.",
+          "scene": "explainer",
+          "prop": "charged-but-drained",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Flat Grey",
+      "beats": [
+        {
+          "vo": "But here's a twist that surprises people. Tiredness doesn't only come from too much. Sometimes it comes from too little. From monotony, meaninglessness, and days that all blur into one grey smudge.",
+          "scene": "explainer",
+          "prop": "languishing-fog",
+          "emotion": "tearful",
+          "chapterStart": true,
+          "title": "THE FLAT GREY",
+          "subtitle": "when it's not overload"
+        },
+        {
+          "vo": "Psychologists have a name for this flat, joyless state: languishing. You're not depressed, not in crisis, but you're not thriving either. You feel stagnant, aimless, a bit numb. Everything is a muted meh. And languishing is profoundly tiring, because without novelty, challenge, or a sense of purpose, the mind has nothing to light it up.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "This is why a boring, under-stimulating day can leave you just as wiped out as a frantic one, and why a trip, a hobby, or meaningful work can leave you tired in a good way, but strangely energised. We don't just need rest from doing too much. We need meaning, to have something worth the energy in the first place.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Junk Rest",
+      "beats": [
+        {
+          "vo": "So if you're this drained, you just need to rest, right? Here's the problem. Most of us rest in a way that doesn't actually restore us at all. We collapse and reach for the one thing guaranteed not to help: the phone.",
+          "scene": "explainer",
+          "prop": "junk-rest",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "JUNK REST",
+          "subtitle": "why your rest doesn't work"
+        },
+        {
+          "vo": "Scrolling, binge-watching, doom-reading. It feels like a break, but it fragments your attention and floods your brain with stimulation. It's junk rest, the mental equivalent of junk food. It fills the time but leaves you more depleted than before. You stand up from an hour of scrolling feeling emptier, not fuller.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Dr Saundra Dalton-Smith argues that most of us are rest-deprived in very specific ways, and we keep trying to fix every kind of tiredness with sleep. She describes seven different types of rest: physical, mental, sensory, creative, emotional, social, and spiritual.",
+          "scene": "diagramCard",
+          "diagram": "seven-rests",
+          "emotion": "serious-expert",
+          "withMascot": true
+        },
+        {
+          "vo": "And the key is to match the rest to the drain. If your eyes and ears are fried from screens, you need sensory rest, not another episode. If people have drained you, you need social rest, time alone. If you're spent from masking, you need a space to finally drop the act. Sleeping more won't fix a deficit it was never meant to.",
+          "scene": "explainer",
+          "prop": "junk-rest",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What Actually Refills",
+      "beats": [
+        {
+          "vo": "So what does genuinely put energy back in the tank? Some of the answers feel almost backwards. The first: when you're tired, moving usually beats resting. It sounds cruel, but it's true.",
+          "scene": "explainer",
+          "prop": "movement-spark",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHAT ACTUALLY REFILLS",
+          "subtitle": "energy you can make"
+        },
+        {
+          "vo": "Study after study shows that light movement, a short walk, a stretch, actually reduces fatigue and boosts energy. Motion creates energy. So does daylight. Getting bright light in the morning, especially, anchors your body clock, sharpens your alertness during the day, and helps you sleep more deeply at night.",
+          "scene": "explainer",
+          "prop": "sunlight-reset",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And then there's the quiet, powerful stuff. Real connection with people who fill you up, rather than drain you. Time in nature. Doing one thing at a time instead of forty. Drinking water, eating actual food. And above all, pointing your days at something that feels like it matters. Purpose is one of the most energising forces there is.",
+          "scene": "story",
+          "room": "restoration-corner",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "It also means protecting your energy, not just spending it. Cutting the number of pointless decisions by building simple routines. Saying no to the things that drain you for no reason. Putting the phone in another room. You don't have to earn rest by burning out first. Guarding your energy is a skill, and it's allowed.",
+          "scene": "explainer",
+          "prop": "movement-spark",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "None of this means doing more. Often it means doing less, but doing it on purpose. A genuine break instead of junk rest. One real conversation instead of a hundred notifications. A walk in the light instead of another coffee. Small shifts that refill the tanks sleep was never going to reach.",
+          "scene": "story",
+          "room": "restoration-corner",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "hoodie", "pose": "wave", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "One honest and important note before we go. Sometimes persistent tiredness isn't about your habits at all. It can be a real medical issue, a thyroid problem, low iron, sleep apnoea, or a sign of burnout or depression, where low energy and low mood run together.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "ONE HONEST NOTE",
+          "subtitle": "when to check in"
+        },
+        {
+          "vo": "This video is not a diagnosis. If your exhaustion is severe, lasting, or comes alongside a low or flat mood, please see a doctor. Fatigue is a real symptom, and getting it checked is wise, not dramatic. You deserve to feel well.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But for that everyday, modern, bone-deep tiredness, remember this. You're probably not lazy, and there's nothing wrong with you. You're just running drains no sleep can fill. So be gentle with yourself, find the rest that actually fits, and give your mind and heart the recharge they've been quietly asking for. Thanks for watching.",
+          "scene": "story",
+          "room": "restoration-corner",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'feel-tired-all-the-time': {
+    A: { lines: ['WHY YOU FEEL', 'TIRED ALL', 'THE TIME'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'sleepy', textColor: COLORS.white, badge: '?', prop: 'charged-but-drained' },
+    B: { lines: ['SLEPT 8 HOURS,', 'STILL', 'EXHAUSTED?'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'tired-but-wired' },
+    C: { lines: ["YOU'RE RESTING", 'THE WRONG', 'WAY'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '7', prop: 'junk-rest' },
+  },
   'gaslighting': {
     A: { lines: ['THE', 'PSYCHOLOGY OF', 'GASLIGHTING'], accent: COLORS.yellow, bg: COLORS.navy, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'dimming-gaslight' },
     B: { lines: ['"THAT NEVER', 'HAPPENED" —', 'WHEN IT DID'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'denial-bubble' },

@@ -1,0 +1,267 @@
+{
+  "slug": "feel-tired-all-the-time",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 9,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        28,
+        30,
+        33
+      ]
+    },
+    {
+      "name": "pajamas",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "energy-leaks",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "fatigue-types",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "rest-vs-energy",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "seven-rests",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        28,
+        30,
+        33
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        10
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19,
+        20
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        28,
+        33
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "attention-residue",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        11
+      ]
+    },
+    {
+      "name": "charged-but-drained",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        18
+      ]
+    },
+    {
+      "name": "decision-drain",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "junk-rest",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        25
+      ]
+    },
+    {
+      "name": "languishing-fog",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "mask-fatigue",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "movement-spark",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26,
+        29
+      ]
+    },
+    {
+      "name": "sunlight-reset",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "three-tireds",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "tired-but-wired",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "buzzing-office",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "groggy-morning",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "restoration-corner",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        28,
+        30,
+        33
+      ]
+    }
+  ]
+}

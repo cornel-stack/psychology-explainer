@@ -181,7 +181,10 @@ export type RoomName =
   | 'reading-studio'
   | 'dim-apartment'
   | 'foggy-hallway'
-  | 'clarity-room';
+  | 'clarity-room'
+  | 'groggy-morning'
+  | 'buzzing-office'
+  | 'restoration-corner';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4792,6 +4795,63 @@ export const ClarityRoom: React.FC = () => (
   </g>
 );
 
+/** Groggy morning: a bedroom flooded with harsh morning light, a rumpled bed and an
+ *  alarm clock — slept a full night, still exhausted. */
+export const GroggyMorning: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowSoft, 0.02)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 13 }).map((_, i) => <rect key={i} x={i * 150} y={0} width={70} height={840} fill={shade(COLORS.yellowSoft, -0.01)} opacity={0.5} />)}
+    {/* bright window with low morning sun + harsh light shafts */}
+    <g transform="translate(1540 320)"><rect x={-150} y={-160} width={300} height={320} rx={14} fill={shade(COLORS.sky, 0.14)} {...xl} /><circle cx={-40} cy={70} r={60} fill={COLORS.yellow} opacity={0.85} /><line x1={0} y1={-160} x2={0} y2={160} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /><line x1={-150} y1={0} x2={150} y2={0} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /></g>
+    {[0, 1, 2].map((i) => <path key={i} d={`M 1440 200 L ${900 - i * 120} 840 L ${1040 - i * 120} 840 L 1540 200 Z`} fill={COLORS.yellow} opacity={0.06} />)}
+    {/* a wall picture */}
+    <g transform="translate(360 300)"><rect x={-64} y={-48} width={128} height={96} rx={6} fill={COLORS.white} {...xl} /><rect x={-50} y={-34} width={100} height={68} rx={4} fill={shade(COLORS.greenTeal, 0.04)} opacity={0.6} /></g>
+    {/* rumpled bed */}
+    <g transform="translate(620 820)"><rect x={-300} y={-20} width={600} height={120} rx={20} fill={COLORS.wood} {...xl} /><rect x={-300} y={-120} width={70} height={120} rx={14} fill={COLORS.woodDark} {...lg} /><path d="M -230 -10 Q -120 -60 40 -24 Q 200 -54 270 -8 L 270 40 L -230 40 Z" fill={shade(COLORS.lavender, 0.08)} {...lg} /><ellipse cx={-180} cy={-24} rx={70} ry={30} fill={COLORS.white} {...lg} /></g>
+    {/* nightstand + alarm clock */}
+    <g transform="translate(1040 780)"><rect x={-50} y={0} width={100} height={120} rx={10} fill={COLORS.woodDark} {...xl} /><rect x={-36} y={-44} width={72} height={44} rx={8} fill={COLORS.navy} {...lg} /><text x={0} y={-14} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={22} fill={COLORS.ledGreen}>7:02</text></g>
+    {/* a coffee mug with steam */}
+    <g transform="translate(1360 760)"><rect x={-26} y={0} width={52} height={54} rx={8} fill={COLORS.red} {...lg} /><path d="M 26 10 q 16 2 0 22" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} />{[0, 1].map((i) => <path key={i} d={`M ${-10 + i * 16} -6 q -6 -12 2 -22`} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.5} />)}</g>
+  </g>
+);
+
+/** Buzzing office: an open-plan workspace under flat fluorescent light, notification
+ *  bubbles swarming, monitors glowing — the modern energy drain. */
+export const BuzzingOffice: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, -0.02)} floor={shade(COLORS.ledGrey, 0.14)} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.sky, -0.04)} opacity={0.4} />)}
+    {/* fluorescent ceiling panels */}
+    {[360, 760, 1160, 1560].map((x, i) => <g key={i} transform={`translate(${x} 70)`}><rect x={-80} y={-26} width={160} height={40} rx={6} fill={COLORS.white} {...lg} /><rect x={-70} y={-18} width={140} height={24} rx={4} fill={shade(COLORS.yellowSoft, 0.06)} opacity={0.7} /></g>)}
+    {/* desks with glowing monitors */}
+    {[420, 960, 1500].map((x, i) => <g key={i} transform={`translate(${x} 720)`}><rect x={-120} y={60} width={240} height={90} rx={8} fill={COLORS.woodDark} {...xl} /><rect x={-70} y={-60} width={140} height={100} rx={10} fill={COLORS.navy} {...lg} /><rect x={-58} y={-48} width={116} height={76} rx={6} fill={shade(COLORS.sky, 0.1)} />{[0, 1, 2].map((j) => <rect key={j} x={-46} y={-38 + j * 20} width={92} height={10} rx={3} fill={shade(COLORS.sky, -0.04)} opacity={0.6} />)}<rect x={-16} y={40} width={32} height={22} rx={4} fill={COLORS.outline} /></g>)}
+    {/* notification bubbles swarming */}
+    {[[300, 240], [640, 180], [1180, 220], [1620, 200], [900, 300]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={0} r={22} fill={COLORS.red} {...sm} /><text x={0} y={6} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={18} fill={COLORS.white}>{(i % 9) + 1}</text></g>)}
+    {/* a wall clock */}
+    <g transform="translate(960 230)"><circle cx={0} cy={0} r={38} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-24} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><line x1={0} y1={0} x2={16} y2={8} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+  </g>
+);
+
+/** Restoration corner: a genuinely restful nook — soft lamp, plant, blanket, tea, a
+ *  window to dusk — the kind of rest that actually refills. */
+export const RestorationCorner: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, 0.04)} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.lavender, 0.02)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={560} stroke={shade(COLORS.lavender, -0.03)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* soft dusk window */}
+    <g transform="translate(1540 340)"><rect x={-140} y={-150} width={280} height={300} rx={14} fill={shade(COLORS.purpleDeep, 0.14)} {...xl} /><circle cx={0} cy={60} r={44} fill={COLORS.pink} opacity={0.6} />{[0, 1, 2].map((i) => <circle key={i} cx={-60 + i * 60} cy={-80} r={3} fill={COLORS.white} opacity={0.7} />)}<line x1={-140} y1={0} x2={140} y2={0} stroke={shade(COLORS.purpleDeep, 0.2)} strokeWidth={STROKE.lg} /></g>
+    {/* warm floor lamp */}
+    <g transform="translate(300 560)"><rect x={-6} y={0} width={12} height={280} fill={COLORS.woodDark} /><path d="M -46 0 L 46 0 L 30 -64 L -30 -64 Z" fill={COLORS.yellowSoft} {...xl} /><ellipse cx={0} cy={30} rx={110} ry={160} fill={COLORS.yellow} opacity={0.08} /></g>
+    {/* comfy armchair with a blanket */}
+    <g transform="translate(820 820)"><rect x={-150} y={-60} width={300} height={170} rx={28} fill={COLORS.greenTeal} {...xl} /><rect x={-150} y={-130} width={80} height={110} rx={22} fill={shade(COLORS.greenTeal, 0.08)} {...lg} /><rect x={70} y={-130} width={80} height={110} rx={22} fill={shade(COLORS.greenTeal, 0.08)} {...lg} /><path d="M -120 -40 Q -40 -70 60 -40 L 70 60 L -120 60 Z" fill={shade(COLORS.pink, 0.04)} {...lg} />{[-100, -60, -20].map((x, i) => <line key={i} x1={x} y1={-30} x2={x + 20} y2={55} stroke={shade(COLORS.pink, -0.04)} strokeWidth={STROKE.sm} opacity={0.6} />)}</g>
+    {/* plant */}
+    <g transform="translate(1240 740)"><rect x={-34} y={0} width={68} height={100} rx={10} fill={COLORS.red} {...xl} /><path d="M 0 0 q -48 -58 -22 -130 M 0 0 q 0 -80 0 -150 M 0 0 q 48 -58 22 -130" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-22} cy={-130} r={16} fill={COLORS.greenLeaf} /><circle cx={0} cy={-150} r={18} fill={COLORS.greenLeaf} /><circle cx={22} cy={-130} r={16} fill={COLORS.greenLeaf} /></g>
+    {/* a mug of tea on a side table */}
+    <g transform="translate(1120 860)"><rect x={-40} y={0} width={80} height={70} rx={8} fill={COLORS.woodDark} {...lg} /><rect x={-24} y={-26} width={48} height={32} rx={8} fill={COLORS.white} {...lg} /><path d="M 24 -18 q 14 2 0 16" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d="M -4 -30 q -4 -8 2 -14" fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.5} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4958,6 +5018,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'dim-apartment': DimApartment,
   'foggy-hallway': FoggyHallway,
   'clarity-room': ClarityRoom,
+  'groggy-morning': GroggyMorning,
+  'buzzing-office': BuzzingOffice,
+  'restoration-corner': RestorationCorner,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

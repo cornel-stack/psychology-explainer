@@ -229,6 +229,10 @@ const NEW_ASSETS = new Set([
   'dim-apartment', 'foggy-hallway', 'clarity-room',
   'dimming-gaslight', 'denial-bubble', 'distorted-mirror', 'trivialize-shrink', 'blame-flip', 'walking-eggshells', 'isolation-web', 'intermittent-warmth', 'reality-journal', 'inner-compass',
   'gaslight-cycle', 'gaslight-tactics', 'disagree-vs-gaslight', 'reality-anchors',
+  // feel-tired-all-the-time (all new)
+  'groggy-morning', 'buzzing-office', 'restoration-corner',
+  'charged-but-drained', 'three-tireds', 'decision-drain', 'tired-but-wired', 'mask-fatigue', 'attention-residue', 'junk-rest', 'languishing-fog', 'movement-spark', 'sunlight-reset',
+  'rest-vs-energy', 'fatigue-types', 'energy-leaks', 'seven-rests',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

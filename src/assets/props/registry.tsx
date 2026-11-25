@@ -59,6 +59,7 @@ import * as An from './anger';
 import * as Fi from './first-impressions';
 import * as Rb from './read-body-language';
 import * as Ga from './gaslighting';
+import * as Ft from './feel-tired';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -715,6 +716,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'intermittent-warmth': Ga.IntermittentWarmth,
   'reality-journal': Ga.RealityJournal,
   'inner-compass': Ga.InnerCompass,
+  'charged-but-drained': Ft.ChargedButDrained,
+  'three-tireds': Ft.ThreeTireds,
+  'decision-drain': Ft.DecisionDrain,
+  'tired-but-wired': Ft.TiredButWired,
+  'mask-fatigue': Ft.MaskFatigue,
+  'attention-residue': Ft.AttentionResidue,
+  'junk-rest': Ft.JunkRest,
+  'languishing-fog': Ft.LanguishingFog,
+  'movement-spark': Ft.MovementSpark,
+  'sunlight-reset': Ft.SunlightReset,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
