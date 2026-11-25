@@ -221,6 +221,10 @@ const NEW_ASSETS = new Set([
   'interview-room', 'first-date-cafe', 'party-entrance',
   'snap-judgment-clock', 'thin-slice', 'primacy-anchor', 'halo-effect', 'warmth-first', 'sticky-label', 'self-fulfilling', 'open-posture', 'pratfall-charm', 'second-look',
   'impression-speed', 'primacy-list', 'first-two-questions', 'halo-spread',
+  // read-body-language (all new)
+  'negotiation-table', 'park-bench', 'reading-studio',
+  'baseline-cue', 'cue-cluster', 'micro-expression', 'honest-feet', 'eye-contact-dial', 'personal-space', 'self-soothe', 'mirror-rapport', 'ventral-front', 'duchenne-smile',
+  'baseline-deviation', 'cluster-not-single', 'proxemics-zones', 'honesty-ladder',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

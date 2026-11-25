@@ -57,6 +57,7 @@ import * as Ti from './timeage';
 import * as Sm from './sadmusic';
 import * as An from './anger';
 import * as Fi from './first-impressions';
+import * as Rb from './read-body-language';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -693,6 +694,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'open-posture': Fi.OpenPosture,
   'pratfall-charm': Fi.PratfallCharm,
   'second-look': Fi.SecondLook,
+  'baseline-cue': Rb.BaselineCue,
+  'cue-cluster': Rb.CueCluster,
+  'micro-expression': Rb.MicroExpression,
+  'honest-feet': Rb.HonestFeet,
+  'eye-contact-dial': Rb.EyeContactDial,
+  'personal-space': Rb.PersonalSpace,
+  'self-soothe': Rb.SelfSoothe,
+  'mirror-rapport': Rb.MirrorRapport,
+  'ventral-front': Rb.VentralFront,
+  'duchenne-smile': Rb.DuchenneSmile,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

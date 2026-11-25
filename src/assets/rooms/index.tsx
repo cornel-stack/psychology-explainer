@@ -175,7 +175,10 @@ export type RoomName =
   | 'cool-calm-room'
   | 'interview-room'
   | 'first-date-cafe'
-  | 'party-entrance';
+  | 'party-entrance'
+  | 'negotiation-table'
+  | 'garden-bench'
+  | 'reading-studio';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4661,6 +4664,73 @@ export const PartyEntrance: React.FC = () => (
   </g>
 );
 
+/** Negotiation table: a boardroom with a long table, two chairs facing off, a window
+ *  and a wall screen — a high-stakes read-each-other setting. */
+export const NegotiationTable: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.navy, 0.08)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 13 }).map((_, i) => <rect key={i} x={i * 150} y={0} width={70} height={840} fill={shade(COLORS.navy, 0.04)} opacity={0.4} />)}
+    {/* wall screen with a simple chart */}
+    <g transform="translate(960 300)"><rect x={-170} y={-110} width={340} height={210} rx={10} fill={COLORS.white} {...xl} />{[0, 1, 2, 3].map((i) => <rect key={i} x={-120 + i * 70} y={60 - (i * 18 + 24)} width={44} height={i * 18 + 24} rx={4} fill={[COLORS.sky, COLORS.greenTeal, COLORS.yellow, COLORS.pink][i]} {...sm} />)}<line x1={-140} y1={62} x2={140} y2={62} stroke={COLORS.outline} strokeWidth={STROKE.sm} /></g>
+    {/* window */}
+    <g transform="translate(300 300)"><rect x={-120} y={-130} width={240} height={260} rx={12} fill={shade(COLORS.sky, 0.12)} {...xl} /><line x1={0} y1={-130} x2={0} y2={130} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-120} y1={0} x2={120} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /></g>
+    {/* potted plant */}
+    <g transform="translate(1620 650)"><rect x={-34} y={0} width={68} height={100} rx={10} fill={COLORS.greenTeal} {...xl} /><path d="M 0 0 q -46 -56 -22 -124 M 0 0 q 0 -78 0 -144 M 0 0 q 46 -56 22 -124" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-22} cy={-124} r={15} fill={COLORS.greenLeaf} /><circle cx={0} cy={-144} r={17} fill={COLORS.greenLeaf} /><circle cx={22} cy={-124} r={15} fill={COLORS.greenLeaf} /></g>
+    {/* long table with two water glasses + a folder */}
+    <g transform="translate(960 800)"><rect x={-360} y={0} width={720} height={110} rx={14} fill={COLORS.woodDark} {...xl} /><rect x={-360} y={-12} width={720} height={18} rx={6} fill={shade(COLORS.woodDark, 0.08)} {...lg} />{[-220, 220].map((x, i) => <g key={i} transform={`translate(${x} 36)`}><rect x={-12} y={-24} width={24} height={34} rx={4} fill={COLORS.sky} opacity={0.6} {...sm} /></g>)}<rect x={-50} y={20} width={100} height={64} rx={6} fill={COLORS.yellowSoft} {...lg} /></g>
+    {/* two chairs */}
+    {[480, 1440].map((x, i) => <g key={i} transform={`translate(${x} 860)`}><rect x={-46} y={-10} width={92} height={30} rx={8} fill={COLORS.outline} {...lg} /><rect x={-46} y={-130} width={14} height={130} rx={6} fill={COLORS.outline} {...lg} /><rect x={-46} y={-130} width={92} height={70} rx={12} fill={shade(COLORS.navy, 0.1)} {...lg} /></g>)}
+  </g>
+);
+
+/** Park bench: an outdoor bench under a tree with a path and bushes — a relaxed,
+ *  open-air conversation where the body speaks freely. */
+export const GardenBench: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.greenTeal} floorY={760} stripe={false} />
+    {/* graduated sky bands to break the flat blue */}
+    {Array.from({ length: 5 }).map((_, i) => <rect key={i} x={0} y={i * 150} width={CANVAS.width} height={150} fill={shade(COLORS.sky, -0.015 * (4 - i))} opacity={0.6} />)}
+    {/* distant treeline along the horizon */}
+    {Array.from({ length: 11 }).map((_, i) => <circle key={i} cx={60 + i * 185} cy={740} r={60 + (i % 3) * 18} fill={shade(COLORS.greenTeal, -0.05)} opacity={0.5} />)}
+    {/* soft hills */}
+    <path d="M 0 760 Q 480 680 960 760 T 1920 760 L 1920 760 L 0 760 Z" fill={shade(COLORS.greenTeal, 0.06)} />
+    <circle cx={320} cy={200} r={70} fill={COLORS.yellow} opacity={0.75} />
+    {Array.from({ length: 3 }).map((_, i) => <circle key={i} cx={320} cy={200} r={82 + i * 16} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.25 - i * 0.06} />)}
+    {/* several clouds spread across the sky */}
+    {[[1500, 180, 1], [1320, 300, 0.8], [760, 150, 0.7], [1050, 420, 0.6], [520, 360, 0.7]].map(([x, y, s], i) => <g key={i} transform={`translate(${x} ${y}) scale(${s})`} opacity={0.5}><ellipse cx={0} cy={0} rx={70} ry={34} fill={COLORS.white} /><ellipse cx={-50} cy={10} rx={44} ry={26} fill={COLORS.white} /><ellipse cx={54} cy={10} rx={48} ry={28} fill={COLORS.white} /></g>)}
+    {/* a couple of birds */}
+    {[[700, 120], [820, 160], [1180, 110]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q 12 -12 24 0 q 12 -12 24 0`} fill="none" stroke={shade(COLORS.sky, -0.2)} strokeWidth={STROKE.sm} strokeLinecap="round" />)}
+    {/* a path */}
+    <path d="M 760 1080 Q 900 880 960 760 Q 1020 880 1160 1080 Z" fill={shade(COLORS.wood, 0.06)} opacity={0.7} />
+    {/* big tree */}
+    <g transform="translate(360 500)"><rect x={-26} y={160} width={52} height={200} rx={10} fill={COLORS.woodDark} {...xl} /><circle cx={0} cy={60} r={150} fill={COLORS.greenLeaf} {...xl} /><circle cx={-110} cy={120} r={90} fill={shade(COLORS.greenLeaf, 0.04)} {...lg} /><circle cx={110} cy={120} r={90} fill={shade(COLORS.greenLeaf, 0.04)} {...lg} /><circle cx={0} cy={40} r={120} fill={shade(COLORS.greenLeaf, 0.08)} /></g>
+    {/* bushes */}
+    {[1500, 1680].map((x, i) => <g key={i} transform={`translate(${x} 740)`}><circle cx={-30} cy={0} r={44} fill={COLORS.greenLeaf} {...lg} /><circle cx={24} cy={-6} r={50} fill={shade(COLORS.greenLeaf, 0.04)} {...lg} /><circle cx={60} cy={6} r={38} fill={COLORS.greenLeaf} {...lg} /></g>)}
+    {/* the bench */}
+    <g transform="translate(960 840)"><rect x={-220} y={0} width={440} height={28} rx={8} fill={COLORS.wood} {...xl} /><rect x={-220} y={-70} width={440} height={22} rx={8} fill={COLORS.wood} {...lg} /><rect x={-220} y={-40} width={440} height={16} rx={6} fill={shade(COLORS.wood, 0.06)} {...sm} />{[-200, -4, 196].map((x, i) => <rect key={i} x={x} y={-74} width={14} height={160} rx={5} fill={COLORS.woodDark} {...lg} />)}</g>
+  </g>
+);
+
+/** Reading studio: a cosy analyst's nook with a big annotated figure on a board,
+ *  sticky notes and a desk lamp — where body language gets decoded. */
+export const ReadingStudio: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, 0.06)} floor={COLORS.woodDark} floorY={860} stripe={false} />
+    {Array.from({ length: 15 }).map((_, i) => <rect key={i} x={i * 130} y={0} width={62} height={860} fill={shade(COLORS.lavender, 0.03)} opacity={0.5} />)}
+    {/* the big analysis board */}
+    <g transform="translate(960 430)"><rect x={-300} y={-300} width={600} height={560} rx={16} fill={COLORS.white} {...xl} />
+      {/* a figure outline being read */}
+      <g transform="translate(-120 0)"><circle cx={0} cy={-150} r={48} fill={COLORS.skin} {...lg} /><path d="M -70 180 Q -80 -90 0 -90 Q 80 -90 70 180 Z" fill={COLORS.sky} {...xl} /></g>
+      {/* annotation call-outs */}
+      {[[-210, -150, 'eyes'], [40, -40, 'arms'], [10, 150, 'feet'], [60, 70, 'hands']].map(([x, y, t], i) => <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={0} r={8} fill={COLORS.red} /><line x1={0} y1={0} x2={60} y2={-20} stroke={COLORS.red} strokeWidth={STROKE.sm} /><rect x={58} y={-40} width={90} height={36} rx={8} fill={COLORS.yellowSoft} {...sm} /><text x={103} y={-16} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={16} fill={COLORS.outline}>{t as string}</text></g>)}
+    </g>
+    {/* desk lamp on a side table */}
+    <g transform="translate(1680 640)"><rect x={-70} y={120} width={140} height={100} rx={10} fill={COLORS.wood} {...xl} /><rect x={-8} y={0} width={16} height={130} fill={COLORS.outline} /><path d="M 0 0 q 70 -10 86 50" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><path d="M 70 40 l 48 0 l -14 44 l -34 0 Z" fill={COLORS.yellow} {...lg} /></g>
+    {/* sticky notes */}
+    {[[280, 240, COLORS.pink], [340, 300, COLORS.sky], [230, 310, COLORS.greenLeaf]].map(([x, y, c], i) => <rect key={i} x={x as number} y={y as number} width={56} height={56} rx={4} fill={c as string} {...sm} transform={`rotate(${i * 6 - 6} ${(x as number) + 28} ${(y as number) + 28})`} />)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4821,6 +4891,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'interview-room': InterviewRoom,
   'first-date-cafe': FirstDateCafe,
   'party-entrance': PartyEntrance,
+  'negotiation-table': NegotiationTable,
+  'garden-bench': GardenBench,
+  'reading-studio': ReadingStudio,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

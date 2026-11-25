@@ -1,0 +1,294 @@
+{
+  "title": "How to Read Body Language",
+  "slug": "read-body-language",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Two people sit across a table. Not a word has been said, and yet a whole conversation is already happening. A foot angled toward the door. A hand drifting up to the neck. A smile that never quite reaches the eyes. The body is always talking. The real skill is learning to listen, honestly, without fooling yourself.",
+          "scene": "story",
+          "room": "negotiation-table",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "HOW TO READ",
+          "subtitle": "body language",
+          "mascots": [
+            { "costume": "suit", "pose": "hands-hips", "emotion": "serious-expert", "x": 520, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "Most of what we feel leaks out through the body long before it reaches our words. But here's the catch. Body language is not the mind-reading magic trick the movies sell you. It's a skill of probabilities, not certainties. Done badly, it makes you a suspicious, overconfident mess. Done well, it makes you perceptive, and kind.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, let's do it properly. The two golden rules that stop you jumping to conclusions, the parts of the body that actually tell the truth, the quiet signals of stress and comfort, and the honest limits every good reader of people keeps firmly in mind. Let's learn to read the room.",
+          "scene": "explainer",
+          "prop": "cue-cluster",
+          "emotion": "excited"
+        }
+      ]
+    },
+    {
+      "name": "The Golden Rules",
+      "beats": [
+        {
+          "vo": "Before a single gesture, you need the two rules that separate skilled observers from people who just make things up. Break these, and everything else you learn today will lead you astray. The first rule is this: establish a baseline.",
+          "scene": "diagramCard",
+          "diagram": "baseline-deviation",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE GOLDEN RULES",
+          "subtitle": "baseline, cluster, context"
+        },
+        {
+          "vo": "Everyone has a normal. Some people fidget constantly, avoid eye contact, and talk with their hands, when they're perfectly relaxed. So before you read into a behaviour, you need to know what that person looks like at ease. The signal isn't the behaviour itself. It's the change, the moment they deviate from their own baseline.",
+          "scene": "explainer",
+          "prop": "baseline-cue",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The second rule is even more important: read clusters, not single cues. This is where almost everyone goes wrong. They see crossed arms and think, aha, defensive. But crossed arms might just mean the room is cold, or that it's a comfortable way to stand. One gesture on its own tells you almost nothing.",
+          "scene": "diagramCard",
+          "diagram": "cluster-not-single",
+          "emotion": "serious-expert",
+          "withMascot": true
+        },
+        {
+          "vo": "Meaning lives in the cluster. Crossed arms, plus a body leaning away, plus a tightened jaw, plus feet pointed at the exit. Now you have three or four cues all pointing the same direction, and a story worth trusting. And always in context. A single cue is a letter. Only a cluster spells a word.",
+          "scene": "story",
+          "room": "negotiation-table",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "tee", "pose": "point-right", "emotion": "serious-expert", "x": 1440, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "And context is the frame around everything. Those crossed arms? Check the room temperature before you check their mood. A yawn might be boredom, or a short night's sleep. A fidget might be anxiety, or three cups of coffee. The skilled reader asks, before anything else, what else could explain this? And rules the simple things out first.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Face Lies Best",
+      "beats": [
+        {
+          "vo": "Now let's climb what we might call the honesty ladder, the parts of the body ranked by how truthfully they speak. And there's a surprise at the top. The face, the very thing we all stare at, is actually the biggest liar on the body.",
+          "scene": "diagramCard",
+          "diagram": "honesty-ladder",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE FACE LIES BEST",
+          "subtitle": "most controlled, least honest"
+        },
+        {
+          "vo": "We spend our whole lives learning to manage our faces. We smile when we're bored, look calm when we're panicking, nod along when we disagree. The face is the most practised, most controlled part of the body, which makes it the least reliable place to look for the truth.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But the face does have one crack in its armour: the micro-expression. Researcher Paul Ekman found that before we can mask a feeling, the true emotion can flash across the face for as little as one twenty-fifth of a second. A flicker of fear, a flash of contempt, gone almost before you see it. The mask slips, just for an instant.",
+          "scene": "explainer",
+          "prop": "micro-expression",
+          "emotion": "scared"
+        },
+        {
+          "vo": "Now be honest with yourself: these flashes are genuinely hard to catch in real time, and chasing them will tie you in knots. So don't try to freeze-frame every face. Just know that when a person's words say one thing and their face flickers with another, even for a heartbeat, the mismatch is worth noticing.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Honest Feet",
+      "beats": [
+        {
+          "vo": "So if the face is the liar, where's the truth? Here's the beautiful insight from former FBI analyst Joe Navarro. The further a body part is from your brain's conscious control, the more honest it becomes. And the most honest, most overlooked part of all is right at the bottom. Your feet.",
+          "scene": "explainer",
+          "prop": "honest-feet",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE HONEST FEET",
+          "subtitle": "the limbic leak"
+        },
+        {
+          "vo": "Think about it. You've spent decades learning to control your face. You have spent almost no time thinking about your feet. They're run by the ancient, survival part of your brain, the part that handles freeze, flight, and fight. And that part doesn't lie. It just reacts.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So the feet quietly do something wonderful: they point where a person actually wants to go. If someone's talking to you but their feet are angled toward the door, part of them is already leaving, no matter how warm their words. And when two chatting people turn their feet toward a newcomer, they've genuinely welcomed them in.",
+          "scene": "story",
+          "room": "garden-bench",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "tee", "pose": "point-left", "emotion": "serious-expert", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "The legs and feet react first and most truthfully, the torso next, the hands after that, and the face last of all. So when you really want to know how someone feels, resist the urge to only read their face. Let your eyes travel down. The truth is usually waiting lower than you think.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Tells of Stress",
+      "beats": [
+        {
+          "vo": "Next, learn to spot one of the most useful signals of all: pacifying behaviours. When something makes us uncomfortable, even for a second, the body instinctively tries to soothe itself. And once you see it, you can't unsee it.",
+          "scene": "explainer",
+          "prop": "self-soothe",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE TELLS OF STRESS",
+          "subtitle": "how we soothe ourselves"
+        },
+        {
+          "vo": "Watch for the hand that drifts to the neck. The fingers that rub together. A palm stroking a thigh, a hand playing with a collar. These are self-soothing gestures, the grown-up version of a child hugging a blanket. They're the body quietly saying, that just made me a little anxious.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But remember the golden rules. A neck touch on its own proves nothing. What you're hunting for is timing. The pacifying gesture that appears right as a particular name comes up, or a specific question gets asked. That's a deviation from baseline, in context, in a cluster. That's a signal genuinely worth noticing.",
+          "scene": "story",
+          "room": "reading-studio",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "labcoat", "pose": "arms-out-presenting", "emotion": "serious-expert", "x": 500, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Space and Eyes",
+      "beats": [
+        {
+          "vo": "Two more channels to read: the space between people, and the eyes. We each walk around inside an invisible bubble of personal space. Anthropologist Edward Hall mapped it into zones, from the intimate circle we keep for loved ones, out to the polite distance we hold with strangers.",
+          "scene": "diagramCard",
+          "diagram": "proxemics-zones",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "SPACE AND EYES",
+          "subtitle": "the bubble and the gaze"
+        },
+        {
+          "vo": "Watch what happens at the edge of that bubble. When someone steps in closer, they feel a connection. When they subtly lean back, create distance, or slide an object between you, that's a quiet request for space. People show you how comfortable they are, simply by how near they're willing to be.",
+          "scene": "explainer",
+          "prop": "personal-space",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Then there's eye contact, which has a comfortable sweet spot. Too little can read as evasive or disengaged. Too much, an unbroken stare, feels aggressive or unsettling. Relaxed eye contact that comes and goes signals warmth and attention. Watch for the deviation: the glance away at a tense moment, or the sudden stare of challenge.",
+          "scene": "explainer",
+          "prop": "eye-contact-dial",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The eyes leak in other ways too. When we see something we genuinely like, our pupils tend to widen. Our blink rate speeds up when we're stressed, and slows when we're focused and calm. You won't consciously measure any of this, but your brain quietly registers it, which is why some people just feel open, and others feel guarded.",
+          "scene": "explainer",
+          "prop": "eye-contact-dial",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "A quick but important note. These are tendencies, not laws, and they vary enormously. In some cultures, steady eye contact is respectful; in others, lowering your eyes is the respectful thing. Autistic people often make less eye contact and move differently, and that is not dishonesty. Context, always.",
+          "scene": "story",
+          "room": "garden-bench",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "hoodie", "pose": "shrug", "emotion": "serious-expert", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Signs of Connection",
+      "beats": [
+        {
+          "vo": "So far we've read discomfort. But body language is just as good at revealing the good stuff, the signals of genuine connection. And the first is something you do without ever noticing: mirroring.",
+          "scene": "explainer",
+          "prop": "mirror-rapport",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE SIGNS OF CONNECTION",
+          "subtitle": "when it's going well"
+        },
+        {
+          "vo": "When two people genuinely click, their bodies quietly fall into sync. One leans in, the other leans in. One picks up their cup, so does the other, moments later. This unconscious echo is a reliable sign that rapport is real. And you can gently use it, matching someone's posture and pace to help them feel at ease.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "Leaning in is another one. We tilt toward people and ideas that draw us, and subtly away from ones that don't. Open palms, relaxed shoulders, uncrossed limbs, these say I've got nothing to defend here. So when someone leans in, opens up, and turns toward you, you're not imagining the warmth. Their body is confirming it.",
+          "scene": "explainer",
+          "prop": "honest-feet",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "Then watch the torso, for what's called ventral fronting. We instinctively point the front of our body, our chest and belly, toward people and things we like and trust. When someone squares up and faces you fully, that's comfort. When they angle away, or keep a bag or a crossed arm as a barrier, part of them is protecting itself.",
+          "scene": "explainer",
+          "prop": "ventral-front",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And finally, the smile. There are two kinds, and your brain can tell them apart even if you can't say how. A polite, social smile uses only the mouth. A genuine one, the Duchenne smile, crinkles the muscles around the eyes into little crow's feet. A real smile always reaches the eyes. That's the one worth trusting.",
+          "scene": "explainer",
+          "prop": "duchenne-smile",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "The Honest Truth",
+      "beats": [
+        {
+          "vo": "Now, the most important part of this whole video, and the part the self-styled experts always skip. Humility. Because here is the honest truth about reading body language: it is not a lie detector. No single cue ever means just one thing.",
+          "scene": "story",
+          "room": "reading-studio",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE HONEST TRUTH",
+          "subtitle": "not a lie detector",
+          "mascots": [
+            { "costume": "labcoat", "pose": "arms-crossed", "emotion": "serious-expert", "x": 500, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "When researchers actually test it, people are only about fifty-four percent accurate at detecting lies from behaviour, barely better than a coin flip. A neck touch doesn't prove guilt. Folded arms don't prove hostility. The moment you believe you can read someone like a book, you've stopped observing and started inventing.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So here's how to hold this skill well. Read clusters, against a baseline, in context. Treat every read as a gentle hypothesis, not a verdict. And never, ever use it to accuse or to catch people out. Use it to notice when someone's uncomfortable, so you can put them at ease. To sense when a friend is hurting behind their words.",
+          "scene": "story",
+          "room": "garden-bench",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "tee", "pose": "wave", "emotion": "happy-talk", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "Because the real gift of reading body language isn't power over others. It's attention. It's finally looking up from yourself long enough to truly see the person in front of you, and to let your own body say, I'm here, I'm listening, you're safe with me. Thanks for watching. Go and read the room, with kindness.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'read-body-language': {
+    A: { lines: ['HOW TO READ', 'BODY', 'LANGUAGE'], accent: COLORS.sky, bg: COLORS.navy, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'honest-feet' },
+    B: { lines: ['WHAT THE', 'BODY SAYS', 'OUT LOUD'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'excited', textColor: COLORS.white, badge: '!', prop: 'micro-expression' },
+    C: { lines: ['THE CUES', 'YOU CAN', 'ACTUALLY TRUST'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '✓', prop: 'duchenne-smile' },
+  },
   'first-impressions': {
     A: { lines: ['THE', 'PSYCHOLOGY OF', 'FIRST IMPRESSIONS'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'snap-judgment-clock' },
     B: { lines: ['JUDGED IN', 'A TENTH OF', 'A SECOND'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'excited', textColor: COLORS.white, badge: '!', prop: 'halo-effect' },
