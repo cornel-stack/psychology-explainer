@@ -1,0 +1,275 @@
+{
+  "slug": "psychology-experiments",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 9,
+    "NEW": 19
+  },
+  "assets": [
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        26,
+        32,
+        34
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "bystander-curve",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "conformity-rate",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "experiment-lessons",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        31
+      ]
+    },
+    {
+      "name": "obedience-curve",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        34
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "arms-out-presenting",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "facepalm",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        34
+      ]
+    },
+    {
+      "name": "asch-lines",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "bobo-doll",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "bystander",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "harlow-monkey",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "invisible-gorilla",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "little-albert",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "marshmallow-test",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "milgram-shock",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "pavlov-bell",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "prison-roles",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "experiment-lab",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "lecture-theater",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        32,
+        34
+      ]
+    },
+    {
+      "name": "observation-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        6,
+        16,
+        26
+      ]
+    }
+  ]
+}

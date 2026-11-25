@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'psychology-experiments': {
+    A: { lines: ['EVERY', 'PSYCHOLOGY', 'EXPERIMENT'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '10', prop: 'milgram-shock' },
+    B: { lines: ['THE STUDIES', 'THAT SHOCKED', 'THE WORLD'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'prison-roles' },
+    C: { lines: ['WOULD YOU', 'HAVE OBEYED?', ''], accent: COLORS.sky, bg: COLORS.navy, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'asch-lines' },
+  },
   'memory-lies': {
     A: { lines: ['EVERY WAY', 'YOUR MEMORY', 'LIES TO YOU'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'false-memory' },
     B: { lines: ['YOUR MEMORY', 'ISN\'T A', 'RECORDING'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'memory-rebuild' },

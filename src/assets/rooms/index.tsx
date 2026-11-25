@@ -205,7 +205,10 @@ export type RoomName =
   | 'goal-trail'
   | 'memory-archive'
   | 'lineup-room'
-  | 'reconstruct-studio';
+  | 'reconstruct-studio'
+  | 'experiment-lab'
+  | 'observation-room'
+  | 'lecture-theater';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5325,6 +5328,56 @@ export const ReconstructStudio: React.FC = () => (
   </g>
 );
 
+/** Experiment lab: a vintage psychology lab — a wall of dials and gauges, a clipboard,
+ *  a caged light, a reel-to-reel recorder — where the classic studies were run. */
+export const ExperimentLab: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.04)} floor={shade(COLORS.ledGrey, 0.1)} floorY={850} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={850} fill={shade(COLORS.greenTeal, 0.0)} opacity={0.4} />)}
+    {/* wall of instrument panels */}
+    <g transform="translate(560 320)"><rect x={-180} y={-130} width={360} height={240} rx={10} fill={shade(COLORS.ledGrey, 0.06)} {...xl} />{Array.from({ length: 6 }).map((_, i) => { const cx = -120 + (i % 3) * 120; const cy = -80 + Math.floor(i / 3) * 110; return <g key={i} transform={`translate(${cx} ${cy})`}><circle cx={0} cy={0} r={38} fill={COLORS.white} {...lg} /><line x1={0} y1={0} x2={Math.cos(Math.PI - (0.3 + i * 0.2)) * 26} y2={-Math.sin(Math.PI - (0.3 + i * 0.2)) * 26} stroke={i > 3 ? COLORS.red : COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle cx={0} cy={0} r={4} fill={COLORS.outline} /></g>; })}</g>
+    {/* reel-to-reel recorder */}
+    <g transform="translate(1440 340)"><rect x={-140} y={-80} width={280} height={160} rx={10} fill={shade(COLORS.woodDark, 0.02)} {...xl} />{[-60, 60].map((x, i) => <g key={i}><circle cx={x} cy={-10} r={44} fill={shade(COLORS.navy, 0.1)} {...lg} /><circle cx={x} cy={-10} r={10} fill={COLORS.ledGrey} /></g>)}<rect x={-100} y={46} width={200} height={16} rx={4} fill={shade(COLORS.ledGrey, 0.04)} /></g>
+    {/* a caged observation light */}
+    <g transform="translate(960 120)"><line x1={0} y1={0} x2={0} y2={60} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><circle cx={0} cy={80} r={26} fill={COLORS.yellow} {...lg} /><path d="M -26 80 A 26 26 0 0 1 26 80 M -18 62 L -18 98 M 0 54 L 0 106 M 18 62 L 18 98" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} /></g>
+    {/* a long lab bench with a clipboard + beaker */}
+    <g transform="translate(960 800)"><rect x={-360} y={0} width={720} height={110} rx={10} fill={COLORS.woodDark} {...xl} /><rect x={-360} y={-14} width={720} height={20} rx={6} fill={shade(COLORS.woodDark, 0.08)} {...lg} /><g transform="translate(-200 -60) rotate(-6)"><rect x={-44} y={-54} width={88} height={108} rx={6} fill={COLORS.white} {...lg} /><rect x={-20} y={-66} width={40} height={16} rx={4} fill={COLORS.ledGrey} />{[0, 1, 2, 3].map((i) => <line key={i} x1={-30} y1={-32 + i * 22} x2={30} y2={-32 + i * 22} stroke={shade(COLORS.sky, -0.06)} strokeWidth={STROKE.sm} />)}</g><g transform="translate(220 -40)"><path d="M -20 -40 L -20 -10 L -34 30 Q -36 40 -24 40 L 24 40 Q 36 40 34 30 L 20 -10 L 20 -40 Z" fill="none" stroke={COLORS.greenTeal} strokeWidth={STROKE.lg} /><path d="M -30 16 L 30 16 L 24 40 Q 24 40 -24 40 Z" fill={COLORS.greenTeal} opacity={0.5} /></g></g>
+  </g>
+);
+
+/** Observation room: a stark room with a big one-way mirror and a camera — where
+ *  behaviour is secretly watched and recorded. */
+export const ObservationRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.navy, 0.06)} floor={shade(COLORS.ledGrey, 0.1)} floorY={850} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={850} fill={shade(COLORS.navy, 0.03)} opacity={0.5} />)}
+    {/* big one-way mirror */}
+    <g transform="translate(700 400)"><rect x={-280} y={-240} width={560} height={420} rx={10} fill={shade(COLORS.sky, 0.1)} opacity={0.4} {...xl} /><rect x={-260} y={-220} width={560} height={420} rx={6} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.3} />{/* reflection streaks */}<path d="M -240 -200 L 20 -200 L -160 180 L -260 180 Z" fill={COLORS.white} opacity={0.08} /></g>
+    {/* a mounted observation camera */}
+    <g transform="translate(1500 240)"><rect x={-50} y={-30} width={100} height={60} rx={10} fill={shade(COLORS.ledGrey, 0.04)} {...xl} /><circle cx={30} cy={0} r={22} fill={shade(COLORS.navy, 0.1)} {...lg} /><circle cx={30} cy={0} r={10} fill={COLORS.sky} opacity={0.6} /><rect x={-58} y={-10} width={16} height={20} rx={4} fill={COLORS.ledGrey} /><circle cx={-36} cy={-40} r={6} fill={COLORS.red} /></g>
+    {/* a lone chair + table under the light */}
+    <g transform="translate(1180 820)"><rect x={-90} y={-30} width={180} height={90} rx={8} fill={COLORS.woodDark} {...xl} /><rect x={-90} y={-44} width={180} height={18} rx={6} fill={shade(COLORS.woodDark, 0.08)} {...lg} /></g>
+    <g transform="translate(1180 700)"><ellipse cx={0} cy={240} rx={150} ry={40} fill={COLORS.yellow} opacity={0.06} /><line x1={0} y1={-140} x2={0} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d="M -40 0 L 40 0 L 28 44 L -28 44 Z" fill={COLORS.yellowSoft} {...lg} /></g>
+    {/* clipboard on wall */}
+    <g transform="translate(320 320)"><rect x={-54} y={-70} width={108} height={140} rx={6} fill={COLORS.white} {...xl} /><rect x={-24} y={-82} width={48} height={18} rx={4} fill={COLORS.ledGrey} />{[0, 1, 2, 3, 4].map((i) => <line key={i} x1={-38} y1={-44 + i * 24} x2={38} y2={-44 + i * 24} stroke={shade(COLORS.sky, -0.06)} strokeWidth={STROKE.sm} />)}</g>
+  </g>
+);
+
+/** Lecture theatre: a tiered university lecture hall with a big chalkboard — where the
+ *  findings get taught to the next generation. */
+export const LectureTheater: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.wood, 0.02)} floor={COLORS.woodDark} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.wood, 0.0)} opacity={0.4} />)}
+    {/* big chalkboard with a scrawled diagram */}
+    <g transform="translate(960 320)"><rect x={-360} y={-180} width={720} height={320} rx={10} fill={shade(COLORS.navy, -0.04)} {...xl} /><rect x={-344} y={-164} width={688} height={288} rx={6} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.3} /><text x={-320} y={-110} fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.white} opacity={0.85}>the mind, explained</text>{/* a scrawled bell curve */}<path d="M -300 60 Q -180 -80 -40 60" fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.lg} opacity={0.7} />{/* arrows */}<path d="M 120 -40 l 80 0 M 180 -52 l 20 12 l -20 12" fill="none" stroke={COLORS.pink} strokeWidth={STROKE.sm} opacity={0.7} /><circle cx={260} cy={20} r={30} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} opacity={0.6} /></g>
+    {/* tiered seating rows (silhouette students) */}
+    {[0, 1, 2].map((row) => <g key={row} transform={`translate(0 ${560 + row * 110})`}><rect x={0} y={0} width={CANVAS.width} height={30} fill={shade(COLORS.woodDark, 0.04)} />{Array.from({ length: 10 }).map((_, i) => <g key={i} transform={`translate(${120 + i * 180} -24)`} opacity={0.3}><circle cx={0} cy={0} r={20} fill={COLORS.navy} /><path d="M -26 60 Q 0 -6 26 60 Z" fill={COLORS.navy} /></g>)}</g>)}
+    {/* a lectern */}
+    <g transform="translate(360 760)"><path d="M -40 100 L -26 -20 L 26 -20 L 40 100 Z" fill={COLORS.woodDark} {...xl} /><rect x={-44} y={-34} width={88} height={22} rx={5} fill={shade(COLORS.wood, 0.04)} {...lg} transform="rotate(-6 0 -23)" /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5515,6 +5568,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'memory-archive': MemoryArchive,
   'lineup-room': LineupRoom,
   'reconstruct-studio': ReconstructStudio,
+  'experiment-lab': ExperimentLab,
+  'observation-room': ObservationRoom,
+  'lecture-theater': LectureTheater,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

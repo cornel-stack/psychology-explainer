@@ -67,6 +67,7 @@ import * as Fg from './forgiveness';
 import * as Cm from './comparing';
 import * as Mo from './motivation';
 import * as Ml from './memory-lies';
+import * as Ex from './experiments';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -803,6 +804,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'rosy-past': Ml.RosyPast,
   'imagine-inflate': Ml.ImagineInflate,
   'confidence-gauge': Ml.ConfidenceGauge,
+  'pavlov-bell': Ex.PavlovBell,
+  'little-albert': Ex.LittleAlbert,
+  'milgram-shock': Ex.MilgramShock,
+  'asch-lines': Ex.AschLines,
+  'prison-roles': Ex.PrisonRoles,
+  'bystander': Ex.Bystander,
+  'bobo-doll': Ex.BoboDoll,
+  'harlow-monkey': Ex.HarlowMonkey,
+  'marshmallow-test': Ex.MarshmallowTest,
+  'invisible-gorilla': Ex.InvisibleGorilla,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

@@ -1,0 +1,388 @@
+{
+  "title": "Every Psychological Experiment Explained",
+  "slug": "psychology-experiments",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Would you deliver a deadly electric shock to a stranger, just because a man in a lab coat told you to? You'd say no. Absolutely not. And yet, when psychologists tested this, around two thirds of ordinary people did exactly that. The experiments that built psychology held up a mirror, and what we saw was deeply unsettling.",
+          "scene": "story",
+          "room": "experiment-lab",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "EVERY PSYCHOLOGICAL",
+          "subtitle": "experiment explained",
+          "mascots": [
+            {
+              "costume": "labcoat",
+              "pose": "arms-crossed",
+              "emotion": "serious-expert",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "These are the landmark studies that shaped how we understand ourselves. Some are brilliant. Some are deeply disturbing. A few were so unethical they could never, ever be run today, and in fact, they're the reason we now have strict rules to protect the people in them. Let's walk through them, one by one.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And watch for the thread that runs through almost all of them, a single, humbling lesson: that our behaviour is shaped far more by the situation we're in than by the kind of person we believe ourselves to be. These experiments are a tour of the human mind, with all its wonder, and all its shadows.",
+          "scene": "explainer",
+          "prop": "pavlov-bell",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Pavlov's Dogs",
+      "beats": [
+        {
+          "vo": "We start where modern psychology more or less began, with a Russian physiologist and his dogs. Ivan Pavlov noticed something odd: his dogs started drooling not just at food, but at the sound of the bell that came before it.",
+          "scene": "explainer",
+          "prop": "pavlov-bell",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "PAVLOV'S DOGS",
+          "subtitle": "classical conditioning"
+        },
+        {
+          "vo": "By ringing a bell every time he fed them, Pavlov taught the dogs to link the two. Soon the bell alone, with no food in sight, made them salivate. This is classical conditioning, and it's everywhere. The way a song floods you with an old feeling, or a notification sound makes your hand twitch. You are conditioned, constantly.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Little Albert",
+      "beats": [
+        {
+          "vo": "Now one of the darker chapters. If you can condition a dog, can you condition a human? In 1920, John Watson set out to prove you could condition fear itself, into a baby.",
+          "scene": "explainer",
+          "prop": "little-albert",
+          "emotion": "scared",
+          "chapterStart": true,
+          "title": "LITTLE ALBERT",
+          "subtitle": "a conditioned fear"
+        },
+        {
+          "vo": "An infant known as Little Albert was shown a harmless white rat, which he happily played with. But every time he reached for it, Watson made a terrifyingly loud noise behind him. Soon, the baby was terrified of the rat alone, and then of anything fluffy, a rabbit, a beard, a Santa mask. His fear had spread.",
+          "scene": "story",
+          "room": "observation-room",
+          "emotion": "scared",
+          "mascots": [
+            {
+              "costume": "labcoat",
+              "pose": "point-right",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "It proved emotions can be learned. But by today's standards, it is grossly unethical. There was no real consent, a baby was deliberately terrified, and he was never deconditioned. Studies like this are exactly why psychology had to build its ethical rules. We learned something true, at a cost that was not acceptable.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Milgram's Obedience",
+      "beats": [
+        {
+          "vo": "Which brings us back to that shocking opener. In 1961, haunted by the horrors of the Holocaust, Stanley Milgram wanted to know: how could ordinary people commit atrocities, just by following orders?",
+          "scene": "diagramCard",
+          "diagram": "obedience-curve",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "MILGRAM'S OBEDIENCE",
+          "subtitle": "just following orders"
+        },
+        {
+          "vo": "Participants were told to shock a man in another room, raising the voltage each time he got an answer wrong. The shocks were fake, the man an actor, but they didn't know that. They heard him scream, beg, then go horrifyingly silent. And whenever they hesitated, a calm man in a lab coat said: the experiment requires that you continue.",
+          "scene": "explainer",
+          "prop": "milgram-shock",
+          "emotion": "scared"
+        },
+        {
+          "vo": "The result stunned the world. Around 65% of completely ordinary people kept going, all the way to the maximum 450 volts, marked danger, severe shock. They weren't monsters. They were sweating and trembling. But an authority taking responsibility was enough. It revealed something terrifying about obedience, and about all of us.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But there's a hopeful footnote. In later versions, obedience dropped sharply when the authority seemed less legitimate, when the victim was in the same room, or, most powerfully, when just one other person refused first. We are deeply swayed by authority, yes. But a single brave voice saying no can give everyone else permission to resist.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Asch Conformity",
+      "beats": [
+        {
+          "vo": "If authority can make us obey, can a simple crowd make us doubt our own eyes? In the 1950s, Solomon Asch set up an almost comically simple test to find out.",
+          "scene": "diagramCard",
+          "diagram": "conformity-rate",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "ASCH CONFORMITY",
+          "subtitle": "doubting your own eyes"
+        },
+        {
+          "vo": "People were shown a line, and asked which of three others matched its length. It was obvious, a child could do it. But everyone else in the room was an actor, told to give the same wrong answer aloud. Faced with a unanimous group, about 75% of real participants caved at least once, agreeing with an answer they could see was false.",
+          "scene": "explainer",
+          "prop": "asch-lines",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And we conform for two different reasons. Sometimes we genuinely start to doubt ourselves, surely all these people can't be wrong. But often we know the group is wrong, and we go along anyway, just to avoid the discomfort of standing out. Either way, the quiet power of a crowd to bend us is far stronger than we'd ever like to admit.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Stanford Prison",
+      "beats": [
+        {
+          "vo": "Perhaps the most infamous experiment of all. In 1971, Philip Zimbardo took ordinary, healthy students and randomly split them into two groups: prisoners and guards, in a fake prison in a university basement.",
+          "scene": "explainer",
+          "prop": "prison-roles",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE STANFORD PRISON",
+          "subtitle": "the power of roles"
+        },
+        {
+          "vo": "It descended into chaos shockingly fast. The guards, these normal young men, became cruel and abusive. The prisoners became withdrawn, anxious, and broken. It got so bad that the two-week study had to be shut down after just six days. For decades, it stood as chilling proof that evil situations can corrupt good people.",
+          "scene": "story",
+          "room": "observation-room",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "suit",
+              "pose": "facepalm",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "But here's a crucial, honest update. The study has since been heavily criticised. Some guards were coached to be tough, the sample was tiny, and people may have been playing a role they thought was expected. So we hold it loosely: a genuine warning about situations and power, but also a lesson in how carefully science must be done.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Bystander Effect",
+      "beats": [
+        {
+          "vo": "Next, a study born from a tragedy, that reveals a disturbing truth about crowds. The question: if you were in trouble, surrounded by people, would someone help?",
+          "scene": "diagramCard",
+          "diagram": "bystander-curve",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE BYSTANDER EFFECT",
+          "subtitle": "when no one helps"
+        },
+        {
+          "vo": "Researchers John Darley and Bibb Latané found something counter-intuitive. The more people who are present, the less likely any single one of them is to step in. It's called the bystander effect, driven by a diffusion of responsibility. When everyone assumes someone else will act, nobody does. The responsibility dissolves into the crowd.",
+          "scene": "explainer",
+          "prop": "bystander",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So you can genuinely be safer in trouble with one person nearby than with fifty. The lesson is powerful and practical. If you ever need help in a crowd, don't shout to everyone. Point at one specific person and say, you, in the red jacket, call an ambulance. You hand them the responsibility that the crowd was busy avoiding.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Bobo Doll",
+      "beats": [
+        {
+          "vo": "Where does aggression come from? Are we born with it, or do we learn it? In 1961, Albert Bandura answered this with an inflatable clown doll called Bobo.",
+          "scene": "explainer",
+          "prop": "bobo-doll",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE BOBO DOLL",
+          "subtitle": "learning by watching"
+        },
+        {
+          "vo": "Children watched an adult punch, kick, and shout at the Bobo doll. Later, left alone with it, those children attacked the doll in the exact same ways, copying the aggression precisely. Children who hadn't seen the violence mostly played gently. It proved social learning theory: we learn behaviour, good and bad, by watching others.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Harlow's Monkeys",
+      "beats": [
+        {
+          "vo": "A gentler, but still troubling study, that changed how we think about love. In the mid-twentieth century, experts believed babies bonded with mothers simply because mothers provided food. Harry Harlow suspected there was more to it.",
+          "scene": "explainer",
+          "prop": "harlow-monkey",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "HARLOW'S MONKEYS",
+          "subtitle": "what love is made of"
+        },
+        {
+          "vo": "He gave baby monkeys two fake mothers: one of cold wire that gave milk, and one of soft cloth that gave no food. The babies drank from the wire mother only when starving, then clung to the soft one for comfort. It showed that love and attachment are about warmth and security, not just food, though the work was cruel to the monkeys.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Marshmallow Test",
+      "beats": [
+        {
+          "vo": "Now a famous one you've probably heard of, with a twist you probably haven't. In 1972, Walter Mischel sat young children in front of a single marshmallow, with an irresistible offer.",
+          "scene": "explainer",
+          "prop": "marshmallow-test",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE MARSHMALLOW TEST",
+          "subtitle": "delayed gratification"
+        },
+        {
+          "vo": "You can eat this one marshmallow now, or wait fifteen minutes alone, and get two. The children squirmed, covered their eyes, and agonised. Early follow-ups suggested the kids who waited did better in life, and the story became a parable about willpower being destiny.",
+          "scene": "story",
+          "room": "observation-room",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "labcoat",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "But here's the modern twist. When researchers repeated it with far more children, the magical effect shrank dramatically. Whether a child waited depended hugely on their background, on whether they'd learned the world was stable and promises were kept. It was less about iron willpower, and more about trust and circumstance.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Invisible Gorilla",
+      "beats": [
+        {
+          "vo": "And finally, a playful one, that proves your own eyes are lying to you right now. In 1999, researchers asked people to watch a video of students passing basketballs, and to carefully count the passes.",
+          "scene": "explainer",
+          "prop": "invisible-gorilla",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE INVISIBLE GORILLA",
+          "subtitle": "you see less than you think"
+        },
+        {
+          "vo": "Focused on counting, about half the viewers completely failed to notice a person in a full gorilla suit stroll into the scene, beat their chest, and walk off. It's called inattentional blindness. When your attention is locked onto one thing, you can be blind to the obvious. You see only the sliver you're paying attention to.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And this isn't just a party trick. It's why a driver can stare straight at a motorcycle and genuinely not see it, why expert radiologists can miss what they're not looking for. Your vivid, seamless experience of the world is a confident illusion, a tidy story your brain shows you, hiding everything it decided wasn't worth your attention.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What They Taught Us",
+      "beats": [
+        {
+          "vo": "So, step back, and look at them all together. What is the mind telling us through these strange, brilliant, troubling studies?",
+          "scene": "diagramCard",
+          "diagram": "experiment-lessons",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHAT THEY TAUGHT US",
+          "subtitle": "the big lessons"
+        },
+        {
+          "vo": "That the situation is staggeringly powerful. That we conform, obey, and look away far more than our self-image admits. That we learn by watching, and see only a fraction of reality. And crucially, that the ethics rules protecting people in research today exist largely because some of these studies caused real harm.",
+          "scene": "story",
+          "room": "lecture-theater",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "labcoat",
+              "pose": "arms-out-presenting",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "And maybe the most useful takeaway of all is this. If good, ordinary people can be led to obey cruelty, to conform against their own eyes, and to walk past someone in need, then the kind, brave thing is rarely automatic. It's a choice, often made against the pull of the situation.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Knowing these experiments isn't just trivia. It's a quiet kind of armour. It helps you notice when you're conforming, when authority is pushing you somewhere wrong, when a crowd is lulling you into doing nothing. And in that noticing, you get to choose differently. That's the real gift of psychology. Thanks for watching.",
+          "scene": "story",
+          "room": "lecture-theater",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "labcoat",
+              "pose": "wave",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

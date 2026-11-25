@@ -261,6 +261,10 @@ const NEW_ASSETS = new Set([
   'memory-archive', 'lineup-room', 'reconstruct-studio',
   'memory-rebuild', 'misinformation-edit', 'false-memory', 'source-mixup', 'mandela-shared', 'flashbulb-blur', 'retell-drift', 'rosy-past', 'imagine-inflate', 'confidence-gauge',
   'record-vs-rebuild', 'recall-rewrite-loop', 'confidence-accuracy', 'gist-not-pixels',
+  // psychology-experiments (all new)
+  'experiment-lab', 'observation-room', 'lecture-theater',
+  'pavlov-bell', 'little-albert', 'milgram-shock', 'asch-lines', 'prison-roles', 'bystander', 'bobo-doll', 'harlow-monkey', 'marshmallow-test', 'invisible-gorilla',
+  'obedience-curve', 'conformity-rate', 'bystander-curve', 'experiment-lessons',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
