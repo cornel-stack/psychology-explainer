@@ -220,7 +220,10 @@ export type RoomName =
   | 'campfire-circle'
   | 'distant-bedroom'
   | 'secret-glow-room'
-  | 'couples-therapy';
+  | 'couples-therapy'
+  | 'hall-of-mirrors'
+  | 'mind-watchtower'
+  | 'reflection-pool';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5655,6 +5658,73 @@ export const CouplesTherapy: React.FC = () => (
   </g>
 );
 
+/** Hall of mirrors: a surreal room of many mirrors reflecting a figure differently —
+ *  distorted, partial, fogged — the confusion of poor self-knowledge. */
+export const HallOfMirrors: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, -0.02)} floor={shade(COLORS.navy, 0.04)} floorY={850} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={850} fill={shade(COLORS.lavender, -0.04)} opacity={0.5} />)}
+    {/* a row of ornate mirrors, each a slightly different reflection */}
+    {[[280, 1, 1], [620, 0.8, -1], [1300, 0.8, 1], [1640, 1, -1]].map(([x, s, flip], i) => (
+      <g key={i} transform={`translate(${x} 420) scale(${flip as number} 1)`}>
+        <rect x={-110} y={-260} width={220} height={520} rx={100} fill={shade(COLORS.sky, 0.08)} opacity={0.35} {...xl} />
+        <rect x={-92} y={-242} width={184} height={484} rx={88} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.3} />
+        {/* a warped reflection */}
+        <g transform={`scale(${s as number} ${1.2 - (s as number) * 0.2})`} opacity={0.6}><circle cx={0} cy={-60} r={50} fill={COLORS.skin} {...lg} /><circle cx={-16} cy={-66} r={5} fill={COLORS.outline} /><circle cx={16} cy={-66} r={5} fill={COLORS.outline} />{i % 2 ? <path d="M -18 -44 Q 0 -56 18 -44" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /> : <path d="M -18 -44 Q 0 -32 18 -44" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />}<path d="M -56 180 Q -64 -10 0 -10 Q 64 -10 56 180 Z" fill={shade(COLORS.sky, 0.04)} {...xl} /></g>
+      </g>
+    ))}
+    {/* a lone, puzzled figure in the centre */}
+    <g transform="translate(960 760)" opacity={0.3}><circle cx={0} cy={-40} r={30} fill={COLORS.ledGrey} /><text x={0} y={-30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={28} fill={COLORS.white}>?</text><path d="M -36 160 Q 0 -6 36 160 Z" fill={COLORS.ledGrey} /></g>
+  </g>
+);
+
+/** Mind watchtower: a calm tower above a sea of clouds/thoughts — the elevated vantage
+ *  of self-observation, looking down on the swirl of the mind. */
+export const MindWatchtower: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.1)} floor={shade(COLORS.lavender, 0.0)} floorY={820} stripe={false} />
+    {/* graduated dawn sky */}
+    {Array.from({ length: 5 }).map((_, i) => <rect key={i} x={0} y={i * 120} width={CANVAS.width} height={120} fill={shade([COLORS.purpleDeep, COLORS.pink, COLORS.pink, COLORS.sky, COLORS.sky][i], 0.04)} opacity={0.4} />)}
+    <circle cx={960} cy={300} r={70} fill={COLORS.yellowSoft} opacity={0.7} />
+    {/* a sea of 'thought' clouds below, swirling */}
+    {Array.from({ length: 10 }).map((_, i) => <ellipse key={i} cx={(i * 240 + (i % 3) * 80) % 1920} cy={560 + (i % 3) * 70} rx={150} ry={46} fill={shade(COLORS.lavender, 0.06)} opacity={0.4} />)}
+    {/* the watchtower rising above the clouds */}
+    <g transform="translate(960 480)">
+      <rect x={-60} y={0} width={120} height={360} rx={10} fill={shade(COLORS.wood, 0.02)} {...xl} />
+      {[0, 1, 2].map((i) => <rect key={i} x={-40} y={60 + i * 90} width={80} height={44} rx={6} fill={shade(COLORS.yellowSoft, 0.04)} opacity={0.6} {...sm} />)}
+      {/* the lookout top */}
+      <rect x={-90} y={-60} width={180} height={70} rx={10} fill={COLORS.woodDark} {...xl} />
+      <path d="M -100 -60 L 0 -130 L 100 -60 Z" fill={shade(COLORS.red, 0.0)} {...xl} />
+      {/* railing + a tiny calm figure looking out */}
+      <rect x={-80} y={-8} width={160} height={10} rx={4} fill={COLORS.woodDark} />
+      <g transform="translate(0 -30)"><circle cx={0} cy={0} r={16} fill={COLORS.skin} {...lg} /><path d="M -6 -2 Q 0 2 6 -2" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+    </g>
+    {/* a couple of stars still out */}
+    {[[300, 180], [1600, 160]].map(([x, y], i) => <g key={i} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.6}><line x1={x - 8} y1={y} x2={x + 8} y2={y} strokeLinecap="round" /><line x1={x} y1={y - 8} x2={x} y2={y + 8} strokeLinecap="round" /></g>)}
+  </g>
+);
+
+/** Reflection pool: a serene courtyard with a still, clear pool that mirrors the sky —
+ *  the calm clarity of true self-knowledge. */
+export const ReflectionPool: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={shade(COLORS.greenTeal, 0.04)} floorY={620} stripe={false} />
+    {/* soft sky */}
+    {Array.from({ length: 4 }).map((_, i) => <rect key={i} x={0} y={i * 150} width={CANVAS.width} height={150} fill={shade(COLORS.sky, -0.012 * (3 - i))} opacity={0.5} />)}
+    <circle cx={1500} cy={200} r={60} fill={COLORS.yellow} opacity={0.75} />
+    {[[360, 170], [1020, 230]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`} opacity={0.5}><ellipse cx={0} cy={0} rx={66} ry={28} fill={COLORS.white} /><ellipse cx={-46} cy={10} rx={40} ry={22} fill={COLORS.white} /></g>)}
+    {/* a still reflecting pool */}
+    <ellipse cx={960} cy={820} rx={560} ry={160} fill={shade(COLORS.sky, -0.04)} {...xl} />
+    <ellipse cx={960} cy={800} rx={520} ry={130} fill={shade(COLORS.sky, 0.06)} />
+    {/* the mirrored sun + ripple rings */}
+    <circle cx={1200} cy={800} r={40} fill={COLORS.yellow} opacity={0.5} />
+    {[0, 1, 2].map((i) => <ellipse key={i} cx={960} cy={820} rx={160 + i * 110} ry={40 + i * 24} fill="none" stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.sm} opacity={0.3 - i * 0.08} />)}
+    {/* reeds + a stone lantern */}
+    {[300, 360].map((x, i) => <path key={i} d={`M ${x} 700 q ${(i % 2 ? 1 : -1) * 12} -56 ${(i % 2 ? 1 : -1) * 6} -110`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" />)}
+    <g transform="translate(1600 640)"><rect x={-26} y={0} width={52} height={90} rx={6} fill={shade(COLORS.ledGrey, 0.08)} {...xl} /><path d="M -36 0 L 36 0 L 24 -40 L -24 -40 Z" fill={shade(COLORS.ledGrey, 0.1)} {...lg} /><rect x={-16} y={-34} width={32} height={28} rx={4} fill={COLORS.yellow} opacity={0.6} /><rect x={-14} y={88} width={28} height={30} rx={4} fill={shade(COLORS.ledGrey, 0.04)} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5860,6 +5930,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'distant-bedroom': DistantBedroom,
   'secret-glow-room': SecretGlowRoom,
   'couples-therapy': CouplesTherapy,
+  'hall-of-mirrors': HallOfMirrors,
+  'mind-watchtower': MindWatchtower,
+  'reflection-pool': ReflectionPool,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

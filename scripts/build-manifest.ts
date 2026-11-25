@@ -281,6 +281,10 @@ const NEW_ASSETS = new Set([
   'distant-bedroom', 'secret-glow-room', 'couples-therapy',
   'wandering-eye', 'many-reasons', 'lost-self', 'unmet-need', 'novelty-thrill', 'feel-desired', 'slippery-slope', 'shattered-trust', 'the-fork', 'repair-or-part',
   'cheating-motives', 'another-self', 'affair-types', 'betrayal-paths',
+  // self-awareness (all new)
+  'hall-of-mirrors', 'mind-watchtower', 'reflection-pool',
+  'blind-spot', 'mount-confidence', 'hindsight-mirror', 'catch-moment', 'inner-map', 'others-view', 'thought-watching', 'witness-self', 'self-accept', 'clear-self',
+  'awareness-gap', 'internal-external', 'johari-window', 'what-not-why',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

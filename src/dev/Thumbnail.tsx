@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'self-awareness': {
+    A: { lines: ['EVERY LEVEL OF', 'SELF-', 'AWARENESS'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '7', prop: 'clear-self' },
+    B: { lines: ['95% THINK', 'THEY\'RE SELF-', 'AWARE. ARE YOU?'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'smug', textColor: COLORS.white, badge: '?', prop: 'blind-spot' },
+    C: { lines: ['YOU ARE NOT', 'YOUR', 'THOUGHTS'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '✓', prop: 'witness-self' },
+  },
   'people-who-cheat': {
     A: { lines: ['THE', 'PSYCHOLOGY OF', 'PEOPLE WHO CHEAT'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'wandering-eye' },
     B: { lines: ['WHY HAPPY', 'PEOPLE', 'CHEAT TOO'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'lost-self' },

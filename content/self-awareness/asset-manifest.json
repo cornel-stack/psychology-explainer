@@ -1,0 +1,234 @@
+{
+  "slug": "self-awareness",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        22
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "awareness-gap",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "internal-external",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "johari-window",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "what-not-why",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        28,
+        29,
+        31
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        30
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        22,
+        29
+      ]
+    },
+    {
+      "name": "blind-spot",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "catch-moment",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "clear-self",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        30
+      ]
+    },
+    {
+      "name": "hindsight-mirror",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "inner-map",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "mount-confidence",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "others-view",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "self-accept",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "thought-watching",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "witness-self",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "hall-of-mirrors",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "mind-watchtower",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "reflection-pool",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    }
+  ]
+}

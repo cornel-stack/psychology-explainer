@@ -72,6 +72,7 @@ import * as Bf from './brain-fog';
 import * as Li from './lies';
 import * as Fr2 from './friends-types';
 import * as Che from './cheating';
+import * as Sa from './self-awareness';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -858,6 +859,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'shattered-trust': Che.ShatteredTrust,
   'the-fork': Che.TheFork,
   'repair-or-part': Che.RepairOrPart,
+  'blind-spot': Sa.BlindSpot,
+  'mount-confidence': Sa.MountConfidence,
+  'hindsight-mirror': Sa.HindsightMirror,
+  'catch-moment': Sa.CatchMoment,
+  'inner-map': Sa.InnerMap,
+  'others-view': Sa.OthersView,
+  'thought-watching': Sa.ThoughtWatching,
+  'witness-self': Sa.WitnessSelf,
+  'self-accept': Sa.SelfAccept,
+  'clear-self': Sa.ClearSelf,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
