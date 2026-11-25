@@ -65,6 +65,7 @@ import * as Sk from './small-talk';
 import * as Gt from './gratitude';
 import * as Fg from './forgiveness';
 import * as Cm from './comparing';
+import * as Mo from './motivation';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -781,6 +782,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'past-self': Cm.PastSelf,
   'own-lane': Cm.OwnLane,
   'envy-compass': Cm.EnvyCompass,
+  'waiting-feeling': Mo.WaitingFeeling,
+  'action-flywheel': Mo.ActionFlywheel,
+  'inner-vs-carrot': Mo.InnerVsCarrot,
+  'three-needs': Mo.ThreeNeeds,
+  'dopamine-chase': Mo.DopamineChase,
+  'giant-goal': Mo.GiantGoal,
+  'tiny-first-step': Mo.TinyFirstStep,
+  'small-wins': Mo.SmallWins,
+  'find-your-why': Mo.FindYourWhy,
+  'reduce-friction': Mo.ReduceFriction,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

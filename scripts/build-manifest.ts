@@ -253,6 +253,10 @@ const NEW_ASSETS = new Set([
   'comparison-feed-room', 'race-track', 'own-studio',
   'measuring-self', 'two-directions', 'reel-vs-reality', 'rigged-compare', 'joy-thief', 'envy-flare', 'endless-ladder', 'past-self', 'own-lane', 'envy-compass',
   'comparison-directions', 'highlight-vs-real', 'unfair-match', 'comparison-toolkit',
+  // motivation (all new)
+  'couch-limbo', 'build-workshop', 'goal-trail',
+  'waiting-feeling', 'action-flywheel', 'inner-vs-carrot', 'three-needs', 'dopamine-chase', 'giant-goal', 'tiny-first-step', 'small-wins', 'find-your-why', 'reduce-friction',
+  'action-first-loop', 'motivation-types', 'three-fuels', 'motivation-toolkit',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

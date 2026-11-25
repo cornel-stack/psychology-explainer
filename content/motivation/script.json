@@ -1,0 +1,339 @@
+{
+  "title": "The Psychology of Motivation",
+  "slug": "motivation",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You know exactly what you should be doing. The project, the workout, the thing you've put off for weeks. You're just waiting. Waiting for the magic moment when you'll finally feel motivated enough to start. So you scroll a little longer, telling yourself you'll begin the second the mood strikes. And somehow, that mood never arrives.",
+          "scene": "story",
+          "room": "couch-limbo",
+          "emotion": "sleepy",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "motivation",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "sleepy",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Here's the problem. We treat motivation as a feeling we have to sit around and wait for. But that is almost exactly backwards, and it's the single biggest reason people stay stuck. Once you understand how motivation actually works, you stop waiting for it, and you start creating it, on demand.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, let's crack it open. The myth that keeps you waiting, the two kinds of motivation and why one lasts and one fizzles, the three hidden fuels that drive us, what dopamine is really doing, and a handful of science-backed ways to actually get yourself going, and keep going. Let's find your spark.",
+          "scene": "explainer",
+          "prop": "waiting-feeling",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Great Myth",
+      "beats": [
+        {
+          "vo": "Let's destroy the biggest myth first, because it changes everything. The myth is that motivation comes before action. That first you feel motivated, and then you do the thing. In reality, it's almost always the other way around.",
+          "scene": "diagramCard",
+          "diagram": "action-first-loop",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE GREAT MYTH",
+          "subtitle": "action comes first"
+        },
+        {
+          "vo": "Action comes first. Motivation follows. Think about it. You rarely feel like going to the gym, but once you're ten minutes in, you're glad you came. You dread starting the essay, but a few sentences in, you find your flow. Starting creates momentum, momentum creates progress, and progress is what finally makes you feel motivated.",
+          "scene": "explainer",
+          "prop": "action-flywheel",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This flips the whole game. You don't need to feel motivated to start. You need to start in order to feel motivated. The feeling isn't the key that unlocks the door. It's the reward you get for walking through it. So if you're waiting to feel ready, stop. Readiness comes after you begin, not before.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Two Kinds of Fire",
+      "beats": [
+        {
+          "vo": "Now, not all motivation is created equal. Psychologists Edward Deci and Richard Ryan drew a crucial line between two kinds, and knowing the difference is the secret to motivation that actually lasts.",
+          "scene": "diagramCard",
+          "diagram": "motivation-types",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "TWO KINDS OF FIRE",
+          "subtitle": "which one lasts"
+        },
+        {
+          "vo": "Extrinsic motivation comes from outside: rewards, money, grades, praise, or the fear of punishment. It works, but it's shallow and short-lived. Intrinsic motivation comes from within: doing something because it's genuinely interesting, enjoyable, or meaningful to you. And intrinsic motivation is the fire that actually keeps burning.",
+          "scene": "explainer",
+          "prop": "inner-vs-carrot",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "In fact, there's a strange effect here. Studies show that paying people to do something they already loved can actually kill their motivation for it. The reward quietly replaces the joy. It's the overjustification effect, and it's a clue: the most durable motivation doesn't come from chasing a carrot. It comes from the thing itself.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So one of the smartest things you can do is make a boring task more intrinsic. Add a sliver of play, choice, or curiosity. Turn it into a game, race the clock, or find the one genuinely interesting angle. The task doesn't change, but the moment it feels a little more like yours, and a little more fun, it stops being a battle.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Three Fuels",
+      "beats": [
+        {
+          "vo": "So what actually lights that inner fire? Deci and Ryan found that intrinsic motivation runs on three psychological fuels. Give yourself these three, and motivation tends to flow almost on its own.",
+          "scene": "diagramCard",
+          "diagram": "three-fuels",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE THREE FUELS",
+          "subtitle": "what lights the fire"
+        },
+        {
+          "vo": "The first is autonomy. We're far more motivated when we feel we chose something, rather than being forced into it. The second is competence. We're driven by the feeling of getting better, of making visible progress, of seeing our effort actually work. Nothing kills motivation faster than feeling stuck and useless.",
+          "scene": "explainer",
+          "prop": "three-needs",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And the third is relatedness, a sense of connection, of doing something that ties us to other people or a bigger purpose. When a task gives you choice, a feeling of progress, and a sense of meaning or connection, you barely need to force yourself at all. The motivation is baked right in.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Chase",
+      "beats": [
+        {
+          "vo": "Let's zoom into the brain for a second, because there's a chemical everyone blames for motivation, and almost everyone misunderstands. Dopamine.",
+          "scene": "explainer",
+          "prop": "dopamine-chase",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE CHASE",
+          "subtitle": "what dopamine really does"
+        },
+        {
+          "vo": "We call dopamine the pleasure chemical, but that's not quite right. Dopamine is really the chemical of wanting, of seeking, of anticipation. It's not the satisfaction of having the reward. It's the drive that makes you go and get it. It's your brain's go signal, firing hardest when a reward feels close and achievable.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This explains so much. It's why getting started and seeing a little progress feels so energising, your brain releases dopamine for the movement toward the goal. And it's why a huge, distant, vague goal feels so flat and lifeless. There's no clear next step for your brain to chase, so the go signal never fires.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And this is exactly what your phone exploits. Apps are engineered to hand your dopamine system a constant stream of tiny, instant, effortless rewards. Next to that, your real goals, which pay off slowly, feel unbearably dull. It's not that you lack drive. Your seeking system has been hijacked by things designed to be easier to want.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Why Motivation Dies",
+      "beats": [
+        {
+          "vo": "Which brings us to why motivation so often dies. And usually, it's not because you're lazy. It's because of how the goal is set up. The number one killer is a goal that's simply too big.",
+          "scene": "explainer",
+          "prop": "giant-goal",
+          "emotion": "tearful",
+          "chapterStart": true,
+          "title": "WHY MOTIVATION DIES",
+          "subtitle": "it's not laziness"
+        },
+        {
+          "vo": "When you stare up at an enormous goal, write a book, get fit, change careers, your brain just sees an overwhelming wall with no obvious first move. So it freezes. The goal is too vague, too far away, and there's no clear next step small enough to actually begin. Overwhelm masquerades as laziness.",
+          "scene": "story",
+          "room": "couch-limbo",
+          "emotion": "tearful",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "There's also a quirk called temporal discounting. Our brains heavily discount future rewards. A payoff months away barely registers against something fun right now. This is the eternal battle: your future self wants the goal, your present self wants the couch. So you have to make the reward, or the progress, feel closer and sooner.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And very often, what looks like no motivation is really fear in disguise. Fear of failing, of looking stupid, of it not being good enough. Perfectionism is especially sneaky: if it can't be perfect, part of you would rather not start at all. So before you label yourself lazy, ask gently, am I unmotivated, or am I just a little scared?",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Willpower Is Overrated",
+      "beats": [
+        {
+          "vo": "So the obvious fix is just more willpower, right? Grit your teeth and force yourself? Here's the uncomfortable truth: relying on willpower alone is a losing strategy. It's a limited, exhaustible resource, and building your life on it is like trying to hold your breath forever.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WILLPOWER IS OVERRATED",
+          "subtitle": "design beats discipline"
+        },
+        {
+          "vo": "The people who seem most disciplined usually aren't white-knuckling it. They've designed their lives so they need less willpower in the first place. They reduce friction. They make the good thing easy and the distraction hard. Lay out your gym clothes the night before. Put the phone in another room. Keep the guitar on its stand.",
+          "scene": "explainer",
+          "prop": "reduce-friction",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Every bit of friction you remove is motivation you no longer have to summon. Your environment is quietly shaping your behaviour all day long. So instead of fighting it with raw willpower, set up your surroundings so the motivated choice becomes the easy, obvious, default one. Design beats discipline, every single time.",
+          "scene": "story",
+          "room": "build-workshop",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "tee",
+              "pose": "hands-hips",
+              "emotion": "serious-expert",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "How to Get Going",
+      "beats": [
+        {
+          "vo": "So let's pull it all together into things you can actually use. Four moves to get going and stay going. And the first you already know, but it bears repeating, because it's the whole key: act first. Don't wait to feel motivated. Start, and let the feeling catch up.",
+          "scene": "diagramCard",
+          "diagram": "motivation-toolkit",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "HOW TO GET GOING",
+          "subtitle": "four moves"
+        },
+        {
+          "vo": "Second, shrink it down. Make the first step so absurdly small it feels almost silly to refuse. Not write the report, just open the document. Not go for a run, just put on your shoes. There's a trick called the two-minute rule: commit to just two minutes. Starting is the hardest part, and a tiny step gets you over it.",
+          "scene": "explainer",
+          "prop": "tiny-first-step",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Third, chase small wins. Break the giant goal into tiny, visible steps, and tick them off. Every small win gives your brain a little hit of dopamine and a sense of real progress, which fuels the next step. Momentum is self-feeding. Researcher Teresa Amabile found that visible progress is the single most powerful daily motivator there is.",
+          "scene": "explainer",
+          "prop": "small-wins",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And fourth, find your why. Connect the task to a reason that genuinely matters to you. Not I have to do this, but I'm doing this because it moves me toward something I care about. A boring task tied to a meaningful why becomes something you can actually sustain. Meaning is the deepest, most renewable fuel of all.",
+          "scene": "explainer",
+          "prop": "find-your-why",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And aim for consistency over intensity. One heroic burst of motivation does far less than showing up small, again and again. The goal isn't a perfect day, it's a repeatable one. On the days you feel like it, great. On the days you don't, just do the two-minute version. A tiny step taken daily beats a giant leap you only manage once.",
+          "scene": "story",
+          "room": "goal-trail",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "tee", "pose": "walking", "emotion": "serious-expert", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "And run through all of it, be kind to yourself. We think beating ourselves up will whip us into action, but the research says the opposite. Shame and self-criticism drain motivation. Self-compassion, treating yourself like a good coach rather than a cruel critic, is what actually keeps you going after a setback.",
+          "scene": "story",
+          "room": "goal-trail",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "tee",
+              "pose": "cheer",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "One honest and important note before we go. If you've lost motivation for everything, if nothing feels worth doing and that flatness won't lift, that may not be a motivation problem at all. A deep, lasting loss of drive can be a real sign of depression or burnout, not laziness.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "ONE HONEST NOTE",
+          "subtitle": "when it's more than that"
+        },
+        {
+          "vo": "This isn't a diagnosis, and no productivity hack fixes that kind of emptiness. If that's where you are, please be gentle with yourself, and reach out for real support. That flatness is a symptom to be cared for, not a flaw to be ashamed of.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But for the everyday stuckness, remember the one idea that changes it all. You will almost never feel like it first. So stop waiting. Make the step tiny, reduce the friction, and just begin, badly if you have to. The motivation you've been waiting for is hiding on the other side of starting. Take the first small step. Thanks for watching.",
+          "scene": "story",
+          "room": "goal-trail",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "tee",
+              "pose": "walking",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -199,7 +199,10 @@ export type RoomName =
   | 'release-lakeside'
   | 'comparison-feed-room'
   | 'race-track'
-  | 'own-studio';
+  | 'own-studio'
+  | 'couch-limbo'
+  | 'build-workshop'
+  | 'goal-trail';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5182,6 +5185,77 @@ export const OwnStudio: React.FC = () => (
   </g>
 );
 
+/** Couch limbo: a living room where procrastination lives — a slumped couch, a glowing
+ *  TV, a snack pile, and an untouched goal on a sticky note on the wall. */
+export const CouchLimbo: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, 0.03)} floor={COLORS.wood} floorY={850} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={850} fill={shade(COLORS.lavender, 0.0)} opacity={0.5} />)}
+    {/* a glowing TV on the wall */}
+    <g transform="translate(960 310)"><rect x={-180} y={-110} width={360} height={220} rx={12} fill={shade(COLORS.navy, 0.1)} {...xl} /><rect x={-162} y={-92} width={324} height={184} rx={8} fill={shade(COLORS.sky, 0.08)} opacity={0.5} /><ellipse cx={0} cy={0} rx={120} ry={70} fill={COLORS.sky} opacity={0.15} /></g>
+    {/* an untouched goal sticky note */}
+    <g transform="translate(360 300) rotate(-6)"><rect x={-54} y={-54} width={108} height={108} rx={6} fill={COLORS.yellow} {...xl} /><text x={0} y={-16} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={16} fill={COLORS.outline}>GOAL:</text><text x={0} y={10} textAnchor="middle" fontFamily="Baloo 2" fontWeight={700} fontSize={13} fill={COLORS.outline}>start the</text><text x={0} y={30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={700} fontSize={13} fill={COLORS.outline}>thing...</text></g>
+    {/* a saggy couch */}
+    <g transform="translate(960 830)"><rect x={-320} y={-40} width={640} height={160} rx={30} fill={COLORS.sky} {...xl} /><rect x={-320} y={-110} width={150} height={100} rx={24} fill={shade(COLORS.sky, 0.06)} {...lg} /><rect x={170} y={-110} width={150} height={100} rx={24} fill={shade(COLORS.sky, 0.06)} {...lg} />{[-130, 30].map((x, i) => <rect key={i} x={x} y={-36} width={110} height={100} rx={18} fill={shade(COLORS.sky, 0.1)} {...lg} transform={`rotate(${i ? 6 : -6} ${x + 55} 14)`} />)}</g>
+    {/* a snack pile + remote on the floor */}
+    <g transform="translate(500 900)"><ellipse cx={0} cy={0} rx={50} ry={20} fill={COLORS.red} {...lg} /><ellipse cx={0} cy={-8} rx={40} ry={14} fill={shade(COLORS.yellowSoft, 0.04)} /></g>
+    <g transform="translate(1380 920) rotate(12)"><rect x={-18} y={-40} width={36} height={80} rx={8} fill={COLORS.ledGrey} {...lg} />{[0, 1, 2].map((i) => <circle key={i} cx={0} cy={-24 + i * 18} r={4} fill={COLORS.outline} />)}</g>
+    {/* a wall clock showing time slipping */}
+    <g transform="translate(1600 300)"><circle cx={0} cy={0} r={42} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-26} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><line x1={0} y1={0} x2={18} y2={10} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+  </g>
+);
+
+/** Maker workshop: a bright, in-motion workshop — a workbench with tools, a half-built
+ *  project, pegboard and shavings — the energy of actually doing. */
+export const BuildWorkshop: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowSoft, 0.03)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {Array.from({ length: 15 }).map((_, i) => <rect key={i} x={i * 130} y={0} width={62} height={840} fill={shade(COLORS.yellowSoft, -0.01)} opacity={0.5} />)}
+    {/* pegboard with hanging tools */}
+    <g transform="translate(560 300)"><rect x={-180} y={-120} width={360} height={220} rx={8} fill={shade(COLORS.wood, 0.02)} {...xl} />{Array.from({ length: 24 }).map((_, i) => <circle key={i} cx={-150 + (i % 8) * 42} cy={-90 + Math.floor(i / 8) * 60} r={3} fill={shade(COLORS.wood, -0.06)} />)}
+      {/* a hammer + wrench + saw silhouettes */}
+      <g transform="translate(-110 -40)"><rect x={-6} y={-40} width={12} height={70} rx={4} fill={COLORS.woodDark} /><rect x={-22} y={-50} width={44} height={20} rx={5} fill={COLORS.ledGrey} {...sm} /></g>
+      <g transform="translate(0 -40)"><rect x={-5} y={-40} width={10} height={76} rx={4} fill={COLORS.ledGrey} /><circle cx={0} cy={-44} r={14} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.lg} /></g>
+      <g transform="translate(110 -30)"><rect x={-30} y={-34} width={60} height={14} rx={4} fill={COLORS.woodDark} /><path d="M 30 -20 l 50 0 l -6 16 l -44 0 Z" fill={COLORS.ledGrey} {...sm} /></g>
+    </g>
+    {/* a bright window */}
+    <g transform="translate(1540 320)"><rect x={-130} y={-140} width={260} height={280} rx={12} fill={shade(COLORS.sky, 0.12)} {...xl} /><line x1={0} y1={-140} x2={0} y2={140} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /><line x1={-130} y1={0} x2={130} y2={0} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /></g>
+    {/* the workbench with a half-built project + shavings */}
+    <g transform="translate(960 810)"><rect x={-360} y={0} width={720} height={120} rx={10} fill={COLORS.wood} {...xl} /><rect x={-360} y={-14} width={720} height={20} rx={6} fill={shade(COLORS.wood, 0.06)} {...lg} />
+      {/* a half-built birdhouse */}
+      <g transform="translate(-120 -80)"><rect x={-44} y={-30} width={88} height={70} rx={4} fill={shade(COLORS.wood, -0.02)} {...lg} /><path d="M -50 -30 L 0 -70 L 50 -30 Z" fill={shade(COLORS.wood, 0.04)} {...lg} /><circle cx={0} cy={0} r={12} fill={COLORS.outline} /></g>
+      {/* tools on bench */}
+      <g transform="translate(160 -16)"><rect x={-5} y={-30} width={10} height={40} rx={3} fill={COLORS.woodDark} /><rect x={-16} y={-36} width={32} height={14} rx={4} fill={COLORS.ledGrey} {...sm} /></g>
+      {/* wood shavings */}
+      {[-250, -200, 240, 290].map((x, i) => <path key={i} d={`M ${x} -4 q 10 -10 22 -2 q -8 8 -22 2 Z`} fill={shade(COLORS.yellowSoft, -0.04)} opacity={0.7} {...sm} />)}
+    </g>
+    {/* a little pendant work-lamp */}
+    <g transform="translate(960 60)"><line x1={0} y1={0} x2={0} y2={120} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d="M -44 120 L 44 120 L 28 176 L -28 176 Z" fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={200} rx={90} ry={40} fill={COLORS.yellow} opacity={0.1} /></g>
+  </g>
+);
+
+/** Goal trail: a hiking trail winding up toward a flagged summit at dawn — the climb of
+ *  progress, with waypoint markers along the way. */
+export const GoalTrail: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.06)} floor={COLORS.greenTeal} floorY={700} stripe={false} />
+    {/* graduated dawn sky + sun */}
+    {Array.from({ length: 4 }).map((_, i) => <rect key={i} x={0} y={i * 130} width={CANVAS.width} height={130} fill={shade([COLORS.yellowSoft, COLORS.sky, COLORS.sky, COLORS.sky][i], 0.04)} opacity={0.4} />)}
+    <circle cx={1500} cy={200} r={70} fill={COLORS.yellow} opacity={0.8} />
+    {[[360, 170], [1050, 230]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`} opacity={0.5}><ellipse cx={0} cy={0} rx={70} ry={30} fill={COLORS.white} /><ellipse cx={-48} cy={10} rx={40} ry={22} fill={COLORS.white} /></g>)}
+    {/* summit mountain with a flag */}
+    <path d="M 700 700 L 1100 150 L 1250 360 L 1400 240 L 1600 700 Z" fill={shade(COLORS.greenTeal, -0.04)} {...xl} />
+    <path d="M 1100 150 L 1040 260 L 1160 260 Z" fill={COLORS.white} opacity={0.6} />
+    <g transform="translate(1100 150)"><line x1={0} y1={0} x2={0} y2={-40} stroke={COLORS.outline} strokeWidth={STROKE.lg} /><path d="M 0 -40 l 30 10 l -30 14 Z" fill={COLORS.red} {...sm} /></g>
+    {/* the winding trail up */}
+    <path d="M 500 1080 Q 760 900 700 760 Q 650 640 900 520 Q 1050 440 1100 300" fill="none" stroke={shade(COLORS.wood, 0.04)} strokeWidth={34} strokeLinecap="round" opacity={0.8} />
+    {/* waypoint flags along the trail */}
+    {[[700, 760], [820, 600], [1030, 470]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><line x1={0} y1={0} x2={0} y2={-30} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><path d="M 0 -30 l 18 6 l -18 8 Z" fill={[COLORS.sky, COLORS.pink, COLORS.yellow][i]} {...sm} /></g>)}
+    {/* foreground bushes */}
+    {[260, 1660].map((x, i) => <g key={i} transform={`translate(${x} 720)`}><circle cx={-30} cy={0} r={44} fill={COLORS.greenLeaf} {...lg} /><circle cx={24} cy={-6} r={50} fill={shade(COLORS.greenLeaf, 0.04)} {...lg} /></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5366,6 +5440,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'comparison-feed-room': ComparisonFeedRoom,
   'race-track': RaceTrack,
   'own-studio': OwnStudio,
+  'couch-limbo': CouchLimbo,
+  'build-workshop': BuildWorkshop,
+  'goal-trail': GoalTrail,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

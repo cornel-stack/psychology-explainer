@@ -1,0 +1,264 @@
+{
+  "slug": "motivation",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 7,
+    "NEW": 20
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        18
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        23,
+        28,
+        29,
+        32
+      ]
+    },
+    {
+      "name": "action-first-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "motivation-toolkit",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "motivation-types",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "three-fuels",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        29,
+        32
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "hands-hips",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        18
+      ]
+    },
+    {
+      "name": "walking",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        28,
+        32
+      ]
+    },
+    {
+      "name": "action-flywheel",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "dopamine-chase",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "find-your-why",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "giant-goal",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "inner-vs-carrot",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "reduce-friction",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "small-wins",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "three-needs",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "tiny-first-step",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "waiting-feeling",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "build-workshop",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "couch-limbo",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        18
+      ]
+    },
+    {
+      "name": "goal-trail",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        28,
+        29,
+        32
+      ]
+    }
+  ]
+}

@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'motivation': {
+    A: { lines: ['THE', 'PSYCHOLOGY OF', 'MOTIVATION'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'excited', textColor: COLORS.white, badge: '?', prop: 'action-flywheel' },
+    B: { lines: ['STOP WAITING', 'TO FEEL', 'MOTIVATED'], accent: COLORS.greenLeaf, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'waiting-feeling' },
+    C: { lines: ['ACTION COMES', 'FIRST — THEN', 'MOTIVATION'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '✓', prop: 'tiny-first-step' },
+  },
   'comparing-yourself': {
     A: { lines: ['WHY YOU', 'COMPARE', 'YOURSELF'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'tearful', textColor: COLORS.white, badge: '?', prop: 'measuring-self' },
     B: { lines: ['THEIR REEL', 'VS YOUR', 'REAL LIFE'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'reel-vs-reality' },
