@@ -64,6 +64,7 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 56 | The Psychology of Forgiveness | `forgiveness` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45568369609 | ✅ render OK |
 | 57 | Why You Compare Yourself to Others | `comparing-yourself` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45570068492 | ✅ render OK |
 | 58 | The Psychology of Motivation | `motivation` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45571803649 | ✅ render OK |
-| 59 | Every Way Your Memory Lies to You | `memory-lies` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45573643791 | ⏳ rendering |
+| 59 | Every Way Your Memory Lies to You | `memory-lies` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45573643791 | ✅ render OK |
+| 60 | Every Psychological Experiment Explained | `psychology-experiments` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45575814766 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
