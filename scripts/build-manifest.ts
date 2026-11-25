@@ -222,9 +222,13 @@ const NEW_ASSETS = new Set([
   'snap-judgment-clock', 'thin-slice', 'primacy-anchor', 'halo-effect', 'warmth-first', 'sticky-label', 'self-fulfilling', 'open-posture', 'pratfall-charm', 'second-look',
   'impression-speed', 'primacy-list', 'first-two-questions', 'halo-spread',
   // read-body-language (all new)
-  'negotiation-table', 'park-bench', 'reading-studio',
+  'negotiation-table', 'garden-bench', 'reading-studio',
   'baseline-cue', 'cue-cluster', 'micro-expression', 'honest-feet', 'eye-contact-dial', 'personal-space', 'self-soothe', 'mirror-rapport', 'ventral-front', 'duchenne-smile',
   'baseline-deviation', 'cluster-not-single', 'proxemics-zones', 'honesty-ladder',
+  // gaslighting (all new)
+  'dim-apartment', 'foggy-hallway', 'clarity-room',
+  'dimming-gaslight', 'denial-bubble', 'distorted-mirror', 'trivialize-shrink', 'blame-flip', 'walking-eggshells', 'isolation-web', 'intermittent-warmth', 'reality-journal', 'inner-compass',
+  'gaslight-cycle', 'gaslight-tactics', 'disagree-vs-gaslight', 'reality-anchors',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

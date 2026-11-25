@@ -58,6 +58,7 @@ import * as Sm from './sadmusic';
 import * as An from './anger';
 import * as Fi from './first-impressions';
 import * as Rb from './read-body-language';
+import * as Ga from './gaslighting';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -704,6 +705,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'mirror-rapport': Rb.MirrorRapport,
   'ventral-front': Rb.VentralFront,
   'duchenne-smile': Rb.DuchenneSmile,
+  'dimming-gaslight': Ga.GaslightLamp,
+  'denial-bubble': Ga.DenialBubble,
+  'distorted-mirror': Ga.DistortedMirror,
+  'trivialize-shrink': Ga.TrivializeShrink,
+  'blame-flip': Ga.BlameFlip,
+  'walking-eggshells': Ga.WalkingEggshells,
+  'isolation-web': Ga.IsolationWeb,
+  'intermittent-warmth': Ga.IntermittentWarmth,
+  'reality-journal': Ga.RealityJournal,
+  'inner-compass': Ga.InnerCompass,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

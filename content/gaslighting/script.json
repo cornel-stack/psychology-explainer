@@ -1,0 +1,291 @@
+{
+  "title": "The Psychology of Gaslighting",
+  "slug": "gaslighting",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Imagine the lights in your home are slowly getting dimmer. You notice. You mention it. And the person you love turns to you, calm and certain, and says: what are you talking about? The lights are exactly the same. You're imagining things. And slowly, night after night, you start to believe them. You start to think the problem is you.",
+          "scene": "story",
+          "room": "dim-apartment",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "gaslighting",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "That slow, deliberate rewriting of your reality has a name: gaslighting. It's one of the most damaging forms of emotional manipulation there is, precisely because it doesn't attack your choices or your looks. It attacks your grip on what's real. And its favourite trick is convincing you that you can't trust your own mind.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Today, we'll look at what gaslighting really is, the specific tactics it uses, why it works on even the smartest, most grounded people, what it quietly does to you, and most importantly, how to find your way back to solid ground. A gentle warning: this one may feel close to home. If it does, please know this is not your fault.",
+          "scene": "explainer",
+          "prop": "dimming-gaslight",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What It Actually Is",
+      "beats": [
+        {
+          "vo": "Let's define it carefully, because the word gets thrown around a lot. Gaslighting is a form of psychological manipulation where one person tries to make another doubt their own memory, perception, and judgment, in order to gain power and control over them.",
+          "scene": "diagramCard",
+          "diagram": "gaslight-cycle",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHAT IT ACTUALLY IS",
+          "subtitle": "rewriting your reality"
+        },
+        {
+          "vo": "The name comes from a 1938 play called Gas Light. In it, a husband slowly dims the gas lamps in their home, and every time his wife notices, he insists nothing has changed, that she's imagining it. Bit by bit, he convinces her she's losing her mind, so that he can control her, and hide his own secrets.",
+          "scene": "explainer",
+          "prop": "dimming-gaslight",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And that's the crucial thing to understand. Gaslighting is almost never a single, dramatic lie. It's a slow drip. A thousand tiny denials and corrections, each small enough to dismiss on its own, that together erode your confidence in your own reality until you stop trusting yourself at all, and start deferring to them.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Over time, the goal is quietly achieved. You become unsure of your own memory. You start running your version of events past them, to check if it's allowed. The very person distorting your reality becomes the one you turn to, to tell you what's real. That's the trap closing.",
+          "scene": "story",
+          "room": "foggy-hallway",
+          "emotion": "confused",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Tactics",
+      "beats": [
+        {
+          "vo": "So what does it actually sound like, day to day? Gaslighting tends to use a handful of recurring moves. Once you can name them, they lose a lot of their power. Here are the five to know.",
+          "scene": "diagramCard",
+          "diagram": "gaslight-tactics",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE FIVE MOVES",
+          "subtitle": "what it sounds like"
+        },
+        {
+          "vo": "The first is flat denial: insisting that something you clearly remember simply never happened. I never said that. That never happened. You made it up. Said with total confidence, it makes you question an event you were certain of just moments ago.",
+          "scene": "explainer",
+          "prop": "denial-bubble",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The second is countering: attacking your memory itself. You always remember things wrong. Your memory is terrible. Then comes trivialising, which shrinks your feelings until you feel foolish for having them. You're overreacting. You're too sensitive. It was just a joke. Why are you making such a big deal?",
+          "scene": "explainer",
+          "prop": "trivialize-shrink",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The fourth is blame-shifting, and it's dizzying. Somehow, by the end of every conversation, you are the one apologising. You're the one with the problem. This is actually your fault. And the fifth is withholding, or stonewalling: a flat refusal to engage. I'm not doing this again. I don't know what you're talking about. The wall goes up.",
+          "scene": "explainer",
+          "prop": "blame-flip",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Why It Works",
+      "beats": [
+        {
+          "vo": "Now, here's the question people quietly ask themselves, often with a lot of shame: how could I fall for this? If you're smart, if you're capable, how could someone talk you out of your own reality? The answer is both reassuring and important. Gaslighting has nothing to do with intelligence.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHY IT WORKS",
+          "subtitle": "even on the smartest people"
+        },
+        {
+          "vo": "It works because it targets something deeper than logic: trust. We are wired to trust the people closest to us, our partners, our parents, our best friends. So when they calmly tell us we're wrong, part of us reasons, they love me, why would they lie? It must be me. Your love for them becomes the weapon used against you.",
+          "scene": "explainer",
+          "prop": "distorted-mirror",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "There's also something called cognitive dissonance. When the person you love insists on a version of reality that clashes with your own, the gap is deeply uncomfortable. And it's often easier for the mind to resolve that discomfort by doubting yourself than by accepting the painful truth that someone you love is manipulating you.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And it compounds. Each time you give ground, it gets easier to give ground again. Repetition wears down certainty the way water wears down stone. This is why gaslighting is so often missed from the inside. It isn't that the victim is weak or foolish. It's that the method is patient, and aimed at our most human instinct: to trust.",
+          "scene": "story",
+          "room": "foggy-hallway",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "suit", "pose": "point-right", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Hook",
+      "beats": [
+        {
+          "vo": "But there's one more ingredient that makes gaslighting so sticky, and so hard to leave. It's not all coldness. In fact, if it were, you'd walk away. The trap is that the cruelty comes mixed with moments of real warmth.",
+          "scene": "explainer",
+          "prop": "intermittent-warmth",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE HOOK",
+          "subtitle": "why it's so hard to leave"
+        },
+        {
+          "vo": "Psychologists call it intermittent reinforcement. Between the cold spells come flashes of the loving, charming person you first fell for. An apology. A perfect day. A tenderness that feels like coming home. And those moments are intoxicating, precisely because they're unpredictable. You never know when the good version will return.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is the exact same psychology that makes a slot machine so addictive. The occasional reward keeps you pulling the lever, hoping. So you stay, waiting for the warm, wonderful person to come back for good, slowly bonding not to who they are, but to who they sometimes pretend to be. It's called a trauma bond, and it is powerful.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "And to keep the spell intact, gaslighting usually comes with isolation. Slowly, your friends become a problem. Your family is painted as toxic or interfering. Little by little, the outside voices that might say, hey, that's not okay, are cut away, until the only mirror you have left is the one holding you captive.",
+          "scene": "explainer",
+          "prop": "isolation-web",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What It Does To You",
+      "beats": [
+        {
+          "vo": "After a while, living like this changes you. You begin walking on eggshells, carefully monitoring every word, bracing for the next time reality gets rewritten. You second-guess everything. You apologise constantly, often without even knowing what for.",
+          "scene": "explainer",
+          "prop": "walking-eggshells",
+          "emotion": "tearful",
+          "chapterStart": true,
+          "title": "WHAT IT DOES TO YOU",
+          "subtitle": "the quiet damage"
+        },
+        {
+          "vo": "You might keep a mental note of evidence, just to prove to yourself that you're not crazy. You feel anxious, foggy, strangely exhausted. And slowly, you lose touch with the confident person you used to be. People who've been gaslit often say the worst part isn't the conflict. It's that they no longer recognise themselves.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "If any of this is landing a little too close, please take a breath. Feeling confused, anxious, or like you're too sensitive, these are not signs that something is wrong with you. They can be the completely natural effects of having your reality denied, over and over. The confusion is a symptom, not a character flaw.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Is It Really Gaslighting?",
+      "beats": [
+        {
+          "vo": "Now, an important note of honesty, because this word is badly overused. Not every disagreement is gaslighting. Not everyone who remembers an event differently, or who denies something once, is manipulating you. People misremember. People get defensive. That's just being human, and it's crucial we don't label it abuse.",
+          "scene": "diagramCard",
+          "diagram": "disagree-vs-gaslight",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "IS IT REALLY GASLIGHTING?",
+          "subtitle": "the honest difference"
+        },
+        {
+          "vo": "So here's the line. A healthy disagreement still respects your reality. Someone might say, I remember it differently, let's figure it out together, and your perspective still counts. Gaslighting attacks your reality. The goal isn't to find the truth. It's to make you feel that your grip on the truth itself is broken.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The markers are a sustained pattern, not one bad moment, and a consistent direction: you always end up the confused one, the wrong one, the one apologising. If disagreements leave you doubting your own sanity again and again, take that seriously. One argument is life. A pattern that erodes your reality is something else.",
+          "scene": "story",
+          "room": "dim-apartment",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "labcoat", "pose": "arms-crossed", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finding Your Way Back",
+      "beats": [
+        {
+          "vo": "So if this is happening, how do you find your way back to solid ground? It starts with the thing gaslighting works hardest to destroy: trusting your own perception. Your feelings and your memories are data. They are information worth listening to, not defects to be corrected away.",
+          "scene": "diagramCard",
+          "diagram": "reality-anchors",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "FINDING YOUR WAY BACK",
+          "subtitle": "to solid ground"
+        },
+        {
+          "vo": "A powerful first step is to keep an external anchor. Write things down. Keep a journal, save the messages, note what was actually said and when. When your reality lives on paper, in your own handwriting, it becomes much harder for someone to convince you it never happened. The record becomes ground you can stand on.",
+          "scene": "explainer",
+          "prop": "reality-journal",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Then, gently break the isolation. Reach out to the friends and family who were quietly pushed away. Talk to people who knew the clear, confident you. Other people can reflect reality back to you, and remind you of what you actually saw. You were never meant to be the only witness to your own life.",
+          "scene": "explainer",
+          "prop": "inner-compass",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And stop trying to win the argument. You cannot out-reason someone whose entire goal is your confusion; debating them just hands them more ground. Instead, set boundaries. Trust your record. Lean on your people. And accept the hardest truth of all: sometimes the only way to get your reality back is to step away from the person taking it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "So if you take one thing from this video, let it be this. If someone constantly makes you doubt your own mind, the problem is very rarely your mind. Trust the quiet voice that keeps whispering, something isn't right here. That voice is not your weakness. It's your reality, trying to find its way home.",
+          "scene": "story",
+          "room": "clarity-room",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "A final, honest word. This isn't a diagnosis, and naming a dynamic isn't the same as condemning a person. But genuine, repeated gaslighting is a serious form of emotional abuse. If this feels like your life, please reach out to a trusted friend, a therapist, or a domestic-abuse helpline. You don't have to sort out what's real alone.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "You are not crazy. You are not too sensitive. And you are not alone. Your reality is valid, your memory deserves to be trusted, and you deserve to be with people who make the world feel clearer, not foggier. Thank you for watching. Please, take gentle care of yourself.",
+          "scene": "story",
+          "room": "clarity-room",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "tee", "pose": "wave", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    }
+  ]
+}

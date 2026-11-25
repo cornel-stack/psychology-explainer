@@ -52,7 +52,7 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
   'manipulation-tactics': {
     A: { lines: ['15 TRICKS', 'THEY USE', 'ON YOU'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'scared', textColor: COLORS.white, badge: '15', prop: 'puppet-strings' },
     B: { lines: ['SPOT A', 'MANIPULATOR', 'IN SECONDS'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'sheep-mask' },
-    C: { lines: ['ARE YOU', 'BEING', 'PLAYED?'], accent: COLORS.sky, bg: COLORS.pink, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'gaslight-lamp' },
+    C: { lines: ['ARE YOU', 'BEING', 'PLAYED?'], accent: COLORS.sky, bg: COLORS.pink, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'dimming-gaslight' },
   },
   'offline-minds': {
     A: { lines: ['9 TRAITS', 'OF PEOPLE', 'WHO LOG OFF'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'happy-talk', textColor: COLORS.white, badge: '9', prop: 'fomo-ghost' },
@@ -98,6 +98,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     A: { lines: ['WHY YOU', 'LOVE SAD', 'MUSIC'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'tearful', textColor: COLORS.white, badge: '?', prop: 'reach-for-sad-song' },
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
+  },
+  'gaslighting': {
+    A: { lines: ['THE', 'PSYCHOLOGY OF', 'GASLIGHTING'], accent: COLORS.yellow, bg: COLORS.navy, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'dimming-gaslight' },
+    B: { lines: ['"THAT NEVER', 'HAPPENED" —', 'WHEN IT DID'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'denial-bubble' },
+    C: { lines: ["YOU'RE NOT", 'CRAZY. AND', "IT'S NOT YOU."], accent: COLORS.greenLeaf, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♥', prop: 'inner-compass' },
   },
   'read-body-language': {
     A: { lines: ['HOW TO READ', 'BODY', 'LANGUAGE'], accent: COLORS.sky, bg: COLORS.navy, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'honest-feet' },

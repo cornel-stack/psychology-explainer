@@ -178,7 +178,10 @@ export type RoomName =
   | 'party-entrance'
   | 'negotiation-table'
   | 'garden-bench'
-  | 'reading-studio';
+  | 'reading-studio'
+  | 'dim-apartment'
+  | 'foggy-hallway'
+  | 'clarity-room';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4731,6 +4734,64 @@ export const ReadingStudio: React.FC = () => (
   </g>
 );
 
+/** Dim apartment: a once-cosy living room drained of light, old gas lamps flickering
+ *  low, a crooked picture — the slowly darkening world of the gaslit. */
+export const DimApartment: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.navy, 0.06)} floor={shade(COLORS.woodDark, -0.02)} floorY={840} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={840} fill={shade(COLORS.navy, 0.03)} opacity={0.5} />)}
+    {/* two gas wall-lamps, dim pools of light */}
+    {[360, 1560].map((x, i) => <g key={i} transform={`translate(${x} 320)`}><rect x={-6} y={0} width={12} height={70} fill={COLORS.woodDark} /><path d="M -30 0 L 30 0 L 20 -44 L -20 -44 Z" fill={shade(COLORS.yellowSoft, -0.02)} {...lg} /><circle cx={0} cy={-18} r={10} fill={COLORS.yellow} opacity={0.6} /><ellipse cx={0} cy={60} rx={70} ry={120} fill={COLORS.yellow} opacity={0.08} /></g>)}
+    {/* a crooked framed picture */}
+    <g transform="translate(960 260) rotate(-8)"><rect x={-70} y={-54} width={140} height={108} rx={6} fill={shade(COLORS.navy, 0.1)} {...xl} /><rect x={-54} y={-38} width={108} height={76} rx={4} fill={shade(COLORS.lavender, -0.02)} opacity={0.5} /></g>
+    {/* a sofa, muted */}
+    <g transform="translate(960 820)"><rect x={-280} y={-50} width={560} height={160} rx={24} fill={shade(COLORS.navy, 0.12)} {...xl} /><rect x={-280} y={-116} width={130} height={100} rx={20} fill={shade(COLORS.navy, 0.16)} {...lg} /><rect x={150} y={-116} width={130} height={100} rx={20} fill={shade(COLORS.navy, 0.16)} {...lg} />{[-120, 20].map((x, i) => <rect key={i} x={x} y={-42} width={100} height={100} rx={16} fill={shade(COLORS.navy, 0.2)} {...lg} />)}</g>
+    {/* a floor lamp, off */}
+    <g transform="translate(300 860)"><rect x={-6} y={-200} width={12} height={200} fill={COLORS.woodDark} /><path d="M -40 -200 L 40 -200 L 28 -256 L -28 -256 Z" fill={shade(COLORS.navy, 0.14)} {...lg} /></g>
+    {/* a clock */}
+    <g transform="translate(1600 640)"><circle cx={0} cy={0} r={40} fill={shade(COLORS.navy, 0.14)} {...xl} /><line x1={0} y1={0} x2={0} y2={-24} stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.6} /><line x1={0} y1={0} x2={16} y2={6} stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.6} /></g>
+  </g>
+);
+
+/** Foggy hallway: a long disorienting corridor swallowed in fog, doors fading into
+ *  grey — the confusion of losing your grip on reality. */
+export const FoggyHallway: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, -0.02)} floor={shade(COLORS.lavender, -0.06)} floorY={820} stripe={false} />
+    {/* perspective corridor lines */}
+    {[[0, 0, 820, 420], [1920, 0, 1100, 420], [0, 1080, 820, 660], [1920, 1080, 1100, 660]].map(([x1, y1, x2, y2], i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={shade(COLORS.lavender, -0.1)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* doors receding, fading into fog */}
+    {[[220, 1, 220], [1700, -1, 220], [470, 1, 150], [1450, -1, 150]].map(([x, dir, h], i) => <g key={i} transform={`translate(${x} 560)`}><rect x={-40} y={-(h as number)} width={80} height={h as number} rx={6} fill={shade(COLORS.lavender, -0.08)} opacity={0.6} {...sm} /><circle cx={(dir as number) * 26} cy={-(h as number) / 2} r={5} fill={COLORS.ledGrey} /></g>)}
+    {/* fog bands drifting across, high and low */}
+    {Array.from({ length: 9 }).map((_, i) => <ellipse key={i} cx={(i * 300 + (i % 2) * 140) % 1920} cy={300 + (i % 4) * 180} rx={340} ry={82} fill={COLORS.white} opacity={0.14 + (i % 2) * 0.06} />)}
+    {/* faint floor reflections of the doors + a receding centre seam */}
+    <path d={`M 960 820 L 760 1080 M 960 820 L 1160 1080`} stroke={shade(COLORS.lavender, -0.1)} strokeWidth={STROKE.sm} opacity={0.4} />
+    {[220, 1700, 470, 1450].map((x, i) => <rect key={i} x={x - 30} y={824} width={60} height={70} rx={6} fill={shade(COLORS.lavender, -0.04)} opacity={0.3} />)}
+    {Array.from({ length: 3 }).map((_, i) => <ellipse key={i} cx={320 + i * 640} cy={960} rx={300} ry={64} fill={COLORS.white} opacity={0.1} />)}
+    {/* a dim overhead light haloed by fog */}
+    <g transform="translate(960 180)"><ellipse cx={0} cy={0} rx={120} ry={40} fill={COLORS.white} opacity={0.2} /><path d="M -34 0 L 34 0 L 24 36 L -24 36 Z" fill={shade(COLORS.yellowSoft, -0.04)} {...lg} /><line x1={0} y1={-60} x2={0} y2={0} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} /></g>
+  </g>
+);
+
+/** Clarity room: light returning — a bright window, open curtains, a plant and a warm
+ *  rug — the calm of finding solid ground again. */
+export const ClarityRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCream} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.bgCream, -0.02)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={560} stroke={shade(COLORS.bgCream, -0.04)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* big bright window with sunrise */}
+    <g transform="translate(960 350)"><rect x={-220} y={-210} width={440} height={420} rx={16} fill={shade(COLORS.sky, 0.08)} {...xl} /><circle cx={0} cy={80} r={90} fill={COLORS.yellow} opacity={0.8} />{Array.from({ length: 10 }).map((_, i) => { const a = (i / 10) * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 100} y1={80 + Math.sin(a) * 100} x2={Math.cos(a) * 140} y2={80 + Math.sin(a) * 140} stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.5} />; })}<line x1={0} y1={-210} x2={0} y2={210} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /><line x1={-220} y1={0} x2={220} y2={0} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /></g>
+    {/* open curtains */}
+    {[-250, 250].map((x, i) => <path key={i} d={`M ${x} 130 Q ${x + (i ? -30 : 30)} 360 ${x} 580 L ${x + (i ? -60 : 60)} 580 Q ${x + (i ? -30 : 30)} 360 ${x + (i ? -60 : 60)} 130 Z`} fill={shade(COLORS.greenTeal, 0.04)} {...lg} transform="translate(0 -220)" />)}
+    {/* plant */}
+    <g transform="translate(360 740)"><rect x={-38} y={0} width={76} height={104} rx={10} fill={COLORS.greenTeal} {...xl} /><path d="M 0 0 q -50 -62 -24 -140 M 0 0 q 0 -84 0 -160 M 0 0 q 50 -62 24 -140" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-24} cy={-140} r={16} fill={COLORS.greenLeaf} /><circle cx={0} cy={-160} r={18} fill={COLORS.greenLeaf} /><circle cx={24} cy={-140} r={16} fill={COLORS.greenLeaf} /></g>
+    {/* a warm round rug */}
+    <ellipse cx={960} cy={960} rx={320} ry={64} fill={shade(COLORS.pink, 0.04)} {...lg} />
+    <ellipse cx={960} cy={960} rx={240} ry={44} fill="none" stroke={shade(COLORS.pink, -0.04)} strokeWidth={STROKE.sm} opacity={0.6} />
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4894,6 +4955,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'negotiation-table': NegotiationTable,
   'garden-bench': GardenBench,
   'reading-studio': ReadingStudio,
+  'dim-apartment': DimApartment,
+  'foggy-hallway': FoggyHallway,
+  'clarity-room': ClarityRoom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

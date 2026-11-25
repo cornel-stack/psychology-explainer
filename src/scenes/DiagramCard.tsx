@@ -4981,8 +4981,118 @@ const HonestyLadder: React.FC = () => {
   );
 };
 
+/** gaslight-cycle: the erosion loop — incident, denial, self-doubt, dependence — that
+ *  tightens over time. */
+const GaslightCycle: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.54; const R = 190;
+  const steps = [{ t: 'something happens', a: -Math.PI / 2 }, { t: 'they deny it', a: 0 }, { t: 'you doubt yourself', a: Math.PI / 2 }, { t: 'you depend on them', a: Math.PI }];
+  const dash = -(frame % 30);
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the erosion loop</text>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={shade(COLORS.navy, 0.1)} strokeWidth={STROKE.lg} strokeDasharray="6 12" strokeDashoffset={dash} opacity={0.6} />
+      {steps.map((s, i) => {
+        const x = cx + Math.cos(s.a) * R; const y = cy + Math.sin(s.a) * R; const p = springIn(frame - i * 8, 12);
+        return <g key={i} transform={`translate(${x} ${y}) scale(${0.7 + 0.3 * p})`} opacity={p}>
+          <rect x={-104} y={-32} width={208} height={64} rx={16} fill={i === 3 ? shade(COLORS.red, 0.04) : COLORS.yellowSoft} {...lg} />
+          <circle cx={-76} cy={0} r={16} fill={COLORS.white} {...sm} /><text x={-76} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{i + 1}</text>
+          <text x={-52} y={6} fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{s.t}</text>
+        </g>;
+      })}
+      <text x={cx} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.navy}>tighter each time</text>
+    </g>
+  );
+};
+
+/** gaslight-tactics: the five recurring moves. */
+const GaslightTactics: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const rows = [
+    { t: 'DENY', s: '"that never happened"', c: COLORS.red },
+    { t: 'COUNTER', s: '"you remember it wrong"', c: COLORS.yellow },
+    { t: 'TRIVIALISE', s: '"you\'re overreacting"', c: COLORS.sky },
+    { t: 'BLAME-SHIFT', s: '"this is your fault"', c: COLORS.lavender },
+    { t: 'WITHHOLD', s: '"I won\'t discuss this"', c: COLORS.greenTeal },
+  ];
+  return (
+    <g>
+      <text x={cx} y={88} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the five moves</text>
+      {rows.map((r, i) => {
+        const p = springIn(frame - i * 7, 12); const y = 170 + i * 104;
+        return <g key={i} transform={`translate(${cx} ${y}) scale(${0.82 + 0.18 * p})`} opacity={p}>
+          <rect x={-380} y={-40} width={760} height={82} rx={16} fill={r.c} opacity={0.82} {...lg} />
+          <text x={-356} y={8} fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{r.t}</text>
+          <text x={356} y={8} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={22} fill={COLORS.outline} fontStyle="italic">{r.s}</text>
+        </g>;
+      })}
+    </g>
+  );
+};
+
+/** disagree-vs-gaslight: a healthy disagreement respects your reality; gaslighting
+ *  attacks it. */
+const DisagreeVsGaslight: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const leftX = CANVAS.width * 0.28; const rightX = CANVAS.width * 0.72; const topY = CANVAS.height * 0.32;
+  const p1 = springIn(frame, 14); const p2 = springIn(frame - 18, 14);
+  const side = (x: number, p: number, title: string, lines: string[], good: boolean) => (
+    <g transform={`translate(${x} 0)`} opacity={p}>
+      <rect x={-250} y={topY - 50} width={500} height={420} rx={20} fill={good ? shade(COLORS.greenTeal, 0.08) : shade(COLORS.red, 0.04)} {...xl} />
+      <text x={0} y={topY} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{title}</text>
+      <g transform={`translate(0 ${topY + 56})`}>
+        <circle cx={0} cy={0} r={34} fill={good ? COLORS.greenTeal : COLORS.red} opacity={0.3} />
+        {good
+          ? <path d="M -16 0 l 10 12 l 20 -24" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" />
+          : <path d="M -14 -14 l 28 28 M 14 -14 l -28 28" stroke={COLORS.redDark} strokeWidth={STROKE.xl} strokeLinecap="round" />}
+      </g>
+      {lines.map((l, i) => <text key={i} x={0} y={topY + 130 + i * 44} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={19} fill={COLORS.outline}>{l}</text>)}
+    </g>
+  );
+  return (
+    <g>
+      <text x={cx} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>one respects you, one erodes you</text>
+      {side(leftX, p1, 'disagreement', ['“I remember it', 'differently.”', 'your view still counts'], true)}
+      {side(rightX, p2, 'gaslighting', ['“you’re imagining', 'it, you’re crazy.”', 'your view is the problem'], false)}
+    </g>
+  );
+};
+
+/** reality-anchors: three ways back — trust yourself, keep a record, reach out. */
+const RealityAnchors: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.5;
+  const anchors = [
+    { t: 'trust your', s: 'perception', a: -Math.PI / 2 - 0.7 },
+    { t: 'keep a', s: 'record', a: -Math.PI / 2 + 0.7 },
+    { t: 'reach', s: 'out', a: Math.PI / 2 },
+  ];
+  const glow = 0.5 + 0.5 * Math.sin(frame / 8);
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>ways back to solid ground</text>
+      {anchors.map((an, i) => {
+        const R = 180; const x = cx + Math.cos(an.a) * R; const y = cy + Math.sin(an.a) * R + 20; const p = springIn(frame - 10 - i * 8, 12);
+        return <g key={i}>
+          <line x1={cx} y1={cy + 20} x2={x} y2={y} stroke={COLORS.greenTeal} strokeWidth={STROKE.lg} opacity={0.5 * p} />
+          <g transform={`translate(${x} ${y}) scale(${0.7 + 0.3 * p})`} opacity={p}>
+            <circle cx={0} cy={0} r={64} fill={shade(COLORS.greenTeal, 0.08)} {...lg} />
+            <text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{an.t}</text>
+            <text x={0} y={20} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{an.s}</text>
+          </g>
+        </g>;
+      })}
+      {/* steady anchor in the middle */}
+      <circle cx={cx} cy={cy + 20} r={44} fill={COLORS.greenTeal} opacity={0.4 + glow * 0.3} {...xl} />
+      <path d={`M ${cx} ${cy - 6} v 48 M ${cx - 16} ${cy + 6} h 32 M ${cx - 22} ${cy + 42} q 22 20 44 0`} fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <circle cx={cx} cy={cy - 12} r={8} fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} />
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -5196,6 +5306,10 @@ export const DiagramCard: React.FC<{
     'cluster-not-single': COLORS.yellow,
     'proxemics-zones': COLORS.sky,
     'honesty-ladder': COLORS.pink,
+    'gaslight-cycle': COLORS.navy,
+    'gaslight-tactics': COLORS.red,
+    'disagree-vs-gaslight': COLORS.lavender,
+    'reality-anchors': COLORS.greenTeal,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -5416,6 +5530,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'cluster-not-single' && <ClusterNotSingle />}
         {diagram === 'proxemics-zones' && <ProxemicsZones />}
         {diagram === 'honesty-ladder' && <HonestyLadder />}
+        {diagram === 'gaslight-cycle' && <GaslightCycle />}
+        {diagram === 'gaslight-tactics' && <GaslightTactics />}
+        {diagram === 'disagree-vs-gaslight' && <DisagreeVsGaslight />}
+        {diagram === 'reality-anchors' && <RealityAnchors />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />
