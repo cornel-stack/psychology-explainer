@@ -6228,8 +6228,92 @@ const FewDeep: React.FC = () => {
   );
 };
 
+/** cheating-motives: the many tangled reasons behind infidelity, not one simple cause. */
+const CheatingMotives: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.52; const cy = CANVAS.height * 0.5;
+  const motives = ['unmet needs', 'validation', 'novelty', 'opportunity', 'avoidance', 'revenge'];
+  return (
+    <g>
+      <text x={cx} y={80} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>never just one reason</text>
+      {motives.map((m, i) => { const a = -Math.PI / 2 + (i / motives.length) * Math.PI * 2; const R = 185; const x = cx + Math.cos(a) * R; const y = cy + Math.sin(a) * R; const p = springIn(frame - i * 6, 12); return (
+        <g key={i}><line x1={cx} y1={cy} x2={x} y2={y} stroke={COLORS.lavender} strokeWidth={STROKE.lg} opacity={0.5 * p} /><g transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * p})`} opacity={p}><rect x={-92} y={-26} width={184} height={52} rx={14} fill={shade([COLORS.sky, COLORS.pink, COLORS.yellow, COLORS.greenTeal, COLORS.lavender, COLORS.red][i], 0.06)} {...lg} /><text x={0} y={7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{m}</text></g></g>
+      ); })}
+      <circle cx={cx} cy={cy} r={48} fill={COLORS.white} {...xl} /><text x={cx} y={cy + 7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>?</text>
+    </g>
+  );
+};
+
+/** another-self: Perel's reframe — an affair chases a lost version of yourself, not a
+ *  different person. */
+const AnotherSelf: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const leftX = CANVAS.width * 0.3; const rightX = CANVAS.width * 0.7; const cy = CANVAS.height * 0.5;
+  const p1 = springIn(frame, 14); const p2 = springIn(frame - 18, 14);
+  return (
+    <g>
+      <text x={cx} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>often not another person...</text>
+      {/* the assumed: another person */}
+      <g transform={`translate(${leftX} ${cy})`} opacity={p1}>
+        <circle cx={0} cy={0} r={100} fill="none" stroke={shade(COLORS.sky, -0.06)} strokeWidth={STROKE.lg} strokeDasharray="6 10" />
+        <circle cx={0} cy={-10} r={40} fill={COLORS.skin} {...lg} /><circle cx={-12} cy={-14} r={5} fill={COLORS.outline} /><circle cx={12} cy={-14} r={5} fill={COLORS.outline} /><path d="M -12 4 Q 0 12 12 4" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <text x={0} y={140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>"another person"</text>
+      </g>
+      <path d={`M ${cx - 36} ${cy} l 72 0`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={p2} />
+      <path d={`M ${cx + 30} ${cy - 10} l 12 10 l -12 10`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" opacity={p2} />
+      {/* the real: another self */}
+      <g transform={`translate(${rightX} ${cy})`} opacity={p2}>
+        <circle cx={0} cy={0} r={100} fill={shade(COLORS.yellow, 0.06)} {...xl} />
+        {Array.from({ length: 10 }).map((_, i) => { const a = (i / 10) * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 108} y1={Math.sin(a) * 108} x2={Math.cos(a) * 126} y2={Math.sin(a) * 126} stroke={COLORS.yellow} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.6} />; })}
+        <circle cx={0} cy={-10} r={40} fill={COLORS.yellowSoft} {...lg} /><path d="M -14 -16 Q -6 -22 2 -16 M 2 -16 Q 10 -22 18 -16" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><path d="M -16 2 Q 0 18 16 2" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <text x={0} y={140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.greenDark}>a lost 'self'</text>
+      </g>
+    </g>
+  );
+};
+
+/** affair-types: emotional vs physical vs both — different shapes of betrayal. */
+const AffairTypes: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.5; const R = 110;
+  const p = springIn(frame, 20);
+  return (
+    <g>
+      <text x={cx} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>it isn't only physical</text>
+      <g opacity={p}>
+        <circle cx={cx - 70} cy={cy} r={R} fill={COLORS.pink} opacity={0.4} {...lg} />
+        <circle cx={cx + 70} cy={cy} r={R} fill={COLORS.sky} opacity={0.4} {...lg} />
+        <text x={cx - 120} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>emotional</text>
+        <text x={cx + 120} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>physical</text>
+        <text x={cx} y={cy - 4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>both</text>
+        <text x={cx} y={cy + 20} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={13} fill={COLORS.red}>deepest</text>
+      </g>
+      <text x={cx} y={cy + 180} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={18} fill={COLORS.outline}>many find the emotional betrayal hurts most</text>
+    </g>
+  );
+};
+
+/** betrayal-paths: after discovery, two honest roads — rebuild, or part. */
+const BetrayalPaths: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const topY = CANVAS.height * 0.3; const forkY = CANVAS.height * 0.44;
+  const p1 = springIn(frame - 10, 14); const p2 = springIn(frame - 20, 14);
+  return (
+    <g>
+      <text x={cx} y={110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>after the break, two honest roads</text>
+      {/* shattered heart at the fork */}
+      <g transform={`translate(${cx} ${forkY})`}><path d="M 0 24 q -36 -26 -36 -46 q 0 -16 18 -16 q 12 0 18 14 q 6 -14 18 -14 q 18 0 18 16 q 0 20 -36 46 Z" fill={COLORS.red} {...xl} transform="translate(0 -4)" /><path d="M 0 -38 l -6 20 l 8 8 l -6 18" fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+      {/* two branches */}
+      <path d={`M ${cx} ${forkY + 30} Q ${cx - 180} ${forkY + 120} ${cx - 260} ${forkY + 220}`} fill="none" stroke={COLORS.greenTeal} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={p1} />
+      <path d={`M ${cx} ${forkY + 30} Q ${cx + 180} ${forkY + 120} ${cx + 260} ${forkY + 220}`} fill="none" stroke={shade(COLORS.sky, -0.04)} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={p2} />
+      <g transform={`translate(${cx - 260} ${forkY + 250})`} opacity={p1}><rect x={-130} y={-40} width={260} height={80} rx={16} fill={shade(COLORS.greenTeal, 0.08)} {...lg} /><text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>rebuild</text><text x={0} y={24} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>repair + transparency</text></g>
+      <g transform={`translate(${cx + 260} ${forkY + 250})`} opacity={p2}><rect x={-130} y={-40} width={260} height={80} rx={16} fill={shade(COLORS.sky, 0.06)} {...lg} /><text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>part ways</text><text x={0} y={24} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>no shame either way</text></g>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices' | 'forgiveness-myths' | 'grudge-cost' | 'grievance-loop' | 'reach-model' | 'comparison-directions' | 'highlight-vs-real' | 'unfair-match' | 'comparison-toolkit' | 'action-first-loop' | 'motivation-types' | 'three-fuels' | 'motivation-toolkit' | 'record-vs-rebuild' | 'recall-rewrite-loop' | 'confidence-accuracy' | 'gist-not-pixels' | 'obedience-curve' | 'conformity-rate' | 'bystander-curve' | 'experiment-lessons' | 'fog-sources' | 'sleep-clarity-curve' | 'switching-cost' | 'fog-lifters' | 'lie-frequency' | 'lie-motives' | 'lie-spectrum' | 'cover-up-cascade' | 'friendship-circles' | 'hours-to-close' | 'friend-roles' | 'few-deep';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices' | 'forgiveness-myths' | 'grudge-cost' | 'grievance-loop' | 'reach-model' | 'comparison-directions' | 'highlight-vs-real' | 'unfair-match' | 'comparison-toolkit' | 'action-first-loop' | 'motivation-types' | 'three-fuels' | 'motivation-toolkit' | 'record-vs-rebuild' | 'recall-rewrite-loop' | 'confidence-accuracy' | 'gist-not-pixels' | 'obedience-curve' | 'conformity-rate' | 'bystander-curve' | 'experiment-lessons' | 'fog-sources' | 'sleep-clarity-curve' | 'switching-cost' | 'fog-lifters' | 'lie-frequency' | 'lie-motives' | 'lie-spectrum' | 'cover-up-cascade' | 'friendship-circles' | 'hours-to-close' | 'friend-roles' | 'few-deep' | 'cheating-motives' | 'another-self' | 'affair-types' | 'betrayal-paths';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -6495,6 +6579,10 @@ export const DiagramCard: React.FC<{
     'hours-to-close': COLORS.greenTeal,
     'friend-roles': COLORS.yellow,
     'few-deep': COLORS.pink,
+    'cheating-motives': COLORS.lavender,
+    'another-self': COLORS.yellow,
+    'affair-types': COLORS.pink,
+    'betrayal-paths': COLORS.sky,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -6767,6 +6855,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'hours-to-close' && <HoursToClose />}
         {diagram === 'friend-roles' && <FriendRoles />}
         {diagram === 'few-deep' && <FewDeep />}
+        {diagram === 'cheating-motives' && <CheatingMotives />}
+        {diagram === 'another-self' && <AnotherSelf />}
+        {diagram === 'affair-types' && <AffairTypes />}
+        {diagram === 'betrayal-paths' && <BetrayalPaths />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

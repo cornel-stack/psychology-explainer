@@ -1,0 +1,244 @@
+{
+  "slug": "people-who-cheat",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 7,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        32
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "affair-types",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "another-self",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "betrayal-paths",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "cheating-motives",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        20,
+        21
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        18,
+        26
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "feel-desired",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "lost-self",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "many-reasons",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "novelty-thrill",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "repair-or-part",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "shattered-trust",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "slippery-slope",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "the-fork",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "unmet-need",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "wandering-eye",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "couples-therapy",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        26,
+        32
+      ]
+    },
+    {
+      "name": "distant-bedroom",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "secret-glow-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    }
+  ]
+}

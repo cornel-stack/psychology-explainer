@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'people-who-cheat': {
+    A: { lines: ['THE', 'PSYCHOLOGY OF', 'PEOPLE WHO CHEAT'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'wandering-eye' },
+    B: { lines: ['WHY HAPPY', 'PEOPLE', 'CHEAT TOO'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'lost-self' },
+    C: { lines: ["IT'S NEVER", 'JUST ONE', 'REASON'], accent: COLORS.sky, bg: COLORS.navy, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'many-reasons' },
+  },
   'types-of-friend': {
     A: { lines: ['EVERY TYPE', 'OF FRIEND', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '10', prop: 'ride-or-die' },
     B: { lines: ['WHICH FRIEND', 'ARE YOU IN', 'YOUR GROUP?'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'excited', textColor: COLORS.white, badge: '?', prop: 'cheerleader' },

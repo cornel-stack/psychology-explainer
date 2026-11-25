@@ -277,6 +277,10 @@ const NEW_ASSETS = new Set([
   'friends-hangout', 'rooftop-hang', 'campfire-circle',
   'ride-or-die', 'cheerleader', 'mentor-guide', 'old-friend', 'work-friend', 'fair-weather', 'mirror-friend', 'acquaintance-wave', 'adventure-buddy', 'drainer-friend',
   'friendship-circles', 'hours-to-close', 'friend-roles', 'few-deep',
+  // people-who-cheat (all new)
+  'distant-bedroom', 'secret-glow-room', 'couples-therapy',
+  'wandering-eye', 'many-reasons', 'lost-self', 'unmet-need', 'novelty-thrill', 'feel-desired', 'slippery-slope', 'shattered-trust', 'the-fork', 'repair-or-part',
+  'cheating-motives', 'another-self', 'affair-types', 'betrayal-paths',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

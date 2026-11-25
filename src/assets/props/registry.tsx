@@ -71,6 +71,7 @@ import * as Ex from './experiments';
 import * as Bf from './brain-fog';
 import * as Li from './lies';
 import * as Fr2 from './friends-types';
+import * as Che from './cheating';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -847,6 +848,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'acquaintance-wave': Fr2.AcquaintanceWave,
   'adventure-buddy': Fr2.AdventureBuddy,
   'drainer-friend': Fr2.DrainerFriend,
+  'wandering-eye': Che.WanderingEye,
+  'many-reasons': Che.ManyReasons,
+  'lost-self': Che.LostSelf,
+  'unmet-need': Che.UnmetNeed,
+  'novelty-thrill': Che.NoveltyThrill,
+  'feel-desired': Che.FeelDesired,
+  'slippery-slope': Che.SlipperySlope,
+  'shattered-trust': Che.ShatteredTrust,
+  'the-fork': Che.TheFork,
+  'repair-or-part': Che.RepairOrPart,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

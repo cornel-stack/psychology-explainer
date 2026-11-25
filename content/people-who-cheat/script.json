@@ -1,0 +1,333 @@
+{
+  "title": "The Psychology of People Who Cheat",
+  "slug": "people-who-cheat",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Few things break a person like the discovery of betrayal. The message you weren't meant to see. The story that doesn't add up. And then the question that loops endlessly in your head at 3am: why? Why would someone do this? The answer most people reach for is simple: because they're a bad person, or because the relationship was broken.",
+          "scene": "story",
+          "room": "distant-bedroom",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "people who cheat",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Let's be absolutely clear from the start. To understand why people cheat is not to excuse it. Cheating is a choice, and a betrayal, and the responsibility always lies with the person who makes that choice. But if we want to understand it, to prevent it, or to heal from it, we have to look honestly at what's really going on underneath.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, with care, let's explore it. Why the one-reason story is a myth, the surprising thing people are often really chasing, the tangle of motives behind it, the devastating cost to the betrayed, and whether a relationship can ever truly survive it. This one is tender. Let's handle it gently.",
+          "scene": "explainer",
+          "prop": "wandering-eye",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Myth of One Reason",
+      "beats": [
+        {
+          "vo": "The first and most comforting myth is that cheating has one clear cause. We desperately want it to, because a single reason feels manageable. If they cheated because the relationship was bad, we can fix the relationship. If they cheated because they're simply a bad person, we can walk away clean.",
+          "scene": "diagramCard",
+          "diagram": "cheating-motives",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE MYTH OF ONE REASON",
+          "subtitle": "it's never that simple"
+        },
+        {
+          "vo": "But the uncomfortable truth, found again and again by researchers and therapists, is that infidelity almost never has just one reason. It's usually a tangle of many, all knotted together. And here's the fact that shocks people most: people in genuinely happy relationships cheat too.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Let that land, because it overturns everything. A good, loving relationship is not a cast-iron guarantee against cheating, and a difficult one is not the whole explanation. If happy people can betray, then the cause can't simply live in the quality of the relationship. Often, it lives somewhere deeper, and more personal, than that.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This matters enormously for the betrayed, who so often torture themselves with, what was wrong with me? What didn't I give them? But the painful, liberating truth is that an affair is frequently not about the person who was betrayed at all. It's about something happening deep inside the person who cheated.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Seeking a Self",
+      "beats": [
+        {
+          "vo": "Which brings us to a profound reframe from the therapist Esther Perel, who has sat with thousands of couples in the wreckage of affairs. Her insight is this: very often, an affair is less about seeking another person, and more about seeking another self.",
+          "scene": "diagramCard",
+          "diagram": "another-self",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "SEEKING A SELF",
+          "subtitle": "Perel's reframe"
+        },
+        {
+          "vo": "People don't always stray because they want to leave the person they're with. Sometimes, they're trying to escape the person they themselves have become. The affair isn't really about the other man or woman. It's about who they get to be in that affair: desired again, alive again, young again, free.",
+          "scene": "explainer",
+          "prop": "lost-self",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It can be a reaction to routine, to feeling invisible, to a quiet crisis of growing older, a grab at a lost version of themselves they're terrified is gone forever. This doesn't make it okay. But it reframes it from a simple act of lust into something sadder and more human: a person, often lost.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Web of Motives",
+      "beats": [
+        {
+          "vo": "So let's untangle that web of motives, because naming them is how we understand. The first is simple, unmet needs. Feeling emotionally neglected, unseen, unappreciated, or a deep mismatch of intimacy. When a real need goes hungry for long enough, the temptation to feed it elsewhere grows.",
+          "scene": "explainer",
+          "prop": "unmet-need",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE WEB OF MOTIVES",
+          "subtitle": "the tangle of reasons"
+        },
+        {
+          "vo": "Closely tied to this is validation. The intoxicating hit of feeling desired and attractive again, especially for someone whose self-esteem is shaky. An affair can feel less like being unfaithful to a partner, and more like a desperate attempt to feel wanted, to prove to themselves that they still matter, that they're still enough.",
+          "scene": "explainer",
+          "prop": "feel-desired",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Then there's novelty, the pure thrill of the new. Long-term love is warm and deep, but it trades the electric excitement of the unknown for comfort and security. For some, the rush of secrecy and newness becomes a drug they chase, mistaking that spike of excitement for something real.",
+          "scene": "explainer",
+          "prop": "novelty-thrill",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And sometimes the motives are darker or more mundane. Revenge, to wound a partner back for a hurt of their own. An exit, unconsciously blowing up a relationship they don't have the courage to end honestly. Or simply opportunity, a moment of weakness, lowered guard, and a chance that, for them, just happened to be there.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Notice how few of these are really about the betrayed partner being inadequate. They're about the cheater's own hunger, fear, boredom, or weakness. Relationships do have real problems worth fixing. But an affair is a terrible, destructive answer to those problems, chosen by one person, that solves nothing and breaks everything.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Attachment and Escape",
+      "beats": [
+        {
+          "vo": "Our deeper wiring plays a role too. People with an avoidant attachment style, who feel smothered by closeness, may cheat to create distance, to sabotage an intimacy that scares them. And people with an anxious style, terrified of abandonment, may seek reassurance and a backup elsewhere when they feel their relationship wobble.",
+          "scene": "explainer",
+          "prop": "many-reasons",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "ATTACHMENT AND ESCAPE",
+          "subtitle": "our deeper wiring"
+        },
+        {
+          "vo": "And we should be honest that it isn't only about physical affairs. An emotional affair, where someone pours their secrets, their intimacy, their emotional energy into another person behind their partner's back, can be every bit as devastating. In fact, many people say the emotional betrayal.",
+          "scene": "diagramCard",
+          "diagram": "affair-types",
+          "emotion": "serious-expert",
+          "withMascot": true
+        }
+      ]
+    },
+    {
+      "name": "The Slippery Slope",
+      "beats": [
+        {
+          "vo": "Here's something crucial that surprises people: most affairs are not coldly planned. They almost never begin with a decision to cheat. They begin with a slippery slope of small, deniable steps.",
+          "scene": "explainer",
+          "prop": "slippery-slope",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE SLIPPERY SLOPE",
+          "subtitle": "how it 'just happens'"
+        },
+        {
+          "vo": "It starts with a secret text. A conversation that goes a little too deep. A we're just friends that everyone involved knows isn't quite true. Each step is tiny, easy to rationalise, easy to hide, even from themselves. People talk about being in an affair fog, a state of denial where they tell themselves it isn't really happening.",
+          "scene": "story",
+          "room": "secret-glow-room",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "suit",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "This is why the single most important defence against cheating isn't grand willpower in the big moment. It's guarding the small boundaries, long before the big moment ever arrives. The secret you're keeping from your partner, however innocent it feels, is very often the first quiet step onto the slope.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Cost to the Betrayed",
+      "beats": [
+        {
+          "vo": "Now we have to turn, with real tenderness, to the person on the other side. Because for the one who is betrayed, the discovery can be genuinely traumatic.",
+          "scene": "explainer",
+          "prop": "shattered-trust",
+          "emotion": "tearful",
+          "chapterStart": true,
+          "title": "THE COST TO THE BETRAYED",
+          "subtitle": "the deepest wound"
+        },
+        {
+          "vo": "Therapists often treat the aftermath of an affair as a form of relational trauma, with symptoms that look remarkably like PTSD. Obsessive, intrusive thoughts. Replaying every memory, now poisoned. And a shattering of your very sense of reality, because the person you trusted most has been living a story you couldn't see.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "So if that is you, please hear this clearly. The choice to cheat was not your fault. Nothing you did or didn't do forced another adult to deceive you. The flaws in a relationship are shared, but the decision to betray belongs entirely to the person who made it. You are allowed to grieve, to rage, and to take all the time you need.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Understanding Is Not Excusing",
+      "beats": [
+        {
+          "vo": "And this is the tightrope we've been walking the whole time, so let's name it directly. Understanding why someone cheated is not the same as excusing it.",
+          "scene": "explainer",
+          "prop": "the-fork",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "UNDERSTANDING ≠ EXCUSING",
+          "subtitle": "both can be true"
+        },
+        {
+          "vo": "Two things can be true at once. The behaviour can be understandable in human terms, a lost person chasing a feeling, and it can still be a genuine wrong, a real betrayal, and entirely their responsibility. Understanding gives you the full picture. It does not hand anyone a free pass. Compassion and accountability are not opposites.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Can It Survive?",
+      "beats": [
+        {
+          "vo": "So the final, aching question: can a relationship ever survive this? And the honest, perhaps surprising answer is: sometimes, yes.",
+          "scene": "diagramCard",
+          "diagram": "betrayal-paths",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "CAN IT SURVIVE?",
+          "subtitle": "two honest roads"
+        },
+        {
+          "vo": "It is brutally hard, and it is never guaranteed. But with genuine remorse, with the affair fully ended, with total transparency, and usually with professional help, some couples do rebuild. And a minority, having been forced to confront everything that was buried.",
+          "scene": "story",
+          "room": "couples-therapy",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "tee",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "But many relationships don't survive, and leaving can be the healthiest, bravest choice of all. There is no shame in rebuilding, and there is no shame in walking away. The only wrong answer is staying trapped in endless pain with no honesty and no repair. You get to decide which road is yours.",
+          "scene": "explainer",
+          "prop": "repair-or-part",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "If a couple does try to rebuild, the burden sits mostly on the one who cheated. It means radical honesty, patience with a partner's pain, answering the same hard questions again and again without defensiveness, and rebuilding trust one kept promise at a time. It is slow, humbling work, and it only succeeds when the remorse is real.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "So where does this leave us? With a little less judgement, and a little more understanding, on all sides. Cheating is rarely the simple act of a cartoon villain. It's usually a very human failure, born of unmet needs, fear, lost identity, and a thousand small, cowardly steps nobody meant to take.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE HONEST TAKEAWAY",
+          "subtitle": "with compassion"
+        },
+        {
+          "vo": "Seeing it this clearly isn't about going soft on betrayal. It's about taking the mystery and the self-blame out of it. The betrayed can finally stop asking what was wrong with them, because the answer was never truly about them. And the rest of us can learn what actually keeps love safe: not suspicion, but honesty, attention, and courage.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And the quiet lesson for every relationship is this. Affairs grow in neglect and silence. So turn toward the person you love, not away. Name your needs out loud instead of burying them. Keep choosing each other in the small, ordinary moments. And if you're ever tempted, find the courage to speak it, not to act it out.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Whatever side of this you've known, please be gentle with yourself. This is one of the hardest, most tangled parts of being human, and there is no shame in needing real support to find your way through it. Thank you for watching, and take very good care of your heart.",
+          "scene": "story",
+          "room": "couples-therapy",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "wave",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -217,7 +217,10 @@ export type RoomName =
   | 'web-room'
   | 'friends-hangout'
   | 'rooftop-hang'
-  | 'campfire-circle';
+  | 'campfire-circle'
+  | 'distant-bedroom'
+  | 'secret-glow-room'
+  | 'couples-therapy';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5583,6 +5586,75 @@ export const CampfireCircle: React.FC = () => (
   </g>
 );
 
+/** Distant bedroom: a dim bedroom where a couple lies back-to-back with a cold gap
+ *  between them — the quiet, emotional distance where affairs grow. */
+export const DistantBedroom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.navy, 0.06)} floor={shade(COLORS.woodDark, -0.02)} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.navy, 0.03)} opacity={0.5} />)}
+    {/* a dim window with a moon */}
+    <g transform="translate(1560 300)"><rect x={-130} y={-140} width={260} height={280} rx={12} fill={shade(COLORS.purpleDeep, 0.1)} {...xl} /><circle cx={60} cy={-60} r={30} fill={COLORS.yellowSoft} opacity={0.6} /><circle cx={48} cy={-68} r={24} fill={shade(COLORS.purpleDeep, 0.1)} />{[0, 1, 2].map((i) => <circle key={i} cx={-50 + i * 50} cy={-90} r={2} fill={COLORS.white} opacity={0.6} />)}<line x1={0} y1={-140} x2={0} y2={140} stroke={shade(COLORS.purpleDeep, 0.2)} strokeWidth={STROKE.lg} /></g>
+    {/* two bedside lamps, one on, one off */}
+    {[[360, true], [1200, false]].map(([x, on], i) => <g key={i} transform={`translate(${x as number} 560)`}><rect x={-6} y={0} width={12} height={160} fill={COLORS.woodDark} /><path d="M -34 0 L 34 0 L 24 -48 L -24 -48 Z" fill={on ? COLORS.yellowSoft : shade(COLORS.navy, 0.12)} {...lg} />{on && <ellipse cx={0} cy={40} rx={90} ry={60} fill={COLORS.yellow} opacity={0.06} />}</g>)}
+    {/* the bed, two figures back-to-back with a gap */}
+    <g transform="translate(960 820)">
+      <rect x={-420} y={-30} width={840} height={130} rx={16} fill={COLORS.wood} {...xl} />
+      <rect x={-420} y={-130} width={110} height={110} rx={14} fill={COLORS.woodDark} {...lg} />
+      {/* blanket */}
+      <path d="M -360 10 Q 0 -30 360 10 L 360 100 L -360 100 Z" fill={shade(COLORS.navy, 0.1)} {...lg} />
+      {/* a cold gap line down the middle */}
+      <line x1={0} y1={-20} x2={0} y2={100} stroke={shade(COLORS.navy, -0.04)} strokeWidth={STROKE.sm} opacity={0.5} strokeDasharray="4 8" />
+      {/* two people turned away from each other */}
+      {[-180, 180].map((x, i) => <g key={i} transform={`translate(${x} -34) scale(${i ? -1 : 1} 1)`}><circle cx={0} cy={-6} r={30} fill={[COLORS.skin, shade(COLORS.skin, -0.04)][i]} {...lg} /><path d="M -30 -10 q 10 6 20 0" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} /><circle cx={-16} cy={-8} r={4} fill={COLORS.outline} /><path d="M -60 50 Q -64 -26 0 -26 Q 40 -26 40 50 Z" fill={shade(COLORS.navy, 0.14)} {...xl} /></g>)}
+    </g>
+  </g>
+);
+
+/** Secret glow room: a dark room at night where one figure's face is lit by a hidden
+ *  phone — the micro-betrayal, the secret text. */
+export const SecretGlowRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wallNight} floor={shade(COLORS.wallNight, 0.04)} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.wallNight, 0.03)} opacity={0.5} />)}
+    {/* faint room outlines barely visible in the dark */}
+    <g transform="translate(360 760)" opacity={0.3}><rect x={-80} y={-200} width={160} height={200} rx={8} fill="none" stroke={shade(COLORS.wallNight, 0.12)} strokeWidth={STROKE.lg} /></g>
+    <g transform="translate(1600 420)" opacity={0.25}><rect x={-100} y={-120} width={200} height={260} rx={10} fill={shade(COLORS.purpleDeep, 0.06)} {...lg} /></g>
+    {/* the figure, lit only by the phone */}
+    <g transform="translate(900 740)">
+      <ellipse cx={120} cy={120} rx={260} ry={180} fill={COLORS.sky} opacity={0.08} />
+      <circle cx={0} cy={0} r={46} fill={shade(COLORS.skin, -0.06)} {...xl} />
+      {/* phone-lit side of face brighter */}
+      <path d="M 0 -46 A 46 46 0 0 1 0 46 Z" fill={shade(COLORS.sky, 0.14)} opacity={0.4} />
+      <circle cx={-14} cy={-6} r={4} fill={COLORS.outline} /><circle cx={14} cy={-6} r={4} fill={COLORS.outline} />
+      <path d="M -10 16 L 10 16" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+      <path d="M -50 90 Q -54 2 0 2 Q 54 2 50 90 Z" fill={shade(COLORS.navy, 0.12)} {...xl} />
+      {/* the glowing phone + a secret heart on screen */}
+      <g transform="translate(90 60)"><rect x={-34} y={-54} width={68} height={108} rx={10} fill={COLORS.sky} opacity={0.5} {...lg} /><rect x={-26} y={-44} width={52} height={88} rx={6} fill={shade(COLORS.sky, 0.14)} />{Array.from({ length: 10 }).map((_, i) => <line key={i} x1={-20 + Math.cos(i) * 2} y1={-40} x2={-26 - i * 2} y2={-48 - i * 3} stroke={COLORS.sky} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.3} />)}<path d="M 0 16 q -10 -10 -10 -16 q 0 -5 5 -5 q 3 0 3 3 q 0 -3 3 -3 q 5 0 5 5 q 0 6 -9 16 Z" fill={COLORS.pink} transform="translate(0 -6)" /></g>
+    </g>
+  </g>
+);
+
+/** Couples therapy: a warm, safe therapy room — a two-seat sofa facing an armchair, a
+ *  box of tissues, a plant and soft light; the place of repair. */
+export const CouplesTherapy: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.06)} floor={COLORS.wood} floorY={850} stripe={false} />
+    {Array.from({ length: 13 }).map((_, i) => <rect key={i} x={i * 150} y={0} width={70} height={850} fill={shade(COLORS.greenTeal, 0.0)} opacity={0.4} />)}
+    {/* a calm abstract wall art */}
+    <g transform="translate(400 300)"><rect x={-80} y={-60} width={160} height={120} rx={8} fill={COLORS.white} {...xl} />{[0, 1, 2].map((i) => <path key={i} d={`M -60 ${20 - i * 20} Q 0 ${-20 - i * 20} 60 ${20 - i * 20}`} fill="none" stroke={[COLORS.sky, COLORS.pink, COLORS.greenTeal][i]} strokeWidth={STROKE.lg} opacity={0.6} />)}</g>
+    {/* window with soft daylight */}
+    <g transform="translate(1560 330)"><rect x={-120} y={-140} width={240} height={280} rx={12} fill={shade(COLORS.sky, 0.12)} {...xl} /><circle cx={60} cy={-70} r={34} fill={COLORS.white} opacity={0.5} /><line x1={0} y1={-140} x2={0} y2={140} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /><line x1={-120} y1={0} x2={120} y2={0} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /></g>
+    {/* the therapist's armchair (facing the couple) */}
+    <g transform="translate(1180 820)"><rect x={-90} y={-50} width={180} height={150} rx={24} fill={COLORS.lavender} {...xl} /><rect x={-90} y={-120} width={60} height={90} rx={18} fill={shade(COLORS.lavender, 0.06)} {...lg} /><rect x={30} y={-120} width={60} height={90} rx={18} fill={shade(COLORS.lavender, 0.06)} {...lg} /></g>
+    {/* the couple's two-seat sofa */}
+    <g transform="translate(620 830)"><rect x={-180} y={-46} width={360} height={150} rx={24} fill={COLORS.pink} {...xl} /><rect x={-180} y={-116} width={70} height={90} rx={18} fill={shade(COLORS.pink, 0.06)} {...lg} /><rect x={110} y={-116} width={70} height={90} rx={18} fill={shade(COLORS.pink, 0.06)} {...lg} /><line x1={0} y1={-40} x2={0} y2={60} stroke={shade(COLORS.pink, -0.04)} strokeWidth={STROKE.sm} /><rect x={-70} y={-40} width={66} height={66} rx={12} fill={shade(COLORS.pink, 0.1)} {...lg} /><rect x={4} y={-40} width={66} height={66} rx={12} fill={shade(COLORS.pink, 0.1)} {...lg} /></g>
+    {/* a small table with tissues between them */}
+    <g transform="translate(920 900)"><rect x={-40} y={0} width={80} height={44} rx={8} fill={COLORS.woodDark} {...xl} /><rect x={-26} y={-26} width={52} height={30} rx={6} fill={COLORS.white} {...lg} /><path d="M -6 -26 q 6 -10 12 0" fill="none" stroke={COLORS.pink} strokeWidth={STROKE.sm} /></g>
+    {/* plant */}
+    <g transform="translate(300 760)"><rect x={-32} y={0} width={64} height={96} rx={10} fill={COLORS.greenTeal} {...xl} /><path d="M 0 0 q -44 -54 -20 -124 M 0 0 q 0 -78 0 -144 M 0 0 q 44 -54 20 -124" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-20} cy={-124} r={15} fill={COLORS.greenLeaf} /><circle cx={0} cy={-144} r={17} fill={COLORS.greenLeaf} /><circle cx={20} cy={-124} r={15} fill={COLORS.greenLeaf} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5785,6 +5857,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'friends-hangout': FriendsHangout,
   'rooftop-hang': RooftopHang,
   'campfire-circle': CampfireCircle,
+  'distant-bedroom': DistantBedroom,
+  'secret-glow-room': SecretGlowRoom,
+  'couples-therapy': CouplesTherapy,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
