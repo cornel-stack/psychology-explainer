@@ -115,7 +115,10 @@ export type RoomName =
   | 'dawn-meadow'
   | 'chasing-horizon'
   | 'stuff-store'
-  | 'warm-gathering';
+  | 'warm-gathering'
+  | 'night-bedroom-3am'
+  | 'mental-cinema'
+  | 'open-doorway';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3141,6 +3144,99 @@ export const WarmGathering: React.FC = () => (
   </g>
 );
 
+/** Night bedroom, 3 AM: dark room lit only by a phone's glow and a cold moon — the
+ *  place the loop runs loudest. */
+export const NightBedroom3am: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wallNightDark} floor={shade(COLORS.purpleDeep, 0.2)} floorY={840} stripe={false} />
+    {/* faint wall panelling so the dark wall isn't one flat field */}
+    {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={i * 200} y={0} width={100} height={840} fill={shade(COLORS.wallNightDark, 0.08)} opacity={0.7} />)}
+    {/* floorboards */}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={840} x2={i * 180 - 140} y2={1080} stroke={shade(COLORS.purpleDeep, 0.3)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    {/* moon window, cold light */}
+    <g transform="translate(300 300)"><rect x={-150} y={-180} width={300} height={360} rx={16} fill={shade(COLORS.wallNight, 0.22)} {...xl} /><circle cx={30} cy={-40} r={70} fill={COLORS.lavender} opacity={0.9} {...sm} /><circle cx={60} cy={-60} r={56} fill={shade(COLORS.wallNight, 0.22)} /><line x1={-150} y1={0} x2={150} y2={0} stroke={shade(COLORS.wallNight, 0.3)} strokeWidth={STROKE.lg} /><line x1={0} y1={-180} x2={0} y2={180} stroke={shade(COLORS.wallNight, 0.3)} strokeWidth={STROKE.lg} />{[...Array(5)].map((_, i) => <circle key={i} cx={-110 + i * 50} cy={120 - (i % 2) * 40} r={3} fill={COLORS.white} opacity={0.7} />)}</g>
+    {/* two framed photos on the wall */}
+    {[760, 920].map((x, i) => <g key={i} transform={`translate(${x} 240)`}><rect x={-46} y={-56} width={92} height={112} rx={8} fill={shade(COLORS.wallNight, 0.18)} {...lg} /><circle cx={0} cy={-10} r={20} fill={[COLORS.pink, COLORS.lavender][i]} opacity={0.8} /><rect x={-26} y={16} width={52} height={10} rx={5} fill={COLORS.lavenderDark} opacity={0.7} /></g>)}
+    {/* bed */}
+    <g transform="translate(1360 740)"><rect x={-320} y={-30} width={640} height={200} rx={20} fill={COLORS.wallNight} {...xl} /><rect x={-320} y={-90} width={200} height={120} rx={18} fill={shade(COLORS.wallNight, 0.14)} {...lg} /><rect x={-300} y={-120} width={120} height={70} rx={16} fill={COLORS.lavender} {...lg} /><path d="M -120 -20 Q 160 -70 320 10 L 320 90 L -120 90 Z" fill={shade(COLORS.purpleDeep, 0.1)} {...lg} /></g>
+    {/* nightstand with glowing phone + 3:00 clock */}
+    <g transform="translate(900 820)"><rect x={-70} y={0} width={140} height={160} rx={10} fill={COLORS.woodDark} {...xl} /><rect x={-70} y={-16} width={140} height={22} rx={6} fill={shade(COLORS.wood, 0.1)} {...lg} />
+      <ellipse cx={0} cy={-30} rx={74} ry={30} fill={COLORS.sky} opacity={0.4} />
+      <g transform="translate(-6 -40) rotate(-10)"><rect x={-20} y={-34} width={40} height={68} rx={7} fill={COLORS.wallNightDark} {...lg} /><rect x={-15} y={-27} width={30} height={54} rx={3} fill={COLORS.sky} /></g>
+      <g transform="translate(40 40)"><rect x={-28} y={-18} width={56} height={34} rx={5} fill={COLORS.wallNightDark} {...sm} /><text x={0} y={7} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={22} fill={COLORS.red}>3:00</text></g>
+    </g>
+    {/* a worry-loop drifting over the bed */}
+    <g transform="translate(1360 470)" opacity={0.6}><ellipse cx={0} cy={0} rx={70} ry={46} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.lg} strokeDasharray="4 18" /><circle cx={0} cy={0} r={16} fill={COLORS.pink} opacity={0.7} /></g>
+    {/* rug */}
+    <ellipse cx={720} cy={1000} rx={300} ry={56} fill={shade(COLORS.purpleDeep, 0.26)} opacity={0.8} />
+  </g>
+);
+
+/** Mental cinema: a private screening room replaying the golden highlight reel of
+ *  someone, to an audience of one. */
+export const MentalCinema: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.08)} floor={shade(COLORS.purpleDeep, 0.24)} floorY={880} stripe={false} />
+    {/* side wall curtains */}
+    {[80, 1840].map((x, i) => <g key={i} transform={`translate(${x} 0)`}>{Array.from({ length: 4 }).map((_, j) => <path key={j} d={`M ${(i ? -1 : 1) * j * 44} 0 q ${(i ? -1 : 1) * 30} 440 0 880 l ${(i ? -1 : 1) * 44} 0 q ${(i ? 1 : -1) * 30} -440 0 -880 Z`} fill={shade(COLORS.red, i % 2 ? 0.12 : 0)} opacity={0.9} />)}</g>)}
+    {/* ceiling spotlights */}
+    {[560, 960, 1360].map((x, i) => <g key={i}><circle cx={x} cy={40} r={14} fill={COLORS.yellowSoft} {...sm} /><path d={`M ${x} 54 L ${x - 60} 300 L ${x + 60} 300 Z`} fill={COLORS.yellowSoft} opacity={0.12} /></g>)}
+    {/* the screen with a glowing memory */}
+    <g transform="translate(960 360)">
+      <rect x={-460} y={-230} width={920} height={460} rx={16} fill={COLORS.outline} {...xl} />
+      <rect x={-440} y={-210} width={880} height={420} rx={10} fill={shade(COLORS.yellow, 0.06)} />
+      {/* an idealized golden memory: two figures under a sun */}
+      <circle cx={-180} cy={-70} r={70} fill={COLORS.yellow} opacity={0.8} />
+      {[-40, 140].map((x, i) => <g key={i} transform={`translate(${x} 60)`}><circle cx={0} cy={-60} r={52} fill={[COLORS.pink, COLORS.lavender][i]} {...lg} /><path d={`M -64 150 Q 0 -10 64 150 Z`} fill={shade([COLORS.pink, COLORS.lavender][i], 0.1)} {...lg} /></g>)}
+      <path d="M -440 150 Q -200 90 40 150 Q 280 210 440 140 L 440 210 L -440 210 Z" fill={shade(COLORS.greenLeaf, 0.1)} opacity={0.7} />
+      <text x={0} y={-150} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.outline} opacity={0.5}>REPLAY</text>
+    </g>
+    {/* projector beam from the back */}
+    <path d="M 960 820 L 540 360 L 1380 360 Z" fill={COLORS.yellowSoft} opacity={0.1} />
+    {/* rows of empty seats + one lone viewer */}
+    {[720, 840].map((y, r) => (
+      <g key={r}>
+        {[460, 640, 820, 1100, 1280, 1460].map((x, i) => (
+          <rect key={i} x={x - 44} y={y - r * 10} width={88} height={70 + r * 10} rx={12} fill={shade(COLORS.red, r % 2 === 1 ? 0.18 : 0.1)} {...lg} />
+        ))}
+      </g>
+    ))}
+    <g transform="translate(960 790)"><circle cx={0} cy={-30} r={40} fill={COLORS.white} {...xl} /><circle cx={-13} cy={-34} r={6} fill={COLORS.outline} /><circle cx={13} cy={-34} r={6} fill={COLORS.outline} /><path d="M -12 -18 Q 0 -10 12 -18" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+  </g>
+);
+
+/** Open doorway: a plain room with a door thrown open onto warm light and a path —
+ *  the choice to walk forward and let the loop close. */
+export const OpenDoorway: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={COLORS.wood} floorY={820} stripe={false} />
+    {/* wall panels / wainscoting */}
+    <rect x={0} y={600} width={CANVAS.width} height={220} fill={shade(COLORS.lavender, 0.08)} />
+    <line x1={0} y1={600} x2={CANVAS.width} y2={600} stroke={shade(COLORS.lavender, 0.16)} strokeWidth={STROKE.lg} />
+    {Array.from({ length: 12 }).map((_, i) => <line key={i} x1={i * 170} y1={0} x2={i * 170} y2={600} stroke={shade(COLORS.lavender, 0.08)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    {/* floorboards */}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={820} x2={i * 180 - 120} y2={1080} stroke={shade(COLORS.wood, 0.12)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    {/* the open door spilling warm light */}
+    <g transform="translate(960 420)">
+      <rect x={-200} y={-280} width={400} height={700} rx={10} fill={COLORS.woodDark} {...xl} />
+      {/* doorway opening — bright path beyond */}
+      <path d="M -150 -240 L 150 -240 L 150 400 L -150 400 Z" fill={COLORS.yellowSoft} />
+      <path d="M -150 -240 L 150 -240 L 110 400 L -110 400 Z" fill={COLORS.yellow} opacity={0.5} />
+      <circle cx={0} cy={-120} r={54} fill={COLORS.white} opacity={0.7} />
+      {/* a little path leading out, plus distant hills */}
+      <path d="M -40 400 L 40 400 L 70 -40 L -70 -40 Z" fill={shade(COLORS.wood, 0.1)} opacity={0.7} />
+      <path d="M -150 20 Q 0 -30 150 20 L 150 80 L -150 80 Z" fill={shade(COLORS.greenLeaf, 0.1)} opacity={0.6} />
+      {/* the open door leaf, swung toward us */}
+      <g transform="translate(-200 0)"><rect x={-180} y={-280} width={180} height={700} rx={8} fill={shade(COLORS.wood, 0.08)} {...xl} /><rect x={-150} y={-230} width={120} height={200} rx={8} fill={shade(COLORS.wood, -0.04)} {...lg} /><rect x={-150} y={0} width={120} height={200} rx={8} fill={shade(COLORS.wood, -0.04)} {...lg} /><circle cx={-24} cy={100} r={12} fill={COLORS.yellowDark} {...sm} /></g>
+    </g>
+    {/* a packed box being left behind, and a potted plant: moving on */}
+    <g transform="translate(320 880)"><rect x={-80} y={-70} width={160} height={150} rx={8} fill={COLORS.woodDark} {...xl} /><path d="M -80 -70 L 0 -40 L 80 -70" fill="none" stroke={shade(COLORS.wood, 0.1)} strokeWidth={STROKE.lg} strokeLinecap="round" /><rect x={-24} y={-70} width={48} height={150} fill={shade(COLORS.wood, 0.08)} opacity={0.6} /></g>
+    <g transform="translate(1600 840)"><rect x={-44} y={0} width={88} height={120} rx={10} fill={COLORS.red} {...xl} /><path d="M 0 0 Q -60 -90 -30 -140 M 0 0 Q 0 -110 0 -150 M 0 0 Q 60 -90 34 -136" fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.xl} strokeLinecap="round" /><circle cx={-30} cy={-140} r={16} fill={COLORS.greenLeaf} /><circle cx={0} cy={-150} r={18} fill={COLORS.greenLeaf} /><circle cx={34} cy={-136} r={16} fill={COLORS.greenLeaf} /></g>
+    {/* framed picture, turned to face the wall — set aside */}
+    <g transform="translate(1680 430) rotate(6)"><rect x={-54} y={-70} width={108} height={140} rx={8} fill={COLORS.woodDark} {...lg} /><rect x={-40} y={-56} width={80} height={112} rx={4} fill={shade(COLORS.lavender, 0.12)} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3241,6 +3337,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'chasing-horizon': ChasingHorizon,
   'stuff-store': StuffStore,
   'warm-gathering': WarmGathering,
+  'night-bedroom-3am': NightBedroom3am,
+  'mental-cinema': MentalCinema,
+  'open-doorway': OpenDoorway,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

@@ -1,0 +1,124 @@
+{
+  "title": "Why You Can't Stop Thinking About Someone",
+  "slug": "cant-stop-thinking",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "It's three in the morning, and your brain has decided, once again, that now is the perfect time to think about them. You're not trying to. You'd give anything to stop. But there they are, looping through your mind, the same memories, the same what-ifs, playing over and over like a song you can't switch off.", "scene": "story", "room": "night-bedroom-3am", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "WHY YOU CAN'T STOP", "subtitle": "thinking about someone",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 1360, "y": 700, "scale": 1.0, "talking": true } ] },
+        { "vo": "Maybe it's a crush you barely know. Maybe an ex. Maybe someone who left, or someone who ran hot and cold until you couldn't tell where you stood. Whoever they are, they've taken up residence in your head, rent-free, and no amount of telling yourself to move on seems to evict them.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Here's the first thing I want you to know. This isn't weakness, and it isn't a character flaw. It's your brain running a very old, very specific set of programs, programs built for survival and bonding, that just happen to misfire around the people we can't stop wanting. There are real mechanisms behind this loop.", "scene": "explainer", "prop": "thought-loop", "emotion": "serious-expert" },
+        { "vo": "And once you can see those mechanisms clearly, two things happen. The looping starts to feel less like something wrong with you, and more like a system you can actually work with. And you get real, practical ways to turn the volume down. So let's open up the machinery of obsession, gently, and see what's really going on.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Today, why one person can hijack your mind, the Zeigarnik loop, the slot-machine of hot and cold, the pedestal, the highlight reel, and the quiet, kind way the thoughts finally loosen their grip. Let's go.", "scene": "explainer", "prop": "rumination-wheel", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "The Open Loop",
+      "beats": [
+        { "vo": "Let's start with the deepest reason the thoughts won't quit. Your mind has a thing about unfinished business. A psychologist named Bluma Zeigarnik noticed that waiters could remember unpaid orders in perfect detail, then forget them the instant the bill was settled. The brain clings to what's open, and releases what's closed.", "scene": "diagramCard", "diagram": "zeigarnik-open-loop", "emotion": "serious-expert", "withMascot": true, "chapterStart": true, "title": "THE OPEN LOOP", "subtitle": "the mind can't drop the unfinished" },
+        { "vo": "That's the Zeigarnik effect, and it's exactly why an unresolved person haunts you more than a settled one. If it ended cleanly, your mind could file it away. But a maybe, a mixed signal, a question never answered, that's an open loop. And your brain keeps it live, pinging you, demanding the resolution it never got.", "scene": "explainer", "prop": "open-loop-knot", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Hot And Cold",
+      "beats": [
+        { "vo": "Now, here's where it gets almost cruel. Think about the people who occupy your mind the most. I'd bet they weren't steadily, reliably warm. They were hot and cold. Attentive one day, distant the next. A flood of affection, then silence. And that unpredictability, it turns out, is the single strongest hook the brain has.", "scene": "story", "room": "night-bedroom-3am", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "HOT & COLD", "subtitle": "the slot-machine effect",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 1360, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "slot-hearts", "x": 620, "y": 520, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Psychologists call it intermittent reinforcement. A reward that comes every single time gets boring fast, your brain tunes it out. But a reward that comes unpredictably, sometimes yes, sometimes nothing, lights up the system like nothing else. It's the exact principle that makes slot machines addictive.", "scene": "diagramCard", "diagram": "variable-reward", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "So when someone is sometimes loving and sometimes cold, you're not falling for them. You're being trained, pull the lever, maybe you win, maybe you don't, just one more try. The uncertainty itself becomes the drug. Which means, painfully, the people who treat us most inconsistently are often the ones we can't stop thinking about.", "scene": "explainer", "prop": "slot-hearts", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Wanting, Not Having",
+      "beats": [
+        { "vo": "And underneath that slot machine is a chemical you've heard of, dopamine. We think of dopamine as the pleasure chemical, but that's not quite right. Dopamine isn't about having. It's about wanting. It's the engine of anticipation, of chasing, of almost. It fires hardest not when you get the reward, but when you might.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert", "chapterStart": true, "title": "WANTING, NOT HAVING", "subtitle": "dopamine chases the 'almost'" },
+        { "vo": "That's why longing for someone you can't quite have feels so relentless, almost physical. Your reward system isn't trying to make you happy. It's trying to make you pursue. So the craving, the checking, the replaying, that's not love overflowing. That's a wanting-machine stuck in the on position, with no off switch in sight.", "scene": "explainer", "prop": "phone-haunt", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Pedestal",
+      "beats": [
+        { "vo": "Here's the next trick your mind plays. When someone isn't in front of you, you don't remember them accurately. You edit. Distance and longing quietly sand off their flaws, polish their best moments, and lift them onto a pedestal, until you're not missing a real person at all. You're missing a masterpiece you painted.", "scene": "story", "room": "mental-cinema", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "THE PEDESTAL", "subtitle": "you miss your edited version",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 960, "y": 820, "scale": 0.8, "talking": true } ],
+          "props": [ { "name": "pedestal-idol", "x": 1440, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "This is idealization, and it's one of the biggest reasons the loop sticks. The person in your head is better than the real one, kinder, more perfect, more the-one-that-got-away, because you built them from highlights and hope. You're not grieving who they were. You're grieving a version of them that never fully existed.", "scene": "diagramCard", "diagram": "idealization-gap", "emotion": "serious-expert", "withMascot": true }
+      ]
+    },
+    {
+      "name": "The Highlight Reel",
+      "beats": [
+        { "vo": "And memory makes it worse, because memory is not a recording. It's a storyteller, and a biased one. Over time it keeps the golden afternoons and quietly drops the arguments, the boredom, the red flags. What's left is a highlight reel, all the best scenes, none of the dull or painful ones.", "scene": "story", "room": "mental-cinema", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE HIGHLIGHT REEL", "subtitle": "memory keeps only the best scenes",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 960, "y": 820, "scale": 0.8, "talking": true } ],
+          "props": [ { "name": "memory-reel", "x": 1440, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "So you sit in your own private cinema, replaying that reel, and it feels like proof of how good it was, how much you lost. But it's a trailer, not the full film. And every time you play it, you deepen the groove, making the memory easier to summon next time. The more you replay, the louder it loops.", "scene": "explainer", "prop": "memory-reel", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Out Of Reach",
+      "beats": [
+        { "vo": "There's one more twist, and it's an old one. We want what we can't have. The moment something becomes scarce, unavailable, forbidden, or just slightly out of reach, it gains a strange extra shine. Psychologists call it the scarcity principle, and a cousin of it, reactance, our rebellion against being told no.", "scene": "explainer", "prop": "scarcity-locked", "emotion": "serious-expert", "chapterStart": true, "title": "OUT OF REACH", "subtitle": "scarcity adds a false shine" },
+        { "vo": "This is the whole tragedy of the one that got away. Their unavailability isn't a turn-off, it's an accelerant. The locked door feels more precious than any open one. So part of what you're feeling may not be about them at all. It may simply be your mind over-valuing the thing it's been told it cannot have.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Rumination Trap",
+      "beats": [
+        { "vo": "Put all this together and you get rumination, that passive, circular dwelling where you chew the same thoughts without ever digesting them. Your brain treats the unresolved bond like a threat, a problem it must solve, so it loops, convinced that if it just thinks hard enough, it'll crack the case. It won't.", "scene": "story", "room": "night-bedroom-3am", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE RUMINATION TRAP", "subtitle": "thinking in circles solves nothing",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 1360, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "rumination-wheel", "x": 620, "y": 520, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Rumination feels productive, like you're working toward an answer. But it's a hamster wheel, lots of motion, no distance travelled. And for some of us, especially if uncertainty feels unsafe, separation trips the nervous system's alarm, firing off that preoccupied, can't-let-go state. Your body thinks it's protecting you.", "scene": "explainer", "prop": "rumination-wheel", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "How It Loosens",
+      "beats": [
+        { "vo": "Okay. That's the machinery. The open loop, the slot machine, the dopamine, the pedestal, the highlight reel, the scarcity, the wheel. It sounds like a lot stacked against you. But every single one of those mechanisms has a counter-move. You can't force the thoughts to stop, but you can stop feeding them. Here's how.", "scene": "explainer", "prop": "open-hand-release", "emotion": "happy-talk", "chapterStart": true, "title": "HOW THE LOOP LOOSENS", "subtitle": "you can't force it — you can stop feeding it" },
+        { "vo": "First, close the loop. Remember, the mind clings to the unfinished. So give it an ending, even one you write yourself. You may never get the conversation, the apology, the explanation. Closure rarely arrives gift-wrapped from them. More often, it's a decision you make, to accept that it's over and stop waiting for a different past.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Cut The Cues",
+      "beats": [
+        { "vo": "Second, starve the slot machine. Every time you check their profile, re-read the messages, or drive past their street, you pull the lever again, and keep the variable-reward loop alive. The intermittent checking is what sustains the craving. So cut the cues. Mute, unfollow, put the reminders in a box you don't open.", "scene": "story", "room": "open-doorway", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "STARVE THE SLOT MACHINE", "subtitle": "cut the cues that pull the lever",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 500, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "phone-haunt", "x": 1400, "y": 460, "scale": 0.45, "appearAt": 6 } ] },
+        { "vo": "This isn't about being cold, or pretending you don't care. It's basic maintenance for your own mind. Each cue is a little trigger that re-fires the whole loop. Remove enough of them and the thoughts lose their footholds, with nothing to keep pulling the lever, the machine slowly, blessedly, goes quiet.", "scene": "explainer", "prop": "scarcity-locked", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Repaint The Picture",
+      "beats": [
+        { "vo": "Third, reality-test the highlight reel. When your mind cues up the golden montage, don't fight it, complete it. Gently add the scenes it keeps cutting. The times you felt anxious, small, unseen. The reasons it didn't work. Not to be bitter, but to remember the whole person, not the pedestal you painted.", "scene": "story", "room": "mental-cinema", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "REPAINT THE PICTURE", "subtitle": "remember the whole person",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 960, "y": 820, "scale": 0.8, "talking": true } ],
+          "props": [ { "name": "pedestal-idol", "x": 1440, "y": 440, "scale": 0.45, "appearAt": 6 } ] },
+        { "vo": "When you miss someone, try asking a sharper question. Do I miss them, the real, whole them? Or do I miss how I felt when things were good, the hope, the possibility, the version I imagined? Nine times out of ten, it's the feeling and the fantasy you're aching for, not the actual, complicated human.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Don't Fight The Bear",
+      "beats": [
+        { "vo": "Fourth, and this one's counter-intuitive. Don't try to not think about them. There's a famous experiment, try right now not to think about a white bear, and of course, it's all you can think about. Suppressing a thought makes your brain check for it constantly, which summons the very thing you're banishing.", "scene": "explainer", "prop": "thought-loop", "emotion": "serious-expert", "chapterStart": true, "title": "DON'T FIGHT THE BEAR", "subtitle": "suppression backfires" },
+        { "vo": "So drop the war against the thought. When they drift into your mind, don't panic, don't scold yourself, just, oh, there's that thought again, and gently turn your attention toward something that absorbs you. A walk, a task, a friend, a project that pulls you into flow. You don't push the thought out. You crowd it out, with a fuller life.", "scene": "explainer", "prop": "open-hand-release", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Time And Kindness",
+      "beats": [
+        { "vo": "And fifth, the quiet one that does most of the work. Time, and self-compassion. Intrusive thoughts about a person are not permanent. Starve the cues, live your life, and the loop genuinely fades, the spikes get smaller, the gaps between them longer, until one day you realise hours passed and you didn't think of them once.", "scene": "diagramCard", "diagram": "letting-go-curve", "emotion": "serious-expert", "withMascot": true, "chapterStart": true, "title": "TIME & KINDNESS", "subtitle": "the loop really does fade" },
+        { "vo": "Until then, be kind to yourself about still thinking of them. Beating yourself up, why am I not over this yet, just adds a second wound on top of the first. You're not broken for having a sticky mind. You're human, running human software. Let the thoughts come, let them go, and trust that the volume is turning down.", "scene": "explainer", "prop": "open-hand-release", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So the next time you catch yourself looping at 3 AM, remember what's actually happening. An open loop your mind won't drop. A slot machine trained on hot and cold. A dopamine system built to want. A pedestal, a highlight reel, a locked door made shinier by the lock. It's not love gone wrong. It's biology doing its job a little too well.", "scene": "story", "room": "open-doorway", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "WALKING OUT",
+          "mascots": [ { "costume": "hoodie", "pose": "walking", "emotion": "happy-talk", "x": 760, "y": 760, "scale": 1.0, "talking": true } ] },
+        { "vo": "And a gentle, honest note. Thinking a lot about someone is deeply human. But if the thoughts turn truly obsessive, take over your days, or circle someone unsafe or gone in a way you can't carry alone, please don't white-knuckle it by yourself. Talking to a therapist isn't weakness. It's the right tool for a heavy load.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "For most of us, though, the loop quietly loosens, close the open door where you can, stop pulling the lever, repaint the picture honestly, stop fighting the bear, and give it time and kindness. The person in your head will get quieter. And one day there'll be room in there again, for you, and for whoever comes next.", "scene": "explainer", "prop": "open-hand-release", "emotion": "happy-talk" },
+        { "vo": "So tell me in the comments, which of these mechanisms hit home hardest, the slot machine, the pedestal, the highlight reel? Naming it is the first loosening. Thank you, truly, for spending this time with me. If it helped, subscribe and stay a while. I'm Dear Brain. Be gentle with that busy mind of yours.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

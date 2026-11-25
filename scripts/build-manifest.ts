@@ -141,6 +141,10 @@ const NEW_ASSETS = new Set([
   'chasing-horizon', 'stuff-store', 'warm-gathering',
   'arrival-mirage', 'hedonic-treadmill', 'money-plateau', 'relationship-warmth', 'experiences-things', 'flow-absorbed', 'gratitude-list', 'giving-ripple', 'present-now', 'joy-vs-meaning',
   'happiness-pie', 'hedonic-curve', 'what-makes-happy', 'happy-vs-meaningful',
+  // cant-stop-thinking (all new)
+  'night-bedroom-3am', 'mental-cinema', 'open-doorway',
+  'thought-loop', 'phone-haunt', 'open-loop-knot', 'slot-hearts', 'pedestal-idol', 'memory-reel', 'rumination-wheel', 'red-string', 'scarcity-locked', 'open-hand-release',
+  'zeigarnik-open-loop', 'variable-reward', 'idealization-gap', 'letting-go-curve',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

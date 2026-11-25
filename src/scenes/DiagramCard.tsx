@@ -3139,8 +3139,104 @@ const HappyVsMeaningful: React.FC = () => {
   );
 };
 
+/** zeigarnik-open-loop: a finished loop sits quiet; an open one keeps pulling. */
+const ZeigarnikOpenLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const R = 110;
+  const tug = 6 * Math.sin(frame / 9);
+  return (
+    <g>
+      {/* closed loop — calm, ticked */}
+      <g transform={`translate(${cx - 180} ${cy})`}>
+        <circle cx={0} cy={0} r={R} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.xl} />
+        <path d="M -34 2 l 22 24 l 46 -54" fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+        <text x={0} y={R + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>closed → quiet</text>
+      </g>
+      {/* open loop — a gap, the mind keeps circling it */}
+      <g transform={`translate(${cx + 180} ${cy})`}>
+        <path d={`M ${R * 0.5} ${-R * 0.87} A ${R} ${R} 0 1 0 ${R * 0.5} ${R * 0.87}`} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        <circle cx={R * 0.5 + tug} cy={-R * 0.87} r={9} fill={COLORS.red} />
+        <circle cx={R * 0.5 + tug} cy={R * 0.87} r={9} fill={COLORS.red} />
+        <text x={0} y={R + 54} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>open → it pulls</text>
+      </g>
+      <text x={cx} y={cy - 170} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the mind can't drop the unfinished</text>
+    </g>
+  );
+};
+
+/** variable-reward: steady rewards fade; unpredictable ones hook hardest. */
+const VariableReward: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const W = 420;
+  const x0 = cx - W / 2, base = cy + 70;
+  const steady = Array.from({ length: 40 }).map((_, i) => `${x0 + (i / 39) * W},${base - 70}`);
+  const seed = [0, 0.9, 0.1, 0.2, 1, 0.05, 0.3, 0.15, 1, 0.08, 0.6, 0];
+  const bars = seed.map((v, i) => ({ x: x0 + (i / (seed.length - 1)) * W, h: 20 + v * 150 }));
+  return (
+    <g>
+      <g transform="translate(0 -110)">
+        <polyline points={steady.join(' ')} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <text x={x0 - 14} y={base - 64} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>steady →</text>
+        <text x={cx} y={base - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>predictable reward: we tune it out</text>
+      </g>
+      {bars.map((b, i) => <rect key={i} x={b.x - 11} y={base - b.h} width={22} height={b.h} rx={5} fill={b.h > 120 ? COLORS.red : COLORS.pink} {...sm} />)}
+      <line x1={x0 - 14} y1={base} x2={x0 + W + 14} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <text x={cx} y={base + 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>unpredictable reward: we can't look away</text>
+      <text x={cx} y={cy - 180} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>hot &amp; cold is the strongest hook</text>
+    </g>
+  );
+};
+
+/** idealization-gap: who they really are vs the edited image we miss. */
+const IdealizationGap: React.FC = () => {
+  const frame = useCurrentFrame();
+  const p = springIn(frame, 26);
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  return (
+    <g>
+      {/* the real, mixed person */}
+      <g transform={`translate(${cx - 160} ${cy})`}>
+        <circle cx={0} cy={-40} r={70} fill={COLORS.white} {...xl} />
+        <circle cx={-22} cy={-48} r={8} fill={COLORS.outline} /><circle cx={22} cy={-48} r={8} fill={COLORS.outline} />
+        <path d="M -22 -18 Q 0 -24 22 -18" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+        <text x={0} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>who they are</text>
+        <text x={0} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>whole &amp; flawed</text>
+      </g>
+      <text x={cx} y={cy - 30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline} opacity={0.5}>›</text>
+      {/* the idealized image, glowing */}
+      <g transform={`translate(${cx + 160} ${cy})`} opacity={0.5 + 0.5 * p}>
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <path key={i} d={`M 0 -40 L ${Math.cos((i / 8) * Math.PI * 2) * 110} ${-40 + Math.sin((i / 8) * Math.PI * 2) * 110}`} stroke={COLORS.yellowSoft} strokeWidth={STROKE.sm} opacity={0.6} strokeLinecap="round" />)}
+        <circle cx={0} cy={-40} r={72} fill={COLORS.pink} opacity={0.4} />
+        <circle cx={0} cy={-40} r={70} fill={COLORS.pink} {...xl} />
+        <path d="M 0 -62 l 7 16 l 17 2 l -13 12 l 4 17 l -15 -9 l -15 9 l 4 -17 l -13 -12 l 17 -2 Z" fill={COLORS.white} />
+        <text x={0} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>who you imagine</text>
+        <text x={0} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>best bits only</text>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>you miss the image, not the person</text>
+    </g>
+  );
+};
+
+/** letting-go-curve: intrusive thoughts fade over time when you stop feeding them. */
+const LettingGoCurve: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 480; const H = 200;
+  const x0 = cx - W / 2, base = cy + H / 2;
+  const pts = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; const wobble = Math.exp(-t * 3.2) * (1 + 0.18 * Math.sin(t * 34)); const y = base - H * wobble; return `${x0 + t * W},${y}`; });
+  return (
+    <g>
+      <line x1={x0 - 10} y1={base} x2={x0 + W + 10} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <line x1={x0} y1={base + 10} x2={x0} y2={base - H - 10} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <polyline points={pts.join(' ')} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <text x={x0 - 14} y={base - H + 10} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>a lot</text>
+      <text x={x0 - 14} y={base + 6} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>quiet</text>
+      <text x={x0} y={base + 40} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>today</text>
+      <text x={x0 + W} y={base + 40} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>weeks on, less contact</text>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>stop feeding it, and it fades</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3270,6 +3366,10 @@ export const DiagramCard: React.FC<{
     'hedonic-curve': COLORS.greenLeaf,
     'what-makes-happy': COLORS.yellow,
     'happy-vs-meaningful': COLORS.yellow,
+    'zeigarnik-open-loop': COLORS.lavender,
+    'variable-reward': COLORS.red,
+    'idealization-gap': COLORS.pink,
+    'letting-go-curve': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3406,6 +3506,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'hedonic-curve' && <HedonicCurve />}
         {diagram === 'what-makes-happy' && <WhatMakesHappy />}
         {diagram === 'happy-vs-meaningful' && <HappyVsMeaningful />}
+        {diagram === 'zeigarnik-open-loop' && <ZeigarnikOpenLoop />}
+        {diagram === 'variable-reward' && <VariableReward />}
+        {diagram === 'idealization-gap' && <IdealizationGap />}
+        {diagram === 'letting-go-curve' && <LettingGoCurve />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

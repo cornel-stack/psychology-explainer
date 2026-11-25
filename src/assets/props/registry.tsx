@@ -37,6 +37,7 @@ import * as Hb from './habits';
 import * as Im from './impostor';
 import * as Gr from './grief';
 import * as Ha from './happiness';
+import * as Th from './thinking';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -454,6 +455,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'giving-ripple': Ha.GivingRipple,
   'present-now': Ha.PresentNow,
   'joy-vs-meaning': Ha.JoyVsMeaning,
+  // cant-stop-thinking emblems (all new)
+  'thought-loop': Th.ThoughtLoop,
+  'phone-haunt': Th.PhoneHaunt,
+  'open-loop-knot': Th.OpenLoopKnot,
+  'slot-hearts': Th.SlotHearts,
+  'pedestal-idol': Th.PedestalIdol,
+  'memory-reel': Th.HighlightReel,
+  'rumination-wheel': Th.RuminationWheel,
+  'red-string': Th.RedString,
+  'scarcity-locked': Th.ScarcityLocked,
+  'open-hand-release': Th.OpenHandRelease,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

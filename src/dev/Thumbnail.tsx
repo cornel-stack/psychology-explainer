@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'cant-stop-thinking': {
+    A: { lines: ['WHY YOU', "CAN'T STOP", 'THINKING OF THEM'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'thought-loop' },
+    B: { lines: ['THE', 'MENTAL', 'LOOP'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'sleepy', textColor: COLORS.white, badge: '∞', prop: 'rumination-wheel' },
+    C: { lines: ['HOT & COLD', 'IS WHY YOU', "CAN'T LET GO"], accent: COLORS.yellow, bg: COLORS.lavenderDark, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'slot-hearts' },
+  },
   'psychology-of-happiness': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF HAPPINESS'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '!', prop: 'relationship-warmth' },
     B: { lines: ['WHAT', 'ACTUALLY', 'MAKES YOU HAPPY'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'arrival-mirage' },
