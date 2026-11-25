@@ -51,7 +51,8 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 43 | The Psychology of Regret | `regret` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45547469658 | ✅ render OK |
 | 44 | Why You Can't Say No | `cant-say-no` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45548853994 | ✅ render OK |
 | 45 | The Psychology of Loneliness | `loneliness` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45550140345 | ✅ render OK |
-| 46 | Why Time Speeds Up As You Age | `time-speeds-up` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45551562814 | ⏳ rendering |
-| 47 | Why You Love Sad Music | `sad-music` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45552881626 | ⏳ rendering |
+| 46 | Why Time Speeds Up As You Age | `time-speeds-up` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45551562814 | ✅ render OK |
+| 47 | Why You Love Sad Music | `sad-music` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45552881626 | ✅ render OK |
+| 48 | The Psychology of Anger | `anger` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45554789945 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
