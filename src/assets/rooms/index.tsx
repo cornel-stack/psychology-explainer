@@ -193,7 +193,10 @@ export type RoomName =
   | 'coffee-queue'
   | 'gratitude-nook'
   | 'gathering-table'
-  | 'sunrise-overlook';
+  | 'sunrise-overlook'
+  | 'mind-courtroom'
+  | 'burdened-road'
+  | 'release-lakeside';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5053,6 +5056,67 @@ export const SunriseOverlook: React.FC = () => (
   </g>
 );
 
+/** Mind courtroom: a surreal internal courtroom — a judge's bench, a witness stand and
+ *  a gavel, where we keep re-trying the person who wronged us. */
+export const MindCourtroom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.navy, 0.06)} floor={COLORS.woodDark} floorY={850} stripe={false} />
+    {Array.from({ length: 13 }).map((_, i) => <rect key={i} x={i * 150} y={0} width={70} height={850} fill={shade(COLORS.navy, 0.03)} opacity={0.5} />)}
+    {/* tall arched window behind the bench */}
+    <g transform="translate(960 300)"><path d="M -150 180 L -150 -100 Q -150 -200 0 -200 Q 150 -200 150 -100 L 150 180 Z" fill={shade(COLORS.sky, 0.1)} opacity={0.4} {...xl} /><line x1={0} y1={-200} x2={0} y2={180} stroke={shade(COLORS.navy, 0.1)} strokeWidth={STROKE.lg} /><line x1={-150} y1={0} x2={150} y2={0} stroke={shade(COLORS.navy, 0.1)} strokeWidth={STROKE.lg} /></g>
+    {/* scales of justice on the wall */}
+    <g transform="translate(360 280)"><line x1={0} y1={-40} x2={0} y2={30} stroke={COLORS.yellow} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={-50} y1={-40} x2={50} y2={-40} stroke={COLORS.yellow} strokeWidth={STROKE.lg} strokeLinecap="round" />{[-50, 50].map((x, i) => <g key={i}><line x1={x} y1={-40} x2={x} y2={-14} stroke={COLORS.yellow} strokeWidth={STROKE.sm} /><path d={`M ${x - 20} -14 Q ${x} 6 ${x + 20} -14`} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.lg} /></g>)}<circle cx={0} cy={-44} r={6} fill={COLORS.yellow} /></g>
+    {/* the judge's bench */}
+    <g transform="translate(960 800)"><rect x={-260} y={-60} width={520} height={160} rx={12} fill={COLORS.woodDark} {...xl} /><rect x={-260} y={-80} width={520} height={26} rx={8} fill={shade(COLORS.woodDark, 0.08)} {...lg} /><rect x={-80} y={-40} width={160} height={70} rx={6} fill={shade(COLORS.woodDark, -0.04)} {...sm} /></g>
+    {/* a gavel */}
+    <g transform="translate(1180 700) rotate(-20)"><rect x={-30} y={-12} width={60} height={24} rx={8} fill={COLORS.wood} {...lg} /><rect x={28} y={-6} width={54} height={12} rx={4} fill={COLORS.woodDark} /><rect x={-60} y={10} width={120} height={14} rx={6} fill={COLORS.wood} {...sm} /></g>
+    {/* a lone witness stand */}
+    <g transform="translate(480 810)"><rect x={-70} y={-40} width={140} height={120} rx={10} fill={shade(COLORS.wood, 0.02)} {...xl} /><rect x={-54} y={-24} width={108} height={50} rx={6} fill={shade(COLORS.wood, -0.04)} {...sm} /></g>
+  </g>
+);
+
+/** Burdened road: a long uphill road under grey sky where a lone figure's long shadow
+ *  trudges — the weight of a carried grudge. */
+export const BurdenedRoad: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.ledGrey, 0.18)} floor={shade(COLORS.ledGrey, 0.08)} floorY={760} stripe={false} />
+    {/* heavy grey sky bands */}
+    {Array.from({ length: 5 }).map((_, i) => <rect key={i} x={0} y={i * 120} width={CANVAS.width} height={120} fill={shade(COLORS.ledGrey, 0.14 - i * 0.01)} opacity={0.5} />)}
+    {/* low clouds */}
+    {[[360, 180], [1200, 150], [1600, 230]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`} opacity={0.5}><ellipse cx={0} cy={0} rx={90} ry={34} fill={shade(COLORS.ledGrey, 0.22)} /><ellipse cx={-60} cy={10} rx={54} ry={26} fill={shade(COLORS.ledGrey, 0.22)} /></g>)}
+    {/* distant hills */}
+    <path d="M 0 760 Q 480 690 960 740 Q 1440 690 1920 760 L 1920 760 L 0 760 Z" fill={shade(COLORS.ledGrey, 0.04)} />
+    {/* the long road climbing away */}
+    <path d="M 760 1080 L 900 740 L 1020 740 L 1160 1080 Z" fill={shade(COLORS.ledGrey, -0.02)} />
+    {Array.from({ length: 5 }).map((_, i) => { const t = i / 5; return <rect key={i} x={955 - (1 - t) * 10} y={1040 - t * 280} width={10 + (1 - t) * 10} height={14} fill={COLORS.yellowSoft} opacity={0.5} />; })}
+    {/* bare roadside tree */}
+    <g transform="translate(300 560)"><rect x={-14} y={140} width={28} height={120} rx={6} fill={COLORS.woodDark} {...lg} /><path d="M 0 150 L 0 30 M 0 70 l -40 -34 M 0 90 l 44 -30 M 0 50 l -30 -40 M 0 60 l 34 -42" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+    {/* a milestone/boundary stone */}
+    <g transform="translate(1560 720)"><path d="M -30 40 L -30 -10 Q -30 -34 0 -34 Q 30 -34 30 -10 L 30 40 Z" fill={shade(COLORS.ledGrey, 0.1)} {...xl} /><line x1={-18} y1={0} x2={18} y2={0} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.6} /></g>
+  </g>
+);
+
+/** Release lakeside: a calm, wide lake at soft dusk with gentle ripples, reeds and a
+ *  small jetty — the stillness of finally letting go. */
+export const ReleaseLakeside: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.06)} floor={shade(COLORS.sky, -0.02)} floorY={620} stripe={false} />
+    {/* soft dusk sky bands */}
+    {Array.from({ length: 4 }).map((_, i) => <rect key={i} x={0} y={i * 150} width={CANVAS.width} height={150} fill={shade([COLORS.pink, COLORS.yellowSoft, COLORS.sky, COLORS.sky][i], 0.04)} opacity={0.4} />)}
+    {/* the lake */}
+    <rect x={0} y={620} width={CANVAS.width} height={460} fill={shade(COLORS.sky, -0.06)} />
+    {/* setting sun + its reflection */}
+    <circle cx={960} cy={540} r={70} fill={COLORS.pink} opacity={0.7} {...lg} />
+    {Array.from({ length: 6 }).map((_, i) => <rect key={i} x={900 + (i % 2) * 20} y={660 + i * 56} width={120 - (i % 2) * 40} height={12} rx={6} fill={COLORS.pink} opacity={0.3 - i * 0.03} />)}
+    {/* gentle ripple rings */}
+    {[0, 1, 2].map((i) => <ellipse key={i} cx={960} cy={820} rx={200 + i * 120} ry={30 + i * 14} fill="none" stroke={shade(COLORS.sky, -0.12)} strokeWidth={STROKE.sm} opacity={0.4 - i * 0.1} />)}
+    {/* reeds on the left */}
+    {[180, 220, 260].map((x, i) => <path key={i} d={`M ${x} 760 q ${(i % 2 ? 1 : -1) * 14} -60 ${(i % 2 ? 1 : -1) * 6} -120`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" />)}
+    {/* a small wooden jetty */}
+    <g transform="translate(1500 700)"><rect x={-40} y={0} width={320} height={22} rx={6} fill={COLORS.woodDark} {...lg} />{[0, 1, 2, 3].map((i) => <rect key={i} x={-20 + i * 80} y={22} width={14} height={80} rx={4} fill={COLORS.woodDark} />)}</g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5231,6 +5295,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'gratitude-nook': GratitudeNook,
   'gathering-table': GatheringTable,
   'sunrise-overlook': SunriseOverlook,
+  'mind-courtroom': MindCourtroom,
+  'burdened-road': BurdenedRoad,
+  'release-lakeside': ReleaseLakeside,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

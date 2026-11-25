@@ -1,0 +1,237 @@
+{
+  "slug": "forgiveness",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        30
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "forgiveness-myths",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "grievance-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "grudge-cost",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "reach-model",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        9,
+        10,
+        26
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        30
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "carrying-coal",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "empathy-lens",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "forgive-boundary",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "forgive-myths",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "grudge-weight",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "let-it-go",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "no-apology-needed",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "replay-wound",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "self-forgive",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "unclench-heart",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        31
+      ]
+    },
+    {
+      "name": "burdened-road",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "mind-courtroom",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "release-lakeside",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        30,
+        32
+      ]
+    }
+  ]
+}

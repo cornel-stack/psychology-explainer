@@ -245,6 +245,10 @@ const NEW_ASSETS = new Set([
   'gratitude-nook', 'gathering-table', 'sunrise-overlook',
   'notice-good', 'negativity-tilt', 'adaptation-fade', 'gratitude-journal', 'half-full-cup', 'thank-you-letter', 'savor-moment', 'imagine-gone', 'gratitude-bond', 'both-true',
   'negativity-bias', 'gratitude-benefits', 'lens-shift', 'gratitude-practices',
+  // forgiveness (all new)
+  'mind-courtroom', 'burdened-road', 'release-lakeside',
+  'carrying-coal', 'grudge-weight', 'forgive-myths', 'replay-wound', 'let-it-go', 'empathy-lens', 'forgive-boundary', 'unclench-heart', 'self-forgive', 'no-apology-needed',
+  'forgiveness-myths', 'grudge-cost', 'grievance-loop', 'reach-model',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

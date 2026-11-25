@@ -63,6 +63,7 @@ import * as Ft from './feel-tired';
 import * as Fn from './faces-names';
 import * as Sk from './small-talk';
 import * as Gt from './gratitude';
+import * as Fg from './forgiveness';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -759,6 +760,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'imagine-gone': Gt.ImagineGone,
   'gratitude-bond': Gt.GratitudeBond,
   'both-true': Gt.BothTrue,
+  'carrying-coal': Fg.CarryingCoal,
+  'grudge-weight': Fg.GrudgeWeight,
+  'forgive-myths': Fg.ForgiveMyths,
+  'replay-wound': Fg.ReplayWound,
+  'let-it-go': Fg.LetItGo,
+  'empathy-lens': Fg.EmpathyLens,
+  'forgive-boundary': Fg.ForgiveBoundary,
+  'unclench-heart': Fg.UnclenchHeart,
+  'self-forgive': Fg.SelfForgive,
+  'no-apology-needed': Fg.NoApologyNeeded,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

@@ -5503,8 +5503,99 @@ const GratitudePractices: React.FC = () => {
   );
 };
 
+/** forgiveness-myths: what forgiveness is NOT — forgetting, excusing, reconciling — vs
+ *  what it is. */
+const ForgivenessMyths: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const myths = ['forgetting what happened', 'excusing the harm', 'reconciling with them', 'weakness or losing'];
+  return (
+    <g>
+      <text x={cx} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>forgiveness is NOT...</text>
+      {myths.map((m, i) => {
+        const p = springIn(frame - i * 8, 12); const y = 190 + i * 96;
+        return <g key={i} transform={`translate(${cx} ${y}) scale(${0.86 + 0.14 * p})`} opacity={p}>
+          <rect x={-380} y={-36} width={760} height={72} rx={16} fill={COLORS.white} {...lg} />
+          <g transform="translate(-330 0)"><circle cx={0} cy={0} r={22} fill={shade(COLORS.red, 0.04)} /><path d="M -9 -9 l 18 18 M 9 -9 l -18 18" stroke={COLORS.redDark} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+          <text x={-290} y={8} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{m}</text>
+        </g>;
+      })}
+      <text x={cx} y={600} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.greenDark}>it's releasing the grudge — for YOU</text>
+    </g>
+  );
+};
+
+/** grudge-cost: unforgiveness behaves like chronic stress — the body pays. */
+const GrudgeCost: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.5;
+  const costs = [
+    { t: 'more stress', a: -Math.PI / 2 },
+    { t: 'higher blood pressure', a: -Math.PI / 2 + (2 * Math.PI) / 5 },
+    { t: 'worse sleep', a: -Math.PI / 2 + (4 * Math.PI) / 5 },
+    { t: 'anxiety + low mood', a: -Math.PI / 2 + (6 * Math.PI) / 5 },
+    { t: 'strained heart', a: -Math.PI / 2 + (8 * Math.PI) / 5 },
+  ];
+  const pulse = 1 + 0.04 * Math.sin(frame / 5);
+  return (
+    <g>
+      <text x={cx} y={80} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the grudge bills your body</text>
+      {costs.map((c, i) => { const R = 190; const x = cx + Math.cos(c.a) * R; const y = cy + Math.sin(c.a) * R + 10; const p = springIn(frame - i * 6, 12); return (
+        <g key={i}><line x1={cx} y1={cy + 10} x2={x} y2={y} stroke={COLORS.red} strokeWidth={STROKE.lg} opacity={0.5 * p} /><g transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * p})`} opacity={p}><rect x={-96} y={-26} width={192} height={52} rx={14} fill={shade(COLORS.red, 0.04)} {...lg} /><text x={0} y={7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>{c.t}</text></g></g>
+      ); })}
+      <g transform={`translate(${cx} ${cy + 10}) scale(${pulse})`}><circle cx={0} cy={0} r={48} fill={shade(COLORS.navy, 0.1)} {...xl} /><path d="M 0 22 q -24 -18 -24 -34 q 0 -12 12 -12 q 8 0 12 8 q 4 -8 12 -8 q 12 0 12 12 q 0 16 -24 34 Z" fill={COLORS.red} transform="translate(0 -2)" {...sm} /></g>
+    </g>
+  );
+};
+
+/** grievance-loop: rumination keeps re-opening the wound — the loop of unforgiveness. */
+const GrievanceLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.52; const R = 170;
+  const steps = [{ t: 'remember the wrong', a: -Math.PI / 2 }, { t: 'feel the anger again', a: Math.PI / 6 }, { t: 'replay the scene', a: Math.PI * 0.83 }];
+  const dash = -(frame % 30);
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the grievance loop</text>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={shade(COLORS.navy, 0.1)} strokeWidth={STROKE.lg} strokeDasharray="6 12" strokeDashoffset={dash} opacity={0.6} />
+      {steps.map((s, i) => { const x = cx + Math.cos(s.a) * R; const y = cy + Math.sin(s.a) * R; const p = springIn(frame - i * 8, 12); return (
+        <g key={i} transform={`translate(${x} ${y}) scale(${0.7 + 0.3 * p})`} opacity={p}><rect x={-110} y={-30} width={220} height={60} rx={16} fill={shade(COLORS.red, 0.04)} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>{s.t}</text></g>
+      ); })}
+      <text x={cx} y={cy + 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.navy}>wound stays open</text>
+    </g>
+  );
+};
+
+/** reach-model: Worthington's five steps to forgive — Recall, Empathise, Altruism,
+ *  Commit, Hold on. */
+const ReachModel: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const steps = [
+    { l: 'R', t: 'Recall', s: 'the hurt, honestly' },
+    { l: 'E', t: 'Empathise', s: 'with their humanity' },
+    { l: 'A', t: 'Altruism', s: 'give forgiveness as a gift' },
+    { l: 'C', t: 'Commit', s: 'to the choice' },
+    { l: 'H', t: 'Hold on', s: 'when it creeps back' },
+  ];
+  return (
+    <g>
+      <text x={cx} y={86} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the REACH model</text>
+      {steps.map((st, i) => {
+        const p = springIn(frame - i * 8, 12); const y = 168 + i * 100;
+        return <g key={i} transform={`translate(${cx} ${y}) scale(${0.86 + 0.14 * p})`} opacity={p}>
+          <rect x={-380} y={-40} width={760} height={80} rx={16} fill={[COLORS.pink, COLORS.yellow, COLORS.greenTeal, COLORS.sky, COLORS.lavender][i]} opacity={0.82} {...lg} />
+          <circle cx={-330} cy={0} r={28} fill={COLORS.white} {...sm} /><text x={-330} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>{st.l}</text>
+          <text x={-282} y={-2} fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{st.t}</text>
+          <text x={-282} y={26} fontFamily={fontFamily} fontWeight={700} fontSize={17} fill={COLORS.outline}>{st.s}</text>
+        </g>;
+      })}
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices' | 'forgiveness-myths' | 'grudge-cost' | 'grievance-loop' | 'reach-model';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -5738,6 +5829,10 @@ export const DiagramCard: React.FC<{
     'gratitude-benefits': COLORS.pink,
     'lens-shift': COLORS.yellow,
     'gratitude-practices': COLORS.greenTeal,
+    'forgiveness-myths': COLORS.greenTeal,
+    'grudge-cost': COLORS.red,
+    'grievance-loop': COLORS.navy,
+    'reach-model': COLORS.pink,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -5978,6 +6073,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'gratitude-benefits' && <GratitudeBenefits />}
         {diagram === 'lens-shift' && <LensShift />}
         {diagram === 'gratitude-practices' && <GratitudePractices />}
+        {diagram === 'forgiveness-myths' && <ForgivenessMyths />}
+        {diagram === 'grudge-cost' && <GrudgeCost />}
+        {diagram === 'grievance-loop' && <GrievanceLoop />}
+        {diagram === 'reach-model' && <ReachModel />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />
