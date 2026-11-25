@@ -1,0 +1,428 @@
+{
+  "title": "The Psychology of People Who Keep Their House Spotless",
+  "slug": "spotless-house",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You know the type. Maybe you are the type. The one who can't fully relax until the counters are wiped, the cushions are squared, and everything is back in its place. The one who tidies when stressed, and feels a tiny glow of peace at a spotless room. But have you wondered what's really going on underneath all that order?",
+          "scene": "story",
+          "room": "show-home-lounge",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "keeping a spotless home",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 760,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Because here's the thing, keeping an immaculate home is almost never just about liking things clean. It's a behaviour wired to some surprisingly deep psychology, control, anxiety, focus, identity, even how your brain is tuned. And understanding it tells you something tender about the person doing the cleaning.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It can be a genuine superpower, a source of calm, clarity, and pride. And just occasionally, it can quietly tip into something that runs the person, instead of the other way around. So let's explore both, with curiosity and zero judgement, whether you're a neat freak, you love one, or you're the lovable opposite.",
+          "scene": "explainer",
+          "prop": "spotless-sparkle",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Why a tidy space soothes an anxious mind. Why clutter genuinely drains your brain. Why some people feel mess as physical discomfort. And the one honest question that tells you whether your cleaning is serving you, or starting to rule you. Grab a duster, metaphorically, and let's dig in.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Welcome to Dear Brain. Today, the surprisingly deep reasons some people keep a spotless home, the real benefits backed by research, and the gentle line where a helpful habit can become a cage. None of this is about being clean or messy. It's about what order means to us. Let's begin.",
+          "scene": "explainer",
+          "prop": "label-jars",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "A Corner You Control",
+      "beats": [
+        {
+          "vo": "Let's start with the big one, control. The world is chaotic. Your job, the news, other people, your own racing thoughts, so much of it is utterly beyond your control. But your home? Your home you can order. You can make one corner of existence calm, clean, and exactly how you want it.",
+          "scene": "diagramCard",
+          "diagram": "control-in-chaos",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "A CORNER YOU CONTROL",
+          "subtitle": "order amid the chaos"
+        },
+        {
+          "vo": "This is why so many people clean when they're anxious or overwhelmed. When everything feels out of control, scrubbing a surface gives you a small, immediate, visible win. Order out of chaos. It's a way of saying to your nervous system, look, I can make at least this one thing right. That's not fussiness. That's self-soothing.",
+          "scene": "explainer",
+          "prop": "control-island",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Cleaning Calms The Mind",
+      "beats": [
+        {
+          "vo": "And the act of cleaning itself can be genuinely therapeutic. Think about it, wiping, scrubbing, folding, these are simple, repetitive, rhythmic motions. They give your busy mind something gentle and structured to hold onto, almost like a moving meditation. The hands work, and the thoughts settle.",
+          "scene": "story",
+          "room": "show-home-lounge",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "CLEANING CALMS THE MIND",
+          "subtitle": "a moving meditation",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 760,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "scrub-calm",
+              "x": 1420,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "There's a reason people talk about the relief of a good clean. It can discharge nervous energy, pull you out of a spiral of worry, and leave you with a tidy space and a slightly tidier head. For a lot of people, cleaning isn't a chore they endure. It's a ritual that regulates their mood. That's a real and healthy thing.",
+          "scene": "explainer",
+          "prop": "scrub-calm",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "It's Partly Who You Are",
+      "beats": [
+        {
+          "vo": "Now, some of this is simply personality. In the big five model that psychologists use, there's a trait called conscientiousness, and within it, a facet called orderliness. Some people are just naturally dialled higher on it. They feel genuinely better in neat environments, and genuinely unsettled in messy ones.",
+          "scene": "diagramCard",
+          "diagram": "orderliness-trait",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "IT'S PARTLY WHO YOU ARE",
+          "subtitle": "a real personality trait"
+        },
+        {
+          "vo": "This trait is partly heritable and pretty stable across your life, so if you've been the tidy one since childhood, that's likely built into your temperament. It also means telling a naturally orderly person to just relax about mess is a bit like telling a tall person to be shorter. Their comfort really does live in order.",
+          "scene": "explainer",
+          "prop": "label-jars",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Disgust Dial",
+      "beats": [
+        {
+          "vo": "Here's another dial that varies hugely from person to person, disgust sensitivity. We all have an inbuilt disgust response, it evolved to keep us away from germs and disease. But some people's disgust dial is simply turned up much higher. Crumbs, smears, a sticky surface register as genuinely, physically unbearable.",
+          "scene": "explainer",
+          "prop": "disgust-dial",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE DISGUST DIAL",
+          "subtitle": "some feel mess more intensely"
+        },
+        {
+          "vo": "So when a highly sensitive person says that mess makes their skin crawl, they are not exaggerating for effect. Their brain is throwing a much louder alarm than yours might. It's not snobbery or drama, it's a more sensitive pathogen-avoidance system. For them, cleaning isn't optional comfort, it's switching off a genuine sense of alarm.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Where You Learned It",
+      "beats": [
+        {
+          "vo": "There's also a story behind the habit, often, the one you grew up in. Many spotless adults were raised in homes where tidy meant good, where a clean house earned praise, or where chaos felt unsafe. We absorb our parents' relationship with order, and carry it, lovingly or anxiously, into our own homes decades later.",
+          "scene": "explainer",
+          "prop": "label-jars",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHERE YOU LEARNED IT",
+          "subtitle": "home, culture, identity"
+        },
+        {
+          "vo": "And there's identity in it too. For many of us, our home is an extension of ourselves, how we present to the world, how we welcome people in. A tidy space can be a quiet act of self-respect, or of hospitality, this is me, and you are cared for here. So cleaning isn't only private comfort. Sometimes it's love, made visible.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Clutter Drains Your Brain",
+      "beats": [
+        {
+          "vo": "And it turns out the tidy folks are onto something, because clutter has a real, measurable cost. In one well-known study at Princeton, researchers found that physical clutter in your field of view actually competes for your brain's attention. All those objects quietly pull at your focus, whether you notice it or not.",
+          "scene": "diagramCard",
+          "diagram": "clutter-attention",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "CLUTTER DRAINS YOUR BRAIN",
+          "subtitle": "mess competes for attention"
+        },
+        {
+          "vo": "The result, a cluttered space can leave you more distracted, more irritable, and less able to concentrate, while a clear one frees your mind to focus on one thing at a time. Other research even links feeling like your home is cluttered with higher stress hormones. So clear space, clear head isn't just a slogan. There's truth in it.",
+          "scene": "explainer",
+          "prop": "clutter-static",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Calm Reward",
+      "beats": [
+        {
+          "vo": "Put it all together, and you can see why, for so many people, a spotless home is a genuine source of wellbeing. A calm, ordered space can lower stress, sharpen focus, lift your mood, and give you a quiet daily sense of competence and pride. It's a small, repeatable act of looking after yourself.",
+          "scene": "story",
+          "room": "serene-tidy-bedroom",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE CALM REWARD",
+          "subtitle": "order as self-care",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 760,
+              "y": 820,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "clear-desk-focus",
+              "x": 1360,
+              "y": 460,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "And let's be fair to the other side too, plenty of brilliant, happy people live in creative, comfortable mess, and thrive in it. Tidiness isn't a moral virtue, and clutter isn't a character flaw. This isn't about which is better. It's about understanding why order feels so good to the people it feels good to.",
+          "scene": "explainer",
+          "prop": "clear-desk-focus",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Clean-To-Avoid Trap",
+      "beats": [
+        {
+          "vo": "Here's a sneaky one many tidy people know well, cleaning as avoidance. Ever found yourself scrubbing the oven right before a big deadline? That's sometimes called procrasti-cleaning. Because tidying feels productive and gives a quick hit of control, it becomes the perfect way to dodge a harder, scarier task.",
+          "scene": "story",
+          "room": "show-home-lounge",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE CLEAN-TO-AVOID TRAP",
+          "subtitle": "tidying to dodge the hard thing",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 760,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "clutter-static",
+              "x": 1420,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "And sometimes we clean to avoid feelings, not tasks. A tidy outside can be a way of managing a messy inside, if I can just get the house in order, maybe I'll feel in order too. There's nothing wrong with that, cleaning is a kind coping tool. It only becomes a problem when it's the only way we ever cope, and the feelings never get faced.",
+          "scene": "explainer",
+          "prop": "scrub-calm",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "When Tidy Becomes A Cage",
+      "beats": [
+        {
+          "vo": "But, and this matters, there's a point where a wonderful habit can quietly tip into something harder. For most people, cleaning serves them. The trouble starts when they begin to serve the cleaning, when the tidiness stops being a choice and becomes a demand they can't refuse.",
+          "scene": "diagramCard",
+          "diagram": "tidy-spectrum",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHEN TIDY BECOMES A CAGE",
+          "subtitle": "where it tips over"
+        },
+        {
+          "vo": "You might recognise it. Cleaning driven by anxious, intrusive fears that something bad will happen if it's not just right. Hours lost to it. Real distress if one thing is out of place. Not being able to rest, or leave a dish in the sink overnight without a spike of dread. When tidiness runs the show, it becomes a cage.",
+          "scene": "explainer",
+          "prop": "tidy-cage",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Serve You, Not Rule You",
+      "beats": [
+        {
+          "vo": "So here's the single most useful question, and it's a kind one. Does the cleaning serve you, or do you serve it? Can you choose to leave the mess and feel fine? Or does something force your hand, leaving you anxious, exhausted, and unable to just be in your own home? One is a helpful habit. The other is worth gently looking at.",
+          "scene": "story",
+          "room": "serene-tidy-bedroom",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "SERVE YOU, NOT RULE YOU",
+          "subtitle": "the one honest question",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 760,
+              "y": 820,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "good-enough-home",
+              "x": 1360,
+              "y": 460,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "If it's a cherished ritual that calms and grounds you, wonderful, keep it, enjoy it. But if it's tipped into compulsion, intrusive fears, or stealing your peace, that can be a sign of anxiety or OCD, which are common and very treatable. There's no shame in it, and talking to a professional can hand you back the controls.",
+          "scene": "explainer",
+          "prop": "good-enough-home",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Loosening The Grip",
+      "beats": [
+        {
+          "vo": "And if you'd like to loosen a grip that's gotten too tight, you don't go cold turkey, you practise, gently. Try deliberately leaving one small thing undone, a single mug by the sink, and just sitting with the discomfort. It rises, and then, crucially, it passes. You're teaching your brain that mess is survivable, that nothing bad happens.",
+          "scene": "story",
+          "room": "serene-tidy-bedroom",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "LOOSENING THE GRIP",
+          "subtitle": "practise tolerating a little mess",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 760,
+              "y": 820,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "reset-ritual",
+              "x": 1360,
+              "y": 460,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "You can also give the habit a container, a set time for a daily reset, rather than letting it bleed into every waking moment. Tidy for twenty minutes in the evening, then stop, and let the home be lived in. The aim isn't to become messy. It's to be back in charge, so the cleaning fits around your life, not your life around it.",
+          "scene": "explainer",
+          "prop": "reset-ritual",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time you see someone fluffing the cushions, or you feel that itch to wipe one more surface before bed, you'll know the real story. It's rarely about being fussy. It's a mind seeking calm, carving order out of chaos, soothing itself, and clearing space to think. There's something quite beautiful in that.",
+          "scene": "story",
+          "room": "serene-tidy-bedroom",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "ORDER, WITH KINDNESS",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 760,
+              "y": 820,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "And if you love someone like this, a gentle tip, try not to dismiss their need for order as them being uptight. For them, that tidy space is calm made visible. Equally, if you're the tidy one, extend that same grace to the messier people you love. Neither way is wrong. We're all just managing our minds with the tools we have.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The healthiest goal isn't a perfect, untouchable show-home. It's a space that feels good to live in, clean enough to calm you, lived-in enough to love. A home that serves your life, rather than a life that serves the home. Keep the order that grounds you, and let go of the tyranny that doesn't.",
+          "scene": "explainer",
+          "prop": "reset-ritual",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, are you the spotless one, or the lovable chaos goblin? And what's the one thing you cannot stand being messy? Be honest. Thank you, truly, for spending this time with me. If this made you see your habits a little more kindly, subscribe and stay a while. I'm Dear Brain. Go enjoy your space.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "slug": "spotless-house",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 5,
+    "NEW": 16
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        17,
+        19,
+        23,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "clutter-attention",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "control-in-chaos",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "orderliness-trait",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "tidy-spectrum",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        4,
+        7,
+        17,
+        27,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        17,
+        19,
+        23,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "clear-desk-focus",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "clutter-static",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16,
+        19
+      ]
+    },
+    {
+      "name": "control-island",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "disgust-dial",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "good-enough-home",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23,
+        24
+      ]
+    },
+    {
+      "name": "label-jars",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        10,
+        13
+      ]
+    },
+    {
+      "name": "reset-ritual",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        26,
+        29
+      ]
+    },
+    {
+      "name": "scrub-calm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8,
+        20
+      ]
+    },
+    {
+      "name": "spotless-sparkle",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "tidy-cage",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "serene-tidy-bedroom",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17,
+        23,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "show-home-lounge",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        7,
+        19
+      ]
+    }
+  ]
+}

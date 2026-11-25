@@ -161,6 +161,10 @@ const NEW_ASSETS = new Set([
   'poker-room', 'two-chairs-talk', 'detective-board',
   'gut-hunch', 'truth-default-glasses', 'coinflip-accuracy', 'myth-busted', 'othello-error', 'micro-flash', 'cognitive-load-lie', 'sparse-story', 'reverse-order', 'cross-check',
   'accuracy-coinflip', 'myth-vs-fact', 'load-truth-vs-lie', 'cluster-baseline',
+  // spotless-house (all new)
+  'show-home-lounge', 'cluttered-chaos-room', 'serene-tidy-bedroom',
+  'spotless-sparkle', 'control-island', 'scrub-calm', 'label-jars', 'disgust-dial', 'clutter-static', 'clear-desk-focus', 'tidy-cage', 'good-enough-home', 'reset-ritual',
+  'control-in-chaos', 'orderliness-trait', 'clutter-attention', 'tidy-spectrum',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

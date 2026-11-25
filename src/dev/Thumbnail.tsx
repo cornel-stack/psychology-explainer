@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'spotless-house': {
+    A: { lines: ['WHY SOME', 'PEOPLE KEEP', 'A SPOTLESS HOME'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '✨', prop: 'spotless-sparkle' },
+    B: { lines: ["IT'S NOT", 'ABOUT BEING', 'CLEAN'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'control-island' },
+    C: { lines: ['WHEN TIDY', 'BECOMES A', 'PROBLEM'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'tidy-cage' },
+  },
   'spot-a-lie': {
     A: { lines: ['THE REAL', 'SIGNS SOMEONE', 'IS LYING'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'gut-hunch' },
     B: { lines: ['MOST LIE', '"TELLS" ARE', 'WRONG'], accent: COLORS.yellow, bg: COLORS.greenDark, emotion: 'confused', textColor: COLORS.white, badge: '✗', prop: 'myth-busted' },

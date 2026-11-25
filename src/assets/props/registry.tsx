@@ -42,6 +42,7 @@ import * as Wa from './watched';
 import * as Cr from './crying';
 import * as Fr from './friends';
 import * as Ly from './lying';
+import * as Sp from './spotless';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -514,6 +515,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'sparse-story': Ly.SparseStory,
   'reverse-order': Ly.ReverseOrder,
   'cross-check': Ly.CrossCheck,
+  // spotless-house emblems (all new)
+  'spotless-sparkle': Sp.SpotlessSparkle,
+  'control-island': Sp.ControlIsland,
+  'scrub-calm': Sp.ScrubCalm,
+  'label-jars': Sp.LabelJars,
+  'disgust-dial': Sp.DisgustDial,
+  'clutter-static': Sp.ClutterStatic,
+  'clear-desk-focus': Sp.ClearDeskFocus,
+  'tidy-cage': Sp.TidyCage,
+  'good-enough-home': Sp.GoodEnoughHome,
+  'reset-ritual': Sp.ResetRitual,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

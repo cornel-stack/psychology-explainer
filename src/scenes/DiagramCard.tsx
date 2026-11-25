@@ -3597,8 +3597,97 @@ const ClusterBaseline: React.FC = () => {
   );
 };
 
+/** control-in-chaos: a small controllable circle inside a big uncontrollable world. */
+const ControlInChaos: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const wob = 6 * Math.sin(frame / 12);
+  return (
+    <g>
+      {/* big chaotic field */}
+      <circle cx={cx} cy={cy} r={200} fill={shade(COLORS.purpleDeep, 0.06)} opacity={0.5} />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => { const a = (i / 8) * Math.PI * 2 + frame / 40; return <line key={i} x1={cx + Math.cos(a) * 120} y1={cy + Math.sin(a) * 110} x2={cx + Math.cos(a) * 190} y2={cy + Math.sin(a) * 175} stroke={COLORS.lavenderDark} strokeWidth={STROKE.sm} opacity={0.5} strokeLinecap="round" />; })}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>a chaotic, uncertain world</text>
+      {/* the calm controllable centre */}
+      <circle cx={cx + wob * 0.2} cy={cy} r={70} fill={COLORS.greenLeaf} {...xl} />
+      <rect x={cx - 26} y={cy - 10} width={52} height={38} rx={6} fill={COLORS.white} {...lg} />
+      <path d="M -30 -10 L 0 -34 L 30 -10 Z" fill={COLORS.red} transform={`translate(${cx} ${cy})`} {...lg} />
+      <text x={cx} y={cy + 56} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>my space</text>
+      <text x={cx} y={cy + 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>order one corner you can control</text>
+    </g>
+  );
+};
+
+/** orderliness-trait: orderliness as a stable spot on a spectrum. */
+const OrderlinessTrait: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 520;
+  const x0 = cx - W / 2;
+  const marker = x0 + W * (0.5 + 0.34 * springIn(frame, 30));
+  return (
+    <g>
+      <rect x={x0} y={cy - 14} width={W} height={28} rx={14} fill={COLORS.greenLeaf} opacity={0.3} {...lg} />
+      <rect x={x0} y={cy - 14} width={W} height={28} rx={14} fill="none" {...lg} />
+      <circle cx={marker} cy={cy} r={22} fill={COLORS.greenLeaf} {...xl} />
+      <text x={x0} y={cy + 56} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>relaxed / messy-ok</text>
+      <text x={x0 + W} y={cy + 56} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>highly orderly</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>orderliness is a real trait</text>
+      <text x={cx} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline}>a facet of conscientiousness</text>
+    </g>
+  );
+};
+
+/** clutter-attention: clutter steals attention; a clear space frees it. */
+const ClutterAttention: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const flick = 0.5 + 0.5 * Math.sin(frame / 4);
+  return (
+    <g>
+      {/* cluttered brain — many competing arrows */}
+      <g transform={`translate(${cx - 180} ${cy})`}>
+        <circle cx={0} cy={0} r={70} fill={COLORS.pink} {...xl} />
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => { const a = (i / 7) * Math.PI * 2; return <line key={i} x1={0} y1={0} x2={Math.cos(a) * 100} y2={Math.sin(a) * 100} stroke={COLORS.red} strokeWidth={STROKE.sm} opacity={0.5 + 0.4 * Math.sin(frame / 3 + i)} strokeLinecap="round" />; })}
+        <text x={0} y={120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>cluttered: scattered</text>
+      </g>
+      <text x={cx - 20} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>›</text>
+      {/* clear brain — one strong focused beam */}
+      <g transform={`translate(${cx + 180} ${cy})`}>
+        <circle cx={0} cy={0} r={70} fill={COLORS.greenLeaf} {...xl} />
+        <line x1={0} y1={0} x2={0} y2={-120} stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" opacity={flick} />
+        <path d="M -12 -104 l 12 -20 l 12 20 Z" fill={COLORS.greenDark} />
+        <text x={0} y={120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>clear: focused</text>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>clutter competes for attention</text>
+    </g>
+  );
+};
+
+/** tidy-spectrum: helpful habit to compulsion — where it tips. */
+const TidySpectrum: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 540;
+  const x0 = cx - W / 2;
+  const pulse = 0.5 + 0.5 * Math.sin(frame / 6);
+  return (
+    <g>
+      <defs>
+        <linearGradient id="tidygrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor={COLORS.greenLeaf} /><stop offset="60%" stopColor={COLORS.yellow} /><stop offset="100%" stopColor={COLORS.red} />
+        </linearGradient>
+      </defs>
+      <rect x={x0} y={cy - 16} width={W} height={32} rx={16} fill="url(#tidygrad)" {...lg} />
+      {/* the tipping point marker */}
+      <g transform={`translate(${x0 + W * 0.72} ${cy})`} opacity={0.7 + 0.3 * pulse}><line x1={0} y1={-44} x2={0} y2={44} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeDasharray="5 6" /><text x={0} y={-56} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>tips here</text></g>
+      <text x={x0 + 40} y={cy + 56} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>helpful habit</text>
+      <text x={x0 + W - 40} y={cy + 56} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>it controls you</text>
+      <text x={cx} y={cy - 120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>does it serve you, or rule you?</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3748,6 +3837,10 @@ export const DiagramCard: React.FC<{
     'myth-vs-fact': COLORS.yellow,
     'load-truth-vs-lie': COLORS.sky,
     'cluster-baseline': COLORS.greenLeaf,
+    'control-in-chaos': COLORS.sky,
+    'orderliness-trait': COLORS.greenLeaf,
+    'clutter-attention': COLORS.yellow,
+    'tidy-spectrum': COLORS.red,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3904,6 +3997,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'myth-vs-fact' && <MythVsFact />}
         {diagram === 'load-truth-vs-lie' && <LoadTruthVsLie />}
         {diagram === 'cluster-baseline' && <ClusterBaseline />}
+        {diagram === 'control-in-chaos' && <ControlInChaos />}
+        {diagram === 'orderliness-trait' && <OrderlinessTrait />}
+        {diagram === 'clutter-attention' && <ClutterAttention />}
+        {diagram === 'tidy-spectrum' && <TidySpectrum />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

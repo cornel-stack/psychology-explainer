@@ -130,7 +130,10 @@ export type RoomName =
   | 'board-game-cafe'
   | 'poker-room'
   | 'two-chairs-talk'
-  | 'detective-board';
+  | 'detective-board'
+  | 'show-home-lounge'
+  | 'cluttered-chaos-room'
+  | 'serene-tidy-bedroom';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3541,6 +3544,87 @@ export const DetectiveBoard: React.FC = () => (
   </g>
 );
 
+/** Show-home lounge: a magazine-perfect, gleaming living room where every single
+ *  thing is in its exact place. */
+export const ShowHomeLounge: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.whiteShade} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.whiteShade, -0.03)} />
+    <line x1={0} y1={560} x2={CANVAS.width} y2={560} stroke={shade(COLORS.whiteShade, -0.08)} strokeWidth={STROKE.lg} />
+    {/* perfectly symmetrical shelving with aligned objects */}
+    {[300, 1620].map((bx, b) => <g key={b} transform={`translate(${bx} 300)`}>{[0, 1, 2].map((r) => <g key={r}><rect x={-100} y={r * 100} width={200} height={14} fill={COLORS.wood} {...lg} />{[-70, -24, 24, 70].map((x, i) => <rect key={i} x={x - 12} y={r * 100 - 44} width={24} height={44} rx={4} fill={[COLORS.sky, COLORS.greenLeaf, COLORS.pink, COLORS.yellow][(r + i) % 4]} opacity={0.75} {...sm} />)}</g>)}</g>)}
+    {/* a framed picture, perfectly level, centered */}
+    <g transform="translate(960 250)"><rect x={-110} y={-80} width={220} height={160} rx={8} fill={COLORS.white} {...xl} /><rect x={-92} y={-62} width={184} height={124} rx={4} fill={COLORS.sky} opacity={0.5} /><circle cx={40} cy={-20} r={24} fill={COLORS.yellow} opacity={0.7} /><path d="M -92 62 Q 0 10 92 50" fill="none" stroke={shade(COLORS.greenDark,0.1)} strokeWidth={STROKE.lg} /></g>
+    {/* a pristine sofa with symmetrical cushions */}
+    <g transform="translate(960 800)">
+      <rect x={-300} y={-50} width={600} height={160} rx={26} fill={COLORS.sky} {...xl} />
+      <rect x={-300} y={-120} width={130} height={120} rx={22} fill={shade(COLORS.sky, 0.1)} {...lg} />
+      <rect x={170} y={-120} width={130} height={120} rx={22} fill={shade(COLORS.sky, 0.1)} {...lg} />
+      {[-170, -60, 60, 170].map((x, i) => <rect key={i} x={x - 44} y={-36} width={88} height={88} rx={16} fill={[COLORS.white, COLORS.pink, COLORS.pink, COLORS.white][i]} {...lg} transform={`rotate(45 ${x} 8)`} />)}
+    </g>
+    {/* a neat coffee table with one centered vase + aligned coasters */}
+    <g transform="translate(960 980)"><rect x={-130} y={-20} width={260} height={30} rx={8} fill={COLORS.woodDark} {...xl} /><g transform="translate(0 -30)"><rect x={-14} y={-30} width={28} height={34} rx={6} fill={COLORS.greenTeal} {...sm} /><path d="M 0 -30 q -14 -30 0 -46 M 0 -30 q 14 -28 0 -44" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>{[-70, 70].map((x,i)=><circle key={i} cx={x} cy={-6} r={14} fill={COLORS.white} {...sm} />)}</g>
+    {/* a few shine sparkles */}
+    <path d="M 540 420 l 3 9 l 9 3 l -9 3 l -3 9 l -3 -9 l -9 -3 l 9 -3 Z" fill={COLORS.yellow} />
+    <path d="M 1400 640 l 2 7 l 7 2 l -7 2 l -2 7 l -2 -7 l -7 -2 l 7 -2 Z" fill={COLORS.yellow} />
+  </g>
+);
+
+/** Cluttered-chaos room: an overwhelming, piled-up mess — the chaos a tidy person
+ *  is soothing away (densely filled by its very nature). */
+export const ClutteredChaosRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.16)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {/* busy wallpaper stripes + patches to break the flat wall */}
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.yellowDark, 0.1)} opacity={0.6} />)}
+    {Array.from({ length: 24 }).map((_, i) => <circle key={`d${i}`} cx={60 + (i * 163) % 1860} cy={60 + ((i * 97) % 480)} r={10} fill={shade(COLORS.yellowDark, 0.22)} opacity={0.4} />)}
+    {/* sticky notes stuck randomly on the wall */}
+    {[[160, 440], [1500, 400], [820, 180], [1180, 500], [460, 520]].map(([x, y], i) => <rect key={`s${i}`} x={x - 24} y={y - 24} width={48} height={48} rx={4} fill={[COLORS.yellow, COLORS.pink, COLORS.sky, COLORS.greenLeaf, COLORS.yellow][i]} {...sm} transform={`rotate(${i * 13 - 20} ${x} ${y})`} />)}
+    {/* leaning, crooked pictures */}
+    {[260, 620, 1340, 1680].map((x, i) => <g key={i} transform={`translate(${x} 220) rotate(${(i % 2 ? 1 : -1) * 10})`}><rect x={-50} y={-66} width={100} height={132} rx={6} fill={COLORS.white} {...lg} /><rect x={-38} y={-52} width={76} height={80} rx={4} fill={[COLORS.pink, COLORS.sky, COLORS.greenLeaf, COLORS.yellow][i]} opacity={0.6} /></g>)}
+    {/* overflowing shelves, items spilling */}
+    <g transform="translate(960 300)"><rect x={-240} y={0} width={480} height={16} rx={4} fill={COLORS.wood} {...lg} />{Array.from({ length: 14 }).map((_, i) => <rect key={i} x={-230 + i * 34} y={-50 - (i % 3) * 10} width={26} height={50 + (i % 3) * 10} rx={4} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.lavender][i % 6]} {...sm} transform={`rotate(${(i % 4) * 6 - 9} ${-217 + i * 34} -20)`} />)}</g>
+    {/* teetering stacks of books + laundry piles on the floor */}
+    {[300, 560].map((x, s) => <g key={s} transform={`translate(${x} 840)`}>{Array.from({ length: 6 }).map((_, i) => <rect key={i} x={-54 + (i % 2) * 8} y={-i * 26} width={108} height={24} rx={4} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.lavender][i]} {...lg} transform={`rotate(${(i % 2 ? 3 : -3)} 0 ${-i * 26})`} />)}</g>)}
+    {/* a big heap of clothes */}
+    <g transform="translate(1200 900)"><path d="M -160 60 Q -120 -60 -40 -30 Q 20 -80 90 -20 Q 170 -40 160 60 Z" fill={COLORS.lavender} {...xl} /><path d="M -90 10 Q -40 -20 10 10 M 30 20 Q 80 -10 120 20" fill="none" stroke={shade(COLORS.lavender, -0.08)} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+    {/* scattered papers + a mug on the floor */}
+    {[[760, 1000, COLORS.white], [900, 1030, COLORS.white], [1500, 980, COLORS.sky]].map(([x, y, c], i) => <rect key={i} x={(x as number) - 24} y={(y as number) - 16} width={48} height={34} rx={4} fill={c as string} {...sm} transform={`rotate(${i * 20 - 20} ${x} ${y})`} />)}
+    <g transform="translate(1680 980)"><rect x={-22} y={-26} width={44} height={40} rx={8} fill={COLORS.red} {...lg} transform="rotate(16 0 -6)" /></g>
+  </g>
+);
+
+/** Serene tidy bedroom: a calm, minimal, immaculate bedroom — the peaceful reward
+ *  of order. */
+export const SereneTidyBedroom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.06)} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={580} width={CANVAS.width} height={260} fill={shade(COLORS.sky, -0.02)} />
+    {/* gentle wall panelling to break the flat wall */}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={580} stroke={shade(COLORS.sky, -0.05)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* a neat row of framed prints above the bed */}
+    {[1180, 1360, 1540].map((x, i) => <g key={`fp${i}`} transform={`translate(${x} 340)`}><rect x={-52} y={-64} width={104} height={128} rx={6} fill={COLORS.white} {...lg} /><rect x={-40} y={-50} width={80} height={76} rx={4} fill={[COLORS.pink, COLORS.greenLeaf, COLORS.yellow][i]} opacity={0.55} /></g>)}
+    {/* soft wall arc / headboard accent */}
+    <circle cx={1360} cy={640} r={240} fill={shade(COLORS.sky, 0.02)} opacity={0.6} />
+    {/* window with gentle light + a single aligned plant */}
+    <g transform="translate(360 330)"><rect x={-130} y={-150} width={260} height={300} rx={12} fill={COLORS.sky} {...xl} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-130} y1={0} x2={130} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><circle cx={60} cy={-80} r={34} fill={COLORS.white} opacity={0.7} /></g>
+    {/* a crisply made bed, pillows squared */}
+    <g transform="translate(1340 780)">
+      <rect x={-320} y={-30} width={640} height={180} rx={18} fill={COLORS.white} {...xl} />
+      <rect x={-320} y={-110} width={200} height={110} rx={16} fill={shade(COLORS.sky, 0.06)} {...lg} />
+      <rect x={-300} y={-96} width={150} height={60} rx={14} fill={COLORS.sky} {...lg} />
+      <rect x={-130} y={-96} width={130} height={56} rx={14} fill={COLORS.pink} {...lg} />
+      <path d="M -120 20 L 320 20 L 320 150 L -120 150 Z" fill={shade(COLORS.sky, 0.04)} {...lg} />
+      <path d="M -120 20 Q 100 -14 320 20" fill="none" stroke={shade(COLORS.sky,-0.06)} strokeWidth={STROKE.lg} />
+    </g>
+    {/* a minimal nightstand: one book, one lamp, aligned */}
+    <g transform="translate(900 860)"><rect x={-60} y={0} width={120} height={120} rx={10} fill={COLORS.wood} {...xl} /><g transform="translate(0 -14)"><rect x={-30} y={-40} width={60} height={24} rx={10} fill={COLORS.yellowSoft} {...lg} /><rect x={-5} y={-16} width={10} height={30} fill={COLORS.woodDark} /></g><rect x={-44} y={30} width={50} height={14} rx={3} fill={COLORS.greenLeaf} /></g>
+    {/* a tidy rug */}
+    <ellipse cx={760} cy={1000} rx={300} ry={54} fill={shade(COLORS.sky, -0.04)} opacity={0.6} />
+    <path d="M 700 330 l 3 9 l 9 3 l -9 3 l -3 9 l -3 -9 l -9 -3 l 9 -3 Z" fill={COLORS.yellow} opacity={0.8} />
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3656,6 +3740,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'poker-room': PokerRoom,
   'two-chairs-talk': TwoChairsTalk,
   'detective-board': DetectiveBoard,
+  'show-home-lounge': ShowHomeLounge,
+  'cluttered-chaos-room': ClutteredChaosRoom,
+  'serene-tidy-bedroom': SereneTidyBedroom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
