@@ -3412,8 +3412,102 @@ const BeingMovedCurve: React.FC = () => {
   );
 };
 
+/** friendship-hours: the ~50 / 90 / 200 hour steps to closeness. */
+const FriendshipHours: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.6;
+  const steps: [string, number, string][] = [['acquaintance', 0, COLORS.ledGrey], ['casual friend', 50, COLORS.sky], ['friend', 90, COLORS.greenLeaf], ['close friend', 200, COLORS.pink]];
+  return (
+    <g>
+      {steps.map(([lab, hrs, c], i) => {
+        const p = springIn(frame - i * 6, 14); const w = 120; const h = 50 + i * 46;
+        const x = cx - 300 + i * 190;
+        return (
+          <g key={i} transform={`translate(${x} ${cy})`}>
+            <rect x={-w / 2} y={-h * p} width={w} height={h * p} rx={8} fill={c} {...lg} />
+            <text x={0} y={30} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.outline}>{lab}</text>
+            {hrs > 0 && <text x={0} y={-h * p - 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>~{hrs}h</text>}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 250} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>closeness is built in hours</text>
+    </g>
+  );
+};
+
+/** liking-gap: how much you think they liked you vs how much they actually did. */
+const LikingGapDiagram: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.52;
+  const bars: [string, number, string][] = [['you assume', 0.5, COLORS.ledGrey], ['reality', 0.85, COLORS.pink]];
+  return (
+    <g>
+      {bars.map(([lab, v, c], i) => {
+        const p = springIn(frame - i * 8, 14); const h = 240 * v * p; const x = cx - 110 + i * 220;
+        return (
+          <g key={i} transform={`translate(${x} ${cy})`}>
+            <rect x={-56} y={40 - h} width={112} height={h} rx={10} fill={c} {...lg} />
+            <text x={0} y={72} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{lab}</text>
+          </g>
+        );
+      })}
+      <path d={`M ${cx - 110} ${cy - 80} Q ${cx} ${cy - 200} ${cx + 110} ${cy - 160}`} fill="none" stroke={COLORS.pink} strokeWidth={STROKE.sm} strokeDasharray="5 8" />
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the liking gap</text>
+      <text x={cx} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline}>they liked you more than you think</text>
+    </g>
+  );
+};
+
+/** everyone-waiting: a room where all hold back, each sure they're the only one. */
+const EveryoneWaiting: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const people = [-220, -75, 75, 220];
+  return (
+    <g>
+      {people.map((dx, i) => {
+        const bob = 3 * Math.sin(frame / 10 + i);
+        return (
+          <g key={i} transform={`translate(${cx + dx} ${cy + bob})`}>
+            <circle cx={0} cy={0} r={42} fill={[COLORS.sky, COLORS.pink, COLORS.yellow, COLORS.lavender][i]} {...xl} />
+            <circle cx={-13} cy={-6} r={5} fill={COLORS.outline} /><circle cx={13} cy={-6} r={5} fill={COLORS.outline} />
+            <path d="M -12 16 Q 0 8 12 16" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+            <g transform="translate(0 -74)"><ellipse cx={0} cy={0} rx={56} ry={26} fill={COLORS.white} {...sm} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={11} fill={COLORS.outline}>they won't</text></g>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>…everyone thinks the same thing</text>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the approach standoff</text>
+    </g>
+  );
+};
+
+/** closeness-ladder: swapping a little more vulnerability deepens a bond. */
+const ClosenessLadder: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.56;
+  const rungs = ['small talk', 'opinions', 'stories', 'fears & dreams'];
+  return (
+    <g>
+      {rungs.map((lab, i) => {
+        const p = springIn(frame - i * 7, 14); const y = cy - i * 70; const w = 320;
+        return (
+          <g key={i} opacity={p}>
+            <rect x={cx - w / 2} y={y - 24} width={w} height={44} rx={10} fill={[COLORS.ledGrey, COLORS.sky, COLORS.greenLeaf, COLORS.pink][i]} {...lg} />
+            <text x={cx} y={y + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>{lab}</text>
+          </g>
+        );
+      })}
+      <path d={`M ${cx + 180} ${cy + 10} L ${cx + 180} ${cy - 210}`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+      <path d={`M ${cx + 180} ${cy - 210} l -8 14 m 8 -14 l 8 14`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+      <text x={cx + 210} y={cy - 100} textAnchor="start" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>closer</text>
+      <text x={cx} y={cy - 280} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>share a little more, go deeper</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3555,6 +3649,10 @@ export const DiagramCard: React.FC<{
     'sensitivity-spectrum': COLORS.lavender,
     'tears-three-jobs': COLORS.pink,
     'being-moved-curve': COLORS.yellow,
+    'friendship-hours': COLORS.sky,
+    'liking-gap': COLORS.pink,
+    'everyone-waiting': COLORS.yellow,
+    'closeness-ladder': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3703,6 +3801,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'sensitivity-spectrum' && <SensitivitySpectrum />}
         {diagram === 'tears-three-jobs' && <TearsThreeJobs />}
         {diagram === 'being-moved-curve' && <BeingMovedCurve />}
+        {diagram === 'friendship-hours' && <FriendshipHours />}
+        {diagram === 'liking-gap' && <LikingGapDiagram />}
+        {diagram === 'everyone-waiting' && <EveryoneWaiting />}
+        {diagram === 'closeness-ladder' && <ClosenessLadder />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

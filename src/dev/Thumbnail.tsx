@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'hard-to-make-friends': {
+    A: { lines: ['WHY MAKING', 'FRIENDS AS', 'AN ADULT IS HARD'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'lonely-bench' },
+    B: { lines: ["IT'S NOT", 'JUST', 'YOU'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'approach-standoff' },
+    C: { lines: ['THEY LIKE', 'YOU MORE', 'THAN YOU THINK'], accent: COLORS.pink, bg: COLORS.blueDiagram, emotion: 'happy-talk', textColor: COLORS.white, badge: '♥', prop: 'liking-gap-scale' },
+  },
   'cry-easily': {
     A: { lines: ['THE', 'PSYCHOLOGY OF', 'CRYING EASILY'], accent: COLORS.sky, bg: COLORS.lavenderDark, emotion: 'tearful', textColor: COLORS.white, badge: '!', prop: 'welling-eye' },
     B: { lines: ['CRYING', "ISN'T", 'WEAKNESS'], accent: COLORS.pink, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '♥', prop: 'overflow-cup' },

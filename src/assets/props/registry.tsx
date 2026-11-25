@@ -40,6 +40,7 @@ import * as Ha from './happiness';
 import * as Th from './thinking';
 import * as Wa from './watched';
 import * as Cr from './crying';
+import * as Fr from './friends';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -490,6 +491,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'held-back': Cr.HeldBack,
   'kind-tissue': Cr.KindTissue,
   'cry-permission': Cr.CryPermission,
+  // hard-to-make-friends emblems (all new)
+  'lonely-bench': Fr.LonelyBench,
+  'friend-factory-closed': Fr.FriendFactoryClosed,
+  'hours-jar': Fr.HoursJar,
+  'repeat-bump': Fr.RepeatBump,
+  'liking-gap-scale': Fr.LikingGapScale,
+  'approach-standoff': Fr.ApproachStandoff,
+  'rejection-armor': Fr.RejectionArmor,
+  'open-up-ladder': Fr.OpenUpLadder,
+  'one-good-friend': Fr.OneGoodFriend,
+  'first-move': Fr.FirstMove,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

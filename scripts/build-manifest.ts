@@ -153,6 +153,10 @@ const NEW_ASSETS = new Set([
   'movie-night-couch', 'rainy-window-seat', 'wedding-hall',
   'welling-eye', 'overflow-cup', 'sensitive-antenna', 'empathy-mirror', 'tear-signal', 'vagal-calm', 'happy-tears', 'held-back', 'kind-tissue', 'cry-permission',
   'overflow-threshold', 'sensitivity-spectrum', 'tears-three-jobs', 'being-moved-curve',
+  // hard-to-make-friends (all new)
+  'moving-boxes-flat', 'evening-class', 'board-game-cafe',
+  'lonely-bench', 'friend-factory-closed', 'hours-jar', 'repeat-bump', 'liking-gap-scale', 'approach-standoff', 'rejection-armor', 'open-up-ladder', 'one-good-friend', 'first-move',
+  'friendship-hours', 'liking-gap', 'everyone-waiting', 'closeness-ladder',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

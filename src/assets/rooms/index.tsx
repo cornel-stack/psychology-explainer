@@ -124,7 +124,10 @@ export type RoomName =
   | 'sunny-park'
   | 'movie-night-couch'
   | 'rainy-window-seat'
-  | 'wedding-hall';
+  | 'wedding-hall'
+  | 'moving-boxes-flat'
+  | 'evening-class'
+  | 'board-game-cafe';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3400,6 +3403,73 @@ export const WeddingHall: React.FC = () => (
   </g>
 );
 
+/** Moving-boxes flat: a half-unpacked new apartment, one person, a window onto a
+ *  city full of strangers — friendship reset to zero. */
+export const MovingBoxesFlat: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCreamDark} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={i * 200} y={0} width={100} height={840} fill={shade(COLORS.bgCreamDark, -0.04)} opacity={0.5} />)}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={840} x2={i * 180 - 120} y2={1080} stroke={shade(COLORS.wood, 0.12)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    {/* window onto a city skyline of strangers' lit windows */}
+    <g transform="translate(1480 340)">
+      <rect x={-260} y={-220} width={520} height={440} rx={16} fill={shade(COLORS.wallNight, 0.14)} {...xl} />
+      <rect x={-240} y={-200} width={500} height={400} rx={8} fill={shade(COLORS.purpleDeep, 0.0)} />
+      {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={-230 + i * 96} y={-40 + (i % 2) * 40} width={80} height={240} fill={shade(COLORS.wallNight, 0.05)} {...sm} />)}
+      {Array.from({ length: 24 }).map((_, i) => <rect key={i} x={-220 + (i % 6) * 78} y={0 + Math.floor(i / 6) * 50} width={20} height={20} fill={COLORS.yellowSoft} opacity={0.8} />)}
+      <circle cx={180} cy={-150} r={44} fill={COLORS.lavender} opacity={0.9} />
+      <line x1={-260} y1={0} x2={260} y2={0} stroke={shade(COLORS.wallNight, 0.2)} strokeWidth={STROKE.lg} /><line x1={0} y1={-220} x2={0} y2={220} stroke={shade(COLORS.wallNight, 0.2)} strokeWidth={STROKE.lg} />
+    </g>
+    {/* stacks of moving boxes */}
+    {[[220, 820], [360, 760], [250, 640]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><rect x={-70} y={-70} width={140} height={140} rx={8} fill={COLORS.wood} {...xl} /><path d="M -70 -70 L 0 -44 L 70 -70" fill="none" stroke={shade(COLORS.wood, 0.1)} strokeWidth={STROKE.lg} strokeLinecap="round" /><rect x={-22} y={-70} width={44} height={140} fill={shade(COLORS.wood, 0.06)} opacity={0.5} /><rect x={-34} y={-20} width={68} height={22} rx={4} fill={COLORS.white} opacity={0.7} /></g>)}
+    {/* a lone lamp + a single mug, unplaced */}
+    <g transform="translate(700 760)"><rect x={-6} y={0} width={12} height={160} fill={COLORS.woodDark} /><path d="M -40 0 L 40 0 L 26 -60 L -26 -60 Z" fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={180} rx={60} ry={16} fill={COLORS.yellowSoft} opacity={0.25} /></g>
+    <g transform="translate(900 900)"><rect x={-26} y={-30} width={52} height={48} rx={8} fill={COLORS.sky} {...lg} /><path d="M 26 -18 q 22 6 0 26" fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} /></g>
+  </g>
+);
+
+/** Evening class: a cosy hobby class with easels and a few classmates — the kind of
+ *  repeated, low-stakes contact where adult friendships can grow. */
+export const EveningClass: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.greenTeal} floor={COLORS.wood} floorY={820} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={260} fill={shade(COLORS.greenTeal, 0.08)} />
+    {/* pinned artwork across the wall */}
+    {[160, 360, 560, 1360, 1560, 1760].map((x, i) => <g key={i} transform={`translate(${x} 170)`}><rect x={-56} y={-70} width={112} height={140} rx={6} fill={COLORS.white} {...lg} /><rect x={-42} y={-56} width={84} height={70} rx={4} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.lavender][i % 4]} opacity={0.7} /><path d={`M -42 ${14} q 42 -30 84 0`} fill="none" stroke={shade(COLORS.greenDark, 0.1)} strokeWidth={STROKE.sm} /></g>)}
+    {/* a shared supply table in the middle back */}
+    <g transform="translate(960 520)"><rect x={-160} y={0} width={320} height={30} rx={8} fill={COLORS.wood} {...xl} />{[-110, -60, -10, 60, 110].map((x, i) => <rect key={i} x={x - 6} y={-50} width={12} height={54} rx={4} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink][i]} />)}<rect x={20} y={-30} width={30} height={34} rx={6} fill={COLORS.white} {...sm} /></g>
+    {/* easels with canvases */}
+    {[360, 760, 1200, 1600].map((x, i) => <g key={i} transform={`translate(${x} 780)`}><path d="M 0 -160 L -54 90 M 0 -160 L 54 90 M -40 40 L 40 40" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><rect x={-60} y={-170} width={120} height={120} rx={6} fill={COLORS.white} {...lg} /><circle cx={0} cy={-120} r={26} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.greenLeaf][i]} opacity={0.7} /><path d="M -40 -70 q 40 -24 80 0" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.sm} /></g>)}
+    {/* a couple of classmates by their easels */}
+    {[560, 1400].map((x, i) => <g key={i} transform={`translate(${x} 760)`}><circle cx={0} cy={-40} r={34} fill={[COLORS.yellowSoft, COLORS.lavender][i]} {...xl} /><circle cx={-12} cy={-44} r={5} fill={COLORS.outline} /><circle cx={12} cy={-44} r={5} fill={COLORS.outline} /><path d="M -12 -28 Q 0 -18 12 -28" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>)}
+  </g>
+);
+
+/** Board-game café: a lively, warm café of shared tables and games — friendship
+ *  actually happening (the goal). */
+export const BoardGameCafe: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.1)} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    <rect x={0} y={540} width={CANVAS.width} height={280} fill={shade(COLORS.yellowDark, 0.05)} />
+    {/* shelves of board-game boxes */}
+    {[120, 1640].map((bx, b) => <g key={b} transform={`translate(${bx} 260)`}>{[0, 1, 2].map((r) => <g key={r}><rect x={-90} y={r * 100} width={180} height={16} rx={4} fill={COLORS.wood} {...lg} />{Array.from({ length: 5 }).map((_, i) => <rect key={i} x={-82 + i * 34} y={r * 100 - 52} width={28} height={52} rx={4} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink][(b + r + i) % 5]} {...sm} />)}</g>)}</g>)}
+    {/* string lights */}
+    <path d="M 240 120 Q 600 190 960 120 Q 1320 60 1680 120" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 8 }).map((_, i) => <circle key={i} cx={300 + i * 180} cy={150 + 24 * Math.sin(i)} r={10} fill={COLORS.yellow} {...sm} />)}
+    {/* two round tables with games + friends laughing */}
+    {[640, 1280].map((cx, t) => (
+      <g key={t} transform={`translate(${cx} 760)`}>
+        <ellipse cx={0} cy={60} rx={150} ry={40} fill={COLORS.wood} {...xl} />
+        {/* a game board on the table */}
+        <g transform="translate(0 40)"><rect x={-54} y={-26} width={108} height={52} rx={8} fill={COLORS.white} {...lg} />{[-1, 0, 1].map((i) => <circle key={i} cx={i * 30} cy={0} r={9} fill={[COLORS.red, COLORS.sky, COLORS.greenLeaf][i + 1]} />)}</g>
+        {/* two friends either side */}
+        {[-150, 150].map((x, i) => <g key={i} transform={`translate(${x} -30)`}><circle cx={0} cy={-36} r={36} fill={[COLORS.pink, COLORS.sky][(t + i) % 2]} {...xl} /><circle cx={-13} cy={-40} r={5} fill={COLORS.outline} /><circle cx={13} cy={-40} r={5} fill={COLORS.outline} /><path d="M -14 -22 Q 0 -8 14 -22" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>)}
+      </g>
+    ))}
+    {/* a counter with mugs at the back-left */}
+    <g transform="translate(300 500)"><rect x={-120} y={0} width={240} height={60} rx={10} fill={COLORS.wood} {...xl} />{[-80, -30, 20, 70].map((x, i) => <g key={i} transform={`translate(${x} -16)`}><rect x={-14} y={-18} width={28} height={26} rx={6} fill={[COLORS.red, COLORS.greenLeaf, COLORS.sky, COLORS.pink][i]} {...sm} /></g>)}</g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3509,6 +3579,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'movie-night-couch': MovieNightCouch,
   'rainy-window-seat': RainyWindowSeat,
   'wedding-hall': WeddingHall,
+  'moving-boxes-flat': MovingBoxesFlat,
+  'evening-class': EveningClass,
+  'board-game-cafe': BoardGameCafe,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
