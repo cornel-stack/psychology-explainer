@@ -56,6 +56,7 @@ import * as Lo from './loneliness';
 import * as Ti from './timeage';
 import * as Sm from './sadmusic';
 import * as An from './anger';
+import * as Fi from './first-impressions';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -682,6 +683,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'pause-breath': An.PauseBreath,
   'assertive-vs-aggressive': An.AssertiveVsAggressive,
   'fuel-to-fix': An.FuelToFix,
+  'snap-judgment-clock': Fi.SnapJudgmentClock,
+  'thin-slice': Fi.ThinSlice,
+  'primacy-anchor': Fi.PrimacyAnchor,
+  'halo-effect': Fi.HaloEffect,
+  'warmth-first': Fi.WarmthFirst,
+  'sticky-label': Fi.StickyLabel,
+  'self-fulfilling': Fi.SelfFulfilling,
+  'open-posture': Fi.OpenPosture,
+  'pratfall-charm': Fi.PratfallCharm,
+  'second-look': Fi.SecondLook,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

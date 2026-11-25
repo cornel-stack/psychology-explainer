@@ -217,6 +217,10 @@ const NEW_ASSETS = new Set([
   'heated-argument-lounge', 'red-mist-room', 'cool-calm-room',
   'anger-flash', 'anger-messenger', 'anger-iceberg', 'amygdala-hijack', 'ninety-sec-wave', 'vent-backfire', 'bottled-anger', 'pause-breath', 'assertive-vs-aggressive', 'fuel-to-fix',
   'anger-as-signal', 'anger-iceberg-split', 'amygdala-flood', 'ninety-second-rule',
+  // first-impressions (all new)
+  'interview-room', 'first-date-cafe', 'party-entrance',
+  'snap-judgment-clock', 'thin-slice', 'primacy-anchor', 'halo-effect', 'warmth-first', 'sticky-label', 'self-fulfilling', 'open-posture', 'pratfall-charm', 'second-look',
+  'impression-speed', 'primacy-list', 'first-two-questions', 'halo-spread',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

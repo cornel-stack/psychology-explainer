@@ -4780,8 +4780,114 @@ const NinetySecondRule: React.FC = () => {
   );
 };
 
+/** impression-speed: a confidence curve that keeps climbing while the verdict is already
+ *  locked in the first tenth of a second. */
+const ImpressionSpeed: React.FC = () => {
+  const frame = useCurrentFrame();
+  const x0 = CANVAS.width * 0.16; const x1 = CANVAS.width * 0.84; const baseY = CANVAS.height * 0.74; const topY = CANVAS.height * 0.3;
+  const W = x1 - x0;
+  const pts = Array.from({ length: 60 }, (_, i) => { const t = i / 59; const y = baseY - (baseY - topY) * (1 - Math.exp(-t * 3.4)); return { x: x0 + t * W, y }; });
+  const reveal = Math.min(pts.length, Math.floor(springIn(frame, 40) * pts.length) + 1);
+  const d = pts.slice(0, reveal).map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+  const vx = x0 + W * 0.06;
+  return (
+    <g>
+      <text x={CANVAS.width / 2} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the verdict comes first</text>
+      <line x1={x0} y1={baseY} x2={x1} y2={baseY} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <line x1={x0} y1={baseY} x2={x0} y2={topY - 20} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 - 16} y={(baseY + topY) / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 16} ${(baseY + topY) / 2})`}>confidence</text>
+      <text x={(x0 + x1) / 2} y={baseY + 46} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline}>time looking</text>
+      <path d={d} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" />
+      {/* the moment the judgment is already made */}
+      <line x1={vx} y1={baseY} x2={vx} y2={topY} stroke={COLORS.red} strokeWidth={STROKE.lg} strokeDasharray="4 10" />
+      <circle cx={vx} cy={pts[3].y} r={11} fill={COLORS.red} {...sm} />
+      <text x={vx + 10} y={topY + 20} fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.red}>0.1s — already decided</text>
+    </g>
+  );
+};
+
+/** primacy-list: the same six traits, read top-down, warm early and cold late — order
+ *  colours the whole picture. */
+const PrimacyList: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const traits = ['intelligent', 'hard-working', 'impulsive', 'critical', 'stubborn', 'envious'];
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>order changes everything</text>
+      {traits.map((t, i) => {
+        const p = springIn(frame - i * 8, 12);
+        const warm = i < 2; const cold = i > 3;
+        const col = warm ? COLORS.greenTeal : cold ? shade(COLORS.sky, -0.04) : COLORS.yellowSoft;
+        return <g key={i} transform={`translate(${cx} ${180 + i * 92}) scale(${0.8 + 0.2 * p})`} opacity={p}>
+          <rect x={-200} y={-34} width={400} height={68} rx={16} fill={col} {...lg} />
+          <circle cx={-168} cy={0} r={18} fill={COLORS.white} {...sm} /><text x={-168} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{i + 1}</text>
+          <text x={-130} y={8} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{t}</text>
+        </g>;
+      })}
+      <text x={cx + 250} y={200} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.greenDark} transform={`rotate(90 ${cx + 250} 200)`}>warm start → warm read</text>
+    </g>
+  );
+};
+
+/** first-two-questions: warmth ("can I trust you?") judged before competence ("can I
+ *  respect you?"). */
+const FirstTwoQuestions: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.5;
+  const p1 = springIn(frame, 14); const p2 = springIn(frame - 24, 14);
+  return (
+    <g>
+      <text x={cx} y={110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>two questions, in order</text>
+      {/* warmth — first, larger */}
+      <text x={cx - 230} y={cy - 172} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.red} opacity={p1}>1st · can I trust you?</text>
+      <g transform={`translate(${cx - 230} ${cy}) scale(${0.6 + 0.4 * p1})`} opacity={p1}>
+        <circle cx={0} cy={0} r={130} fill={shade(COLORS.yellow, 0.06)} {...xl} />
+        <path d="M 0 40 q -46 -30 -46 -58 q 0 -28 30 -28 q 16 0 16 18 q 0 -18 16 -18 q 30 0 30 28 q 0 28 -46 58 Z" fill={COLORS.red} transform="translate(0 -6)" {...lg} />
+        <text x={0} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>WARMTH</text>
+      </g>
+      {/* arrow */}
+      <path d={`M ${cx - 70} ${cy} l 90 0`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={p2} />
+      <path d={`M ${cx + 14} ${cy - 10} l 14 10 l -14 10`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" opacity={p2} />
+      {/* competence — second, smaller: ascending bars */}
+      <text x={cx + 210} y={cy - 158} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.skyDark} opacity={p2}>2nd · can I respect you?</text>
+      <g transform={`translate(${cx + 210} ${cy}) scale(${0.5 + 0.35 * p2})`} opacity={p2}>
+        <circle cx={0} cy={0} r={118} fill={shade(COLORS.sky, 0.06)} {...xl} />
+        {[0, 1, 2].map((i) => <rect key={i} x={-52 + i * 38} y={-6 - i * 24} width={30} height={40 + i * 24} rx={6} fill={COLORS.sky} {...lg} />)}
+        <text x={0} y={96} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>COMPETENCE</text>
+      </g>
+    </g>
+  );
+};
+
+/** halo-spread: one bright trait at the centre bleeds its glow onto unrelated
+ *  judgments around it. */
+const HaloSpread: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.52;
+  const outer = ['kind', 'smart', 'honest', 'capable', 'likeable'];
+  const glow = 0.5 + 0.5 * Math.sin(frame / 7);
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>one trait spreads out</text>
+      {outer.map((o, i) => {
+        const a = -Math.PI / 2 + (i / outer.length) * Math.PI * 2; const R = 200; const x = cx + Math.cos(a) * R; const y = cy + Math.sin(a) * R;
+        const p = springIn(frame - 12 - i * 6, 12);
+        return <g key={i}>
+          <line x1={cx} y1={cy} x2={x} y2={y} stroke={COLORS.yellow} strokeWidth={STROKE.lg} opacity={0.5 * p} />
+          <g transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * p})`} opacity={p}><ellipse cx={0} cy={0} rx={62} ry={40} fill={shade(COLORS.yellow, 0.08)} opacity={0.4 + glow * 0.3} /><rect x={-58} y={-24} width={116} height={48} rx={12} fill={COLORS.white} {...lg} /><text x={0} y={7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{o}</text></g>
+        </g>;
+      })}
+      {[1, 2, 3].map((r) => <circle key={r} cx={cx} cy={cy} r={54 + r * 22} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={(0.4 - r * 0.1) * (0.6 + glow * 0.5)} />)}
+      <circle cx={cx} cy={cy} r={52} fill={COLORS.yellow} opacity={0.5 + glow * 0.3} {...xl} />
+      <text x={cx} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>good-</text>
+      <text x={cx} y={cy + 26} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>looking</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4987,6 +5093,10 @@ export const DiagramCard: React.FC<{
     'anger-iceberg-split': COLORS.blueDiagram,
     'amygdala-flood': COLORS.red,
     'ninety-second-rule': COLORS.red,
+    'impression-speed': COLORS.sky,
+    'primacy-list': COLORS.greenTeal,
+    'first-two-questions': COLORS.yellow,
+    'halo-spread': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -5199,6 +5309,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'anger-iceberg-split' && <AngerIcebergSplit />}
         {diagram === 'amygdala-flood' && <AmygdalaFlood />}
         {diagram === 'ninety-second-rule' && <NinetySecondRule />}
+        {diagram === 'impression-speed' && <ImpressionSpeed />}
+        {diagram === 'primacy-list' && <PrimacyList />}
+        {diagram === 'first-two-questions' && <FirstTwoQuestions />}
+        {diagram === 'halo-spread' && <HaloSpread />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

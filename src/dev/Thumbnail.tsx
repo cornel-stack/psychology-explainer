@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'first-impressions': {
+    A: { lines: ['THE', 'PSYCHOLOGY OF', 'FIRST IMPRESSIONS'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'snap-judgment-clock' },
+    B: { lines: ['JUDGED IN', 'A TENTH OF', 'A SECOND'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'excited', textColor: COLORS.white, badge: '!', prop: 'halo-effect' },
+    C: { lines: ['WHY WARMTH', 'BEATS BEING', 'IMPRESSIVE'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'warmth-first' },
+  },
   'anger': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF ANGER'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '?', prop: 'anger-flash' },
     B: { lines: ['WHAT YOUR', 'ANGER IS', 'TRYING TO SAY'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'anger-iceberg' },

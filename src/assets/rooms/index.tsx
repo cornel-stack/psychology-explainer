@@ -172,7 +172,10 @@ export type RoomName =
   | 'sunset-balcony'
   | 'heated-argument-lounge'
   | 'red-mist-room'
-  | 'cool-calm-room';
+  | 'cool-calm-room'
+  | 'interview-room'
+  | 'first-date-cafe'
+  | 'party-entrance';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4606,6 +4609,58 @@ export const CoolCalmRoom: React.FC = () => (
   </g>
 );
 
+/** Interview room: a clean office with a desk, two chairs facing off, a clock and a
+ *  framed certificate — the classic first-impression arena. */
+export const InterviewRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.03)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 13 }).map((_, i) => <rect key={i} x={i * 150} y={0} width={70} height={840} fill={shade(COLORS.sky, 0.0)} opacity={0.4} />)}
+    {/* wall clock */}
+    <g transform="translate(960 220)"><circle cx={0} cy={0} r={52} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-34} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={24} y2={6} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle cx={0} cy={0} r={6} fill={COLORS.outline} /></g>
+    {/* framed certificate */}
+    <g transform="translate(360 300)"><rect x={-70} y={-54} width={140} height={108} rx={6} fill={COLORS.white} {...xl} /><rect x={-54} y={-38} width={108} height={60} rx={4} fill={shade(COLORS.yellowSoft, 0.04)} />{[0, 1, 2].map((i) => <line key={i} x1={-40} y1={-20 + i * 16} x2={40} y2={-20 + i * 16} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.sm} />)}<circle cx={34} cy={34} r={10} fill={COLORS.red} /></g>
+    {/* window */}
+    <g transform="translate(1540 320)"><rect x={-130} y={-140} width={260} height={280} rx={12} fill={shade(COLORS.sky, 0.12)} {...xl} /><line x1={0} y1={-140} x2={0} y2={140} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-130} y1={0} x2={130} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /></g>
+    {/* the desk */}
+    <g transform="translate(960 760)"><rect x={-260} y={0} width={520} height={120} rx={12} fill={COLORS.woodDark} {...xl} /><rect x={-260} y={-14} width={520} height={20} rx={6} fill={shade(COLORS.woodDark, 0.08)} {...lg} /><rect x={-120} y={30} width={90} height={60} rx={6} fill={COLORS.white} {...sm} /></g>
+    {/* two chairs */}
+    {[520, 1400].map((x, i) => <g key={i} transform={`translate(${x} 840)`}><rect x={-44} y={-10} width={88} height={30} rx={8} fill={COLORS.navy} {...lg} /><rect x={-44} y={-120} width={16} height={120} rx={6} fill={COLORS.navy} {...lg} /><rect x={-44} y={-120} width={88} height={60} rx={10} fill={shade(COLORS.navy, 0.08)} {...lg} /></g>)}
+  </g>
+);
+
+/** First-date cafe: a cosy cafe with a small round table for two, warm lamps, a
+ *  chalkboard menu and a plant — a nervous, hopeful first meeting. */
+export const FirstDateCafe: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.pink, 0.04)} floor={COLORS.wood} floorY={860} stripe={false} />
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 120} y={0} width={60} height={860} fill={shade(COLORS.pink, 0.02)} opacity={0.5} />)}
+    {/* hanging warm lamps */}
+    {[560, 960, 1360].map((x, i) => <g key={i} transform={`translate(${x} 0)`}><line x1={0} y1={0} x2={0} y2={150} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><path d={`M -40 150 L 40 150 L 26 210 L -26 210 Z`} fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={214} rx={26} ry={8} fill={COLORS.yellow} opacity={0.7} /></g>)}
+    {/* chalkboard menu */}
+    <g transform="translate(300 360)"><rect x={-80} y={-90} width={160} height={180} rx={10} fill={shade(COLORS.navy, -0.04)} {...xl} /><rect x={-68} y={-78} width={136} height={156} rx={6} fill="none" stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.5} />{[0, 1, 2, 3].map((i) => <line key={i} x1={-54} y1={-50 + i * 34} x2={40} y2={-50 + i * 34} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.6} />)}</g>
+    {/* plant */}
+    <g transform="translate(1600 620)"><rect x={-36} y={0} width={72} height={100} rx={10} fill={COLORS.greenTeal} {...xl} /><path d="M 0 0 q -50 -60 -24 -130 M 0 0 q 0 -80 0 -150 M 0 0 q 50 -60 24 -130" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-24} cy={-130} r={16} fill={COLORS.greenLeaf} /><circle cx={0} cy={-150} r={18} fill={COLORS.greenLeaf} /><circle cx={24} cy={-130} r={16} fill={COLORS.greenLeaf} /></g>
+    {/* round table for two with two cups */}
+    <g transform="translate(960 820)"><rect x={-10} y={0} width={20} height={120} fill={COLORS.woodDark} /><ellipse cx={0} cy={0} rx={160} ry={40} fill={COLORS.wood} {...xl} /><ellipse cx={0} cy={-8} rx={150} ry={34} fill={shade(COLORS.wood, 0.06)} />{[-70, 70].map((x, i) => <g key={i} transform={`translate(${x} -14)`}><ellipse cx={0} cy={0} rx={26} ry={10} fill={COLORS.white} {...lg} /><path d={`M 22 -2 q 14 2 0 10`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d="M -8 -14 q -4 -10 2 -16" fill="none" stroke={COLORS.whiteShade} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.6} /></g>)}<path d="M 0 -24 q -10 -16 0 -28 q 10 12 0 28 Z" fill={COLORS.pink} opacity={0.6} /></g>
+  </g>
+);
+
+/** Party entrance: a doorway into a lively party — balloons, string lights, a bright
+ *  room beyond — the moment all eyes turn to the newcomer. */
+export const PartyEntrance: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.06)} floor={COLORS.woodDark} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.purpleDeep, 0.03)} opacity={0.5} />)}
+    {/* string lights across the top */}
+    <path d="M 0 90 Q 480 180 960 90 Q 1440 180 1920 90" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 13 }).map((_, i) => { const t = i / 12; const x = t * 1920; const y = 90 + Math.sin(t * Math.PI * 2) * 60 + 20; return <circle key={i} cx={x} cy={y} r={11} fill={[COLORS.yellow, COLORS.pink, COLORS.sky, COLORS.greenLeaf][i % 4]} {...sm} />; })}
+    {/* the bright doorway */}
+    <g transform="translate(960 480)"><rect x={-220} y={-320} width={440} height={640} rx={20} fill={shade(COLORS.yellowSoft, 0.06)} {...xl} /><rect x={-190} y={-290} width={380} height={580} rx={12} fill={COLORS.yellowSoft} opacity={0.5} />{[-120, -40, 44, 128].map((x, i) => <g key={i} transform={`translate(${x} ${140 + (i % 2) * 14})`} opacity={0.4}><circle cx={0} cy={-30} r={24} fill={COLORS.purpleDeep} /><path d="M -34 150 Q -36 -8 0 -8 Q 36 -8 34 150 Z" fill={COLORS.purpleDeep} /></g>)}</g>
+    {/* balloons on each side */}
+    {[[220, 520], [1700, 560]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}>{[[-40, 0, COLORS.pink], [40, -10, COLORS.sky], [0, -40, COLORS.yellow]].map(([dx, dy, c], j) => <g key={j}><ellipse cx={dx as number} cy={dy as number} rx={34} ry={42} fill={c as string} {...lg} /><line x1={dx as number} y1={(dy as number) + 42} x2={0} y2={150} stroke={COLORS.outline} strokeWidth={STROKE.sm} /></g>)}</g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4763,6 +4818,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'heated-argument-lounge': HeatedArgumentLounge,
   'red-mist-room': RedMistRoom,
   'cool-calm-room': CoolCalmRoom,
+  'interview-room': InterviewRoom,
+  'first-date-cafe': FirstDateCafe,
+  'party-entrance': PartyEntrance,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

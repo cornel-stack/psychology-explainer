@@ -1,0 +1,298 @@
+{
+  "title": "The Psychology of First Impressions",
+  "slug": "first-impressions",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You walk into a room. A party, an interview, a first date. You haven't said a single word yet. And already, before you've even opened your mouth, every person in that room has quietly made up their mind about you. How trustworthy you are. How confident. Whether they like you. It happened in a flash, and you had almost no say in it.",
+          "scene": "story",
+          "room": "party-entrance",
+          "emotion": "scared",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "first impressions",
+          "mascots": [
+            { "costume": "suit", "pose": "wave", "emotion": "scared", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "First impressions feel almost unfair. They're fast, they're stubborn, and they're often wrong. And yet they shape job offers, friendships, verdicts, and love. So today, let's pull back the curtain on them. How your brain makes a snap verdict, the hidden biases pulling the strings, and how to make, and read, a first impression wisely.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Why your judgment is locked in a tenth of a second, the two questions every brain is secretly asking about you, why one good trait can make you look good at everything, and the surprising reason a small, clumsy mistake can make people like you more. Let's begin.",
+          "scene": "explainer",
+          "prop": "snap-judgment-clock",
+          "emotion": "excited"
+        }
+      ]
+    },
+    {
+      "name": "Faster Than Thought",
+      "beats": [
+        {
+          "vo": "Let's start with just how fast this happens, because it's genuinely startling. In a famous study, psychologists Janine Willis and Alexander Todorov flashed photos of strangers' faces for a fraction of a second and asked people to rate them. How trustworthy, how likeable, how competent.",
+          "scene": "diagramCard",
+          "diagram": "impression-speed",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "FASTER THAN THOUGHT",
+          "subtitle": "a tenth of a second"
+        },
+        {
+          "vo": "They found that people formed a full impression in about one tenth of a second. A hundred milliseconds. And here's the kicker: when they gave other people unlimited time to look, their judgments barely changed. More time didn't change the verdict. It just made people more confident in the one they'd already reached in an instant.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This lightning speed has a name: thin-slicing. Psychologists Nalini Ambady and Robert Rosenthal showed that people watching a silent two-second clip of a teacher could predict their end-of-term ratings almost as accurately as students who sat through a whole semester. Two seconds held almost as much signal as months.",
+          "scene": "explainer",
+          "prop": "thin-slice",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Why would a brain judge so recklessly fast? Survival. For most of human history, a stranger approaching could mean a friend or a threat, and you did not have time to gather references. The brain that decided fast, friend or foe, lived longer. We've inherited that ancient, split-second judge, and it never clocks off.",
+          "scene": "story",
+          "room": "party-entrance",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "tee", "pose": "point-right", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The First Thing Wins",
+      "beats": [
+        {
+          "vo": "Once that snap verdict is made, something sneaky happens. The very first thing someone learns about you starts colouring everything that comes after. Psychologists call it the primacy effect, and a classic experiment shows it beautifully.",
+          "scene": "diagramCard",
+          "diagram": "primacy-list",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE FIRST THING WINS",
+          "subtitle": "the primacy effect"
+        },
+        {
+          "vo": "Back in 1946, Solomon Asch read people a list of traits describing a person: intelligent, hard-working, impulsive, critical, stubborn, envious. Then he read the exact same words to another group, but in reverse order, ending on intelligent. Same traits. Same information. Completely different person.",
+          "scene": "explainer",
+          "prop": "primacy-anchor",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The group that heard intelligent first pictured a capable person whose stubbornness was just the price of their brilliance. The group that heard envious first pictured a bitter, difficult person who happened to be clever. The early words became a lens, and every later trait got bent to fit it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is why those opening seconds carry so much weight. Whatever lands first, a warm smile or a limp handshake, a confident hello or an anxious mumble, becomes the frame. And we spend the rest of the encounter fitting new evidence into the story we've already started telling.",
+          "scene": "story",
+          "room": "interview-room",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "suit", "pose": "hands-hips", "emotion": "serious-expert", "x": 1360, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Halo",
+      "beats": [
+        {
+          "vo": "Now meet one of the most powerful biases in the whole of psychology, and a slightly embarrassing one for our species. It's called the halo effect, and it means one good quality quietly makes us assume all the others.",
+          "scene": "diagramCard",
+          "diagram": "halo-spread",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE HALO EFFECT",
+          "subtitle": "one good thing glows"
+        },
+        {
+          "vo": "The most studied version is attractiveness. Decades of research show that good-looking people are automatically rated as kinder, smarter, more honest, more capable, and more trustworthy, none of which has anything to do with their face. Psychologists bluntly named it the what is beautiful is good stereotype.",
+          "scene": "explainer",
+          "prop": "halo-effect",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And it isn't just looks. A confident voice, a sharp outfit, a prestigious job title, even a firm handshake can throw off the same glow. One shiny trait lights up, and the brain lazily colours everything else in to match. We think we're judging the whole person. Often we're just judging the halo.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The halo even runs in reverse. One negative first trait casts a shadow, making us assume the worst about everything else, the horn effect. So a single early signal, good or bad, can quietly decide how your whole character gets read. It's unfair. But once you know it's happening, you can use it, and guard against it.",
+          "scene": "explainer",
+          "prop": "sticky-label",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Two Questions",
+      "beats": [
+        {
+          "vo": "So if the brain is judging this fast, what exactly is it judging? Researchers have found that almost every first impression, across cultures, runs on just two simple dimensions. And nearly everything someone decides about you in those first seconds comes down to these two questions.",
+          "scene": "diagramCard",
+          "diagram": "first-two-questions",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE TWO QUESTIONS",
+          "subtitle": "warmth, then competence"
+        },
+        {
+          "vo": "Question one is warmth: can I trust you? Are you friend or foe, do you mean me well? Question two is competence: can I respect you? Are you capable, can you act on it? Psychologist Susan Fiske and her colleagues found that these two axes, warmth and competence, explain the vast majority of our first judgments of other people.",
+          "scene": "explainer",
+          "prop": "warmth-first",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And here is the crucial part. We don't weigh them equally, and we don't read them in the same order. Warmth is judged first, and it matters more. Evolutionarily that makes perfect sense. Before you ask whether a stranger is skilled, your brain urgently needs to know one thing: are they going to help me, or hurt me?",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This flips most people's instincts. Walking into an interview, we try hard to look competent. Impressive, polished, qualified. But people are reading your warmth first, and if you come across as cold or arrogant, all that competence can actually backfire. It reads as a threat, not an asset.",
+          "scene": "story",
+          "room": "interview-room",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "suit", "pose": "arms-crossed", "emotion": "serious-expert", "x": 520, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "The warmest signals are the simplest ones. A genuine smile that reaches the eyes. Open body language. Real eye contact. Remembering and using someone's name. These tiny cues answer that first urgent question, I'm safe, I mean you well, long before you've said anything of substance.",
+          "scene": "explainer",
+          "prop": "open-posture",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "Why They Stick",
+      "beats": [
+        {
+          "vo": "Now, you'd hope that if a first impression is wrong, it would simply get corrected as you got to know someone. Sometimes it does. But first impressions are astonishingly sticky, and there are two reasons why.",
+          "scene": "diagramCard",
+          "diagram": "halo-spread",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHY THEY STICK",
+          "subtitle": "the trap closes"
+        },
+        {
+          "vo": "The first is confirmation bias. Once your brain decides someone is warm, or cold, it starts hunting for evidence that fits. Their jokes seem charming, or their silences seem rude, depending entirely on the label you slapped on in second one. We notice what confirms the first read, and quietly wave away what doesn't.",
+          "scene": "explainer",
+          "prop": "sticky-label",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The second reason is stranger. It's called the self-fulfilling prophecy. If you decide someone is cold, you act a little guarded around them. You give less. And sensing that, they pull back too, which looks exactly like the coldness you expected. Your impression quietly created the very behaviour that proves it right.",
+          "scene": "explainer",
+          "prop": "self-fulfilling",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "In a real experiment, men who were told a woman on a phone call was attractive spoke to her more warmly, and she, hearing that warmth, responded more warmly in turn, to people who'd never even seen her. The expectation reached out and shaped reality. First impressions don't just predict the future. Sometimes they build it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Making a Good One",
+      "beats": [
+        {
+          "vo": "So let's get practical. If warmth comes first and sticks hardest, the single best thing you can do is lead with it. Before you try to impress anyone, aim to connect. A warm, present hello beats an impressive one almost every time.",
+          "scene": "story",
+          "room": "first-date-cafe",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "MAKING A GOOD ONE",
+          "subtitle": "lead with warmth",
+          "mascots": [
+            { "costume": "tee", "pose": "wave", "emotion": "happy-talk", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "But here's a liberating twist, especially if you're a bit of a perfectionist. You don't have to be flawless. In fact, trying to seem perfect can make you harder to like. There's a wonderful piece of research called the pratfall effect that proves it.",
+          "scene": "explainer",
+          "prop": "pratfall-charm",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Psychologist Elliot Aronson had people listen to a recording of a highly competent person. For some listeners, that person clumsily spilled a cup of coffee near the end. And astonishingly, the blunder made them more likeable, not less. A small, human imperfection, resting on real competence, reads as warmth. It makes you relatable.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "There's a catch, though. The pratfall only works if competence is already established. When an average performer spilled the coffee, people liked them less. So the lesson isn't be a mess. It's that once you're capable, you don't need to hide every flaw. A little honest humanity makes you far more magnetic than cold perfection.",
+          "scene": "story",
+          "room": "first-date-cafe",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "tee", "pose": "shrug", "emotion": "serious-expert", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "And remember the primacy effect works for you, too. Those first few seconds are prime real estate, so spend them well. Arrive calm, not flustered. Slow down. Make warm eye contact. Those opening moments become the frame everyone reads you through, so set a frame worth keeping.",
+          "scene": "explainer",
+          "prop": "open-posture",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Second Look",
+      "beats": [
+        {
+          "vo": "But the deepest lesson of all isn't about managing how others see you. It's about how you see them. Because if your snap judgments are this fast, this biased, and this sticky, then a lot of them are simply wrong, and you'll never know about the good people you quietly wrote off in a tenth of a second.",
+          "scene": "explainer",
+          "prop": "second-look",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE SECOND LOOK",
+          "subtitle": "hold your verdict loosely"
+        },
+        {
+          "vo": "The shy person who seemed aloof may just have been nervous. The over-eager one may simply have cared. The quiet colleague you filed under boring might be the most interesting person you'll ever meet, if you give the story a chance to continue past page one.",
+          "scene": "story",
+          "room": "first-date-cafe",
+          "emotion": "tearful",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "tearful", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "So you can't stop your brain making snap judgments, that part is automatic. But you can learn to hold them loosely. To notice the halo, catch the first-trait lens, and consciously give people a second look. That one habit, staying curious a little longer than your instinct wants to, quietly makes you wiser, and kinder.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So yes, first impressions are powerful. Lead with warmth, let your humanity show, and make those first seconds count. But never forget they're only the first page. The best people, and the best connections of your life, are almost always the ones you took the time to read past the opening line. Thanks for watching. Take a second look.",
+          "scene": "story",
+          "room": "party-entrance",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "suit", "pose": "cheer", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    }
+  ]
+}
