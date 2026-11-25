@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'small-talk': {
+    A: { lines: ['THE', 'PSYCHOLOGY OF', 'SMALL TALK'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '?', prop: 'weather-opener' },
+    B: { lines: ['WHY SMALL TALK', "ISN'T ABOUT", 'THE WEATHER'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'bridge-to-deep' },
+    C: { lines: ['THEY LIKE YOU', 'MORE THAN', 'YOU THINK'], accent: COLORS.pink, bg: COLORS.greenTeal, emotion: 'smug', textColor: COLORS.outline, badge: '♥', prop: 'liking-gap-faces' },
+  },
   'remember-faces-not-names': {
     A: { lines: ['WHY YOU FORGET', 'NAMES BUT NOT', 'FACES'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'face-yes-name-blank' },
     B: { lines: ['"I KNOW YOU...', 'BUT WHAT\'S', 'YOUR NAME?"'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'tip-of-tongue' },

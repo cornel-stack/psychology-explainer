@@ -1,0 +1,259 @@
+{
+  "slug": "small-talk",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 9,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        31
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "conversation-depth",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "small-talk-bridge",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "small-talk-jobs",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "underestimate-liking",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19,
+        23,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        15
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        31
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "awkward-pause",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "bridge-to-deep",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "depth-dial",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "liking-gap-faces",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "open-question-key",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "shared-spark",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "social-grooming",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "trust-signal",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "weak-ties-web",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "weather-opener",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "coffee-queue",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "elevator-ride",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        31
+      ]
+    },
+    {
+      "name": "party-kitchen",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    }
+  ]
+}

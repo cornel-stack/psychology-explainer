@@ -5304,8 +5304,106 @@ const NameRecallSteps: React.FC = () => {
   );
 };
 
+/** small-talk-jobs: the three hidden jobs small talk does — connection, a safety signal,
+ *  and an on-ramp. */
+const SmallTalkJobs: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const jobs = [
+    { t: 'CONNECTION', s: 'grooming, with words', c: COLORS.pink },
+    { t: 'SAFETY SIGNAL', s: '"I\'m friendly, I\'m safe"', c: COLORS.greenTeal },
+    { t: 'ON-RAMP', s: 'the door to deeper talk', c: COLORS.sky },
+  ];
+  return (
+    <g>
+      <text x={cx} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>what small talk is really doing</text>
+      {jobs.map((j, i) => {
+        const p = springIn(frame - i * 9, 12); const y = 210 + i * 150;
+        return <g key={i} transform={`translate(${cx} ${y}) scale(${0.84 + 0.16 * p})`} opacity={p}>
+          <rect x={-380} y={-56} width={760} height={112} rx={20} fill={j.c} opacity={0.82} {...lg} />
+          <text x={-352} y={-4} fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>{j.t}</text>
+          <text x={-352} y={32} fontFamily={fontFamily} fontWeight={700} fontSize={20} fill={COLORS.outline}>{j.s}</text>
+          <text x={330} y={14} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.white}>{i + 1}</text>
+        </g>;
+      })}
+    </g>
+  );
+};
+
+/** conversation-depth: the layers of conversation from cliché down to feelings. */
+const ConversationDepth: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const layers = [
+    { t: 'clichés', s: '"how are you?" "fine"', c: COLORS.sky },
+    { t: 'facts', s: '"I work in design"', c: COLORS.greenTeal },
+    { t: 'opinions', s: '"I actually think..."', c: COLORS.yellow },
+    { t: 'feelings', s: '"honestly, I\'ve felt..."', c: COLORS.pink },
+  ];
+  return (
+    <g>
+      <text x={cx} y={88} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the layers of a conversation</text>
+      {layers.map((l, i) => {
+        const p = springIn(frame - i * 8, 12); const y = 170 + i * 108; const w = 440 + i * 120;
+        return <g key={i} transform={`translate(${cx} ${y}) scale(${0.86 + 0.14 * p})`} opacity={p}>
+          <rect x={-w / 2} y={-42} width={w} height={84} rx={16} fill={l.c} opacity={0.8} {...lg} />
+          <text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{l.t}</text>
+          <text x={0} y={26} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={17} fill={COLORS.outline}>{l.s}</text>
+        </g>;
+      })}
+      <text x={cx - 340} y={400} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline} transform={`rotate(90 ${cx - 340} 400)`}>deeper ↓ closer</text>
+    </g>
+  );
+};
+
+/** underestimate-liking: predicted liking sits well below how much they actually liked you. */
+const UnderestimateLiking: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.5;
+  const predicted = springIn(frame, 20) * 0.42; const actual = springIn(frame - 10, 20) * 0.82;
+  const bar = (x: number, fill: number, label: string, color: string, sub: string) => (
+    <g transform={`translate(${x} ${cy})`}>
+      <rect x={-70} y={-150} width={140} height={300} rx={18} fill={COLORS.white} {...xl} />
+      <rect x={-56} y={136 - 272 * fill} width={112} height={272 * fill} rx={12} fill={color} />
+      <text x={0} y={-172} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{label}</text>
+      <text x={0} y={192} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={18} fill={COLORS.outline}>{sub}</text>
+    </g>
+  );
+  return (
+    <g>
+      <text x={cx} y={80} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>they like you more than you think</text>
+      {bar(cx - 150, predicted, 'YOU GUESS', COLORS.sky, '"they barely liked me"')}
+      {bar(cx + 150, actual, 'REALITY', COLORS.pink, 'they really liked you')}
+      <path d={`M ${cx - 150} ${cy - 150 * 0.84 + 20} C ${cx} ${cy - 220}, ${cx} ${cy - 220}, ${cx + 150} ${cy - 150 * 1.64 + 20}`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.sm} strokeDasharray="5 8" opacity={0.6} />
+      <text x={cx} y={cy - 232} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.greenDark}>the liking gap</text>
+    </g>
+  );
+};
+
+/** small-talk-bridge: small talk is the near bank; cross it to reach real connection. */
+const SmallTalkBridge: React.FC = () => {
+  const frame = useCurrentFrame();
+  const x0 = CANVAS.width * 0.2; const x1 = CANVAS.width * 0.8; const baseY = CANVAS.height * 0.56;
+  const walk = springIn(frame, 46);
+  const wx = x0 + walk * (x1 - x0); const wy = baseY - Math.sin(walk * Math.PI) * 120;
+  return (
+    <g>
+      <text x={CANVAS.width / 2} y={110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>small talk is the bridge</text>
+      {/* water */}
+      <rect x={0} y={baseY + 20} width={CANVAS.width} height={120} fill={shade(COLORS.sky, 0.08)} opacity={0.4} />
+      {/* banks */}
+      <g transform={`translate(${x0} ${baseY})`}><rect x={-120} y={0} width={120} height={200} fill={shade(COLORS.yellowSoft, 0.04)} {...lg} /><text x={-60} y={60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>small</text><text x={-60} y={88} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>talk</text></g>
+      <g transform={`translate(${x1} ${baseY})`}><rect x={0} y={-40} width={160} height={240} fill={shade(COLORS.greenTeal, 0.06)} {...lg} /><text x={76} y={40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>real</text><text x={76} y={68} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>connection</text></g>
+      {/* the bridge arc */}
+      <path d={`M ${x0} ${baseY} Q ${(x0 + x1) / 2} ${baseY - 180} ${x1} ${baseY - 40}`} fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      {/* the walker crossing */}
+      <g transform={`translate(${wx} ${wy - 18})`}><circle cx={0} cy={-16} r={16} fill={COLORS.pink} {...lg} /><circle cx={-5} cy={-18} r={3} fill={COLORS.outline} /><circle cx={5} cy={-18} r={3} fill={COLORS.outline} /><path d="M -16 18 Q -18 -2 0 -2 Q 18 -2 16 18 Z" fill={COLORS.pink} {...lg} /></g>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -5531,6 +5629,10 @@ export const DiagramCard: React.FC<{
     'baker-baker': COLORS.yellow,
     'two-pathways': COLORS.sky,
     'name-recall-steps': COLORS.pink,
+    'small-talk-jobs': COLORS.pink,
+    'conversation-depth': COLORS.sky,
+    'underestimate-liking': COLORS.greenTeal,
+    'small-talk-bridge': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -5763,6 +5865,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'baker-baker' && <BakerBaker />}
         {diagram === 'two-pathways' && <TwoPathways />}
         {diagram === 'name-recall-steps' && <NameRecallSteps />}
+        {diagram === 'small-talk-jobs' && <SmallTalkJobs />}
+        {diagram === 'conversation-depth' && <ConversationDepth />}
+        {diagram === 'underestimate-liking' && <UnderestimateLiking />}
+        {diagram === 'small-talk-bridge' && <SmallTalkBridge />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

@@ -61,6 +61,7 @@ import * as Rb from './read-body-language';
 import * as Ga from './gaslighting';
 import * as Ft from './feel-tired';
 import * as Fn from './faces-names';
+import * as Sk from './small-talk';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -737,6 +738,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'missed-intro': Fn.MissedIntro,
   'ancient-faces': Fn.AncientFaces,
   'name-anchor': Fn.NameAnchor,
+  'weather-opener': Sk.WeatherOpener,
+  'social-grooming': Sk.SocialGrooming,
+  'trust-signal': Sk.TrustSignal,
+  'bridge-to-deep': Sk.BridgeToDeep,
+  'liking-gap-faces': Sk.LikingGapFaces,
+  'weak-ties-web': Sk.WeakTiesWeb,
+  'open-question-key': Sk.OpenQuestionKey,
+  'depth-dial': Sk.DepthDial,
+  'shared-spark': Sk.SharedSpark,
+  'awkward-pause': Sk.AwkwardPause,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

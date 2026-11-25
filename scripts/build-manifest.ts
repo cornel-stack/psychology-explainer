@@ -237,6 +237,10 @@ const NEW_ASSETS = new Set([
   'networking-mixer', 'portrait-gallery', 'street-reunion',
   'face-yes-name-blank', 'tip-of-tongue', 'face-brain-area', 'floating-name', 'meaning-web', 'baker-paradox', 'recognise-vs-recall', 'missed-intro', 'ancient-faces', 'name-anchor',
   'recall-vs-recognition', 'baker-baker', 'two-pathways', 'name-recall-steps',
+  // small-talk (all new)
+  'elevator-ride', 'party-kitchen', 'coffee-queue',
+  'weather-opener', 'social-grooming', 'trust-signal', 'bridge-to-deep', 'liking-gap-faces', 'weak-ties-web', 'open-question-key', 'depth-dial', 'shared-spark', 'awkward-pause',
+  'small-talk-jobs', 'conversation-depth', 'underestimate-liking', 'small-talk-bridge',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
