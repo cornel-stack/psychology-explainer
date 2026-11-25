@@ -39,5 +39,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 31 | Why You Can Feel Someone Watching You | `feeling-watched` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45531635923 | ✅ render OK |
 | 32 | The Psychology of People Who Cry Easily | `cry-easily` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45533180857 | ✅ render OK |
 | 33 | The Psychology of People Who Struggle to Make Friends | `hard-to-make-friends` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45534446360 | ⏳ rendering |
+| 34 | The Real Signs Someone Is Lying | `spot-a-lie` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45535682665 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
