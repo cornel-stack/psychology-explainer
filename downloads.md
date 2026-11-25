@@ -41,7 +41,7 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 33 | The Psychology of People Who Struggle to Make Friends | `hard-to-make-friends` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45534446360 | ✅ render OK |
 | 34 | The Real Signs Someone Is Lying | `spot-a-lie` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45535682665 | ✅ render OK |
 | 35 | The Psychology of People Who Keep Their House Spotless | `spotless-house` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45536913516 | ✅ render OK |
-| 36 | The Psychology of Nostalgia | `nostalgia` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45538242348 | ⏳ rendering |
-| 37 | Why Music Gives You Chills | `music-chills` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45539590545 | ⏳ rendering |
+| 36 | The Psychology of Nostalgia | `nostalgia` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45538256207 | ⏳ rendering |
+| 37 | Why Music Gives You Chills | `music-chills` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45539601286 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
