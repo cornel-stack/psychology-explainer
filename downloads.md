@@ -45,5 +45,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 37 | Why Music Gives You Chills | `music-chills` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45539601286 | ✅ render OK |
 | 38 | Why You Cringe at Old Memories | `cringe-attacks` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45541040487 | ✅ render OK |
 | 39 | Why You Talk to Yourself | `talking-to-yourself` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45542475619 | ⏳ rendering |
+| 40 | The Psychology of Boredom | `boredom` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45543705877 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
