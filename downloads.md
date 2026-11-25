@@ -54,7 +54,8 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 46 | Why Time Speeds Up As You Age | `time-speeds-up` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45551562814 | ✅ render OK |
 | 47 | Why You Love Sad Music | `sad-music` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45552881626 | ✅ render OK |
 | 48 | The Psychology of Anger | `anger` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45554789945 | ✅ render OK |
-| 49 | The Psychology of First Impressions | `first-impressions` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45556473367 | ⏳ rendering |
-| 50 | How to Read Body Language | `read-body-language` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45558217276 | ⏳ rendering |
+| 49 | The Psychology of First Impressions | `first-impressions` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45556473367 | ✅ render OK |
+| 50 | How to Read Body Language | `read-body-language` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45558217276 | ✅ render OK |
+| 51 | The Psychology of Gaslighting | `gaslighting` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45560022685 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
