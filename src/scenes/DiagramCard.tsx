@@ -5977,8 +5977,107 @@ const ExperimentLessons: React.FC = () => {
   );
 };
 
+/** fog-sources: brain fog as 'smoke' rising from many underlying fires. */
+const FogSources: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.46;
+  const fires = ['poor sleep', 'stress', 'inflammation', 'blood sugar', 'hormones', 'overload'];
+  const drift = 6 * Math.sin(frame / 10);
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>fog is smoke — look for the fire</text>
+      {/* the fog cloud (the symptom) */}
+      {[0, 1, 2, 3].map((i) => <ellipse key={i} cx={cx - 90 + i * 60 + drift} cy={cy - 30 + (i % 2) * 20} rx={70} ry={34} fill={COLORS.ledGrey} opacity={0.3} />)}
+      <text x={cx} y={cy - 24} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>BRAIN FOG</text>
+      {/* the underlying fires */}
+      {fires.map((fr, i) => {
+        const x = cx - 300 + i * 120; const p = springIn(frame - i * 6, 12);
+        return <g key={i} transform={`translate(${x} ${cy + 180})`} opacity={p}>
+          <path d="M 0 0 q -10 -14 0 -30 q 10 16 0 30 Z" fill={COLORS.red} {...sm} />
+          <path d={`M 0 -24 q -4 -44 0 -${80}`} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} strokeDasharray="4 8" opacity={0.5} />
+          <rect x={-56} y={16} width={112} height={40} rx={10} fill={COLORS.yellowSoft} {...lg} /><text x={0} y={42} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{fr}</text>
+        </g>;
+      })}
+    </g>
+  );
+};
+
+/** sleep-clarity-curve: as sleep drops, cognitive clarity falls off a cliff. */
+const SleepClarityCurve: React.FC = () => {
+  const frame = useCurrentFrame();
+  const x0 = CANVAS.width * 0.18; const x1 = CANVAS.width * 0.82; const baseY = CANVAS.height * 0.72; const topY = CANVAS.height * 0.3;
+  const W = x1 - x0;
+  const pts = Array.from({ length: 50 }, (_, i) => { const t = i / 49; const y = topY + (baseY - topY) * (1 / (1 + Math.exp(-(t - 0.55) * 10))); return { x: x0 + t * W, y }; });
+  const rv = Math.min(50, Math.floor(springIn(frame, 44) * 50) + 1);
+  const d = pts.slice(0, rv).map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+  return (
+    <g>
+      <text x={CANVAS.width / 2} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>lose sleep, lose clarity</text>
+      <line x1={x0} y1={baseY} x2={x1} y2={baseY} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <line x1={x0} y1={baseY} x2={x0} y2={topY - 10} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 - 16} y={(baseY + topY) / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 16} ${(baseY + topY) / 2})`}>mental clarity</text>
+      <text x={x0 + 90} y={baseY + 44} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.greenDark}>rested</text>
+      <text x={x1 - 90} y={baseY + 44} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.red}>sleep-deprived</text>
+      <path d={d} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" />
+    </g>
+  );
+};
+
+/** switching-cost: single-tasking is clear; rapid switching leaks focus into residue. */
+const SwitchingCost: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const leftX = CANVAS.width * 0.3; const rightX = CANVAS.width * 0.7; const cy = CANVAS.height * 0.5;
+  const p1 = springIn(frame, 14); const p2 = springIn(frame - 16, 14);
+  return (
+    <g>
+      <text x={cx} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>multitasking is a myth</text>
+      {/* single-task: one clean beam */}
+      <g transform={`translate(${leftX} ${cy})`} opacity={p1}>
+        <circle cx={0} cy={0} r={100} fill={shade(COLORS.greenTeal, 0.08)} {...xl} />
+        <path d="M -50 0 L 50 0" stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        <path d="M 34 -14 l 16 14 l -16 14" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" />
+        <text x={0} y={140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>single-task</text>
+        <text x={0} y={168} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.greenDark}>clear</text>
+      </g>
+      {/* switch: scattered half-beams */}
+      <g transform={`translate(${rightX} ${cy})`} opacity={p2}>
+        <circle cx={0} cy={0} r={100} fill={shade(COLORS.red, 0.04)} {...xl} />
+        {[-50, -20, 10, 40].map((a, i) => <path key={i} d={`M -50 0 L ${a} ${(i - 1.5) * 22}`} stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.6} strokeDasharray="6 8" />)}
+        <text x={0} y={140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>task-switch</text>
+        <text x={0} y={168} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.red}>foggy residue</text>
+      </g>
+    </g>
+  );
+};
+
+/** fog-lifters: the reliable ways to clear the fog. */
+const FogLifters: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const items = [
+    { t: 'SLEEP', s: 'the biggest lever' },
+    { t: 'MOVE', s: 'a daily walk' },
+    { t: 'FUEL', s: 'water + steady sugar' },
+    { t: 'SINGLE-TASK', s: 'cut the input' },
+  ];
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>how to clear the fog</text>
+      {items.map((it, i) => {
+        const p = springIn(frame - i * 9, 12); const y = 190 + i * 116;
+        return <g key={i} transform={`translate(${cx} ${y}) scale(${0.84 + 0.16 * p})`} opacity={p}>
+          <rect x={-360} y={-44} width={720} height={88} rx={18} fill={[COLORS.sky, COLORS.greenTeal, COLORS.yellow, COLORS.pink][i]} opacity={0.82} {...lg} />
+          <circle cx={-310} cy={0} r={26} fill={COLORS.white} {...sm} /><text x={-310} y={9} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{i + 1}</text>
+          <text x={-264} y={-2} fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{it.t}</text>
+          <text x={-264} y={26} fontFamily={fontFamily} fontWeight={700} fontSize={18} fill={COLORS.outline}>{it.s}</text>
+        </g>;
+      })}
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices' | 'forgiveness-myths' | 'grudge-cost' | 'grievance-loop' | 'reach-model' | 'comparison-directions' | 'highlight-vs-real' | 'unfair-match' | 'comparison-toolkit' | 'action-first-loop' | 'motivation-types' | 'three-fuels' | 'motivation-toolkit' | 'record-vs-rebuild' | 'recall-rewrite-loop' | 'confidence-accuracy' | 'gist-not-pixels' | 'obedience-curve' | 'conformity-rate' | 'bystander-curve' | 'experiment-lessons';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices' | 'forgiveness-myths' | 'grudge-cost' | 'grievance-loop' | 'reach-model' | 'comparison-directions' | 'highlight-vs-real' | 'unfair-match' | 'comparison-toolkit' | 'action-first-loop' | 'motivation-types' | 'three-fuels' | 'motivation-toolkit' | 'record-vs-rebuild' | 'recall-rewrite-loop' | 'confidence-accuracy' | 'gist-not-pixels' | 'obedience-curve' | 'conformity-rate' | 'bystander-curve' | 'experiment-lessons' | 'fog-sources' | 'sleep-clarity-curve' | 'switching-cost' | 'fog-lifters';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -6232,6 +6331,10 @@ export const DiagramCard: React.FC<{
     'conformity-rate': COLORS.sky,
     'bystander-curve': COLORS.red,
     'experiment-lessons': COLORS.sky,
+    'fog-sources': COLORS.ledGrey,
+    'sleep-clarity-curve': COLORS.sky,
+    'switching-cost': COLORS.greenTeal,
+    'fog-lifters': COLORS.greenTeal,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -6492,6 +6595,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'conformity-rate' && <ConformityRate />}
         {diagram === 'bystander-curve' && <BystanderCurve />}
         {diagram === 'experiment-lessons' && <ExperimentLessons />}
+        {diagram === 'fog-sources' && <FogSources />}
+        {diagram === 'sleep-clarity-curve' && <SleepClarityCurve />}
+        {diagram === 'switching-cost' && <SwitchingCost />}
+        {diagram === 'fog-lifters' && <FogLifters />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

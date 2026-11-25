@@ -265,6 +265,10 @@ const NEW_ASSETS = new Set([
   'experiment-lab', 'observation-room', 'lecture-theater',
   'pavlov-bell', 'little-albert', 'milgram-shock', 'asch-lines', 'prison-roles', 'bystander', 'bobo-doll', 'harlow-monkey', 'marshmallow-test', 'invisible-gorilla',
   'obedience-curve', 'conformity-rate', 'bystander-curve', 'experiment-lessons',
+  // brain-fog (all new)
+  'fog-study', 'hazy-commute', 'bright-kitchen',
+  'foggy-head', 'word-gone', 'sleep-debt', 'cortisol-fog', 'inflamed-brain', 'sugar-crash', 'thirsty-brain', 'hormone-dial', 'task-switch', 'fog-lifts',
+  'fog-sources', 'sleep-clarity-curve', 'switching-cost', 'fog-lifters',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

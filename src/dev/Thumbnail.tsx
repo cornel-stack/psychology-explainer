@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'brain-fog': {
+    A: { lines: ['WHY YOUR', 'BRAIN FEELS', 'FOGGY'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'foggy-head' },
+    B: { lines: ['CAN\'T THINK', 'STRAIGHT?', "HERE'S WHY"], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'sleepy', textColor: COLORS.white, badge: '!', prop: 'word-gone' },
+    C: { lines: ['HOW TO', 'CLEAR THE', 'MENTAL FOG'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '✓', prop: 'fog-lifts' },
+  },
   'psychology-experiments': {
     A: { lines: ['EVERY', 'PSYCHOLOGY', 'EXPERIMENT'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '10', prop: 'milgram-shock' },
     B: { lines: ['THE STUDIES', 'THAT SHOCKED', 'THE WORLD'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'prison-roles' },

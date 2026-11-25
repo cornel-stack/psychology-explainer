@@ -1,0 +1,358 @@
+{
+  "title": "Why Your Brain Feels Foggy",
+  "slug": "brain-fog",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You're staring at the screen, but nothing's going in. You walk into a room and forget why. A simple word is right there, on the tip of your tongue, and you just... can't reach it. It's not quite tiredness. It's more like your brain is wrapped in cotton wool. Thoughts feel slow, sticky, and just out of focus. Welcome to brain fog.",
+          "scene": "story",
+          "room": "fog-study",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY YOUR BRAIN",
+          "subtitle": "feels foggy",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Almost everyone knows this cloudy, can't-think-straight feeling. But here's the key thing to understand: brain fog is not a disease. It's a symptom. A signal. It's your brain waving a little flag to tell you that something, somewhere in your system, is out of balance. And once you know where to look, you can usually clear it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, let's hunt down the real causes. The sleep problem hiding behind most of it, the surprising roles of stress, inflammation, blood sugar, and hormones, why modern life fogs us up on purpose, and the practical, science-backed ways to burn the fog off and think clearly again. Let's find the fire behind the smoke.",
+          "scene": "explainer",
+          "prop": "foggy-head",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Smoke, Not Fire",
+      "beats": [
+        {
+          "vo": "First, the single most important reframe. Brain fog itself is just the smoke. And you cannot clear smoke by waving at it. You have to find the fire that's producing it.",
+          "scene": "diagramCard",
+          "diagram": "fog-sources",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "SMOKE, NOT FIRE",
+          "subtitle": "fog is always a symptom"
+        },
+        {
+          "vo": "That hazy feeling, poor concentration, forgetfulness, slow thinking, losing words, is the end result of something physical going on underneath. It is almost never just in your head, and it's almost never a sign that you're going stupid or losing your mind. It's a downstream effect of an upstream cause.",
+          "scene": "explainer",
+          "prop": "word-gone",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And there are a handful of usual suspects that cause most of it. So instead of fighting the fog directly, we're going to go through each of these hidden fires one by one. Because once you put out the right fire, the fog very often just lifts on its own. Let's start with the biggest culprit of them all.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Sleep Culprit",
+      "beats": [
+        {
+          "vo": "By far the most common cause of brain fog is simply not getting enough good-quality sleep. And this one is sneaky, because you can be foggy without even feeling especially sleepy.",
+          "scene": "diagramCard",
+          "diagram": "sleep-clarity-curve",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE SLEEP CULPRIT",
+          "subtitle": "the biggest cause"
+        },
+        {
+          "vo": "Sleep is when your brain does its housekeeping. During deep sleep, it literally flushes out metabolic waste products that build up during the day, and it files your memories away properly. Shortchange that, even by an hour or two, and your attention, memory, and processing speed all take a direct hit. The fog rolls in.",
+          "scene": "explainer",
+          "prop": "sleep-debt",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And it's about quality, not just hours. Fragmented sleep, from stress, late-night screens, alcohol, or undiagnosed sleep apnoea, can leave you foggy even if the clock says you got eight hours. So if your thinking is cloudy, the very first question to ask is always: how have I actually been sleeping?",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Stress Steals Clarity",
+      "beats": [
+        {
+          "vo": "The second big fire is chronic stress. When you're under constant pressure, your body keeps pumping out the stress hormone cortisol, and sustained high cortisol is genuinely toxic to clear thinking.",
+          "scene": "explainer",
+          "prop": "cortisol-fog",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "STRESS STEALS CLARITY",
+          "subtitle": "the cortisol cloud"
+        },
+        {
+          "vo": "It impairs the prefrontal cortex, the part you need for focus and planning, and the hippocampus, your memory centre. A brain stuck in low-grade fight-or-flight is busy scanning for threats, not thinking clearly. That's why stress produces such a scattered, can't-hold-a-thought kind of fog. The pressure itself is eating your clarity.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And stress and sleep gang up on you. Stress wrecks your sleep, and poor sleep makes you more reactive to stress; the fog thickening with each loop. It's often why a hard, worried period in your life feels so mentally cloudy. Break the cycle at either point, calm the stress or protect the sleep, and both start to ease.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "When You're Unwell",
+      "beats": [
+        {
+          "vo": "The third cause is one people often miss: inflammation, and being unwell. When your body is fighting something, whether an infection, an illness, or a chronic condition, it produces inflammation that directly dampens your thinking.",
+          "scene": "explainer",
+          "prop": "inflamed-brain",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHEN YOU'RE UNWELL",
+          "subtitle": "inflammation + illness"
+        },
+        {
+          "vo": "This is that heavy, foggy sluggishness you feel with a cold or flu, sometimes called sickness behaviour. Inflammatory signals tell your brain to slow down and conserve energy for healing. And this is also why post-viral fog after COVID-19 is such a real and well-documented thing. If you've been ill, your foggy brain is still recovering.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's worth adding two more hidden sources here. Many ongoing conditions come with fog as part of the package. And a huge, overlooked one: medication. Lots of common prescriptions list fogginess or drowsiness as a side effect. If yours started when a new medication did, that's worth a chat with your doctor.",
+          "scene": "story",
+          "room": "fog-study",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Running on Empty",
+      "beats": [
+        {
+          "vo": "Next, the simple physical fuel your brain runs on, because when the inputs are off, so is your thinking. Your brain is an incredibly hungry organ, and it's fussy about what it gets.",
+          "scene": "explainer",
+          "prop": "sugar-crash",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "RUNNING ON EMPTY",
+          "subtitle": "fuel, water, nutrients"
+        },
+        {
+          "vo": "It runs mostly on glucose, so big sugar spikes, from a snack or a pastry, give you a short high and then a crash that leaves you jittery and foggy. Steady fuel, with protein and fibre, keeps thinking far more stable. And here's a startlingly simple one: even mild dehydration measurably impairs your attention and short-term memory.",
+          "scene": "explainer",
+          "prop": "thirsty-brain",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "A tired, foggy brain is very often just a slightly dehydrated one. On top of that, common nutrient deficiencies, like low vitamin B12, iron, or vitamin D, are classic, and very treatable, causes of persistent fog. Sometimes the fix for a cloudy mind is as humble as a glass of water, a proper meal, or a blood test.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Two everyday culprits hide in plain sight here, too: caffeine and alcohol. We lean on coffee to punch through the fog, but too much fuels anxiety and wrecks the next night's sleep, deepening the fog tomorrow. And alcohol, even a couple of drinks, badly fragments your sleep, which is a major reason for that heavy, cloudy next-day head.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Hormone Factor",
+      "beats": [
+        {
+          "vo": "A cause that's hugely common and massively under-discussed: your hormones. Hormonal shifts have a powerful effect on how clearly you can think.",
+          "scene": "explainer",
+          "prop": "hormone-dial",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE HORMONE FACTOR",
+          "subtitle": "often overlooked"
+        },
+        {
+          "vo": "An underactive thyroid is a notorious, treatable cause of brain fog. So are the oestrogen changes of perimenopause and menopause, where fog is one of the most common and distressing symptoms. Pregnancy and the menstrual cycle play their part too. If your fog has a pattern or a timing, your hormones are worth investigating with a doctor.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This matters because so many people, especially women in midlife, are told their fog is nothing, or that it's all in their head. It isn't. Hormonal brain fog is real, physical, and often very fixable once it's correctly identified. If this is you, please don't dismiss it, and don't let anyone else dismiss it either.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Modern Overload",
+      "beats": [
+        {
+          "vo": "Now, a cause that we do entirely to ourselves: pure information overload. Your brain evolved for a quiet world, and we're drowning it in input.",
+          "scene": "diagramCard",
+          "diagram": "switching-cost",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "MODERN OVERLOAD",
+          "subtitle": "the multitasking myth"
+        },
+        {
+          "vo": "Here's the crucial truth: multitasking is a myth. Your brain can't actually do two thinking tasks at once. It rapidly switches between them, and every switch has a cost. It leaves a little smear of attention residue stuck on the last thing, so you're never fully on anything. Do that all day, and your focus shatters into fog.",
+          "scene": "explainer",
+          "prop": "task-switch",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Add a constant stream of notifications, forty open browser tabs, and a hundred tiny unfinished loops, and your working memory is completely overwhelmed. This isn't a broken brain. It's a perfectly normal brain being asked to process an absurd, un-natural amount of input, all at once. Of course it feels hazy.",
+          "scene": "story",
+          "room": "hazy-commute",
+          "emotion": "sleepy",
+          "mascots": [
+            {
+              "costume": "suit",
+              "pose": "facepalm",
+              "emotion": "sleepy",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mood and the Mind",
+      "beats": [
+        {
+          "vo": "And one more cause that deserves real compassion: your mood. Anxiety and depression don't just affect how you feel. They directly affect how you think.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "MOOD AND THE MIND",
+          "subtitle": "anxiety + low mood"
+        },
+        {
+          "vo": "Anxiety floods your working memory with worry, leaving almost no bandwidth for clear thought. And depression commonly includes genuine cognitive symptoms. That is not laziness, and it's not a personal failing. It's a real, recognised part of how these conditions work, and it deserves support, not shame.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "And there's a cruel little loop to watch for. You notice you're foggy, you panic that something's wrong with your brain, and that worry adds more anxiety, which thickens the fog. So part of the cure is this reassurance: fog is common, it's usually a signal about your body, and it's often temporary. Easing the fear can start to lift it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Clearing the Fog",
+      "beats": [
+        {
+          "vo": "So, with all those fires in mind, how do you actually clear the fog? The good news is that the fixes are simple, free, and they target the root causes. Here are the big ones.",
+          "scene": "diagramCard",
+          "diagram": "fog-lifters",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "CLEARING THE FOG",
+          "subtitle": "the fixes that work"
+        },
+        {
+          "vo": "First and most powerful: protect your sleep. It's the single highest-leverage thing you can do, so guard it fiercely. Second, move your body. It sounds backwards when you feel sluggish, but even a brisk ten-minute walk boosts blood flow and a brain-growth factor called BDNF, and reliably clears the fog.",
+          "scene": "explainer",
+          "prop": "fog-lifts",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Third, sort your fuel: drink more water than you think you need, and swap sugar spikes for steady meals with protein and fibre. Fourth, lower the input. Single-task on purpose, close the extra tabs, silence the notifications, and give your brain real, screen-free breaks. You're not lazy, you're overloaded, so reduce the load.",
+          "scene": "story",
+          "room": "bright-kitchen",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "tee",
+              "pose": "hands-hips",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "And be patient with it. Brain fog that built up over weeks of bad sleep and stress won't vanish in an afternoon. These fixes stack and compound quietly and over a week or two the haze gradually thins. You're not chasing one magic fix. You're gently restoring the conditions your brain needs to run clearly.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "One honest and important note before we go. If your brain fog is severe, persistent, or came on suddenly, please don't just push through it. See a doctor. Because fog can be a flag for very real and treatable things: a thyroid problem, a vitamin deficiency, a sleep disorder, depression, or lingering effects of illness.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "ONE HONEST NOTE",
+          "subtitle": "when to check in"
+        },
+        {
+          "vo": "But for that everyday haziness, remember the idea that changes it all: the fog is smoke. You are not broken, and you are not losing it. Your brain is asking for something, sleep, calm, water, movement, a lighter load. Give it what it needs, and the clear, sharp mind you remember is usually waiting on the other side. Thanks for watching.",
+          "scene": "story",
+          "room": "bright-kitchen",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "tee",
+              "pose": "wave",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

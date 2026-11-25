@@ -68,6 +68,7 @@ import * as Cm from './comparing';
 import * as Mo from './motivation';
 import * as Ml from './memory-lies';
 import * as Ex from './experiments';
+import * as Bf from './brain-fog';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -814,6 +815,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'harlow-monkey': Ex.HarlowMonkey,
   'marshmallow-test': Ex.MarshmallowTest,
   'invisible-gorilla': Ex.InvisibleGorilla,
+  'foggy-head': Bf.FoggyHead,
+  'word-gone': Bf.WordGone,
+  'sleep-debt': Bf.SleepDebt,
+  'cortisol-fog': Bf.CortisolFog,
+  'inflamed-brain': Bf.InflamedBrain,
+  'sugar-crash': Bf.SugarCrash,
+  'thirsty-brain': Bf.ThirstyBrain,
+  'hormone-dial': Bf.HormoneDial,
+  'task-switch': Bf.TaskSwitch,
+  'fog-lifts': Bf.FogLifts,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
