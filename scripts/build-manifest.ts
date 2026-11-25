@@ -137,6 +137,10 @@ const NEW_ASSETS = new Set([
   'grief-shore', 'memory-room', 'dawn-meadow',
   'grief-denial', 'grief-anger', 'grief-bargaining', 'grief-depression', 'grief-acceptance', 'grief-meaning', 'grief-waves', 'messy-path', 'ball-in-box', 'carry-grief',
   'five-stages', 'grief-not-linear', 'grief-waves-time', 'grief-grows-around',
+  // psychology-of-happiness (all new)
+  'chasing-horizon', 'stuff-store', 'warm-gathering',
+  'arrival-mirage', 'hedonic-treadmill', 'money-plateau', 'relationship-warmth', 'experiences-things', 'flow-absorbed', 'gratitude-list', 'giving-ripple', 'present-now', 'joy-vs-meaning',
+  'happiness-pie', 'hedonic-curve', 'what-makes-happy', 'happy-vs-meaningful',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

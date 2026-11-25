@@ -1,0 +1,309 @@
+{
+  "slug": "psychology-of-happiness",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 9,
+    "NEW": 20
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        7,
+        11,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        28
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "happiness-pie",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "happy-vs-meaningful",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "hedonic-curve",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "what-makes-happy",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        5,
+        11,
+        28
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        4,
+        13,
+        14,
+        18,
+        20,
+        22,
+        30,
+        32,
+        33
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        6,
+        8,
+        9,
+        10,
+        12,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        26,
+        27,
+        29,
+        31
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        5,
+        11,
+        14,
+        18,
+        20,
+        24,
+        28
+      ]
+    },
+    {
+      "name": "reach-down",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "walking",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        7
+      ]
+    },
+    {
+      "name": "arrival-mirage",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "name": "experiences-things",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16,
+        17
+      ]
+    },
+    {
+      "name": "flow-absorbed",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "giving-ripple",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22,
+        23
+      ]
+    },
+    {
+      "name": "gratitude-list",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20,
+        21,
+        30
+      ]
+    },
+    {
+      "name": "hedonic-treadmill",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "joy-vs-meaning",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "money-plateau",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11,
+        12
+      ]
+    },
+    {
+      "name": "present-now",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10,
+        24,
+        25,
+        32
+      ]
+    },
+    {
+      "name": "relationship-warmth",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        29
+      ]
+    },
+    {
+      "name": "chasing-horizon",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        5,
+        28
+      ]
+    },
+    {
+      "name": "stuff-store",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        7,
+        11
+      ]
+    },
+    {
+      "name": "warm-gathering",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ]
+    }
+  ]
+}

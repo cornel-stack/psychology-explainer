@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'psychology-of-happiness': {
+    A: { lines: ['THE', 'PSYCHOLOGY', 'OF HAPPINESS'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '!', prop: 'relationship-warmth' },
+    B: { lines: ['WHAT', 'ACTUALLY', 'MAKES YOU HAPPY'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'arrival-mirage' },
+    C: { lines: ['WHY MONEY', "WON'T MAKE", 'YOU HAPPY'], accent: COLORS.sky, bg: COLORS.blueDiagram, emotion: 'serious-expert', textColor: COLORS.white, badge: '$', prop: 'money-plateau' },
+  },
   'stages-of-grief': {
     A: { lines: ['EVERY', 'STAGE OF', 'GRIEF'], accent: COLORS.yellow, bg: COLORS.blueDiagram, emotion: 'sleepy', textColor: COLORS.white, badge: '5', prop: 'grief-waves' },
     B: { lines: ['THE TRUTH', 'ABOUT', 'GRIEF'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'grief-meaning' },

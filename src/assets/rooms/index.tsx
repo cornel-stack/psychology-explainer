@@ -112,7 +112,10 @@ export type RoomName =
   | 'reframe-desk'
   | 'grief-shore'
   | 'memory-room'
-  | 'dawn-meadow';
+  | 'dawn-meadow'
+  | 'chasing-horizon'
+  | 'stuff-store'
+  | 'warm-gathering';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3067,6 +3070,77 @@ export const DawnMeadow: React.FC = () => (
   </g>
 );
 
+/** Chasing horizon: a long road toward a shimmering "HAPPY" that always stays on
+ *  the horizon — the chase that never arrives. */
+export const ChasingHorizon: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.greenLeaf} floorY={700} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={260} fill={shade(COLORS.sky, 0.12)} />
+    <circle cx={1560} cy={200} r={74} fill={COLORS.yellowSoft} {...sm} />
+    {/* rolling hills */}
+    <path d="M 0 700 Q 480 620 960 700 Q 1440 780 1920 680 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenLeaf, 0.1)} />
+    {/* a long road to the horizon */}
+    <path d="M 820 1080 L 930 700 L 990 700 L 1120 1080 Z" fill={shade(COLORS.wood, 0.1)} {...lg} />
+    {[0, 1, 2, 3].map((i) => <rect key={i} x={952} y={740 + i * 80} width={16} height={40} rx={4} fill={COLORS.yellowSoft} transform={`translate(${i * -6} 0) scale(${1 + i * 0.3} 1)`} />)}
+    {/* the shimmering HAPPY mirage on the horizon */}
+    <g transform="translate(960 640)"><ellipse cx={0} cy={0} rx={120} ry={50} fill={COLORS.yellow} opacity={0.4} /><rect x={-80} y={-28} width={160} height={56} rx={12} fill={COLORS.yellow} {...lg} opacity={0.7} /><text x={0} y={10} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.outline} opacity={0.7}>HAPPY</text></g>
+    {/* ignored signposts along the way */}
+    {([[300, "WHEN I'M RICH"], [1600, "WHEN I'M THIN"]] as [number, string][]).map(([x, t], i) => (
+      <g key={i} transform={`translate(${x} 760)`}><rect x={-8} y={0} width={16} height={120} fill={COLORS.woodDark} /><rect x={-80} y={-40} width={160} height={46} rx={6} fill={COLORS.white} {...lg} /><text x={0} y={-10} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={18} fill={COLORS.outline}>{t}</text></g>
+    ))}
+  </g>
+);
+
+/** Stuff store: a bright shop of boxed things and price tags — the promise that
+ *  buying more will finally do it. */
+export const StuffStore: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCreamDark} floor={COLORS.whiteShade} floorY={820} stripe={false} />
+    {/* subtle wall panels to break up the flat cream */}
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 120} y={0} width={60} height={820} fill={shade(COLORS.bgCreamDark, -0.05)} opacity={0.6} />)}
+    {/* floor tiles to break up the lower band */}
+    {Array.from({ length: 13 }).map((_, i) => <line key={i} x1={i * 160} y1={820} x2={i * 160 - 120} y2={1080} stroke={shade(COLORS.whiteShade, -0.05)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    <line x1={0} y1={940} x2={CANVAS.width} y2={940} stroke={shade(COLORS.whiteShade, -0.05)} strokeWidth={STROKE.sm} opacity={0.5} />
+    {/* hanging aisle signs across the top */}
+    {[200, 560, 920, 1280, 1640].map((x, i) => <g key={i} transform={`translate(${x} 70)`}><line x1={0} y1={-70} x2={0} y2={0} {...sm} /><rect x={-66} y={0} width={132} height={54} rx={10} fill={[COLORS.sky, COLORS.greenLeaf, COLORS.yellow, COLORS.pink, COLORS.lavender][i]} {...lg} /><text x={0} y={36} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.white}>{['NEW', '20%', 'BUY', 'HOT', 'MORE'][i]}</text></g>)}
+    {/* shelves of products */}
+    {[260, 560].map((y, r) => (
+      <g key={r}>
+        <rect x={120} y={y + 70} width={CANVAS.width - 240} height={16} rx={4} fill={shade(COLORS.wood, 0.1)} {...lg} />
+        {Array.from({ length: 9 }).map((_, i) => <g key={i} transform={`translate(${200 + i * 180} ${y})`}><rect x={-44} y={-30} width={88} height={100} rx={8} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.lavender][(r + i) % 6]} {...lg} /><rect x={-30} y={-14} width={60} height={28} rx={6} fill={COLORS.white} opacity={0.7} /><circle cx={30} cy={-40} r={14} fill={COLORS.yellowDark} {...sm} /></g>)}
+      </g>
+    ))}
+    {/* a checkout counter with a register, filling the lower floor */}
+    <g transform="translate(300 900)"><rect x={-180} y={0} width={360} height={150} rx={10} fill={COLORS.wood} {...xl} /><rect x={-180} y={-24} width={360} height={30} rx={8} fill={shade(COLORS.wood, 0.12)} {...lg} /><g transform="translate(60 -70)"><rect x={-50} y={-40} width={100} height={70} rx={8} fill={shade(COLORS.outline, 0.3)} {...lg} /><rect x={-36} y={-28} width={72} height={30} rx={4} fill={COLORS.greenLeaf} /></g></g>
+    {/* shopping cart */}
+    <g transform="translate(1540 820)"><path d="M -60 -60 L -40 -60 L -20 20 L 60 20 L 76 -34 L -30 -34" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" /><circle cx={-12} cy={44} r={16} fill={COLORS.outline} /><circle cx={54} cy={44} r={16} fill={COLORS.outline} /><rect x={-14} y={-28} width={70} height={40} rx={6} fill={COLORS.red} {...sm} /></g>
+    {/* a big SALE banner */}
+    <g transform="translate(400 180)"><rect x={-120} y={-44} width={240} height={88} rx={12} fill={COLORS.red} {...xl} /><text x={0} y={16} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={48} fill={COLORS.white}>SALE</text></g>
+  </g>
+);
+
+/** Warm gathering: a cosy table of friends, string lights and good food — where
+ *  happiness actually tends to live. */
+export const WarmGathering: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.14)} floor={COLORS.wood} floorY={780} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={220} fill={shade(COLORS.yellowDark, 0.08)} />
+    {/* string lights */}
+    <path d="M 0 70 Q 480 160 960 80 Q 1440 0 1920 90" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 10 }).map((_, i) => <circle key={i} cx={100 + i * 190} cy={100 + 28 * Math.sin(i)} r={11} fill={COLORS.yellow} {...sm} />)}
+    {/* window with warm evening */}
+    <g transform="translate(960 300)"><rect x={-140} y={-150} width={280} height={300} rx={14} fill={shade(COLORS.yellowDark, 0.12)} {...xl} /><circle cx={0} cy={30} r={56} fill={COLORS.yellow} {...sm} /><line x1={-140} y1={-10} x2={140} y2={-10} stroke={shade(COLORS.yellowDark, 0.14)} strokeWidth={STROKE.lg} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.yellowDark, 0.14)} strokeWidth={STROKE.lg} /></g>
+    {/* a long table with plates + mugs */}
+    <g transform="translate(960 760)">
+      <rect x={-420} y={-20} width={840} height={60} rx={12} fill={COLORS.woodDark} {...xl} />
+      <rect x={-420} y={-70} width={840} height={56} rx={14} fill={shade(COLORS.wood, 0.1)} {...lg} />
+      {[-300, -100, 100, 300].map((x, i) => <g key={i} transform={`translate(${x} -42)`}><ellipse cx={0} cy={0} rx={48} ry={18} fill={COLORS.white} {...sm} /><ellipse cx={0} cy={-2} rx={30} ry={11} fill={[COLORS.greenLeaf, COLORS.red, COLORS.yellow, COLORS.sky][i]} /></g>)}
+    </g>
+    {/* two friendly figures at the near edge */}
+    {[520, 1400].map((x, i) => <g key={i} transform={`translate(${x} 700)`}><circle cx={0} cy={-40} r={40} fill={[COLORS.white, COLORS.yellowSoft][i]} {...xl} /><circle cx={-14} cy={-46} r={6} fill={COLORS.outline} /><circle cx={14} cy={-46} r={6} fill={COLORS.outline} /><path d="M -14 -30 Q 0 -16 14 -30" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3164,6 +3238,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'grief-shore': GriefShore,
   'memory-room': MemoryRoom,
   'dawn-meadow': DawnMeadow,
+  'chasing-horizon': ChasingHorizon,
+  'stuff-store': StuffStore,
+  'warm-gathering': WarmGathering,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

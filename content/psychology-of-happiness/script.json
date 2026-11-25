@@ -1,0 +1,134 @@
+{
+  "title": "The Psychology of Happiness",
+  "slug": "psychology-of-happiness",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "We spend our whole lives chasing it. We tell ourselves, I'll be happy when. When I get the job. The house. The relationship. The body. And so we run toward the horizon, certain that happiness is just up ahead, waiting. But the horizon, of course, keeps moving. And we never quite arrive.", "scene": "story", "room": "chasing-horizon", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE PSYCHOLOGY OF HAPPINESS", "subtitle": "what actually makes us happy",
+          "mascots": [ { "costume": "hoodie", "pose": "walking", "emotion": "happy-talk", "x": 700, "y": 700, "scale": 1.0, "talking": true } ] },
+        { "vo": "The good news is, psychology has studied happiness very closely, and found something hopeful. We are, almost all of us, chasing it in the wrong places. The things we're sure will make us happy barely move the needle. And the things that genuinely do are often hiding in plain sight.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Part of the problem is built right into the brain. Whenever something good happens, a raise, a new phone, a dream holiday, we get a lovely spike of joy. And then, quietly, we adapt. The new becomes normal, the joy fades, and we're right back where we started, already wanting the next thing.", "scene": "diagramCard", "diagram": "hedonic-curve", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "It's almost a cruel design. But understanding it is the key to escaping it. Because once you know why the chase never ends, you can finally step off the treadmill, and start pointing your energy at the things that actually, lastingly, work.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Why the things we chase don't make us happy, what genuinely does, according to decades of research, and the quiet paradox at the very heart of a good life. Let's go find some happiness, in the right places this time.", "scene": "explainer", "prop": "arrival-mirage", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "The Arrival Fallacy",
+      "beats": [
+        { "vo": "Let's start with the big illusion, the arrival fallacy. It's the deep belief that happiness lives at a destination. When I finally arrive, there, then I'll be happy. So we sacrifice the present, endlessly, for a future finish line that, when we reach it, never feels the way we imagined.", "scene": "story", "room": "chasing-horizon", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE ARRIVAL FALLACY", "subtitle": "'I'll be happy when...'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 700, "y": 700, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "arrival-mirage", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Think of the goal you were sure would do it. You reached it, felt wonderful for, what, a week? And then the feeling faded, and a new when quietly took its place. The joy is real, but it's temporary. Happiness was never the destination. It has to be found in the journey, or it's never found at all.", "scene": "explainer", "prop": "arrival-mirage", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Hedonic Treadmill",
+      "beats": [
+        { "vo": "The engine behind that fading is called hedonic adaptation, or the hedonic treadmill. Your mind adapts to almost anything, remarkably fast. A stunning view becomes wallpaper. A dream salary becomes the new normal. You keep running, acquiring, upgrading, but your happiness stays stubbornly in the same place.", "scene": "story", "room": "stuff-store", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE HEDONIC TREADMILL", "subtitle": "we adapt to everything",
+          "mascots": [ { "costume": "hoodie", "pose": "walking", "emotion": "sleepy", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "hedonic-treadmill", "x": 1400, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "There's a famous study of lottery winners and accident victims. A year on, the winners were barely happier than before, and the victims had largely returned toward their own baseline too. We adapt to the good and the bad, and drift back home. Which means buying your way to lasting happiness is almost impossible.", "scene": "explainer", "prop": "hedonic-treadmill", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Set Point",
+      "beats": [
+        { "vo": "So what does determine our happiness? Here's one rough, much-debated model that's still useful as a guide. It suggests our happiness is a bit like a pie. Around half may be a genetic set point, our natural baseline. A surprisingly small slice is our actual life circumstances. And a big slice is simply what we choose to do.", "scene": "diagramCard", "diagram": "happiness-pie", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Now, don't take those exact numbers too literally, the science is messy. But the headline is genuinely liberating. Your circumstances, the stuff we obsess over, matter far less than we think. And a large, meaningful chunk of your happiness is within your control, decided by your daily habits and choices. So let's talk about those.", "scene": "explainer", "prop": "present-now", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Money Myth",
+      "beats": [
+        { "vo": "First, let's bust the biggest myth of all. Money. Surely more money means more happiness? Well, up to a point, yes. Lifting someone out of poverty and stress makes a real, huge difference. Enough money to feel safe genuinely matters, a lot. But then something strange happens.", "scene": "story", "room": "stuff-store", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE MONEY MYTH", "subtitle": "it matters less than you think",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 760, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "money-plateau", "x": 1400, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Past the point of comfortable needs, the happiness you get from each extra pound drops away sharply. The curve flattens. A person earning ten times more than their comfortable neighbour is rarely ten times happier, often, barely happier at all. We massively overestimate what money will do for our joy.", "scene": "explainer", "prop": "money-plateau", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "What Works",
+      "beats": [
+        { "vo": "So if not money and stuff, then what? Decades of research point, again and again, to the same handful of things. And here's the beautiful part. Almost none of them cost anything at all. These are the real engines of a happy life. Let's go through them, one by one.", "scene": "diagramCard", "diagram": "what-makes-happy", "emotion": "happy-talk", "withMascot": true }
+      ]
+    },
+    {
+      "name": "1 — Relationships",
+      "beats": [
+        { "vo": "Number one, by a landslide. Relationships. The single greatest predictor of a happy life isn't wealth, or success, or fame. It's the quality of your close relationships. One of the longest studies ever run, following people for over eighty years, found this to be the clearest result of all.", "scene": "story", "room": "warm-gathering", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "1 — RELATIONSHIPS", "subtitle": "the clearest result in the research",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 620, "y": 740, "scale": 1.0, "talking": true }, { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1360, "y": 740, "scale": 0.95, "flip": true } ] },
+        { "vo": "Good relationships keep us happier, and even physically healthier. Loneliness, it turns out, is as harmful to us as smoking. So if you want one high-leverage investment in your happiness, it's this. Call the friend. Mend the rift. Prioritise the people you love over almost everything else. Nothing else comes close.", "scene": "explainer", "prop": "relationship-warmth", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "2 — Experiences",
+      "beats": [
+        { "vo": "Number two. Experiences over things. When you do spend money, spend it on doing, not owning. A trip, a concert, a meal with friends, a class. Research consistently shows experiences make us far happier than possessions, and the reasons are lovely.", "scene": "story", "room": "warm-gathering", "emotion": "excited", "camera": "slowZoom", "chapterStart": true, "title": "2 — EXPERIENCES, NOT THINGS", "subtitle": "buy memories, not objects",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 760, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "experiences-things", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "A new gadget sits on a shelf and fades into the background, hello, hedonic treadmill. But an experience becomes part of your story. It connects you to others, and best of all, it actually improves in memory. We don't remember things. We remember moments. Collect moments, not objects.", "scene": "explainer", "prop": "experiences-things", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "3 — Flow",
+      "beats": [
+        { "vo": "Number three. Flow. That state of being so happily absorbed in an activity that the world and the clock just disappear. Playing music, building something, writing, climbing, cooking, that timeless, effortless focus. It turns out to be one of the most deeply satisfying states a human can be in.", "scene": "story", "room": "warm-gathering", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "3 — FLOW", "subtitle": "happily lost in the doing",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "flow-absorbed", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Interestingly, we're often happiest not when we're relaxing, but when we're engaged, stretched by something that's challenging but doable. So build more flow into your life. Find the activity that swallows your whole attention, and protect time for it. Engagement, not just rest, is a huge, underrated source of joy.", "scene": "explainer", "prop": "flow-absorbed", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "4 — Gratitude",
+      "beats": [
+        { "vo": "Number four, and maybe the simplest of all. Gratitude. Because we adapt so fast to the good in our lives, we stop seeing it. Gratitude is the deliberate practice of noticing it again. And the research here is remarkably strong, for something so small and so free.", "scene": "story", "room": "warm-gathering", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "4 — GRATITUDE", "subtitle": "re-noticing the good",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "gratitude-list", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "People who simply write down three things they're grateful for, a few times a week, measurably boost their happiness over time. It's a direct counter to the treadmill. It forces your attention back onto what's already good, the things you have, that you'd grieve terribly if they were gone.", "scene": "explainer", "prop": "gratitude-list", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "5 — Giving",
+      "beats": [
+        { "vo": "Number five, and a delightful surprise. Giving. It feels like happiness should come from getting. But study after study finds the opposite. Spending time or money on other people makes us reliably happier than spending it on ourselves. Kindness has a direct, measurable effect on the giver.", "scene": "story", "room": "warm-gathering", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "5 — GIVING", "subtitle": "the helper's high",
+          "mascots": [ { "costume": "hoodie", "pose": "reach-down", "emotion": "happy-talk", "x": 760, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "giving-ripple", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "There's even a name for it, the helper's high. A small act of kindness, a gift, a favour, a bit of your time, lifts your mood, and it ripples outward too. Generosity is one of the few genuine happiness shortcuts. To feel better fast, do something kind for someone else.", "scene": "explainer", "prop": "giving-ripple", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "6 — Presence",
+      "beats": [
+        { "vo": "Number six. Presence. A landmark study tracked thousands of people through their days and found something striking. We spend nearly half our waking hours with our minds wandering, away from what we're actually doing. And a wandering mind, it concluded, is an unhappy mind.", "scene": "story", "room": "warm-gathering", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "6 — PRESENCE", "subtitle": "a wandering mind is unhappy",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 760, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "present-now", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "So much of our unhappiness isn't about now at all. It's replaying the past, or dreading the future, while the actual present moment, often perfectly fine, slips by unnoticed. Simply bringing your full attention back to what you're doing, this conversation, this meal, this walk, lifts your mood. Be where your feet are.", "scene": "explainer", "prop": "present-now", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Happiness vs Meaning",
+      "beats": [
+        { "vo": "Now, one more distinction that changes everything. Happiness and meaning are not the same thing. Happiness is feeling good right now. Meaning is the sense that your life matters, that you're part of something bigger than yourself. And a truly rich life needs both.", "scene": "diagramCard", "diagram": "happy-vs-meaningful", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Sometimes they pull apart. Raising a child, or chasing a hard goal, can be stressful and low on daily happiness, yet overflowing with meaning. And a life of pure, easy pleasure can feel strangely empty. So don't only chase good feelings. Chase a life that feels like it counts. Aim for the overlap of both.", "scene": "explainer", "prop": "joy-vs-meaning", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Paradox",
+      "beats": [
+        { "vo": "And this brings us to the strange paradox right at the heart of it all. Chasing happiness directly tends to backfire. Studies show that people who value and pursue happiness most intensely often end up, oddly, less happy, and even lonelier. The harder you grab at it, the more it slips away.", "scene": "story", "room": "chasing-horizon", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE HAPPINESS PARADOX", "subtitle": "chase it, and it runs",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 700, "y": 700, "scale": 1.0, "talking": true } ] },
+        { "vo": "Because happiness was never really a target you can aim at. It's a byproduct. It arrives sideways, while you're busy connecting with people, absorbed in good work, helping someone, being present. Stop chasing the feeling directly. Build a life full of those things, and the happiness quietly comes to you.", "scene": "explainer", "prop": "relationship-warmth", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So let's bring it home. You can stop waiting to arrive, and stop buying things to fill the gap. Instead, pour your energy into the stuff that genuinely works. Nurture your relationships. Collect experiences. Find your flow. Practise gratitude. Give freely. And come back, again and again, to the present moment.", "scene": "explainer", "prop": "gratitude-list", "emotion": "happy-talk" },
+        { "vo": "A gentle, honest note. Ordinary unhappiness is part of being human, and these ideas genuinely help with it. But persistent low mood, or depression, is something different, and not a failure of effort or gratitude. If that's where you are, please reach out to a professional. You deserve real support.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "But for most of us, most days, happiness was never hiding on some distant horizon. It was right here all along, in a shared meal, an absorbing afternoon, a small kindness, a moment you finally stopped to actually notice. You don't have to chase it. You just have to turn toward it. I'm Dear Brain.", "scene": "explainer", "prop": "present-now", "emotion": "happy-talk" },
+        { "vo": "So here's a tiny experiment. Today, do just one thing from this list. Message someone you love, or write down three good things, or do one small kindness. Then tell me in the comments which one, and how it felt. Thank you, as always, for spending this time with me. I'm Dear Brain. Go be well.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

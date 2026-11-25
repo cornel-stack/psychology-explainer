@@ -36,6 +36,7 @@ import * as Ch from './charisma';
 import * as Hb from './habits';
 import * as Im from './impostor';
 import * as Gr from './grief';
+import * as Ha from './happiness';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -442,6 +443,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'messy-path': Gr.MessyPath,
   'ball-in-box': Gr.BallInBox,
   'carry-grief': Gr.CarryGrief,
+  // psychology-of-happiness emblems (all new)
+  'arrival-mirage': Ha.ArrivalMirage,
+  'hedonic-treadmill': Ha.HedonicTreadmill,
+  'money-plateau': Ha.MoneyPlateau,
+  'relationship-warmth': Ha.RelationshipWarmth,
+  'experiences-things': Ha.ExperiencesThings,
+  'flow-absorbed': Ha.FlowAbsorbed,
+  'gratitude-list': Ha.GratitudeList,
+  'giving-ripple': Ha.GivingRipple,
+  'present-now': Ha.PresentNow,
+  'joy-vs-meaning': Ha.JoyVsMeaning,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
