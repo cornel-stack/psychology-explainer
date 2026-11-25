@@ -193,6 +193,10 @@ const NEW_ASSETS = new Set([
   'toddler-playroom', 'family-photo-wall', 'growing-brainscape',
   'baby-no-recall', 'fading-babymemory', 'building-hippocampus', 'neuron-overwrite', 'wordless-experience', 'mirror-me', 'photo-built-memory', 'implicit-imprint', 'reminisce-bonding', 'amnesia-curtain',
   'memory-offset', 'hippocampus-building', 'neurogenesis-overwrite', 'reconstructed-memory',
+  // regret (all new)
+  'crossroads-dusk', 'reflective-porch', 'start-line-dawn',
+  'if-only-fork', 'road-not-taken', 'regret-weight', 'did-vs-didnt', 'silver-medal', 'regret-compass', 'lesson-gem', 'regret-spiral', 'self-forgive-hand', 'take-the-leap',
+  'counterfactual', 'action-inaction-time', 'near-miss', 'regret-function',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

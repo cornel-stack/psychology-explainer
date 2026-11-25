@@ -4261,8 +4261,91 @@ const ReconstructedMemory: React.FC = () => {
   );
 };
 
+/** counterfactual: reality vs an imagined better alternative (upward). */
+const CounterfactualDiagram: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const g = 0.4 + 0.4 * Math.sin(frame / 6);
+  return (
+    <g>
+      {/* shared start */}
+      <circle cx={cx - 170} cy={cy} r={14} fill={COLORS.outline} />
+      {/* reality path (dull, down) */}
+      <path d={`M ${cx - 158} ${cy} Q ${cx - 40} ${cy + 20} ${cx + 110} ${cy + 50}`} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <g transform={`translate(${cx + 130} ${cy + 50})`}><circle cx={0} cy={0} r={26} fill={COLORS.ledGrey} {...lg} /><text x={0} y={46} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>reality</text></g>
+      {/* imagined-better path (glowing, up) */}
+      <path d={`M ${cx - 158} ${cy} Q ${cx - 40} ${cy - 40} ${cx + 110} ${cy - 70}`} fill="none" stroke={COLORS.yellowSoft} strokeWidth={STROKE.xl} strokeLinecap="round" strokeDasharray="8 8" opacity={0.6 + g} />
+      <g transform={`translate(${cx + 130} ${cy - 70})`} opacity={0.6 + g * 0.4}><circle cx={0} cy={0} r={26} fill={COLORS.yellow} {...lg} /><text x={0} y={-36} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>"if only..."</text></g>
+      <text x={cx} y={cy - 140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>regret compares up to a better 'if'</text>
+    </g>
+  );
+};
+
+/** action-inaction-time: over time, inaction regrets overtake action regrets. */
+const ActionInactionTime: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 480; const H = 180;
+  const x0 = cx - W / 2; const base = cy + H / 2;
+  const action = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; return `${x0 + t * W},${base - H * (0.8 - 0.65 * t)}`; });
+  const inaction = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; return `${x0 + t * W},${base - H * (0.2 + 0.7 * t)}`; });
+  return (
+    <g>
+      <line x1={x0} y1={base} x2={x0 + W} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <polyline points={action.join(' ')} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <polyline points={inaction.join(' ')} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 + W + 6} y={base - H * 0.15 + 6} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.sky}>"did"</text>
+      <text x={x0 + W + 6} y={base - H * 0.9 + 6} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.red}>"didn't"</text>
+      <text x={x0} y={base + 32} textAnchor="start" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>soon after</text>
+      <text x={x0 + W} y={base + 32} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>years later</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the things we didn't do win out</text>
+    </g>
+  );
+};
+
+/** near-miss: silver (compares up) is less happy than bronze (compares down). */
+const NearMissDiagram: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const medal = (x: number, n: string, c: string, happy: boolean, note: string) => (
+    <g transform={`translate(${x} ${cy})`}>
+      <circle cx={0} cy={0} r={48} fill={c} {...xl} />
+      <text x={0} y={8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.white}>{n}</text>
+      <g transform="translate(0 72)"><circle cx={0} cy={0} r={22} fill={COLORS.white} {...lg} /><circle cx={-8} cy={-4} r={3} fill={COLORS.outline} /><circle cx={8} cy={-4} r={3} fill={COLORS.outline} />{happy ? <path d="M -9 6 Q 0 14 9 6" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /> : <path d="M -9 10 Q 0 2 9 10" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />}</g>
+      <text x={0} y={128} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>{note}</text>
+    </g>
+  );
+  return (
+    <g>
+      {medal(cx - 110, '2', COLORS.ledGrey, false, '"if only... gold"')}
+      {medal(cx + 110, '3', COLORS.wood, true, '"at least a medal!"')}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>so-close hurts the most</text>
+    </g>
+  );
+};
+
+/** regret-function: regret → learn → better; no regret → repeat. */
+const RegretFunction: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const row = (y: number, a: string, b: string, c: string, outcome: string, oc: string) => (
+    <g transform={`translate(0 ${y})`}>
+      <g transform={`translate(${cx - 220} 0)`}><rect x={-80} y={-28} width={160} height={56} rx={12} fill={shade(c, 0.1)} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{a}</text></g>
+      <path d={`M ${cx - 132} 0 l 46 0 l -10 -8 m 10 8 l -10 8`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" />
+      <g transform={`translate(${cx - 10} 0)`}><rect x={-80} y={-28} width={160} height={56} rx={12} fill={shade(c, 0.1)} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{b}</text></g>
+      <path d={`M ${cx + 78} 0 l 46 0 l -10 -8 m 10 8 l -10 8`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" />
+      <g transform={`translate(${cx + 200} 0)`}><rect x={-70} y={-28} width={150} height={56} rx={12} fill={oc} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.white}>{outcome}</text></g>
+    </g>
+  );
+  return (
+    <g>
+      {row(cy - 50, 'feel regret', 'learn', shade(COLORS.greenLeaf, 0.1), 'better next time', COLORS.greenLeaf)}
+      {row(cy + 50, 'shrug it off', 'forget', shade(COLORS.red, 0.1), 'same mistake', COLORS.red)}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the pain is useful feedback</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4444,6 +4527,10 @@ export const DiagramCard: React.FC<{
     'hippocampus-building': COLORS.sky,
     'neurogenesis-overwrite': COLORS.red,
     'reconstructed-memory': COLORS.yellow,
+    'counterfactual': COLORS.lavender,
+    'action-inaction-time': COLORS.sky,
+    'near-miss': COLORS.yellow,
+    'regret-function': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4632,6 +4719,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'hippocampus-building' && <HippocampusBuilding />}
         {diagram === 'neurogenesis-overwrite' && <NeurogenesisOverwrite />}
         {diagram === 'reconstructed-memory' && <ReconstructedMemory />}
+        {diagram === 'counterfactual' && <CounterfactualDiagram />}
+        {diagram === 'action-inaction-time' && <ActionInactionTime />}
+        {diagram === 'near-miss' && <NearMissDiagram />}
+        {diagram === 'regret-function' && <RegretFunction />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

@@ -154,7 +154,10 @@ export type RoomName =
   | 'memory-lab'
   | 'toddler-playroom'
   | 'family-photo-wall'
-  | 'growing-brainscape';
+  | 'growing-brainscape'
+  | 'crossroads-dusk'
+  | 'reflective-porch'
+  | 'start-line-dawn';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4170,6 +4173,77 @@ export const GrowingBrainscape: React.FC = () => (
   </g>
 );
 
+/** Crossroads at dusk: a literal fork in a country road with two signposts — the
+ *  choices and the roads not taken. */
+export const CrossroadsDusk: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.skyEnd, 0.04)} floor={shade(COLORS.greenLeaf, 0.14)} floorY={720} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.skyEnd, 0.1)} />
+    {/* low dusk sun */}
+    <circle cx={1500} cy={300} r={90} fill={COLORS.yellowSoft} opacity={0.8} />
+    {[0, 1, 2].map((i) => <ellipse key={i} cx={400 + i * 220} cy={160 + (i % 2) * 40} rx={80} ry={28} fill={COLORS.white} opacity={0.4} />)}
+    {/* rolling hills */}
+    <path d="M 0 720 Q 480 650 960 720 Q 1440 790 1920 690 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenLeaf, 0.08)} />
+    {/* the forking road */}
+    <path d="M 820 1080 L 930 720 L 990 720 L 1120 1080 Z" fill={shade(COLORS.wood, 0.12)} {...lg} />
+    <path d="M 930 720 L 640 540 L 690 520 L 975 700 Z" fill={shade(COLORS.wood, 0.1)} {...lg} />
+    <path d="M 990 720 L 1300 540 L 1250 520 L 1005 700 Z" fill={shade(COLORS.ledGrey, 0.12)} {...lg} opacity={0.7} />
+    {/* dashed centre lines */}
+    {[0, 1, 2, 3].map((i) => <rect key={i} x={952} y={760 + i * 70} width={16} height={34} rx={4} fill={COLORS.yellowSoft} transform={`translate(${i * -5} 0) scale(${1 + i * 0.3} 1)`} />)}
+    {/* the signpost at the fork */}
+    <g transform="translate(960 560)"><rect x={-8} y={0} width={16} height={160} fill={COLORS.woodDark} {...sm} /><g transform="translate(0 20)"><rect x={-140} y={-24} width={130} height={40} rx={6} fill={COLORS.wood} {...lg} /><text x={-76} y={2} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={18} fill={COLORS.white}>WHAT IF</text></g><g transform="translate(0 58)"><rect x={10} y={-24} width={130} height={40} rx={6} fill={shade(COLORS.wood, 0.1)} {...lg} /><text x={76} y={2} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={18} fill={COLORS.white}>WHAT IS</text></g></g>
+    {/* a lone tree */}
+    <g transform="translate(260 640)"><rect x={-18} y={0} width={36} height={120} rx={8} fill={COLORS.woodDark} {...lg} /><circle cx={0} cy={-40} r={80} fill={shade(COLORS.greenDark, 0.06)} {...xl} /></g>
+  </g>
+);
+
+/** Reflective porch: a wooden porch with a rocking chair at sunset — looking back
+ *  over a life and its choices. */
+export const ReflectivePorch: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.12)} floor={COLORS.wood} floorY={800} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={360} fill={shade(COLORS.yellowDark, 0.06)} />
+    {/* warm sunset sky beyond the porch rail */}
+    <circle cx={1480} cy={340} r={90} fill={COLORS.yellow} opacity={0.7} />
+    {/* porch posts + roof beam */}
+    <rect x={0} y={60} width={CANVAS.width} height={30} fill={COLORS.woodDark} />
+    {[180, 960, 1740].map((x, i) => <rect key={i} x={x - 20} y={90} width={40} height={430} fill={shade(COLORS.wood, -0.04)} {...lg} />)}
+    {/* a porch railing */}
+    <rect x={0} y={560} width={CANVAS.width} height={20} rx={6} fill={COLORS.woodDark} />
+    {Array.from({ length: 20 }).map((_, i) => <rect key={i} x={60 + i * 96} y={580} width={14} height={120} fill={shade(COLORS.wood, 0.06)} />)}
+    {/* floorboards */}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={800} x2={i * 180 - 120} y2={1080} stroke={shade(COLORS.wood, 0.1)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* a rocking chair */}
+    <g transform="translate(620 820)"><path d="M -70 0 L -50 -140 L 10 -140 L -10 0 Z" fill={shade(COLORS.wood, -0.04)} {...xl} /><rect x={-80} y={0} width={110} height={16} rx={6} fill={COLORS.wood} {...lg} />{[-70, 20].map((x, i) => <rect key={i} x={x} y={16} width={12} height={70} fill={COLORS.woodDark} />)}<path d="M -84 90 Q -30 106 36 90" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><rect x={-74} y={-30} width={90} height={30} rx={10} fill={COLORS.pink} {...lg} /></g>
+    {/* a side table with a cup of tea + a photo frame */}
+    <g transform="translate(900 900)"><rect x={-50} y={0} width={100} height={110} rx={10} fill={COLORS.woodDark} {...xl} /><g transform="translate(-20 -20)"><rect x={-20} y={-24} width={40} height={30} rx={8} fill={COLORS.white} {...lg} /><path d="M 20 -14 q 18 6 0 22" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} /></g><g transform="translate(26 -24)"><rect x={-18} y={-28} width={36} height={44} rx={4} fill={COLORS.sky} {...sm} /></g></g>
+    {/* a hanging plant */}
+    <g transform="translate(1400 120)"><line x1={0} y1={0} x2={0} y2={60} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><rect x={-30} y={60} width={60} height={40} rx={10} fill={COLORS.red} {...lg} /><path d="M -20 100 q -20 60 -10 120 M 20 100 q 20 60 10 120 M 0 100 q 0 70 0 130" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+  </g>
+);
+
+/** Start line at dawn: a running track start line in fresh morning light — the energy
+ *  of acting now, before it becomes a regret. */
+export const StartLineDawn: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.02)} floor={shade(COLORS.red, 0.04)} floorY={760} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={320} fill={shade(COLORS.sky, 0.08)} />
+    {/* dawn sun rising */}
+    <circle cx={960} cy={320} r={100} fill={COLORS.yellowSoft} opacity={0.8} />
+    {[0, 1, 2, 3, 4].map((i) => <line key={i} x1={960} y1={320} x2={960 + Math.cos((i / 5) * Math.PI - Math.PI / 2) * 240} y2={320 + Math.sin((i / 5) * Math.PI - Math.PI / 2) * 240} stroke={COLORS.yellowSoft} strokeWidth={STROKE.sm} opacity={0.4} />)}
+    {/* running track lanes receding */}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={760} x2={i * 180 - 160} y2={1080} stroke={shade(COLORS.red, -0.06)} strokeWidth={STROKE.lg} opacity={0.5} />)}
+    {/* the bold white start line */}
+    <path d="M 240 820 L 1680 820 L 1760 920 L 160 920 Z" fill={COLORS.white} {...lg} />
+    {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={240 + i * 150} y={830} width={60} height={80} fill={COLORS.outline} opacity={0.15} />)}
+    <text x={960} y={895} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={46} fill={COLORS.outline} opacity={0.5}>START</text>
+    {/* a starting block */}
+    <g transform="translate(1340 760)"><path d="M -40 40 L 20 40 L 40 0 L -20 0 Z" fill={COLORS.sky} {...xl} /><rect x={-20} y={-20} width={30} height={16} rx={4} fill={shade(COLORS.sky, -0.08)} /></g>
+    {/* distant stadium stands */}
+    {[200, 1720].map((x, i) => <g key={i} transform={`translate(${x} 500)`}><rect x={-120} y={0} width={240} height={200} rx={8} fill={shade(COLORS.blueDiagram, 0.06)} {...lg} />{[0, 1, 2].map((r) => <line key={r} x1={-120} y1={50 + r * 50} x2={120} y2={50 + r * 50} stroke={shade(COLORS.blueDiagram, -0.04)} strokeWidth={STROKE.sm} />)}</g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4309,6 +4383,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'toddler-playroom': ToddlerPlayroom,
   'family-photo-wall': FamilyPhotoWall,
   'growing-brainscape': GrowingBrainscape,
+  'crossroads-dusk': CrossroadsDusk,
+  'reflective-porch': ReflectivePorch,
+  'start-line-dawn': StartLineDawn,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

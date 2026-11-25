@@ -1,0 +1,243 @@
+{
+  "slug": "regret",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 7,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        17,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "action-inaction-time",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "counterfactual",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "near-miss",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "regret-function",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        17,
+        21,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        9
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        9,
+        17,
+        21
+      ]
+    },
+    {
+      "name": "did-vs-didnt",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "if-only-fork",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "lesson-gem",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        18
+      ]
+    },
+    {
+      "name": "regret-compass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10,
+        23
+      ]
+    },
+    {
+      "name": "regret-spiral",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "regret-weight",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "road-not-taken",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        9
+      ]
+    },
+    {
+      "name": "self-forgive-hand",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "silver-medal",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "take-the-leap",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19,
+        20
+      ]
+    },
+    {
+      "name": "crossroads-dusk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        21
+      ]
+    },
+    {
+      "name": "reflective-porch",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        9,
+        17
+      ]
+    },
+    {
+      "name": "start-line-dawn",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    }
+  ]
+}

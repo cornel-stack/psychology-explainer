@@ -50,6 +50,7 @@ import * as St from './selftalk';
 import * as Bo from './boredom';
 import * as Dj from './dejavu';
 import * as Bm from './babymemory';
+import * as Rg from './regret';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -610,6 +611,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'implicit-imprint': Bm.ImplicitImprint,
   'reminisce-bonding': Bm.ReminisceBonding,
   'amnesia-curtain': Bm.AmnesiaCurtain,
+  // regret emblems (all new)
+  'if-only-fork': Rg.IfOnlyFork,
+  'road-not-taken': Rg.RoadNotTaken,
+  'regret-weight': Rg.RegretWeight,
+  'did-vs-didnt': Rg.DidVsDidnt,
+  'silver-medal': Rg.SilverMedal,
+  'regret-compass': Rg.RegretCompass,
+  'lesson-gem': Rg.LessonGem,
+  'regret-spiral': Rg.RegretSpiral,
+  'self-forgive-hand': Rg.SelfForgiveHand,
+  'take-the-leap': Rg.TakeTheLeap,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

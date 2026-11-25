@@ -1,0 +1,421 @@
+{
+  "title": "The Psychology of Regret",
+  "slug": "regret",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "It's 3am, and your mind pulls up the file again. The thing you said. The chance you didn't take. The road you didn't walk down. And that quiet, aching voice begins, if only. If only I'd tried. If only I'd stayed. Regret. It might be the most human feeling of all, and almost everything you believe about it is upside down.",
+          "scene": "story",
+          "room": "crossroads-dusk",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "regret",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 540,
+              "y": 640,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "We treat regret as a useless, corrosive emotion, something to banish, to live without. No regrets, we tattoo on ourselves. But psychology tells a richer, stranger story. Regret, it turns out, is one of the most useful feelings you have, a built-in teacher, pointing straight at what you value most.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So let's turn regret over in the light. What it actually is, what the research says we regret most, especially at the very end of life, why it stings sharpest when we came so close, and how to turn this painful feeling from a punishment into a guide. Let's make peace with if only.",
+          "scene": "explainer",
+          "prop": "if-only-fork",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What Regret Is",
+      "beats": [
+        {
+          "vo": "First, what is regret, under the hood? It's built from a very particular mental move called counterfactual thinking. Your mind runs a simulation of an alternative past, a version where you chose differently, and imagines it turned out better. Then it compares that shiny imaginary life, to your real one.",
+          "scene": "diagramCard",
+          "diagram": "counterfactual",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHAT REGRET IS",
+          "subtitle": "the 'if only' simulation"
+        },
+        {
+          "vo": "And that comparison is the ache. Regret is the gap between what is, and the better what-if your mind just conjured. Psychologists call this comparing upward, to a brighter alternative, and it feels bad precisely because the imagined version looks so much better than the one you're living. Your own imagination, turned against you.",
+          "scene": "explainer",
+          "prop": "road-not-taken",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Regret, Not Just Sadness",
+      "beats": [
+        {
+          "vo": "It's worth separating regret from its cousin, disappointment. If it rains on your wedding, you're disappointed, but you don't regret the weather, because you didn't cause it. Regret is special, it only shows up where you had a choice, and a hand in the outcome. That's the sting, and also the clue.",
+          "scene": "explainer",
+          "prop": "did-vs-didnt",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "REGRET, NOT JUST SADNESS",
+          "subtitle": "it lives where you had a choice"
+        },
+        {
+          "vo": "Because regret always carries a sense of agency, it's saying, this was, at least partly, up to me. And that's exactly why it can teach you, while disappointment mostly just hurts. The responsibility that makes regret so painful is the very thing that makes it so useful. It only visits the choices that were yours to make.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Most Human Feeling",
+      "beats": [
+        {
+          "vo": "And you are not alone in this, not remotely. When researchers ask people to name the emotions they feel most in daily life, regret consistently lands near the very top of the list. It's one of the most common emotions we have, woven right through the human experience.",
+          "scene": "explainer",
+          "prop": "regret-weight",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE MOST HUMAN FEELING",
+          "subtitle": "we all carry it"
+        },
+        {
+          "vo": "So if you carry a few heavy regrets, understand that everyone around you does too, the confident, the successful, the serene, all of them. We just hide them well. Regret is part of the price of being a creature that can imagine other paths. And as we'll see, that price buys you something genuinely valuable.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Things We Didn't Do",
+      "beats": [
+        {
+          "vo": "Now here's the first finding that flips everything. In the short term, we regret the things we did, the blunder, the embarrassing text, the impulsive choice. But over the long run, that completely reverses. Looking back across a whole life, we regret far more the things we didn't do.",
+          "scene": "diagramCard",
+          "diagram": "action-inaction-time",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THINGS WE DIDN'T DO",
+          "subtitle": "inaction haunts us longest"
+        },
+        {
+          "vo": "The mistakes we made tend to fade, we explain them, repair them, grow past them. But the chances we didn't take? The person we never asked out, the dream we never chased, the trip we never booked? Those stay open, unresolved, haunting. In the end, it's rarely I wish I hadn't. It's almost always, I wish I had.",
+          "scene": "explainer",
+          "prop": "did-vs-didnt",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Four Regrets",
+      "beats": [
+        {
+          "vo": "When one researcher gathered thousands upon thousands of people's deepest regrets, something striking emerged, almost all of them fell into just four kinds. And naming them is strangely clarifying, because you'll likely recognise your own in here somewhere.",
+          "scene": "explainer",
+          "prop": "regret-compass",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE FOUR REGRETS",
+          "subtitle": "almost all of them, just four"
+        },
+        {
+          "vo": "First, foundation regrets, I wish I'd been more responsible, saved, looked after myself. Second, boldness regrets, I wish I'd taken the chance. Third, moral regrets, I wish I'd done the right thing. And fourth, connection regrets, I wish I'd reached out, before the drift. Four quiet signposts, pointing at what we value.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Dreams We Shelved",
+      "beats": [
+        {
+          "vo": "And it goes deeper still. Research into our very biggest life regrets finds they cluster around a specific kind of loss, the gap between who we became, and who we dreamed we could be. Our unrealised ideal self. The talent we never developed, the bolder life we never dared to live.",
+          "scene": "story",
+          "room": "reflective-porch",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE DREAMS WE SHELVED",
+          "subtitle": "the self we never became",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 560,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "road-not-taken",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Curiously, we tend to make peace with failing our duties and obligations, the shoulds. What truly lingers is failing our dreams, the coulds. That's oddly hopeful, though, because it tells you exactly where to point your energy now, toward the bold, meaningful things you'd hate to reach the end without even trying.",
+          "scene": "explainer",
+          "prop": "regret-compass",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "At The Very End",
+      "beats": [
+        {
+          "vo": "And there's a tender window into all this. A nurse who spent years caring for people in their final weeks noticed they kept voicing the same handful of regrets. Not about money, or work, or mistakes. Almost always, about living too cautiously, and loving too quietly.",
+          "scene": "story",
+          "room": "reflective-porch",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "AT THE VERY END",
+          "subtitle": "what the dying tend to say",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 560,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "regret-weight",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "The most common was, I wish I'd had the courage to live true to myself, not the life others expected of me. Then, I wish I hadn't worked so hard. I wish I'd expressed my feelings. I wish I'd stayed in touch with my friends. And, I wish I'd let myself be happier. A whole life's wisdom, offered to us early, if we'll listen.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "So Close",
+      "beats": [
+        {
+          "vo": "Here's a fascinating quirk, regret bites hardest when we almost made it. Picture an Olympic podium. Who looks happier, the silver medalist, or the bronze? You'd think second place beats third. But studies of real athletes' faces found the opposite, bronze medalists often look visibly happier than silver.",
+          "scene": "diagramCard",
+          "diagram": "near-miss",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "SO CLOSE",
+          "subtitle": "the near-miss stings most"
+        },
+        {
+          "vo": "Why? Because of what each one compares to. The silver medalist compares upward, if only I'd been a fraction faster, I'd have won gold. The bronze medalist compares downward, phew, at least I made the podium at all. Same reality, opposite feeling. Regret isn't about how well you did. It's about how close you came to doing better.",
+          "scene": "explainer",
+          "prop": "silver-medal",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Regret Is A Teacher",
+      "beats": [
+        {
+          "vo": "So if regret is this painful, why do we even have it? Here's the beautiful answer, it's one of the most useful emotions you own. Regret is your brain's way of learning from the past. That sting is feedback, flagging a choice that didn't work, so you make a wiser one next time.",
+          "scene": "diagramCard",
+          "diagram": "regret-function",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "REGRET IS A TEACHER",
+          "subtitle": "the pain is feedback"
+        },
+        {
+          "vo": "We know this because of people who can't feel it. With certain kinds of brain damage, people lose the capacity for regret entirely, and you might think, lucky them. But they don't learn from their mistakes, and they make the same bad decisions, again and again. Regret, it turns out, is what makes us wiser. The ache is the lesson.",
+          "scene": "explainer",
+          "prop": "lesson-gem",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "When Regret Turns Toxic",
+      "beats": [
+        {
+          "vo": "But, and this is crucial, there's a line where helpful regret curdles into something harmful. Healthy regret says, that didn't work, here's the lesson, now let's do better. Toxic regret just says, you idiot, how could you, over and over, with no lesson and no way out. That's not regret anymore. That's rumination.",
+          "scene": "explainer",
+          "prop": "regret-spiral",
+          "emotion": "confused",
+          "chapterStart": true,
+          "title": "WHEN REGRET TURNS TOXIC",
+          "subtitle": "learning vs self-punishment"
+        },
+        {
+          "vo": "When regret stops teaching and starts just punishing, looping endlessly in self-blame, it's linked to anxiety and depression, and it helps no one, least of all you. The goal was never to feel no regret. It's to let regret inform you, and then let it go. To mine the lesson, and set down the stone.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Use It Well",
+      "beats": [
+        {
+          "vo": "So how do you turn regret from a tormentor into a teacher? Three steps. First, self-compassion. Talk to your past self the way you'd talk to a dear friend who made the same choice, with understanding, not contempt. You did the best you could with what you knew then. Truly.",
+          "scene": "story",
+          "room": "reflective-porch",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "USE IT WELL",
+          "subtitle": "from tormentor to teacher",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 560,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "self-forgive-hand",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Second, extract the lesson. Ask, what does this regret reveal that I value? It's always pointing at something precious. And third, act on it. Make the repair you can still make. And let it guide you forward, use the what-if to fuel a bolder choice next time, so you collect fewer of the regrets that truly last.",
+          "scene": "explainer",
+          "prop": "lesson-gem",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And for the regrets you truly cannot change, the ones where no repair is possible, borrow the bronze medalist's trick. Gently add an at least. At least I learned something. At least it led me here, to this. It isn't denial, it's choosing, deliberately, to compare downward, so a closed door stops casting such a long shadow.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Antidote Is Action",
+      "beats": [
+        {
+          "vo": "And since the deepest regrets come from inaction, the dreams we shelved, the antidote is wonderfully clear, act now. The best way to avoid the heavy regrets of tomorrow is to take the brave, meaningful chances today, while you still can. Not recklessly, but deliberately, toward what matters to you.",
+          "scene": "story",
+          "room": "start-line-dawn",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE ANTIDOTE IS ACTION",
+          "subtitle": "take the chance now",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "cheer",
+              "emotion": "excited",
+              "x": 560,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "take-the-leap",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Send the message. Book the trip. Start the thing. Make the apology. Future you is watching, and they are begging you to be brave now, so they don't have to lie awake decades from now whispering, if only. The scariest chances you take today are the regrets you'll never have to carry.",
+          "scene": "explainer",
+          "prop": "take-the-leap",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time that 3am voice starts up with its if only, don't fight it, and don't drown in it. Listen to it, gently. Thank it. It's not here to torture you. It's here to teach you what you love, and to point you toward a braver tomorrow. Regret is just love, looking backward. And it can light the way forward.",
+          "scene": "story",
+          "room": "crossroads-dusk",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "REGRET, LOOKING FORWARD",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 540,
+              "y": 640,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "One honest, caring note. Reflecting on regrets is healthy, and often clarifying. But if regret becomes a relentless, hopeless spiral of self-blame you can't escape, that can be part of depression, and it deserves real support. Please be gentle with yourself, and know a good therapist can help you set that weight down.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But for most of us, regret is simply the shadow cast by a life we care about. A person with no regrets isn't someone who lived perfectly, it's someone who never cared deeply, or risked anything at all. Your regrets are proof that you have values, and dreams, and a heart. Let them teach you. Then walk on.",
+          "scene": "explainer",
+          "prop": "regret-compass",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, and only if you want to, what's a chance you're glad you took, the leap that became a cherished memory instead of a regret? Let's inspire each other to be brave. Thank you, truly, for spending this time with me. If this helped you set something down, subscribe and stay a while. I'm Dear Brain.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}
