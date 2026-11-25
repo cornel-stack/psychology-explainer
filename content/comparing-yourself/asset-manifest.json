@@ -1,0 +1,245 @@
+{
+  "slug": "comparing-yourself",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 19
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        31
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        20,
+        30
+      ]
+    },
+    {
+      "name": "comparison-directions",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "comparison-toolkit",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "highlight-vs-real",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "unfair-match",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "name": "hands-hips",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        31
+      ]
+    },
+    {
+      "name": "walking",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "endless-ladder",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "envy-compass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "envy-flare",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "joy-thief",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "measuring-self",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "own-lane",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "past-self",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "reel-vs-reality",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "rigged-compare",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "two-directions",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "comparison-feed-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "own-studio",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        30,
+        31
+      ]
+    },
+    {
+      "name": "race-track",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    }
+  ]
+}

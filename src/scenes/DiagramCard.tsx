@@ -5594,8 +5594,119 @@ const ReachModel: React.FC = () => {
   );
 };
 
+/** comparison-directions: self in the middle, an upward arrow (envy/inspire) and a
+ *  downward arrow (relief/pity). */
+const ComparisonDirections: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.52;
+  const up = springIn(frame, 16); const down = springIn(frame - 14, 16);
+  return (
+    <g>
+      <text x={cx} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>we measure against each other</text>
+      {/* upward */}
+      <g opacity={up}>
+        <g transform={`translate(${cx} ${cy - 150})`}><circle cx={0} cy={0} r={44} fill={shade(COLORS.sky, 0.06)} {...xl} /><path d="M -16 -4 Q 0 -14 16 -4" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle cx={-12} cy={-8} r={4} fill={COLORS.outline} /><circle cx={12} cy={-8} r={4} fill={COLORS.outline} /><path d="M -10 10 Q 0 16 10 10" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+        <path d={`M ${cx} ${cy - 50} L ${cx} ${cy - 104}`} stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" /><path d={`M ${cx - 10} ${cy - 92} l 10 -12 l 10 12`} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+        <text x={cx + 90} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.red}>UPWARD</text>
+        <text x={cx + 110} y={cy - 126} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>inspire — or envy</text>
+      </g>
+      {/* self */}
+      <g transform={`translate(${cx} ${cy})`}><circle cx={0} cy={0} r={50} fill={COLORS.pink} {...xl} /><text x={0} y={7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>you</text></g>
+      {/* downward */}
+      <g opacity={down}>
+        <g transform={`translate(${cx} ${cy + 150})`}><circle cx={0} cy={0} r={44} fill={shade(COLORS.greenTeal, 0.06)} {...xl} /><circle cx={-12} cy={-6} r={4} fill={COLORS.outline} /><circle cx={12} cy={-6} r={4} fill={COLORS.outline} /><path d="M -10 14 L 10 14" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+        <path d={`M ${cx} ${cy + 50} L ${cx} ${cy + 104}`} stroke={COLORS.greenTeal} strokeWidth={STROKE.lg} strokeLinecap="round" /><path d={`M ${cx - 10} ${cy + 92} l 10 12 l 10 -12`} fill="none" stroke={COLORS.greenTeal} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+        <text x={cx + 90} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.greenDark}>DOWNWARD</text>
+        <text x={cx + 110} y={cy + 174} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>relief — or fear</text>
+      </g>
+    </g>
+  );
+};
+
+/** highlight-vs-real: their curated highlight reel vs your full, messy real life. */
+const HighlightVsReal: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const leftX = CANVAS.width * 0.3; const rightX = CANVAS.width * 0.7; const cy = CANVAS.height * 0.52;
+  const p1 = springIn(frame, 14); const p2 = springIn(frame - 16, 14);
+  return (
+    <g>
+      <text x={cx} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>what you're really comparing</text>
+      {/* their reel — one shiny frame */}
+      <g transform={`translate(${leftX} ${cy})`} opacity={p1}>
+        <rect x={-120} y={-110} width={240} height={220} rx={16} fill={COLORS.yellowSoft} {...xl} />
+        <path d="M 0 -30 l 10 22 l 24 2 l -18 16 l 6 24 l -22 -12 l -22 12 l 6 -24 l -18 -16 l 24 -2 Z" fill={COLORS.yellow} {...sm} />
+        <text x={0} y={76} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>their HIGHLIGHTS</text>
+        <text x={0} y={150} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={17} fill={COLORS.outline}>one perfect frame</text>
+      </g>
+      <text x={cx} y={cy + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>vs</text>
+      {/* your reality — a messy strip */}
+      <g transform={`translate(${rightX} ${cy})`} opacity={p2}>
+        <rect x={-120} y={-110} width={240} height={220} rx={16} fill={COLORS.white} {...xl} />
+        {[[-70, -60, COLORS.sky], [10, -40, COLORS.pink], [-30, 10, COLORS.greenTeal], [50, 30, COLORS.ledGrey], [-60, 50, COLORS.yellow]].map(([x, y, c], i) => <rect key={i} x={x as number} y={y as number} width={60} height={30} rx={6} fill={shade(c as string, 0.04)} opacity={0.6} transform={`rotate(${i * 12 - 24} ${x} ${y})`} />)}
+        <text x={0} y={76} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>your WHOLE LIFE</text>
+        <text x={0} y={150} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={17} fill={COLORS.outline}>every messy moment</text>
+      </g>
+    </g>
+  );
+};
+
+/** unfair-match: a boxing-style matchup of 'your worst day' vs 'their best day'. */
+const UnfairMatch: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.5;
+  const p1 = springIn(frame, 14); const p2 = springIn(frame - 14, 14);
+  return (
+    <g>
+      <text x={cx} y={110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>a rigged match-up</text>
+      {/* your worst */}
+      <g transform={`translate(${cx - 240} ${cy})`} opacity={p1}>
+        <circle cx={0} cy={0} r={100} fill={shade(COLORS.pink, 0.04)} {...xl} />
+        <circle cx={-18} cy={-10} r={6} fill={COLORS.outline} /><circle cx={18} cy={-10} r={6} fill={COLORS.outline} />
+        <path d="M -22 26 Q 0 16 22 26" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        <text x={0} y={140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>your worst day</text>
+      </g>
+      <text x={cx} y={cy + 12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={44} fill={COLORS.red} opacity={p2}>vs</text>
+      {/* their best */}
+      <g transform={`translate(${cx + 240} ${cy})`} opacity={p2}>
+        <circle cx={0} cy={0} r={100} fill={shade(COLORS.yellow, 0.06)} {...xl} />
+        <path d="M -22 -10 Q -14 -18 -6 -10 M 6 -10 Q 14 -18 22 -10" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+        <path d="M -24 12 Q 0 36 24 12" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        {[0, 1, 2].map((i) => <path key={i} d={`M ${-34 + i * 34} -56 q 4 -8 0 -16`} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.sm} strokeLinecap="round" />)}
+        <text x={0} y={140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>their best day</text>
+      </g>
+      <text x={cx} y={CANVAS.height - 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.red}>you were never going to win this</text>
+    </g>
+  );
+};
+
+/** comparison-toolkit: four ways to handle comparison. */
+const ComparisonToolkit: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5;
+  const items = [
+    { t: 'CATCH IT', s: 'notice the compare' },
+    { t: 'CURATE', s: 'mute what shrinks you' },
+    { t: 'PAST SELF', s: 'am I growing?' },
+    { t: 'OWN LANE', s: 'your values, your race' },
+  ];
+  return (
+    <g>
+      <text x={cx} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>how to handle it</text>
+      {items.map((it, i) => {
+        const p = springIn(frame - i * 9, 12); const y = 190 + i * 116;
+        return <g key={i} transform={`translate(${cx} ${y}) scale(${0.84 + 0.16 * p})`} opacity={p}>
+          <rect x={-360} y={-44} width={720} height={88} rx={18} fill={[COLORS.sky, COLORS.pink, COLORS.greenTeal, COLORS.yellow][i]} opacity={0.82} {...lg} />
+          <circle cx={-310} cy={0} r={26} fill={COLORS.white} {...sm} /><text x={-310} y={9} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{i + 1}</text>
+          <text x={-264} y={-2} fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{it.t}</text>
+          <text x={-264} y={26} fontFamily={fontFamily} fontWeight={700} fontSize={18} fill={COLORS.outline}>{it.s}</text>
+        </g>;
+      })}
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices' | 'forgiveness-myths' | 'grudge-cost' | 'grievance-loop' | 'reach-model';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule' | 'impression-speed' | 'primacy-list' | 'first-two-questions' | 'halo-spread' | 'baseline-deviation' | 'cluster-not-single' | 'proxemics-zones' | 'honesty-ladder' | 'gaslight-cycle' | 'gaslight-tactics' | 'disagree-vs-gaslight' | 'reality-anchors' | 'rest-vs-energy' | 'fatigue-types' | 'energy-leaks' | 'seven-rests' | 'recall-vs-recognition' | 'baker-baker' | 'two-pathways' | 'name-recall-steps' | 'small-talk-jobs' | 'conversation-depth' | 'underestimate-liking' | 'small-talk-bridge' | 'negativity-bias' | 'gratitude-benefits' | 'lens-shift' | 'gratitude-practices' | 'forgiveness-myths' | 'grudge-cost' | 'grievance-loop' | 'reach-model' | 'comparison-directions' | 'highlight-vs-real' | 'unfair-match' | 'comparison-toolkit';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -5833,6 +5944,10 @@ export const DiagramCard: React.FC<{
     'grudge-cost': COLORS.red,
     'grievance-loop': COLORS.navy,
     'reach-model': COLORS.pink,
+    'comparison-directions': COLORS.pink,
+    'highlight-vs-real': COLORS.yellow,
+    'unfair-match': COLORS.red,
+    'comparison-toolkit': COLORS.sky,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -6077,6 +6192,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'grudge-cost' && <GrudgeCost />}
         {diagram === 'grievance-loop' && <GrievanceLoop />}
         {diagram === 'reach-model' && <ReachModel />}
+        {diagram === 'comparison-directions' && <ComparisonDirections />}
+        {diagram === 'highlight-vs-real' && <HighlightVsReal />}
+        {diagram === 'unfair-match' && <UnfairMatch />}
+        {diagram === 'comparison-toolkit' && <ComparisonToolkit />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

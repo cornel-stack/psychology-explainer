@@ -196,7 +196,10 @@ export type RoomName =
   | 'sunrise-overlook'
   | 'mind-courtroom'
   | 'burdened-road'
-  | 'release-lakeside';
+  | 'release-lakeside'
+  | 'comparison-feed-room'
+  | 'race-track'
+  | 'own-studio';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5117,6 +5120,68 @@ export const ReleaseLakeside: React.FC = () => (
   </g>
 );
 
+/** Comparison feed room: a dim room whose walls are glowing phone-feed panels of other
+ *  people's highlights, a lone figure bathed in their cold light. */
+export const ComparisonFeedRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.08)} floor={shade(COLORS.navy, 0.06)} floorY={850} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={850} fill={shade(COLORS.purpleDeep, 0.04)} opacity={0.5} />)}
+    {/* floating feed panels (phones) showing 'perfect' lives */}
+    {[[220, 230, -6], [540, 180, 5], [1380, 200, -4], [1700, 250, 6], [360, 470, 4], [1560, 480, -5]].map(([x, y, rot], i) => (
+      <g key={i} transform={`translate(${x} ${y}) rotate(${rot})`}>
+        <rect x={-62} y={-96} width={124} height={192} rx={14} fill={COLORS.white} {...xl} />
+        <ellipse cx={0} cy={60} rx={70} ry={50} fill={[COLORS.sky, COLORS.pink, COLORS.yellow][i % 3]} opacity={0.2} />
+        <circle cx={0} cy={-36} r={26} fill={COLORS.skin} {...sm} /><path d="M -10 -30 Q 0 -22 10 -30" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+        {[0, 1, 2].map((j) => <rect key={j} x={-44} y={8 + j * 20} width={88 - j * 20} height={10} rx={4} fill={shade(COLORS.sky, -0.04)} opacity={0.5} />)}
+        <path d="M 40 -78 l 3 7 l 7 1 l -5 5 l 1 7 l -6 -3 l -6 3 l 1 -7 l -5 -5 l 7 -1 Z" fill={COLORS.yellow} />
+      </g>
+    ))}
+    {/* cold glow pooling on the floor around a lone figure spot */}
+    <ellipse cx={960} cy={900} rx={320} ry={70} fill={COLORS.sky} opacity={0.08} />
+    {/* a big central phone the figure stares into */}
+    <g transform="translate(960 440)"><rect x={-90} y={-150} width={180} height={300} rx={20} fill={COLORS.white} {...xl} /><rect x={-74} y={-128} width={148} height={256} rx={10} fill={shade(COLORS.sky, 0.08)} opacity={0.5} />{[0, 1, 2, 3].map((j) => <rect key={j} x={-60} y={-100 + j * 60} width={120} height={44} rx={8} fill={shade(COLORS.purpleDeep, 0.1)} opacity={0.4} />)}</g>
+  </g>
+);
+
+/** Race track: an athletics track with curved lanes, a finish line and a cheering
+ *  stand — the comparison race we never chose. */
+export const RaceTrack: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={shade(COLORS.red, 0.0)} floorY={620} stripe={false} />
+    {/* graduated sky + sun */}
+    {Array.from({ length: 4 }).map((_, i) => <rect key={i} x={0} y={i * 150} width={CANVAS.width} height={150} fill={shade(COLORS.sky, -0.012 * (3 - i))} opacity={0.5} />)}
+    <circle cx={300} cy={180} r={64} fill={COLORS.yellow} opacity={0.8} />
+    {[[1500, 160], [1100, 220]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`} opacity={0.5}><ellipse cx={0} cy={0} rx={70} ry={30} fill={COLORS.white} /><ellipse cx={-48} cy={10} rx={40} ry={22} fill={COLORS.white} /></g>)}
+    {/* stadium stand */}
+    <g transform="translate(960 480)"><rect x={-900} y={-80} width={1800} height={160} rx={10} fill={shade(COLORS.navy, 0.08)} {...xl} />{Array.from({ length: 30 }).map((_, i) => <circle key={i} cx={-860 + i * 60} cy={-30 + (i % 2) * 36} r={12} fill={[COLORS.pink, COLORS.yellow, COLORS.greenLeaf, COLORS.white][i % 4]} opacity={0.5} />)}</g>
+    {/* running track with lanes */}
+    <rect x={0} y={620} width={CANVAS.width} height={460} fill={shade(COLORS.red, 0.02)} />
+    {[700, 780, 860, 940].map((y, i) => <line key={i} x1={0} y1={y} x2={CANVAS.width} y2={y} stroke={COLORS.white} strokeWidth={STROKE.lg} opacity={0.7} />)}
+    {/* finish line (checkered) */}
+    {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={1500} y={620 + i * 44} width={30} height={44} fill={i % 2 ? COLORS.white : COLORS.outline} opacity={0.7} />)}
+    {/* a couple of distant runner silhouettes in other lanes */}
+    {[[500, 740], [900, 820]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`} opacity={0.3}><circle cx={0} cy={-34} r={20} fill={COLORS.navy} /><path d="M -24 70 Q 0 -8 24 70 Z" fill={COLORS.navy} /></g>)}
+  </g>
+);
+
+/** Own studio: a calm, personal creative studio — an easel, a desk with your own work,
+ *  warm light and plants — the antidote: your own lane and values. */
+export const OwnStudio: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.08)} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={280} fill={shade(COLORS.greenTeal, 0.04)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={560} stroke={shade(COLORS.greenTeal, 0.02)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* window with soft light */}
+    <g transform="translate(1560 340)"><rect x={-130} y={-150} width={260} height={300} rx={12} fill={shade(COLORS.sky, 0.12)} {...xl} /><circle cx={70} cy={-80} r={40} fill={COLORS.white} opacity={0.5} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /><line x1={-130} y1={0} x2={130} y2={0} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /></g>
+    {/* an easel with a personal painting */}
+    <g transform="translate(420 560)"><path d="M 0 0 L -70 300 M 0 0 L 70 300 M 0 240 L 0 320" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" /><rect x={-90} y={-10} width={180} height={150} rx={6} fill={COLORS.white} {...xl} /><circle cx={-30} cy={50} r={30} fill={COLORS.pink} opacity={0.7} /><path d="M 10 110 l 40 -60 l 40 60 Z" fill={COLORS.greenTeal} opacity={0.7} /></g>
+    {/* desk with your own sketch + mug + lamp */}
+    <g transform="translate(1120 800)"><rect x={-160} y={0} width={320} height={110} rx={10} fill={COLORS.woodDark} {...xl} /><rect x={-120} y={-50} width={120} height={70} rx={6} fill={COLORS.white} {...lg} transform="rotate(-4 -60 -16)" />{[0, 1, 2].map((i) => <line key={i} x1={-108} y1={-36 + i * 16} x2={-18} y2={-36 + i * 16} stroke={shade(COLORS.sky, -0.06)} strokeWidth={STROKE.sm} transform="rotate(-4 -60 -16)" />)}<g transform="translate(60 -16)"><rect x={-20} y={-24} width={40} height={30} rx={6} fill={COLORS.red} {...sm} /><path d="M -4 -28 q -4 -8 2 -14" fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.5} /></g></g>
+    {/* plant */}
+    <g transform="translate(300 760)"><rect x={-34} y={0} width={68} height={100} rx={10} fill={COLORS.red} {...xl} /><path d="M 0 0 q -46 -56 -22 -124 M 0 0 q 0 -78 0 -144 M 0 0 q 46 -56 22 -124" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-22} cy={-124} r={15} fill={COLORS.greenLeaf} /><circle cx={0} cy={-144} r={17} fill={COLORS.greenLeaf} /><circle cx={22} cy={-124} r={15} fill={COLORS.greenLeaf} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5298,6 +5363,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'mind-courtroom': MindCourtroom,
   'burdened-road': BurdenedRoad,
   'release-lakeside': ReleaseLakeside,
+  'comparison-feed-room': ComparisonFeedRoom,
+  'race-track': RaceTrack,
+  'own-studio': OwnStudio,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

@@ -249,6 +249,10 @@ const NEW_ASSETS = new Set([
   'mind-courtroom', 'burdened-road', 'release-lakeside',
   'carrying-coal', 'grudge-weight', 'forgive-myths', 'replay-wound', 'let-it-go', 'empathy-lens', 'forgive-boundary', 'unclench-heart', 'self-forgive', 'no-apology-needed',
   'forgiveness-myths', 'grudge-cost', 'grievance-loop', 'reach-model',
+  // comparing-yourself (all new)
+  'comparison-feed-room', 'race-track', 'own-studio',
+  'measuring-self', 'two-directions', 'reel-vs-reality', 'rigged-compare', 'joy-thief', 'envy-flare', 'endless-ladder', 'past-self', 'own-lane', 'envy-compass',
+  'comparison-directions', 'highlight-vs-real', 'unfair-match', 'comparison-toolkit',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

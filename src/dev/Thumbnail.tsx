@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'comparing-yourself': {
+    A: { lines: ['WHY YOU', 'COMPARE', 'YOURSELF'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'tearful', textColor: COLORS.white, badge: '?', prop: 'measuring-self' },
+    B: { lines: ['THEIR REEL', 'VS YOUR', 'REAL LIFE'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'reel-vs-reality' },
+    C: { lines: ['STOP RUNNING', 'A RACE WITH', 'NO FINISH'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '✓', prop: 'own-lane' },
+  },
   'forgiveness': {
     A: { lines: ['THE', 'PSYCHOLOGY OF', 'FORGIVENESS'], accent: COLORS.greenLeaf, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'let-it-go' },
     B: { lines: ['THE GRUDGE', 'IS HURTING', 'YOU, NOT THEM'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'tearful', textColor: COLORS.white, badge: '!', prop: 'carrying-coal' },

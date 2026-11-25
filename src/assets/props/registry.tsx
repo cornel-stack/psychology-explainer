@@ -64,6 +64,7 @@ import * as Fn from './faces-names';
 import * as Sk from './small-talk';
 import * as Gt from './gratitude';
 import * as Fg from './forgiveness';
+import * as Cm from './comparing';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -770,6 +771,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'unclench-heart': Fg.UnclenchHeart,
   'self-forgive': Fg.SelfForgive,
   'no-apology-needed': Fg.NoApologyNeeded,
+  'measuring-self': Cm.MeasuringSelf,
+  'two-directions': Cm.TwoDirections,
+  'reel-vs-reality': Cm.ReelVsReality,
+  'rigged-compare': Cm.RiggedCompare,
+  'joy-thief': Cm.JoyThief,
+  'envy-flare': Cm.EnvyFlare,
+  'endless-ladder': Cm.EndlessLadder,
+  'past-self': Cm.PastSelf,
+  'own-lane': Cm.OwnLane,
+  'envy-compass': Cm.EnvyCompass,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

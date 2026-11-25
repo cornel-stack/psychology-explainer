@@ -1,0 +1,296 @@
+{
+  "title": "Why You Compare Yourself to Others",
+  "slug": "comparing-yourself",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You were having a perfectly fine day. Then you picked up your phone. And there it was: someone's new house, someone's dream holiday, someone your age somehow already running a company. Ten minutes later, your fine life suddenly feels small and not quite enough. What just happened? You compared. And comparison just quietly robbed you.",
+          "scene": "story",
+          "room": "comparison-feed-room",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY YOU COMPARE",
+          "subtitle": "yourself to others",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "tearful", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "We all do it. We measure ourselves against everyone around us, constantly, often without even noticing. And in a world of endless curated feeds, it has quietly become one of the biggest thieves of happiness there is. But here's the thing. Comparison isn't a personal flaw. It's a deep, ancient feature of the human mind.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, let's understand it. Why your brain is wired to compare, how social media rigged the entire game against you, why comparison steals your joy so effectively, and how to break free, using comparison to grow instead of letting it crush you. Let's stop playing a game we were never meant to win.",
+          "scene": "explainer",
+          "prop": "measuring-self",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "It's Automatic",
+      "beats": [
+        {
+          "vo": "First, the big reassurance. If you compare yourself to others, you are not insecure or shallow. You are human. Back in 1954, psychologist Leon Festinger described what he called social comparison theory, and it's one of the most robust ideas in psychology.",
+          "scene": "diagramCard",
+          "diagram": "comparison-directions",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "IT'S AUTOMATIC",
+          "subtitle": "a built-in instinct"
+        },
+        {
+          "vo": "Festinger's insight was simple. We have a deep need to know how we're doing. Am I smart? Am I attractive? Am I successful? But for most of these things, there's no objective ruler, no official score. So how does the brain figure it out? It looks around at other people, and measures you against them. Comparison is how we locate ourselves.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And there's a good evolutionary reason this runs so deep. For our ancestors, your rank in the group was a matter of life and death. It decided your access to food, to safety, to mates. So the brain became exquisitely tuned to one question: where do I stand compared to everyone else? That ancient radar is still running, every single day.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Up and Down",
+      "beats": [
+        {
+          "vo": "Now, we compare in two directions, and understanding them is key. The first is upward comparison, looking at people who seem better off, further ahead, more successful than us.",
+          "scene": "explainer",
+          "prop": "two-directions",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "UP AND DOWN",
+          "subtitle": "two directions"
+        },
+        {
+          "vo": "Upward comparison is a double-edged sword. Done well, it can inspire you. That person climbed the mountain, so maybe I can too. But done badly, it crushes you. It fills you with envy, inadequacy, and the gnawing sense that you're falling behind. Same comparison, completely opposite effects.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The other direction is downward comparison, looking at those who seem worse off. This can make us feel better about ourselves, or spark real gratitude for what we have. But it can also curdle into smugness, or a secret fear of falling to where they are. The point is, comparison itself is neutral. What matters is how we use it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And here's a subtle twist: we compare hardest to people most like us. A billionaire's yacht barely stings, but a friend, a sibling, a colleague doing slightly better? That one burns. They're our real reference group, the ones our ancient radar is actually scanning. Which is why a friend's good news can trigger a pang we're ashamed of.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Rigged Game",
+      "beats": [
+        {
+          "vo": "Here's where it gets dangerous, and why your grandparents compared far less than you do. For almost all of human history, you only compared yourself to the few dozen people in your village. People roughly like you. Then came social media, and it blew that wide open.",
+          "scene": "diagramCard",
+          "diagram": "highlight-vs-real",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE RIGGED GAME",
+          "subtitle": "reel vs real life"
+        },
+        {
+          "vo": "Now you compare yourself not to a few dozen locals, but to thousands of strangers and celebrities, every time you open an app. And worse, you're not seeing their real lives. You're seeing their highlight reel. The best, most filtered, most carefully chosen two percent of their existence.",
+          "scene": "explainer",
+          "prop": "reel-vs-reality",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And this is the cruel trick at the heart of it all. You compare your behind-the-scenes to their highlight reel. You know all your own doubts, your boring Tuesdays, your failures and insecurities. But all you see of them is the trophy, the holiday, the perfect photo. You're comparing your whole messy story to their showreel.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And the algorithms make it worse, because they feed you the extremes. The most beautiful, the most successful, the most enviable moments from across the entire planet, served up back to back. No normal human life could ever compete with a feed that's been engineered to show you only the dazzling top of everything.",
+          "scene": "explainer",
+          "prop": "rigged-compare",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's like comparing your worst day to someone else's best day, and then feeling bad about yourself for losing. The contest was rigged before you even started. You were never seeing the full picture. You were comparing reality against a carefully built illusion, and no one can feel good measuring themselves against a highlight reel.",
+          "scene": "diagramCard",
+          "diagram": "unfair-match",
+          "emotion": "serious-expert",
+          "withMascot": true
+        }
+      ]
+    },
+    {
+      "name": "It Steals Your Joy",
+      "beats": [
+        {
+          "vo": "There's a famous line, often attributed to Theodore Roosevelt: comparison is the thief of joy. And psychology backs it up completely. Chronic upward comparison is strongly linked to envy, anxiety, low self-esteem, and depressive feelings.",
+          "scene": "explainer",
+          "prop": "joy-thief",
+          "emotion": "tearful",
+          "chapterStart": true,
+          "title": "IT STEALS YOUR JOY",
+          "subtitle": "the thief at work"
+        },
+        {
+          "vo": "And notice how it poisons things you should be proud of. You get a good grade, then hear someone got a better one, and suddenly yours feels worthless. You love your home, until you see a nicer one online. Comparison can take a genuine joy and instantly drain all the colour out of it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "This is the sting of envy, and it's one of the most corrosive feelings we have, because it quietly turns other people's wins into your losses. Their success starts to feel like a personal attack, like proof that you're not enough. And you're left resenting people for simply living their lives.",
+          "scene": "explainer",
+          "prop": "envy-flare",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "And that quietly poisons your relationships. It's hard to be truly happy for a friend when part of you is keeping score. Comparison can put a thin wall of resentment between you and the people you love, making their joy feel like a threat instead of something to celebrate. The thief doesn't just steal your joy. It steals your connection.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        }
+      ]
+    },
+    {
+      "name": "The Endless Ladder",
+      "beats": [
+        {
+          "vo": "And here's the final cruelty that makes comparison a genuine trap. Even if you win, you lose. Because the ladder of comparison has no top.",
+          "scene": "explainer",
+          "prop": "endless-ladder",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE ENDLESS LADDER",
+          "subtitle": "a race with no finish"
+        },
+        {
+          "vo": "There is always, always someone ahead of you. Richer, fitter, smarter, further along. Get the car you dreamed of, and you'll notice a better one. Hit the goal, and the comparison just resets to the next rung up. If your sense of worth depends on being ahead of other people, you've signed up for a race that literally cannot be won.",
+          "scene": "story",
+          "room": "race-track",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "tee", "pose": "walking", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "This is why chasing a feeling of enough through comparison never works. The finish line keeps moving. You could be in the top one percent of humans who have ever lived, in comfort and safety, and still feel like a failure, simply because you're looking up at the people above you, instead of around at the life you actually have.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Use It, Don't Be Used",
+      "beats": [
+        {
+          "vo": "So should we try to never compare again? That's neither possible nor even helpful. Because comparison isn't all bad. Used wisely, it's actually a powerful tool. The trick is to compare to learn, not to judge.",
+          "scene": "explainer",
+          "prop": "envy-compass",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "USE IT, DON'T BE USED",
+          "subtitle": "envy as information"
+        },
+        {
+          "vo": "Seeing someone further ahead can show you what's possible, and teach you how they did it. And here's a beautiful reframe for envy. Instead of letting it sour into resentment, treat it as information. Envy is a signal. It points, like a compass, straight at something you actually want.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So the next time you feel that pang, get curious instead of bitter. Ask: what is this envy telling me I value? Do I actually want that thing, or do I just think I should? Then let it fuel your own action, not your own misery. Envy, handled well, can become one of the clearest maps to your own desires.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "How to Handle It",
+      "beats": [
+        {
+          "vo": "So let's make this practical. Here are four ways to take comparison from a thief, and turn it into something you control. And the first is simply: catch it.",
+          "scene": "diagramCard",
+          "diagram": "comparison-toolkit",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "HOW TO HANDLE IT",
+          "subtitle": "four moves"
+        },
+        {
+          "vo": "Awareness is everything. Most comparison happens on autopilot. So start noticing the moment it strikes, especially while you're scrolling. Just naming it, oh, I'm comparing right now, and this is a rigged game, instantly loosens its grip. You can't change a habit you can't even see.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Second, curate your inputs. You are not obligated to follow accounts that reliably make you feel small. Mute them, unfollow them, take regular breaks. You control the feed that's fuelling the comparison, so prune it ruthlessly. Fill your attention with things that inspire you, not ones that quietly diminish you.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Third, and this one is transformative: compare yourself to your past self, not to other people. Forget whether you're ahead of them. Ask: am I better than I was a year ago? Am I growing? This is the only comparison that's fair, motivating, and actually within your control. You versus you, that's the only race that matters.",
+          "scene": "explainer",
+          "prop": "past-self",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And fourth, run your own lane. A runner who keeps glancing at the lanes beside them loses their stride and their speed.",
+          "scene": "explainer",
+          "prop": "own-lane",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Anchor yourself instead to your own values, your own goals, your own definition of a good life. When you're genuinely clear on what truly matters to you, other people's highlight reels simply lose their power. You stop needing to be ahead of everyone, because you finally know where you're actually trying to go.",
+          "scene": "story",
+          "room": "own-studio",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "tee", "pose": "hands-hips", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "So the next time your phone makes your good life feel small, remember what's really happening. You're comparing your messy, beautiful, complete reality to a stranger's carefully chosen highlight. It was never a fair fight. And it was never a race you had to run.",
+          "scene": "story",
+          "room": "own-studio",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Your life isn't meant to look like theirs. The things that make you you, your particular path, your quiet wins, your own strange and wonderful story, don't show up on anyone's leaderboard. They were never supposed to. And they're worth so much more than a number of likes.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So lift your eyes off everyone else's lane, and put them back on your own. Compare yourself to who you were yesterday, chase what genuinely matters to you, and let the rest scroll by. You are not behind. You're just on your own road. Thanks for watching, and take good care of yourself.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}
