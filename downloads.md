@@ -61,7 +61,8 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 53 | Why You Remember Faces But Not Names | `remember-faces-not-names` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45563372589 | ✅ render OK |
 | 54 | The Psychology of Small Talk | `small-talk` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45565080407 | ✅ render OK |
 | 55 | The Psychology of Gratitude | `gratitude` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45566648634 | ✅ render OK |
-| 56 | The Psychology of Forgiveness | `forgiveness` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45568369609 | ⏳ rendering |
+| 56 | The Psychology of Forgiveness | `forgiveness` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45568369609 | ✅ render OK |
 | 57 | Why You Compare Yourself to Others | `comparing-yourself` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45570068492 | ⏳ rendering |
+| 58 | The Psychology of Motivation | `motivation` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45571803649 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
