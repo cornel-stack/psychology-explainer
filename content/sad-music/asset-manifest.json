@@ -1,0 +1,212 @@
+{
+  "slug": "sad-music",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 5,
+    "NEW": 16
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        13,
+        17,
+        19
+      ]
+    },
+    {
+      "name": "console-hormone",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "mood-congruence",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "sad-music-gives",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "safe-emotion",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        17,
+        19,
+        21,
+        22
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        13
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        13,
+        17,
+        19
+      ]
+    },
+    {
+      "name": "cathartic-release",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "console-wave",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "empathy-dial-music",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "lighter-after",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "mood-mirror",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "moved-tear-warm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13,
+        14,
+        21
+      ]
+    },
+    {
+      "name": "reach-for-sad-song",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "safe-sadness-jar",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "song-companion",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "rainy-car-drive",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        7
+      ]
+    },
+    {
+      "name": "string-quartet-hall",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "sunset-balcony",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17,
+        19
+      ]
+    }
+  ]
+}

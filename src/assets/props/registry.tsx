@@ -54,6 +54,7 @@ import * as Rg from './regret';
 import * as Sn from './sayno';
 import * as Lo from './loneliness';
 import * as Ti from './timeage';
+import * as Sm from './sadmusic';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -658,6 +659,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'watched-clock-drag': Ti.WatchedClockDrag,
   'present-savor': Ti.PresentSavor,
   'novelty-stretch': Ti.NoveltyStretch,
+  // sad-music emblems (all new)
+  'reach-for-sad-song': Sm.ReachForSadSong,
+  'safe-sadness-jar': Sm.SafeSadnessJar,
+  'console-wave': Sm.ConsoleWave,
+  'song-companion': Sm.SongCompanion,
+  'mood-mirror': Sm.MoodMirror,
+  'cathartic-release': Sm.CatharticRelease,
+  'moved-tear-warm': Sm.MovedTearWarm,
+  'empathy-dial-music': Sm.EmpathyDialMusic,
+  'sad-playlist-heart': Sm.SadPlaylistHeart,
+  'lighter-after': Sm.LighterAfter,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

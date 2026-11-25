@@ -1,0 +1,413 @@
+{
+  "title": "Why You Love Sad Music",
+  "slug": "sad-music",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You've had a hard day. You feel low, heavy, a little heartbroken. So what do you do? You put on the saddest, most melancholy song you can find, and you play it on repeat. And somehow, bizarrely, it feels good. Why would a creature that avoids pain go looking for music designed to make it sad? It's one of psychology's loveliest puzzles.",
+          "scene": "story",
+          "room": "rainy-car-drive",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY YOU LOVE",
+          "subtitle": "sad music",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 640,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "We spend our lives trying to feel happy, and yet we voluntarily seek out sad songs, and find them beautiful, comforting, even blissful. Scientists call it the paradox of pleasurable sadness. And the answers reveal something tender and profound about the human heart. So let's find out why heartbreak sounds so good.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Why a sad song can feel like a warm hug, the surprising chemistry it might trigger, why it doesn't deepen your sadness but actually lifts it, and how a melancholy melody can be one of the kindest things you do for yourself. Grab your most bittersweet playlist. Let's press play.",
+          "scene": "explainer",
+          "prop": "reach-for-sad-song",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Sadness, But Safe",
+      "beats": [
+        {
+          "vo": "The first key is that the sadness from music is a completely different beast from sadness in real life. Real sadness comes from a real loss, a breakup, a death, a failure. It's painful, and you can't just switch it off. The sadness from a song has no actual catastrophe behind it at all.",
+          "scene": "diagramCard",
+          "diagram": "safe-emotion",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "SADNESS, BUT SAFE",
+          "subtitle": "feeling, without the loss"
+        },
+        {
+          "vo": "It's what psychologists call an aesthetic emotion, a real feeling you can experience safely, at a distance, and stop whenever you like. It's like a rollercoaster or a horror film, all the intensity, with none of the real danger. So you can actually savour the sadness, and enjoy its beauty, because deep down, you're perfectly safe.",
+          "scene": "explainer",
+          "prop": "safe-sadness-jar",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's the same reason we weep at films and love tragic novels. We're drawn, again and again, to feel big, difficult emotions, as long as we know we're safe. Art is the place we go to rehearse the whole range of being human, the grief as much as the joy, without any of it actually costing us a thing.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Why It Sounds Sad",
+      "beats": [
+        {
+          "vo": "Here's a question underneath all of this, why do certain sounds strike us as sad in the first place? A big part of the answer is that sad music mimics the sound of a sad human voice. When we're grieving, our speech slows down, drops lower in pitch, goes quieter, and sags at the ends of phrases.",
+          "scene": "explainer",
+          "prop": "mood-mirror",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHY IT SOUNDS SAD",
+          "subtitle": "it mimics a crying voice"
+        },
+        {
+          "vo": "And that is almost exactly what sad music does, slow tempos, low notes, soft volume, falling, drooping melodies, often in a minor key. The music is, in a sense, speaking the universal language of sorrow, the sound of a human heart in pain. No wonder it reaches us so directly. It's crying, turned into something beautiful.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Comfort Chemistry",
+      "beats": [
+        {
+          "vo": "There may even be some soothing chemistry involved. Here's a fascinating theory. When you cry from real sadness, your body releases a hormone called prolactin, which helps calm and console you, part of your natural recovery system.",
+          "scene": "diagramCard",
+          "diagram": "console-hormone",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE COMFORT CHEMISTRY",
+          "subtitle": "music in console mode"
+        },
+        {
+          "vo": "The idea is that sad music can trip this same comforting response, nudging your body into console mode, as if to soothe a grief. But with no real loss to grieve, you get the warm glow of the comfort hormone, with none of the real pain. The music gently tricks your body into hugging you. It's debated, but it's a beautiful idea.",
+          "scene": "explainer",
+          "prop": "console-wave",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "A Friend Who Gets It",
+      "beats": [
+        {
+          "vo": "But maybe the most powerful reason is this, a sad song understands you. When you're hurting, there is something profoundly comforting about music that says, out loud, exactly what you feel. It reaches into your private ache and says, yes, this, I know.",
+          "scene": "story",
+          "room": "rainy-car-drive",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "A FRIEND WHO GETS IT",
+          "subtitle": "it says what you feel",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 640,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "song-companion",
+              "x": 1500,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "When you feel low, you can also feel terribly alone in it, like no one could possibly understand. A sad song is proof that someone else felt this exact thing, so deeply they turned it into art. Suddenly you're not alone in the dark anymore. The song sits beside you, an empathic friend who truly gets it. And that connection heals.",
+          "scene": "explainer",
+          "prop": "song-companion",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "We Grieve Together",
+      "beats": [
+        {
+          "vo": "And sad music does one more quietly beautiful thing, it binds us together. Think of a whole stadium singing a heartbreak anthem in unison, thousands of strangers, all aching to the same melody. A song at a funeral that lets a room full of grief breathe as one. Shared sadness, it turns out, is a powerful kind of connection.",
+          "scene": "explainer",
+          "prop": "song-companion",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WE GRIEVE TOGETHER",
+          "subtitle": "shared sorrow bonds us"
+        },
+        {
+          "vo": "When you love a sad song that millions of others love too, you're part of an invisible community of feeling, everyone who's ever cried to those same notes. Your private pain becomes something shared, universal, held. There's deep comfort in that, knowing your sorrow has been felt before, by so many, and set to music.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "It Lifts You, Not Lowers",
+      "beats": [
+        {
+          "vo": "Now, you might worry, doesn't wallowing in sad songs just make you sadder? Surprisingly, for most people, no, quite the opposite. When you're already down, a cheerful, upbeat song can feel jarring, even mocking, like it's refusing to understand you. A sad song, by contrast, matches you.",
+          "scene": "diagramCard",
+          "diagram": "mood-congruence",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "IT LIFTS YOU, NOT LOWERS",
+          "subtitle": "it validates, then releases"
+        },
+        {
+          "vo": "This is called mood congruence, and that feeling of being matched and met is validating, it says your feeling is okay, and real. And by giving the sadness somewhere to go, a shape, a sound, a release, the music helps you move through it. Most people feel lighter, calmer, even uplifted after a good sad listen. It's medicine, not poison.",
+          "scene": "explainer",
+          "prop": "mood-mirror",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Gentle Release",
+      "beats": [
+        {
+          "vo": "Part of why it lifts you is catharsis, the release of pent-up emotion. We all carry feelings we haven't fully let out, sadness we've swallowed, grief we've been too busy to feel. It builds up, quietly, with nowhere to go.",
+          "scene": "explainer",
+          "prop": "cathartic-release",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE GENTLE RELEASE",
+          "subtitle": "letting the feeling out"
+        },
+        {
+          "vo": "A sad song gives that bottled-up feeling permission, and a safe container, to finally come out. It can bring the tears you needed to cry, the ache you needed to feel. And afterwards, like the calm after a storm, there's relief, a lightness, an emptied-out peace. Sometimes a sad song is helping you let go of sadness you already carried.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is partly why a good cry to a sad song can leave you feeling so clean and clear afterward. You're not indulging weakness, you're doing emotional housekeeping, clearing out what you'd been carrying. The music simply gives you permission, and a little privacy, to feel what you hadn't let yourself feel.",
+          "scene": "explainer",
+          "prop": "lighter-after",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Being Moved",
+      "beats": [
+        {
+          "vo": "And then there's the most exquisite ingredient of all, that feeling of simply being moved. The lump in the throat, the shiver down the spine, the tears that come not from pain, but from sheer, overwhelming beauty. Sad music is one of the most reliable ways to summon it.",
+          "scene": "story",
+          "room": "string-quartet-hall",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "BEING MOVED",
+          "subtitle": "the beauty that overflows",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 300,
+              "y": 900,
+              "scale": 0.85,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "moved-tear-warm",
+              "x": 1420,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "This bittersweet feeling of being moved is its own profound reward, a mix of sorrow and wonder and tenderness at once. It's the same feeling that wells up at a wedding, or a breathtaking view. Sad music, in all its beauty, lets us touch the full depth of being human, the grief and the glory together. One of life's great pleasures.",
+          "scene": "explainer",
+          "prop": "moved-tear-warm",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Woven Into Memory",
+      "beats": [
+        {
+          "vo": "There's another reason certain sad songs hit so hard, they're soaked in memory. A melancholy song you loved during a heartbreak, or a loss, becomes forever linked to that chapter of your life. Play it years later, and it doesn't just sound sad, it carries the whole weight of everything it lived through with you.",
+          "scene": "story",
+          "room": "string-quartet-hall",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WOVEN INTO MEMORY",
+          "subtitle": "the whole chapter comes back",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 300,
+              "y": 900,
+              "scale": 0.85,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "song-companion",
+              "x": 1420,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "So a sad song can be a kind of time machine, carrying you back to who you were, and what you felt. It's bittersweet, yes, but it also honours your past, and reminds you how much you've felt, and survived. Listening can be a tender way of visiting an old version of yourself, and quietly thanking them for getting you here.",
+          "scene": "explainer",
+          "prop": "moved-tear-warm",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Who Loves It Most",
+      "beats": [
+        {
+          "vo": "You may have noticed that some people adore sad music, while others actively avoid it. That difference is real, and revealing. The people who are most drawn to sad music, and most moved by it, tend to score highly on two traits, empathy, and openness to experience.",
+          "scene": "diagramCard",
+          "diagram": "sad-music-gives",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHO LOVES IT MOST",
+          "subtitle": "the deeply feeling ones"
+        },
+        {
+          "vo": "In other words, if you love a good sad song, it likely means you're a deeply feeling, emotionally rich, imaginative person, someone who feels the world intensely. So that melancholy playlist isn't a sign of being gloomy or broken. It's a sign of a big, open, empathic heart, one that isn't afraid to feel everything, fully. That's a gift.",
+          "scene": "explainer",
+          "prop": "empathy-dial-music",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And if sad music does little for you, that's completely fine too. It doesn't mean you're shallow or cold, you simply process feeling in your own way, perhaps more through doing, or talking, or other kinds of music. There's no wrong way to have an emotional life. We each have our own path to the same tender place.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Use It Well",
+      "beats": [
+        {
+          "vo": "So how do you make the most of this beautiful tool? Simply, let yourself use it. When you're sad, don't force relentless happy music on yourself. Reach for the song that meets you where you are. Let it validate you, hold you, and help the feeling move through and out.",
+          "scene": "story",
+          "room": "sunset-balcony",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "USE IT WELL",
+          "subtitle": "let the song meet you",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 620,
+              "y": 740,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "lighter-after",
+              "x": 1420,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Just one gentle caution. There's a difference between using sad music to move through a feeling, and using it to wallow, to stew in the same low mood on endless loop, with no release. The healthy way is to let the song companion you through, then lift you back out. Feel it fully, then rise. If low mood never lifts, seek real support.",
+          "scene": "explainer",
+          "prop": "lighter-after",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time you find yourself drawn to a heartbreakingly beautiful, melancholy song, don't fight it, and don't feel strange about it. You're not being morbid. You're doing something wise. You're giving your feelings a voice, a companion, and a safe, beautiful place to be felt. You're being tender with yourself.",
+          "scene": "story",
+          "room": "sunset-balcony",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "FEEL IT, FULLY",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 620,
+              "y": 740,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Because perhaps the deepest truth here is this, we don't actually want a life of only happiness. We want a life that's fully felt. Sad music lets us feel the whole spectrum, the ache alongside the joy, safely, beautifully, and together with others who've felt it too. And a heart brave enough to feel the sad songs is a heart truly alive.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So turn the music up. Let it reach the places words can't. Cry if you need to, and feel the strange, sweet comfort of being perfectly understood by a melody. There is nothing wrong with you for loving the sad songs. In fact, it might be one of the most beautiful, human things about you.",
+          "scene": "explainer",
+          "prop": "moved-tear-warm",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, what's the one sad song that gets you every single time, the one you reach for when you need to feel? Share it, and let's build the most beautiful, comforting playlist together. Thank you, truly, for spending this time with me. If this made you feel understood, subscribe and stay a while. I'm Dear Brain.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

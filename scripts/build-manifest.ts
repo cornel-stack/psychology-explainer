@@ -209,6 +209,10 @@ const NEW_ASSETS = new Set([
   'golden-childhood-yard', 'same-day-treadmill', 'mountain-viewpoint',
   'endless-summer', 'flipping-calendar', 'life-pie-slices', 'memory-dots', 'first-glow', 'routine-blur', 'holiday-fast-long', 'watched-clock-drag', 'present-savor', 'novelty-stretch',
   'proportion-ratio', 'memory-density-diagram', 'routine-vs-novelty', 'holiday-paradox-diagram',
+  // sad-music (all new)
+  'rainy-car-drive', 'string-quartet-hall', 'sunset-balcony',
+  'reach-for-sad-song', 'safe-sadness-jar', 'console-wave', 'song-companion', 'mood-mirror', 'cathartic-release', 'moved-tear-warm', 'empathy-dial-music', 'sad-playlist-heart', 'lighter-after',
+  'safe-emotion', 'console-hormone', 'mood-congruence', 'sad-music-gives',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

@@ -166,7 +166,10 @@ export type RoomName =
   | 'two-cups-table'
   | 'golden-childhood-yard'
   | 'same-day-treadmill'
-  | 'mountain-viewpoint';
+  | 'mountain-viewpoint'
+  | 'rainy-car-drive'
+  | 'string-quartet-hall'
+  | 'sunset-balcony';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4468,6 +4471,84 @@ export const MountainViewpoint: React.FC = () => (
   </g>
 );
 
+/** Rainy car drive: inside a car at night, rain streaking the windscreen, dashboard
+ *  glow — the classic place to play a sad song. */
+export const RainyCarDrive: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wallNightDark} floor={shade(COLORS.wallNightDark, -0.04)} floorY={1080} stripe={false} />
+    {/* the windscreen view: a dark rainy road + distant lights */}
+    <rect x={160} y={80} width={1600} height={560} rx={24} fill={shade(COLORS.wallNight, 0.0)} {...xl} />
+    <rect x={180} y={100} width={1560} height={520} rx={16} fill={shade(COLORS.purpleDeep, 0.08)} />
+    {/* road receding */}
+    <path d="M 760 620 L 900 300 L 1020 300 L 1160 620 Z" fill={shade(COLORS.wallNightDark, -0.04)} />
+    {[0, 1, 2].map((i) => <rect key={i} x={952} y={340 + i * 90} width={16} height={40} rx={4} fill={COLORS.yellowSoft} opacity={0.6} transform={`scale(${1 + i * 0.3} 1) translate(${i * -6} 0)`} />)}
+    {/* oncoming headlight blurs + streetlights */}
+    {[[360, 260], [1500, 240], [600, 360], [1300, 400]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={14 + (i % 2) * 8} fill={COLORS.yellowSoft} opacity={0.5} />)}
+    {/* rain streaks on the glass */}
+    {Array.from({ length: 30 }).map((_, i) => <line key={i} x1={200 + i * 52} y1={110} x2={186 + i * 52} y2={610} stroke={COLORS.sky} strokeWidth={STROKE.sm} opacity={0.3} />)}
+    {/* trickling drops */}
+    {[[400, 200], [800, 320], [1200, 160], [1500, 380], [600, 120]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q -7 12 0 22 q 7 -10 0 -22 Z`} fill={COLORS.sky} opacity={0.5} />)}
+    {/* the dashboard across the bottom with a glowing radio */}
+    <path d="M 0 640 Q 960 700 1920 640 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.wallNightDark, -0.06)} {...xl} />
+    {/* steering wheel */}
+    <g transform="translate(640 980)"><circle cx={0} cy={0} r={110} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} /><circle cx={0} cy={0} r={34} fill={shade(COLORS.wallNightDark, -0.02)} {...lg} /><line x1={-90} y1={0} x2={-34} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.lg} /><line x1={34} y1={0} x2={90} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.lg} /><line x1={0} y1={34} x2={0} y2={90} stroke={COLORS.outline} strokeWidth={STROKE.lg} /></g>
+    {/* the car stereo display */}
+    <g transform="translate(1300 860)"><rect x={-130} y={-50} width={260} height={100} rx={12} fill={COLORS.outline} {...xl} /><rect x={-116} y={-36} width={232} height={72} rx={6} fill={shade(COLORS.sky, -0.02)} /><path d="M -80 0 q -8 -12 -14 -1 q -4 7 14 14 q 18 -7 14 -14 q -6 -11 -14 1 Z" fill={COLORS.pink} />{[-20, -8, 4, 16, 28].map((x, i) => <rect key={i} x={x} y={-14} width={6} height={28} rx={3} fill={COLORS.yellowSoft} opacity={0.7} />)}<text x={70} y={6} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={16} fill={COLORS.white}>♪</text></g>
+  </g>
+);
+
+/** String quartet hall: an elegant, dim concert hall with four musicians under a
+ *  warm spotlight — a sad, beautiful piece. */
+export const StringQuartetHall: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.08)} floor={COLORS.woodDark} floorY={820} stripe={false} />
+    {/* grand drapes on the sides */}
+    {[90, 1830].map((x, i) => <g key={i} transform={`translate(${x} 0)`}>{[0, 1, 2, 3].map((j) => <path key={j} d={`M ${(i ? -1 : 1) * j * 46} 0 q ${(i ? -1 : 1) * 32} 420 0 820 l ${(i ? -1 : 1) * 46} 0 q ${(i ? 1 : -1) * 32} -420 0 -820 Z`} fill={shade(COLORS.red, j % 2 ? 0.12 : 0)} opacity={0.9} />)}</g>)}
+    {/* soft spotlight on the players */}
+    <path d="M 960 60 L 560 820 L 1360 820 Z" fill={COLORS.yellowSoft} opacity={0.12} />
+    {/* a chandelier */}
+    <g transform="translate(960 90)"><line x1={0} y1={-90} x2={0} y2={0} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />{[-40, -14, 14, 40].map((x, i) => <g key={i}><line x1={0} y1={0} x2={x} y2={30} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><circle cx={x} cy={36} r={9} fill={COLORS.yellow} {...sm} /></g>)}</g>
+    {/* four seated string players */}
+    {[560, 800, 1120, 1360].map((x, i) => (
+      <g key={i} transform={`translate(${x} 640)`}>
+        <circle cx={0} cy={-40} r={34} fill={[COLORS.white, COLORS.yellowSoft, COLORS.white, COLORS.yellowSoft][i]} {...xl} />
+        <circle cx={-11} cy={-44} r={5} fill={COLORS.outline} /><circle cx={11} cy={-44} r={5} fill={COLORS.outline} />
+        <path d="M -44 120 Q 0 -8 44 120 Z" fill={shade(COLORS.outline, 0.3)} {...lg} />
+        {/* instrument + bow */}
+        {i < 3
+          ? <g transform="translate(26 20) rotate(-30)"><rect x={-14} y={-30} width={28} height={70} rx={14} fill={COLORS.wood} {...lg} /><line x1={-40} y1={-20} x2={44} y2={-26} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+          : <g transform="translate(0 44)"><rect x={-24} y={-40} width={48} height={110} rx={20} fill={COLORS.wood} {...lg} /></g>}
+      </g>
+    ))}
+    {/* music stands */}
+    {[640, 1200].map((x, i) => <g key={i} transform={`translate(${x} 760)`}><rect x={-4} y={0} width={8} height={90} fill={COLORS.ledGrey} /><rect x={-34} y={-30} width={68} height={40} rx={4} fill={COLORS.white} {...sm} transform="rotate(-10)" /></g>)}
+  </g>
+);
+
+/** Sunset balcony: a small balcony at golden hour with a speaker and a cushion — a
+ *  bittersweet, beautiful moment with music. */
+export const SunsetBalcony: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.skyEnd, 0.02)} floor={COLORS.wood} floorY={800} stripe={false} />
+    {/* glowing sunset sky */}
+    <rect x={0} y={0} width={CANVAS.width} height={500} fill={shade(COLORS.skyEnd, 0.04)} />
+    <circle cx={960} cy={420} r={130} fill={COLORS.yellow} opacity={0.75} />
+    <rect x={0} y={420} width={CANVAS.width} height={10} fill={COLORS.yellowSoft} opacity={0.4} />
+    {/* a distant city skyline silhouette */}
+    {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <rect key={i} x={i * 250} y={400 + (i % 3) * 40} width={200} height={200} fill={shade(COLORS.purpleDeep, 0.08)} opacity={0.6} />)}
+    {/* soft clouds catching the light */}
+    {[300, 1500].map((x, i) => <ellipse key={i} cx={x} cy={180 + (i % 2) * 40} rx={100} ry={30} fill={COLORS.pink} opacity={0.4} />)}
+    {/* balcony railing */}
+    <rect x={0} y={580} width={CANVAS.width} height={18} rx={6} fill={COLORS.woodDark} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={40 + i * 88} y={598} width={12} height={140} fill={shade(COLORS.wood, 0.06)} />)}
+    {/* a cushion + a speaker + a mug */}
+    <g transform="translate(560 780)"><rect x={-70} y={-30} width={140} height={60} rx={20} fill={COLORS.pink} {...xl} /></g>
+    <g transform="translate(1320 740)"><rect x={-40} y={-80} width={80} height={120} rx={14} fill={COLORS.wallNightDark} {...xl} /><circle cx={0} cy={-40} r={24} fill={shade(COLORS.outline, 0.3)} /><circle cx={0} cy={10} r={14} fill={shade(COLORS.outline, 0.3)} />{[0, 1].map((i) => <path key={i} d={`M ${44 + i * 8} -40 q 16 20 0 40`} fill="none" stroke={COLORS.pink} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.6} />)}</g>
+    {/* a potted plant */}
+    <g transform="translate(1600 720)"><rect x={-30} y={0} width={60} height={70} rx={10} fill={COLORS.red} {...lg} /><path d="M 0 0 q -50 -46 -26 -110 M 0 0 q 0 -60 0 -120 M 0 0 q 50 -46 26 -104" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4619,6 +4700,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'golden-childhood-yard': GoldenChildhoodYard,
   'same-day-treadmill': SameDayTreadmill,
   'mountain-viewpoint': MountainViewpoint,
+  'rainy-car-drive': RainyCarDrive,
+  'string-quartet-hall': StringQuartetHall,
+  'sunset-balcony': SunsetBalcony,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
