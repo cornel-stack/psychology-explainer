@@ -205,6 +205,10 @@ const NEW_ASSETS = new Set([
   'busy-crossing', 'apartment-window-night', 'two-cups-table',
   'lonely-in-crowd', 'connection-gap', 'social-hunger', 'alone-not-lonely', 'loneliness-body', 'loneliness-trap-spiral', 'threat-goggles', 'first-hello-hand', 'give-connect', 'open-up-bridge',
   'connection-gap-diagram', 'loneliness-signal', 'loneliness-health', 'loneliness-cycle',
+  // time-speeds-up (all new)
+  'golden-childhood-yard', 'same-day-treadmill', 'mountain-viewpoint',
+  'endless-summer', 'flipping-calendar', 'life-pie-slices', 'memory-dots', 'first-glow', 'routine-blur', 'holiday-fast-long', 'watched-clock-drag', 'present-savor', 'novelty-stretch',
+  'proportion-ratio', 'memory-density-diagram', 'routine-vs-novelty', 'holiday-paradox-diagram',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

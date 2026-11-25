@@ -1,0 +1,386 @@
+{
+  "title": "Why Time Speeds Up As You Age",
+  "slug": "time-speeds-up",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Remember being a kid, when a single summer felt like an entire era? When the drive to the seaside took forever, and the wait until your birthday stretched out like a lifetime? Now blink, and it's December again. Where did the year go? As we get older, time seems to accelerate, faster and faster. And there are real reasons why.",
+          "scene": "story",
+          "room": "golden-childhood-yard",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY TIME SPEEDS UP",
+          "subtitle": "as you age",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 820,
+              "y": 680,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "It's one of the most universal experiences there is, and one of the most unsettling. It can feel like life is slipping through your fingers, picking up speed as you go. But here's the good news. Once you understand why time feels this way, you can actually learn to slow it back down, and make your life feel longer, and fuller.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So let's unravel the mystery of time. Why a year feels shorter now than it used to, the surprising role your memory plays, the strange holiday paradox, and the simple secret to stretching time back out. Your clock hasn't changed. But your mind's experience of it has. Let's slow down, and look.",
+          "scene": "explainer",
+          "prop": "flipping-calendar",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Shrinking Fraction",
+      "beats": [
+        {
+          "vo": "The first clue is beautifully simple, and it's just maths. Think about what one year actually is, relative to your whole life. To a one-year-old, a year is their entire existence. To a five-year-old, a year is a fifth of everything they've ever known, enormous.",
+          "scene": "diagramCard",
+          "diagram": "proportion-ratio",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE SHRINKING FRACTION",
+          "subtitle": "each year is a smaller slice"
+        },
+        {
+          "vo": "But to a fifty-year-old, that same year is just one-fiftieth of their life, a tiny sliver. So each passing year is a smaller fraction of the total you've lived. This idea, over a century old, is called proportional theory. By its logic, age five to ten can feel as long as all of your thirties. Each year, proportionally, shrinks.",
+          "scene": "explainer",
+          "prop": "life-pie-slices",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Is The Brain-Clock Slowing?",
+      "beats": [
+        {
+          "vo": "Now, is there a biological clock ticking slower as we age? Some scientists think so. One intriguing idea argues that as our brains and bodies age, we process incoming images more slowly, capturing fewer mental snapshots per second. With fewer frames to fill a given stretch, time would seem to rush by faster.",
+          "scene": "explainer",
+          "prop": "flipping-calendar",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "A SLOWING INNER CLOCK?",
+          "subtitle": "a debated extra piece"
+        },
+        {
+          "vo": "Things like body temperature, dopamine, and our internal pacemaker really do seem to tweak our sense of time. But to be honest, these biological theories are still debated and uncertain. The best-supported explanation remains the one we've built here, it's mostly about novelty, attention, and the memories we make.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Memory Makes Time",
+      "beats": [
+        {
+          "vo": "But the proportion idea is only part of it. The deeper, more powerful answer is about memory. Here's the key insight, when we look back and judge how long a period of time felt, we don't count the minutes. We count the memories. A stretch of time rich with new memories feels long in hindsight. A stretch with few feels short.",
+          "scene": "diagramCard",
+          "diagram": "memory-density-diagram",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "MEMORY MAKES TIME",
+          "subtitle": "we judge time by memories"
+        },
+        {
+          "vo": "So think about how your brain measures a year in hindsight. It flicks back through the mental photo album of that year. If it's packed with vivid, distinct memories, the year feels substantial, full, long. If it's a thin, blurry album of near-identical days, the brain shrugs and goes, that went fast. The density of memory is the secret.",
+          "scene": "explainer",
+          "prop": "memory-dots",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's a strange thought, isn't it. The length of your life, as you'll remember it, isn't set by the calendar at all. It's written by your memories. Two people can live the exact same number of years, and one will feel like they lived twice as long, simply because they filled their time with more that was worth remembering.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Age Of Firsts",
+      "beats": [
+        {
+          "vo": "And this is exactly why childhood felt so endless. Those early years are crammed with firsts. Your first day of school, first bike ride, first time at the ocean, first friend, first everything. Every day was bursting with brand-new, vivid experiences your brain carefully recorded in high definition.",
+          "scene": "story",
+          "room": "golden-childhood-yard",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE AGE OF FIRSTS",
+          "subtitle": "childhood is all new",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "cheer",
+              "emotion": "excited",
+              "x": 820,
+              "y": 680,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "first-glow",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "So a single childhood summer laid down a huge, dense library of memories, which is exactly why, looking back, it feels like it lasted forever. Your young brain was recording the world constantly, in rich detail, because almost all of it was new. Novelty, it turns out, is what makes time feel long.",
+          "scene": "explainer",
+          "prop": "first-glow",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Routine Trap",
+      "beats": [
+        {
+          "vo": "Which leads straight to why adult years vanish. As we grow up, life becomes, well, routine. The same commute, the same job, the same meals, the same scroll before bed. And when days are near-identical, your brain stops bothering to record them in detail. Why save a thousand copies of the same Tuesday?",
+          "scene": "diagramCard",
+          "diagram": "routine-vs-novelty",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE ROUTINE TRAP",
+          "subtitle": "sameness erases memory"
+        },
+        {
+          "vo": "So a routine year leaves barely any new memories behind. And when you look back on it, there's almost nothing there to measure, so it feels like it flew by in an instant. The cruel irony is that the more settled and predictable our lives become, the faster they seem to pass. Routine doesn't just feel dull. It shrinks your time.",
+          "scene": "explainer",
+          "prop": "routine-blur",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The First-Week Effect",
+      "beats": [
+        {
+          "vo": "You can feel all of this in miniature whenever you start something new, a new job, a new school, a new city. Think back to the first week. It felt enormous, didn't it? Endless, intense, like it lasted a month. Every face, every corridor, every task was unfamiliar, and your brain was recording all of it.",
+          "scene": "story",
+          "room": "same-day-treadmill",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE FIRST-WEEK EFFECT",
+          "subtitle": "novelty in miniature",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 600,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "routine-blur",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Then, a few months in, the weeks start to blur and vanish, because it's all familiar now, all routine. Same desk, same faces, same tasks. That contrast, the long first week versus the blurred months after, is the whole phenomenon of a life, played out in fast-forward. Clear proof that novelty, not the clock, shapes your time.",
+          "scene": "explainer",
+          "prop": "routine-blur",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Holiday Paradox",
+      "beats": [
+        {
+          "vo": "Now here's a delicious wrinkle that proves the whole thing, the holiday paradox. Think about a wonderful, novel week away somewhere new. While you're there, time seems to fly, you're so absorbed and busy that the days vanish. Yet when you get home and look back, that single week feels huge, like you were gone for ages.",
+          "scene": "diagramCard",
+          "diagram": "holiday-paradox-diagram",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE HOLIDAY PARADOX",
+          "subtitle": "fast now, long in memory"
+        },
+        {
+          "vo": "Compare that to a dull week at home. In the moment, it drags, every boring hour crawls. But afterwards, it collapses to nothing in your memory, because nothing happened worth recording. So novel time flies now but stretches long in memory, while routine time drags now, but vanishes later. Memory and the moment play by different rules.",
+          "scene": "explainer",
+          "prop": "holiday-fast-long",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Time In The Moment",
+      "beats": [
+        {
+          "vo": "That raises the other half of the puzzle, time in the moment, right now. And here, the rule is almost the opposite, attention is everything. When you're bored and watching the clock, time crawls painfully. A watched pot never boils. A watched clock barely moves.",
+          "scene": "explainer",
+          "prop": "watched-clock-drag",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "TIME IN THE MOMENT",
+          "subtitle": "attention bends it"
+        },
+        {
+          "vo": "But when you're happily absorbed in something, in a state of flow, hours disappear in what feels like minutes. Time flies when you're having fun. And in moments of sudden fear or danger, time can seem to slow to a crawl, because your brain starts recording everything in frantic, super-rich detail. Your felt sense of time really bends.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Why Fear Slows Time",
+      "beats": [
+        {
+          "vo": "Let's linger on that slow-motion-in-danger feeling, because it's fascinating. People in car crashes or falls often report that time stretched, everything moving in dreamlike slow motion. For a long time we thought the brain literally sped up its perception. But clever experiments suggest something subtler, and stranger.",
+          "scene": "explainer",
+          "prop": "watched-clock-drag",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHY FEAR SLOWS TIME",
+          "subtitle": "the slow-motion illusion"
+        },
+        {
+          "vo": "It seems that in terror, you don't actually see in slow motion. Instead, your brain lays down memories at a frantic, dense rate, capturing far more detail than usual. And afterwards, all that extra memory makes the event feel like it lasted much longer than it did. The same trick again, more memory, more felt time, cranked to the extreme.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "How To Slow Time",
+      "beats": [
+        {
+          "vo": "So, the big question, can you slow time down? Wonderfully, yes. And now you know the secret, it's novelty. Since your brain measures the length of your life by how many new memories you lay down, the answer is to give it more of them. Break the routine. Fill your days with fresh experiences.",
+          "scene": "story",
+          "room": "mountain-viewpoint",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "HOW TO SLOW TIME",
+          "subtitle": "feed your brain novelty",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "excited",
+              "x": 620,
+              "y": 820,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "novelty-stretch",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Travel somewhere new. Learn a skill. Take a different route home. Meet new people. Rearrange the furniture, even. Anything that snaps your brain out of autopilot and makes it pay attention again lays down fresh memories, and makes that period feel richer and longer in hindsight. A varied life is, quite literally, a longer-feeling one.",
+          "scene": "explainer",
+          "prop": "novelty-stretch",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And you don't need grand gestures or expensive trips. The brain just needs genuine newness, so even small novelties count. Cook a dish you've never made. Call someone you've lost touch with. Say yes to the small invitation you'd normally decline. A life doesn't feel long because it was big. It feels long because it was varied.",
+          "scene": "explainer",
+          "prop": "novelty-stretch",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Be Here Now",
+      "beats": [
+        {
+          "vo": "And there's a second, quieter key, presence. Because so much of life rushes past while we're on autopilot, half here, lost in our phones, our worries, our to-do lists. We miss the actual moment entirely. And a moment you don't truly notice is a moment that leaves no memory, and so, no time at all.",
+          "scene": "explainer",
+          "prop": "present-savor",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "BE HERE NOW",
+          "subtitle": "presence thickens time"
+        },
+        {
+          "vo": "So slow down, and actually savour things. Taste your food. Notice the sky. Be fully in the conversation. Mindful attention thickens time, turning a thin, forgettable blur into a rich, memorable now. You can also anchor your days with photos and a few journal lines, little hooks that help the good moments stick, and the year feel fuller.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So if you feel like life is speeding up, and the years are blurring together, don't despair. It isn't a cruel law of nature you're stuck with. It's a feature of memory, and you hold the controls. Every new thing you try, every moment you truly show up for, is you, quietly, gently, slowing time back down.",
+          "scene": "story",
+          "room": "mountain-viewpoint",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "YOU HOLD THE CONTROLS",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 620,
+              "y": 820,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "There's something freeing in this. The feeling that time is flying isn't really about the clock at all. It's your mind, gently telling you that you've drifted onto autopilot, and nudging you to wake up, and live more deliberately. Fast time is a signal, and the cure is simply, to pay attention again.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So this year, don't let it become another blur. Seek out the new. Say yes to the adventure. And above all, be here, now, for the ordinary, beautiful moments, because those are the ones that, in the end, make a life feel long, full, and richly lived. Time is passing either way. The only question is how much of it you'll be here for.",
+          "scene": "explainer",
+          "prop": "present-savor",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, what's one new thing you want to try this year, to make it feel a little longer? Name it, and make it real. And go do something today your future self will actually remember. Thank you, truly, for spending this, your precious time, with me. If this made you want to wake up a little, subscribe. I'm Dear Brain.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

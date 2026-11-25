@@ -49,7 +49,7 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 41 | The Psychology of Déjà Vu | `deja-vu` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45544828574 | ✅ render OK |
 | 42 | Why You Can't Remember Being a Baby | `childhood-amnesia` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45546281141 | ✅ render OK |
 | 43 | The Psychology of Regret | `regret` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45547469658 | ✅ render OK |
-| 44 | Why You Can't Say No | `cant-say-no` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45548853994 | ⏳ rendering |
+| 44 | Why You Can't Say No | `cant-say-no` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45548853994 | ✅ render OK |
 | 45 | The Psychology of Loneliness | `loneliness` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45550140345 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._

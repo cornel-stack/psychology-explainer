@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'time-speeds-up': {
+    A: { lines: ['WHY TIME', 'SPEEDS UP AS', 'YOU AGE'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'flipping-calendar' },
+    B: { lines: ['WHY SUMMERS', 'FELT ENDLESS', 'AS A KID'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '!', prop: 'endless-summer' },
+    C: { lines: ['HOW TO', 'SLOW TIME', 'BACK DOWN'], accent: COLORS.greenLeaf, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '✓', prop: 'novelty-stretch' },
+  },
   'loneliness': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF LONELINESS'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'tearful', textColor: COLORS.white, badge: '?', prop: 'lonely-in-crowd' },
     B: { lines: ['WHY YOU FEEL', 'ALONE IN', 'A CROWD'], accent: COLORS.lavender, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'connection-gap' },

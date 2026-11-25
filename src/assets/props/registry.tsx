@@ -53,6 +53,7 @@ import * as Bm from './babymemory';
 import * as Rg from './regret';
 import * as Sn from './sayno';
 import * as Lo from './loneliness';
+import * as Ti from './timeage';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -646,6 +647,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'first-hello-hand': Lo.FirstHelloHand,
   'give-connect': Lo.GiveConnect,
   'open-up-bridge': Lo.OpenUpBridge,
+  // time-speeds-up emblems (all new)
+  'endless-summer': Ti.EndlessSummer,
+  'flipping-calendar': Ti.FlippingCalendar,
+  'life-pie-slices': Ti.LifePieSlices,
+  'memory-dots': Ti.MemoryDots,
+  'first-glow': Ti.FirstGlow,
+  'routine-blur': Ti.RoutineBlur,
+  'holiday-fast-long': Ti.HolidayFastLong,
+  'watched-clock-drag': Ti.WatchedClockDrag,
+  'present-savor': Ti.PresentSavor,
+  'novelty-stretch': Ti.NoveltyStretch,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

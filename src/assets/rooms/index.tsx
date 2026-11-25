@@ -163,7 +163,10 @@ export type RoomName =
   | 'calm-garden-gate'
   | 'busy-crossing'
   | 'apartment-window-night'
-  | 'two-cups-table';
+  | 'two-cups-table'
+  | 'golden-childhood-yard'
+  | 'same-day-treadmill'
+  | 'mountain-viewpoint';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4395,6 +4398,76 @@ export const TwoCupsTable: React.FC = () => (
   </g>
 );
 
+/** Golden childhood yard: a sunny back garden on an endless summer afternoon — a
+ *  swing, a sprinkler, long shadows, the time that felt forever. */
+export const GoldenChildhoodYard: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.0)} floor={COLORS.greenLeaf} floorY={740} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.sky, 0.08)} />
+    {/* big warm low sun */}
+    <circle cx={1500} cy={260} r={110} fill={COLORS.yellow} opacity={0.85} />
+    {[0, 1, 2, 3, 4].map((i) => <line key={i} x1={1500} y1={260} x2={1500 + Math.cos((i / 5) * Math.PI - Math.PI / 2) * 260} y2={260 + Math.sin((i / 5) * Math.PI - Math.PI / 2) * 260} stroke={COLORS.yellowSoft} strokeWidth={STROKE.sm} opacity={0.4} />)}
+    {[300, 560, 860].map((x, i) => <g key={i} opacity={0.9}><ellipse cx={x} cy={150 + (i % 2) * 30} rx={76} ry={32} fill={COLORS.white} /></g>)}
+    {/* rolling lawn */}
+    <path d="M 0 740 Q 480 680 960 740 Q 1440 800 1920 720 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenLeaf, 0.08)} />
+    {/* a big tree with a tyre swing */}
+    <g transform="translate(400 500)"><rect x={-26} y={0} width={52} height={240} rx={10} fill={COLORS.woodDark} {...xl} /><circle cx={0} cy={-60} r={130} fill={COLORS.greenDark} {...xl} /><circle cx={-70} cy={20} r={70} fill={shade(COLORS.greenDark, 0.08)} {...lg} /><circle cx={80} cy={10} r={76} fill={shade(COLORS.greenDark, 0.08)} {...lg} /><line x1={60} y1={30} x2={80} y2={300} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><circle cx={80} cy={320} r={34} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} /></g>
+    {/* a sprinkler with water arcs */}
+    <g transform="translate(1250 820)"><rect x={-8} y={0} width={16} height={40} fill={COLORS.ledGrey} {...sm} />{[-1, 0, 1].map((d, i) => <path key={i} d={`M 0 0 Q ${d * 80} ${-90} ${d * 150} 20`} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.6} />)}</g>
+    {/* scattered toys / a ball on the grass */}
+    <circle cx={760} cy={960} r={34} fill={COLORS.red} {...xl} /><path d="M 734 948 Q 760 938 786 948 M 744 974 Q 760 964 776 974" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+    {/* little flowers dotting the lawn */}
+    {[260, 620, 1120, 1600].map((x, i) => <g key={i} transform={`translate(${x} ${980 + (i % 2) * 20})`}><line x1={0} y1={0} x2={0} y2={-30} stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={0} cy={-36} r={12} fill={[COLORS.pink, COLORS.yellow, COLORS.lavender, COLORS.red][i]} {...sm} /></g>)}
+  </g>
+);
+
+/** Same-day treadmill: a surreal room where a figure walks a treadmill past a wall
+ *  of identical torn-off calendar days and a clock — adult routine. */
+export const SameDayTreadmill: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.bgCreamDark, 0.0)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.bgCreamDark, -0.04)} opacity={0.5} />)}
+    {/* a wall grid of identical grey calendar days */}
+    {Array.from({ length: 24 }).map((_, i) => {
+      const x = 150 + (i % 8) * 210;
+      const y = 120 + Math.floor(i / 8) * 150;
+      return (
+        <g key={i} transform={`translate(${x} ${y})`}>
+          <rect x={-50} y={-56} width={100} height={112} rx={8} fill={COLORS.white} {...lg} />
+          <rect x={-50} y={-56} width={100} height={26} rx={8} fill={shade(COLORS.ledGrey, 0.1)} />
+          <text x={0} y={30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={34} fill={shade(COLORS.ledGrey, -0.1)}>14</text>
+        </g>
+      );
+    })}
+    {/* a big clock */}
+    <g transform="translate(960 560)"><circle cx={0} cy={0} r={70} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-40} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={28} y2={10} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle cx={0} cy={0} r={6} fill={COLORS.outline} /></g>
+    {/* the treadmill on the floor */}
+    <g transform="translate(960 920)"><rect x={-220} y={0} width={440} height={30} rx={12} fill={COLORS.outline} {...xl} /><circle cx={-190} cy={15} r={22} fill={shade(COLORS.outline, 0.3)} /><circle cx={190} cy={15} r={22} fill={shade(COLORS.outline, 0.3)} />{Array.from({ length: 10 }).map((_, i) => <line key={i} x1={-180 + i * 40} y1={-4} x2={-180 + i * 40} y2={0} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} />)}<rect x={120} y={-120} width={16} height={120} fill={COLORS.ledGrey} /><rect x={90} y={-130} width={80} height={18} rx={6} fill={COLORS.ledGrey} {...lg} /></g>
+  </g>
+);
+
+/** Mountain viewpoint: a scenic overlook with a fresh vista — the novelty and
+ *  wonder that stretches time back out. */
+export const MountainViewpoint: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={shade(COLORS.greenDark, 0.1)} floorY={860} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.sky, 0.06)} />
+    {/* sun + clouds */}
+    <circle cx={1560} cy={200} r={74} fill={COLORS.yellow} {...sm} />
+    {[320, 700, 1080].map((x, i) => <g key={i} opacity={0.9}><ellipse cx={x} cy={160 + (i % 2) * 30} rx={80} ry={32} fill={COLORS.white} /><ellipse cx={x + 54} cy={160 + (i % 2) * 30} rx={54} ry={26} fill={COLORS.white} /></g>)}
+    {/* layered mountain ranges receding (depth = novelty/vastness) */}
+    <path d="M 0 620 L 300 360 L 560 560 L 860 300 L 1200 560 L 1500 340 L 1920 580 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.blueDiagram, 0.1)} opacity={0.5} />
+    <path d="M 0 720 L 360 500 L 720 700 L 1080 460 L 1440 700 L 1920 520 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenDark, 0.14)} opacity={0.7} />
+    {/* snow caps */}
+    {[860, 1500].map((x, i) => <path key={i} d={`M ${x - 40} ${i ? 372 : 332} L ${x} ${i ? 340 : 300} L ${x + 40} ${i ? 372 : 332} Z`} fill={COLORS.white} opacity={0.8} />)}
+    {/* a foreground overlook ledge with a telescope */}
+    <path d="M 0 900 Q 480 860 960 900 Q 1440 940 1920 880 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenDark, 0.06)} />
+    <g transform="translate(1500 760)"><rect x={-8} y={0} width={16} height={120} fill={COLORS.ledGrey} /><rect x={-14} y={116} width={28} height={16} rx={4} fill={COLORS.outline} /><g transform="rotate(-24)"><rect x={-20} y={-60} width={70} height={30} rx={10} fill={COLORS.red} {...xl} /><circle cx={50} cy={-45} r={16} fill={COLORS.sky} {...sm} /></g></g>
+    {/* a couple of birds */}
+    {[[400, 280], [560, 240]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q 16 -14 32 0 q 16 -14 32 0`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4543,6 +4616,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'busy-crossing': BusyCrossing,
   'apartment-window-night': ApartmentWindowNight,
   'two-cups-table': TwoCupsTable,
+  'golden-childhood-yard': GoldenChildhoodYard,
+  'same-day-treadmill': SameDayTreadmill,
+  'mountain-viewpoint': MountainViewpoint,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

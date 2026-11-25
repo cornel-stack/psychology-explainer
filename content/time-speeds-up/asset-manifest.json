@@ -1,0 +1,208 @@
+{
+  "slug": "time-speeds-up",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 5,
+    "NEW": 16
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        15,
+        19
+      ]
+    },
+    {
+      "name": "holiday-paradox-diagram",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "memory-density-diagram",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "proportion-ratio",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "routine-vs-novelty",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        15
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        19,
+        21,
+        22
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        20
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        15,
+        19
+      ]
+    },
+    {
+      "name": "first-glow",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "flipping-calendar",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "holiday-fast-long",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "life-pie-slices",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "memory-dots",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "novelty-stretch",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        16
+      ]
+    },
+    {
+      "name": "present-savor",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        21
+      ]
+    },
+    {
+      "name": "routine-blur",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "watched-clock-drag",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "golden-childhood-yard",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        7
+      ]
+    },
+    {
+      "name": "mountain-viewpoint",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        15,
+        19
+      ]
+    }
+  ]
+}

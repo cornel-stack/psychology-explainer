@@ -4507,8 +4507,88 @@ const LonelinessCycle: React.FC = () => {
   );
 };
 
+/** proportion-ratio: a year as a shrinking fraction of a life. */
+const ProportionRatio: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const ages: [number, number][] = [[1, 1], [5, 1 / 5], [10, 1 / 10], [30, 1 / 30], [60, 1 / 60]];
+  return (
+    <g>
+      {ages.map(([age, frac], i) => {
+        const p = springIn(frame - i * 5, 12); const x = cx - 300 + i * 150; const w = 100; const h = 220 * frac * p + 6;
+        return (
+          <g key={i} transform={`translate(${x} ${cy})`}>
+            <rect x={-w / 2} y={60 - h} width={w} height={h} rx={8} fill={i === 0 ? COLORS.sky : shade(COLORS.sky, 0.06)} {...lg} />
+            <text x={0} y={88} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>age {age}</text>
+            <text x={0} y={52 - h} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.outline}>1/{age}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a year shrinks against your whole life</text>
+    </g>
+  );
+};
+
+/** memory-density-diagram: dense memories = long-feeling; sparse = short. */
+const MemoryDensityDiagram: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5; const W = 200;
+  const box = (gx: number, title: string, n: number, c: string, felt: string) => (
+    <g transform={`translate(${gx} ${cy})`}>
+      <rect x={-W / 2} y={-90} width={W} height={160} rx={10} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} />
+      {Array.from({ length: n }).map((_, i) => { const cols = Math.ceil(Math.sqrt(n)); const r = Math.floor(i / cols); const cc = i % cols; return <circle key={i} cx={-W / 2 + 26 + cc * ((W - 40) / cols) } cy={-70 + r * ((140) / cols)} r={6} fill={c} />; })}
+      <text x={0} y={-108} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{title}</text>
+      <text x={0} y={94} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{felt}</text>
+    </g>
+  );
+  return (
+    <g>
+      {box(cx - 150, 'a child year', 28, COLORS.yellow, 'feels long')}
+      {box(cx + 150, 'an adult year', 5, COLORS.ledGrey, 'feels short')}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>more memories = a longer-feeling year</text>
+    </g>
+  );
+};
+
+/** routine-vs-novelty: novelty lays memories (long); routine doesn't (short). */
+const RoutineVsNovelty: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const bars: [string, number, string][] = [['routine', 0.35, COLORS.ledGrey], ['novelty', 0.9, COLORS.greenLeaf]];
+  return (
+    <g>
+      {bars.map(([lab, v, c], i) => {
+        const p = springIn(frame - i * 8, 14); const h = 240 * v * p; const x = cx - 110 + i * 220;
+        return <g key={i} transform={`translate(${x} ${cy})`}><rect x={-56} y={50 - h} width={112} height={h} rx={10} fill={c} {...lg} /><text x={0} y={84} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{lab}</text></g>;
+      })}
+      <text x={cx} y={cy + 84} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>↑ memories laid down ↑</text>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>novelty fills time; routine empties it</text>
+    </g>
+  );
+};
+
+/** holiday-paradox-diagram: in-the-moment vs in-retrospect, for novel vs routine. */
+const HolidayParadoxDiagram: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const cell = (gx: number, gy: number, txt: string, c: string) => (
+    <g transform={`translate(${gx} ${gy})`}><rect x={-96} y={-34} width={192} height={68} rx={12} fill={shade(c, 0.1)} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>{txt}</text></g>
+  );
+  return (
+    <g>
+      <text x={cx - 160} y={cy - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>in the moment</text>
+      <text x={cx + 160} y={cy - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>in memory</text>
+      <text x={cx - 300} y={cy - 36} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.pinkDark}>holiday</text>
+      <text x={cx - 300} y={cy + 56} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>routine</text>
+      {cell(cx - 160, cy - 40, 'flies by', COLORS.sky)}
+      {cell(cx + 160, cy - 40, 'feels LONG', COLORS.pink)}
+      {cell(cx - 160, cy + 52, 'drags', COLORS.ledGrey)}
+      {cell(cx + 160, cy + 52, 'vanishes', COLORS.ledGrey)}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the holiday paradox</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4702,6 +4782,10 @@ export const DiagramCard: React.FC<{
     'loneliness-signal': COLORS.sky,
     'loneliness-health': COLORS.red,
     'loneliness-cycle': COLORS.yellow,
+    'proportion-ratio': COLORS.sky,
+    'memory-density-diagram': COLORS.yellow,
+    'routine-vs-novelty': COLORS.greenLeaf,
+    'holiday-paradox-diagram': COLORS.pink,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4902,6 +4986,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'loneliness-signal' && <LonelinessSignal />}
         {diagram === 'loneliness-health' && <LonelinessHealth />}
         {diagram === 'loneliness-cycle' && <LonelinessCycle />}
+        {diagram === 'proportion-ratio' && <ProportionRatio />}
+        {diagram === 'memory-density-diagram' && <MemoryDensityDiagram />}
+        {diagram === 'routine-vs-novelty' && <RoutineVsNovelty />}
+        {diagram === 'holiday-paradox-diagram' && <HolidayParadoxDiagram />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />
