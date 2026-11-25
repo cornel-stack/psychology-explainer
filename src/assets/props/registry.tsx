@@ -38,6 +38,7 @@ import * as Im from './impostor';
 import * as Gr from './grief';
 import * as Ha from './happiness';
 import * as Th from './thinking';
+import * as Wa from './watched';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -466,6 +467,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'red-string': Th.RedString,
   'scarcity-locked': Th.ScarcityLocked,
   'open-hand-release': Th.OpenHandRelease,
+  // feeling-watched emblems (all new)
+  'neck-prickle': Wa.NeckPrickle,
+  'eye-radar': Wa.EyeRadar,
+  'sclera-eyes': Wa.ScleraEyes,
+  'peripheral-catch': Wa.PeripheralCatch,
+  'stare-alarm': Wa.StareAlarm,
+  'sixth-sense-myth': Wa.SixthSenseMyth,
+  'turn-and-look': Wa.TurnAndLook,
+  'hit-miss-tally': Wa.HitMissTally,
+  'spotlight-self': Wa.SpotlightSelf,
+  'all-clear': Wa.AllClear,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

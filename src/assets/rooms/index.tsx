@@ -118,7 +118,10 @@ export type RoomName =
   | 'warm-gathering'
   | 'night-bedroom-3am'
   | 'mental-cinema'
-  | 'open-doorway';
+  | 'open-doorway'
+  | 'library-stacks'
+  | 'night-platform'
+  | 'sunny-park';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3237,6 +3240,78 @@ export const OpenDoorway: React.FC = () => (
   </g>
 );
 
+/** Library stacks: a hushed library of tall shelves and green lamps — where a
+ *  single pair of eyes between the books makes your neck prickle. */
+export const LibraryStacks: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.14)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {/* tall bookshelves across the back, densely filled */}
+    {[120, 560, 1360, 1800].map((bx, b) => (
+      <g key={b} transform={`translate(${bx} 0)`}>
+        <rect x={-80} y={40} width={160} height={800} rx={8} fill={COLORS.wood} {...xl} />
+        {[0, 1, 2, 3, 4, 5].map((r) => (
+          <g key={r}>
+            <rect x={-74} y={110 + r * 120} width={148} height={14} fill={shade(COLORS.wood, -0.06)} />
+            {Array.from({ length: 9 }).map((_, i) => <rect key={i} x={-72 + i * 16} y={70 + r * 120} width={12} height={40 + (i % 3) * 6} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.lavender][(b + r + i) % 6]} {...sm} />)}
+          </g>
+        ))}
+      </g>
+    ))}
+    {/* the watcher — a pair of eyes peeking between the middle stacks */}
+    <g transform="translate(960 360)"><rect x={-60} y={-40} width={120} height={560} rx={8} fill={shade(COLORS.wood, -0.04)} {...lg} /><circle cx={0} cy={120} r={40} fill={COLORS.skin} {...lg} /><circle cx={-14} cy={116} r={7} fill={COLORS.white} {...sm} /><circle cx={-12} cy={116} r={3} fill={COLORS.outline} /><circle cx={14} cy={116} r={7} fill={COLORS.white} {...sm} /><circle cx={12} cy={116} r={3} fill={COLORS.outline} /></g>
+    {/* reading table with a green banker's lamp, near */}
+    <g transform="translate(700 880)"><rect x={-220} y={-10} width={440} height={30} rx={8} fill={COLORS.wood} {...xl} /><rect x={-200} y={-30} width={440} height={24} rx={10} fill={shade(COLORS.wood, 0.08)} {...lg} /><g transform="translate(140 -24)"><rect x={-40} y={-40} width={80} height={28} rx={14} fill={COLORS.greenDark} {...lg} /><rect x={-6} y={-12} width={12} height={28} fill={COLORS.woodDark} /><ellipse cx={0} cy={20} rx={26} ry={8} fill={COLORS.yellowSoft} opacity={0.6} /></g><rect x={-180} y={-24} width={70} height={14} rx={3} fill={COLORS.sky} /></g>
+    {/* a hanging sign */}
+    <g transform="translate(1180 120)"><rect x={-90} y={-30} width={180} height={60} rx={10} fill={COLORS.greenDark} {...lg} /><text x={0} y={10} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={26} fill={COLORS.white}>QUIET</text></g>
+  </g>
+);
+
+/** Night platform: an empty train platform after dark — pillars, a departures
+ *  board, and a lone silhouette whose gaze you can feel across the tiles. */
+export const NightPlatform: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wallNight} floor={shade(COLORS.purpleDeep, 0.18)} floorY={780} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={220} fill={shade(COLORS.wallNight, 0.14)} />
+    {/* tiled floor */}
+    {Array.from({ length: 13 }).map((_, i) => <line key={i} x1={i * 160} y1={780} x2={i * 160 - 180} y2={1080} stroke={shade(COLORS.purpleDeep, 0.28)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    <line x1={0} y1={920} x2={CANVAS.width} y2={920} stroke={shade(COLORS.purpleDeep, 0.28)} strokeWidth={STROKE.sm} opacity={0.5} />
+    {/* support pillars */}
+    {[300, 1620].map((x, i) => <rect key={i} x={x - 40} y={120} width={80} height={660} fill={shade(COLORS.wallNight, 0.1)} {...lg} />)}
+    {/* departures board */}
+    <g transform="translate(960 190)"><rect x={-260} y={-90} width={520} height={180} rx={14} fill={COLORS.outline} {...xl} />{[0, 1, 2].map((r) => <g key={r}><text x={-230} y={-40 + r * 56} fontFamily="Baloo 2" fontWeight={800} fontSize={28} fill={COLORS.yellow}>{['PLATFORM 2', 'DELAYED', 'LAST TRAIN'][r]}</text><rect x={150} y={-62 + r * 56} width={90} height={30} rx={4} fill={[COLORS.ledGreen, COLORS.red, COLORS.sky][r] || COLORS.sky} /></g>)}</g>
+    {/* ceiling lamps casting pools */}
+    {[480, 960, 1440].map((x, i) => <g key={i}><rect x={x - 50} y={110} width={100} height={16} rx={6} fill={COLORS.yellowSoft} {...sm} /><ellipse cx={x} cy={940} rx={120} ry={40} fill={COLORS.yellowSoft} opacity={0.12} /></g>)}
+    {/* the lone watcher silhouette, far down the platform */}
+    <g transform="translate(1500 700)"><circle cx={0} cy={-46} r={34} fill={shade(COLORS.wallNight, 0.05)} {...xl} /><circle cx={-11} cy={-50} r={6} fill={COLORS.yellow} /><circle cx={11} cy={-50} r={6} fill={COLORS.yellow} /><path d="M -40 70 Q -34 -8 0 -12 Q 34 -8 40 70 Z" fill={shade(COLORS.wallNight, 0.05)} {...xl} /></g>
+    {/* platform edge line + tracks hint */}
+    <rect x={0} y={1010} width={CANVAS.width} height={14} fill={COLORS.yellow} opacity={0.7} />
+    <rect x={0} y={1024} width={CANVAS.width} height={56} fill={shade(COLORS.purpleDeep, 0.34)} />
+  </g>
+);
+
+/** Sunny park: open daylight, benches and trees — the safe, reality-check room
+ *  where you look around and nobody is watching at all. */
+export const SunnyPark: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={COLORS.greenLeaf} floorY={760} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={240} fill={shade(COLORS.sky, 0.1)} />
+    <circle cx={1620} cy={180} r={80} fill={COLORS.yellow} {...sm} />
+    {[220, 520, 900].map((x, i) => <g key={i} opacity={0.9}><ellipse cx={x} cy={150 + (i % 2) * 30} rx={70} ry={34} fill={COLORS.white} /><ellipse cx={x + 50} cy={150 + (i % 2) * 30} rx={50} ry={28} fill={COLORS.white} /></g>)}
+    {/* rolling lawn */}
+    <path d="M 0 760 Q 480 700 960 760 Q 1440 820 1920 740 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.greenLeaf, 0.08)} />
+    {/* a winding path */}
+    <path d="M 820 1080 L 900 760 L 1010 760 L 1160 1080 Z" fill={shade(COLORS.wood, 0.12)} {...lg} />
+    {/* trees */}
+    {[180, 1700].map((x, i) => <g key={i} transform={`translate(${x} 700)`}><rect x={-20} y={0} width={40} height={140} rx={8} fill={COLORS.woodDark} {...lg} /><circle cx={0} cy={-40} r={90} fill={COLORS.greenDark} {...xl} /><circle cx={-50} cy={10} r={56} fill={shade(COLORS.greenDark, 0.08)} {...lg} /><circle cx={54} cy={6} r={60} fill={shade(COLORS.greenDark, 0.08)} {...lg} /></g>)}
+    {/* empty park benches — reassuringly nobody on them */}
+    {[560, 1280].map((x, i) => <g key={i} transform={`translate(${x} 860)`}><rect x={-90} y={-30} width={180} height={18} rx={6} fill={COLORS.wood} {...lg} /><rect x={-90} y={0} width={180} height={16} rx={6} fill={COLORS.wood} {...lg} /><rect x={-80} y={-30} width={14} height={60} fill={COLORS.woodDark} /><rect x={66} y={-30} width={14} height={60} fill={COLORS.woodDark} /></g>)}
+    {/* a couple of birds */}
+    {[[700, 300], [1050, 240]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q 16 -14 32 0 q 16 -14 32 0`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />)}
+    {/* shrubs to fill the lower band */}
+    {[380, 1120, 1520].map((x, i) => <g key={i} transform={`translate(${x} 980)`}><circle cx={0} cy={0} r={44} fill={COLORS.greenDark} {...lg} /><circle cx={40} cy={10} r={30} fill={shade(COLORS.greenDark, 0.06)} {...sm} /><circle cx={-38} cy={12} r={26} fill={shade(COLORS.greenDark, 0.06)} {...sm} /></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3340,6 +3415,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'night-bedroom-3am': NightBedroom3am,
   'mental-cinema': MentalCinema,
   'open-doorway': OpenDoorway,
+  'library-stacks': LibraryStacks,
+  'night-platform': NightPlatform,
+  'sunny-park': SunnyPark,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

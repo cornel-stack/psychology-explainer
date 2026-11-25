@@ -1,0 +1,116 @@
+{
+  "title": "Why You Can Feel Someone Watching You",
+  "slug": "feeling-watched",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "You're sitting quietly, minding your own business, when it creeps over you. That unmistakable prickle on the back of your neck. Someone is watching you. You're sure of it. So you turn around, slowly, and there they are, eyes locked right onto you. How on earth did you know?", "scene": "story", "room": "library-stacks", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "WHY YOU CAN FEEL", "subtitle": "someone watching you",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "terrified", "x": 760, "y": 740, "scale": 1.0, "talking": true } ] },
+        { "vo": "Almost everyone has felt it. That eerie certainty that unseen eyes are on you. And it's so vivid, so reliable, that for centuries people have assumed it must be a sixth sense, some invisible beam you can feel landing on your skin. It really does feel like magic.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "But here's the twist. It isn't magic, and it isn't a psychic power. It's something arguably more impressive, a suite of astonishingly sensitive brain systems, built over millions of years, specifically to answer one question that once meant life or death. Is something looking at me right now?", "scene": "explainer", "prop": "neck-prickle", "emotion": "serious-expert" },
+        { "vo": "And once you understand how that machinery actually works, two things happen. The feeling stops being spooky and starts being fascinating. And when it misfires, when you feel watched and no one's there, you'll know exactly why, and how to switch the alarm back off.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. Today, the real science of feeling watched, your built-in gaze detector, the corner of your eye, the threat alarm, why it feels psychic when it isn't, and how to calm a watch-detector that's stuck on high. Let's turn around and look.", "scene": "explainer", "prop": "eye-radar", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "The Eye Detector",
+      "beats": [
+        { "vo": "Let's start with just how good you are at this. Your brain has dedicated circuitry, in a region called the superior temporal sulcus, whose whole job is to find eyes and work out where they're pointing. And it is frighteningly precise. You can tell if someone's looking at your eyes versus your mouth, from across a room.", "scene": "diagramCard", "diagram": "gaze-detector", "emotion": "serious-expert", "withMascot": true, "chapterStart": true, "title": "THE EYE DETECTOR", "subtitle": "circuitry just for finding eyes" },
+        { "vo": "There's even an effect psychologists call the stare-in-the-crowd. In a sea of faces looking away, a single pair of eyes pointed straight at you seems to pop out and grab your attention, instantly, automatically, before you've consciously scanned a thing. Direct gaze is a priority signal your brain refuses to miss.", "scene": "explainer", "prop": "eye-radar", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Born To Watch",
+      "beats": [
+        { "vo": "And this isn't something you learn. It's there from the very first days of life. Newborn babies, just hours old, will reliably look longer at a face that's gazing directly at them than at one looking away. Before they can hold their head up, before they know a single word, they already track eyes.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert", "chapterStart": true, "title": "BORN TO WATCH", "subtitle": "it's there from day one" },
+        { "vo": "That tells us how deep this runs. Detecting gaze isn't a party trick, it's foundational equipment, as basic as recognising a face or flinching from a loud noise. We are, quite literally, born to notice who is looking at us. So when you feel watched, you're running software that's been installed since the cradle.", "scene": "explainer", "prop": "eye-radar", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Cooperative Eye",
+      "beats": [
+        { "vo": "And we practically invite each other to do this. Look closely at a human eye, and notice the large white part, the sclera. We're the only primate with eyes this visibly white. In other apes, dark eyes hide the gaze. Ours broadcast it, making it easy for everyone to see exactly where we're looking.", "scene": "story", "room": "library-stacks", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "THE COOPERATIVE EYE", "subtitle": "we're built to be read",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 760, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "sclera-eyes", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Scientists call this the cooperative eye hypothesis. We evolved to follow each other's gaze, to share attention, to point with our eyes. It made us brilliant at teamwork. But it has a flip side. Because we're all walking around broadcasting where we look, you've become exquisitely tuned to catch when that gaze lands on you.", "scene": "explainer", "prop": "sclera-eyes", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Corner Of Your Eye",
+      "beats": [
+        { "vo": "But wait, you might say, sometimes I feel watched by someone behind me, or off to the side, where I can't even see their eyes. And that's where the second system comes in, your peripheral vision. The edges of your sight are terrible at detail, but superb at one thing, catching movement.", "scene": "story", "room": "night-platform", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE CORNER OF YOUR EYE", "subtitle": "built to catch movement",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 620, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "peripheral-catch", "x": 1380, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "A tiny head-turn at the edge of your vision, a shift of a shadow, a change in posture nearby, your brain registers all of it below conscious awareness. You don't notice the cue itself. You just get the feeling, someone's there, which prompts you to turn and check. The conscious hunch arrives after the unconscious detection.", "scene": "explainer", "prop": "peripheral-catch", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Threat Alarm",
+      "beats": [
+        { "vo": "Now, why does this feeling come with such a jolt, that cold prickle, the quickened pulse? Because across the entire animal kingdom, a direct stare is not neutral. It's a signal, often a threat. A predator locks on before it strikes. A rival stares before a fight. Being looked at means something is paying attention to you.", "scene": "story", "room": "night-platform", "emotion": "terrified", "camera": "slowZoom", "chapterStart": true, "title": "THE THREAT ALARM", "subtitle": "a stare means something's locked on",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "terrified", "x": 620, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "stare-alarm", "x": 1380, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "So your amygdala, the brain's alarm system, treats possible eyes-on-you as something worth flagging, fast. It would rather fire a false alarm a hundred times than miss the one real threat. That better-safe-than-sorry wiring is exactly why the feeling hits your body before your thinking brain has caught up.", "scene": "explainer", "prop": "stare-alarm", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "So Is It A Sixth Sense?",
+      "beats": [
+        { "vo": "Okay, but what about the real mystery, the times you feel watched and could not possibly have seen or heard a thing? Surely that's proof of some sixth sense? It's such a strong feeling that scientists have actually tested it, carefully, for over a hundred years, starting back in 1898.", "scene": "explainer", "prop": "sixth-sense-myth", "emotion": "confused", "chapterStart": true, "title": "IS IT A SIXTH SENSE?", "subtitle": "they actually tested it" },
+        { "vo": "They sat people with their backs turned and had others stare, or not stare, at random. The result, across many careful studies? People could not reliably tell. Their guesses were no better than chance. There's no good evidence for a genuine psychic staring-detector. The feeling is real, but that explanation isn't.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "They even ruled out the clever objections, no, you're not feeling body heat across a room, or air currents, or tiny sounds. Remove all those cues properly, and the mysterious sense simply vanishes. Which points somewhere far more interesting than ESP, to the ingenious ways your ordinary senses trick you. So what's really going on?", "scene": "explainer", "prop": "sixth-sense-myth", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Self-Fulfilling Turn",
+      "beats": [
+        { "vo": "Here's the first secret, and it's beautifully sneaky. When you feel a hunch that you're being watched and you turn around to check, your own movement, that sudden head-turn, catches other people's eyes. Movement draws the gaze. So they look at you, now, because you just moved.", "scene": "diagramCard", "diagram": "watch-feedback-loop", "emotion": "serious-expert", "withMascot": true, "chapterStart": true, "title": "THE SELF-FULFILLING TURN", "subtitle": "your move draws their eyes" },
+        { "vo": "And in that instant, your eyes meet theirs, and your brain shouts, I knew it! They were watching me! But the truth is subtler. They weren't necessarily watching before. Your turn created the very thing you went looking for. The feeling of confirmation is partly manufactured by the act of checking.", "scene": "explainer", "prop": "turn-and-look", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Counting Only The Hits",
+      "beats": [
+        { "vo": "And here's the second secret, the one that makes the whole thing feel so uncanny, confirmation bias. Think about it. When you feel watched, turn, and catch someone looking, it's electric, memorable, you'll tell that story for years. I knew they were staring at me.", "scene": "diagramCard", "diagram": "hit-miss-bias", "emotion": "serious-expert", "withMascot": true, "chapterStart": true, "title": "COUNTING ONLY THE HITS", "subtitle": "the misses vanish from memory" },
+        { "vo": "But all the other times? You feel watched, you turn, and nobody's there, nobody cares. And that non-event evaporates instantly. You don't store it, you don't count it. So your memory keeps a wildly lopsided scorebook, all the dramatic hits, none of the forgettable misses, and the sense feels far more accurate than it really is.", "scene": "explainer", "prop": "hit-miss-tally", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Spotlight Effect",
+      "beats": [
+        { "vo": "There's also a quieter reason we feel watched, we simply overestimate how much anyone is paying attention to us at all. Psychologists call it the spotlight effect. We walk around feeling like we're under a spotlight, convinced people notice our every stumble, outfit and awkward moment.", "scene": "story", "room": "night-platform", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE SPOTLIGHT EFFECT", "subtitle": "we overestimate the audience",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 620, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "spotlight-self", "x": 1380, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "In reality, everyone else is starring in their own movie, far too busy worrying about their own spotlight to track yours. So a lot of that watched feeling is less about real eyes, and more about an inner sense of being on stage, a self-consciousness the brain projects outward onto a crowd that's barely looking.", "scene": "explainer", "prop": "spotlight-self", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "When The Dial Sticks",
+      "beats": [
+        { "vo": "Now, this detector has a volume dial, and that dial can get turned up. When you're anxious, stressed, or in an unfamiliar place, your whole threat system goes on high alert, and the watch-detector cranks up with it. You'll feel watched far more often, and far more intensely, than when you're calm and safe.", "scene": "diagramCard", "diagram": "vigilance-dial", "emotion": "serious-expert", "withMascot": true, "chapterStart": true, "title": "WHEN THE DIAL STICKS", "subtitle": "anxiety turns it up" },
+        { "vo": "A well-calibrated detector pings, you glance, you see nothing, and it settles. But a dial stuck on high keeps firing, over and over, finding threats everywhere. It's the same brilliant system, just badly tuned by a nervous system that's trying a little too hard to keep you safe. The good news, you can turn it back down.", "scene": "explainer", "prop": "stare-alarm", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "How To Settle It",
+      "beats": [
+        { "vo": "So here's how to settle the feeling when it strikes. First, name it. Instead of that's definitely someone staring, try, that's my gaze detector doing its ancient job. Naming it as a reflex, not a fact, instantly loosens its grip and hands control back to your thinking brain.", "scene": "story", "room": "sunny-park", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "HOW TO SETTLE IT", "subtitle": "name it, check it, let it fade",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 700, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "all-clear", "x": 1380, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Second, reality-check, but fairly. Go ahead and look, that's healthy. But this time, count the misses too. Notice all the moments you felt watched and absolutely no one was there. Keep an honest scorebook, and the sense stops feeling psychic and starts feeling like what it is, a smoke alarm that sometimes goes off at toast.", "scene": "explainer", "prop": "hit-miss-tally", "emotion": "serious-expert" },
+        { "vo": "And third, ground yourself. Because the dial rides on your arousal, calming your body turns it down. Slow your breath, feel your feet on the floor, remind yourself you're safe. As the alarm system relaxes, the watched feeling quietly fades on its own. You look, you see nothing, and this time, you let it go.", "scene": "explainer", "prop": "all-clear", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So the next time that prickle runs up your neck, you'll know the truth. It's not a ghost, or a sixth sense, or a beam you can feel. It's a gaze detector honed over millions of years, peripheral vision catching the tiniest movement, and a memory that keeps only the dramatic hits. It's not magic. It's you, being remarkable.", "scene": "story", "room": "sunny-park", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "NOT MAGIC — JUST YOU",
+          "mascots": [ { "costume": "hoodie", "pose": "walking", "emotion": "happy-talk", "x": 760, "y": 720, "scale": 1.0, "talking": true } ] },
+        { "vo": "One honest, gentle note. Occasionally feeling watched is completely normal and human. But if you feel constantly, distressingly certain that you're being watched or followed, in a way that takes over your days, that's worth talking through with a professional. It isn't a character flaw, and support genuinely helps. Please reach out.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "For most of us, though, this strange little sense is just one of the countless quiet wonders running under the hood of being human, a brain so tuned to connection that it can feel a pair of eyes across a room. That's not something to fear. Honestly, it's something to marvel at.", "scene": "explainer", "prop": "sclera-eyes", "emotion": "happy-talk" },
+        { "vo": "So tell me in the comments, when was the last time you felt watched, and were you right, or was it a classic false alarm? Be honest about the misses. Thank you, truly, for spending this time with me. If this made your brain feel a little more wonderful, subscribe and stay a while. I'm Dear Brain. Keep looking closely.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

@@ -3235,8 +3235,102 @@ const LettingGoCurve: React.FC = () => {
   );
 };
 
+/** gaze-detector: we lock onto direct gaze far faster than averted gaze. */
+const GazeDetector: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  const lit = (frame % 120) < 60; // the direct-gaze face flashes "found"
+  const faces = [{ dx: -170, look: -14 }, { dx: -40, look: 12 }, { dx: 160, look: 0, direct: true }, { dx: 300, look: -10 }];
+  return (
+    <g>
+      {faces.map((f, i) => (
+        <g key={i} transform={`translate(${cx - 120 + f.dx} ${cy})`}>
+          <circle cx={0} cy={0} r={44} fill={COLORS.white} {...xl} />
+          {[-16, 16].map((ex) => <g key={ex}><circle cx={ex} cy={-4} r={10} fill={COLORS.white} {...sm} /><circle cx={ex + f.look} cy={-4} r={5} fill={COLORS.outline} /></g>)}
+          <path d="M -14 20 Q 0 28 14 20" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+          {f.direct && lit && <><circle cx={0} cy={0} r={60} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} /><text x={0} y={-74} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>found!</text></>}
+        </g>
+      ))}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a direct stare pops out instantly</text>
+      <text x={cx} y={cy + 120} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={17} fill={COLORS.outline}>the brain's stare-in-the-crowd detector</text>
+    </g>
+  );
+};
+
+/** hit-miss-bias: felt watched & right is remembered; felt watched & wrong isn't. */
+const HitMissBias: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const cells: [string, boolean][] = [['HIT', true], ['MISS', false], ['MISS', false], ['HIT', true], ['MISS', false], ['MISS', false]];
+  return (
+    <g>
+      {cells.map(([lab, hit], i) => {
+        const p = springIn(frame - i * 4, 12);
+        const x = cx - 250 + i * 100; const op = hit ? 1 : 0.28;
+        return (
+          <g key={i} transform={`translate(${x} ${cy}) scale(${0.7 + 0.3 * p})`} opacity={op}>
+            <rect x={-40} y={-50} width={80} height={100} rx={12} fill={hit ? COLORS.greenLeaf : COLORS.ledGrey} {...lg} />
+            <text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.white}>{lab}</text>
+            {hit && <text x={0} y={78} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.outline}>★ recalled</text>}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>you remember the hits, not the misses</text>
+    </g>
+  );
+};
+
+/** watch-feedback-loop: feel watched → turn → they notice you → they look → "proof". */
+const WatchFeedbackLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const R = 150;
+  const nodes = ['you FEEL\nwatched', 'you TURN\nto check', 'your move\nCATCHES eyes', 'PROOF! they\'re\nlooking'];
+  const a = (frame / 30) % (Math.PI * 2);
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.lg} strokeDasharray="4 16" />
+      <g transform={`translate(${cx + Math.cos(a) * R} ${cy + Math.sin(a) * R})`}><circle cx={0} cy={0} r={9} fill={COLORS.lavenderDark} /></g>
+      {nodes.map((n, i) => {
+        const ang = -Math.PI / 2 + (i / 4) * Math.PI * 2; const x = cx + Math.cos(ang) * R; const y = cy + Math.sin(ang) * R;
+        return <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={0} r={54} fill={COLORS.lavender} {...lg} />{n.split('\n').map((ln, j) => <text key={j} x={0} y={-4 + j * 16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={12} fill={COLORS.outline}>{ln}</text>)}</g>;
+      })}
+      <text x={cx} y={cy + 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>self-</text>
+      <text x={cx} y={cy + 24} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={17} fill={COLORS.outline}>fulfilling</text>
+      <text x={cx} y={cy - R - 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>the turn makes it come true</text>
+    </g>
+  );
+};
+
+/** vigilance-dial: the watch-detector, well-calibrated vs stuck on high. */
+const VigilanceDial: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.52; const R = 140;
+  const jitter = 3 * Math.sin(frame / 3);
+  const gauge = (gx: number, deg: number, c: string, lab: string, sub: string) => {
+    const rad = (deg - 90) * (Math.PI / 180);
+    return (
+      <g transform={`translate(${gx} ${cy})`}>
+        <path d={`M ${-R} 0 A ${R} ${R} 0 0 1 ${R} 0`} fill="none" stroke={shade(COLORS.outline, 0.4)} strokeWidth={STROKE.xl} strokeLinecap="round" />
+        <line x1={0} y1={0} x2={Math.cos(rad) * (R - 20)} y2={Math.sin(rad) * (R - 20)} stroke={c} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <circle cx={0} cy={0} r={14} fill={COLORS.outline} />
+        <text x={-R} y={34} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>calm</text>
+        <text x={R} y={34} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>on guard</text>
+        <text x={0} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>{lab}</text>
+        <text x={0} y={94} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>{sub}</text>
+      </g>
+    );
+  };
+  return (
+    <g>
+      {gauge(cx - 200, 70, COLORS.greenLeaf, 'calibrated', 'checks, then settles')}
+      {gauge(cx + 200, 150 + jitter, COLORS.red, 'stuck high', 'anxiety turns it up')}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the same detector, two settings</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3370,6 +3464,10 @@ export const DiagramCard: React.FC<{
     'variable-reward': COLORS.red,
     'idealization-gap': COLORS.pink,
     'letting-go-curve': COLORS.greenLeaf,
+    'gaze-detector': COLORS.sky,
+    'hit-miss-bias': COLORS.red,
+    'watch-feedback-loop': COLORS.lavender,
+    'vigilance-dial': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3510,6 +3608,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'variable-reward' && <VariableReward />}
         {diagram === 'idealization-gap' && <IdealizationGap />}
         {diagram === 'letting-go-curve' && <LettingGoCurve />}
+        {diagram === 'gaze-detector' && <GazeDetector />}
+        {diagram === 'hit-miss-bias' && <HitMissBias />}
+        {diagram === 'watch-feedback-loop' && <WatchFeedbackLoop />}
+        {diagram === 'vigilance-dial' && <VigilanceDial />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

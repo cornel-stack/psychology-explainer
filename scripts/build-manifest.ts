@@ -145,6 +145,10 @@ const NEW_ASSETS = new Set([
   'night-bedroom-3am', 'mental-cinema', 'open-doorway',
   'thought-loop', 'phone-haunt', 'open-loop-knot', 'slot-hearts', 'pedestal-idol', 'memory-reel', 'rumination-wheel', 'red-string', 'scarcity-locked', 'open-hand-release',
   'zeigarnik-open-loop', 'variable-reward', 'idealization-gap', 'letting-go-curve',
+  // feeling-watched (all new)
+  'library-stacks', 'night-platform', 'sunny-park',
+  'neck-prickle', 'eye-radar', 'sclera-eyes', 'peripheral-catch', 'stare-alarm', 'sixth-sense-myth', 'turn-and-look', 'hit-miss-tally', 'spotlight-self', 'all-clear',
+  'gaze-detector', 'hit-miss-bias', 'watch-feedback-loop', 'vigilance-dial',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
