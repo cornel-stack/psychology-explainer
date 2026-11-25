@@ -33,6 +33,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 25 | The Psychology of Charisma | `psychology-of-charisma` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45514535186 | ✅ render OK |
 | 26 | The Psychology of Habits | `psychology-of-habits` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45518169854 | ✅ render OK |
 | 27 | Impostor Syndrome: Why You Feel Like a Fraud | `impostor-syndrome` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45521807676 | ✅ render OK |
-| 28 | Every Stage of Grief Explained | `stages-of-grief` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45525048318 | ⏳ rendering |
+| 28 | Every Stage of Grief Explained | `stages-of-grief` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45525048318 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
