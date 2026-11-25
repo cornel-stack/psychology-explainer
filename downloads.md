@@ -58,7 +58,8 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 50 | How to Read Body Language | `read-body-language` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45558217276 | ✅ render OK |
 | 51 | The Psychology of Gaslighting | `gaslighting` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45560022685 | ✅ render OK |
 | 52 | Why You Feel Tired All the Time | `feel-tired-all-the-time` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45561583596 | ✅ render OK |
-| 53 | Why You Remember Faces But Not Names | `remember-faces-not-names` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45563372589 | ⏳ rendering |
-| 54 | The Psychology of Small Talk | `small-talk` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45565080407 | ⏳ rendering |
+| 53 | Why You Remember Faces But Not Names | `remember-faces-not-names` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45563372589 | ✅ render OK |
+| 54 | The Psychology of Small Talk | `small-talk` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45565080407 | ✅ render OK |
+| 55 | The Psychology of Gratitude | `gratitude` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45566648634 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
