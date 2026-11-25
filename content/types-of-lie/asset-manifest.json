@@ -1,0 +1,258 @@
+{
+  "slug": "types-of-lie",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 8,
+    "NEW": 19
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        18,
+        21
+      ]
+    },
+    {
+      "name": "cover-up-cascade",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "lie-frequency",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "lie-motives",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "lie-spectrum",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        33
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        9,
+        14,
+        34
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        18
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        16,
+        17,
+        19,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        15,
+        20,
+        21
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "arms-crossed",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "cower",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "bald-faced",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        15
+      ]
+    },
+    {
+      "name": "broken-promise",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "compulsive-nose",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "exaggeration-fish",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "lie-snowball",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "noble-lie",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "omission-gap",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "poker-bluff",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "self-deception",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "white-lie",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "interrogation-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "poker-den",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "web-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    }
+  ]
+}

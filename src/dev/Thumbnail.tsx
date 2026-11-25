@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'types-of-lie': {
+    A: { lines: ['EVERY TYPE', 'OF LIE', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'smug', textColor: COLORS.white, badge: '10', prop: 'compulsive-nose' },
+    B: { lines: ['YOU TELL', '2 LIES', 'EVERY DAY'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'bald-faced' },
+    C: { lines: ['THE LIE THAT', 'HURTS YOU', 'MOST'], accent: COLORS.sky, bg: COLORS.navy, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'self-deception' },
+  },
   'brain-fog': {
     A: { lines: ['WHY YOUR', 'BRAIN FEELS', 'FOGGY'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'foggy-head' },
     B: { lines: ['CAN\'T THINK', 'STRAIGHT?', "HERE'S WHY"], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'sleepy', textColor: COLORS.white, badge: '!', prop: 'word-gone' },

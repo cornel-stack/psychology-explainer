@@ -69,6 +69,7 @@ import * as Mo from './motivation';
 import * as Ml from './memory-lies';
 import * as Ex from './experiments';
 import * as Bf from './brain-fog';
+import * as Li from './lies';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -825,6 +826,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'hormone-dial': Bf.HormoneDial,
   'task-switch': Bf.TaskSwitch,
   'fog-lifts': Bf.FogLifts,
+  'white-lie': Li.WhiteLie,
+  'omission-gap': Li.OmissionGap,
+  'exaggeration-fish': Li.ExaggerationFish,
+  'bald-faced': Li.BaldFaced,
+  'lie-snowball': Li.LieSnowball,
+  'poker-bluff': Li.PokerBluff,
+  'noble-lie': Li.NobleLie,
+  'compulsive-nose': Li.CompulsiveNose,
+  'broken-promise': Li.BrokenPromise,
+  'self-deception': Li.SelfDeception,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

@@ -1,0 +1,358 @@
+{
+  "title": "Every Type of Lie Explained",
+  "slug": "types-of-lie",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Be honest. Have you lied today? Before you say no, think. Did you tell someone you were fine when you weren't? Say a gift was lovely when it wasn't? Agree you'd be there in five minutes when you hadn't even left? Statistically, you almost certainly have. Lying isn't a rare moral failing. It's one of the most ordinary things humans do.",
+          "scene": "story",
+          "room": "interrogation-room",
+          "emotion": "scared",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "EVERY TYPE OF LIE",
+          "subtitle": "explained",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "scared",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "But not all lies are equal. There's a whole spectrum, from tiny kindnesses that hold society together, to corrosive deceptions that tear it apart. And right at the far, most dangerous end, sit the lies we tell ourselves. Today, we're going to lay them all out, one by one.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Why we lie, who does it most, and every major type of lie, the harmless, the clever, the compulsive, and the one that quietly runs your whole life. By the end, you'll never hear the word honest the same way again. Let's pull back the curtain on dishonesty.",
+          "scene": "explainer",
+          "prop": "bald-faced",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Everyone Lies",
+      "beats": [
+        {
+          "vo": "First, let's bust the myth that lying is rare. It isn't. Studies where people track every lie they tell find that the average person tells around one or two lies every single day. Lying is woven right into the fabric of normal social life.",
+          "scene": "diagramCard",
+          "diagram": "lie-frequency",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "EVERYONE LIES",
+          "subtitle": "but not equally"
+        },
+        {
+          "vo": "But here's the fascinating twist. Lies are not spread out evenly. Research shows that most people actually lie quite rarely, while a small number of prolific liars tell the overwhelming majority of all the lies out there. So everyone lies sometimes, but a few people do a huge amount of the dishonest heavy lifting.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And lying is surprisingly hard work. Telling the truth is your brain's effortless default. Lying means you have to suppress the truth, invent a believable alternative, keep it consistent, and track exactly who you've told what. It's mentally exhausting, which is precisely why big lies are so hard to keep up.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "In fact, the ability to lie is a developmental milestone. Children typically start telling lies around age three or four, and far from being a worry, it's a sign of a healthy, developing brain. To lie, a child has to understand that other people hold different beliefs, and then deliberately plant a false one. Lying is built into the mind.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Why We Lie",
+      "beats": [
+        {
+          "vo": "So if it's that much effort, why do we bother? It turns out almost every lie comes down to just a handful of motives, and most of them aren't evil at all.",
+          "scene": "diagramCard",
+          "diagram": "lie-motives",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHY WE LIE",
+          "subtitle": "the handful of motives"
+        },
+        {
+          "vo": "We lie to avoid trouble, to spare someone's feelings, to fit in and smooth over an awkward moment, to get ahead, or simply to look better than we are. And this is the key to the whole video. A lie's type, and whether it's harmless or toxic, is defined almost entirely by its motive. So for every lie we meet, keep asking: why?",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The White Lie",
+      "beats": [
+        {
+          "vo": "Which brings us to the gentlest lie of all: the white lie. Yes, I'd love to come. No, you don't look tired at all. It's delicious, thank you so much. These are small, kind untruths told to protect feelings and keep things pleasant.",
+          "scene": "explainer",
+          "prop": "white-lie",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE WHITE LIE",
+          "subtitle": "the social glue"
+        },
+        {
+          "vo": "And here's something that might surprise you: white lies are the grease of social life, and mostly a good thing. Imagine a world of total, brutal honesty, where everyone told you exactly what they thought of your cooking, your outfit, and your personality. It would be unbearable. A little kind dishonesty is often simply good manners.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "There is a catch. White lies have a quiet cost when they pile up. The biggest one is the I'm fine that hides real pain, keeping people who love you at arm's length. So the rule of thumb: a white lie that protects someone else's feelings is usually kind. One that hides your own struggle, day after day, can leave you very alone.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        }
+      ]
+    },
+    {
+      "name": "The Lie of Omission",
+      "beats": [
+        {
+          "vo": "Next, a sneakier one, the lie of omission. This is where you don't actually say anything false. You just carefully leave out the parts that matter.",
+          "scene": "explainer",
+          "prop": "omission-gap",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE LIE OF OMISSION",
+          "subtitle": "deceiving by leaving out"
+        },
+        {
+          "vo": "Yes, I went out last night, technically true, while leaving out exactly who with. It's the favourite lie of people who want to deceive while still being able to say, but I never actually lied! And that's the catch. If the intent is to mislead, leaving out the truth is still a lie, just a slipperier, more deniable one.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Stretching the Truth",
+      "beats": [
+        {
+          "vo": "Then there's the exaggeration, the lie that stretches. You didn't catch a big fish, you caught a monster. You didn't wait a while, you waited forever. The core is true, but it's been inflated for effect, to impress, to entertain, or to win an argument.",
+          "scene": "explainer",
+          "prop": "exaggeration-fish",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "STRETCHING THE TRUTH",
+          "subtitle": "the exaggeration"
+        },
+        {
+          "vo": "And its bolder cousin is the bald-faced lie: a complete, knowing falsehood, delivered with total confidence even when the truth is obvious. No, I definitely didn't eat the last biscuit, said with crumbs still on your face. It's the most brazen kind, and it relies entirely on nerve.",
+          "scene": "explainer",
+          "prop": "bald-faced",
+          "emotion": "smug"
+        },
+        {
+          "vo": "And brazen lies work more often than they should, because we're terrible at detecting lies. Despite how confident we feel, studies show people spot a lie only about fifty-four percent of the time, barely better than chance. There's no reliable tell. The bold liar slips through precisely because we expect them to crack, and they don't.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Cover-Up",
+      "beats": [
+        {
+          "vo": "Now we come to the most self-destructive lie of all, the one that multiplies. It's the cover-up, and it behaves exactly like a snowball rolling downhill.",
+          "scene": "diagramCard",
+          "diagram": "cover-up-cascade",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE COVER-UP",
+          "subtitle": "the snowball effect"
+        },
+        {
+          "vo": "You tell one small lie. But to protect it, you need a second lie. And that one needs a third to hold it up. Before long, you're maintaining an entire wobbling tower of deceptions, terrified one wrong word will bring the whole thing crashing down. As the old line goes: oh, what a tangled web we weave.",
+          "scene": "story",
+          "room": "web-room",
+          "emotion": "scared",
+          "mascots": [
+            {
+              "costume": "suit",
+              "pose": "cower",
+              "emotion": "scared",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "This is why the cover-up is so often worse than the original crime. The first lie might have been forgiven in a heartbeat. But the exhausting web of lies built to hide it, that's what truly destroys trust. The quiet lesson here: the second lie is almost always a bigger mistake than the first.",
+          "scene": "explainer",
+          "prop": "lie-snowball",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Bluff",
+      "beats": [
+        {
+          "vo": "Not every lie is about hiding something. The bluff is a lie of performance. You pretend to have a strength, a plan, or a winning hand that you simply don't have.",
+          "scene": "explainer",
+          "prop": "poker-bluff",
+          "emotion": "smug",
+          "chapterStart": true,
+          "title": "THE BLUFF",
+          "subtitle": "the lie of performance"
+        },
+        {
+          "vo": "It's the heart of poker, of negotiation, of that confident I've totally got this when you're panicking inside. Interestingly, we often don't even class the bluff as a proper lie, because everyone involved sort of knows it's part of the game. It's deception by acting, and sometimes, it's even expected of you.",
+          "scene": "story",
+          "room": "poker-den",
+          "emotion": "smug",
+          "mascots": [
+            {
+              "costume": "suit",
+              "pose": "arms-crossed",
+              "emotion": "smug",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Noble Lie",
+      "beats": [
+        {
+          "vo": "Here's a lie with a halo: the noble, or altruistic, lie. This is a falsehood told purely to protect or help someone else, with no benefit to you at all.",
+          "scene": "explainer",
+          "prop": "noble-lie",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE NOBLE LIE",
+          "subtitle": "deception out of kindness"
+        },
+        {
+          "vo": "No, nobody's planning anything for your birthday, to protect a surprise party. Or telling a frightened, dying loved one that everything is going to be okay. These lies sit in a genuinely grey, debated area. Is it wrong to deceive someone, if you're only doing it out of pure love and kindness? Most of us would say, not always.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But tread carefully. The noble lie has a habit of backfiring. We tell ourselves we're protecting someone, when really we're protecting ourselves from a hard conversation. And people often sense when they're being managed, even kindly. Sometimes the most loving thing isn't the comforting lie, but the honest truth they needed to hear.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Compulsive Lying",
+      "beats": [
+        {
+          "vo": "Now a more troubling type: compulsive, or pathological lying. This is when someone lies habitually, often about small, pointless things, and frequently for no clear benefit at all.",
+          "scene": "explainer",
+          "prop": "compulsive-nose",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "COMPULSIVE LYING",
+          "subtitle": "lying without a reason"
+        },
+        {
+          "vo": "They'll lie about things that don't matter, where the truth would have been fine. This isn't really about deceiving others for gain. It's often a deep-rooted pattern, sometimes tied to underlying struggles, low self-worth, or a need for attention. It's less a choice than a compulsion, and it usually needs compassion, not just anger.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Broken Promise",
+      "beats": [
+        {
+          "vo": "Don't forget the lie that points at the future: the broken promise. Most lies are about the past or present, but this one is a lie about what you'll do next.",
+          "scene": "explainer",
+          "prop": "broken-promise",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE BROKEN PROMISE",
+          "subtitle": "the future-tense lie"
+        },
+        {
+          "vo": "I'll pay you back next week. I'll definitely be there. I'll change, I promise. If the intention was never truly there, or if you keep breaking it, it quietly becomes one of the most corrosive lies of all. Because few things erode trust as deeply as someone whose words about tomorrow simply can't be relied on.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Lie That Runs You",
+      "beats": [
+        {
+          "vo": "And finally, the most dangerous lie of them all. It's not aimed at anyone else. It's the one you tell yourself. Self-deception.",
+          "scene": "explainer",
+          "prop": "self-deception",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE LIE THAT RUNS YOU",
+          "subtitle": "self-deception"
+        },
+        {
+          "vo": "I'm totally fine. I'll start tomorrow. It's their fault, not mine. I don't really care anyway. These are the comforting stories we tell ourselves to avoid a painful truth, and they are uniquely dangerous for one simple reason: there is nobody to catch us. No one can call out a lie you've hidden even from yourself.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Every other lie on this list distorts someone else's picture of reality. But self-deception distorts your own. It's how we stay in jobs and relationships we know are wrong, and dodge the changes we desperately need. The lies we tell others can damage our relationships. The lies we tell ourselves can quietly run our entire lives.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So how do you catch a lie you're telling yourself? Watch for the places you get defensive, where a little voice insists a bit too loudly that everything's fine. Notice the excuses you reach for again and again. And ask the people who love you what they see, because they can often spot your blind spots far more clearly than you can.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "So where does all this leave us? Not vowing to never tell another white lie, that's neither realistic nor kind. The point isn't perfect honesty. It's awareness. The next time you bend the truth, just gently notice why. Is it a small kindness, or are you protecting yourself at someone else's expense?",
+          "scene": "diagramCard",
+          "diagram": "lie-spectrum",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE HONEST TAKEAWAY",
+          "subtitle": "notice the motive"
+        },
+        {
+          "vo": "Watch for the cover-up snowball, keep the promises you make, and above all, stay honest with yourself. A life built on small kindnesses is a good one, but a life built on self-deception is a cage. The truth you most need to hear is usually the one you're trying hardest not to tell yourself. Thanks for watching, and be honest out there.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

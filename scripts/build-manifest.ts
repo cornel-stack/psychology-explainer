@@ -269,6 +269,10 @@ const NEW_ASSETS = new Set([
   'fog-study', 'hazy-commute', 'bright-kitchen',
   'foggy-head', 'word-gone', 'sleep-debt', 'cortisol-fog', 'inflamed-brain', 'sugar-crash', 'thirsty-brain', 'hormone-dial', 'task-switch', 'fog-lifts',
   'fog-sources', 'sleep-clarity-curve', 'switching-cost', 'fog-lifters',
+  // types-of-lie (all new)
+  'poker-den', 'interrogation-room', 'web-room',
+  'white-lie', 'omission-gap', 'exaggeration-fish', 'bald-faced', 'lie-snowball', 'poker-bluff', 'noble-lie', 'compulsive-nose', 'broken-promise', 'self-deception',
+  'lie-frequency', 'lie-motives', 'lie-spectrum', 'cover-up-cascade',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

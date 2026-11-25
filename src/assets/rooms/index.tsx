@@ -211,7 +211,10 @@ export type RoomName =
   | 'lecture-theater'
   | 'fog-study'
   | 'hazy-commute'
-  | 'bright-kitchen';
+  | 'bright-kitchen'
+  | 'poker-den'
+  | 'interrogation-room'
+  | 'web-room';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5449,6 +5452,62 @@ export const BrightKitchen: React.FC = () => (
   </g>
 );
 
+/** Poker den: a dim, smoky card room — a green felt table with cards, chips and two
+ *  chairs, a low hanging lamp — the home of the bluff. */
+export const PokerDen: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.navy, 0.08)} floor={shade(COLORS.woodDark, -0.02)} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.navy, 0.03)} opacity={0.5} />)}
+    {/* low hanging lamp casting a pool of light */}
+    <g transform="translate(960 60)"><line x1={0} y1={0} x2={0} y2={120} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d="M -60 120 L 60 120 L 40 180 L -40 180 Z" fill={COLORS.yellowSoft} {...xl} /><ellipse cx={0} cy={420} rx={320} ry={120} fill={COLORS.yellow} opacity={0.1} /></g>
+    {/* a framed 'no bluffing' sign, ironic */}
+    <g transform="translate(320 320)"><rect x={-70} y={-44} width={140} height={88} rx={6} fill={shade(COLORS.navy, 0.1)} {...xl} /><text x={0} y={6} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={20} fill={COLORS.red}>ALL IN</text></g>
+    {/* the felt table */}
+    <g transform="translate(960 790)"><ellipse cx={0} cy={40} rx={380} ry={120} fill={COLORS.greenTeal} {...xl} /><ellipse cx={0} cy={28} rx={340} ry={100} fill={shade(COLORS.greenTeal, -0.04)} />
+      {/* community cards */}
+      {[-90, -30, 30, 90].map((x, i) => <g key={i} transform={`translate(${x} 10)`}><rect x={-22} y={-32} width={44} height={64} rx={6} fill={COLORS.white} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={20} fill={[COLORS.red, COLORS.outline, COLORS.red, COLORS.outline][i]}>{['A', 'K', '10', 'Q'][i]}</text></g>)}
+      {/* chip stacks */}
+      {[-250, 250].map((x, i) => <g key={i} transform={`translate(${x} 20)`}>{[0, 1, 2, 3].map((j) => <ellipse key={j} cx={0} cy={-j * 8} rx={28} ry={10} fill={[COLORS.red, COLORS.sky, COLORS.yellow][j % 3]} {...sm} />)}</g>)}
+    </g>
+    {/* two chairs */}
+    {[480, 1440].map((x, i) => <g key={i} transform={`translate(${x} 880)`}><rect x={-44} y={-10} width={88} height={30} rx={8} fill={COLORS.woodDark} {...lg} /><rect x={-44} y={-110} width={88} height={60} rx={12} fill={shade(COLORS.woodDark, 0.04)} {...lg} /></g>)}
+  </g>
+);
+
+/** Interrogation room: a stark grey room with a single table, a lamp, a two-way mirror
+ *  and a lie-detector readout — where lies meet the truth. */
+export const InterrogationRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.ledGrey, 0.14)} floor={shade(COLORS.ledGrey, 0.06)} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.ledGrey, 0.08)} opacity={0.5} />)}
+    {/* two-way mirror */}
+    <g transform="translate(560 360)"><rect x={-200} y={-180} width={400} height={300} rx={8} fill={shade(COLORS.sky, 0.08)} opacity={0.4} {...xl} /><path d="M -180 -160 L 20 -160 L -120 100 L -200 100 Z" fill={COLORS.white} opacity={0.08} /></g>
+    {/* a lie-detector machine with a jagged readout */}
+    <g transform="translate(1480 340)"><rect x={-130} y={-80} width={260} height={160} rx={10} fill={shade(COLORS.navy, 0.04)} {...xl} /><rect x={-110} y={-62} width={220} height={80} rx={6} fill={shade(COLORS.sky, 0.1)} opacity={0.5} /><path d="M -104 -22 l 24 0 l 10 -30 l 14 48 l 12 -24 l 16 6 l 22 0" fill="none" stroke={COLORS.red} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" />{[0, 1, 2].map((i) => <circle key={i} cx={-80 + i * 60} cy={54} r={8} fill={[COLORS.red, COLORS.yellow, COLORS.greenTeal][i]} />)}</g>
+    {/* a single metal table + hanging lamp */}
+    <g transform="translate(960 80)"><line x1={0} y1={0} x2={0} y2={110} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d="M -46 110 L 46 110 L 30 160 L -30 160 Z" fill={COLORS.yellowSoft} {...xl} /><ellipse cx={0} cy={700} rx={160} ry={50} fill={COLORS.yellow} opacity={0.07} /></g>
+    <g transform="translate(960 820)"><rect x={-130} y={-30} width={260} height={100} rx={8} fill={shade(COLORS.ledGrey, 0.02)} {...xl} /><rect x={-130} y={-44} width={260} height={18} rx={6} fill={shade(COLORS.ledGrey, 0.1)} {...lg} /></g>
+  </g>
+);
+
+/** Web room: a surreal dim room strung corner-to-corner with tangled threads — the
+ *  ever-growing web of a cover-up. */
+export const WebRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, -0.04)} floor={shade(COLORS.navy, 0.04)} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.lavender, -0.02)} opacity={0.5} />)}
+    {/* tangled web threads radiating from corners */}
+    {[[0, 0], [1920, 0], [0, 860], [1920, 860]].map(([cxw, cyw], c) => (
+      <g key={c}>{Array.from({ length: 6 }).map((_, i) => { const tx = (cxw === 0 ? 1 : -1); const ty = (cyw === 0 ? 1 : -1); return <line key={i} x1={cxw} y1={cyw} x2={cxw + tx * (200 + i * 120)} y2={cyw + ty * (100 + i * 50)} stroke={shade(COLORS.lavender, -0.1)} strokeWidth={STROKE.sm} opacity={0.4} />; })}</g>
+    ))}
+    {/* concentric web rings in the centre */}
+    {[0, 1, 2, 3].map((i) => <circle key={i} cx={960} cy={430} r={80 + i * 90} fill="none" stroke={shade(COLORS.lavender, -0.1)} strokeWidth={STROKE.sm} opacity={0.35} strokeDasharray="2 18" />)}
+    {Array.from({ length: 12 }).map((_, i) => { const a = (i / 12) * Math.PI * 2; return <line key={i} x1={960} y1={430} x2={960 + Math.cos(a) * 360} y2={430 + Math.sin(a) * 360} stroke={shade(COLORS.lavender, -0.1)} strokeWidth={STROKE.sm} opacity={0.3} />; })}
+    {/* little 'lie' tags caught in the web */}
+    {[[720, 300], [1220, 340], [860, 600], [1120, 560]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y}) rotate(${i * 12 - 18})`}><rect x={-30} y={-16} width={60} height={32} rx={6} fill={COLORS.yellowSoft} {...sm} /><text x={0} y={5} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={14} fill={COLORS.outline}>lie</text></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5645,6 +5704,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'fog-study': FogStudy,
   'hazy-commute': HazyCommute,
   'bright-kitchen': BrightKitchen,
+  'poker-den': PokerDen,
+  'interrogation-room': InterrogationRoom,
+  'web-room': WebRoom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
