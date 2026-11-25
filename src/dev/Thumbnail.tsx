@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'stages-of-grief': {
+    A: { lines: ['EVERY', 'STAGE OF', 'GRIEF'], accent: COLORS.yellow, bg: COLORS.blueDiagram, emotion: 'sleepy', textColor: COLORS.white, badge: '5', prop: 'grief-waves' },
+    B: { lines: ['THE TRUTH', 'ABOUT', 'GRIEF'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'grief-meaning' },
+    C: { lines: ['GRIEF IS', 'LOVE WITH', 'NOWHERE TO GO'], accent: COLORS.pink, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'carry-grief' },
+  },
   'impostor-syndrome': {
     A: { lines: ['IMPOSTOR', 'SYNDROME', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.blueDiagram, emotion: 'scared', textColor: COLORS.white, badge: '?', prop: 'fraud-mask' },
     B: { lines: ['WHY YOU', 'FEEL LIKE', 'A FRAUD'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'found-out' },

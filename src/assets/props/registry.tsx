@@ -35,6 +35,7 @@ import * as Lv from './loves';
 import * as Ch from './charisma';
 import * as Hb from './habits';
 import * as Im from './impostor';
+import * as Gr from './grief';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -430,6 +431,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'type-soloist': Im.TypeSoloist,
   'type-genius': Im.TypeGenius,
   'type-superhero': Im.TypeSuperhero,
+  // stages-of-grief emblems (all new)
+  'grief-denial': Gr.GriefDenial,
+  'grief-anger': Gr.GriefAnger,
+  'grief-bargaining': Gr.GriefBargaining,
+  'grief-depression': Gr.GriefDepression,
+  'grief-acceptance': Gr.GriefAcceptance,
+  'grief-meaning': Gr.GriefMeaning,
+  'grief-waves': Gr.GriefWaves,
+  'messy-path': Gr.MessyPath,
+  'ball-in-box': Gr.BallInBox,
+  'carry-grief': Gr.CarryGrief,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

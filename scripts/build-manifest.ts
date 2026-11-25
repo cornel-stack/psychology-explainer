@@ -133,6 +133,10 @@ const NEW_ASSETS = new Set([
   'impostor-office', 'exposure-spotlight', 'reframe-desk',
   'fraud-mask', 'discount-win', 'found-out', 'wider-shore', 'evidence-folder', 'type-perfectionist', 'type-expert', 'type-soloist', 'type-genius', 'type-superhero',
   'impostor-cycle', 'competence-confidence-gap', 'five-types', 'feelings-vs-facts',
+  // stages-of-grief (all new)
+  'grief-shore', 'memory-room', 'dawn-meadow',
+  'grief-denial', 'grief-anger', 'grief-bargaining', 'grief-depression', 'grief-acceptance', 'grief-meaning', 'grief-waves', 'messy-path', 'ball-in-box', 'carry-grief',
+  'five-stages', 'grief-not-linear', 'grief-waves-time', 'grief-grows-around',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

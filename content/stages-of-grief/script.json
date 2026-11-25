@@ -1,0 +1,117 @@
+{
+  "title": "Every Stage of Grief Explained",
+  "slug": "stages-of-grief",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "At some point, every one of us will stand on this shore. A loss arrives, and the tide of grief rolls in, and nothing feels solid anymore. You've probably heard there are five neat stages you're supposed to move through. But grief is rarely that tidy. So let's talk about it honestly, and gently.", "scene": "story", "room": "grief-shore", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "EVERY STAGE OF GRIEF", "subtitle": "and the truth about loss",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 700, "y": 820, "scale": 1.0, "talking": true } ] },
+        { "vo": "The famous five stages, denial, anger, bargaining, depression, acceptance, come from the psychiatrist Elisabeth Kübler-Ross. They're a genuinely useful way to recognise what you might feel. So we'll walk through all five, and the sixth that was added later.", "scene": "diagramCard", "diagram": "five-stages", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "But first, the single most important thing to understand, and it's something even Kübler-Ross herself stressed. These stages are not a checklist. Not a straight line you climb in order and finish. They're a map of possible feelings, not a timeline you're failing to keep up with.", "scene": "diagramCard", "diagram": "grief-not-linear", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "You might skip stages, or circle back to ones you thought you'd passed. You might feel several at once, or in a completely different order. There is no right way, and no schedule. However your grief is moving through you, you are doing it correctly.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. The stages of grief, what each one really feels like, why grief comes in waves instead of steps, and how to carry a loss, and support someone carrying theirs, with a little more gentleness. Let's begin, softly.", "scene": "explainer", "prop": "grief-waves", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Grief Is Love",
+      "beats": [
+        { "vo": "Before the stages, one reframe that changes everything. Grief is not a problem to be solved, or a sickness to recover from. There's a beautiful line that captures it. Grief is simply love with nowhere to go. All the love that was flowing toward someone, suddenly with no destination.", "scene": "story", "room": "memory-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "GRIEF IS LOVE", "subtitle": "with nowhere to go",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 820, "y": 740, "scale": 1.0, "talking": true } ] },
+        { "vo": "Which also means grief isn't only for death. We grieve breakups, and friendships that fade. Lost jobs, lost health, lost homes. The person we thought we'd become. Any ending of something we loved can bring it. If you're grieving something others think is small, your grief is still real, and still valid.", "scene": "explainer", "prop": "carry-grief", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "1 — Denial",
+      "beats": [
+        { "vo": "Stage one, denial. Not usually a literal, this isn't true, but a kind of numb, foggy disbelief. This can't be happening. It doesn't feel real. The world carries on, and you move through it on autopilot, strangely calm, oddly detached, as if watching your own life through glass.", "scene": "story", "room": "grief-shore", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "1 — DENIAL", "subtitle": "'this isn't real'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "sleepy", "x": 700, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "grief-denial", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Far from being a weakness, this numbness is a mercy. It's your mind's way of letting in only as much reality as you can bear at once, pacing the pain so it doesn't crush you all in a single moment. Denial is the shock absorber. It softens the first, unbearable impact of the loss.", "scene": "explainer", "prop": "grief-denial", "emotion": "serious-expert" },
+        { "vo": "If you're here, and feeling strangely calm, or even nothing at all, please don't judge yourself for it. People sometimes feel guilty that they're not falling apart. But that numbness isn't a lack of love. It's your mind protecting you, holding the wave back until you're a little more ready to meet it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "2 — Anger",
+      "beats": [
+        { "vo": "Stage two, anger. As the numbness wears off and reality seeps in, it often burns. Why me? Why them? It's not fair. The anger can fly in any direction, at doctors, at family, at yourself, at the person who left, even at a God you're not sure you believe in. It can feel frightening, and shameful.", "scene": "story", "room": "grief-shore", "emotion": "annoyed", "camera": "slowZoom", "chapterStart": true, "title": "2 — ANGER", "subtitle": "'why? it's not fair'",
+          "mascots": [ { "costume": "hoodie", "pose": "fist-up", "emotion": "annoyed", "x": 700, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "grief-anger", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "But anger is actually a sign of returning strength, and it's deeply necessary. Underneath it is almost always pain, and love. It gives the formless agony of loss a shape, something solid to push against. Don't be afraid of your grief's anger. It means the feeling is finally moving.", "scene": "explainer", "prop": "grief-anger", "emotion": "serious-expert" },
+        { "vo": "So rather than swallowing it, let the anger have a safe outlet. Move your body, pound a pillow, shout where no one can hear, write the furious letter you'll never send. The goal isn't to aim it at anyone, it's to let the energy out, so it doesn't curdle and turn inward against you.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "3 — Bargaining",
+      "beats": [
+        { "vo": "Stage three, bargaining. This is the realm of if only, and what if. If only I'd called sooner. What if we'd seen the doctor earlier. The mind replays the past on an endless loop, desperately searching for the moment it could have changed everything. It often comes wrapped in heavy guilt.", "scene": "story", "room": "memory-room", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "3 — BARGAINING", "subtitle": "'if only... what if...'",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 820, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "grief-bargaining", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Bargaining is the mind's last attempt to regain control over something utterly uncontrollable. If I can just find the thing I did wrong, maybe I can undo it. It's exhausting, and the guilt can be cruel. But it's a normal, human attempt to make sense of something that simply doesn't.", "scene": "explainer", "prop": "grief-bargaining", "emotion": "serious-expert" },
+        { "vo": "If you're stuck in the if-onlys, try to offer yourself this. You did the best you could, with what you knew, in the moment you were in. Hindsight invents choices you never actually had. The guilt feels like love, like you should have been able to save them. But it wasn't yours to carry. Set it down, gently.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "4 — Depression",
+      "beats": [
+        { "vo": "Stage four, depression. This is the heavy one. As the bargaining fails and the full reality finally lands, a deep sadness settles in. The world turns grey. Energy drains away. You may want to withdraw, to sleep, to simply stop. The sheer weight of the loss sits on your chest.", "scene": "story", "room": "memory-room", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "4 — DEPRESSION", "subtitle": "the heavy weight of loss",
+          "mascots": [ { "costume": "hoodie", "pose": "cower", "emotion": "sleepy", "x": 820, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "grief-depression", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It's important to say, this is not a mental illness. It's an appropriate, healthy response to a profound loss. It would be strange not to feel it. This is not something to be medicated away immediately. It's grief doing its deep, necessary work. The only way out of it is, gently, through it.", "scene": "explainer", "prop": "grief-depression", "emotion": "serious-expert" },
+        { "vo": "In this stage, drop every expectation of yourself. You don't need to be productive, or social, or fine. Your only job is to get through each day, and sometimes just each hour. Eat something. Drink water. Rest. Let people help. Survival is enough right now. Everything else can wait.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "5 — Acceptance",
+      "beats": [
+        { "vo": "Stage five, acceptance. And here we have to clear up the biggest myth of all. Acceptance does not mean you're okay with the loss, or that you're over it, or that it stopped hurting. You may never be okay that it happened. That's not what this is.", "scene": "story", "room": "grief-shore", "emotion": "neutral", "camera": "slowZoom", "chapterStart": true, "title": "5 — ACCEPTANCE", "subtitle": "not 'okay' — just living with it",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "neutral", "x": 700, "y": 820, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "grief-acceptance", "x": 1360, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Acceptance simply means you've come to acknowledge the new reality, that this loss is now a part of your life, and you begin, slowly, to learn how to live alongside it. You have more good moments than bad. You start to re-engage with the world. The loss is still there, but it no longer stops the clock.", "scene": "explainer", "prop": "grief-acceptance", "emotion": "serious-expert" },
+        { "vo": "And acceptance isn't a finish line you cross and never leave. On an anniversary, hearing a song, catching a familiar scent, you can be pulled right back into the depths, years later. That isn't failure or going backwards. That's just grief, and love, visiting again. Let it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "6 — Meaning",
+      "beats": [
+        { "vo": "And then there's a sixth stage, added more recently by the grief expert David Kessler. Meaning. After acceptance, many people find a way to make some meaning out of their loss, not to justify it, loss never needs justifying, but to carry it in a way that honours what was lost.", "scene": "story", "room": "dawn-meadow", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "6 — MEANING", "subtitle": "honouring what was lost",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 740, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "grief-meaning", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "It might be a charity started, a cause taken up, a habit of living more fully, a way of carrying their kindness forward. Meaning doesn't erase the pain, and it can't be rushed or forced. But for many, it's where grief slowly transforms into a kind of continued, quiet love.", "scene": "explainer", "prop": "grief-meaning", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "It Comes in Waves",
+      "beats": [
+        { "vo": "Now, here's a far more accurate picture of how grief actually feels than any set of steps. It comes in waves. In the beginning, the waves are enormous and constant, crashing over you again and again, so close together you can barely catch your breath between them.", "scene": "diagramCard", "diagram": "grief-waves-time", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Over time, the waves don't necessarily get smaller, but they do come further apart. You get longer stretches of calm between them, time to breathe, to function, to even feel joy again. And then a wave arrives out of nowhere and knocks you flat, and that, too, is completely normal.", "scene": "explainer", "prop": "grief-waves", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "You Grow Around It",
+      "beats": [
+        { "vo": "And this leads to the most hopeful, and truest, idea of all. People say time heals, and that you'll get over it, and move on. But that's not quite how it works. You don't get over a great loss. You don't shrink the grief down to nothing. Instead, something gentler and more beautiful happens.", "scene": "diagramCard", "diagram": "grief-grows-around", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "At first, the grief fills your entire world, it's all there is. But over time, your life slowly grows bigger around it. New experiences, people, moments. The grief stays the same size, a permanent part of you, but it takes up less and less of the whole. You grow around your grief. And that is healing.", "scene": "explainer", "prop": "ball-in-box", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "How to Be There",
+      "beats": [
+        { "vo": "So how do we do this well, for ourselves, and for others? For yourself, be patient and impossibly gentle. There is no schedule. Feel the waves instead of fighting them, and lean on your people. You don't have to be strong, or okay. You just have to let yourself grieve.", "scene": "story", "room": "dawn-meadow", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "HOW TO BE THERE", "subtitle": "for yourself, and others",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 740, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "carry-grief", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "And if someone you love is grieving, here's the most useful thing to know. Don't try to fix it. You can't, and you don't need to. Avoid the at-leasts and the they're-in-a-better-place. Those rush people past their pain. Instead, just show up. Sit with them. Say, I'm here, and I'm not going anywhere.", "scene": "explainer", "prop": "carry-grief", "emotion": "serious-expert" },
+        { "vo": "Presence beats advice every time. Say their lost person's name, they long to hear it. Bring a meal, not a platitude. Let them cry without trying to cheer them up. The greatest gift you can offer a grieving heart isn't the perfect words. It's simply your steady, patient, loving company.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "A gentle, honest note before we close. For most of us, grief slowly softens into something we can carry. But if it stays frozen and overwhelming for a very long time, if it traps you and won't let the waves move at all, please reach out to a professional. There is no shame in needing a hand to carry it.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "If you are grieving right now, I want you to hear this clearly. There is nothing wrong with you. You are not broken, or behind, or doing it wrong. You are a person who loved someone, or something, and this is simply the shape that love takes when it has nowhere left to go.", "scene": "explainer", "prop": "grief-meaning", "emotion": "serious-expert" },
+        { "vo": "Be gentle with yourself. Let the waves come, and let them pass. And trust that, slowly, without ever forgetting, your life will grow soft and wide around this. The love doesn't end. It just learns to live inside you differently. You are not alone in this. I'm Dear Brain.", "scene": "explainer", "prop": "carry-grief", "emotion": "happy-talk" },
+        { "vo": "If this reached you today, maybe hold someone a little closer, or say a name out loud that you miss. And in the comments, you're welcome to share a memory of whoever brought you here. We'll hold it with you. Thank you for sitting with me through a hard one. I'm Dear Brain. Be gentle out there.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}

@@ -109,7 +109,10 @@ export type RoomName =
   | 'habit-studio'
   | 'impostor-office'
   | 'exposure-spotlight'
-  | 'reframe-desk';
+  | 'reframe-desk'
+  | 'grief-shore'
+  | 'memory-room'
+  | 'dawn-meadow';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3007,6 +3010,63 @@ export const ReframeDesk: React.FC = () => (
   </g>
 );
 
+/** Grief shore: a quiet sea under a parting sky — where the tide of grief comes
+ *  and goes, with a lone bench looking out. */
+export const GriefShore: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.06)} floor={shade(COLORS.wood, 0.1)} floorY={820} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.sky, 0.14)} />
+    {/* parting clouds + light */}
+    {[[320, 180], [1500, 160], [900, 120]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><ellipse rx={110} ry={44} fill={COLORS.white} {...lg} /><ellipse cx={72} cy={10} rx={74} ry={38} fill={COLORS.white} {...sm} /></g>)}
+    <circle cx={960} cy={260} r={70} fill={COLORS.yellowSoft} opacity={0.6} {...sm} />
+    {/* the sea */}
+    <rect x={0} y={520} width={CANVAS.width} height={300} fill={COLORS.blueDiagram} />
+    {Array.from({ length: 5 }).map((_, i) => <path key={i} d={`M 0 ${560 + i * 50} q 240 -26 480 0 q 240 26 480 0 q 240 -26 480 0 q 240 26 480 0`} fill="none" stroke={shade(COLORS.blueDiagram, 0.14)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    <path d="M 0 820 Q 480 780 960 820 Q 1440 850 1920 800 L 1920 1080 L 0 1080 Z" fill={shade(COLORS.wood, 0.14)} />
+    {/* a lone bench facing the sea */}
+    <g transform="translate(1480 880)"><rect x={-80} y={-18} width={160} height={16} rx={4} fill={COLORS.woodDark} {...lg} /><rect x={-80} y={-72} width={160} height={16} rx={4} fill={COLORS.woodDark} {...lg} /><rect x={-66} y={-2} width={14} height={56} fill={COLORS.woodDark} /><rect x={52} y={-2} width={14} height={56} fill={COLORS.woodDark} /></g>
+  </g>
+);
+
+/** Memory room: a tender space of someone loved and lost — framed photos, an
+ *  empty chair, a candle and soft window light. */
+export const MemoryRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, 0.04)} floor={COLORS.wood} floorY={760} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={200} fill={shade(COLORS.lavender, 0.06)} />
+    {/* wall of framed photos */}
+    {([[280, 220, COLORS.sky], [470, 180, COLORS.pink], [410, 360, COLORS.greenLeaf], [1540, 230, COLORS.yellowSoft]] as [number, number, string][]).map(([x, y, c], i) => (
+      <g key={i} transform={`translate(${x} ${y}) rotate(${i % 2 ? 3 : -3})`}><rect x={-60} y={-54} width={120} height={108} rx={8} fill={COLORS.bgCream} {...xl} /><circle cx={0} cy={-8} r={24} fill={c} {...sm} /><path d="M -46 46 Q 0 6 46 46 Z" fill={c} {...sm} /></g>
+    ))}
+    {/* soft window */}
+    <g transform="translate(960 280)"><rect x={-130} y={-150} width={260} height={280} rx={14} fill={shade(COLORS.yellowSoft, 0.1)} {...xl} /><circle cx={0} cy={20} r={56} fill={COLORS.yellowSoft} opacity={0.7} /><line x1={-130} y1={-10} x2={130} y2={-10} stroke={COLORS.lavenderDark} strokeWidth={STROKE.lg} /><line x1={0} y1={-150} x2={0} y2={130} stroke={COLORS.lavenderDark} strokeWidth={STROKE.lg} /></g>
+    {/* empty armchair */}
+    <g transform="translate(560 640)"><rect x={-110} y={-30} width={220} height={130} rx={24} fill={COLORS.red} {...xl} /><rect x={-150} y={-10} width={60} height={130} rx={22} fill={shade(COLORS.red, 0.12)} {...lg} /><rect x={90} y={-10} width={60} height={130} rx={22} fill={shade(COLORS.red, 0.12)} {...lg} /><rect x={-90} y={-110} width={180} height={90} rx={22} fill={shade(COLORS.red, 0.06)} {...xl} /></g>
+    {/* side table + candle */}
+    <g transform="translate(1340 680)"><rect x={-44} y={0} width={88} height={90} rx={8} fill={COLORS.wood} {...lg} /><circle cx={0} cy={-30} r={30} fill={COLORS.yellowSoft} opacity={0.5} /><rect x={-14} y={-24} width={28} height={40} rx={6} fill={COLORS.white} {...sm} /><path d="M 0 -40 Q 8 -30 0 -22 Q -8 -30 0 -40 Z" fill={COLORS.yellow} {...sm} /></g>
+  </g>
+);
+
+/** Dawn meadow: a gentle field at first light — flowers, a tree and a candle of
+ *  remembrance, where meaning and new growth begin. */
+export const DawnMeadow: React.FC = () => (
+  <g>
+    <rect x={0} y={0} width={CANVAS.width} height={CANVAS.height} fill={COLORS.yellowSoft} />
+    <rect x={0} y={0} width={CANVAS.width} height={400} fill={shade(COLORS.pink, 0.16)} opacity={0.4} />
+    {/* rising sun + rays */}
+    <circle cx={960} cy={420} r={120} fill={COLORS.yellow} {...sm} />
+    {Array.from({ length: 16 }).map((_, i) => <line key={i} x1={960} y1={420} x2={960} y2={180} stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.25} transform={`rotate(${i * 22.5} 960 420)`} strokeLinecap="round" />)}
+    {/* ground */}
+    <path d="M 0 720 Q 480 660 960 720 Q 1440 780 1920 700 L 1920 1080 L 0 1080 Z" fill={COLORS.greenLeaf} {...xl} />
+    {/* a lone tree */}
+    <g transform="translate(360 680)"><rect x={-26} y={-120} width={52} height={200} rx={12} fill={COLORS.woodDark} {...xl} /><circle cx={0} cy={-170} r={100} fill={shade(COLORS.greenLeaf, -0.04)} {...xl} /><circle cx={-60} cy={-130} r={64} fill={shade(COLORS.greenLeaf, 0.08)} {...lg} /><circle cx={60} cy={-130} r={64} fill={shade(COLORS.greenLeaf, 0.08)} {...lg} /></g>
+    {/* flowers */}
+    {[1180, 1340, 1500, 1640].map((x, i) => <g key={i} transform={`translate(${x} ${820 - (i % 2) * 30})`}><rect x={-3} y={0} width={6} height={50} fill={COLORS.greenDark} />{[0, 72, 144, 216, 288].map((a) => <ellipse key={a} cx={0} cy={-8} rx={7} ry={12} fill={[COLORS.pink, COLORS.red, COLORS.sky, COLORS.lavender][i % 4]} {...sm} transform={`rotate(${a})`} />)}<circle cy={-8} r={6} fill={COLORS.yellowDark} /></g>)}
+    {/* candle of remembrance on a small stone */}
+    <g transform="translate(1340 760)"><ellipse cx={0} cy={60} rx={60} ry={18} fill={shade(COLORS.ledGrey, 0.1)} {...lg} /><circle cx={0} cy={-6} r={40} fill={COLORS.yellowSoft} opacity={0.5} /><rect x={-16} y={0} width={32} height={50} rx={6} fill={COLORS.white} {...lg} /><path d="M 0 -18 Q 10 -4 0 8 Q -10 -4 0 -18 Z" fill={COLORS.yellow} {...sm} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3101,6 +3161,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'impostor-office': ImpostorOffice,
   'exposure-spotlight': ExposureSpotlight,
   'reframe-desk': ReframeDesk,
+  'grief-shore': GriefShore,
+  'memory-room': MemoryRoom,
+  'dawn-meadow': DawnMeadow,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

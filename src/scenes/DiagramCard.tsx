@@ -2993,8 +2993,83 @@ const FeelingsVsFacts: React.FC = () => {
   );
 };
 
+/** five-stages: the classic (Kübler-Ross) five stages. */
+const FiveStages: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const stages: [string, string][] = [['DENIAL', COLORS.sky], ['ANGER', COLORS.red], ['BARGAINING', COLORS.yellowDark], ['DEPRESSION', COLORS.blueDiagram], ['ACCEPTANCE', COLORS.greenLeaf]];
+  return (
+    <g>
+      {stages.map(([lab, c], i) => {
+        const p = springIn(frame - i * 7, 10); const y = cy - 170 + i * 86;
+        return (
+          <g key={lab} transform={`translate(${cx} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <circle cx={-170} cy={0} r={34} fill={c} {...lg} /><text x={-170} y={10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>{i + 1}</text>
+            <text x={-116} y={10} fontFamily={fontFamily} fontWeight={800} fontSize={32} fill={COLORS.outline}>{lab}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 270} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>a map, not a checklist</text>
+    </g>
+  );
+};
+
+/** grief-not-linear: the tidy myth vs the tangled reality. */
+const GriefNotLinear: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.42;
+  return (
+    <g>
+      <text x={cx} y={cy - 120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>THE MYTH</text>
+      <line x1={cx - 200} y1={cy - 70} x2={cx + 180} y2={cy - 70} stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <path d={`M ${cx + 180} ${cy - 70} l -16 -10 l 0 20 Z`} fill={COLORS.greenLeaf} />
+      <text x={cx} y={cy + 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>THE REALITY</text>
+      <path d={`M ${cx - 200} ${cy + 90} q 60 -80 100 0 q 40 80 90 -10 q 30 -60 80 30 q 20 50 60 -30`} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <path d={`M ${cx + 160} ${cy + 60} l 4 -18 l -18 8 Z`} fill={COLORS.red} />
+      <text x={cx} y={cy + 190} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>you loop back, and that's normal</text>
+    </g>
+  );
+};
+
+/** grief-waves-time: intensity comes in waves that slowly space out. */
+const GriefWavesTime: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const W = 460;
+  const x0 = cx - W / 2, y0 = cy + 80;
+  const pts = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; const x = x0 + t * W; const env = 150 * Math.exp(-t * 1.6) + 20; const y = y0 - Math.abs(Math.sin(i / (3 + t * 10))) * env; return `${x},${y}`; });
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + W} y2={y0} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <polyline points={pts.join(' ')} fill="none" stroke={COLORS.blueDiagram} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <text x={x0 + 20} y={y0 - 160} fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>intensity</text>
+      <text x={x0 + W - 40} y={y0 + 34} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>time →</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the waves come further apart</text>
+    </g>
+  );
+};
+
+/** grief-grows-around: grief stays; your life grows around it. */
+const GriefGrowsAround: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44;
+  const grow = springIn(frame, 40);
+  const Panel = ({ x, outerR, lab }: { x: number; outerR: number; lab: string }) => (
+    <g transform={`translate(${x} ${cy})`}>
+      <circle r={outerR} fill={shade(COLORS.greenLeaf, 0.2)} {...xl} />
+      <circle r={58} fill={COLORS.blueDiagram} {...lg} />
+      <text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.white}>grief</text>
+      <text x={0} y={outerR + 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{lab}</text>
+    </g>
+  );
+  return (
+    <g>
+      <Panel x={cx - 180} outerR={72} lab="at first" />
+      <Panel x={cx + 180} outerR={72 + 90 * grow} lab="in time" />
+      <text x={cx} y={cy - 190} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>grief stays — you grow around it</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3116,6 +3191,10 @@ export const DiagramCard: React.FC<{
     'competence-confidence-gap': COLORS.greenLeaf,
     'five-types': COLORS.lavender,
     'feelings-vs-facts': COLORS.greenLeaf,
+    'five-stages': COLORS.sky,
+    'grief-not-linear': COLORS.lavender,
+    'grief-waves-time': COLORS.sky,
+    'grief-grows-around': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3244,6 +3323,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'competence-confidence-gap' && <CompetenceConfidenceGap />}
         {diagram === 'five-types' && <FiveTypes />}
         {diagram === 'feelings-vs-facts' && <FeelingsVsFacts />}
+        {diagram === 'five-stages' && <FiveStages />}
+        {diagram === 'grief-not-linear' && <GriefNotLinear />}
+        {diagram === 'grief-waves-time' && <GriefWavesTime />}
+        {diagram === 'grief-grows-around' && <GriefGrowsAround />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />
