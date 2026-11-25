@@ -32,6 +32,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 24 | Every Type of Love Explained | `types-of-love` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45510382101 | ✅ render OK |
 | 25 | The Psychology of Charisma | `psychology-of-charisma` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45514535186 | ✅ render OK |
 | 26 | The Psychology of Habits | `psychology-of-habits` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45518169854 | ✅ render OK |
-| 27 | Impostor Syndrome: Why You Feel Like a Fraud | `impostor-syndrome` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45521807676 | ⏳ rendering |
+| 27 | Impostor Syndrome: Why You Feel Like a Fraud | `impostor-syndrome` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45521807676 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
