@@ -37,5 +37,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 29 | The Psychology of Happiness | `psychology-of-happiness` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45528546390 | ✅ render OK |
 | 30 | Why You Can't Stop Thinking About Someone | `cant-stop-thinking` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45530115639 | ✅ render OK |
 | 31 | Why You Can Feel Someone Watching You | `feeling-watched` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45531635923 | ⏳ rendering |
+| 32 | The Psychology of People Who Cry Easily | `cry-easily` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45533180857 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
