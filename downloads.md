@@ -67,6 +67,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 59 | Every Way Your Memory Lies to You | `memory-lies` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45573643791 | ✅ render OK |
 | 60 | Every Psychological Experiment Explained | `psychology-experiments` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45575814766 | ✅ render OK |
 | 61 | Why Your Brain Feels Foggy | `brain-fog` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45579769443 | ✅ render OK |
-| 62 | Every Type of Lie Explained | `types-of-lie` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45583450647 | ⏳ rendering |
+| 62 | Every Type of Lie Explained | `types-of-lie` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45583450647 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
