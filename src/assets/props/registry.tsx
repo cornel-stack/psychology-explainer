@@ -39,6 +39,7 @@ import * as Gr from './grief';
 import * as Ha from './happiness';
 import * as Th from './thinking';
 import * as Wa from './watched';
+import * as Cr from './crying';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -478,6 +479,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'hit-miss-tally': Wa.HitMissTally,
   'spotlight-self': Wa.SpotlightSelf,
   'all-clear': Wa.AllClear,
+  // cry-easily emblems (all new)
+  'welling-eye': Cr.WellingEye,
+  'overflow-cup': Cr.OverflowCup,
+  'sensitive-antenna': Cr.SensitiveAntenna,
+  'empathy-mirror': Cr.EmpathyMirror,
+  'tear-signal': Cr.TearSignal,
+  'vagal-calm': Cr.VagalCalm,
+  'happy-tears': Cr.HappyTears,
+  'held-back': Cr.HeldBack,
+  'kind-tissue': Cr.KindTissue,
+  'cry-permission': Cr.CryPermission,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

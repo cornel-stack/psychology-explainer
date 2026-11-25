@@ -121,7 +121,10 @@ export type RoomName =
   | 'open-doorway'
   | 'library-stacks'
   | 'night-platform'
-  | 'sunny-park';
+  | 'sunny-park'
+  | 'movie-night-couch'
+  | 'rainy-window-seat'
+  | 'wedding-hall';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3312,6 +3315,91 @@ export const SunnyPark: React.FC = () => (
   </g>
 );
 
+/** Movie-night couch: a cosy lounge with a glowing TV playing a tearjerker, a
+ *  tissue box at the ready — where the welling-up begins. */
+export const MovieNightCouch: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.04)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={i * 200} y={0} width={100} height={840} fill={shade(COLORS.purpleDeep, -0.03)} opacity={0.5} />)}
+    {/* the big glowing TV with a sad scene */}
+    <g transform="translate(430 360)">
+      <rect x={-260} y={-150} width={520} height={310} rx={16} fill={COLORS.outline} {...xl} />
+      <rect x={-240} y={-130} width={480} height={270} rx={8} fill={shade(COLORS.sky, 0.08)} />
+      <ellipse cx={-120} cy={120} rx={360} ry={120} fill={COLORS.skyEnd} opacity={0.12} />
+      {/* two little figures parting on screen */}
+      {[-90, 70].map((x, i) => <g key={i} transform={`translate(${x} 40)`}><circle cx={0} cy={-40} r={34} fill={[COLORS.pink, COLORS.lavender][i]} {...lg} /><path d={`M -42 100 Q 0 -4 42 100 Z`} fill={shade([COLORS.pink, COLORS.lavender][i], 0.1)} {...lg} /></g>)}
+      <path d="M -40 10 q 8 10 0 24 M 40 14 q 8 10 0 24" stroke={COLORS.sky} strokeWidth={STROKE.sm} strokeLinecap="round" fill="none" />
+      <text x={0} y={-96} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={24} fill={COLORS.white} opacity={0.6}>...goodbye</text>
+    </g>
+    {/* TV stand */}
+    <rect x={240} y={520} width={380} height={30} rx={8} fill={COLORS.wood} {...lg} />
+    {/* a plump couch on the right */}
+    <g transform="translate(1380 800)">
+      <rect x={-320} y={-60} width={640} height={200} rx={28} fill={COLORS.hoodie} {...xl} />
+      <rect x={-320} y={-130} width={150} height={120} rx={24} fill={shade(COLORS.hoodie, 0.1)} {...lg} />
+      <rect x={170} y={-130} width={150} height={120} rx={24} fill={shade(COLORS.hoodie, 0.1)} {...lg} />
+      {[-150, 40].map((x, i) => <rect key={i} x={x} y={-40} width={120} height={120} rx={20} fill={shade(COLORS.hoodie, 0.14)} {...lg} />)}
+      <rect x={-120} y={-20} width={80} height={70} rx={14} fill={COLORS.pink} {...lg} transform="rotate(-8 -80 10)" />
+    </g>
+    {/* side table with a tissue box + lamp glow */}
+    <g transform="translate(900 860)"><rect x={-60} y={0} width={120} height={120} rx={8} fill={COLORS.wood} {...xl} /><rect x={-44} y={-34} width={88} height={40} rx={8} fill={COLORS.pink} {...lg} /><path d="M -10 -34 Q 0 -60 10 -34 Z" fill={COLORS.white} {...sm} /></g>
+    {/* a floor lamp */}
+    <g transform="translate(1800 620)"><rect x={-6} y={0} width={12} height={240} fill={COLORS.woodDark} /><path d="M -46 0 L 46 0 L 30 -70 L -30 -70 Z" fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={60} rx={70} ry={20} fill={COLORS.yellowSoft} opacity={0.3} /></g>
+  </g>
+);
+
+/** Rainy window seat: a quiet nook by a rain-streaked window with a warm mug —
+ *  the reflective, tender place where feelings rise. */
+export const RainyWindowSeat: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={COLORS.wood} floorY={860} stripe={false} />
+    <rect x={0} y={600} width={CANVAS.width} height={260} fill={shade(COLORS.lavender, 0.07)} />
+    {/* big window with a grey rainy sky */}
+    <g transform="translate(960 420)">
+      <rect x={-420} y={-360} width={840} height={620} rx={18} fill={shade(COLORS.sky, -0.12)} {...xl} />
+      <rect x={-400} y={-340} width={820} height={580} rx={10} fill={shade(COLORS.sky, 0.0)} />
+      {/* distant soft hills */}
+      <path d="M -400 180 Q -120 90 160 170 Q 360 220 420 160 L 420 240 L -400 240 Z" fill={shade(COLORS.greenDark, 0.14)} opacity={0.5} />
+      {/* rain streaks */}
+      {Array.from({ length: 26 }).map((_, i) => <line key={i} x1={-390 + i * 32} y1={-330} x2={-402 + i * 32} y2={230} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.35} />)}
+      {/* trickling drops on the glass */}
+      {[[-300, -120], [-120, 40], [160, -200], [280, 90], [40, -60]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q -7 10 0 18 q 7 -8 0 -18 Z`} fill={COLORS.white} opacity={0.5} />)}
+      {/* mullions */}
+      <line x1={0} y1={-340} x2={0} y2={240} stroke={shade(COLORS.sky, -0.12)} strokeWidth={STROKE.lg} /><line x1={-400} y1={-50} x2={420} y2={-50} stroke={shade(COLORS.sky, -0.12)} strokeWidth={STROKE.lg} />
+    </g>
+    {/* a window-seat bench with cushion */}
+    <g transform="translate(960 900)"><rect x={-460} y={-20} width={920} height={60} rx={10} fill={COLORS.woodDark} {...xl} /><rect x={-440} y={-54} width={900} height={44} rx={16} fill={COLORS.pink} {...lg} /></g>
+    {/* a steaming mug on the sill */}
+    <g transform="translate(560 640)"><rect x={-30} y={-34} width={60} height={56} rx={10} fill={COLORS.white} {...lg} /><path d="M 30 -22 q 28 6 0 34" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} /><path d="M -12 -48 q -8 -12 0 -22 M 10 -48 q -8 -12 0 -22" fill="none" stroke={COLORS.whiteShade} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.7} /></g>
+    {/* a trailing plant */}
+    <g transform="translate(1480 560)"><rect x={-30} y={0} width={60} height={70} rx={10} fill={COLORS.greenTeal} {...lg} /><path d="M 0 0 q -50 50 -70 120 M 0 0 q 50 50 70 110 M 0 0 q 0 60 0 120" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+  </g>
+);
+
+/** Wedding hall: rows of chairs, a flower arch and drifting confetti — the moving
+ *  ceremony where even the composed well up (happy tears). */
+export const WeddingHall: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.1)} floor={COLORS.wood} floorY={800} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={240} fill={shade(COLORS.yellowDark, 0.05)} />
+    {/* bunting across the top */}
+    <path d="M 0 60 Q 480 150 960 70 Q 1440 0 1920 80" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 11 }).map((_, i) => <path key={i} d={`M ${90 + i * 174} ${96 + 26 * Math.sin(i)} l 22 0 l -11 24 Z`} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.lavender][i % 4]} {...sm} />)}
+    {/* flower arch at the far end */}
+    <g transform="translate(960 360)">
+      <path d="M -180 300 L -180 0 A 180 180 0 0 1 180 0 L 180 300" fill="none" stroke={COLORS.wood} strokeWidth={STROKE.xl} />
+      {Array.from({ length: 14 }).map((_, i) => { const a = Math.PI * (i / 13); const x = Math.cos(Math.PI - a) * 180; const y = -Math.sin(a) * 180; return <circle key={i} cx={x} cy={y} r={20} fill={[COLORS.pink, COLORS.white, COLORS.yellow][i % 3]} {...sm} />; })}
+      {[[-180, 60], [-180, 180], [180, 60], [180, 180]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={16} fill={COLORS.greenLeaf} {...sm} />)}
+      {/* two little figures under the arch */}
+      {[-50, 50].map((x, i) => <g key={i} transform={`translate(${x} 150)`}><circle cx={0} cy={-30} r={30} fill={[COLORS.white, COLORS.lavender][i]} {...lg} /><path d={`M -36 150 Q 0 -4 36 150 Z`} fill={shade([COLORS.white, COLORS.lavender][i], 0.08)} {...lg} /></g>)}
+    </g>
+    {/* rows of guest chairs with an aisle */}
+    {[720, 860, 1000].map((y, r) => [1, 1, 1, 0, 0, 1, 1, 1].map((on, i) => on ? <g key={`${r}-${i}`} transform={`translate(${150 + i * 230} ${y})`}><rect x={-40} y={-50} width={80} height={60} rx={8} fill={shade(COLORS.wood, 0.08)} {...lg} /><rect x={-40} y={-50} width={80} height={16} rx={6} fill={[COLORS.pink, COLORS.sky, COLORS.lavender][r]} /></g> : null))}
+    {/* drifting confetti */}
+    {[[300, 300], [600, 220], [1300, 260], [1650, 320], [900, 180]].map(([x, y], i) => <rect key={i} x={x} y={y} width={14} height={14} rx={3} fill={[COLORS.pink, COLORS.yellow, COLORS.sky, COLORS.lavender, COLORS.greenLeaf][i]} transform={`rotate(${i * 40} ${x} ${y})`} />)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3418,6 +3506,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'library-stacks': LibraryStacks,
   'night-platform': NightPlatform,
   'sunny-park': SunnyPark,
+  'movie-night-couch': MovieNightCouch,
+  'rainy-window-seat': RainyWindowSeat,
+  'wedding-hall': WeddingHall,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

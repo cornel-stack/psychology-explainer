@@ -3329,8 +3329,91 @@ const VigilanceDial: React.FC = () => {
   );
 };
 
+/** overflow-threshold: feeling rises to a cry-line; a lower line spills sooner. */
+const OverflowThreshold: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5; const W = 440;
+  const x0 = cx - W / 2; const base = cy + 90;
+  const level = base - (60 + 90 * (0.5 + 0.5 * Math.sin(frame / 20)));
+  const column = (gx: number, lineY: number, lab: string, c: string) => (
+    <g>
+      <rect x={gx - 40} y={base - 230} width={80} height={230} rx={10} fill={shade(COLORS.white, 0.1)} {...lg} />
+      <rect x={gx - 36} y={level} width={72} height={base - level - 4} rx={6} fill={COLORS.sky} opacity={0.85} />
+      <line x1={gx - 54} y1={lineY} x2={gx + 54} y2={lineY} stroke={COLORS.red} strokeWidth={STROKE.lg} strokeDasharray="8 6" />
+      <text x={gx} y={base - 250} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{lab}</text>
+      {level < lineY && <text x={gx} y={lineY - 10} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.red}>tears</text>}
+    </g>
+  );
+  return (
+    <g>
+      {column(cx - 130, base - 190, 'high threshold', COLORS.sky)}
+      {column(cx + 130, base - 110, 'low threshold', COLORS.sky)}
+      <text x={cx - 220} y={base + 30} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={13} fill={COLORS.red}>cry-line</text>
+      <text x={cx} y={cy - 170} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>same feeling, different cry-line</text>
+    </g>
+  );
+};
+
+/** sensitivity-spectrum: everyone sits on a line; ~20% are highly sensitive. */
+const SensitivitySpectrum: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 520;
+  const x0 = cx - W / 2;
+  return (
+    <g>
+      <rect x={x0} y={cy - 16} width={W} height={32} rx={16} fill={COLORS.lavender} {...lg} />
+      <rect x={x0 + W * 0.8} y={cy - 16} width={W * 0.2} height={32} rx={16} fill={COLORS.pink} />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => { const x = x0 + 30 + i * ((W - 60) / 7); const high = x > x0 + W * 0.8; return <circle key={i} cx={x} cy={cy} r={high ? 18 : 13} fill={high ? COLORS.pink : COLORS.white} {...sm} />; })}
+      <text x={x0} y={cy + 56} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>less sensitive</text>
+      <text x={x0 + W} y={cy + 56} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>highly sensitive</text>
+      <text x={x0 + W * 0.9} y={cy - 44} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.pinkDark}>~1 in 5</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a normal trait, not a flaw</text>
+    </g>
+  );
+};
+
+/** tears-three-jobs: the three jobs of emotional tears. */
+const TearsThreeJobs: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const jobs: [string, string, string][] = [['SIGNAL', 'I need you', COLORS.sky], ['RELEASE', 'settle me', COLORS.greenLeaf], ['BOND', 'draw us close', COLORS.pink]];
+  return (
+    <g>
+      {jobs.map(([lab, sub, c], i) => {
+        const p = springIn(frame - i * 6, 14); const x = cx - 220 + i * 220;
+        return (
+          <g key={i} transform={`translate(${x} ${cy}) scale(${0.7 + 0.3 * p})`}>
+            <path d="M 0 -62 q -30 40 0 74 q 30 -34 0 -74 Z" fill={c} {...lg} />
+            <ellipse cx={-9} cy={-10} rx={8} ry={14} fill={COLORS.white} opacity={0.6} />
+            <text x={0} y={104} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>{lab}</text>
+            <text x={0} y={128} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>{sub}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>what emotional tears do</text>
+    </g>
+  );
+};
+
+/** being-moved-curve: joy climbs so high it spills over as tears too. */
+const BeingMovedCurve: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 460; const H = 180;
+  const x0 = cx - W / 2; const base = cy + H / 2;
+  const pts = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; return `${x0 + t * W},${base - H * Math.pow(t, 1.4)}`; });
+  return (
+    <g>
+      <line x1={x0 - 10} y1={base} x2={x0 + W + 10} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <line x1={x0} y1={base + 10} x2={x0} y2={base - H - 30} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <polyline points={pts.join(' ')} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <text x={x0 - 12} y={base - H - 14} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>overwhelming joy</text>
+      {/* tears spilling at the peak */}
+      <g transform={`translate(${x0 + W} ${base - H + 10})`}><path d="M 0 0 q -9 12 0 22 q 9 -10 0 -22 Z" fill={COLORS.sky} {...sm} /><path d="M 18 8 q -7 10 0 18 q 7 -8 0 -18 Z" fill={COLORS.sky} {...sm} /></g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>joy can spill over as tears</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3468,6 +3551,10 @@ export const DiagramCard: React.FC<{
     'hit-miss-bias': COLORS.red,
     'watch-feedback-loop': COLORS.lavender,
     'vigilance-dial': COLORS.yellow,
+    'overflow-threshold': COLORS.sky,
+    'sensitivity-spectrum': COLORS.lavender,
+    'tears-three-jobs': COLORS.pink,
+    'being-moved-curve': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3612,6 +3699,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'hit-miss-bias' && <HitMissBias />}
         {diagram === 'watch-feedback-loop' && <WatchFeedbackLoop />}
         {diagram === 'vigilance-dial' && <VigilanceDial />}
+        {diagram === 'overflow-threshold' && <OverflowThreshold />}
+        {diagram === 'sensitivity-spectrum' && <SensitivitySpectrum />}
+        {diagram === 'tears-three-jobs' && <TearsThreeJobs />}
+        {diagram === 'being-moved-curve' && <BeingMovedCurve />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

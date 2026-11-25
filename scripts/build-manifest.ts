@@ -149,6 +149,10 @@ const NEW_ASSETS = new Set([
   'library-stacks', 'night-platform', 'sunny-park',
   'neck-prickle', 'eye-radar', 'sclera-eyes', 'peripheral-catch', 'stare-alarm', 'sixth-sense-myth', 'turn-and-look', 'hit-miss-tally', 'spotlight-self', 'all-clear',
   'gaze-detector', 'hit-miss-bias', 'watch-feedback-loop', 'vigilance-dial',
+  // cry-easily (all new)
+  'movie-night-couch', 'rainy-window-seat', 'wedding-hall',
+  'welling-eye', 'overflow-cup', 'sensitive-antenna', 'empathy-mirror', 'tear-signal', 'vagal-calm', 'happy-tears', 'held-back', 'kind-tissue', 'cry-permission',
+  'overflow-threshold', 'sensitivity-spectrum', 'tears-three-jobs', 'being-moved-curve',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

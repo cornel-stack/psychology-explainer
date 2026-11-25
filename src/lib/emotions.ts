@@ -67,7 +67,8 @@ export type EmotionName =
   | 'terrified'
   | 'annoyed'
   | 'smug'
-  | 'serious-expert';
+  | 'serious-expert'
+  | 'tearful';
 
 export const EMOTIONS: Record<EmotionName, EmotionSpec> = {
   neutral: { eyes: 'oval', brows: 'flat', mouth: 'smile-sm', extra: 'none', talkBias: 0.1 },
@@ -81,6 +82,8 @@ export const EMOTIONS: Record<EmotionName, EmotionSpec> = {
   // smug = one raised brow + side smirk; serious-expert = heavy stern brows + talk
   smug: { eyes: 'oval', brows: 'smug', mouth: 'smirk', extra: 'none', talkBias: 0.12 },
   'serious-expert': { eyes: 'open', brows: 'stern', mouth: 'talk', extra: 'none', talkBias: 0.2 },
+  // tearful = soft half-lidded eyes, worried brows, wavy trembling mouth
+  tearful: { eyes: 'half', brows: 'worried', mouth: 'wavy', extra: 'none', talkBias: 0.15 },
 };
 
 export const resolveEmotion = (name: EmotionName): EmotionSpec =>

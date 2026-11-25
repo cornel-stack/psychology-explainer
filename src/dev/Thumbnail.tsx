@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'cry-easily': {
+    A: { lines: ['THE', 'PSYCHOLOGY OF', 'CRYING EASILY'], accent: COLORS.sky, bg: COLORS.lavenderDark, emotion: 'tearful', textColor: COLORS.white, badge: '!', prop: 'welling-eye' },
+    B: { lines: ['CRYING', "ISN'T", 'WEAKNESS'], accent: COLORS.pink, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '♥', prop: 'overflow-cup' },
+    C: { lines: ['WHY YOU', 'CRY AT', 'EVERYTHING'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'happy-tears' },
+  },
   'feeling-watched': {
     A: { lines: ['WHY YOU', 'FEEL SOMEONE', 'WATCHING YOU'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'terrified', textColor: COLORS.white, badge: '!', prop: 'neck-prickle' },
     B: { lines: ['IS IT A', 'SIXTH', 'SENSE?'], accent: COLORS.lavender, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'sixth-sense-myth' },
