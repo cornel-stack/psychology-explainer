@@ -70,6 +70,7 @@ import * as Ml from './memory-lies';
 import * as Ex from './experiments';
 import * as Bf from './brain-fog';
 import * as Li from './lies';
+import * as Fr2 from './friends-types';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -836,6 +837,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'compulsive-nose': Li.CompulsiveNose,
   'broken-promise': Li.BrokenPromise,
   'self-deception': Li.SelfDeception,
+  'ride-or-die': Fr2.RideOrDie,
+  'cheerleader': Fr2.Cheerleader,
+  'mentor-guide': Fr2.MentorGuide,
+  'old-friend': Fr2.OldFriend,
+  'work-friend': Fr2.WorkFriend,
+  'fair-weather': Fr2.FairWeather,
+  'mirror-friend': Fr2.MirrorFriend,
+  'acquaintance-wave': Fr2.AcquaintanceWave,
+  'adventure-buddy': Fr2.AdventureBuddy,
+  'drainer-friend': Fr2.DrainerFriend,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

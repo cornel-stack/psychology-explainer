@@ -1,0 +1,342 @@
+{
+  "title": "Every Type of Friend Explained",
+  "slug": "types-of-friend",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Picture the people you'd call your friends. Now notice something: they're not all the same kind of friend, are they? There's the one you'd call at 3am. The one who hypes you up. The one you only ever see at work. And the one who, if you're honest, leaves you feeling a drained. We tend to lump them all under one word.",
+          "scene": "story",
+          "room": "friends-hangout",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "EVERY TYPE OF FRIEND",
+          "subtitle": "explained",
+          "mascots": [
+            {
+              "costume": "tee",
+              "pose": "wave",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "And this matters more than you'd think. The famous Harvard Study of Adult Development tracked people for over eighty years, and found that the single biggest predictor of a long, happy life wasn't money or fame. It was the quality of your relationships. Good friends are, quite literally, good for your health.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, let's sort them all out. Every major type of friend, from the ride-or-die to the energy drainer, why you need a whole variety of them, the surprising science of how friendships actually form, and why a few deep ones beat a hundred shallow ones. Grab your group chat. Let's meet your friends.",
+          "scene": "explainer",
+          "prop": "ride-or-die",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Friendship in Layers",
+      "beats": [
+        {
+          "vo": "First, a bit of structure. Anthropologist Robin Dunbar discovered that we don't hold all our friends at the same distance. We keep them in nested layers, like rings around us.",
+          "scene": "diagramCard",
+          "diagram": "friendship-circles",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "FRIENDSHIP IN LAYERS",
+          "subtitle": "the rings around you"
+        },
+        {
+          "vo": "At the centre is a tiny support clique of around five people, your absolute closest. Then a sympathy group of about fifteen good friends, a wider band of fifty, and out to the famous Dunbar's number of roughly a hundred and fifty people we can hold a real relationship with.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And people constantly move between these rings. A best friend can slowly drift out to the edges, and a casual acquaintance can be pulled right into the centre. Knowing this helps you be intentional. Who do you want in your inner five? Because those spots are limited, and precious, and the people in them are the ones most worth your time.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Inner Circle",
+      "beats": [
+        {
+          "vo": "So let's meet the friends in those inner rings, starting with the most precious of all: the ride-or-die. This is your person. The one who shows up in a crisis, no questions asked, at any hour.",
+          "scene": "explainer",
+          "prop": "ride-or-die",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE INNER CIRCLE",
+          "subtitle": "your person"
+        },
+        {
+          "vo": "They've seen you at your absolute worst and love you anyway. You don't perform for them, you don't have to explain yourself, and silence with them is comfortable, not awkward. If you have even one or two of these in your whole life, you are genuinely, deeply rich. Guard them with everything you've got.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Close behind is the cheerleader. The friend whose superpower is belief. They celebrate your wins louder than you do, they talk you up when you're doubting yourself, and they send the message that just says, you've got this. On a grey day, they're sunshine, and everyone needs a little of that energy in their corner.",
+          "scene": "explainer",
+          "prop": "cheerleader",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "What makes inner-circle friendships so deep is one thing: vulnerability. The willingness to be truly seen, flaws and fears and all, and accepted anyway. It's a little scary, which is why we only risk it with a few people. But that mutual letting-down of the guard is what turns an acquaintance into someone who feels like family.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Guides and the History",
+      "beats": [
+        {
+          "vo": "Then there's the mentor. Usually a bit older or wiser, this is the friend you go to for perspective. They've walked the road ahead of you, and they offer guidance without judgement, a steady hand that helps you see the bigger picture when you're lost in the weeds.",
+          "scene": "explainer",
+          "prop": "mentor-guide",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "GUIDES AND HISTORY",
+          "subtitle": "wisdom and roots"
+        },
+        {
+          "vo": "And its beautiful opposite: the old friend. The one who knew you before you became who you are now. You might only speak twice a year, but the second you do, you pick up exactly where you left off, as if no time has passed. They are a living link to your own history, and there's no replacing that.",
+          "scene": "explainer",
+          "prop": "old-friend",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "There's a particular comfort in a friend who remembers the person you used to be. They hold your embarrassing haircuts, your old dreams, the version of you that no new friend will ever meet. In a life that keeps changing, the old friend is an anchor to where you came from, and sometimes.",
+          "scene": "story",
+          "room": "rooftop-hang",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Context Friends",
+      "beats": [
+        {
+          "vo": "Next, a friend defined entirely by a shared situation: the work friend. This is the ally who makes the daily grind survivable. The in-jokes, the knowing glance across a meeting, the lunch that keeps you sane.",
+          "scene": "explainer",
+          "prop": "work-friend",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE CONTEXT FRIENDS",
+          "subtitle": "allies of the everyday"
+        },
+        {
+          "vo": "The interesting question with the work friend is: would you still be friends if the context vanished? Sometimes, a true, lifelong friend is hiding inside a work friend. But often, they're beautifully specific to that shared world. And that's okay. Not every friendship needs to survive outside the place it was born.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Which brings us to a friend to be a little more careful with: the fair-weather friend. This is the one who's wonderful company when things are good, up for every celebration and sunny day. But when the storm clouds roll in, when you're in real trouble, you look around and somehow, they've quietly disappeared.",
+          "scene": "explainer",
+          "prop": "fair-weather",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "A quick, hopeful note on the fair-weather friend before we move on. Try not to be too bitter about them. Most aren't cruel, they just struggle with discomfort and don't know how to sit with someone else's pain. It simply means they're a good-times friend, not a crisis friend. Enjoy them for the sunshine, and look elsewhere for the storms.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The One Who Challenges You",
+      "beats": [
+        {
+          "vo": "Now a rarer and more valuable friend than most people realise: the mirror. This is the friend brave enough to tell you the truth you don't want to hear.",
+          "scene": "explainer",
+          "prop": "mirror-friend",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE ONE WHO CHALLENGES YOU",
+          "subtitle": "the honest mirror"
+        },
+        {
+          "vo": "They'll gently say, are you sure that's a good idea? They call you out when you're being unfair, and hold you to a higher standard. In the moment, it can sting. But the mirror friend is the one who actually helps you grow. A friend who only ever agrees with you is pleasant. A friend who makes you better is priceless.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The trick with the mirror friend is learning to receive it. When someone who loves you tells you a hard truth, the instinct is to get defensive. But try to pause, and ask yourself: is there something real in this? The friends willing to risk the awkward conversation for your sake are rare.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Lighter Ties",
+      "beats": [
+        {
+          "vo": "Not every friend has to be deep to matter. Take the acquaintance, the weak tie, the friendly neighbour, the regular at your gym, the person you always chat to at the school gate.",
+          "scene": "explainer",
+          "prop": "acquaintance-wave",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE LIGHTER TIES",
+          "subtitle": "small, but valuable"
+        },
+        {
+          "vo": "These light connections are quietly powerful. Research on weak ties shows they boost our mood, our sense of belonging, and even our opportunities. And then there's the pure joy of the adventure buddy, the friend who drags you out of your rut, who's always up for the road trip, the spontaneous plan, the thing you'd never do alone.",
+          "scene": "explainer",
+          "prop": "adventure-buddy",
+          "emotion": "excited"
+        },
+        {
+          "vo": "It's worth saying why all this matters so much right now. We are, by many measures, lonelier than ever, with shrinking friendship circles and fewer close confidants. In a world of a thousand online followers, real, in-person friendship has become something you have to choose, and protect, deliberately.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Drainer",
+      "beats": [
+        {
+          "vo": "And finally, a type we all need to be honest about: the drainer. The friend you leave feeling strangely exhausted, flat, and a little emptier than before.",
+          "scene": "explainer",
+          "prop": "drainer-friend",
+          "emotion": "tearful",
+          "chapterStart": true,
+          "title": "THE DRAINER",
+          "subtitle": "the one-way friend"
+        },
+        {
+          "vo": "With the drainer, the friendship is all one way. It's constant crisis, endless taking, and conversations that are only ever about them. Now, a good friend going through a genuinely hard time is not a drainer, that's just friendship. The drainer is the one for whom it's always like this, year after year, with nothing flowing back.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "You don't have to cut them off cold, but you are allowed to protect your energy with boundaries, and to notice where it's going. Because your friendships should, on the whole, fill you up, not constantly bleed you dry. Pay attention to how you feel after you see someone. Your body keeps a surprisingly honest score.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Built on Hours",
+      "beats": [
+        {
+          "vo": "So how do these friendships actually form? There's a lovely piece of research by Jeffrey Hall that puts a number on it. Closeness is built, quite simply, on accumulated hours together.",
+          "scene": "diagramCard",
+          "diagram": "hours-to-close",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "BUILT ON HOURS",
+          "subtitle": "the time it takes"
+        },
+        {
+          "vo": "It takes roughly fifty hours together to turn an acquaintance into a casual friend. Around ninety to become real friends. And over two hundred hours of shared time to become close. This is why making close friends as a busy adult feels so hard. It's not you.",
+          "scene": "story",
+          "room": "campfire-circle",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "The practical upshot is simple, and hopeful. If you want closer friends, you mostly just have to bank the hours, and the easiest way is through consistency. A standing weekly call, a regular walk, the same coffee every Friday. It's not grand gestures that build closeness.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Don't Ask One to Be All",
+      "beats": [
+        {
+          "vo": "Which leads to one of the most important lessons here. Because no single friend can possibly be all of these types at once. And expecting them to is a recipe for disappointment.",
+          "scene": "diagramCard",
+          "diagram": "friend-roles",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "DON'T ASK ONE TO BE ALL",
+          "subtitle": "you need variety"
+        },
+        {
+          "vo": "Your adventure buddy might be a terrible shoulder to cry on. Your deep, wise mentor might be no fun at a party. And that is fine. A healthy social life isn't one perfect best friend who does everything. It's a rich portfolio of different people, each meeting a different need.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is also the quiet cure for a lot of loneliness in relationships. Many people pour every single need into one person, a partner, a best friend, and then feel let down when that one human can't be everything. Spread the load across a few good people, and no single friendship has to carry a weight it was never built to hold.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "And one last, freeing idea. It is completely normal for friendships to fade, drift, and end as your lives move in different directions. A friendship ending isn't always a failure. Sometimes, people are simply friends for a season, and outgrowing one can be a healthy, natural part of life.",
+          "scene": "diagramCard",
+          "diagram": "few-deep",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "A FEW, DEEP",
+          "subtitle": "what really matters"
+        },
+        {
+          "vo": "And here's the question worth sitting with: which of these friends are you? Because every type we've met is a type you can choose to be for someone else. The ride-or-die who shows up. The cheerleader who believes in them. The mirror who loves them enough to be honest. Friendship isn't just about the friends you have.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So don't chase a huge crowd. In the end, a couple of deep, true friends who know you will always matter more than a hundred shallow ones. Tend your inner circle, invest the hours, cherish the variety, and gently notice the drainers. And above all, try to be, for someone else, the kind of friend you'd most want to have.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'types-of-friend': {
+    A: { lines: ['EVERY TYPE', 'OF FRIEND', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '10', prop: 'ride-or-die' },
+    B: { lines: ['WHICH FRIEND', 'ARE YOU IN', 'YOUR GROUP?'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'excited', textColor: COLORS.white, badge: '?', prop: 'cheerleader' },
+    C: { lines: ['SPOT THE', 'FRIEND WHO', 'DRAINS YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'drainer-friend' },
+  },
   'types-of-lie': {
     A: { lines: ['EVERY TYPE', 'OF LIE', 'EXPLAINED'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'smug', textColor: COLORS.white, badge: '10', prop: 'compulsive-nose' },
     B: { lines: ['YOU TELL', '2 LIES', 'EVERY DAY'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'bald-faced' },

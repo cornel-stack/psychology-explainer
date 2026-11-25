@@ -1,0 +1,244 @@
+{
+  "slug": "types-of-friend",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 7,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        12,
+        27
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "few-deep",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "friend-roles",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "friendship-circles",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "hours-to-close",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        6,
+        8,
+        11,
+        12,
+        13,
+        20,
+        34
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        14,
+        16,
+        17,
+        18,
+        19,
+        22,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        15,
+        23
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        12,
+        27
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "acquaintance-wave",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "adventure-buddy",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "cheerleader",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "drainer-friend",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "fair-weather",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "mentor-guide",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "mirror-friend",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "old-friend",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "ride-or-die",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        6
+      ]
+    },
+    {
+      "name": "work-friend",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "campfire-circle",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "friends-hangout",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "rooftop-hang",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    }
+  ]
+}

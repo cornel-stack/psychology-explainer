@@ -273,6 +273,10 @@ const NEW_ASSETS = new Set([
   'poker-den', 'interrogation-room', 'web-room',
   'white-lie', 'omission-gap', 'exaggeration-fish', 'bald-faced', 'lie-snowball', 'poker-bluff', 'noble-lie', 'compulsive-nose', 'broken-promise', 'self-deception',
   'lie-frequency', 'lie-motives', 'lie-spectrum', 'cover-up-cascade',
+  // types-of-friend (all new)
+  'friends-hangout', 'rooftop-hang', 'campfire-circle',
+  'ride-or-die', 'cheerleader', 'mentor-guide', 'old-friend', 'work-friend', 'fair-weather', 'mirror-friend', 'acquaintance-wave', 'adventure-buddy', 'drainer-friend',
+  'friendship-circles', 'hours-to-close', 'friend-roles', 'few-deep',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

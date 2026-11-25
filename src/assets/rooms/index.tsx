@@ -214,7 +214,10 @@ export type RoomName =
   | 'bright-kitchen'
   | 'poker-den'
   | 'interrogation-room'
-  | 'web-room';
+  | 'web-room'
+  | 'friends-hangout'
+  | 'rooftop-hang'
+  | 'campfire-circle';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5508,6 +5511,78 @@ export const WebRoom: React.FC = () => (
   </g>
 );
 
+/** Friends hangout: a warm, lived-in living room where friends gather — a big sofa,
+ *  snacks, board games, string lights and cushions; the cosy heart of friendship. */
+export const FriendsHangout: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowSoft, 0.04)} floor={COLORS.wood} floorY={850} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={850} fill={shade(COLORS.yellowSoft, -0.01)} opacity={0.5} />)}
+    {/* string lights */}
+    <path d="M 0 110 Q 480 180 960 110 Q 1440 180 1920 110" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 11 }).map((_, i) => { const t = i / 10; const x = t * 1920; const y = 110 + Math.sin(t * Math.PI * 2) * 52 + 18; return <circle key={i} cx={x} cy={y} r={10} fill={[COLORS.yellow, COLORS.pink, COLORS.sky, COLORS.greenLeaf][i % 4]} {...sm} />; })}
+    {/* framed photos on the wall */}
+    {[320, 480].map((x, i) => <g key={i} transform={`translate(${x} 320) rotate(${i ? 5 : -5})`}><rect x={-50} y={-40} width={100} height={80} rx={6} fill={COLORS.white} {...xl} /><circle cx={-16} cy={0} r={14} fill={[COLORS.sky, COLORS.pink][i]} {...sm} /><circle cx={16} cy={0} r={14} fill={[COLORS.pink, COLORS.yellow][i]} {...sm} /></g>)}
+    {/* a window to evening */}
+    <g transform="translate(1560 340)"><rect x={-130} y={-140} width={260} height={280} rx={12} fill={shade(COLORS.purpleDeep, 0.12)} {...xl} />{[0, 1, 2].map((i) => <circle key={i} cx={-50 + i * 55} cy={-70} r={3} fill={COLORS.white} opacity={0.7} />)}<line x1={0} y1={-140} x2={0} y2={140} stroke={shade(COLORS.purpleDeep, 0.2)} strokeWidth={STROKE.lg} /></g>
+    {/* the big sofa with cushions */}
+    <g transform="translate(960 830)"><rect x={-340} y={-50} width={680} height={170} rx={28} fill={COLORS.pink} {...xl} /><rect x={-340} y={-120} width={140} height={100} rx={22} fill={shade(COLORS.pink, 0.06)} {...lg} /><rect x={200} y={-120} width={140} height={100} rx={22} fill={shade(COLORS.pink, 0.06)} {...lg} />{[-180, -20, 160].map((x, i) => <rect key={i} x={x} y={-44} width={96} height={96} rx={16} fill={[COLORS.yellowSoft, COLORS.sky, COLORS.greenLeaf][i]} {...lg} transform={`rotate(${i * 6 - 6} ${x + 48} 4)`} />)}</g>
+    {/* a coffee table with snacks + a board game */}
+    <g transform="translate(540 900)"><rect x={-90} y={0} width={180} height={50} rx={8} fill={COLORS.woodDark} {...xl} /><ellipse cx={-40} cy={-8} rx={34} ry={12} fill={COLORS.yellowSoft} {...lg} /><rect x={20} y={-18} width={60} height={16} rx={3} fill={COLORS.red} {...sm} />{[0, 1, 2].map((i) => <circle key={i} cx={30 + i * 18} cy={-10} r={4} fill={COLORS.white} />)}</g>
+  </g>
+);
+
+/** Rooftop hang: a city rooftop at golden sunset — a low ledge, fairy lights, the
+ *  skyline beyond and a couple of folding chairs; where friends talk for hours. */
+export const RooftopHang: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.pink, 0.02)} floor={shade(COLORS.woodDark, 0.02)} floorY={760} stripe={false} />
+    {/* graduated sunset sky */}
+    {Array.from({ length: 5 }).map((_, i) => <rect key={i} x={0} y={i * 120} width={CANVAS.width} height={120} fill={shade([COLORS.pink, COLORS.pink, COLORS.yellowSoft, COLORS.sky, COLORS.sky][i], 0.03)} opacity={0.4} />)}
+    {/* setting sun */}
+    <circle cx={960} cy={420} r={90} fill={COLORS.yellow} opacity={0.8} {...xl} />
+    {[0, 1, 2].map((i) => <circle key={i} cx={960} cy={420} r={110 + i * 40} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.3 - i * 0.08} />)}
+    {/* city skyline silhouette */}
+    {Array.from({ length: 12 }).map((_, i) => { const h = 120 + ((i * 53) % 220); return <rect key={i} x={i * 170} y={760 - h} width={130} height={h} fill={shade(COLORS.purpleDeep, 0.1)} opacity={0.5} />; })}
+    {[[260, 620], [1020, 560], [1560, 640]].map(([x, y], i) => Array.from({ length: 3 }).map((_, j) => <rect key={`${i}-${j}`} x={x + j * 24} y={y + (j % 2) * 20} width={12} height={12} fill={COLORS.yellow} opacity={0.5} />))}
+    {/* rooftop ledge */}
+    <rect x={0} y={740} width={CANVAS.width} height={30} fill={shade(COLORS.woodDark, 0.04)} {...lg} />
+    {/* fairy lights strung along */}
+    <path d="M 0 720 Q 480 760 960 720 Q 1440 760 1920 720" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 13 }).map((_, i) => { const t = i / 12; const x = t * 1920; const y = 720 + Math.sin(t * Math.PI * 2) * 30 + 10; return <circle key={i} cx={x} cy={y} r={7} fill={COLORS.yellow} {...sm} />; })}
+    {/* two folding chairs + a small table */}
+    {[620, 1300].map((x, i) => <g key={i} transform={`translate(${x} 860)`}><rect x={-40} y={0} width={80} height={24} rx={6} fill={COLORS.sky} {...lg} /><rect x={-40} y={-70} width={80} height={16} rx={6} fill={shade(COLORS.sky, 0.06)} {...lg} /><line x1={-34} y1={24} x2={-40} y2={70} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={34} y1={24} x2={40} y2={70} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>)}
+  </g>
+);
+
+/** Campfire circle: a night campsite — a glowing fire, logs to sit on, trees and a
+ *  starry sky; the setting for deep late-night friendship talks. */
+export const CampfireCircle: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wallNight} floor={shade(COLORS.greenDark, -0.02)} floorY={780} stripe={false} />
+    {/* graduated night-sky bands + a milky-way wisp to break the flat dark */}
+    {Array.from({ length: 5 }).map((_, i) => <rect key={i} x={0} y={i * 120} width={CANVAS.width} height={120} fill={shade(COLORS.wallNight, 0.02 * (i - 2))} opacity={0.5} />)}
+    <path d="M 0 180 Q 600 120 1200 260 Q 1600 340 1920 300 L 1920 420 Q 1500 460 1100 400 Q 600 320 0 360 Z" fill={shade(COLORS.purpleDeep, 0.06)} opacity={0.3} />
+    {/* denser, varied stars */}
+    {Array.from({ length: 90 }).map((_, i) => <circle key={i} cx={(i * 211 + (i % 7) * 30) % 1920} cy={(i * 137) % 700} r={(i % 4 === 0 ? 3 : 1.5)} fill={COLORS.white} opacity={0.5 + (i % 3) * 0.2} />)}
+    {/* a few plus-shaped twinkles */}
+    {[[300, 160], [760, 240], [1300, 180], [1700, 360]].map(([x, y], i) => <g key={i} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.7}><line x1={x - 10} y1={y} x2={x + 10} y2={y} strokeLinecap="round" /><line x1={x} y1={y - 10} x2={x} y2={y + 10} strokeLinecap="round" /></g>)}
+    {/* distant mountain range along the horizon */}
+    <path d="M 0 700 L 240 520 L 440 660 L 680 480 L 920 680 L 1200 500 L 1460 680 L 1720 540 L 1920 700 L 1920 780 L 0 780 Z" fill={shade(COLORS.purpleDeep, -0.04)} opacity={0.6} />
+    <circle cx={1600} cy={200} r={60} fill={COLORS.yellowSoft} opacity={0.85} {...lg} /><circle cx={1576} cy={186} r={52} fill={COLORS.wallNight} opacity={0.5} />
+    {/* tree silhouettes */}
+    {[200, 460, 1500, 1760].map((x, i) => <g key={i} transform={`translate(${x} 560)`}><rect x={-10} y={120} width={20} height={120} fill={shade(COLORS.greenDark, -0.04)} /><path d="M 0 -40 L -60 120 L 60 120 Z" fill={shade(COLORS.greenDark, -0.02)} /><path d="M 0 0 L -46 110 L 46 110 Z" fill={shade(COLORS.greenDark, 0.02)} /></g>)}
+    {/* the campfire */}
+    <g transform="translate(960 780)">
+      {[0, 1, 2].map((i) => <ellipse key={i} cx={0} cy={0} rx={200 - i * 50} ry={60 - i * 14} fill={COLORS.yellow} opacity={0.06 + i * 0.03} />)}
+      <path d="M -30 10 L 36 -16 M -36 -10 L 30 16" stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <path d="M 0 0 q -24 -22 -12 -58 q 8 16 16 8 q -4 -26 12 -40 q -2 32 16 40 q 12 14 -4 50 Z" fill={COLORS.yellow} {...lg} transform="translate(0 -14)" />
+      <path d="M 0 -6 q -14 -14 -6 -36 q 10 18 18 0 q 2 24 -8 36 Z" fill={COLORS.red} opacity={0.8} transform="translate(0 -10)" />
+    </g>
+    {/* logs to sit on */}
+    {[620, 1300].map((x, i) => <g key={i} transform={`translate(${x} 860)`}><rect x={-80} y={-18} width={160} height={36} rx={18} fill={COLORS.woodDark} {...xl} /><ellipse cx={-80} cy={0} rx={10} ry={18} fill={shade(COLORS.wood, 0.04)} {...sm} /></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5707,6 +5782,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'poker-den': PokerDen,
   'interrogation-room': InterrogationRoom,
   'web-room': WebRoom,
+  'friends-hangout': FriendsHangout,
+  'rooftop-hang': RooftopHang,
+  'campfire-circle': CampfireCircle,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
