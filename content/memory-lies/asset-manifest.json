@@ -1,0 +1,260 @@
+{
+  "slug": "memory-lies",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 10,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        33
+      ]
+    },
+    {
+      "name": "labcoat",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "confidence-accuracy",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "gist-not-pixels",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "recall-rewrite-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "record-vs-rebuild",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        17
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        31,
+        33
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        32
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        12,
+        28
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        33
+      ]
+    },
+    {
+      "name": "confidence-gauge",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "false-memory",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "flashbulb-blur",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "imagine-inflate",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "mandela-shared",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "memory-rebuild",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        4
+      ]
+    },
+    {
+      "name": "misinformation-edit",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "retell-drift",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "rosy-past",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "source-mixup",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "lineup-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "memory-archive",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        33
+      ]
+    },
+    {
+      "name": "reconstruct-studio",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    }
+  ]
+}

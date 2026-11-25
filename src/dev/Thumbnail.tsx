@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'memory-lies': {
+    A: { lines: ['EVERY WAY', 'YOUR MEMORY', 'LIES TO YOU'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'false-memory' },
+    B: { lines: ['YOUR MEMORY', 'ISN\'T A', 'RECORDING'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'memory-rebuild' },
+    C: { lines: ['YOU REMEMBER', 'THINGS THAT', 'NEVER HAPPENED'], accent: COLORS.pink, bg: COLORS.navy, emotion: 'scared', textColor: COLORS.white, badge: '!?', prop: 'confidence-gauge' },
+  },
   'motivation': {
     A: { lines: ['THE', 'PSYCHOLOGY OF', 'MOTIVATION'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'excited', textColor: COLORS.white, badge: '?', prop: 'action-flywheel' },
     B: { lines: ['STOP WAITING', 'TO FEEL', 'MOTIVATED'], accent: COLORS.greenLeaf, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'waiting-feeling' },

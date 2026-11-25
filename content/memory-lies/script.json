@@ -1,0 +1,355 @@
+{
+  "title": "Every Way Your Memory Lies to You",
+  "slug": "memory-lies",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Think of a vivid memory from your childhood. You can probably see it clearly, the colours, the feelings, who was there. It feels like a little video clip, perfectly preserved, ready to replay. Here's the unsettling truth. A good chunk of that memory is almost certainly wrong. And the more certain you feel, the more that should worry you.",
+          "scene": "story",
+          "room": "memory-archive",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "EVERY WAY YOUR MEMORY",
+          "subtitle": "lies to you",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "We trust our memories completely. We build our identities on them, win arguments with them, send people to prison based on them. But memory is nowhere near as reliable as it feels. It bends, invents, and quietly rewrites the past, all without telling you. And today, we're going to catch it in the act.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "We'll go through every major way your memory deceives you: how it edits your past, how it plants things that never happened, why your most vivid memories can be your most wrong, and the strange, beautiful reason your brain is built to be this unreliable. Let's open the archive, and find out how much of your past is fiction.",
+          "scene": "explainer",
+          "prop": "memory-rebuild",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Not a Recording",
+      "beats": [
+        {
+          "vo": "First, the foundation everything else rests on. The biggest myth about memory is that it works like a video camera. That your brain records events faithfully, stores the footage, and plays it back on demand. It does nothing of the sort.",
+          "scene": "diagramCard",
+          "diagram": "record-vs-rebuild",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "NOT A RECORDING",
+          "subtitle": "memory is reconstructed"
+        },
+        {
+          "vo": "Memory is reconstructive. You don't retrieve a complete recording. Instead, every time you remember something, your brain rebuilds it from scattered fragments, and fills in all the gaps with assumptions, expectations, and beliefs about how things probably went. You're not replaying the past. You're reassembling it, from pieces, right now.",
+          "scene": "explainer",
+          "prop": "memory-rebuild",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And here's the truly dangerous part. Every time you recall a memory, you can subtly change it, and then save the edited version back over the original. So the memories you revisit the most, your most treasured ones, are often the ones that have drifted the furthest from what actually happened. You've been editing them your whole life.",
+          "scene": "diagramCard",
+          "diagram": "recall-rewrite-loop",
+          "emotion": "serious-expert",
+          "withMascot": true
+        },
+        {
+          "vo": "Sit with that for a moment, because it's a little vertiginous. Your entire sense of who you are is built on your memories. And those memories are not a solid foundation of fact. They're a shifting, self-edited story. In a very real way, you are not remembering your life. You are continuously re-authoring it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Misinformation Effect",
+      "beats": [
+        {
+          "vo": "Lie number one: your memory will happily absorb things that were never there. This is the misinformation effect, and the pioneering researcher Elizabeth Loftus proved it in a now-famous study.",
+          "scene": "explainer",
+          "prop": "misinformation-edit",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE MISINFORMATION EFFECT",
+          "subtitle": "after-the-fact edits"
+        },
+        {
+          "vo": "People watched a video of a car crash, then were asked how fast the cars were going. But the wording was sneaky. Some were asked the speed when the cars hit, others when they smashed. That one word changed everything. The smashed group recalled higher speeds, and a week later, many remembered broken glass. There was none.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "A single suggestive word rewrote their memory of what they'd seen with their own eyes. This is why leading questions are so dangerous. Information that arrives after an event gets quietly folded into the memory, as if it had been there all along. Your memory doesn't guard the past. It happily updates it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "You've lived this a hundred times. An argument with a partner or sibling where you both remember the same event completely differently, each certain the other is lying. Usually, neither is. You've simply each rebuilt the memory through your own feelings and later experiences, until you genuinely remember two different pasts.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "False Memories",
+      "beats": [
+        {
+          "vo": "If that's unsettling, this is worse. Your memory can't just distort the details of a real event. It can invent entire events that never happened at all.",
+          "scene": "explainer",
+          "prop": "false-memory",
+          "emotion": "scared",
+          "chapterStart": true,
+          "title": "FALSE MEMORIES",
+          "subtitle": "events that never were"
+        },
+        {
+          "vo": "In Loftus's famous lost in the mall studies, researchers gently suggested to people that as a child they'd once been lost in a shopping mall. It never happened. But with a little suggestion and time, many didn't just believe it. They vividly remembered it, adding their own rich details, their panic, the kind stranger who helped.",
+          "scene": "story",
+          "room": "reconstruct-studio",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "labcoat",
+              "pose": "point-right",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "These were not lies. They genuinely remembered something that never occurred, with the same confidence and vividness as a real memory. Think about that. Your brain can build a complete, detailed, emotional memory of something that is pure fiction, and you'd have no way of telling it apart from the real ones.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Source Confusion",
+      "beats": [
+        {
+          "vo": "Lie number three is quieter, and you do it constantly. It's called source confusion. You remember the what, but you get the where it came from completely wrong.",
+          "scene": "explainer",
+          "prop": "source-mixup",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "SOURCE CONFUSION",
+          "subtitle": "where did that come from?"
+        },
+        {
+          "vo": "Did that actually happen to you, or did you see it in a film? Did your friend tell you that story, or did you dream it? Was that your idea, or did you read it somewhere and forget? Your brain stores the content and the source separately, and it frequently mixes them up, stitching a memory to the wrong origin entirely.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is behind that strange feeling of being sure someone told you something they swear they never did. Or claiming an idea as your own, having genuinely forgotten you heard it elsewhere. The memory itself is real. It's just been filed under the wrong source, and you have no way of feeling the mistake.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Mandela Effect",
+      "beats": [
+        {
+          "vo": "Lie number four is so strange that people invent conspiracy theories to explain it. It's when huge groups of people confidently share the exact same false memory. You might know it as the Mandela effect.",
+          "scene": "explainer",
+          "prop": "mandela-shared",
+          "emotion": "confused",
+          "chapterStart": true,
+          "title": "THE MANDELA EFFECT",
+          "subtitle": "misremembering together"
+        },
+        {
+          "vo": "A famous logo you'd swear had a detail it never had. A movie line everyone quotes that was never said that way. A brand name spelled differently in everyone's memory. It feels spooky, like the timeline changed. But the real reason is simpler: we store the gist, the meaning, then reconstruct the specifics the same plausible, wrong way.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Flashbulb Memories",
+      "beats": [
+        {
+          "vo": "Lie number five targets the memories you'd bet your life on. Think of where you were when you heard some huge piece of news. That memory feels frozen in perfect detail, like a photograph taken by a flashbulb. Psychologists even call them flashbulb memories.",
+          "scene": "explainer",
+          "prop": "flashbulb-blur",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "FLASHBULB MEMORIES",
+          "subtitle": "vivid, certain... and wrong"
+        },
+        {
+          "vo": "They feel more vivid, more certain, more real than any other memory. Surely these ones are accurate? No. When researchers wrote down people's flashbulb memories right after a shocking event, then checked back years later, the memories had drifted and changed dramatically, even as people's confidence in them stayed sky-high.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This reveals the single most important thing to understand about memory. Confidence is not accuracy. The feeling of certainty, that crystal-clear vividness, is just a feeling. It is generated by your brain, and it is not proof that the memory is true. You can be utterly, completely sure, and utterly, completely wrong.",
+          "scene": "diagramCard",
+          "diagram": "confidence-accuracy",
+          "emotion": "serious-expert",
+          "withMascot": true
+        }
+      ]
+    },
+    {
+      "name": "The Retelling Drift",
+      "beats": [
+        {
+          "vo": "Lie number six creeps in through your own mouth. Every time you tell a story, you reshape it, just a little. You smooth the dull parts, sharpen the dramatic ones, round off the edges to make it land better.",
+          "scene": "explainer",
+          "prop": "retell-drift",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE RETELLING DRIFT",
+          "subtitle": "the game of telephone"
+        },
+        {
+          "vo": "And here's the trap: the next time you recall that event, you don't remember the original. You remember your last retelling of it. So your favourite, most-polished anecdotes, the ones you've told a hundred times, have quietly morphed into tall tales. It's a game of telephone, played between you and yourself, across the years.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Rosy Past",
+      "beats": [
+        {
+          "vo": "Lie number seven is the one that colours everything. The present quietly reaches back and edits the past to match it. Your current mood and knowledge tint your memories like a filter.",
+          "scene": "explainer",
+          "prop": "rosy-past",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE ROSY PAST",
+          "subtitle": "the present edits the past"
+        },
+        {
+          "vo": "There's rosy retrospection, where we remember the past as sunnier than we rated it at the time, which is why the good old days always seem better than now. And there's hindsight bias, the I knew it all along effect, where once you know the outcome, you rewrite your memory so you always saw it coming. The past isn't fixed.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Imagining Makes It Real",
+      "beats": [
+        {
+          "vo": "And lie number eight might be the most dangerous of all, because it means you can accidentally create memories just by thinking. It's called imagination inflation.",
+          "scene": "explainer",
+          "prop": "imagine-inflate",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "IMAGINING MAKES IT REAL",
+          "subtitle": "thinking it into memory"
+        },
+        {
+          "vo": "Simply imagining that an event happened, picturing it, turning it over in your mind, makes it feel more and more like a genuine memory. The more you rehearse a possibility, the more real it starts to feel, until your brain can no longer tell the difference between what you experienced and what you merely imagined.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is why eyewitness testimony, despite feeling rock solid, is a leading cause of wrongful convictions. A confident witness pointing across a courtroom has sent innocent people to prison on a memory that quietly rebuilt itself. Our justice system is slowly learning what psychology already knows: certainty is not truth.",
+          "scene": "story",
+          "room": "lineup-room",
+          "emotion": "serious-expert",
+          "mascots": [
+            {
+              "costume": "suit",
+              "pose": "point-right",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Beautiful Reason",
+      "beats": [
+        {
+          "vo": "So at this point you might be feeling a little betrayed by your own brain. If memory is this unreliable, why on earth is it built so badly? But here's the twist. It isn't a flaw. It's a feature, and a brilliant one.",
+          "scene": "diagramCard",
+          "diagram": "gist-not-pixels",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE BEAUTIFUL REASON",
+          "subtitle": "the bug is the feature"
+        },
+        {
+          "vo": "A perfect, pixel-by-pixel recording of your entire life would be a crushing, useless avalanche of detail. Instead, your brain is smart. It throws away the specifics and keeps the gist, the meaning, the lesson. That's what lets you generalise, spot patterns, and learn.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And the very same reconstructive system that misremembers your past is the one that lets you imagine the future. To plan, to dream, to picture things that never existed. Memory and imagination run on the same machinery. The price of a mind that can create is a memory that can't be fully trusted. It's a trade worth making.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "So what do you do with all this? Not panic. Just hold your memories a little more loosely, especially the vivid, emotional, certain ones. Be genuinely willing to be wrong, even about things you'd swear to. And for anything that really matters, write it down, because the page remembers far better than you do.",
+          "scene": "explainer",
+          "prop": "confidence-gauge",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "HOLD IT LOOSELY",
+          "subtitle": "a gentle humility"
+        },
+        {
+          "vo": "Your memory isn't a historian preserving the truth. It's a storyteller, endlessly rewriting a tale to make sense of who you are. It's not a perfect record of your life. It's a living, breathing, beautifully flawed story. And maybe knowing that lets you hold the whole thing a little more gently. Thanks for watching.",
+          "scene": "story",
+          "room": "memory-archive",
+          "emotion": "happy-talk",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "wave",
+              "emotion": "happy-talk",
+              "x": 960,
+              "y": 980,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

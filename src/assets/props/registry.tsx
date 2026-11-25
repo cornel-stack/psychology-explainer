@@ -66,6 +66,7 @@ import * as Gt from './gratitude';
 import * as Fg from './forgiveness';
 import * as Cm from './comparing';
 import * as Mo from './motivation';
+import * as Ml from './memory-lies';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -792,6 +793,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'small-wins': Mo.SmallWins,
   'find-your-why': Mo.FindYourWhy,
   'reduce-friction': Mo.ReduceFriction,
+  'memory-rebuild': Ml.MemoryRebuild,
+  'misinformation-edit': Ml.MisinformationEdit,
+  'false-memory': Ml.FalseMemory,
+  'source-mixup': Ml.SourceMixup,
+  'mandela-shared': Ml.MandelaShared,
+  'flashbulb-blur': Ml.FlashbulbBlur,
+  'retell-drift': Ml.RetellDrift,
+  'rosy-past': Ml.RosyPast,
+  'imagine-inflate': Ml.ImagineInflate,
+  'confidence-gauge': Ml.ConfidenceGauge,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

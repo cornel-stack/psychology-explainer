@@ -257,6 +257,10 @@ const NEW_ASSETS = new Set([
   'couch-limbo', 'build-workshop', 'goal-trail',
   'waiting-feeling', 'action-flywheel', 'inner-vs-carrot', 'three-needs', 'dopamine-chase', 'giant-goal', 'tiny-first-step', 'small-wins', 'find-your-why', 'reduce-friction',
   'action-first-loop', 'motivation-types', 'three-fuels', 'motivation-toolkit',
+  // memory-lies (all new)
+  'memory-archive', 'lineup-room', 'reconstruct-studio',
+  'memory-rebuild', 'misinformation-edit', 'false-memory', 'source-mixup', 'mandela-shared', 'flashbulb-blur', 'retell-drift', 'rosy-past', 'imagine-inflate', 'confidence-gauge',
+  'record-vs-rebuild', 'recall-rewrite-loop', 'confidence-accuracy', 'gist-not-pixels',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

@@ -202,7 +202,10 @@ export type RoomName =
   | 'own-studio'
   | 'couch-limbo'
   | 'build-workshop'
-  | 'goal-trail';
+  | 'goal-trail'
+  | 'memory-archive'
+  | 'lineup-room'
+  | 'reconstruct-studio';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5256,6 +5259,72 @@ export const GoalTrail: React.FC = () => (
   </g>
 );
 
+/** Memory archive: a surreal library of memory files — towering shelves of glowing
+ *  photo-boxes, some being pulled out and re-filed, a few flickering or mislabelled. */
+export const MemoryArchive: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, 0.06)} floor={COLORS.woodDark} floorY={850} stripe={false} />
+    {/* tall shelving units full of memory boxes */}
+    {[200, 500, 1420, 1720].map((cx, s) => (
+      <g key={s} transform={`translate(${cx} 0)`}>
+        <rect x={-110} y={120} width={220} height={620} rx={8} fill={shade(COLORS.wood, 0.02)} {...xl} />
+        {[0, 1, 2, 3].map((row) => <line key={row} x1={-110} y1={200 + row * 130} x2={110} y2={200 + row * 130} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} />)}
+        {Array.from({ length: 12 }).map((_, i) => { const col = i % 3; const row = Math.floor(i / 3); const c = [COLORS.sky, COLORS.pink, COLORS.yellowSoft, COLORS.greenTeal][(i + s) % 4]; return <rect key={i} x={-94 + col * 66} y={140 + row * 130} width={56} height={46} rx={4} fill={shade(c, 0.04)} {...sm} opacity={(i + s) % 7 === 0 ? 0.4 : 1} />; })}
+      </g>
+    ))}
+    {/* a central memory box being pulled out + rewritten, glowing */}
+    <g transform="translate(960 440)">
+      <rect x={-130} y={-96} width={260} height={192} rx={12} fill={COLORS.white} {...xl} />
+      <ellipse cx={0} cy={0} rx={150} ry={110} fill={COLORS.yellow} opacity={0.12} />
+      <circle cx={-20} cy={-14} r={30} fill={COLORS.skin} {...lg} /><path d="M -10 -8 Q -20 0 -30 -8" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      {/* an edit mark */}
+      <g transform="translate(60 40) rotate(40)"><rect x={-5} y={-34} width={10} height={48} rx={3} fill={COLORS.red} {...sm} /><path d="M -5 14 L 5 14 L 0 28 Z" fill={COLORS.outline} /></g>
+    </g>
+    {/* a rolling ladder */}
+    <g transform="translate(760 740)"><line x1={0} y1={0} x2={-60} y2={-560} stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" /><line x1={60} y1={0} x2={10} y2={-560} stroke={COLORS.woodDark} strokeWidth={STROKE.xl} strokeLinecap="round" />{[0, 1, 2, 3, 4].map((i) => <line key={i} x1={-50 + i * 2} y1={-90 - i * 100} x2={52 - i * 2} y2={-90 - i * 100} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+  </g>
+);
+
+/** Lineup room: a police-style eyewitness identity lineup behind glass — five
+ *  silhouettes under height bars, a stark reminder of unreliable testimony. */
+export const LineupRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.ledGrey, 0.16)} floor={shade(COLORS.ledGrey, 0.08)} floorY={850} stripe={false} />
+    {/* back wall with height-measurement lines */}
+    <rect x={260} y={120} width={1400} height={560} rx={8} fill={shade(COLORS.sky, 0.06)} opacity={0.5} {...xl} />
+    {[0, 1, 2, 3, 4, 5].map((i) => <g key={i}><line x1={300} y1={200 + i * 80} x2={1620} y2={200 + i * 80} stroke={shade(COLORS.ledGrey, 0.0)} strokeWidth={STROKE.sm} opacity={0.5} /><text x={290} y={205 + i * 80} textAnchor="end" fontFamily="Baloo 2" fontWeight={700} fontSize={16} fill={COLORS.outline} opacity={0.6}>{6 - i}</text></g>)}
+    {/* five suspect silhouettes */}
+    {[480, 720, 960, 1200, 1440].map((x, i) => <g key={i} transform={`translate(${x} 700)`}><circle cx={0} cy={-150} r={46} fill={shade(COLORS.navy, 0.1 + (i % 3) * 0.02)} {...lg} /><path d="M -64 130 Q -70 -90 0 -90 Q 70 -90 64 130 Z" fill={shade(COLORS.navy, 0.14)} {...xl} /><rect x={-50} y={120} width={100} height={30} rx={6} fill={COLORS.white} {...sm} /><text x={0} y={142} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={18} fill={COLORS.outline}>{i + 1}</text></g>)}
+    {/* the one-way glass sheen */}
+    <path d="M 300 160 L 600 160 L 360 660 L 300 660 Z" fill={COLORS.white} opacity={0.1} />
+    {/* a question mark over the lineup (which one?) */}
+    <text x={960} y={120} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={60} fill={COLORS.red} opacity={0.6}>?</text>
+  </g>
+);
+
+/** Reconstruct studio: a bright workshop where a memory is being rebuilt from fragments
+ *  on a board — pinned photos, strings, and gaps marked with question cards. */
+export const ReconstructStudio: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowSoft, 0.03)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 15 }).map((_, i) => <rect key={i} x={i * 130} y={0} width={62} height={840} fill={shade(COLORS.yellowSoft, -0.01)} opacity={0.5} />)}
+    {/* a big cork investigation board */}
+    <g transform="translate(960 420)">
+      <rect x={-420} y={-300} width={840} height={560} rx={14} fill={shade(COLORS.wood, 0.04)} {...xl} />
+      {/* pinned memory fragments */}
+      {[[-280, -180, COLORS.sky, -8], [-80, -200, COLORS.pink, 6], [160, -150, COLORS.greenTeal, -5], [-200, 40, COLORS.yellowSoft, 7], [120, 80, COLORS.lavender, -6]].map(([x, y, c, rot], i) => (
+        <g key={i} transform={`translate(${x} ${y}) rotate(${rot})`}><rect x={-60} y={-46} width={120} height={92} rx={4} fill={c as string} {...lg} /><circle cx={0} cy={-38} r={5} fill={COLORS.red} /></g>
+      ))}
+      {/* a gap marked with a question card */}
+      <g transform="translate(300 -40) rotate(4)"><rect x={-54} y={-40} width={108} height={80} rx={4} fill="none" stroke={COLORS.red} strokeWidth={STROKE.sm} strokeDasharray="6 7" /><text x={0} y={8} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.red}>?</text></g>
+      {/* red strings connecting fragments */}
+      <path d="M -280 -180 L -80 -200 L 160 -150 M -80 -200 L -200 40 L 120 80" fill="none" stroke={COLORS.red} strokeWidth={STROKE.sm} opacity={0.6} />
+    </g>
+    {/* a desk lamp */}
+    <g transform="translate(300 620)"><rect x={-60} y={160} width={120} height={60} rx={10} fill={COLORS.woodDark} {...xl} /><rect x={-6} y={0} width={12} height={170} fill={COLORS.outline} /><path d="M 0 0 q 70 -10 86 50" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><path d="M 70 40 l 48 0 l -14 44 l -34 0 Z" fill={COLORS.yellow} {...lg} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5443,6 +5512,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'couch-limbo': CouchLimbo,
   'build-workshop': BuildWorkshop,
   'goal-trail': GoalTrail,
+  'memory-archive': MemoryArchive,
+  'lineup-room': LineupRoom,
+  'reconstruct-studio': ReconstructStudio,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
