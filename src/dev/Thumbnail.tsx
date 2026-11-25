@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'music-chills': {
+    A: { lines: ['WHY MUSIC', 'GIVES YOU', 'CHILLS'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'excited', textColor: COLORS.white, badge: '!', prop: 'spine-shiver' },
+    B: { lines: ['THE SCIENCE', 'OF GOOSEBUMPS', 'FROM A SONG'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♫', prop: 'goosebumps-arm' },
+    C: { lines: ['WHY ONE NOTE', 'MAKES YOU', 'SHIVER'], accent: COLORS.yellow, bg: COLORS.blueDiagram, emotion: 'happy-talk', textColor: COLORS.white, badge: '?', prop: 'soundwave-heart' },
+  },
   'nostalgia': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF NOSTALGIA'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'tearful', textColor: COLORS.white, badge: '♥', prop: 'bittersweet-heart' },
     B: { lines: ['WHY THE PAST', 'FEELS SO', 'GOOD'], accent: COLORS.pink, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '?', prop: 'music-box' },

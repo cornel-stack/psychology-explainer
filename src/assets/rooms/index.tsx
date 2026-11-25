@@ -136,7 +136,10 @@ export type RoomName =
   | 'serene-tidy-bedroom'
   | 'memory-attic'
   | 'retro-kitchen'
-  | 'vinyl-room';
+  | 'vinyl-room'
+  | 'live-concert'
+  | 'headphone-nook'
+  | 'grand-awe';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3709,6 +3712,86 @@ export const VinylRoom: React.FC = () => (
   </g>
 );
 
+/** Live concert: a dark gig with a bright stage, beams and a silhouetted crowd —
+ *  where chills hit hardest. */
+export const LiveConcert: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.wallNightDark} floor={shade(COLORS.purpleDeep, 0.2)} floorY={900} stripe={false} />
+    {/* atmospheric haze bands + floating light motes to break up the dark */}
+    {Array.from({ length: 7 }).map((_, i) => <rect key={i} x={0} y={i * 120} width={CANVAS.width} height={60} fill={shade(COLORS.purpleDeep, 0.04)} opacity={0.4} />)}
+    {Array.from({ length: 40 }).map((_, i) => <circle key={`m${i}`} cx={(i * 211) % 1900} cy={60 + ((i * 97) % 540)} r={3} fill={[COLORS.pink, COLORS.sky, COLORS.yellow][i % 3]} opacity={0.35} />)}
+    {/* side speaker stacks */}
+    {[90, 1830].map((x, i) => <g key={i} transform={`translate(${x} 520)`}>{[0, 1, 2, 3].map((r) => <g key={r} transform={`translate(0 ${r * 110})`}><rect x={-60} y={-50} width={120} height={100} rx={8} fill={shade(COLORS.wallNight, 0.04)} {...lg} /><circle cx={0} cy={0} r={34} fill={COLORS.outline} /><circle cx={0} cy={0} r={12} fill={shade(COLORS.wallNight, 0.1)} /></g>)}</g>)}
+    {/* stage glow backdrop */}
+    <rect x={560} y={180} width={800} height={440} rx={20} fill={shade(COLORS.purpleDeep, 0.06)} />
+    {/* coloured stage light beams fanning out */}
+    {[-3, -2, -1, 1, 2, 3].map((i) => <path key={i} d={`M 960 160 L ${960 + i * 180} 700 L ${960 + i * 180 + 90} 700 Z`} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.lavender, COLORS.red][(i + 3) % 6]} opacity={0.16} />)}
+    {/* overhead light rig */}
+    <rect x={560} y={150} width={800} height={24} rx={6} fill={COLORS.outline} />
+    {[640, 760, 880, 1000, 1120, 1240].map((x, i) => <circle key={i} cx={x} cy={186} r={12} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.lavender, COLORS.red][i]} {...sm} />)}
+    {/* the stage with a performer silhouette + spotlight */}
+    <rect x={560} y={600} width={800} height={40} rx={6} fill={COLORS.outline} />
+    <path d="M 960 220 L 880 600 L 1040 600 Z" fill={COLORS.yellowSoft} opacity={0.18} />
+    <g transform="translate(960 560)"><circle cx={0} cy={-40} r={30} fill={COLORS.wallNight} {...lg} /><path d="M -34 40 Q 0 -10 34 40 Z" fill={COLORS.wallNight} {...lg} /><line x1={30} y1={-20} x2={70} y2={-50} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={74} cy={-54} r={10} fill={COLORS.ledGrey} {...sm} /></g>
+    {/* silhouetted crowd with raised hands + phone lights */}
+    {Array.from({ length: 16 }).map((_, i) => { const x = 120 + i * 112; return <g key={i} transform={`translate(${x} 900)`}><circle cx={0} cy={-30} r={26} fill={shade(COLORS.wallNightDark, -0.04)} /><path d="M -30 80 Q 0 -8 30 80 Z" fill={shade(COLORS.wallNightDark, -0.04)} /><path d={`M ${-8} -40 l -6 -30 M 8 -40 l 6 -30`} stroke={shade(COLORS.wallNightDark, -0.1)} strokeWidth={STROKE.lg} strokeLinecap="round" />{i % 3 === 0 && <circle cx={-14} cy={-72} r={6} fill={COLORS.yellowSoft} />}</g>; })}
+  </g>
+);
+
+/** Headphone nook: a cosy chair, big over-ear headphones and eyes-closed bliss, with
+ *  sound waves rippling out. */
+export const HeadphoneNook: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.lavender, 0.04)} floor={COLORS.wood} floorY={860} stripe={false} />
+    <rect x={0} y={600} width={CANVAS.width} height={260} fill={shade(COLORS.lavender, -0.03)} />
+    {/* wall panelling */}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={600} stroke={shade(COLORS.lavender, -0.05)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* framed album prints */}
+    {[260, 1500, 1680].map((x, i) => <g key={i} transform={`translate(${x} 240)`}><rect x={-62} y={-62} width={124} height={124} rx={6} fill={[COLORS.pink, COLORS.sky, COLORS.yellow][i]} {...lg} /><circle cx={0} cy={0} r={40} fill={COLORS.outline} /><circle cx={0} cy={0} r={10} fill={[COLORS.pink, COLORS.sky, COLORS.yellow][i]} /></g>)}
+    {/* big sound waves rippling from the centre */}
+    {[90, 150, 210, 270].map((r, i) => <path key={i} d={`M ${960 - r} 520 a ${r} ${r} 0 0 1 ${r * 2} 0`} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} opacity={0.5 - i * 0.1} />)}
+    {/* floating music notes */}
+    {[[660, 400], [1260, 380], [760, 300]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={10} r={10} fill={COLORS.lavenderDark} /><rect x={8} y={-20} width={5} height={30} fill={COLORS.lavenderDark} /></g>)}
+    {/* a comfy armchair with a blissed-out listener in headphones */}
+    <g transform="translate(960 780)">
+      <rect x={-150} y={-40} width={300} height={200} rx={30} fill={COLORS.pink} {...xl} />
+      <rect x={-190} y={-20} width={60} height={160} rx={22} fill={shade(COLORS.pink, 0.1)} {...lg} />
+      <rect x={130} y={-20} width={60} height={160} rx={22} fill={shade(COLORS.pink, 0.1)} {...lg} />
+      {/* listener */}
+      <circle cx={0} cy={-60} r={56} fill={COLORS.white} {...xl} />
+      <path d="M -40 -70 Q -30 -86 -18 -74 M 18 -74 Q 30 -86 40 -70" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+      <path d="M -14 -44 Q 0 -36 14 -44" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+      {/* headphones */}
+      <path d="M -56 -64 Q 0 -120 56 -64" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.xl} />
+      <rect x={-72} y={-74} width={26} height={44} rx={10} fill={COLORS.sky} {...lg} /><rect x={46} y={-74} width={26} height={44} rx={10} fill={COLORS.sky} {...lg} />
+    </g>
+  </g>
+);
+
+/** Grand awe: a vast cathedral-like space with soaring arches and god-rays — chills
+ *  from sheer awe. */
+export const GrandAwe: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.blueDiagram, 0.14)} floor={shade(COLORS.blueDiagram, 0.26)} floorY={880} stripe={false} />
+    {/* stone-block wall texture */}
+    {Array.from({ length: 10 }).map((_, r) => <line key={`h${r}`} x1={0} y1={80 + r * 80} x2={CANVAS.width} y2={80 + r * 80} stroke={shade(COLORS.blueDiagram, 0.06)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {Array.from({ length: 60 }).map((_, i) => { const r = i % 10; const off = (r % 2) * 80; return <line key={`v${i}`} x1={off + Math.floor(i / 10) * 160} y1={80 + r * 80} x2={off + Math.floor(i / 10) * 160} y2={160 + r * 80} stroke={shade(COLORS.blueDiagram, 0.06)} strokeWidth={STROKE.sm} opacity={0.4} />; })}
+    {/* soaring arches — five, filling the width */}
+    {[260, 610, 960, 1310, 1660].map((x, i) => <g key={i}><path d={`M ${x - 150} 880 L ${x - 150} 300 Q ${x} 90 ${x + 150} 300 L ${x + 150} 880`} fill="none" stroke={shade(COLORS.blueDiagram, 0.02)} strokeWidth={STROKE.xl} opacity={0.6} /><path d={`M ${x - 150} 300 Q ${x} 90 ${x + 150} 300`} fill={shade(COLORS.blueDiagram, 0.08)} opacity={0.3} /></g>)}
+    {/* tall stained-glass window with god-rays */}
+    <g transform="translate(960 360)">
+      <path d="M -120 300 L -120 -60 Q 0 -200 120 -60 L 120 300 Z" fill={shade(COLORS.blueDiagram, 0.02)} {...xl} />
+      {[[-60, COLORS.pink], [0, COLORS.yellow], [60, COLORS.sky]].map(([x, c], i) => <path key={i} d={`M ${(x as number) - 24} 300 L ${(x as number) - 24} -30 Q ${x} -140 ${(x as number) + 24} -30 L ${(x as number) + 24} 300 Z`} fill={c as string} opacity={0.6} />)}
+    </g>
+    {/* god-rays beaming down */}
+    {[-1, 0, 1].map((i) => <path key={i} d={`M ${960 + i * 70} 200 L ${860 + i * 120} 880 L ${960 + i * 120} 880 Z`} fill={COLORS.yellowSoft} opacity={0.12} />)}
+    {/* distant candles / lights */}
+    {[300, 460, 1460, 1620].map((x, i) => <g key={i} transform={`translate(${x} 760)`}><rect x={-6} y={0} width={12} height={40} fill={COLORS.white} {...sm} /><circle cx={0} cy={-8} r={8} fill={COLORS.yellow} /></g>)}
+    {/* tiny awed figure, dwarfed by the space */}
+    <g transform="translate(960 840)"><circle cx={0} cy={-34} r={26} fill={COLORS.white} {...xl} /><path d="M -28 60 Q 0 -6 28 60 Z" fill={COLORS.hoodie} {...lg} /><path d="M -22 20 l -22 -16 M 22 20 l 22 -16" stroke={COLORS.hoodie} strokeWidth={STROKE.xl} strokeLinecap="round" /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3830,6 +3913,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'memory-attic': MemoryAttic,
   'retro-kitchen': RetroKitchen,
   'vinyl-room': VinylRoom,
+  'live-concert': LiveConcert,
+  'headphone-nook': HeadphoneNook,
+  'grand-awe': GrandAwe,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

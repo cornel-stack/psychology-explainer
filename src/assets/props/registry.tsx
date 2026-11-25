@@ -44,6 +44,7 @@ import * as Fr from './friends';
 import * as Ly from './lying';
 import * as Sp from './spotless';
 import * as No from './nostalgia';
+import * as Ch2 from './chills';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -538,6 +539,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'rose-tint-glasses': No.RoseTintGlasses,
   'connection-thread': No.ConnectionThread,
   'present-anchor': No.PresentAnchor,
+  // music-chills emblems (all new)
+  'spine-shiver': Ch2.SpineShiver,
+  'goosebumps-arm': Ch2.GoosebumpsArm,
+  'soundwave-heart': Ch2.SoundwaveHeart,
+  'music-reward-brain': Ch2.MusicRewardBrain,
+  'anticipation-peak': Ch2.AnticipationPeak,
+  'expectation-break': Ch2.ExpectationBreak,
+  'brain-wiring': Ch2.BrainWiring,
+  'awe-chills': Ch2.AweChills,
+  'chill-playlist': Ch2.ChillPlaylist,
+  'chills-meter': Ch2.ChillsMeter,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

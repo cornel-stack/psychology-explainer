@@ -169,6 +169,10 @@ const NEW_ASSETS = new Set([
   'memory-attic', 'retro-kitchen', 'vinyl-room',
   'bittersweet-heart', 'sepia-photo', 'memory-lane', 'scent-trigger', 'music-box', 'old-cassette', 'childhood-home-mem', 'rose-tint-glasses', 'connection-thread', 'present-anchor',
   'nostalgia-benefits', 'reminiscence-bump', 'bittersweet-mix', 'nostalgia-coping-loop',
+  // music-chills (all new)
+  'live-concert', 'headphone-nook', 'grand-awe',
+  'spine-shiver', 'goosebumps-arm', 'soundwave-heart', 'music-reward-brain', 'anticipation-peak', 'expectation-break', 'brain-wiring', 'awe-chills', 'chill-playlist', 'chills-meter',
+  'music-reward-loop', 'two-dopamine-hits', 'expectation-violation', 'who-gets-chills',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

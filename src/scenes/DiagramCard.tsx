@@ -3768,8 +3768,98 @@ const NostalgiaCopingLoop: React.FC = () => {
   );
 };
 
+/** music-reward-loop: music hits the same reward system as food, sex, drugs. */
+const MusicRewardLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const g = 0.5 + 0.5 * Math.sin(frame / 7);
+  const peers = ['food', 'sex', 'drugs', 'MUSIC'];
+  return (
+    <g>
+      {/* central reward hub */}
+      <circle cx={cx} cy={cy} r={64} fill={COLORS.pink} opacity={0.4 + g * 0.3} />
+      <circle cx={cx} cy={cy} r={64} fill="none" {...xl} />
+      <text x={cx} y={cy - 4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>reward</text>
+      <text x={cx} y={cy + 16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>system</text>
+      {peers.map((p, i) => {
+        const a = -Math.PI / 2 + (i / peers.length) * Math.PI * 2; const R = 170; const x = cx + Math.cos(a) * R; const y = cy + Math.sin(a) * R;
+        const hot = p === 'MUSIC';
+        return <g key={i}><line x1={cx} y1={cy} x2={x} y2={y} stroke={hot ? COLORS.pink : COLORS.ledGrey} strokeWidth={hot ? STROKE.lg : STROKE.sm} opacity={hot ? 0.8 : 0.5} /><g transform={`translate(${x} ${y})`}><rect x={-58} y={-26} width={116} height={52} rx={12} fill={hot ? COLORS.yellow : COLORS.white} {...lg} /><text x={0} y={7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{p}</text></g></g>;
+      })}
+      <text x={cx} y={cy - 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>music rewards us like food does</text>
+    </g>
+  );
+};
+
+/** two-dopamine-hits: an anticipatory hit before the peak, then the peak hit. */
+const TwoDopamineHits: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 480; const H = 200;
+  const x0 = cx - W / 2; const base = cy + H / 2;
+  const pts = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; const y = base - H * (0.1 + 0.85 * Math.pow(t, 3)); return `${x0 + t * W},${y}`; });
+  const antiX = x0 + W * 0.62; const peakX = x0 + W * 0.95;
+  const pulse = 0.5 + 0.5 * Math.sin(frame / 5);
+  return (
+    <g>
+      <polyline points={pts.join(' ')} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <line x1={x0 - 10} y1={base} x2={x0 + W + 10} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      {/* anticipation marker */}
+      <g transform={`translate(${antiX} ${base - H * 0.4})`} opacity={0.7 + 0.3 * pulse}><circle cx={0} cy={0} r={16} fill={COLORS.yellow} {...sm} /><text x={0} y={44} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>anticipation</text></g>
+      {/* peak marker */}
+      <g transform={`translate(${peakX} ${base - H * 0.86})`}>{[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <line key={i} x1={0} y1={0} x2={Math.cos((i / 8) * Math.PI * 2) * 24} y2={Math.sin((i / 8) * Math.PI * 2) * 24} stroke={COLORS.pink} strokeWidth={STROKE.lg} strokeLinecap="round" />)}<circle cx={0} cy={0} r={14} fill={COLORS.pink} {...sm} /><text x={0} y={-36} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>the drop!</text></g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a hit before, and at, the peak</text>
+    </g>
+  );
+};
+
+/** expectation-violation: predicted path vs a pleasurable surprise. */
+const ExpectationViolation: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5; const W = 440;
+  const x0 = cx - W / 2; const mid = cy;
+  const g = 0.5 + 0.5 * Math.sin(frame / 5);
+  return (
+    <g>
+      {/* shared start */}
+      <path d={`M ${x0} ${mid} L ${x0 + W * 0.5} ${mid}`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      {/* predicted continuation (flat, grey, dotted) */}
+      <path d={`M ${x0 + W * 0.5} ${mid} L ${x0 + W} ${mid}`} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.lg} strokeDasharray="6 10" />
+      <text x={x0 + W} y={mid + 34} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>what you expected</text>
+      {/* actual: a surprising, satisfying leap */}
+      <path d={`M ${x0 + W * 0.5} ${mid} Q ${x0 + W * 0.7} ${mid - 120} ${x0 + W * 0.95} ${mid - 90}`} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.xl} strokeLinecap="round" />
+      <g transform={`translate(${x0 + W * 0.95} ${mid - 90})`} opacity={0.7 + 0.3 * g}>{[0, 1, 2, 3, 4].map((i) => <line key={i} x1={0} y1={0} x2={Math.cos((i / 5) * Math.PI - Math.PI / 2) * 26} y2={Math.sin((i / 5) * Math.PI - Math.PI / 2) * 26} stroke={COLORS.yellow} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+      <text x={x0 + W * 0.8} y={mid - 120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>the surprise = chills</text>
+      <text x={cx} y={cy - 160} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a prediction, pleasurably broken</text>
+    </g>
+  );
+};
+
+/** who-gets-chills: ~2/3 of people do; linked to openness & brain wiring. */
+const WhoGetsChills: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46;
+  return (
+    <g>
+      {Array.from({ length: 9 }).map((_, i) => {
+        const col = i % 3; const row = Math.floor(i / 3); const x = cx - 150 + col * 150; const y = cy - 80 + row * 100;
+        const chill = i < 6; const p = springIn(frame - i * 3, 12);
+        return (
+          <g key={i} transform={`translate(${x} ${y}) scale(${0.7 + 0.3 * p})`}>
+            <circle cx={0} cy={0} r={40} fill={chill ? COLORS.pink : COLORS.white} {...lg} />
+            <circle cx={-13} cy={-4} r={5} fill={COLORS.outline} /><circle cx={13} cy={-4} r={5} fill={COLORS.outline} />
+            {chill ? <path d="M -12 14 Q 0 24 12 14" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /> : <line x1={-12} y1={16} x2={12} y2={16} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />}
+            {chill && [[-34, -30], [34, -30]].map(([sx, sy], j) => <path key={j} d={`M ${sx} ${sy} l 1 4 l 4 1 l -4 1 l -1 4 l -1 -4 l -4 -1 l 4 -1 Z`} fill={COLORS.yellow} />)}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>about 2 in 3 feel the chills</text>
+      <text x={cx} y={cy + 180} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline}>it's wiring, not trying harder</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3927,6 +4017,10 @@ export const DiagramCard: React.FC<{
     'reminiscence-bump': COLORS.sky,
     'bittersweet-mix': COLORS.pink,
     'nostalgia-coping-loop': COLORS.greenLeaf,
+    'music-reward-loop': COLORS.pink,
+    'two-dopamine-hits': COLORS.sky,
+    'expectation-violation': COLORS.yellow,
+    'who-gets-chills': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4091,6 +4185,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'reminiscence-bump' && <ReminiscenceBump />}
         {diagram === 'bittersweet-mix' && <BittersweetMix />}
         {diagram === 'nostalgia-coping-loop' && <NostalgiaCopingLoop />}
+        {diagram === 'music-reward-loop' && <MusicRewardLoop />}
+        {diagram === 'two-dopamine-hits' && <TwoDopamineHits />}
+        {diagram === 'expectation-violation' && <ExpectationViolation />}
+        {diagram === 'who-gets-chills' && <WhoGetsChills />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

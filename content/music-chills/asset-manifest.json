@@ -1,0 +1,241 @@
+{
+  "slug": "music-chills",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 5,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        15,
+        17,
+        19,
+        24,
+        27
+      ]
+    },
+    {
+      "name": "expectation-violation",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "music-reward-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "two-dopamine-hits",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "who-gets-chills",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        17,
+        19,
+        24
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        27,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        28
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        19,
+        24
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        15,
+        17,
+        27
+      ]
+    },
+    {
+      "name": "anticipation-peak",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        26
+      ]
+    },
+    {
+      "name": "awe-chills",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "brain-wiring",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15,
+        16
+      ]
+    },
+    {
+      "name": "chill-playlist",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "chills-meter",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "expectation-break",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14
+      ]
+    },
+    {
+      "name": "goosebumps-arm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "music-reward-brain",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        10
+      ]
+    },
+    {
+      "name": "soundwave-heart",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20,
+        21,
+        29
+      ]
+    },
+    {
+      "name": "spine-shiver",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        23
+      ]
+    },
+    {
+      "name": "grand-awe",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "headphone-nook",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        15
+      ]
+    },
+    {
+      "name": "live-concert",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        19,
+        24,
+        27
+      ]
+    }
+  ]
+}

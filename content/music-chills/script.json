@@ -1,0 +1,389 @@
+{
+  "title": "Why Music Gives You Chills",
+  "slug": "music-chills",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You know the moment. The song builds, the voice soars, the drop hits, and suddenly it washes over you. A shiver races up your spine. The hairs on your arms stand up. Your skin prickles with goosebumps. For a few seconds, a pattern of sound has reached inside you and physically moved your body. How on earth does that happen?",
+          "scene": "story",
+          "room": "headphone-nook",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY MUSIC GIVES YOU",
+          "subtitle": "chills",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "excited",
+              "x": 540,
+              "y": 860,
+              "scale": 0.95,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "It's one of the most magical, mysterious things our brains do. Vibrations in the air, with no food, no safety, no survival value whatsoever, somehow trigger a full-body wave of pleasure. Scientists call it frisson, and it's a genuine puzzle. Why would evolution wire us to get the shivers from a melody?",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The answer is a beautiful collision of dopamine, prediction, ancient reflexes, and emotion. By the end of this, you'll understand exactly what's happening in your brain and body when a song gives you chills, why some people feel it and others don't, and even how to chase that feeling on purpose. Let's follow the shiver.",
+          "scene": "explainer",
+          "prop": "spine-shiver",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Skin Orgasm",
+      "beats": [
+        {
+          "vo": "First, let's name it properly. That shiver-and-goosebumps response to music has a technical name, frisson, and a cheekier one scientists actually use, the skin orgasm. It's a sudden, transient wave of intense pleasure, rippling across your skin in response to something powerful, usually, music.",
+          "scene": "diagramCard",
+          "diagram": "who-gets-chills",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE SKIN ORGASM",
+          "subtitle": "frisson, explained"
+        },
+        {
+          "vo": "And here's the first clue. Not everyone gets it. Studies suggest around two-thirds of people feel musical chills, while the rest rarely or never do. It's also linked to a trait called openness to experience, curious, imaginative people tend to feel it more. If you get chills easily, your brain is wired a rather lovely way.",
+          "scene": "explainer",
+          "prop": "chills-meter",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Built Into Us",
+      "beats": [
+        {
+          "vo": "And this response runs deep in our species. Music appears in every human culture ever studied, and it's astonishingly old, we've found bone flutes over forty thousand years old. Long before writing, before cities, humans were making melodies together. Whatever chills are, they're tangled up with something fundamental about being human.",
+          "scene": "explainer",
+          "prop": "music-reward-brain",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "BUILT INTO US",
+          "subtitle": "older than history"
+        },
+        {
+          "vo": "Even tiny babies respond to music, calming to a lullaby, moving to a beat, long before they understand a single word. We arrive pre-tuned to be moved by sound. That's part of why frisson feels so primal, it isn't a learned taste, like liking olives. It's closer to a reflex, reaching into equipment we were practically born with.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "An Ancient Reflex",
+      "beats": [
+        {
+          "vo": "Let's start with the goosebumps themselves, because they're a wonderful piece of evolutionary leftover. Goosebumps are caused by tiny muscles at the base of each hair, pulling the hair upright. We share this reflex with other mammals, and it originally had nothing to do with music at all.",
+          "scene": "explainer",
+          "prop": "goosebumps-arm",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "AN ANCIENT REFLEX",
+          "subtitle": "goosebumps are borrowed"
+        },
+        {
+          "vo": "In our furry ancestors it served two jobs, fluffing up fur to trap warmth when cold, and puffing the body up to look bigger when threatened. Think of a cat's tail doubling in size. We barely have the fur for it now, but the wiring remains, and somehow powerful music hijacks this ancient survival reflex and fires it off in pure delight.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Your Brain On Music",
+      "beats": [
+        {
+          "vo": "So why does music set off such intense pleasure in the first place? Here's the big one. When you listen to music you love, your brain releases dopamine, the same feel-good reward chemical involved in eating delicious food, falling in love, and yes, addictive drugs.",
+          "scene": "diagramCard",
+          "diagram": "music-reward-loop",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "YOUR BRAIN ON MUSIC",
+          "subtitle": "music = dopamine"
+        },
+        {
+          "vo": "Brain scans show that during a chills moment, the reward centres deep in your brain light up exactly as they do for life's most basic pleasures. And this is strange. Food keeps you alive, love makes babies, but music does nothing for survival, yet your brain treats a stirring song like a jackpot. Sound has hooked our reward system.",
+          "scene": "explainer",
+          "prop": "music-reward-brain",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Two Hits",
+      "beats": [
+        {
+          "vo": "Now it gets even more clever. Researchers at McGill University found that the dopamine doesn't just arrive at the big climactic moment. It comes in two waves. There's a hit at the peak, the drop, the key change, the soaring note. But there's also a second hit, moments before, in anticipation.",
+          "scene": "diagramCard",
+          "diagram": "two-dopamine-hits",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE TWO HITS",
+          "subtitle": "wanting, then having"
+        },
+        {
+          "vo": "Your brain, having heard the build-up, predicts the glorious moment that's coming, and starts releasing dopamine in anticipation. Then the moment lands, and you get the second, bigger hit. The thrill of the wait, and the thrill of the payoff. Which is exactly why that long, tension-building climb can feel almost unbearably delicious.",
+          "scene": "explainer",
+          "prop": "anticipation-peak",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Pleasure Of Surprise",
+      "beats": [
+        {
+          "vo": "And here's the secret ingredient behind the chills, surprise. Your brain is a relentless prediction machine. As music plays, it's constantly, unconsciously guessing what comes next, the next note, the next chord, the next beat. Most of the time, it guesses right, and the music feels pleasant but safe.",
+          "scene": "diagramCard",
+          "diagram": "expectation-violation",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE PLEASURE OF SURPRISE",
+          "subtitle": "a broken prediction"
+        },
+        {
+          "vo": "But chills tend to strike at the moments the music does something unexpected, yet somehow perfect. A sudden key change. A voice entering from nowhere. A silence, then a swell. Your prediction is pleasurably broken, and that delightful jolt of being surprised in just the right way is a huge trigger for the dopamine, and the shiver.",
+          "scene": "explainer",
+          "prop": "expectation-break",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Why Some Don't Feel It",
+      "beats": [
+        {
+          "vo": "So why do some lucky people get chills from half their playlist, while others have genuinely never felt a thing? For a long time it was a mystery, until researchers scanned the brains of people who do and don't get musical chills, and found a real, physical difference.",
+          "scene": "story",
+          "room": "headphone-nook",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY SOME DON'T FEEL IT",
+          "subtitle": "it's in the wiring",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 540,
+              "y": 860,
+              "scale": 0.95,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "brain-wiring",
+              "x": 1380,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "People who feel strong chills tend to have more, denser connections between the part of the brain that processes sound and the parts that handle emotion and reward. More bridges, more traffic, bigger feeling. So if music doesn't give you goosebumps, it's not that you don't love it enough. It's just how your brain is wired. No shame in it.",
+          "scene": "explainer",
+          "prop": "brain-wiring",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Not Just Music",
+      "beats": [
+        {
+          "vo": "And here's a lovely twist, it isn't only music. That same chills response can be triggered by anything that overwhelms us with beauty or awe. A breathtaking landscape. A cathedral ceiling. A powerful speech. A pivotal scene in a film. The sight of a night sky absolutely crammed with stars.",
+          "scene": "story",
+          "room": "grand-awe",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "NOT JUST MUSIC",
+          "subtitle": "awe gives chills too",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "excited",
+              "x": 1300,
+              "y": 880,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "awe-chills",
+              "x": 520,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "What links all of these is awe, that feeling of meeting something vast and moving, bigger than yourself. Chills seem to be the body's signature for a peak emotional experience, a moment so meaningful it overflows your normal boundaries. Music is simply the most reliable, portable way humans ever found to manufacture awe on demand.",
+          "scene": "explainer",
+          "prop": "awe-chills",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Group Shiver",
+      "beats": [
+        {
+          "vo": "And chills are often best shared. Think of a crowd at a concert when the whole room erupts into the chorus together, thousands of people getting goosebumps at the exact same instant. Music doesn't just move individuals, it synchronises them. Our heartbeats, our breathing, even our brainwaves can fall into step when we listen together.",
+          "scene": "story",
+          "room": "live-concert",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE GROUP SHIVER",
+          "subtitle": "chills bond us together",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "cheer",
+              "emotion": "excited",
+              "x": 300,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "This is likely one of the deep reasons music exists at all, it bonds us. For our ancestors, singing, drumming and dancing together built trust and belonging, turning a collection of individuals into a tribe. So that collective shiver at a gig is an ancient magic trick, using shared awe to stitch strangers into one feeling, for a moment.",
+          "scene": "explainer",
+          "prop": "soundwave-heart",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Chills And Memory",
+      "beats": [
+        {
+          "vo": "There's one more layer that makes certain songs hit like a freight train, memory and meaning. The songs that give you the strongest chills often aren't just sonically clever, they're personal. They're tied to a specific person, a time, a loss, a love. The music carries the emotion of everything it's wrapped around in your life.",
+          "scene": "explainer",
+          "prop": "soundwave-heart",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "CHILLS AND MEANING",
+          "subtitle": "the song carries your story"
+        },
+        {
+          "vo": "So when a particular song floors you but leaves your friend unmoved, it's because for you, it's not just music, it's a memory, a feeling, a whole chapter of your life compressed into three minutes. The chills are your body recognising something that matters deeply to you. They're emotion, made physical.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's why chills and tears so often arrive together, at a wedding song, a funeral hymn, the track from your first dance. The shiver is your body saying, this matters, remember. Far from being silly or oversensitive, those goosebumps are a sign you're deeply tuned to meaning. They are emotion made visible on your skin.",
+          "scene": "explainer",
+          "prop": "spine-shiver",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Chase The Chills",
+      "beats": [
+        {
+          "vo": "So, can you get more chills on purpose? Happily, yes. First, listen actively and fully, eyes closed, good headphones, no distractions, letting the music have your whole attention. Frisson loves immersion, the more absorbed you are, the more likely the shiver.",
+          "scene": "story",
+          "room": "live-concert",
+          "emotion": "excited",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "CHASE THE CHILLS",
+          "subtitle": "how to feel more of them",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "cheer",
+              "emotion": "excited",
+              "x": 300,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Second, seek out music with dynamics, big builds, sudden changes, soaring moments, those surprise-and-release structures that trigger it. Third, go to live shows, where volume, crowd and spectacle amplify everything. And fourth, revisit the songs tied to your most emotional memories, and build yourself a dedicated chills playlist.",
+          "scene": "explainer",
+          "prop": "chill-playlist",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And one more, chase novelty. Because chills feed on surprise, a song you've heard five hundred times can stop delivering them, its twists no longer surprise your brain. So keep discovering new music, and revisit old favourites after a long break. A little distance lets a beloved song ambush you all over again.",
+          "scene": "explainer",
+          "prop": "anticipation-peak",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time a song sends that electric shiver down your spine, marvel at what just happened. Your brain predicted the music, got pleasurably surprised, flooded itself with dopamine, and fired off an ancient reflex meant for fluffing fur, all because some humans arranged sound waves in a beautiful order. That is extraordinary.",
+          "scene": "story",
+          "room": "live-concert",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "MOVED BY SOUND",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 300,
+              "y": 980,
+              "scale": 0.85,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "And if you're one of the people who doesn't get chills, don't worry, you haven't missed out on loving music. You feel it your own way, through your own wiring. There's no right way for a song to reach you. The point was never the goosebumps. It was always the connection.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Because that's the real wonder here. In a universe of physics and survival, we evolved to be moved, literally, to the point of shivers, by pure beauty. Music is proof that we are creatures who crave meaning, awe, and feeling. And that spine-tingling shiver is your body's way of saying, this, right here, is what it is to be alive.",
+          "scene": "explainer",
+          "prop": "soundwave-heart",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, what's the one song that gives you chills every single time, no matter how often you hear it? Go and play it right now. Thank you, truly, for spending this time with me. If this gave you even a little shiver, subscribe and stay a while. I'm Dear Brain. Go get the goosebumps.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}
