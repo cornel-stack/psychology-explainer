@@ -190,7 +190,10 @@ export type RoomName =
   | 'street-reunion'
   | 'elevator-ride'
   | 'party-kitchen'
-  | 'coffee-queue';
+  | 'coffee-queue'
+  | 'gratitude-nook'
+  | 'gathering-table'
+  | 'sunrise-overlook';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4985,6 +4988,71 @@ export const CoffeeQueue: React.FC = () => (
   </g>
 );
 
+/** Gratitude nook: a warm, cosy journaling corner at sunrise — an armchair, a steaming
+ *  mug, a journal, a plant and soft golden light. */
+export const GratitudeNook: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowSoft, 0.03)} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={540} width={CANVAS.width} height={300} fill={shade(COLORS.yellowSoft, -0.01)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={540} stroke={shade(COLORS.yellowSoft, -0.04)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* sunrise window with warm rays */}
+    <g transform="translate(1540 350)"><rect x={-150} y={-160} width={300} height={320} rx={14} fill={shade(COLORS.sky, 0.1)} {...xl} /><circle cx={0} cy={90} r={70} fill={COLORS.yellow} opacity={0.85} />{Array.from({ length: 9 }).map((_, i) => { const a = (i / 9) * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 80} y1={90 + Math.sin(a) * 80} x2={Math.cos(a) * 120} y2={90 + Math.sin(a) * 120} stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.5} />; })}<line x1={0} y1={-160} x2={0} y2={160} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /><line x1={-150} y1={0} x2={150} y2={0} stroke={shade(COLORS.sky, -0.08)} strokeWidth={STROKE.lg} /></g>
+    {[0, 1, 2].map((i) => <path key={i} d={`M 1420 240 L ${840 - i * 120} 840 L ${980 - i * 120} 840 L 1540 240 Z`} fill={COLORS.yellow} opacity={0.05} />)}
+    {/* a framed 'grateful' heart */}
+    <g transform="translate(360 300)"><rect x={-60} y={-54} width={120} height={108} rx={8} fill={COLORS.white} {...xl} /><path d="M 0 24 q -26 -20 -26 -40 q 0 -12 12 -12 q 8 0 12 8 q 4 -8 12 -8 q 12 0 12 12 q 0 20 -26 40 Z" fill={COLORS.pink} {...sm} transform="translate(0 -4)" /></g>
+    {/* a cosy armchair */}
+    <g transform="translate(820 820)"><rect x={-150} y={-60} width={300} height={170} rx={30} fill={COLORS.pink} {...xl} /><rect x={-150} y={-140} width={80} height={120} rx={24} fill={shade(COLORS.pink, 0.06)} {...lg} /><rect x={70} y={-140} width={80} height={120} rx={24} fill={shade(COLORS.pink, 0.06)} {...lg} /><rect x={-110} y={-40} width={220} height={90} rx={18} fill={shade(COLORS.pink, 0.1)} {...lg} /></g>
+    {/* side table with journal + mug */}
+    <g transform="translate(1120 840)"><rect x={-50} y={0} width={100} height={110} rx={10} fill={COLORS.woodDark} {...xl} /><rect x={-42} y={-24} width={84} height={30} rx={5} fill={COLORS.white} {...lg} transform="rotate(-6 0 -10)" /><g transform="translate(36 -20)"><rect x={-18} y={-20} width={36} height={28} rx={6} fill={COLORS.red} {...sm} />{[0, 1].map((i) => <path key={i} d={`M ${-8 + i * 12} -24 q -4 -8 2 -16`} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} strokeLinecap="round" opacity={0.5} />)}</g></g>
+    {/* plant */}
+    <g transform="translate(300 760)"><rect x={-34} y={0} width={68} height={100} rx={10} fill={COLORS.greenTeal} {...xl} /><path d="M 0 0 q -46 -56 -22 -124 M 0 0 q 0 -78 0 -144 M 0 0 q 46 -56 22 -124" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-22} cy={-124} r={15} fill={COLORS.greenLeaf} /><circle cx={0} cy={-144} r={17} fill={COLORS.greenLeaf} /><circle cx={22} cy={-124} r={15} fill={COLORS.greenLeaf} /></g>
+  </g>
+);
+
+/** Gathering table: a warm shared meal — a long table laden with food, hanging lights,
+ *  empty chairs waiting, the glow of togetherness. */
+export const GatheringTable: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.red, 0.04)} floor={COLORS.woodDark} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.red, 0.02)} opacity={0.5} />)}
+    {/* hanging warm lights */}
+    {[480, 960, 1440].map((x, i) => <g key={i} transform={`translate(${x} 0)`}><line x1={0} y1={0} x2={0} y2={140} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><path d="M -44 140 L 44 140 L 28 200 L -28 200 Z" fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={206} rx={30} ry={10} fill={COLORS.yellow} opacity={0.7} /></g>)}
+    {/* a window to dusk */}
+    <g transform="translate(300 320)"><rect x={-120} y={-130} width={240} height={260} rx={12} fill={shade(COLORS.purpleDeep, 0.12)} {...xl} />{[0, 1, 2].map((i) => <circle key={i} cx={-50 + i * 55} cy={-60} r={3} fill={COLORS.white} opacity={0.7} />)}<line x1={0} y1={-130} x2={0} y2={130} stroke={shade(COLORS.purpleDeep, 0.2)} strokeWidth={STROKE.lg} /></g>
+    {/* the laden table */}
+    <g transform="translate(960 800)"><rect x={-480} y={-30} width={960} height={150} rx={14} fill={COLORS.wood} {...xl} /><rect x={-480} y={-50} width={960} height={26} rx={10} fill={shade(COLORS.wood, 0.06)} {...lg} />
+      {/* a roast platter in the centre */}
+      <ellipse cx={0} cy={-46} rx={90} ry={26} fill={COLORS.white} {...lg} /><ellipse cx={0} cy={-52} rx={60} ry={18} fill={shade(COLORS.wood, -0.04)} {...sm} />
+      {/* bowls + glasses */}
+      {[-320, -200, 200, 320].map((x, i) => <ellipse key={i} cx={x} cy={-44} rx={44} ry={16} fill={[COLORS.greenTeal, COLORS.yellowSoft, COLORS.pink, COLORS.sky][i]} {...lg} />)}
+      {[-120, 120].map((x, i) => <path key={i} d={`M ${x - 10} -46 L ${x + 10} -46 L ${x + 7} -78 L ${x - 7} -78 Z`} fill={shade(COLORS.red, 0.04)} opacity={0.7} {...sm} />)}
+    </g>
+    {/* a couple of chairs */}
+    {[520, 1400].map((x, i) => <g key={i} transform={`translate(${x} 880)`}><rect x={-44} y={-10} width={88} height={28} rx={8} fill={COLORS.woodDark} {...lg} /><rect x={-44} y={-120} width={88} height={60} rx={12} fill={shade(COLORS.wood, 0.02)} {...lg} /></g>)}
+  </g>
+);
+
+/** Sunrise overlook: a scenic hilltop viewpoint at dawn — layered hills, a vast sky,
+ *  a lookout bench, the quiet awe of being alive. */
+export const SunriseOverlook: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.06)} floor={COLORS.greenTeal} floorY={820} stripe={false} />
+    {/* graduated dawn sky */}
+    {Array.from({ length: 5 }).map((_, i) => <rect key={i} x={0} y={i * 120} width={CANVAS.width} height={120} fill={shade([COLORS.pink, COLORS.yellowSoft, COLORS.sky, COLORS.sky, COLORS.sky][i], 0.04)} opacity={0.4} />)}
+    {/* rising sun with glow */}
+    <circle cx={960} cy={420} r={100} fill={COLORS.yellow} opacity={0.85} {...xl} />
+    {[0, 1, 2].map((i) => <circle key={i} cx={960} cy={420} r={120 + i * 40} fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.sm} opacity={0.3 - i * 0.08} />)}
+    {/* layered hills */}
+    <path d="M 0 620 Q 480 540 960 600 Q 1440 540 1920 620 L 1920 820 L 0 820 Z" fill={shade(COLORS.greenTeal, 0.06)} />
+    <path d="M 0 700 Q 600 620 1200 700 Q 1600 740 1920 690 L 1920 820 L 0 820 Z" fill={shade(COLORS.greenTeal, -0.02)} />
+    {/* a few clouds + birds */}
+    {[[360, 200], [1500, 240]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`} opacity={0.5}><ellipse cx={0} cy={0} rx={64} ry={28} fill={COLORS.white} /><ellipse cx={-44} cy={8} rx={38} ry={20} fill={COLORS.white} /></g>)}
+    {[[700, 160], [1180, 180]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q 12 -12 24 0 q 12 -12 24 0`} fill="none" stroke={shade(COLORS.sky, -0.2)} strokeWidth={STROKE.sm} strokeLinecap="round" />)}
+    {/* lookout bench */}
+    <g transform="translate(960 850)"><rect x={-180} y={0} width={360} height={24} rx={8} fill={COLORS.wood} {...xl} /><rect x={-180} y={-58} width={360} height={20} rx={8} fill={COLORS.wood} {...lg} />{[-160, -4, 152].map((x, i) => <rect key={i} x={x} y={-62} width={14} height={120} rx={5} fill={COLORS.woodDark} {...lg} />)}</g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5160,6 +5228,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'elevator-ride': ElevatorRide,
   'party-kitchen': PartyKitchen,
   'coffee-queue': CoffeeQueue,
+  'gratitude-nook': GratitudeNook,
+  'gathering-table': GatheringTable,
+  'sunrise-overlook': SunriseOverlook,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

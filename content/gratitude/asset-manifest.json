@@ -1,0 +1,246 @@
+{
+  "slug": "gratitude",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 19
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        33
+      ]
+    },
+    {
+      "name": "pajamas",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "gratitude-benefits",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "gratitude-practices",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        25
+      ]
+    },
+    {
+      "name": "lens-shift",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "negativity-bias",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        15,
+        21,
+        23,
+        24,
+        27,
+        33,
+        34
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        25,
+        26,
+        28,
+        29,
+        30,
+        32
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        14,
+        31
+      ]
+    },
+    {
+      "name": "cheer",
+      "type": "pose",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        26,
+        33
+      ]
+    },
+    {
+      "name": "adaptation-fade",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "both-true",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        30
+      ]
+    },
+    {
+      "name": "gratitude-bond",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "gratitude-journal",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "half-full-cup",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "imagine-gone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "negativity-tilt",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "notice-good",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "savor-moment",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "thank-you-letter",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "gathering-table",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "gratitude-nook",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "sunrise-overlook",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        33
+      ]
+    }
+  ]
+}

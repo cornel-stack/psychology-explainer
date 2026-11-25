@@ -1,0 +1,310 @@
+{
+  "title": "The Psychology of Gratitude",
+  "slug": "gratitude",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Here's a strange fact about being human. You could have a warm bed, food in the fridge, people who love you, a working body, a sky full of stars, and still spend the whole day feeling like it's somehow not enough. We are surrounded by good things we've completely stopped seeing. And learning to see them again might change everything.",
+          "scene": "story",
+          "room": "sunrise-overlook",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "gratitude",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Gratitude sounds soft, like a greeting card. But it's actually one of the most studied, most reliable tools in all of psychology for feeling happier, calmer, and more connected. It's not about pretending everything is perfect. It's about training your attention to notice the good that's already there.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, let's look at why your brain is practically built to overlook the good, the real science of what gratitude does to your mind and your relationships, a few simple practices that genuinely work, and the honest line between real gratitude and fake, forced positivity. Let's learn to really see our lives.",
+          "scene": "explainer",
+          "prop": "notice-good",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What It Really Is",
+      "beats": [
+        {
+          "vo": "First, let's be clear about what gratitude actually is. It's simply the act of noticing and appreciating the good in your life, and often, recognising that a lot of it came from outside you. From other people, from luck, from the world. It's a quiet acknowledgement that you have been given something.",
+          "scene": "explainer",
+          "prop": "half-full-cup",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHAT IT REALLY IS",
+          "subtitle": "a skill, not a mood"
+        },
+        {
+          "vo": "And here's the most important part. Gratitude is not a personality you're born with or without. It's a skill. A practice. Like a muscle, it gets stronger the more you use it. The more you look for things to appreciate, the more your brain starts finding them, automatically. You are literally training what your mind notices.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But before we can train it, we have to understand what we're up against. Because your brain, for very good reasons, is wired to do almost the opposite. It's built to overlook the good and fixate on the bad. And there are two powerful forces behind that.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Negativity Bias",
+      "beats": [
+        {
+          "vo": "The first is called the negativity bias. Your brain treats bad things as far more important, and more attention-worthy, than good things of the same size. One criticism outweighs ten compliments. One worry drowns out a dozen blessings.",
+          "scene": "diagramCard",
+          "diagram": "negativity-bias",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE NEGATIVITY BIAS",
+          "subtitle": "bad shouts, good whispers"
+        },
+        {
+          "vo": "And this made brilliant evolutionary sense. For our ancestors, missing a threat, a predator, a rival, a danger, could cost you your life. Missing a nice sunset cost you nothing. So the brains that obsessed over problems survived. We are the descendants of the worriers, wired to scan endlessly for what's wrong.",
+          "scene": "explainer",
+          "prop": "negativity-tilt",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The trouble is, in a modern life with far fewer predators, that same wiring just leaves us anxious and dissatisfied, endlessly noticing what's missing. Gratitude is the deliberate counterweight. It's you choosing to point the spotlight at the good your brain would otherwise skip straight past.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "We Get Used to Everything",
+      "beats": [
+        {
+          "vo": "The second force is even sneakier. It's called hedonic adaptation, and it's the reason happiness is so slippery. Put simply: we get used to everything.",
+          "scene": "explainer",
+          "prop": "adaptation-fade",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WE GET USED TO EVERYTHING",
+          "subtitle": "the good fades to normal"
+        },
+        {
+          "vo": "Remember how badly you once wanted the thing you now own? The phone, the home, the relationship, the job. For a while it was thrilling. And then, slowly, it faded into the background and became normal, invisible, just the baseline you measure everything else against. The joy quietly evaporated, and you started reaching for the next thing.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is the treadmill so many of us are stuck on. We adapt to every good thing, so we never feel we have enough. Gratitude is how you step off the treadmill. It deliberately re-notices what's become invisible, and makes the familiar feel precious again. It's how you get to actually feel the good you already have.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And there's a modern accelerant pouring fuel on this: comparison. Every time you scroll, you're shown other people's highlight reels, their wins, their holidays, their perfect kitchens. It quietly resets your baseline upward, so your own good life starts to look like a disappointment. Comparison is the thief of gratitude.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Scarcity to Abundance",
+      "beats": [
+        {
+          "vo": "Put those two forces together, and you see what gratitude is really doing. It's changing the lens you look at your life through. And the very same life can look completely different depending on which lens you use.",
+          "scene": "diagramCard",
+          "diagram": "lens-shift",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "SCARCITY TO ABUNDANCE",
+          "subtitle": "same life, different lens"
+        },
+        {
+          "vo": "Through the scarcity lens, you see everything you lack. What you haven't achieved, what others have, what's still missing. It's a lens of not enough, and it leaves you restless no matter how much you have. It is, unfortunately, your brain's factory setting.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "Gratitude switches you to the abundance lens. Suddenly you see what's present. What's going right. What you'd miss terribly if it vanished. Nothing about your actual life has changed. But everything about how it feels has. Gratitude doesn't give you a better life. It helps you notice the one you already have.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "What It Does to You",
+      "beats": [
+        {
+          "vo": "Now, this might all sound nice but vague. So let's talk about the hard evidence, because gratitude has been studied intensely, and the results are genuinely striking.",
+          "scene": "diagramCard",
+          "diagram": "gratitude-benefits",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHAT IT DOES TO YOU",
+          "subtitle": "the proven effects"
+        },
+        {
+          "vo": "In landmark studies by Robert Emmons, people who kept a weekly gratitude journal became measurably happier and more optimistic than those who listed hassles, and even slept better. A single exercise called Three Good Things, just writing three good things each night, has been shown to lift mood for weeks.",
+          "scene": "explainer",
+          "prop": "gratitude-journal",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "In the brain, gratitude lights up regions tied to reward and feel-good chemistry, and expressing it is linked to the bonding hormone that draws us close. There's also a lovely quirk: it's hard to feel deep gratitude and anxiety at the same time. They crowd each other out. Appreciation and dread don't share a room easily.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Now, let's be measured here. Gratitude isn't magic, and the effects are real but modest. It won't erase hardship or cure an illness. But as a simple, free, daily practice with this much evidence behind it? There are very few things in psychology that give you so much, for so little effort.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "It Binds Us",
+      "beats": [
+        {
+          "vo": "Gratitude doesn't just change how you feel inside. It transforms your relationships. In fact, expressing it might be one of the most underused tools for building closeness we have.",
+          "scene": "explainer",
+          "prop": "gratitude-bond",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "IT BINDS US",
+          "subtitle": "the glue of connection"
+        },
+        {
+          "vo": "Psychologist Sara Algoe describes how saying a genuine thank you works like social glue. It finds the good people in our lives, reminds us of their value, and binds us closer to them. When someone feels truly appreciated by you, they feel seen, and they become warmer and more invested in return.",
+          "scene": "story",
+          "room": "gathering-table",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "tee", "pose": "cheer", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "And yet we so rarely say it out loud. We feel grateful for people, our partners, our friends, our parents, and then just... never tell them. One of the simplest ways to deepen almost any relationship is to actually speak the appreciation you already feel. Don't let it stay silent in your head.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This works everywhere, not just at home. A manager who genuinely thanks their team earns more loyalty than one who only criticises. A quick, specific thank you to a colleague, a friend, a stranger who helped, costs nothing and can quietly make someone's whole day. Gratitude, spoken out loud, is a gift that lands on both of you.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "And here's the beautiful part: it compounds. The more you practise gratitude, the more your brain gets into the habit of scanning for the good instead of the bad. Start with just one small thing a day, and over weeks it quietly rewires your default. You don't become a different person. You just become far more awake to your own life.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "How to Practise It",
+      "beats": [
+        {
+          "vo": "So how do you actually build this? Here are four practices that genuinely work. And the goal of all of them is the same: to deliberately point your attention at the good, until it starts happening on its own.",
+          "scene": "diagramCard",
+          "diagram": "gratitude-practices",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "HOW TO PRACTISE IT",
+          "subtitle": "four simple ways"
+        },
+        {
+          "vo": "One: keep a gratitude journal, but the secret is to be specific. Don't write my family. Write the way my sister called just to check in today. Generic gratitude does almost nothing. Specific, vivid gratitude, the particular moment, the exact detail, is what actually moves the needle.",
+          "scene": "story",
+          "room": "gratitude-nook",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "pajamas", "pose": "idle", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Two: savour. When something good is happening, a warm drink, a laugh, sun on your face, actually pause and let yourself feel it for a few extra seconds, instead of rushing past. Savouring is gratitude in real time, and it's how you squeeze the joy out of ordinary moments before adaptation steals them.",
+          "scene": "explainer",
+          "prop": "savor-moment",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "Three: write a gratitude letter. Think of someone who shaped your life and never got a proper thank you, and write them one. Delivering it in person, reading it aloud, is one of the single most powerful happiness exercises in all of psychology. It floods both of you with warmth.",
+          "scene": "explainer",
+          "prop": "thank-you-letter",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And four, the most surprising one: mental subtraction. Instead of imagining more, imagine less. Picture a good thing in your life, a person, your health, your home, suddenly gone. It sounds grim, but it snaps you instantly out of taking it for granted. It's the It's a Wonderful Life effect, and it works like a charm.",
+          "scene": "explainer",
+          "prop": "imagine-gone",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Not Toxic Positivity",
+      "beats": [
+        {
+          "vo": "But here's a crucial, honest warning. Real gratitude is not the same as forced, toxic positivity. It is not slapping on a smile and chanting good vibes only while you're falling apart inside.",
+          "scene": "explainer",
+          "prop": "both-true",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "NOT TOXIC POSITIVITY",
+          "subtitle": "the honest line"
+        },
+        {
+          "vo": "Using gratitude to bully yourself out of real feelings, telling yourself you've no right to be sad because others have it worse, isn't gratitude. It's suppression, and it just buries the pain. Genuine gratitude never demands that you deny your struggle. It sits right beside it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "tearful"
+        },
+        {
+          "vo": "You can be heartbroken and still grateful for the people holding you through it. You can be worn out by a hard season and still thankful for one small mercy in it. Both are true at once. Real gratitude doesn't erase the darkness. It just helps you keep sight of the light that's still there, and it's never a substitute for real support.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "So here's the quiet invitation. Tonight, before you sleep, find three specific good things from your day. Tomorrow, tell one person you're glad they exist. And the next time something lovely and ordinary happens, pause for three extra seconds and actually feel it.",
+          "scene": "story",
+          "room": "sunrise-overlook",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Because your life, right now, is quietly full of things that someone else is praying for. Gratitude is simply learning to see them again, before they're gone. So open your eyes to the good you already have. It was there all along, just waiting to be noticed. Thank you, genuinely, for watching.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

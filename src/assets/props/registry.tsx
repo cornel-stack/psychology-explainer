@@ -62,6 +62,7 @@ import * as Ga from './gaslighting';
 import * as Ft from './feel-tired';
 import * as Fn from './faces-names';
 import * as Sk from './small-talk';
+import * as Gt from './gratitude';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -748,6 +749,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'depth-dial': Sk.DepthDial,
   'shared-spark': Sk.SharedSpark,
   'awkward-pause': Sk.AwkwardPause,
+  'notice-good': Gt.NoticeGood,
+  'negativity-tilt': Gt.NegativityTilt,
+  'adaptation-fade': Gt.AdaptationFade,
+  'gratitude-journal': Gt.GratitudeJournal,
+  'half-full-cup': Gt.HalfFullCup,
+  'thank-you-letter': Gt.ThankYouLetter,
+  'savor-moment': Gt.SavorMoment,
+  'imagine-gone': Gt.ImagineGone,
+  'gratitude-bond': Gt.GratitudeBond,
+  'both-true': Gt.BothTrue,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

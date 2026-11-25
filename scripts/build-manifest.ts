@@ -241,6 +241,10 @@ const NEW_ASSETS = new Set([
   'elevator-ride', 'party-kitchen', 'coffee-queue',
   'weather-opener', 'social-grooming', 'trust-signal', 'bridge-to-deep', 'liking-gap-faces', 'weak-ties-web', 'open-question-key', 'depth-dial', 'shared-spark', 'awkward-pause',
   'small-talk-jobs', 'conversation-depth', 'underestimate-liking', 'small-talk-bridge',
+  // gratitude (all new)
+  'gratitude-nook', 'gathering-table', 'sunrise-overlook',
+  'notice-good', 'negativity-tilt', 'adaptation-fade', 'gratitude-journal', 'half-full-cup', 'thank-you-letter', 'savor-moment', 'imagine-gone', 'gratitude-bond', 'both-true',
+  'negativity-bias', 'gratitude-benefits', 'lens-shift', 'gratitude-practices',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
