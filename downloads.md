@@ -30,5 +30,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 22 | Every Cognitive Distortion Explained | `cognitive-distortions` | ~12 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45501592167 | ✅ render OK |
 | 23 | Every Emotion Explained | `basic-emotions` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45506343773 | ✅ render OK |
 | 24 | Every Type of Love Explained | `types-of-love` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45510382101 | ✅ render OK |
+| 25 | The Psychology of Charisma | `psychology-of-charisma` | ~11 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45514535186 | ⏳ rendering |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
