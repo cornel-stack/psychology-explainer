@@ -1,0 +1,241 @@
+{
+  "slug": "boredom",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        11,
+        15,
+        21,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "boredom-creativity",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "boredom-equation",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "shock-choice",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "tolerance-eroding",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        11,
+        25,
+        27,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        26,
+        28
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        11,
+        15,
+        21,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "bored-fidget",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19
+      ]
+    },
+    {
+      "name": "boredom-lightbulb",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10,
+        15,
+        23
+      ]
+    },
+    {
+      "name": "dragging-clock",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "engage-choice",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        26
+      ]
+    },
+    {
+      "name": "explore-compass",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        13
+      ]
+    },
+    {
+      "name": "grasping-void",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4
+      ]
+    },
+    {
+      "name": "numbing-scroll",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "rest-vs-boredom",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "shock-vs-boredom",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "wander-cloud",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11,
+        12,
+        29
+      ]
+    },
+    {
+      "name": "blank-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        11,
+        15
+      ]
+    },
+    {
+      "name": "maker-workshop",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        25,
+        27
+      ]
+    },
+    {
+      "name": "waiting-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        21
+      ]
+    }
+  ]
+}

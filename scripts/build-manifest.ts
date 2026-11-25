@@ -181,6 +181,10 @@ const NEW_ASSETS = new Set([
   'mirror-pep-talk', 'locker-room', 'thinking-desk',
   'talking-aloud', 'kid-private-speech', 'inner-voice-bubble', 'rubber-duck', 'lost-keys-found', 'hype-coach', 'name-megaphone', 'inner-critic', 'inner-coach', 'quiet-mind',
   'inner-speech-origin', 'self-talk-performance', 'name-distance', 'critic-vs-coach',
+  // boredom (all new)
+  'waiting-room', 'blank-room', 'maker-workshop',
+  'dragging-clock', 'grasping-void', 'bored-fidget', 'shock-vs-boredom', 'numbing-scroll', 'boredom-lightbulb', 'wander-cloud', 'explore-compass', 'rest-vs-boredom', 'engage-choice',
+  'boredom-equation', 'shock-choice', 'boredom-creativity', 'tolerance-eroding',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

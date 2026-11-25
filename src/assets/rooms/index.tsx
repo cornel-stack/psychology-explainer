@@ -145,7 +145,10 @@ export type RoomName =
   | 'calm-reframe-room'
   | 'mirror-pep-talk'
   | 'locker-room'
-  | 'thinking-desk';
+  | 'thinking-desk'
+  | 'waiting-room'
+  | 'blank-room'
+  | 'maker-workshop';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3932,6 +3935,91 @@ export const ThinkingDesk: React.FC = () => (
   </g>
 );
 
+/** Waiting room: rows of plastic chairs, a slow clock, old magazines and a ticket
+ *  display — the archetypal theatre of boredom. */
+export const WaitingRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.1)} floor={COLORS.whiteShade} floorY={840} stripe={false} />
+    {/* wall panels + dado to break the flat wall */}
+    {Array.from({ length: 16 }).map((_, i) => <rect key={`p${i}`} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.greenTeal, 0.06)} opacity={0.6} />)}
+    <rect x={0} y={520} width={CANVAS.width} height={60} fill={shade(COLORS.greenTeal, 0.04)} />
+    {Array.from({ length: 11 }).map((_, r) => <line key={r} x1={0} y1={90 + r * 70} x2={CANVAS.width} y2={90 + r * 70} stroke={shade(COLORS.greenTeal, 0.06)} strokeWidth={STROKE.sm} opacity={0.4} />)}
+    {/* framed health posters */}
+    {[150, 1500, 1720].map((x, i) => <g key={`ps${i}`} transform={`translate(${x} 360)`}><rect x={-56} y={-74} width={112} height={148} rx={6} fill={COLORS.white} {...lg} /><rect x={-44} y={-60} width={88} height={70} rx={4} fill={[COLORS.pink, COLORS.sky, COLORS.yellow][i]} opacity={0.6} /><line x1={-40} y1={26} x2={40} y2={26} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} /><line x1={-40} y1={44} x2={16} y2={44} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} /></g>)}
+    {/* floor tiles */}
+    {Array.from({ length: 13 }).map((_, i) => <line key={i} x1={i * 160} y1={840} x2={i * 160 - 120} y2={1080} stroke={shade(COLORS.whiteShade, -0.05)} strokeWidth={STROKE.sm} opacity={0.6} />)}
+    {/* a slow wall clock */}
+    <g transform="translate(960 220)"><circle cx={0} cy={0} r={70} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-40} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={28} y2={6} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle cx={0} cy={0} r={7} fill={COLORS.outline} /></g>
+    {/* a 'NOW SERVING' ticket display */}
+    <g transform="translate(400 220)"><rect x={-110} y={-50} width={220} height={100} rx={12} fill={COLORS.outline} {...xl} /><text x={0} y={-6} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={18} fill={COLORS.ledGrey}>NOW SERVING</text><text x={0} y={32} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={34} fill={COLORS.red}>B-07</text></g>
+    {/* a potted plant + a water cooler */}
+    <g transform="translate(1600 560)"><rect x={-40} y={0} width={80} height={200} rx={10} fill={COLORS.sky} {...xl} /><rect x={-30} y={-60} width={60} height={70} rx={10} fill={shade(COLORS.sky, 0.14)} {...lg} /><ellipse cx={0} cy={-60} rx={30} ry={10} fill={COLORS.white} opacity={0.5} /></g>
+    {/* a long row of linked plastic chairs */}
+    <g transform="translate(0 760)">{[220, 400, 580, 1180, 1360].map((x, i) => <g key={i} transform={`translate(${x} 0)`}><rect x={-60} y={-10} width={120} height={28} rx={8} fill={[COLORS.red, COLORS.yellow, COLORS.sky][i % 3]} {...lg} /><rect x={-60} y={-90} width={120} height={80} rx={12} fill={shade([COLORS.red, COLORS.yellow, COLORS.sky][i % 3], 0.08)} {...lg} /><rect x={-56} y={18} width={14} height={80} fill={COLORS.ledGrey} /><rect x={42} y={18} width={14} height={80} fill={COLORS.ledGrey} /></g>)}</g>
+    {/* a low table with scattered old magazines */}
+    <g transform="translate(820 880)"><rect x={-110} y={0} width={220} height={24} rx={8} fill={COLORS.wood} {...xl} />{[-70, -10, 50].map((x, i) => <rect key={i} x={x - 30} y={-18} width={60} height={20} rx={3} fill={[COLORS.pink, COLORS.greenLeaf, COLORS.lavender][i]} {...sm} transform={`rotate(${i * 8 - 8} ${x} -8)`} />)}</g>
+  </g>
+);
+
+/** Blank room: an almost-empty beige room with one chair and a grey window — pure,
+ *  restless under-stimulation. */
+export const BlankRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCreamDark} floor={COLORS.wood} floorY={840} stripe={false} />
+    {/* vertical wallpaper bands to break the pure-flat beige */}
+    {Array.from({ length: 16 }).map((_, i) => <rect key={`b${i}`} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.bgCreamDark, -0.06)} opacity={0.7} />)}
+    {Array.from({ length: 10 }).map((_, r) => Array.from({ length: 16 }).map((_, c) => <circle key={`w${r}-${c}`} cx={120 + c * 122} cy={60 + r * 56} r={5} fill={shade(COLORS.bgCreamDark, -0.1)} opacity={0.5} />))}
+    {/* panelling + a long dado rail */}
+    {Array.from({ length: 12 }).map((_, i) => <line key={i} x1={i * 170} y1={0} x2={i * 170} y2={620} stroke={shade(COLORS.bgCreamDark, -0.05)} strokeWidth={STROKE.sm} opacity={0.4} />)}
+    <rect x={0} y={560} width={CANVAS.width} height={60} fill={shade(COLORS.bgCreamDark, -0.04)} />
+    {/* one lonely, boring framed picture + a plain rug */}
+    <g transform="translate(300 320)"><rect x={-70} y={-54} width={140} height={108} rx={6} fill={COLORS.white} {...lg} /><rect x={-56} y={-40} width={112} height={80} rx={4} fill={shade(COLORS.ledGrey, 0.14)} /></g>
+    <ellipse cx={1000} cy={1000} rx={360} ry={56} fill={shade(COLORS.wood, 0.1)} opacity={0.6} />
+    <line x1={0} y1={560} x2={CANVAS.width} y2={560} stroke={shade(COLORS.bgCreamDark, -0.1)} strokeWidth={STROKE.lg} />
+    {/* floorboards */}
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={840} x2={i * 180 - 120} y2={1080} stroke={shade(COLORS.wood, 0.1)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* a plain grey window with a dull grey sky */}
+    <g transform="translate(560 360)"><rect x={-150} y={-170} width={300} height={340} rx={10} fill={shade(COLORS.ledGrey, 0.12)} {...xl} /><rect x={-132} y={-152} width={264} height={304} rx={6} fill={shade(COLORS.ledGrey, 0.2)} /><line x1={0} y1={-170} x2={0} y2={170} stroke={shade(COLORS.ledGrey, 0.06)} strokeWidth={STROKE.lg} /><line x1={-150} y1={0} x2={150} y2={0} stroke={shade(COLORS.ledGrey, 0.06)} strokeWidth={STROKE.lg} /></g>
+    {/* a single lonely light bulb + cord */}
+    <g transform="translate(1300 60)"><line x1={0} y1={0} x2={0} y2={120} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><circle cx={0} cy={136} r={18} fill={COLORS.yellowSoft} {...sm} /><ellipse cx={0} cy={340} rx={120} ry={30} fill={COLORS.yellowSoft} opacity={0.12} /></g>
+    {/* a single wooden chair, facing nothing */}
+    <g transform="translate(1340 780)"><rect x={-50} y={0} width={100} height={24} rx={6} fill={COLORS.wood} {...xl} /><rect x={-50} y={-120} width={100} height={30} rx={8} fill={shade(COLORS.wood, 0.08)} {...lg} /><rect x={-50} y={-90} width={16} height={90} fill={COLORS.woodDark} /><rect x={34} y={-90} width={16} height={90} fill={COLORS.woodDark} /><rect x={-46} y={24} width={14} height={90} fill={COLORS.woodDark} /><rect x={32} y={24} width={14} height={90} fill={COLORS.woodDark} /></g>
+    {/* a clock, almost the only thing to look at */}
+    <g transform="translate(960 240)"><circle cx={0} cy={0} r={48} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-28} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={18} y2={4} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle cx={0} cy={0} r={5} fill={COLORS.outline} /></g>
+  </g>
+);
+
+/** Maker workshop: a rich, engaging workshop full of tools and projects — the
+ *  antidote to boredom (deep engagement). */
+export const MakerWorkshop: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.wood, 0.12)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {/* horizontal plank panelling across the whole wall */}
+    {Array.from({ length: 10 }).map((_, i) => <line key={`pk${i}`} x1={0} y1={70 + i * 70} x2={CANVAS.width} y2={70 + i * 70} stroke={shade(COLORS.wood, -0.06)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {Array.from({ length: 28 }).map((_, i) => <rect key={`nl${i}`} x={(i * 131) % 1880} y={70 + (i % 10) * 70 - 3} width={6} height={6} rx={2} fill={shade(COLORS.wood, -0.12)} opacity={0.4} />)}
+    {/* pegboard of tools across the back */}
+    <rect x={120} y={120} width={700} height={360} rx={10} fill={shade(COLORS.wood, 0.04)} {...xl} />
+    {Array.from({ length: 11 }).map((_, c) => Array.from({ length: 6 }).map((_, r) => <circle key={`${c}-${r}`} cx={170 + c * 62} cy={160 + r * 56} r={4} fill={shade(COLORS.wood, -0.08)} opacity={0.5} />))}
+    {/* hanging tools */}
+    {[[220, COLORS.red], [320, COLORS.sky], [420, COLORS.yellow], [540, COLORS.greenLeaf], [660, COLORS.pink]].map(([x, c], i) => <g key={i} transform={`translate(${x} 200)`}><rect x={-8} y={0} width={16} height={70} rx={4} fill={c as string} {...sm} /><rect x={-20} y={66} width={40} height={20} rx={4} fill={shade(c as string, -0.06)} {...sm} /></g>)}
+    {/* a bright window */}
+    <g transform="translate(1600 300)"><rect x={-140} y={-150} width={280} height={300} rx={12} fill={COLORS.sky} {...xl} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-140} y1={0} x2={140} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /></g>
+    {/* a sturdy workbench with a project in progress */}
+    <g transform="translate(960 820)">
+      <rect x={-420} y={-20} width={840} height={50} rx={8} fill={COLORS.wood} {...xl} />
+      <rect x={-380} y={30} width={40} height={160} fill={COLORS.woodDark} /><rect x={340} y={30} width={40} height={160} fill={COLORS.woodDark} />
+      {/* a half-built birdhouse / project */}
+      <g transform="translate(-180 -30)"><rect x={-50} y={-50} width={100} height={60} rx={4} fill={shade(COLORS.wood, 0.06)} {...lg} /><path d="M -58 -50 L 0 -90 L 58 -50 Z" fill={COLORS.red} {...lg} /><circle cx={0} cy={-26} r={14} fill={COLORS.outline} /></g>
+      {/* paint pots + brushes */}
+      {[40, 90, 140].map((x, i) => <g key={i} transform={`translate(${x} -20)`}><rect x={-14} y={-28} width={28} height={30} rx={4} fill={[COLORS.pink, COLORS.sky, COLORS.greenLeaf][i]} {...sm} /></g>)}
+      {/* a mug of brushes */}
+      <g transform="translate(260 -30)"><rect x={-20} y={-30} width={40} height={36} rx={6} fill={COLORS.yellow} {...lg} />{[-8, 0, 8].map((x, i) => <line key={i} x1={x} y1={-30} x2={x - 4} y2={-60} stroke={[COLORS.red, COLORS.sky, COLORS.greenLeaf][i]} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+    </g>
+    {/* string of jars on a shelf */}
+    <g transform="translate(1500 560)"><rect x={-120} y={0} width={240} height={14} rx={4} fill={COLORS.wood} {...lg} />{[-90, -50, -10, 30, 70].map((x, i) => <rect key={i} x={x - 12} y={-40} width={24} height={40} rx={6} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink][i]} opacity={0.7} {...sm} />)}</g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4062,6 +4150,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'mirror-pep-talk': MirrorPepTalk,
   'locker-room': LockerRoom,
   'thinking-desk': ThinkingDesk,
+  'waiting-room': WaitingRoom,
+  'blank-room': BlankRoom,
+  'maker-workshop': MakerWorkshop,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

@@ -4034,8 +4034,85 @@ const CriticVsCoach: React.FC = () => {
   );
 };
 
+/** boredom-equation: wanting to engage + unable to engage = boredom. */
+const BoredomEquation: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const p = springIn(frame, 26);
+  const term = (x: number, lab: string, sub: string, c: string) => (
+    <g transform={`translate(${x} ${cy})`}><circle cx={0} cy={0} r={58} fill={c} {...xl} /><text x={0} y={-2} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{lab}</text><text x={0} y={18} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={12} fill={COLORS.outline}>{sub}</text></g>
+  );
+  return (
+    <g>
+      {term(cx - 200, 'WANT to', 'engage', COLORS.sky)}
+      <text x={cx - 100} y={cy + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>+</text>
+      {term(cx, "CAN'T", 'engage', COLORS.red)}
+      <text x={cx + 100} y={cy + 8} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={40} fill={COLORS.outline}>=</text>
+      <g transform={`translate(${cx + 200} ${cy}) scale(${0.7 + 0.3 * p})`}><circle cx={0} cy={0} r={58} fill={COLORS.yellow} {...xl} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>BORED</text></g>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>boredom is a kind of stuck</text>
+    </g>
+  );
+};
+
+/** shock-choice: the share who shocked themselves rather than sit bored. */
+const ShockChoice: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  return (
+    <g>
+      {Array.from({ length: 10 }).map((_, i) => {
+        const col = i % 5; const row = Math.floor(i / 5); const x = cx - 220 + col * 110; const y = cy - 30 + row * 100;
+        const shocked = i < 6; const p = springIn(frame - i * 3, 12);
+        return (
+          <g key={i} transform={`translate(${x} ${y}) scale(${0.7 + 0.3 * p})`}>
+            <circle cx={0} cy={0} r={34} fill={shocked ? COLORS.red : COLORS.white} {...lg} />
+            {shocked ? <path d="M -6 -14 l -8 16 l 10 -2 l -6 14 l 16 -22 l -10 2 Z" fill={COLORS.yellow} /> : <path d="M -10 6 l 20 0" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>many shocked themselves rather than sit bored</text>
+      <text x={cx} y={cy + 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline}>we'd rather feel something than nothing</text>
+    </g>
+  );
+};
+
+/** boredom-creativity: a bored spell leads to a more creative burst after. */
+const BoredomCreativity: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const bars: [string, number, string][] = [['straight to task', 0.5, COLORS.ledGrey], ['bored first', 0.88, COLORS.greenLeaf]];
+  return (
+    <g>
+      {bars.map(([lab, v, c], i) => {
+        const p = springIn(frame - i * 8, 14); const h = 240 * v * p; const x = cx - 110 + i * 220;
+        return <g key={i} transform={`translate(${x} ${cy})`}><rect x={-56} y={50 - h} width={112} height={h} rx={10} fill={c} {...lg} />{i === 1 && <g transform={`translate(0 ${26 - h})`}><circle cx={0} cy={0} r={16} fill={COLORS.yellow} {...sm} />{[0, 1, 2, 3, 4].map((j) => <line key={j} x1={Math.cos((j / 5) * Math.PI - Math.PI / 2) * 22} y1={Math.sin((j / 5) * Math.PI - Math.PI / 2) * 22} x2={Math.cos((j / 5) * Math.PI - Math.PI / 2) * 30} y2={Math.sin((j / 5) * Math.PI - Math.PI / 2) * 30} stroke={COLORS.yellow} strokeWidth={STROKE.sm} strokeLinecap="round" />)}</g>}<text x={0} y={84} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{lab}</text></g>;
+      })}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a dull spell sparks more creativity</text>
+    </g>
+  );
+};
+
+/** tolerance-eroding: our tolerance for boredom shrinking as we fill every gap. */
+const ToleranceEroding: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5; const W = 460; const H = 180;
+  const x0 = cx - W / 2; const base = cy + H / 2;
+  const pts = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; const y = base - H * (0.9 - 0.8 * t); return `${x0 + t * W},${y}`; });
+  return (
+    <g>
+      <line x1={x0 - 10} y1={base} x2={x0 + W + 10} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <line x1={x0} y1={base + 10} x2={x0} y2={base - H - 10} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <polyline points={pts.join(' ')} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 - 12} y={base - H + 12} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={13} fill={COLORS.outline}>high</text>
+      <text x={x0 - 12} y={base - 2} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={13} fill={COLORS.outline}>low</text>
+      <text x={x0} y={base + 34} textAnchor="start" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>pre-phone</text>
+      <text x={x0 + W} y={base + 34} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>infinite scroll</text>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>our tolerance for boredom is shrinking</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4205,6 +4282,10 @@ export const DiagramCard: React.FC<{
     'self-talk-performance': COLORS.greenLeaf,
     'name-distance': COLORS.yellow,
     'critic-vs-coach': COLORS.pink,
+    'boredom-equation': COLORS.yellow,
+    'shock-choice': COLORS.red,
+    'boredom-creativity': COLORS.greenLeaf,
+    'tolerance-eroding': COLORS.sky,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4381,6 +4462,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'self-talk-performance' && <SelfTalkPerformance />}
         {diagram === 'name-distance' && <NameDistance />}
         {diagram === 'critic-vs-coach' && <CriticVsCoach />}
+        {diagram === 'boredom-equation' && <BoredomEquation />}
+        {diagram === 'shock-choice' && <ShockChoice />}
+        {diagram === 'boredom-creativity' && <BoredomCreativity />}
+        {diagram === 'tolerance-eroding' && <ToleranceEroding />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

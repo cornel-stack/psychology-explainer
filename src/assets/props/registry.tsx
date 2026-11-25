@@ -47,6 +47,7 @@ import * as No from './nostalgia';
 import * as Ch2 from './chills';
 import * as Cg from './cringe';
 import * as St from './selftalk';
+import * as Bo from './boredom';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -574,6 +575,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'inner-critic': St.InnerCritic,
   'inner-coach': St.InnerCoach,
   'quiet-mind': St.QuietMind,
+  // boredom emblems (all new)
+  'dragging-clock': Bo.DraggingClock,
+  'grasping-void': Bo.GraspingVoid,
+  'bored-fidget': Bo.BoredFidget,
+  'shock-vs-boredom': Bo.ShockVsBoredom,
+  'numbing-scroll': Bo.NumbingScroll,
+  'boredom-lightbulb': Bo.BoredomLightbulb,
+  'wander-cloud': Bo.WanderCloud,
+  'explore-compass': Bo.ExploreCompass,
+  'rest-vs-boredom': Bo.RestVsBoredom,
+  'engage-choice': Bo.EngageChoice,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

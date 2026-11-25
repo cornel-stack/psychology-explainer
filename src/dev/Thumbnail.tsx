@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'boredom': {
+    A: { lines: ['THE', 'PSYCHOLOGY', 'OF BOREDOM'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'sleepy', textColor: COLORS.outline, badge: '?', prop: 'dragging-clock' },
+    B: { lines: ['WHY BOREDOM', 'IS SECRETLY', 'GOOD FOR YOU'], accent: COLORS.greenLeaf, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'boredom-lightbulb' },
+    C: { lines: ['YOUR PHONE', 'IS KILLING', 'YOUR BOREDOM'], accent: COLORS.red, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'numbing-scroll' },
+  },
   'talking-to-yourself': {
     A: { lines: ['WHY YOU', 'TALK TO', 'YOURSELF'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '?', prop: 'talking-aloud' },
     B: { lines: ["IT'S NOT", 'CRAZY —', "IT'S SMART"], accent: COLORS.greenLeaf, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'inner-voice-bubble' },
