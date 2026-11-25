@@ -60,6 +60,7 @@ import * as Fi from './first-impressions';
 import * as Rb from './read-body-language';
 import * as Ga from './gaslighting';
 import * as Ft from './feel-tired';
+import * as Fn from './faces-names';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -726,6 +727,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'languishing-fog': Ft.LanguishingFog,
   'movement-spark': Ft.MovementSpark,
   'sunlight-reset': Ft.SunlightReset,
+  'face-yes-name-blank': Fn.FaceYesNameBlank,
+  'tip-of-tongue': Fn.TipOfTongue,
+  'face-brain-area': Fn.FaceBrainArea,
+  'floating-name': Fn.FloatingName,
+  'meaning-web': Fn.MeaningWeb,
+  'baker-paradox': Fn.BakerParadox,
+  'recognise-vs-recall': Fn.RecogniseVsRecall,
+  'missed-intro': Fn.MissedIntro,
+  'ancient-faces': Fn.AncientFaces,
+  'name-anchor': Fn.NameAnchor,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

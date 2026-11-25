@@ -1,0 +1,291 @@
+{
+  "title": "Why You Remember Faces But Not Names",
+  "slug": "remember-faces-not-names",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "You're walking down the street when someone lights up and says hello. And you know them. You absolutely know this face. You can picture where you met, you remember they're funny, you even recall their dog. There's just one tiny, catastrophic problem. Their name? Completely, utterly gone. So you smile, panic, and say, heyyy... you.",
+          "scene": "story",
+          "room": "street-reunion",
+          "emotion": "scared",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY YOU REMEMBER",
+          "subtitle": "faces but not names",
+          "mascots": [
+            { "costume": "tee", "pose": "wave", "emotion": "scared", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "If this happens to you constantly, relax. It's one of the most universal quirks of human memory, and not a sign your brain is failing. In fact, it's a sign your brain is working exactly as designed. Remembering a face and remembering a name are two completely different tasks, and your brain is brilliant at one and terrible at the other.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So today, let's solve this little mystery. Why faces stick but names slip away, the famous Baker paradox that explains it perfectly, the real reason you blank the second someone introduces themselves, and some genuinely useful tricks to never embarrassingly forget a name again. Let's dig in.",
+          "scene": "explainer",
+          "prop": "face-yes-name-blank",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Two Different Jobs",
+      "beats": [
+        {
+          "vo": "Let's start with why these two things feel so different. The key is that recognising a face and recalling a name are two separate kinds of memory, and one is far, far easier than the other.",
+          "scene": "diagramCard",
+          "diagram": "recall-vs-recognition",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "TWO DIFFERENT JOBS",
+          "subtitle": "recognition vs recall"
+        },
+        {
+          "vo": "Recognising a face is what psychologists call recognition. It's the easiest form of memory there is, because the thing you need to remember, the face, is right there in front of you, acting as its own giant cue. Your brain just has to answer a simple yes or no: have I seen this before? And it's superb at that.",
+          "scene": "explainer",
+          "prop": "recognise-vs-recall",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Recalling a name is a totally different beast. It's recall, the hardest kind of memory, because you have to produce the information from scratch, out of thin air, with almost no help. The face gives you zero clues about whether its owner is a Sara, a Priya, or a Mohammed. You're groping in the dark.",
+          "scene": "explainer",
+          "prop": "tip-of-tongue",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's the difference between a multiple-choice question and a blank essay. Recognition hands you the answer and asks, is this it? Recall hands you a blank page and says, go. That's why the name sits agonisingly on the tip of your tongue. The connection is there, it's just too thin and faint to pull the whole word through.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And your recognition system is almost absurdly good. You can spot a friend in a packed crowd, from behind, at a weird angle, in bad light, in a fraction of a second. You can recognise thousands of faces across your life. That's a staggering feat of memory, happening effortlessly, all day, without you ever noticing how impressive it is.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "Faces Get Special Hardware",
+      "beats": [
+        {
+          "vo": "But it goes deeper than that. Your brain doesn't just find faces easy. It is obsessed with them. It has dedicated, specialised machinery built for one job: reading faces.",
+          "scene": "explainer",
+          "prop": "face-brain-area",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "FACES GET SPECIAL HARDWARE",
+          "subtitle": "the face area"
+        },
+        {
+          "vo": "There's a region in your brain called the fusiform face area, whose entire purpose is processing faces. And it doesn't read a face piece by piece. It takes in the whole thing at once, as a single rich pattern, which is why face recognition is so instant and effortless. No other object gets this VIP treatment.",
+          "scene": "diagramCard",
+          "diagram": "two-pathways",
+          "emotion": "serious-expert",
+          "withMascot": true
+        },
+        {
+          "vo": "And there's a good evolutionary reason. For hundreds of thousands of years, instantly recognising a face was a matter of survival. Is this a friend or an enemy? Family or a stranger? Are they angry or kind? The humans who were brilliant at reading faces survived and had children. We are their descendants, wired to the core for faces.",
+          "scene": "story",
+          "room": "portrait-gallery",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Names, by contrast, are a brand-new invention. For almost all of human history, you lived in a small group where everyone's face was known, and language was young. Your brain never evolved a special module for storing arbitrary verbal labels, because for most of our existence, it simply didn't need one.",
+          "scene": "explainer",
+          "prop": "ancient-faces",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Just how specialised is this system? Some people have a condition called prosopagnosia, or face blindness, and genuinely cannot recognise faces, sometimes not even their own children. Their eyes work perfectly; the face machinery just doesn't. It shows how much face recognition is a specific, separate talent we take for granted.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Names Mean Nothing",
+      "beats": [
+        {
+          "vo": "Which brings us to the real heart of the problem, and it's almost philosophical. A name is completely, utterly meaningless. And meaninglessness is kryptonite for memory.",
+          "scene": "explainer",
+          "prop": "floating-name",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "NAMES MEAN NOTHING",
+          "subtitle": "arbitrary labels"
+        },
+        {
+          "vo": "Think about it. If I tell you someone is a gardener, your mind instantly conjures a whole world, soil, plants, sunshine, a watering can. The word hooks onto dozens of things you already know. But if I tell you their surname is Gardner, spelled differently, it hooks onto absolutely nothing. It's just an arbitrary sound, floating free.",
+          "scene": "explainer",
+          "prop": "meaning-web",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Our memory is essentially a vast web of connections. We remember new things by linking them to things we already know. The more hooks a piece of information has, the easier it is to find later. And a name, by its very nature, arrives with no hooks at all. It's a smooth, slippery label with nothing to grab onto.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "This is exactly why some names do stick. The ones that happen to mean something, or paint a picture, or belong to someone famous you already know. A memorable nickname sticks for the same reason: it's vivid and connected. The plain, unusual surname you've never heard before? That's the one that evaporates the instant you hear it.",
+          "scene": "explainer",
+          "prop": "floating-name",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Baker Paradox",
+      "beats": [
+        {
+          "vo": "Psychologists proved this with a wonderful experiment known as the Baker paradox. And once you hear it, you'll never think about names the same way again.",
+          "scene": "diagramCard",
+          "diagram": "baker-baker",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE BAKER PARADOX",
+          "subtitle": "same word, different fate"
+        },
+        {
+          "vo": "Researchers showed people photos of strangers. Half were told, this man's name is Mr Baker. The other half were told, this man is a baker. Same photo. The exact same word, baker. Then, later, they tested who could remember it. And the result was striking and consistent.",
+          "scene": "explainer",
+          "prop": "baker-paradox",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "People remembered baker the occupation far better than Baker the name. Why? Because a baker, the job, connects to a rich web, bread, ovens, a tall white hat, the smell of pastries. But Baker the surname connects to nothing. Same word, two completely different fates, purely because one had meaning and the other didn't.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And you've probably noticed this yourself. You can often recall what someone does, where they're from, how you met, even their hobbies, while their name stays stubbornly out of reach. That's not random. Those details all carry meaning and connection. The name is the one piece with none, so it's always the first to go.",
+          "scene": "explainer",
+          "prop": "meaning-web",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "You Weren't Listening",
+      "beats": [
+        {
+          "vo": "There's one more culprit, and it's the most human of all. A huge amount of the time, you don't forget the name at all. You never actually learned it in the first place.",
+          "scene": "explainer",
+          "prop": "missed-intro",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "YOU WEREN'T LISTENING",
+          "subtitle": "it was never stored"
+        },
+        {
+          "vo": "Picture the moment of introduction. Someone says, hi, I'm Jessica. But in that exact instant, your brain isn't listening. It's busy. You're worrying about your handshake, planning what you'll say, hoping you look normal, panicking slightly. The name sails right past you, completely unprocessed. You can't recall what you never stored.",
+          "scene": "story",
+          "room": "networking-mixer",
+          "emotion": "confused",
+          "mascots": [
+            { "costume": "suit", "pose": "shrug", "emotion": "confused", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "So the name never even made it into memory. Meanwhile, the face? You can't help but process that deeply, automatically, no effort required. It's no wonder that moments later you're left with a crystal-clear face and a total, embarrassing blank where the name should be. The deck was stacked from the very first second.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And this is the real secret behind people who are good with names. They're not born with magic memories. They've simply learned to do the one thing the rest of us skip: at introduction, they go quiet inside and actually listen. The name slips past everyone else. They catch it. That tiny act of attention is almost the whole game.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It also helps to genuinely care about the person in front of you. When you're truly curious about someone, your attention naturally locks on, and the details, including the name, stick almost by themselves. A lot of being good with names is really just being present enough to find the other person interesting.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "How to Remember Names",
+      "beats": [
+        {
+          "vo": "So here's the good news. Now that you know why names slip away, you can beat the system. The trick is to give that slippery, meaningless name the hooks it's missing. Here's how, in four simple steps.",
+          "scene": "diagramCard",
+          "diagram": "name-recall-steps",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "HOW TO REMEMBER NAMES",
+          "subtitle": "give it some hooks"
+        },
+        {
+          "vo": "Step one, and it's the big one: actually pay attention. When someone says their name, stop rehearsing your own introduction and genuinely listen. Step two, repeat it back immediately. Nice to meet you, Sara. This forces your brain to process it and buys you a second, crucial encounter with the word.",
+          "scene": "explainer",
+          "prop": "recognise-vs-recall",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Step three, make it mean something. Link the name to an image, a rhyme, or someone else you know with that name. Picture Sara on a safari. Connect it to a distinctive feature of their face, so the name gets anchored to the thing you'll definitely remember. You're manufacturing the hooks the name never came with.",
+          "scene": "explainer",
+          "prop": "name-anchor",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And step four, use it. Drop their name into the conversation a couple of times, and again when you say goodbye. Lovely to meet you, Sara. Each time you retrieve it, you carve the path a little deeper, until it finally sticks. Four small steps, and that tip-of-the-tongue panic starts to disappear.",
+          "scene": "story",
+          "room": "networking-mixer",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "suit", "pose": "point-right", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "And if all else fails, just ask. Sorry, remind me of your name? Far from being embarrassing, it's a small act of respect, it says you care enough to get it right. Most people are quietly relieved, because they've almost certainly forgotten yours too. A warm, honest ask beats a whole evening of anxious avoidance.",
+          "scene": "explainer",
+          "prop": "face-yes-name-blank",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "So the next time a familiar face says hello and your mind goes blank, don't panic, and please don't feel stupid. You are not bad with names. You simply have a brain that was lovingly engineered over millions of years to be a world-class face expert, and never got the upgrade for arbitrary verbal labels.",
+          "scene": "story",
+          "room": "street-reunion",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "And one honest note. Everyday name-blanking is completely normal, and it gets a touch more common as we age, which is also normal. This isn't a diagnosis. But if you notice a marked, worsening slide, forgetting familiar people, recent events, or common words, it's worth a chat with your doctor, just to be safe.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "But for that everyday blank? It's not a flaw. It's a feature of one of the most sophisticated memory systems in the known universe. So give yourself a break, remember the face, cherish the dog, and maybe just double-check their name before the conversation gets awkward. Thanks for watching.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

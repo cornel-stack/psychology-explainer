@@ -1,0 +1,273 @@
+{
+  "slug": "remember-faces-not-names",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 10,
+    "NEW": 18
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "suit",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        22,
+        29
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        0,
+        31
+      ]
+    },
+    {
+      "name": "baker-baker",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "name-recall-steps",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "recall-vs-recognition",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "two-pathways",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        7,
+        25,
+        29,
+        30,
+        31,
+        33
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        26,
+        27,
+        28,
+        32
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        10,
+        31
+      ]
+    },
+    {
+      "name": "point-right",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "shrug",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        22
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "ancient-faces",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "baker-paradox",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "face-brain-area",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "face-yes-name-blank",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        30
+      ]
+    },
+    {
+      "name": "floating-name",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13,
+        16
+      ]
+    },
+    {
+      "name": "meaning-web",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        14,
+        20
+      ]
+    },
+    {
+      "name": "missed-intro",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        21
+      ]
+    },
+    {
+      "name": "name-anchor",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        28
+      ]
+    },
+    {
+      "name": "recognise-vs-recall",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        27
+      ]
+    },
+    {
+      "name": "tip-of-tongue",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "networking-mixer",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        22,
+        29
+      ]
+    },
+    {
+      "name": "portrait-gallery",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "street-reunion",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        31
+      ]
+    }
+  ]
+}

@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'remember-faces-not-names': {
+    A: { lines: ['WHY YOU FORGET', 'NAMES BUT NOT', 'FACES'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'face-yes-name-blank' },
+    B: { lines: ['"I KNOW YOU...', 'BUT WHAT\'S', 'YOUR NAME?"'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'tip-of-tongue' },
+    C: { lines: ['THE TRICK TO', 'NEVER FORGET', 'A NAME'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'smug', textColor: COLORS.outline, badge: '✓', prop: 'name-anchor' },
+  },
   'feel-tired-all-the-time': {
     A: { lines: ['WHY YOU FEEL', 'TIRED ALL', 'THE TIME'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'sleepy', textColor: COLORS.white, badge: '?', prop: 'charged-but-drained' },
     B: { lines: ['SLEPT 8 HOURS,', 'STILL', 'EXHAUSTED?'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '!', prop: 'tired-but-wired' },

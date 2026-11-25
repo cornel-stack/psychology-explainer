@@ -233,6 +233,10 @@ const NEW_ASSETS = new Set([
   'groggy-morning', 'buzzing-office', 'restoration-corner',
   'charged-but-drained', 'three-tireds', 'decision-drain', 'tired-but-wired', 'mask-fatigue', 'attention-residue', 'junk-rest', 'languishing-fog', 'movement-spark', 'sunlight-reset',
   'rest-vs-energy', 'fatigue-types', 'energy-leaks', 'seven-rests',
+  // remember-faces-not-names (all new)
+  'networking-mixer', 'portrait-gallery', 'street-reunion',
+  'face-yes-name-blank', 'tip-of-tongue', 'face-brain-area', 'floating-name', 'meaning-web', 'baker-paradox', 'recognise-vs-recall', 'missed-intro', 'ancient-faces', 'name-anchor',
+  'recall-vs-recognition', 'baker-baker', 'two-pathways', 'name-recall-steps',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

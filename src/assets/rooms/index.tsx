@@ -184,7 +184,10 @@ export type RoomName =
   | 'clarity-room'
   | 'groggy-morning'
   | 'buzzing-office'
-  | 'restoration-corner';
+  | 'restoration-corner'
+  | 'networking-mixer'
+  | 'portrait-gallery'
+  | 'street-reunion';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4852,6 +4855,73 @@ export const RestorationCorner: React.FC = () => (
   </g>
 );
 
+/** Networking mixer: a bright event space with a name-tag table, mingling silhouettes,
+ *  balloons and drinks — the classic "forgot your name" moment. */
+export const NetworkingMixer: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.04)} floor={COLORS.wood} floorY={860} stripe={false} />
+    {Array.from({ length: 14 }).map((_, i) => <rect key={i} x={i * 140} y={0} width={66} height={860} fill={shade(COLORS.sky, 0.0)} opacity={0.4} />)}
+    {/* a 'HELLO my name is' banner */}
+    <g transform="translate(960 190)"><rect x={-240} y={-54} width={480} height={108} rx={14} fill={COLORS.white} {...xl} /><rect x={-240} y={-54} width={480} height={30} rx={14} fill={COLORS.red} /><text x={0} y={-30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={20} fill={COLORS.white}>HELLO my name is</text><text x={0} y={30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={34} fill={COLORS.outline}>. . . ?</text></g>
+    {/* mingling silhouettes in the background */}
+    {[200, 330, 1600, 1730].map((x, i) => <g key={i} transform={`translate(${x} 640)`} opacity={0.3}><circle cx={0} cy={-40} r={30} fill={COLORS.navy} /><path d="M -36 150 Q 0 -4 36 150 Z" fill={COLORS.navy} /></g>)}
+    {/* a name-tag table */}
+    <g transform="translate(400 780)"><rect x={-130} y={0} width={260} height={90} rx={10} fill={COLORS.woodDark} {...xl} />{[-80, -20, 40].map((x, i) => <g key={i} transform={`translate(${x} -16) rotate(${i * 4 - 4})`}><rect x={-26} y={-18} width={52} height={36} rx={5} fill={COLORS.white} {...sm} /><rect x={-26} y={-18} width={52} height={10} rx={5} fill={[COLORS.red, COLORS.sky, COLORS.greenTeal][i]} /></g>)}</g>
+    {/* balloons */}
+    <g transform="translate(1540 520)">{[[-40, 0, COLORS.pink], [40, -10, COLORS.yellow], [0, -44, COLORS.sky]].map(([dx, dy, c], i) => <g key={i}><ellipse cx={dx as number} cy={dy as number} rx={34} ry={42} fill={c as string} {...lg} /><line x1={dx as number} y1={(dy as number) + 42} x2={0} y2={150} stroke={COLORS.outline} strokeWidth={STROKE.sm} /></g>)}</g>
+    {/* a high drinks table with two glasses */}
+    <g transform="translate(1180 820)"><rect x={-10} y={0} width={20} height={100} fill={COLORS.woodDark} /><ellipse cx={0} cy={0} rx={90} ry={24} fill={COLORS.wood} {...xl} />{[-36, 36].map((x, i) => <path key={i} d={`M ${x - 12} -12 L ${x + 12} -12 L ${x + 8} -40 L ${x - 8} -40 Z`} fill={shade(COLORS.sky, 0.1)} opacity={0.7} {...sm} />)}</g>
+  </g>
+);
+
+/** Portrait gallery: a gallery wall hung with framed faces, a bench and spotlights —
+ *  faces everywhere, all instantly familiar, none quite nameable. */
+export const PortraitGallery: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.bgCream, -0.02)} floor={COLORS.woodDark} floorY={860} stripe={false} />
+    {Array.from({ length: 12 }).map((_, i) => <rect key={i} x={i * 165} y={0} width={76} height={860} fill={shade(COLORS.bgCream, -0.04)} opacity={0.5} />)}
+    {/* a rail of portrait frames, each a simple face */}
+    {[[280, 300], [560, 260], [840, 320], [1120, 260], [1400, 300], [1660, 270]].map(([x, y], i) => {
+      const skins = [COLORS.skin, shade(COLORS.skin, -0.06), shade(COLORS.skin, 0.03)];
+      return <g key={i} transform={`translate(${x} ${y})`}>
+        <rect x={-72} y={-88} width={144} height={176} rx={8} fill={COLORS.white} {...xl} />
+        <rect x={-58} y={-74} width={116} height={148} rx={6} fill={shade(COLORS.sky, 0.06)} />
+        <circle cx={0} cy={-6} r={42} fill={skins[i % 3]} {...lg} />
+        <circle cx={-14} cy={-10} r={4} fill={COLORS.outline} /><circle cx={14} cy={-10} r={4} fill={COLORS.outline} />
+        <path d={i % 2 ? 'M -12 8 Q 0 16 12 8' : 'M -12 10 L 12 10'} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" />
+        {/* a blank little name plaque */}
+        <rect x={-34} y={92} width={68} height={20} rx={4} fill={COLORS.woodDark} {...sm} /><text x={0} y={107} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={13} fill={COLORS.white}>? ? ?</text>
+      </g>;
+    })}
+    {/* a viewing bench */}
+    <g transform="translate(700 840)"><rect x={-150} y={0} width={300} height={24} rx={8} fill={COLORS.wood} {...xl} />{[-130, 0, 130].map((x, i) => <rect key={i} x={x - 7} y={22} width={14} height={40} rx={4} fill={COLORS.woodDark} {...lg} />)}</g>
+  </g>
+);
+
+/** Street reunion: a sunny city street where two people meet — the pavement bump-into
+ *  where the face lands but the name doesn't. */
+export const StreetReunion: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.04)} floor={shade(COLORS.ledGrey, 0.16)} floorY={820} stripe={false} />
+    {/* graduated sky bands + sun + clouds to break the flat blue */}
+    {Array.from({ length: 4 }).map((_, i) => <rect key={i} x={0} y={i * 80} width={CANVAS.width} height={80} fill={shade(COLORS.sky, -0.012 * (3 - i))} opacity={0.6} />)}
+    <circle cx={1500} cy={130} r={56} fill={COLORS.yellow} opacity={0.8} />
+    {[[360, 110, 1], [700, 170, 0.8], [1120, 120, 0.7], [240, 220, 0.6]].map(([x, y, s], i) => <g key={i} transform={`translate(${x} ${y}) scale(${s})`} opacity={0.5}><ellipse cx={0} cy={0} rx={66} ry={30} fill={COLORS.white} /><ellipse cx={-46} cy={10} rx={40} ry={22} fill={COLORS.white} /><ellipse cx={50} cy={10} rx={44} ry={24} fill={COLORS.white} /></g>)}
+    {/* upper storeys above the shops (windows) */}
+    {[180, 520, 860, 1200, 1540].map((x, i) => <g key={i} transform={`translate(${x} 0)`}><rect x={-120} y={120} width={240} height={190} rx={6} fill={shade([COLORS.pink, COLORS.yellowSoft, COLORS.greenTeal, COLORS.lavender, COLORS.sky][i], 0.02)} {...xl} />{[-60, 60].map((wx, j) => <rect key={j} x={wx - 34} y={160} width={68} height={90} rx={6} fill={shade(COLORS.sky, 0.1)} opacity={0.6} {...sm} />)}</g>)}
+    {/* a row of shopfronts */}
+    {[[180, COLORS.pink], [520, COLORS.yellowSoft], [860, COLORS.greenTeal], [1200, COLORS.lavender], [1540, COLORS.sky]].map(([x, c], i) => <g key={i} transform={`translate(${x as number} 0)`}><rect x={-120} y={300} width={240} height={360} rx={8} fill={shade(c as string, 0.04)} {...xl} /><rect x={-120} y={300} width={240} height={70} rx={8} fill={shade(c as string, -0.06)} {...lg} /><rect x={-90} y={420} width={180} height={160} rx={6} fill={shade(COLORS.sky, 0.1)} opacity={0.6} {...sm} /><rect x={-30} y={580} width={60} height={80} rx={4} fill={COLORS.woodDark} {...sm} /></g>)}
+    {/* awnings */}
+    {[180, 520, 860, 1200, 1540].map((x, i) => <path key={i} d={`M ${x - 110} 370 L ${x + 110} 370 L ${x + 90} 410 L ${x - 90} 410 Z`} fill={[COLORS.red, COLORS.greenTeal, COLORS.sky, COLORS.pink, COLORS.yellow][i]} {...lg} opacity={0.85} />)}
+    {/* a lamppost + a little tree */}
+    <g transform="translate(1680 560)"><rect x={-6} y={0} width={12} height={260} fill={COLORS.outline} /><circle cx={0} cy={-6} r={16} fill={COLORS.yellow} {...sm} /></g>
+    <g transform="translate(300 600)"><rect x={-14} y={120} width={28} height={100} rx={6} fill={COLORS.woodDark} {...lg} /><circle cx={0} cy={80} r={70} fill={COLORS.greenLeaf} {...xl} /><circle cx={-44} cy={110} r={44} fill={shade(COLORS.greenLeaf, 0.04)} {...lg} /></g>
+    {/* pavement line */}
+    <line x1={0} y1={920} x2={CANVAS.width} y2={920} stroke={shade(COLORS.ledGrey, 0.04)} strokeWidth={STROKE.sm} opacity={0.5} />
+    {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={i * 210 + 40} y={1000} width={90} height={10} rx={4} fill={shade(COLORS.ledGrey, 0.04)} opacity={0.5} />)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5021,6 +5091,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'groggy-morning': GroggyMorning,
   'buzzing-office': BuzzingOffice,
   'restoration-corner': RestorationCorner,
+  'networking-mixer': NetworkingMixer,
+  'portrait-gallery': PortraitGallery,
+  'street-reunion': StreetReunion,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
