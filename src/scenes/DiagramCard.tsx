@@ -3506,8 +3506,99 @@ const ClosenessLadder: React.FC = () => {
   );
 };
 
+/** accuracy-coinflip: human lie-detection sits barely above a coin flip. */
+const AccuracyCoinflip: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const fill = springIn(frame, 30);
+  const barW = 260;
+  const bar = (y: number, frac: number, c: string, lab: string) => (
+    <g transform={`translate(${cx - barW / 2} ${y})`}>
+      <rect x={0} y={-24} width={barW} height={48} rx={10} fill={shade(COLORS.white, 0.1)} {...lg} />
+      <rect x={0} y={-24} width={barW * frac * fill} height={48} rx={10} fill={c} />
+      <text x={barW + 16} y={8} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{Math.round(frac * 100)}%</text>
+      <text x={-16} y={8} textAnchor="end" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{lab}</text>
+    </g>
+  );
+  return (
+    <g>
+      {bar(cy - 50, 0.5, COLORS.ledGrey, 'coin flip')}
+      {bar(cy + 50, 0.54, COLORS.red, 'humans')}
+      <line x1={cx - barW / 2 + barW * 0.5} y1={cy - 90} x2={cx - barW / 2 + barW * 0.5} y2={cy + 90} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeDasharray="5 7" opacity={0.5} />
+      <text x={cx} y={cy - 140} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>we're barely better than chance</text>
+    </g>
+  );
+};
+
+/** myth-vs-fact: the famous "tells" that don't actually work. */
+const MythVsFact: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const myths = ['shifty eyes', 'fidgeting', 'touching nose', 'looking up-left', 'crossed arms'];
+  return (
+    <g>
+      {myths.map((m, i) => {
+        const p = springIn(frame - i * 5, 12); const y = cy - 130 + i * 62;
+        return (
+          <g key={i} transform={`translate(${cx} ${y})`} opacity={p}>
+            <rect x={-230} y={-24} width={460} height={48} rx={10} fill={shade(COLORS.red, 0.1)} {...lg} />
+            <text x={-200} y={8} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.outline}>{m}</text>
+            <g transform="translate(190 0)"><circle cx={0} cy={0} r={16} fill={COLORS.red} /><line x1={-7} y1={-7} x2={7} y2={7} stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={7} y1={-7} x2={-7} y2={7} stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 180} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>none of these reliably mean lying</text>
+    </g>
+  );
+};
+
+/** load-truth-vs-lie: telling the truth = recall; lying = build + monitor. */
+const LoadTruthVsLie: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const col = (gx: number, title: string, c: string, tasks: string[]) => (
+    <g transform={`translate(${gx} ${cy})`}>
+      <rect x={-150} y={-120} width={300} height={260} rx={16} fill={shade(c, 0.14)} {...lg} />
+      <text x={0} y={-86} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{title}</text>
+      {tasks.map((t, i) => { const p = springIn(frame - i * 6, 12); return <g key={i} transform={`translate(0 ${-40 + i * 50}) scale(${0.7 + 0.3 * p})`}><rect x={-120} y={-18} width={240} height={36} rx={8} fill={c} {...sm} /><text x={0} y={7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{t}</text></g>; })}
+    </g>
+  );
+  return (
+    <g>
+      {col(cx - 180, 'TRUTH', COLORS.greenLeaf, ['just recall it'])}
+      {col(cx + 180, 'LIE', COLORS.red, ['invent a story', 'keep it straight', 'watch your face', 'read the listener'])}
+      <text x={cx} y={cy - 160} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a lie carries a heavier load</text>
+    </g>
+  );
+};
+
+/** cluster-baseline: one cue means nothing; a cluster + change from baseline is the signal. */
+const ClusterBaseline: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const pulse = 0.5 + 0.5 * Math.sin(frame / 8);
+  return (
+    <g>
+      {/* one cue — crossed out */}
+      <g transform={`translate(${cx - 200} ${cy})`}>
+        <circle cx={0} cy={0} r={46} fill={COLORS.ledGrey} {...lg} />
+        <text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.white}>1 cue</text>
+        <text x={0} y={86} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>means nothing</text>
+      </g>
+      <text x={cx - 60} y={cy + 6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>›</text>
+      {/* a cluster + baseline change */}
+      <g transform={`translate(${cx + 150} ${cy})`}>
+        {[[-48, -30], [48, -30], [0, 40]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={30} fill={COLORS.greenLeaf} opacity={0.7 + 0.3 * pulse} {...sm} />)}
+        <text x={0} y={-2} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>cluster</text>
+        <text x={0} y={100} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>+ change from normal</text>
+      </g>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>clusters, not single cues</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3653,6 +3744,10 @@ export const DiagramCard: React.FC<{
     'liking-gap': COLORS.pink,
     'everyone-waiting': COLORS.yellow,
     'closeness-ladder': COLORS.greenLeaf,
+    'accuracy-coinflip': COLORS.red,
+    'myth-vs-fact': COLORS.yellow,
+    'load-truth-vs-lie': COLORS.sky,
+    'cluster-baseline': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3805,6 +3900,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'liking-gap' && <LikingGapDiagram />}
         {diagram === 'everyone-waiting' && <EveryoneWaiting />}
         {diagram === 'closeness-ladder' && <ClosenessLadder />}
+        {diagram === 'accuracy-coinflip' && <AccuracyCoinflip />}
+        {diagram === 'myth-vs-fact' && <MythVsFact />}
+        {diagram === 'load-truth-vs-lie' && <LoadTruthVsLie />}
+        {diagram === 'cluster-baseline' && <ClusterBaseline />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

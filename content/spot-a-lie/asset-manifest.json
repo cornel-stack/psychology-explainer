@@ -1,0 +1,241 @@
+{
+  "slug": "spot-a-lie",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        12,
+        14,
+        20,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "accuracy-coinflip",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "cluster-baseline",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "load-truth-vs-lie",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        18
+      ]
+    },
+    {
+      "name": "myth-vs-fact",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        4,
+        27,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        12,
+        14,
+        20,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "cognitive-load-lie",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19,
+        22
+      ]
+    },
+    {
+      "name": "coinflip-accuracy",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        4,
+        8
+      ]
+    },
+    {
+      "name": "cross-check",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        26
+      ]
+    },
+    {
+      "name": "gut-hunch",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        9
+      ]
+    },
+    {
+      "name": "micro-flash",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "myth-busted",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "othello-error",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "reverse-order",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        24
+      ]
+    },
+    {
+      "name": "sparse-story",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        20,
+        21
+      ]
+    },
+    {
+      "name": "truth-default-glasses",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        5,
+        29
+      ]
+    },
+    {
+      "name": "detective-board",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        14,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "poker-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        20
+      ]
+    },
+    {
+      "name": "two-chairs-talk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        12
+      ]
+    }
+  ]
+}

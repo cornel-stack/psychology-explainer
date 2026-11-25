@@ -127,7 +127,10 @@ export type RoomName =
   | 'wedding-hall'
   | 'moving-boxes-flat'
   | 'evening-class'
-  | 'board-game-cafe';
+  | 'board-game-cafe'
+  | 'poker-room'
+  | 'two-chairs-talk'
+  | 'detective-board';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3470,6 +3473,74 @@ export const BoardGameCafe: React.FC = () => (
   </g>
 );
 
+/** Poker room: a green-felt card table, chips and dim overhead light — the classic
+ *  stage for reading a "tell" (and mis-reading one). */
+export const PokerRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenDark, 0.18)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {Array.from({ length: 10 }).map((_, i) => <rect key={i} x={i * 200} y={0} width={100} height={840} fill={shade(COLORS.greenDark, 0.1)} opacity={0.5} />)}
+    {/* low hanging lamp casting a pool over the table */}
+    <g transform="translate(960 0)"><line x1={0} y1={0} x2={0} y2={150} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><path d="M -80 150 L 80 150 L 54 200 L -54 200 Z" fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={560} rx={420} ry={120} fill={COLORS.yellowSoft} opacity={0.14} /></g>
+    {/* framed pictures on the wall for density */}
+    {[220, 1700].map((x, i) => <g key={i} transform={`translate(${x} 260)`}><rect x={-60} y={-76} width={120} height={152} rx={8} fill={shade(COLORS.greenDark, 0.24)} {...lg} /><rect x={-44} y={-60} width={88} height={92} rx={4} fill={[COLORS.red, COLORS.sky][i]} opacity={0.6} /></g>)}
+    {/* the oval poker table */}
+    <g transform="translate(960 760)">
+      <ellipse cx={0} cy={0} rx={440} ry={180} fill={COLORS.greenLeaf} {...xl} />
+      <ellipse cx={0} cy={0} rx={400} ry={150} fill="none" stroke={shade(COLORS.greenLeaf, -0.08)} strokeWidth={STROKE.lg} />
+      {/* community cards */}
+      {[-120, -60, 0, 60, 120].map((x, i) => <g key={i} transform={`translate(${x} -10)`}><rect x={-22} y={-32} width={44} height={64} rx={6} fill={COLORS.white} {...lg} /><text x={0} y={8} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={22} fill={i % 2 ? COLORS.red : COLORS.outline}>{['A', 'K', '7', 'Q', '9'][i]}</text></g>)}
+      {/* chip stacks */}
+      {[[-300, 40], [300, 40], [-240, -70], [240, -70]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}>{[0, 1, 2, 3].map((j) => <ellipse key={j} cx={0} cy={-j * 10} rx={26} ry={10} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.pink][(i + j) % 4]} {...sm} />)}</g>)}
+    </g>
+    {/* two players' hole cards at the near edge */}
+    {[520, 1400].map((x, i) => <g key={i} transform={`translate(${x} 1000)`}>{[-18, 18].map((dx) => <rect key={dx} x={dx - 20} y={-30} width={40} height={58} rx={6} fill={COLORS.blueDiagram} {...lg} transform={`rotate(${dx > 0 ? 8 : -8} ${dx} 0)`} />)}</g>)}
+  </g>
+);
+
+/** Two chairs: two facing armchairs with a small lamp and plant — a calm, honest
+ *  conversation where you actually listen. */
+export const TwoChairsTalk: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCream} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={580} width={CANVAS.width} height={260} fill={shade(COLORS.bgCream, -0.04)} />
+    <line x1={0} y1={580} x2={CANVAS.width} y2={580} stroke={shade(COLORS.bgCream, -0.1)} strokeWidth={STROKE.lg} />
+    {/* a bookshelf for density */}
+    <g transform="translate(240 360)"><rect x={-110} y={-120} width={220} height={300} rx={8} fill={COLORS.wood} {...xl} />{[0, 1, 2].map((r) => <g key={r}><rect x={-100} y={-70 + r * 90} width={200} height={14} fill={shade(COLORS.wood, -0.06)} />{Array.from({ length: 10 }).map((_, i) => <rect key={i} x={-96 + i * 20} y={-110 + r * 90} width={15} height={38} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.lavender][(r + i) % 6]} {...sm} />)}</g>)}</g>
+    {/* a window */}
+    <g transform="translate(1660 320)"><rect x={-130} y={-150} width={260} height={300} rx={12} fill={COLORS.sky} {...xl} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-130} y1={0} x2={130} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><circle cx={70} cy={-80} r={34} fill={COLORS.white} opacity={0.7} /></g>
+    {/* two facing armchairs */}
+    {[700, 1240].map((x, i) => <g key={i} transform={`translate(${x} 820) scale(${i ? -1 : 1} 1)`}><rect x={-80} y={-60} width={170} height={140} rx={24} fill={[COLORS.pink, COLORS.sky][i]} {...xl} /><rect x={-100} y={-40} width={44} height={120} rx={18} fill={shade([COLORS.pink, COLORS.sky][i], 0.1)} {...lg} /><rect x={-80} y={-110} width={150} height={70} rx={20} fill={shade([COLORS.pink, COLORS.sky][i], 0.08)} {...lg} /></g>)}
+    {/* small side table + lamp + plant between */}
+    <g transform="translate(970 860)"><rect x={-44} y={0} width={88} height={100} rx={8} fill={COLORS.woodDark} {...xl} /><rect x={-6} y={-70} width={12} height={72} fill={COLORS.woodDark} /><path d="M -34 -70 L 34 -70 L 22 -110 L -22 -110 Z" fill={COLORS.yellowSoft} {...lg} /></g>
+    <g transform="translate(1500 780)"><rect x={-30} y={0} width={60} height={70} rx={10} fill={COLORS.red} {...lg} /><path d="M 0 0 q -46 -50 -24 -110 M 0 0 q 0 -60 0 -120 M 0 0 q 46 -50 24 -104" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-24} cy={-110} r={14} fill={COLORS.greenLeaf} /><circle cx={0} cy={-120} r={16} fill={COLORS.greenLeaf} /><circle cx={24} cy={-104} r={14} fill={COLORS.greenLeaf} /></g>
+  </g>
+);
+
+/** Detective board: a cork evidence board with photos, notes and red string — the
+ *  responsible way to handle suspicion: gather, cross-check, corroborate. */
+export const DetectiveBoard: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.wood, 0.14)} floor={COLORS.woodDark} floorY={860} stripe={false} />
+    {/* the big cork board */}
+    <g transform="translate(960 420)">
+      <rect x={-640} y={-340} width={1280} height={700} rx={16} fill={shade(COLORS.yellowDark, 0.18)} {...xl} />
+      <rect x={-640} y={-340} width={1280} height={700} rx={16} fill="none" stroke={shade(COLORS.wood, -0.1)} strokeWidth={STROKE.xl} />
+      {/* speckle texture */}
+      {Array.from({ length: 60 }).map((_, i) => <circle key={i} cx={-600 + (i * 97) % 1200} cy={-300 + ((i * 53) % 640)} r={3} fill={shade(COLORS.yellowDark, 0.06)} opacity={0.5} />)}
+      {/* pinned photos / notes */}
+      {[[-440, -180, COLORS.sky], [-150, -230, COLORS.white], [180, -170, COLORS.pink], [470, -210, COLORS.white], [-360, 120, COLORS.white], [40, 150, COLORS.yellow], [420, 110, COLORS.lavender]].map(([x, y, c], i) => (
+        <g key={i} transform={`translate(${x} ${y}) rotate(${(i % 2 ? 1 : -1) * 5})`}>
+          <rect x={-70} y={-54} width={140} height={120} rx={4} fill={c as string} {...lg} />
+          {(c === COLORS.white) ? <><line x1={-50} y1={-30} x2={50} y2={-30} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} /><line x1={-50} y1={-8} x2={50} y2={-8} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} /><line x1={-50} y1={14} x2={20} y2={14} stroke={COLORS.ledGrey} strokeWidth={STROKE.sm} /></> : <circle cx={0} cy={-6} r={30} fill={COLORS.white} opacity={0.5} />}
+          <circle cx={0} cy={-54} r={7} fill={COLORS.red} {...sm} />
+        </g>
+      ))}
+      {/* red string connecting clues */}
+      <path d="M -440 -180 L -150 -230 L 180 -170 L -360 120 L 40 150 L 470 -210 L 420 110" fill="none" stroke={COLORS.red} strokeWidth={STROKE.sm} opacity={0.8} />
+    </g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3582,6 +3653,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'moving-boxes-flat': MovingBoxesFlat,
   'evening-class': EveningClass,
   'board-game-cafe': BoardGameCafe,
+  'poker-room': PokerRoom,
+  'two-chairs-talk': TwoChairsTalk,
+  'detective-board': DetectiveBoard,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

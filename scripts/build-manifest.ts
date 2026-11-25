@@ -157,6 +157,10 @@ const NEW_ASSETS = new Set([
   'moving-boxes-flat', 'evening-class', 'board-game-cafe',
   'lonely-bench', 'friend-factory-closed', 'hours-jar', 'repeat-bump', 'liking-gap-scale', 'approach-standoff', 'rejection-armor', 'open-up-ladder', 'one-good-friend', 'first-move',
   'friendship-hours', 'liking-gap', 'everyone-waiting', 'closeness-ladder',
+  // spot-a-lie (all new)
+  'poker-room', 'two-chairs-talk', 'detective-board',
+  'gut-hunch', 'truth-default-glasses', 'coinflip-accuracy', 'myth-busted', 'othello-error', 'micro-flash', 'cognitive-load-lie', 'sparse-story', 'reverse-order', 'cross-check',
+  'accuracy-coinflip', 'myth-vs-fact', 'load-truth-vs-lie', 'cluster-baseline',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

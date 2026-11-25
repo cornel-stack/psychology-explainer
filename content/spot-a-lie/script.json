@@ -1,0 +1,396 @@
+{
+  "title": "The Real Signs Someone Is Lying",
+  "slug": "spot-a-lie",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "They're telling you a story, and something in your gut goes, that's not quite true. Maybe they glanced away. Maybe they touched their nose. You've seen the shows, you know the tells. So you lean in, certain you can catch them. But here's the uncomfortable truth, almost everything you think you know about spotting a liar is wrong.",
+          "scene": "story",
+          "room": "two-chairs-talk",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE REAL SIGNS",
+          "subtitle": "someone is lying",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 700,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "The shifty eyes, the fidgeting, the nervous sweat, decades of research have put these famous tells to the test, and most of them simply fall apart. Worse, believing in them makes you worse at the truth, and dangerous to the innocent. This is not the video that teaches you to read people like a human lie detector.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "It's something more useful, and more honest. It's the real science of deception, what genuinely separates a lie from the truth, why we're so hopeless at telling them apart, and what actually, modestly, helps. By the end, you'll be far wiser, and a lot more careful about ever shouting, I knew you were lying.",
+          "scene": "explainer",
+          "prop": "gut-hunch",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Because the goal here isn't to turn you into a suspicious interrogator eyeing everyone you love. It's to upgrade your thinking, so you stop trusting myths, stop punishing honest people for being nervous, and start weighing the few things that truly matter. Let's clear away the nonsense.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Welcome to Dear Brain. Today, the truth-default, why we're basically coin-flipping, the myths that need to die, the Othello error, and the one thing that really does betray a lie. Fair warning, this will make you trust your gut a little less around liars, and, honestly, that's a very good thing.",
+          "scene": "explainer",
+          "prop": "coinflip-accuracy",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "We Believe By Default",
+      "beats": [
+        {
+          "vo": "Let's start with a surprising fact about you, you are built to believe people. Psychologist Tim Levine calls it the truth-default. Unless something strongly tips us off, we automatically assume what we're being told is true. We don't fact-check every sentence, we just, trust.",
+          "scene": "explainer",
+          "prop": "truth-default-glasses",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WE BELIEVE BY DEFAULT",
+          "subtitle": "and that's mostly smart"
+        },
+        {
+          "vo": "And that sounds like a flaw, until you realise it's brilliant. The vast majority of what people tell you really is true, so defaulting to trust is efficient and usually correct. It lets society function without endless, exhausting suspicion. The only downside is that, now and then, it leaves a door open for the rare liar to slip through.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "We're Terrible At It",
+      "beats": [
+        {
+          "vo": "So how good are we, really, at catching the liars who slip through? This is the number that stops people in their tracks. When researchers pooled over two hundred studies and tens of thousands of people trying to detect lies, the average accuracy was around fifty-four percent.",
+          "scene": "diagramCard",
+          "diagram": "accuracy-coinflip",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WE'RE TERRIBLE AT IT",
+          "subtitle": "~54% — basically a coin flip"
+        },
+        {
+          "vo": "Fifty-four percent. A coin flip gets you fifty. We are barely, barely better than random guessing. And here's the kicker, police officers, judges, so-called experts? They score about the same, but with far more confidence. Confidence in lie detection has almost nothing to do with being right. Let that humble all of us.",
+          "scene": "explainer",
+          "prop": "coinflip-accuracy",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And oddly, training and experience barely help. The people most certain they're human lie detectors tend to do no better than anyone else, they've just stopped doubting themselves. Real skill here starts with accepting how limited the skill actually is. The honest expert is the one who says, I probably can't tell.",
+          "scene": "explainer",
+          "prop": "gut-hunch",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Myths That Must Die",
+      "beats": [
+        {
+          "vo": "So why are we so bad? Largely because we're all watching for the wrong things, cues that feel obvious but just aren't real. Let's bust them. Liars avoid eye contact? No, many make more, to seem convincing. Fidgeting, touching the nose, looking up and to the left? None of them reliably mean a thing.",
+          "scene": "diagramCard",
+          "diagram": "myth-vs-fact",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE MYTHS MUST DIE",
+          "subtitle": "there is no Pinocchio's nose"
+        },
+        {
+          "vo": "When scientists reviewed every supposed body-language tell, they found no single reliable nonverbal cue to lying. None. There is no Pinocchio's nose, no twitch that gives the game away. All those confident TV experts reading micro-fidgets? They're mostly selling you a comforting fiction. The body is a terrible lie detector.",
+          "scene": "explainer",
+          "prop": "myth-busted",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Othello Error",
+      "beats": [
+        {
+          "vo": "And this leads to a genuinely harmful mistake, one with a name, the Othello error. It's when we see someone nervous, sweating, shaky, avoiding our eyes, and conclude, guilty. But think about it. An honest person, wrongly suspected of something serious, gets nervous too. Terrified, even.",
+          "scene": "story",
+          "room": "two-chairs-talk",
+          "emotion": "scared",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE OTHELLO ERROR",
+          "subtitle": "nervous is not the same as lying",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "scared",
+              "x": 700,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "othello-error",
+              "x": 1280,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "So their fear of not being believed gets read as proof they're lying, and an innocent person is condemned by their own anxiety. This error has wrecked relationships and sent innocent people to prison. Nervousness is a sign of stress, full stop. It tells you someone feels pressure, never that they're lying. Please remember that one.",
+          "scene": "explainer",
+          "prop": "othello-error",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Cost Of Getting It Wrong",
+      "beats": [
+        {
+          "vo": "And it's worth sitting with how much damage the myths do. Relationships have ended because one person decided the other 'looked guilty.' Innocent people have been grilled, disbelieved, even wrongly convicted, partly because an investigator trusted a twitch or a lack of eye contact as if it were proof.",
+          "scene": "story",
+          "room": "detective-board",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE COST OF BEING WRONG",
+          "subtitle": "myths harm innocent people",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 960,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "That's the hidden danger of feeling confident. Every time you're sure you've caught a liar, you're also risking branding an honest person a cheat. So the humility here isn't just intellectual, it's kind. Holding suspicions loosely protects people from being punished for a crime that happened only in your reading of their face.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "What About Microexpressions?",
+      "beats": [
+        {
+          "vo": "But surely, you say, microexpressions? Those split-second flashes of real feeling? Yes, these are real. Paul Ekman showed that genuine emotions can flicker across a face in a fraction of a second, before we mask them. It's fascinating science. But as an everyday lie detector, it's wildly overhyped.",
+          "scene": "explainer",
+          "prop": "micro-flash",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "AND MICROEXPRESSIONS?",
+          "subtitle": "real — but overhyped"
+        },
+        {
+          "vo": "A microexpression lasts maybe a twentieth of a second. You will miss almost all of them. And even when you do catch one, it tells you someone felt an emotion, fear, say, not why. Remember the Othello error, that fear could be guilt, or it could be the dread of not being believed. A flicker is not a confession.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The One Real Tell",
+      "beats": [
+        {
+          "vo": "So is it hopeless? Not quite. Because there is one genuine, well-evidenced difference between lying and truth-telling, and it's not in the body at all. It's in the mind. Telling the truth is easy, you just remember what happened. But lying is hard work.",
+          "scene": "diagramCard",
+          "diagram": "load-truth-vs-lie",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE ONE REAL TELL",
+          "subtitle": "lying is cognitively harder"
+        },
+        {
+          "vo": "A liar has to invent a plausible story, keep it consistent, remember what they've already said, suppress the truth, and watch your face to see if you're buying it, all at once. That's a huge mental load. Researchers like Aldert Vrij realised the smart move isn't to watch the body. It's to make the lying even harder.",
+          "scene": "explainer",
+          "prop": "cognitive-load-lie",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Listen, Don't Watch",
+      "beats": [
+        {
+          "vo": "Which flips the whole game. Stop staring at their hands, and start listening to their words. Because that heavy mental load leaks out in the content of what people say. Truthful accounts tend to be richer, messier, full of odd little details, the song that was playing, the thing someone said.",
+          "scene": "story",
+          "room": "poker-room",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "LISTEN, DON'T WATCH",
+          "subtitle": "the tell is in the words",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 520,
+              "y": 940,
+              "scale": 0.95,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "sparse-story",
+              "x": 1360,
+              "y": 460,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "A fabricated story is often the opposite, oddly thin, vague, and smooth, because the liar only invented the headlines, not the texture of a real memory. So don't ask, do they look shifty? Ask, is this account strangely bare, or suspiciously over-rehearsed? What's said matters far more than how much they fidget.",
+          "scene": "explainer",
+          "prop": "sparse-story",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "There's a nice reason this works. When you recall something that truly happened, your memory hands you sights, sounds and little side-details for free. When you're inventing, you have to consciously generate every piece, so you keep it lean to avoid tripping yourself up. Richness is cheap for the truthful, and expensive for the liar.",
+          "scene": "explainer",
+          "prop": "cognitive-load-lie",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Make It Harder",
+      "beats": [
+        {
+          "vo": "And if you really need to test a story, you don't accuse, you add load, gently. The best researched trick is almost funny, ask them to tell it in reverse order. Start at the end, and walk it backwards to the beginning. For someone recalling a true memory, that's doable. For someone reciting a script, it's a nightmare.",
+          "scene": "diagramCard",
+          "diagram": "cluster-baseline",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "MAKE IT HARDER",
+          "subtitle": "add load, don't accuse"
+        },
+        {
+          "vo": "You can also ask unexpected questions, or for small specific details, what was to your left, who paid? Truth-tellers reach into memory and answer. Liars, caught off-script, stumble, stall, or go vague. And remember, never judge a single cue. Look for a cluster of them, and for a clear change from how that person normally behaves.",
+          "scene": "explainer",
+          "prop": "reverse-order",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Another neat one, ask them to sketch the scene. Draw me the room, where everyone was sitting. People recalling a real event draw it easily and accurately. People inventing have to design a whole consistent picture on the spot, and it shows. The theme is always the same, add load, and let the truth become the path of least resistance.",
+          "scene": "explainer",
+          "prop": "reverse-order",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Handle It Wisely",
+      "beats": [
+        {
+          "vo": "But here's the most important part, what to do with a suspicion. Not pounce. Not accuse. The responsible move is to stay curious, not combative, and to gather information. Ask open questions. Let them talk. And crucially, check what they say against what you can actually verify, the facts, the timeline, other people.",
+          "scene": "story",
+          "room": "detective-board",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "HANDLE IT WISELY",
+          "subtitle": "corroborate, don't accuse",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 500,
+              "y": 960,
+              "scale": 0.9,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "cross-check",
+              "x": 1360,
+              "y": 760,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Corroboration beats intuition every single time. A story that doesn't match the evidence tells you far more than any twitch ever could. And if it all checks out? Then maybe your gut was just reacting to their nerves, or your own. Being willing to be wrong about a lie is the mark of a fair and careful mind.",
+          "scene": "explainer",
+          "prop": "cross-check",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So, the real signs someone is lying. Not shifty eyes or a touched nose, those are myths. Watch instead for a story that's strangely thin, that cracks when told backwards, that stumbles on the unexpected, and above all, that doesn't match the facts. And treat nervousness as nerves, never as proof.",
+          "scene": "story",
+          "room": "detective-board",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "TRUST THE FACTS, NOT THE TWITCH",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 500,
+              "y": 960,
+              "scale": 0.9,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "And an honest, caring note, because this one matters. You cannot reliably read lies off a person's face, and acting like you can quietly corrodes trust and wrongs innocent people. If you find yourself constantly scanning a partner for tells, that chronic distrust is worth looking at gently, perhaps with a professional.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The deepest lesson of all this research isn't how to catch everyone out. It's humility. We are all walking around far too confident in a skill we barely have. So hold your suspicions loosely, weigh the evidence, not the eyes, and leave room to be wrong. That makes you both a sharper thinker and a kinder one.",
+          "scene": "explainer",
+          "prop": "truth-default-glasses",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, which myth had you fooled, the eye contact one, the fidgeting, the up-and-to-the-left? Be honest, we all believed at least one. Thank you, truly, for spending this time with me. If this made you a little wiser, subscribe and stay a while. I'm Dear Brain. Go think carefully.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

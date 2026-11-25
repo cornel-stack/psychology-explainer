@@ -41,6 +41,7 @@ import * as Th from './thinking';
 import * as Wa from './watched';
 import * as Cr from './crying';
 import * as Fr from './friends';
+import * as Ly from './lying';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -502,6 +503,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'open-up-ladder': Fr.OpenUpLadder,
   'one-good-friend': Fr.OneGoodFriend,
   'first-move': Fr.FirstMove,
+  // spot-a-lie emblems (all new)
+  'gut-hunch': Ly.GutHunch,
+  'truth-default-glasses': Ly.TruthDefaultGlasses,
+  'coinflip-accuracy': Ly.CoinflipAccuracy,
+  'myth-busted': Ly.MythBusted,
+  'othello-error': Ly.OthelloError,
+  'micro-flash': Ly.MicroFlash,
+  'cognitive-load-lie': Ly.CognitiveLoadLie,
+  'sparse-story': Ly.SparseStory,
+  'reverse-order': Ly.ReverseOrder,
+  'cross-check': Ly.CrossCheck,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
