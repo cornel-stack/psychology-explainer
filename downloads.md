@@ -68,6 +68,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 60 | Every Psychological Experiment Explained | `psychology-experiments` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45575814766 | ✅ render OK |
 | 61 | Why Your Brain Feels Foggy | `brain-fog` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45579769443 | ✅ render OK |
 | 62 | Every Type of Lie Explained | `types-of-lie` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45583450647 | ✅ render OK |
-| 63 | Every Type of Friend Explained | `types-of-friend` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45588637626 | ⏳ rendering |
+| 63 | Every Type of Friend Explained | `types-of-friend` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45588637626 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
