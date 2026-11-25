@@ -103,7 +103,10 @@ export type RoomName =
   | 'blossom-garden'
   | 'connection-lounge'
   | 'spotlight-stage'
-  | 'fireside-circle';
+  | 'fireside-circle'
+  | 'habit-brain-paths'
+  | 'routine-kitchen'
+  | 'habit-studio';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -2878,6 +2881,70 @@ export const FiresideCircle: React.FC = () => (
   </g>
 );
 
+/** Habit-brain paths: a cross-section of the mind as worn grooves — deep,
+ *  automatic paths and one faint new trail being carved. */
+export const HabitBrainPaths: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={shade(COLORS.lavender, -0.08)} floorY={840} stripe={false} />
+    {Array.from({ length: 22 }).map((_, i) => <rect key={i} x={i * 90} y={0} width={44} height={560} fill={shade(COLORS.lavender, -0.04)} opacity={0.5} />)}
+    {/* a big brain outline */}
+    <g transform="translate(960 430)">
+      <path d="M -320 60 Q -360 -120 -200 -160 Q -140 -230 -20 -190 Q 100 -240 220 -170 Q 380 -150 360 40 Q 380 170 220 200 Q 120 250 -20 210 Q -160 250 -260 190 Q -350 160 -320 60 Z" fill={shade(COLORS.pink, 0.1)} {...xl} />
+      {/* deep well-worn grooves */}
+      {[[-200, -40, COLORS.red], [40, -70, COLORS.red], [160, 60, COLORS.red]].map(([x, y, c], i) => <path key={i} d={`M ${x} ${y} q 80 -40 150 20 q 60 60 -20 110`} fill="none" stroke={c as string} strokeWidth={STROKE.xl} strokeLinecap="round" opacity={0.7} />)}
+      {/* a faint new trail */}
+      <path d="M -260 80 q 120 -20 180 60" fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" strokeDasharray="6 14" />
+      {/* little node sparks */}
+      {[[-180, -30], [80, -40], [200, 80], [-80, 120]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={12} fill={COLORS.yellow} {...sm} />)}
+    </g>
+    <text x={960} y={160} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={34} fill={COLORS.outline} opacity={0.5}>worn into the brain</text>
+  </g>
+);
+
+/** Routine kitchen: the daily stage where habits live — coffee maker, toaster, a
+ *  wall calendar and clock. */
+export const RoutineKitchen: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.sky, 0.1)} floor={COLORS.wood} floorY={760} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={200} fill={shade(COLORS.sky, 0.04)} />
+    {/* upper cabinets */}
+    {[160, 420, 680].map((x, i) => <rect key={i} x={x} y={120} width={220} height={180} rx={8} fill={shade(COLORS.wood, 0.1)} {...lg} />)}
+    {/* wall clock + calendar */}
+    <g transform="translate(1180 230)"><circle r={70} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-46} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={34} y2={10} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle r={7} fill={COLORS.outline} /></g>
+    <g transform="translate(1500 250)"><rect x={-90} y={-100} width={180} height={190} rx={10} fill={COLORS.white} {...xl} /><rect x={-90} y={-100} width={180} height={44} rx={10} fill={COLORS.red} {...sm} />{Array.from({ length: 3 }).map((_, r) => Array.from({ length: 4 }).map((_, c) => <rect key={`${r}-${c}`} x={-74 + c * 40} y={-40 + r * 42} width={28} height={28} rx={4} fill={shade(COLORS.white, 0.05)} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.sm} />))}<path d="M 30 24 l 10 10 l 18 -22" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" /></g>
+    {/* counter */}
+    <rect x={0} y={700} width={CANVAS.width} height={40} fill={shade(COLORS.wood, 0.14)} {...xl} />
+    <rect x={0} y={740} width={CANVAS.width} height={320} fill={COLORS.wood} />
+    {/* coffee maker + mug + toaster */}
+    <g transform="translate(360 650)"><rect x={-50} y={-50} width={100} height={100} rx={10} fill={shade(COLORS.outline, 0.3)} {...xl} /><rect x={-34} y={20} width={68} height={30} rx={6} fill={COLORS.white} {...sm} /><rect x={-20} y={-40} width={40} height={16} rx={6} fill={COLORS.red} /></g>
+    <g transform="translate(560 690)"><rect x={-30} y={-30} width={60} height={50} rx={8} fill={COLORS.yellow} {...lg} /><path d="M 30 -18 q 18 2 12 18" fill="none" stroke={COLORS.yellow} strokeWidth={STROKE.lg} /></g>
+    <g transform="translate(1640 660)"><rect x={-60} y={-40} width={120} height={80} rx={14} fill={COLORS.ledGrey} {...xl} /><rect x={-30} y={-54} width={24} height={20} rx={4} fill={shade(COLORS.wood, 0.1)} /><rect x={6} y={-54} width={24} height={20} rx={4} fill={shade(COLORS.wood, 0.1)} /></g>
+  </g>
+);
+
+/** Habit studio: a calm space to build a new habit — a tracker wall of
+ *  checkmarks, a tidy desk, a plant and a water bottle. */
+export const HabitStudio: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.bgCream} floor={COLORS.wood} floorY={800} stripe={false} />
+    <rect x={0} y={560} width={CANVAS.width} height={240} fill={shade(COLORS.bgCream, -0.04)} />
+    {/* big habit tracker board */}
+    <g transform="translate(560 300)">
+      <rect x={-300} y={-180} width={600} height={360} rx={14} fill={COLORS.white} {...xl} />
+      <text x={0} y={-130} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={30} fill={COLORS.outline}>DAILY HABITS</text>
+      {Array.from({ length: 3 }).map((_, r) => Array.from({ length: 7 }).map((_, c) => {
+        const done = (r * 7 + c) < 16;
+        return <g key={`${r}-${c}`} transform={`translate(${-250 + c * 80} ${-60 + r * 70})`}><rect x={-26} y={-26} width={52} height={52} rx={8} fill={done ? COLORS.greenLeaf : shade(COLORS.bgCream, -0.04)} {...sm} />{done && <path d="M -12 0 l 8 8 l 14 -18" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />}</g>;
+      }))}
+    </g>
+    {/* desk + plant + water + journal */}
+    <rect x={0} y={760} width={CANVAS.width} height={40} fill={shade(COLORS.wood, 0.12)} {...lg} />
+    <g transform="translate(1500 640)"><path d="M -36 10 L 36 10 L 28 70 L -28 70 Z" fill={COLORS.red} {...lg} />{[-22, 0, 22].map((lx) => <path key={lx} d={`M ${lx} 10 q ${lx} -70 ${lx * 0.4} -130`} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />)}</g>
+    <g transform="translate(1180 690)"><rect x={-24} y={-70} width={48} height={100} rx={12} fill={COLORS.sky} {...lg} /><rect x={-16} y={-86} width={32} height={20} rx={6} fill={shade(COLORS.sky, -0.1)} {...sm} /></g>
+    <g transform="translate(1340 710)"><rect x={-44} y={-40} width={88} height={60} rx={6} fill={COLORS.yellowSoft} {...lg} /><path d="M 0 -40 l 0 60" stroke={shade(COLORS.yellowSoft, -0.1)} strokeWidth={STROKE.sm} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -2966,6 +3033,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'connection-lounge': ConnectionLounge,
   'spotlight-stage': SpotlightStage,
   'fireside-circle': FiresideCircle,
+  'habit-brain-paths': HabitBrainPaths,
+  'routine-kitchen': RoutineKitchen,
+  'habit-studio': HabitStudio,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

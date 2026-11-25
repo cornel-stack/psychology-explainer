@@ -125,6 +125,10 @@ const NEW_ASSETS = new Set([
   'connection-lounge', 'spotlight-stage', 'fireside-circle',
   'char-presence', 'char-warmth', 'char-competence', 'char-listening', 'char-shine', 'char-story', 'char-openbody', 'char-authentic', 'char-enthusiasm', 'char-grid-prop', 'char-compass',
   'warmth-competence-grid', 'charisma-loop', 'presence-dial', 'charisma-learnable',
+  // psychology-of-habits (all new)
+  'habit-brain-paths', 'routine-kitchen', 'habit-studio',
+  'autopilot-brain', 'habit-loop-prop', 'craving-magnet', 'swap-routine', 'obvious-cue', 'easy-ramp', 'satisfying-check', 'stack-blocks', 'identity-badge', 'compound-seed',
+  'habit-loop-diagram', 'reward-timing', 'four-laws', 'compound-growth',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

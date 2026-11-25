@@ -33,6 +33,7 @@ import * as Di from './distortions';
 import * as Eb from './emotions_basic';
 import * as Lv from './loves';
 import * as Ch from './charisma';
+import * as Hb from './habits';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -406,6 +407,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'char-enthusiasm': Ch.CharEnthusiasm,
   'char-grid-prop': Ch.CharGrid,
   'char-compass': Ch.CharCompass,
+  // psychology-of-habits emblems (all new)
+  'autopilot-brain': Hb.AutopilotBrain,
+  'habit-loop-prop': Hb.HabitLoop,
+  'craving-magnet': Hb.CravingMagnet,
+  'swap-routine': Hb.SwapRoutine,
+  'obvious-cue': Hb.ObviousCue,
+  'easy-ramp': Hb.EasyRamp,
+  'satisfying-check': Hb.SatisfyingCheck,
+  'stack-blocks': Hb.StackBlocks,
+  'identity-badge': Hb.IdentityBadge,
+  'compound-seed': Hb.CompoundSeed,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

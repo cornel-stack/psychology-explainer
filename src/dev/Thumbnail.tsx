@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'psychology-of-habits': {
+    A: { lines: ['THE', 'PSYCHOLOGY', 'OF HABITS'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'habit-loop-prop' },
+    B: { lines: ['HOW TO', 'ACTUALLY', 'BUILD A HABIT'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '4', prop: 'satisfying-check' },
+    C: { lines: ['WHY HABITS', 'BEAT', 'WILLPOWER'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'compound-seed' },
+  },
   'psychology-of-charisma': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF CHARISMA'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'happy-talk', textColor: COLORS.white, badge: '9', prop: 'char-warmth' },
     B: { lines: ['WHY SOME', 'PEOPLE ARE', 'MAGNETIC'], accent: COLORS.pink, bg: COLORS.red, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'char-presence' },

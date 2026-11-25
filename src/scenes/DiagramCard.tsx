@@ -2841,8 +2841,84 @@ const CharismaLearnable: React.FC = () => {
   );
 };
 
+/** habit-loop-diagram: cue → routine → reward → craving, round and round. */
+const HabitLoopDiagram: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.44; const R = 155;
+  const nodes: [string, string][] = [['CUE', COLORS.sky], ['ROUTINE', COLORS.yellowDark], ['REWARD', COLORS.greenLeaf], ['CRAVING', COLORS.red]];
+  const dot = (frame % 120) / 120;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeDasharray="4 16" opacity={0.5} />
+      {nodes.map(([lab, c], i) => { const a = -Math.PI / 2 + (i / 4) * Math.PI * 2; const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R; return <g key={lab} transform={`translate(${x} ${y})`}><circle r={58} fill={c} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>{lab}</text></g>; })}
+      {(() => { const a = -Math.PI / 2 + dot * Math.PI * 2; return <circle cx={cx + Math.cos(a) * R} cy={cy + Math.sin(a) * R} r={12} fill={COLORS.outline} />; })()}
+      <text x={cx} y={cy + R + 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={30} fill={COLORS.outline}>every habit runs this loop</text>
+    </g>
+  );
+};
+
+/** reward-timing: good habits pay off later; bad habits pay off now. */
+const RewardTiming: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.42;
+  const Row = ({ y, lab, nowGood, c }: { y: number; lab: string; nowGood: boolean; c: string }) => (
+    <g transform={`translate(${cx} ${y})`}>
+      <text x={-320} y={6} fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>{lab}</text>
+      <g transform="translate(-110 0)"><circle r={30} fill={nowGood ? COLORS.red : COLORS.greenLeaf} {...lg} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>now</text></g>
+      <path d="M 0 0 l 90 0 m -14 -10 l 14 10 l -14 10" transform="translate(-72 0)" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" />
+      <g transform="translate(120 0)"><circle r={30} fill={nowGood ? COLORS.greenLeaf : COLORS.red} opacity={0.6} {...lg} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>later</text></g>
+    </g>
+  );
+  return (
+    <g>
+      <Row y={cy - 60} lab="GOOD HABIT" nowGood={false} c={COLORS.greenLeaf} />
+      <Row y={cy + 70} lab="BAD HABIT" nowGood c={COLORS.red} />
+      <text x={cx} y={cy + 200} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>we chase the instant reward</text>
+    </g>
+  );
+};
+
+/** four-laws: make it obvious, attractive, easy, satisfying. */
+const FourLaws: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.22;
+  const laws: [string, string, string][] = [['1', 'OBVIOUS', COLORS.sky], ['2', 'ATTRACTIVE', COLORS.pink], ['3', 'EASY', COLORS.greenLeaf], ['4', 'SATISFYING', COLORS.yellow]];
+  return (
+    <g>
+      {laws.map(([n, lab, c], i) => {
+        const p = springIn(frame - i * 9, 12); const y = cy + i * 110;
+        return (
+          <g key={lab} transform={`translate(${cx} ${y}) scale(${p})`} style={{ transformOrigin: 'center' }}>
+            <circle cx={-170} cy={0} r={38} fill={c} {...lg} /><text x={-170} y={12} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={34} fill={COLORS.outline}>{n}</text>
+            <text x={-110} y={10} fontFamily={fontFamily} fontWeight={800} fontSize={36} fill={COLORS.outline}>{lab}</text>
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + 460} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the four laws of habit</text>
+    </g>
+  );
+};
+
+/** compound-growth: 1% better vs 1% worse, every day. */
+const CompoundGrowth: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const W = 440;
+  const x0 = cx - W / 2, y0 = cy + 110;
+  const up = Array.from({ length: 40 }).map((_, i) => { const t = i / 39; const y = y0 - 230 * (Math.pow(3.7, t) - 1) / 2.7; return `${x0 + t * W},${y}`; });
+  const down = Array.from({ length: 40 }).map((_, i) => { const t = i / 39; const y = y0 - 20 + 90 * (1 - Math.pow(0.3, t)); return `${x0 + t * W},${y}`; });
+  return (
+    <g>
+      <line x1={x0} y1={y0} x2={x0 + W} y2={y0} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <line x1={x0} y1={y0} x2={x0} y2={y0 - 240} stroke={COLORS.outline} strokeWidth={STROKE.sm} opacity={0.4} />
+      <polyline points={down.join(' ')} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <polyline points={up.join(' ')} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 + W - 30} y={y0 - 215} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.greenDark}>1% better</text>
+      <text x={x0 + W - 30} y={y0 + 20} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.red}>1% worse</text>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>tiny habits compound</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -2956,6 +3032,10 @@ export const DiagramCard: React.FC<{
     'charisma-loop': COLORS.pink,
     'presence-dial': COLORS.greenTeal,
     'charisma-learnable': COLORS.yellow,
+    'habit-loop-diagram': COLORS.sky,
+    'reward-timing': COLORS.red,
+    'four-laws': COLORS.greenLeaf,
+    'compound-growth': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -3076,6 +3156,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'charisma-loop' && <CharismaLoop />}
         {diagram === 'presence-dial' && <PresenceDial />}
         {diagram === 'charisma-learnable' && <CharismaLearnable />}
+        {diagram === 'habit-loop-diagram' && <HabitLoopDiagram />}
+        {diagram === 'reward-timing' && <RewardTiming />}
+        {diagram === 'four-laws' && <FourLaws />}
+        {diagram === 'compound-growth' && <CompoundGrowth />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

@@ -1,0 +1,121 @@
+{
+  "title": "The Psychology of Habits",
+  "slug": "psychology-of-habits",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        { "vo": "Right now, you are mostly running on autopilot. Studies suggest that around forty percent of what you do every day isn't a conscious choice at all. It's habit. The route you drive, the way you scroll, your first move in the morning. You're not deciding. You're just running an old program.", "scene": "story", "room": "routine-kitchen", "emotion": "sleepy", "camera": "slowZoom", "chapterStart": true, "title": "THE PSYCHOLOGY OF HABITS", "subtitle": "how your autopilot really works",
+          "mascots": [ { "costume": "hoodie", "pose": "walking", "emotion": "sleepy", "x": 760, "y": 720, "scale": 1.0, "talking": true } ] },
+        { "vo": "That sounds a little unsettling, but it's actually your brain being brilliant. If you had to consciously decide every tiny action, you'd be exhausted by breakfast. So the brain automates whatever you repeat, freeing you to think about everything else. Habits are how it saves its energy.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "And here's the liberating truth. Habits aren't about willpower, or being disciplined, or trying harder. They run on a precise, predictable machinery. And once you understand that machinery, you can start to reprogram it, deliberately, swapping the habits that drain you for ones that build you.", "scene": "diagramCard", "diagram": "habit-loop-diagram", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "If you've ever tried to build a good habit and failed, over and over, this is for you. You weren't weak. You were just fighting the system instead of using it. So let's learn how habits really work, and how to finally make them work for you.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Welcome to Dear Brain. How habits form, why they're so hard to break, and the science-backed system for building ones that actually stick, even if your willpower is, let's be honest, not your strong point. Let's begin.", "scene": "explainer", "prop": "habit-loop-prop", "emotion": "happy-talk" }
+      ]
+    },
+    {
+      "name": "Why You Have Habits",
+      "beats": [
+        { "vo": "Every time you repeat a behaviour, you wear a path a little deeper into your brain. Literally. In a region called the basal ganglia, repeated actions carve neural grooves, until the behaviour becomes so automatic that your conscious mind can check out entirely, and the groove just runs itself.", "scene": "story", "room": "habit-brain-paths", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "HABITS ARE GROOVES", "subtitle": "worn into the brain",
+          "mascots": [ { "costume": "labcoat", "pose": "point-right", "emotion": "serious-expert", "x": 520, "y": 760, "scale": 1.0, "talking": true, "lookDir": "right" } ] },
+        { "vo": "This is why old habits feel almost impossible to erase. That deep groove never truly disappears, it just sits there, waiting. Which is also the key to everything. You rarely delete an old path. Instead, you carve a new, stronger one right beside it, until the new groove becomes the default.", "scene": "explainer", "prop": "autopilot-brain", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "The Habit Loop",
+      "beats": [
+        { "vo": "So how does a groove form in the first place? Every single habit, good or bad, runs on the same three-part loop. First, a cue, a trigger that tells your brain to start. Then the routine, the behaviour itself. And finally, a reward, the payoff that tells your brain, yes, remember this one.", "scene": "story", "room": "routine-kitchen", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "CUE, ROUTINE, REWARD", "subtitle": "the three-part loop",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "habit-loop-prop", "x": 1340, "y": 420, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Take stress-snacking. The cue is a stab of stress. The routine is reaching for the biscuits. The reward is a little hit of comfort and distraction. Do it a few times, and your brain welds the three together, so now stress automatically means biscuits, no decision required.", "scene": "explainer", "prop": "habit-loop-prop", "emotion": "serious-expert" },
+        { "vo": "Once you see this loop, you'll spot it everywhere, in every habit you have. And that's genuinely powerful, because to change any habit, you first have to find its loop. What's the real cue? What's the routine? And crucially, what reward is it secretly giving you?", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "The Craving Engine",
+      "beats": [
+        { "vo": "But there's a hidden fourth piece that makes the loop actually run. Craving. Over time, the moment your brain senses the cue, it starts to anticipate the reward, and it's that craving, that pull, that drags the routine out of you. You don't crave the cigarette. You crave the relief it promises.", "scene": "story", "room": "routine-kitchen", "emotion": "confused", "camera": "slowZoom", "chapterStart": true, "title": "THE CRAVING ENGINE", "subtitle": "anticipation is the pull",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "confused", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "craving-magnet", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "This is also why some habits grip us so much harder than others. It all comes down to the timing of the reward. And this one piece of psychology explains why your bad habits feel so easy, and your good habits feel like dragging yourself uphill.", "scene": "diagramCard", "diagram": "reward-timing", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Bad habits give you the reward now, and the cost much later. Junk food, the scroll, the cigarette, instant payoff, delayed price. Good habits are the reverse. The gym, the reading, the saving, cost now, reward much later. And your brain, wired for the immediate, grabs the instant hit every time.", "scene": "explainer", "prop": "craving-magnet", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Replace, Don't Erase",
+      "beats": [
+        { "vo": "So here's the single most important rule for changing a habit. You cannot simply erase a bad one, white-knuckling it with pure willpower almost never lasts. Instead, you replace it. You keep the very same cue and the same reward, and you swap only the routine in the middle.", "scene": "story", "room": "habit-brain-paths", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "REPLACE, DON'T ERASE", "subtitle": "keep the cue, swap the routine",
+          "mascots": [ { "costume": "labcoat", "pose": "idle", "emotion": "serious-expert", "x": 520, "y": 760, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "swap-routine", "x": 1320, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "Back to stress-snacking. The cue, stress, isn't going anywhere, and you still need the reward, comfort. So you leave both in place, and you slot in a new routine that delivers the same comfort. A short walk. A few deep breaths. A quick call to a friend. Same loop, healthier middle.", "scene": "explainer", "prop": "swap-routine", "emotion": "serious-expert" },
+        { "vo": "This is why just trying to stop a habit feels so brutal, you're leaving a craving wide open with nothing to fill it. Give that craving a better routine to land on, and change suddenly gets dramatically easier. Don't fight the loop. Gently redirect it.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Law 1 — Obvious",
+      "beats": [
+        { "vo": "Now, to actually build a good habit from scratch, there are four simple laws. Law one, make it obvious. Since every habit starts with a cue, you design your environment so the good cue is impossible to miss. Want to read more? Leave the book on your pillow, where you literally can't ignore it.", "scene": "story", "room": "routine-kitchen", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "LAW 1 — MAKE IT OBVIOUS", "subtitle": "design your cues",
+          "mascots": [ { "costume": "hoodie", "pose": "point-right", "emotion": "happy-talk", "x": 760, "y": 720, "scale": 1.0, "talking": true, "lookDir": "right" } ],
+          "props": [ { "name": "obvious-cue", "x": 1340, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "And the reverse breaks bad habits, make them invisible. Most willpower battles are lost before they begin, at the point of the cue. If the biscuits are out of the house, and the phone is charging in another room, you don't need iron discipline. You've simply removed the trigger.", "scene": "explainer", "prop": "obvious-cue", "emotion": "serious-expert" },
+        { "vo": "Your environment is quietly running your life far more than your intentions are. So stop relying on being strong in the moment, and start engineering the moment itself. Make the good thing obvious, and the bad thing invisible. Let your surroundings do the heavy lifting.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Law 2 — Easy",
+      "beats": [
+        { "vo": "Law two, make it easy. We wildly overestimate our future motivation, and badly underestimate friction. The harder a habit is to start, the less likely you are to do it. So you shrink it down until starting is almost effortless. Don't aim to run five miles. Aim to put your shoes on.", "scene": "story", "room": "habit-studio", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "LAW 2 — MAKE IT EASY", "subtitle": "shrink the first step",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 820, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "easy-ramp", "x": 1380, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "This is the famous two-minute rule. Scale any new habit down to something that takes two minutes or less. Read one page. Write one sentence. Do one push-up. It feels almost too small to matter, but that's the point. A habit must be established before it can be improved.", "scene": "diagramCard", "diagram": "four-laws", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Because showing up, even tiny, is the whole game. On the days you don't feel like it, you still do your laughably small version, and you keep the groove alive. Master the art of showing up first. You can always make the habit bigger once it's actually a habit.", "scene": "explainer", "prop": "easy-ramp", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Law 3 — Satisfying",
+      "beats": [
+        { "vo": "Law three, make it satisfying. Remember, the brain repeats whatever gets an immediate reward. The trouble is, good habits often pay off far too slowly to feel rewarding today. So you have to add a little instant satisfaction yourself, to bridge the gap until the real rewards arrive.", "scene": "story", "room": "habit-studio", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "LAW 3 — MAKE IT SATISFYING", "subtitle": "reward yourself now",
+          "mascots": [ { "costume": "hoodie", "pose": "cheer", "emotion": "excited", "x": 820, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "satisfying-check", "x": 1380, "y": 440, "scale": 0.45, "appearAt": 6 } ] },
+        { "vo": "The simplest trick in the world, track it. Mark an X on a calendar, or tick a box, every time you do the habit. That tiny hit of satisfaction, plus the growing chain you don't want to break, is shockingly motivating. Don't break the chain becomes its own quiet reward.", "scene": "explainer", "prop": "satisfying-check", "emotion": "serious-expert" },
+        { "vo": "So give your future-focused good habits a small, immediate payoff. A tick, a treat, a moment of genuine pride. You're simply speaking your brain's native language, which is, reward me now, and I'll happily do it again tomorrow.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Habit Stacking",
+      "beats": [
+        { "vo": "Here's a bonus technique that supercharges all of this. Habit stacking. The easiest way to start a new habit is to bolt it onto one you already do without thinking. The formula is simple, after I do this existing habit, I will do this new one. The old habit becomes the cue for the new.", "scene": "story", "room": "routine-kitchen", "emotion": "happy-talk", "camera": "slowZoom", "chapterStart": true, "title": "HABIT STACKING", "subtitle": "bolt it onto an old habit",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 720, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "stack-blocks", "x": 1340, "y": 420, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "After I pour my morning coffee, I will write down one thing I'm grateful for. After I brush my teeth, I will do two minutes of stretching. You already have dozens of rock-solid daily habits. Each one is a perfect, reliable anchor to hang a tiny new habit on.", "scene": "explainer", "prop": "stack-blocks", "emotion": "serious-expert" }
+      ]
+    },
+    {
+      "name": "Identity",
+      "beats": [
+        { "vo": "But the deepest, most lasting change of all isn't about the behaviour. It's about identity. Most people chase a goal, I want to run a marathon. The real shift is becoming a type of person. I am a runner. When a habit becomes part of who you are, you no longer have to force it.", "scene": "story", "room": "habit-studio", "emotion": "serious-expert", "camera": "slowZoom", "chapterStart": true, "title": "BECOME THE PERSON", "subtitle": "identity beats willpower",
+          "mascots": [ { "costume": "hoodie", "pose": "idle", "emotion": "serious-expert", "x": 820, "y": 740, "scale": 1.0, "talking": true } ],
+          "props": [ { "name": "identity-badge", "x": 1380, "y": 440, "scale": 0.5, "appearAt": 6 } ] },
+        { "vo": "And here's the beautiful part, every single time you do the habit, you cast a vote for that new identity. Each tiny action is a quiet piece of proof. I am the kind of person who does this. Enough votes, and the identity becomes true, not because you forced it, but because you kept showing up.", "scene": "explainer", "prop": "identity-badge", "emotion": "serious-expert" },
+        { "vo": "So don't just ask, what do I want to achieve? Ask the deeper question, who do I want to become? Then take the smallest possible action that person would take, today. You're not just building a habit anymore. You're quietly, vote by vote, becoming someone new.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Compounding",
+      "beats": [
+        { "vo": "Now, the reason to care about all of this. Habits seem small, almost trivial, in the moment. One workout. One page. One healthy meal. It's easy to feel like they don't matter. But habits are the compound interest of self-improvement, and their real power only shows up over time.", "scene": "diagramCard", "diagram": "compound-growth", "emotion": "serious-expert", "withMascot": true },
+        { "vo": "Just one percent better every day doesn't sound like much. But repeated daily, it compounds into being nearly thirty-eight times better over a single year. And the reverse is just as true, one percent worse each day quietly erodes you down to almost nothing. Tiny choices, enormous destinations.", "scene": "explainer", "prop": "compound-seed", "emotion": "serious-expert" },
+        { "vo": "The catch is that the results are delayed, and often invisible for a while. You water the bamboo for years and see nothing, then it explodes upward. Most people give up in that flat, discouraging valley. The ones who win are simply the ones who keep going, trusting the compounding.", "scene": "closeUp", "subject": "face", "emotion": "neutral" }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        { "vo": "So let's pull it all together into something you can actually use. Pick one tiny habit. Make its cue obvious, make it two-minutes easy, and give yourself an instant tick of satisfaction. Stack it onto something you already do. And do it as a vote for the person you want to become.", "scene": "explainer", "prop": "habit-loop-prop", "emotion": "happy-talk" },
+        { "vo": "And please, be kind to yourself along the way. You will miss days, everyone does. The rule that actually matters isn't never fail. It's never miss twice. One slip is an accident. Two in a row is the start of a new, worse habit. So just get back on the horse, fast, without the self-hatred.", "scene": "closeUp", "subject": "face", "emotion": "serious-expert" },
+        { "vo": "Because in the end, you don't rise to the level of your goals. You fall to the level of your systems, your habits. Your life today is largely the sum of them. Which means changing your habits, one tiny groove at a time, really is changing your whole future. I'm Dear Brain.", "scene": "explainer", "prop": "compound-seed", "emotion": "happy-talk" },
+        { "vo": "Tell me in the comments the one small habit you're going to start this week. Writing it down, where someone might see it, makes it far more likely to stick. Thank you, as always, for spending this time with me. I'm Dear Brain. Go carve a better groove.", "scene": "closeUp", "subject": "face", "emotion": "happy-talk" }
+      ]
+    }
+  ]
+}
