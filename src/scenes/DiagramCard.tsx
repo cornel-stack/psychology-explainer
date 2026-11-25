@@ -4659,8 +4659,129 @@ const SadMusicGives: React.FC = () => {
   );
 };
 
+/** anger-as-signal: anger as a messenger — an alarm light that carries information and
+ *  energy; the feeling isn't the problem, what we do with it is. */
+const AngerAsSignal: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.46;
+  const flash = 0.5 + 0.5 * Math.sin(frame / 6);
+  const items = [{ t: 'something matters', y: 60 }, { t: 'a line was crossed', y: 150 }, { t: 'energy to act', y: 240 }];
+  return (
+    <g>
+      <text x={cx} y={cy - 220} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>anger is a messenger</text>
+      {/* the alarm bell */}
+      <g transform={`translate(${cx - 320} ${cy})`}>
+        {[1, 2, 3].map((r) => <circle key={r} cx={0} cy={-10} r={60 + r * 26} fill="none" stroke={COLORS.red} strokeWidth={STROKE.sm} opacity={(0.4 - r * 0.1) * flash} />)}
+        <path d="M -54 30 Q -54 -54 0 -54 Q 54 -54 54 30 Z" fill={COLORS.red} opacity={0.3 + flash * 0.4} {...xl} />
+        <rect x={-64} y={30} width={128} height={16} rx={8} fill={COLORS.redDark} {...lg} />
+        <circle cx={0} cy={52} r={12} fill={COLORS.redDark} {...lg} />
+        <path d="M 0 -54 v -16" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <circle cx={0} cy={-76} r={9} fill={COLORS.yellow} {...sm} />
+        <text x={0} y={-6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.white}>!</text>
+      </g>
+      {/* the information it carries */}
+      {items.map((it, i) => {
+        const p = springIn(frame - 10 - i * 8, 12);
+        return <g key={i} transform={`translate(${cx - 120} ${cy - 150 + it.y}) scale(${0.7 + 0.3 * p})`} opacity={p}>
+          <path d="M -40 0 l 22 -14 v 28 Z" fill={COLORS.red} opacity={0.7} />
+          <rect x={0} y={-26} width={420} height={52} rx={14} fill={COLORS.yellowSoft} {...lg} />
+          <text x={24} y={8} fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.outline}>{it.t}</text>
+        </g>;
+      })}
+    </g>
+  );
+};
+
+/** anger-iceberg-split: the anger iceberg — anger above the waterline, the softer
+ *  feelings (hurt, fear, shame) hidden below. */
+const AngerIcebergSplit: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const waterY = CANVAS.height * 0.42;
+  const below = ['hurt', 'fear', 'shame', 'powerlessness'];
+  const bob = Math.sin(frame / 18) * 6;
+  return (
+    <g>
+      {/* water */}
+      <rect x={0} y={waterY} width={CANVAS.width} height={CANVAS.height - waterY} fill={shade(COLORS.blueDiagram, 0.08)} opacity={0.5} />
+      <line x1={0} y1={waterY} x2={CANVAS.width} y2={waterY} stroke={COLORS.blueDiagram} strokeWidth={STROKE.lg} opacity={0.7} />
+      <g transform={`translate(${cx} ${bob})`}>
+        {/* tip above water = anger */}
+        <path d={`M ${0} ${waterY - 150} l 90 150 l -180 0 Z`} fill={COLORS.red} {...xl} />
+        <text x={0} y={waterY - 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.white}>ANGER</text>
+        {/* big mass below = the real feelings */}
+        <path d={`M -90 ${waterY} l 180 0 l 70 120 l -40 110 l -240 0 l -40 -110 Z`} fill={shade(COLORS.blueDiagram, -0.04)} opacity={0.85} {...xl} />
+        {below.map((b, i) => {
+          const p = springIn(frame - 14 - i * 7, 12);
+          return <text key={i} x={0} y={waterY + 60 + i * 42} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={22} fill={COLORS.white} opacity={p}>{b}</text>;
+        })}
+      </g>
+      <text x={cx} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the anger iceberg</text>
+    </g>
+  );
+};
+
+/** amygdala-flood: the amygdala hijack — the fast threat alarm floods the body before
+ *  the slow, rational prefrontal cortex can weigh in. */
+const AmygdalaFlood: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.5; const cy = CANVAS.height * 0.5;
+  const surge = frame % 90;
+  const fast = Math.min(1, surge / 10);
+  const slow = Math.max(0, Math.min(1, (surge - 30) / 40));
+  return (
+    <g>
+      <text x={cx} y={120} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the amygdala hijack</text>
+      {/* brain outline */}
+      <path d={`M ${cx - 220} ${cy} q -10 -120 110 -150 q 60 -50 150 -10 q 90 -20 120 60 q 40 50 -10 110 q 10 90 -110 100 q -80 40 -160 -10 q -90 10 -90 -80 Z`} fill={shade(COLORS.lavender, 0.1)} opacity={0.4} {...xl} />
+      {/* amygdala = fast red alarm */}
+      <g transform={`translate(${cx - 90} ${cy + 40})`}>
+        <circle cx={0} cy={0} r={38 + fast * 10} fill={COLORS.red} opacity={0.5 + fast * 0.4} {...lg} />
+        <text x={0} y={70} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>amygdala</text>
+        <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.red}>fast · 0.1s</text>
+      </g>
+      {/* prefrontal cortex = slow */}
+      <g transform={`translate(${cx + 150} ${cy - 70})`}>
+        <circle cx={0} cy={0} r={44} fill={COLORS.greenTeal} opacity={0.3 + slow * 0.5} {...lg} />
+        <text x={0} y={-60} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>prefrontal</text>
+        <text x={0} y={-40} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.greenDark}>slow · later</text>
+      </g>
+      {/* flood arrow from amygdala out to the body, firing first */}
+      <path d={`M ${cx - 52} ${cy + 40} q 120 20 220 120`} fill="none" stroke={COLORS.red} strokeWidth={STROKE.xl} strokeLinecap="round" opacity={0.3 + fast * 0.6} strokeDasharray="4 14" />
+      <text x={cx + 150} y={cy + 190} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={20} fill={COLORS.red} opacity={0.4 + fast * 0.5}>adrenaline + cortisol</text>
+    </g>
+  );
+};
+
+/** ninety-second-rule: the chemical surge of anger peaks and subsides in ~90 seconds;
+ *  staying angry means re-triggering the thought. */
+const NinetySecondRule: React.FC = () => {
+  const frame = useCurrentFrame();
+  const x0 = CANVAS.width * 0.16; const x1 = CANVAS.width * 0.84; const baseY = CANVAS.height * 0.72; const peakY = CANVAS.height * 0.3;
+  const W = x1 - x0;
+  const pts = Array.from({ length: 60 }, (_, i) => { const t = i / 59; const bell = Math.exp(-Math.pow((t - 0.3) * 4.2, 2)); return { x: x0 + t * W, y: baseY - (baseY - peakY) * bell }; });
+  const reveal = Math.min(pts.length, Math.floor(springIn(frame, 40) * pts.length) + 1);
+  const d = pts.slice(0, reveal).map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+  const dot = pts[Math.min(reveal - 1, pts.length - 1)];
+  return (
+    <g>
+      <text x={CANVAS.width / 2} y={90} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={28} fill={COLORS.outline}>the 90-second wave</text>
+      {/* axes */}
+      <line x1={x0} y1={baseY} x2={x1} y2={baseY} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <line x1={x0} y1={baseY} x2={x0} y2={peakY - 20} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 - 14} y={(baseY + peakY) / 2} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline} transform={`rotate(-90 ${x0 - 14} ${(baseY + peakY) / 2})`}>arousal</text>
+      {/* the bell curve */}
+      <path d={d} fill="none" stroke={COLORS.red} strokeWidth={STROKE.xl} strokeLinecap="round" strokeLinejoin="round" />
+      {dot && <circle cx={dot.x} cy={dot.y} r={10} fill={COLORS.red} {...sm} />}
+      {/* 90s marker */}
+      <line x1={x0 + W * 0.6} y1={baseY} x2={x0 + W * 0.6} y2={baseY + 16} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <text x={x0 + W * 0.6} y={baseY + 44} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>~90 seconds</text>
+      <text x={x1} y={baseY + 44} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.greenDark}>then it subsides — if you don't feed it</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe' | 'connection-gap-diagram' | 'loneliness-signal' | 'loneliness-health' | 'loneliness-cycle' | 'proportion-ratio' | 'memory-density-diagram' | 'routine-vs-novelty' | 'holiday-paradox-diagram' | 'safe-emotion' | 'console-hormone' | 'mood-congruence' | 'sad-music-gives' | 'anger-as-signal' | 'anger-iceberg-split' | 'amygdala-flood' | 'ninety-second-rule';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4862,6 +4983,10 @@ export const DiagramCard: React.FC<{
     'console-hormone': COLORS.pink,
     'mood-congruence': COLORS.greenLeaf,
     'sad-music-gives': COLORS.yellow,
+    'anger-as-signal': COLORS.red,
+    'anger-iceberg-split': COLORS.blueDiagram,
+    'amygdala-flood': COLORS.red,
+    'ninety-second-rule': COLORS.red,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -5070,6 +5195,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'console-hormone' && <ConsoleHormone />}
         {diagram === 'mood-congruence' && <MoodCongruence />}
         {diagram === 'sad-music-gives' && <SadMusicGives />}
+        {diagram === 'anger-as-signal' && <AngerAsSignal />}
+        {diagram === 'anger-iceberg-split' && <AngerIcebergSplit />}
+        {diagram === 'amygdala-flood' && <AmygdalaFlood />}
+        {diagram === 'ninety-second-rule' && <NinetySecondRule />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

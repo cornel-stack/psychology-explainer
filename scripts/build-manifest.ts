@@ -213,6 +213,10 @@ const NEW_ASSETS = new Set([
   'rainy-car-drive', 'string-quartet-hall', 'sunset-balcony',
   'reach-for-sad-song', 'safe-sadness-jar', 'console-wave', 'song-companion', 'mood-mirror', 'cathartic-release', 'moved-tear-warm', 'empathy-dial-music', 'sad-playlist-heart', 'lighter-after',
   'safe-emotion', 'console-hormone', 'mood-congruence', 'sad-music-gives',
+  // anger (all new)
+  'heated-argument-lounge', 'red-mist-room', 'cool-calm-room',
+  'anger-flash', 'anger-messenger', 'anger-iceberg', 'amygdala-hijack', 'ninety-sec-wave', 'vent-backfire', 'bottled-anger', 'pause-breath', 'assertive-vs-aggressive', 'fuel-to-fix',
+  'anger-as-signal', 'anger-iceberg-split', 'amygdala-flood', 'ninety-second-rule',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

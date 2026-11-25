@@ -99,6 +99,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['WHY SAD', 'SONGS FEEL', 'SO GOOD'], accent: COLORS.pink, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '♪', prop: 'console-wave' },
     C: { lines: ['SADNESS,', 'BUT SAFE', 'AND BEAUTIFUL'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '♥', prop: 'moved-tear-warm' },
   },
+  'anger': {
+    A: { lines: ['THE', 'PSYCHOLOGY', 'OF ANGER'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '?', prop: 'anger-flash' },
+    B: { lines: ['WHAT YOUR', 'ANGER IS', 'TRYING TO SAY'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'anger-iceberg' },
+    C: { lines: ['WHY VENTING', 'MAKES ANGER', 'WORSE'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '✓', prop: 'pause-breath' },
+  },
   'time-speeds-up': {
     A: { lines: ['WHY TIME', 'SPEEDS UP AS', 'YOU AGE'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'flipping-calendar' },
     B: { lines: ['WHY SUMMERS', 'FELT ENDLESS', 'AS A KID'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '!', prop: 'endless-summer' },

@@ -1,0 +1,326 @@
+{
+  "title": "The Psychology of Anger",
+  "slug": "anger",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Someone cuts you off in traffic. A message lands wrong. The person you love says the one thing that stings. And before you can think, heat floods your chest, your jaw clenches, and words you'll regret are already halfway out of your mouth. A few minutes later, the storm passes, and you're left wondering where that even came from.",
+          "scene": "story",
+          "room": "heated-argument-lounge",
+          "emotion": "annoyed",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "anger",
+          "mascots": [
+            { "costume": "tee", "pose": "fist-up", "emotion": "annoyed", "x": 640, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Anger might be the most misunderstood emotion we have. We treat it like a flaw, something to be ashamed of, to swallow, to apologise for. Or we let it run the show and call it honesty. But anger isn't the enemy. It's a signal. And if you learn to read it, it becomes one of the most useful feelings you own.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "In the next few minutes: what anger is really trying to tell you, the softer feeling that almost always hides beneath it, why your brain can hijack you in a tenth of a second, why venting makes it worse, and the simple ninety-second trick that hands you back control. Let's talk about anger.",
+          "scene": "explainer",
+          "prop": "anger-flash",
+          "emotion": "excited"
+        }
+      ]
+    },
+    {
+      "name": "Anger Is a Messenger",
+      "beats": [
+        {
+          "vo": "Here's the first reframe, and it changes everything. Anger is not bad. It's a completely normal, healthy emotion that every human being is built to feel. It shows up in response to something specific: a perceived threat, an injustice, a blocked goal, or a boundary that's just been crossed.",
+          "scene": "diagramCard",
+          "diagram": "anger-as-signal",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "ANGER IS A MESSENGER",
+          "subtitle": "the feeling isn't the problem"
+        },
+        {
+          "vo": "Think of anger as an alarm. When it goes off, it's carrying two things. First, information: something here matters to you, something isn't right. And second, energy, a surge of fuel to do something about it. Anger is the part of you that stands up and says, this is not okay.",
+          "scene": "explainer",
+          "prop": "anger-messenger",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So the problem is never the feeling itself. The problem is what we do with it. A smoke alarm isn't dangerous, it's useful. It only becomes a problem if you either rip it off the wall and ignore it, or let it shriek non-stop until everyone around you is covering their ears. Anger works exactly the same way.",
+          "scene": "story",
+          "room": "heated-argument-lounge",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "suit", "pose": "point-right", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "And it's worth being precise here, because we blur two things that are not the same. Anger is a feeling, it happens inside you. Aggression is a behaviour, it's what you do to someone else. You can feel white-hot anger and harm no one. The feeling is always allowed. It's only aggression, acting to hurt, that we need to watch.",
+          "scene": "explainer",
+          "prop": "anger-flash",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "People who are taught that anger is shameful don't stop feeling it. They just lose the ability to hear what it's telling them. The goal was never to erase your anger. It's to understand it, so that instead of controlling you, it can actually work for you.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Anger Iceberg",
+      "beats": [
+        {
+          "vo": "Now for the most important secret about anger. Most of the time, it isn't the real emotion at all. Anger is what therapists call a secondary emotion. It sits on top of something softer and far more vulnerable underneath.",
+          "scene": "diagramCard",
+          "diagram": "anger-iceberg-split",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE ANGER ICEBERG",
+          "subtitle": "what's hiding underneath"
+        },
+        {
+          "vo": "Picture an iceberg. Anger is the sharp, visible tip above the waterline, the part everyone sees. But below the surface sits the real, hidden mass: hurt, fear, shame, embarrassment, rejection, a feeling of being powerless. That's what's actually going on.",
+          "scene": "explainer",
+          "prop": "anger-iceberg",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Why the disguise? Because anger feels powerful and protective, while the feelings beneath it feel weak and exposed. When you're hurt, you feel small. When you're angry, you feel strong. So the mind quietly swaps one for the other and reaches for anger as armour against the softer thing it doesn't want to feel.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "You see this everywhere once you know to look. The parent who yells when a child runs into the road isn't really angry, they're terrified. The friend who goes cold after being left out isn't above it all, they're hurt. The rage is loud, but it's almost always standing guard over something tender.",
+          "scene": "story",
+          "room": "heated-argument-lounge",
+          "emotion": "tearful",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "tearful", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "This is why the next time you feel furious, the most powerful question you can ask is: what's underneath this? If you snapped at your partner for being late, is it really about the time, or is it the fear that you don't matter to them? Name the feeling below, and the anger on top often melts.",
+          "scene": "explainer",
+          "prop": "fuel-to-fix",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Amygdala Hijack",
+      "beats": [
+        {
+          "vo": "But if anger carries useful information, why do we so often act like idiots when we feel it? To answer that, we have to go into the brain, and meet the reason you can lose your mind before you've even finished a thought.",
+          "scene": "diagramCard",
+          "diagram": "amygdala-flood",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE AMYGDALA HIJACK",
+          "subtitle": "when the alarm fires first"
+        },
+        {
+          "vo": "Deep in your brain sits the amygdala, your threat detector. Its whole job is speed. When it senses danger, it fires a fight-or-flight response in about a tenth of a second, flooding your body with adrenaline and cortisol. Heart pounding, muscles tense, ready to fight, long before you've consciously decided anything.",
+          "scene": "explainer",
+          "prop": "amygdala-hijack",
+          "emotion": "scared"
+        },
+        {
+          "vo": "The psychologist Daniel Goleman called this the amygdala hijack. The problem is that your rational brain, the prefrontal cortex, the wise part that weighs consequences, is slow. By the time it comes online, the alarm has already flooded the system and taken the wheel.",
+          "scene": "story",
+          "room": "red-mist-room",
+          "emotion": "terrified",
+          "camera": "slowZoom",
+          "mascots": [
+            { "costume": "tee", "pose": "cower", "emotion": "terrified", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "This is the famous red mist. For those few seconds, the thinking part of your brain is literally offline. That's not an excuse, it's an explanation, and it's why we do and say things in anger that we'd never choose in calm. The trick isn't to never get hijacked. It's to know it's happening, and buy yourself time.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The 90-Second Wave",
+      "beats": [
+        {
+          "vo": "So how do you buy that time? With one of the most freeing facts in all of psychology. Brain scientist Jill Bolte Taylor discovered that the physical surge of an emotion, the actual chemical flood through your body, runs its full course in about ninety seconds.",
+          "scene": "diagramCard",
+          "diagram": "ninety-second-rule",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE 90-SECOND WAVE",
+          "subtitle": "ride it out"
+        },
+        {
+          "vo": "Ninety seconds. That's it. The chemicals of anger pour in, peak, and then, if you leave them alone, they naturally wash out of your bloodstream. The storm has a built-in timer. Your body wants to calm down. It's designed to.",
+          "scene": "explainer",
+          "prop": "ninety-sec-wave",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So why does anger ever last longer than a minute and a half? Because after the wave, we keep it alive ourselves. We re-run the argument. We rehearse the comeback. We tell the story of how wrong they were, again and again. And every time you retell it, you re-trigger the chemical flood and start the wave all over.",
+          "scene": "story",
+          "room": "red-mist-room",
+          "emotion": "annoyed",
+          "mascots": [
+            { "costume": "hoodie", "pose": "arms-crossed", "emotion": "annoyed", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "This is the whole game. When you feel that first surge, don't act and don't feed it. Step away. Breathe. Count. Just let the ninety seconds pass. On the other side of that wave, your thinking brain comes back online, and the choice of what to do next returns to you.",
+          "scene": "explainer",
+          "prop": "pause-breath",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Venting Myth",
+      "beats": [
+        {
+          "vo": "Now let's kill a myth that's done a lot of damage. You've probably heard that anger is like steam in a kettle, and if you don't let it out, you'll explode. So punch a pillow. Scream in the car. Smash some plates at a rage room. Get it all out. It feels true. It's also almost completely wrong.",
+          "scene": "explainer",
+          "prop": "vent-backfire",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE VENTING MYTH",
+          "subtitle": "letting it out backfires"
+        },
+        {
+          "vo": "This idea is called catharsis theory, and decades of research, led by psychologist Brad Bushman, have shown it backfires. When you vent aggressively, you're not releasing the anger. You're rehearsing it. You're practising being furious, keeping your body's arousal sky-high and wiring the rage in deeper.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "In study after study, people who vented their anger ended up angrier and more aggressive than people who did nothing at all. The pillow doesn't absorb your rage. It trains it. What actually works is the opposite of venting: bringing your arousal down. Calming the body, not firing it up.",
+          "scene": "story",
+          "room": "heated-argument-lounge",
+          "emotion": "annoyed",
+          "mascots": [
+            { "costume": "tee", "pose": "facepalm", "emotion": "annoyed", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "So if loud venting makes it worse, surely the answer is to just bottle it all up and stay quiet? Unfortunately, no. That path has its own steep price, and it's one we pay with our health.",
+          "scene": "explainer",
+          "prop": "anger-messenger",
+          "emotion": "confused"
+        }
+      ]
+    },
+    {
+      "name": "Neither Explode Nor Bottle",
+      "beats": [
+        {
+          "vo": "Chronically swallowing your anger, pretending you're fine when you're not, is linked to a real toll: simmering resentment, anxiety, stress, and over the years, higher blood pressure and strain on the heart. The anger doesn't vanish when you bottle it. It just turns inward and leaks out sideways.",
+          "scene": "explainer",
+          "prop": "bottled-anger",
+          "emotion": "tearful",
+          "chapterStart": true,
+          "title": "NEITHER EXPLODE NOR BOTTLE",
+          "subtitle": "there's a third way"
+        },
+        {
+          "vo": "So we're caught between two bad options. Explode, and you hurt people and train your rage. Suppress, and you quietly hurt yourself. The healthy path is neither. It's a third way: to process the anger, and then express it constructively. And the key word there is a specific one, assertive, not aggressive.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Aggressive says: you're an idiot, you always do this, what is wrong with you. It attacks the person. Assertive says: when this happened, I felt hurt, and here's what I need. It names the feeling and the need, calmly and clearly, without attacking anyone. Same energy, completely different direction.",
+          "scene": "explainer",
+          "prop": "assertive-vs-aggressive",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Assertive anger is how you honour the message without becoming the explosion. You get to stand up for yourself, set the boundary, say the hard thing, and still keep the relationship intact. It's not weaker than shouting. It's far, far stronger.",
+          "scene": "story",
+          "room": "cool-calm-room",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "mascots": [
+            { "costume": "suit", "pose": "hands-hips", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Using It Well",
+      "beats": [
+        {
+          "vo": "So let's pull it all together into something you can actually use the next time anger shows up. Five steps, and they follow everything we've learned. The first one you already know: pause, and ride out that ninety-second wave before you do anything at all.",
+          "scene": "explainer",
+          "prop": "pause-breath",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "USING IT WELL",
+          "subtitle": "five steps"
+        },
+        {
+          "vo": "Second, name it. Just saying to yourself, I'm feeling really angry right now, does something remarkable. Brain scans show that putting a feeling into words, which researchers call affect labeling, actually calms the amygdala down. Naming the emotion loosens its grip on you.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Third, look underneath. Remember the iceberg. Ask what the anger is protecting. What's the hurt, the fear, the need beneath it? Fourth, express it assertively, the feeling and the need, not an attack. And fifth, use that energy to fix the problem, not to punish the person.",
+          "scene": "story",
+          "room": "cool-calm-room",
+          "emotion": "serious-expert",
+          "mascots": [
+            { "costume": "tee", "pose": "arms-out-presenting", "emotion": "serious-expert", "x": 960, "y": 980, "scale": 0.9, "talking": true }
+          ]
+        },
+        {
+          "vo": "Because that's the secret the angriest people never learn. Anger was never meant to be aimed at people. It's fuel. It's the energy to change what isn't right, to protect what you love, to set a boundary that needed setting. Pointed at a person, it burns. Pointed at a problem, it's power.",
+          "scene": "diagramCard",
+          "diagram": "anger-as-signal",
+          "emotion": "serious-expert",
+          "withMascot": true
+        }
+      ]
+    },
+    {
+      "name": "Close",
+      "beats": [
+        {
+          "vo": "One honest note before we go. If your anger feels constant, or out of control, if it's damaging your relationships, your work, or your health, or if it ever spills into aggression toward the people around you, please treat that as something worth real support.",
+          "scene": "story",
+          "room": "cool-calm-room",
+          "emotion": "tearful",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "tearful", "x": 700, "y": 980, "scale": 0.85, "talking": true }
+          ]
+        },
+        {
+          "vo": "None of this is a diagnosis, and it isn't a substitute for talking to someone who can help. Anger is one of the most workable things there is in therapy, and reaching out for support with it is a sign of strength, not of failure. You don't have to figure it out alone.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So the next time the heat rises, try to remember: your anger isn't a monster to cage, or a weapon to swing. It's a messenger, knocking to tell you something matters. Let the wave pass. Ask what's underneath. And then use its energy to build something better. Thanks for watching, and take gentle care of yourself.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

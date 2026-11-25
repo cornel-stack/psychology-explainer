@@ -169,7 +169,10 @@ export type RoomName =
   | 'mountain-viewpoint'
   | 'rainy-car-drive'
   | 'string-quartet-hall'
-  | 'sunset-balcony';
+  | 'sunset-balcony'
+  | 'heated-argument-lounge'
+  | 'red-mist-room'
+  | 'cool-calm-room';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4549,6 +4552,60 @@ export const SunsetBalcony: React.FC = () => (
   </g>
 );
 
+/** Heated argument lounge: a living room mid-argument, a tipped lamp, tension in the
+ *  air — the scene of a flare-up. */
+export const HeatedArgumentLounge: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.red, 0.04)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.red, 0.02)} opacity={0.5} />)}
+    {/* a crooked, knocked picture frame */}
+    <g transform="translate(360 300) rotate(-14)"><rect x={-60} y={-70} width={120} height={140} rx={6} fill={COLORS.white} {...lg} /><rect x={-46} y={-56} width={92} height={90} rx={4} fill={shade(COLORS.sky, 0.06)} /></g>
+    {/* a window */}
+    <g transform="translate(1560 320)"><rect x={-140} y={-150} width={280} height={300} rx={12} fill={shade(COLORS.purpleDeep, 0.1)} {...xl} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.purpleDeep, 0.2)} strokeWidth={STROKE.lg} /><line x1={-140} y1={0} x2={140} y2={0} stroke={shade(COLORS.purpleDeep, 0.2)} strokeWidth={STROKE.lg} /></g>
+    {/* a sofa */}
+    <g transform="translate(960 820)"><rect x={-300} y={-50} width={600} height={180} rx={26} fill={shade(COLORS.red, 0.0)} {...xl} /><rect x={-300} y={-120} width={140} height={110} rx={22} fill={shade(COLORS.red, 0.06)} {...lg} /><rect x={160} y={-120} width={140} height={110} rx={22} fill={shade(COLORS.red, 0.06)} {...lg} />{[-150, 40].map((x, i) => <rect key={i} x={x} y={-40} width={110} height={110} rx={18} fill={shade(COLORS.red, 0.1)} {...lg} transform={`rotate(${i ? 8 : -8} ${x + 55} 15)`} />)}</g>
+    {/* two figures turned away from each other, cross */}
+    {[560, 1360].map((x, i) => <g key={i} transform={`translate(${x} 720) scale(${i ? -1 : 1} 1)`}><circle cx={0} cy={-40} r={40} fill={[COLORS.white, COLORS.yellowSoft][i]} {...xl} /><path d="M -34 -16 L -10 -8" stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={-16} cy={-42} r={5} fill={COLORS.outline} /><path d="M -14 -22 Q 0 -14 14 -22" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><path d={`M -40 80 Q 0 0 40 80 Z`} fill={shade([COLORS.white, COLORS.yellowSoft][i], 0.08)} {...lg} /><path d="M -30 -70 l 12 -8 M -20 -74 l 6 -12" stroke={COLORS.red} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>)}
+    {/* a tipped-over floor lamp */}
+    <g transform="translate(300 860) rotate(30)"><rect x={-6} y={0} width={12} height={160} fill={COLORS.woodDark} /><path d="M -40 0 L 40 0 L 28 -56 L -28 -56 Z" fill={COLORS.yellowSoft} {...lg} /></g>
+  </g>
+);
+
+/** Red mist room: a surreal room drowning in the red haze of rage — the amygdala
+ *  hijack made visible. */
+export const RedMistRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.red, 0.02)} floor={shade(COLORS.redDark, 0.04)} floorY={840} stripe={false} />
+    {/* pulsing red haze bands */}
+    {Array.from({ length: 8 }).map((_, i) => <rect key={i} x={0} y={i * 110} width={CANVAS.width} height={60} fill={shade(COLORS.red, -0.04)} opacity={0.35} />)}
+    {/* radiating anger lines from the centre */}
+    {Array.from({ length: 16 }).map((_, i) => { const a = (i / 16) * Math.PI * 2; return <line key={i} x1={960 + Math.cos(a) * 200} y1={460 + Math.sin(a) * 200} x2={960 + Math.cos(a) * 520} y2={460 + Math.sin(a) * 520} stroke={shade(COLORS.redDark, 0.06)} strokeWidth={STROKE.lg} opacity={0.4} strokeLinecap="round" />; })}
+    {/* jagged lightning-bolt shapes of rage */}
+    {[[300, 300], [1600, 360], [500, 760], [1500, 740]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} l 26 -40 l -14 4 l 22 -44 l -40 48 l 16 -4 Z`} fill={COLORS.yellow} opacity={0.6} {...sm} />)}
+    {/* the figure in the middle, consumed by red */}
+    <g transform="translate(960 720)"><circle cx={0} cy={-56} r={60} fill={shade(COLORS.red, 0.1)} {...xl} /><path d="M -36 -72 L -8 -62 M 36 -72 L 8 -62" stroke={COLORS.white} strokeWidth={STROKE.xl} strokeLinecap="round" /><circle cx={-18} cy={-50} r={7} fill={COLORS.white} /><circle cx={18} cy={-50} r={7} fill={COLORS.white} /><path d="M -22 -28 Q 0 -40 22 -28" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" /><path d="M -64 90 Q -68 6 0 2 Q 68 6 64 90 Z" fill={shade(COLORS.red, 0.12)} {...xl} />{[-70, 70].map((xx, i) => <g key={i}>{[0, 1].map((j) => <path key={j} d={`M ${xx} ${-66 + j * 4} q ${(i ? 1 : -1) * (16 + j * 6)} -18 0 -38`} fill="none" stroke={COLORS.redDark} strokeWidth={STROKE.sm} strokeLinecap="round" />)}</g>)}</g>
+  </g>
+);
+
+/** Cool calm room: a serene, cool-blue room with soft light and a plant — the place
+ *  the anger cools and clarity returns. */
+export const CoolCalmRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={shade(COLORS.sky, -0.02)} floorY={840} stripe={false} />
+    <rect x={0} y={580} width={CANVAS.width} height={260} fill={shade(COLORS.sky, 0.04)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={580} stroke={shade(COLORS.sky, -0.04)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {/* a big calm window with soft daylight */}
+    <g transform="translate(960 360)"><rect x={-200} y={-200} width={400} height={400} rx={16} fill={shade(COLORS.sky, 0.08)} {...xl} /><rect x={-180} y={-180} width={360} height={360} rx={10} fill={COLORS.white} opacity={0.35} /><line x1={0} y1={-200} x2={0} y2={200} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-200} y1={0} x2={200} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><circle cx={90} cy={-100} r={44} fill={COLORS.white} opacity={0.6} /></g>
+    {/* soft concentric calm ripples */}
+    {[0, 1, 2].map((i) => <circle key={i} cx={960} cy={360} r={230 + i * 50} fill="none" stroke={shade(COLORS.sky, -0.04)} strokeWidth={STROKE.sm} opacity={0.3} />)}
+    {/* a low meditation cushion */}
+    <g transform="translate(960 920)"><ellipse cx={0} cy={0} rx={120} ry={34} fill={COLORS.greenTeal} {...xl} /><ellipse cx={0} cy={-14} rx={110} ry={28} fill={shade(COLORS.greenTeal, 0.08)} {...lg} /></g>
+    {/* a calming plant + a candle */}
+    <g transform="translate(360 760)"><rect x={-40} y={0} width={80} height={110} rx={12} fill={COLORS.greenTeal} {...xl} /><path d="M 0 0 q -60 -70 -30 -150 M 0 0 q 0 -90 0 -170 M 0 0 q 60 -70 30 -150" fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.xl} strokeLinecap="round" /><circle cx={-30} cy={-150} r={18} fill={COLORS.greenLeaf} /><circle cx={0} cy={-170} r={20} fill={COLORS.greenLeaf} /><circle cx={30} cy={-150} r={18} fill={COLORS.greenLeaf} /></g>
+    <g transform="translate(1560 820)"><rect x={-24} y={0} width={48} height={70} rx={6} fill={COLORS.white} {...lg} /><rect x={-5} y={-20} width={10} height={22} fill={COLORS.ledGrey} /><path d="M 0 -20 q -8 -10 0 -22 q 8 12 0 22 Z" fill={COLORS.yellow} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4703,6 +4760,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'rainy-car-drive': RainyCarDrive,
   'string-quartet-hall': StringQuartetHall,
   'sunset-balcony': SunsetBalcony,
+  'heated-argument-lounge': HeatedArgumentLounge,
+  'red-mist-room': RedMistRoom,
+  'cool-calm-room': CoolCalmRoom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

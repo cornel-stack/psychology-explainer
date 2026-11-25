@@ -55,6 +55,7 @@ import * as Sn from './sayno';
 import * as Lo from './loneliness';
 import * as Ti from './timeage';
 import * as Sm from './sadmusic';
+import * as An from './anger';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -670,6 +671,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'empathy-dial-music': Sm.EmpathyDialMusic,
   'sad-playlist-heart': Sm.SadPlaylistHeart,
   'lighter-after': Sm.LighterAfter,
+  // anger emblems (all new)
+  'anger-flash': An.AngerFlash,
+  'anger-messenger': An.AngerMessenger,
+  'anger-iceberg': An.AngerIceberg,
+  'amygdala-hijack': An.AmygdalaHijack,
+  'ninety-sec-wave': An.NinetySecWave,
+  'vent-backfire': An.VentBackfire,
+  'bottled-anger': An.BottledAnger,
+  'pause-breath': An.PauseBreath,
+  'assertive-vs-aggressive': An.AssertiveVsAggressive,
+  'fuel-to-fix': An.FuelToFix,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
