@@ -157,7 +157,10 @@ export type RoomName =
   | 'growing-brainscape'
   | 'crossroads-dusk'
   | 'reflective-porch'
-  | 'start-line-dawn';
+  | 'start-line-dawn'
+  | 'task-pile-desk'
+  | 'reaching-hands-room'
+  | 'calm-garden-gate';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4244,6 +4247,78 @@ export const StartLineDawn: React.FC = () => (
   </g>
 );
 
+/** Task-pile desk: a desk buried under everyone else's requests — sticky notes,
+ *  buzzing phone, overflowing inbox — the overcommitted people-pleaser. */
+export const TaskPileDesk: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.bgCreamDark, 0.02)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {Array.from({ length: 16 }).map((_, i) => <rect key={`bd${i}`} x={i * 120} y={0} width={60} height={640} fill={shade(COLORS.bgCreamDark, -0.05)} opacity={0.6} />)}
+    {/* a wall densely covered in sticky-note requests (4 rows) */}
+    {Array.from({ length: 36 }).map((_, i) => {
+      const x = 130 + (i % 9) * 195;
+      const y = 110 + Math.floor(i / 9) * 130;
+      const rot = (i * 37) % 24 - 12;
+      const fillC = [COLORS.yellow, COLORS.pink, COLORS.sky, COLORS.greenLeaf][i % 4];
+      const lab = ['can you?', 'ASAP', 'just one', 'help!', 'favour?'][i % 5];
+      return (
+        <g key={i} transform={`translate(${x} ${y}) rotate(${rot})`}>
+          <rect x={-44} y={-44} width={88} height={88} rx={4} fill={fillC} opacity={0.75} {...sm} />
+          <line x1={-28} y1={-20} x2={28} y2={-20} stroke={COLORS.outline} strokeWidth={STROKE.sm} opacity={0.4} />
+          <line x1={-28} y1={0} x2={18} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.sm} opacity={0.4} />
+          <text x={0} y={30} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={16} fill={COLORS.outline} opacity={0.6}>{lab}</text>
+        </g>
+      );
+    })}
+    {/* the overloaded desk */}
+    <g transform="translate(960 830)">
+      <rect x={-460} y={-20} width={920} height={44} rx={8} fill={COLORS.woodDark} {...xl} />
+      {/* teetering stacks of folders/papers */}
+      {[-320, -180, 240, 380].map((x, s) => <g key={s} transform={`translate(${x} -20)`}>{Array.from({ length: 5 }).map((_, i) => <rect key={i} x={-50 + (i % 2) * 6} y={-i * 20} width={100} height={18} rx={3} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink][i]} {...lg} transform={`rotate(${(i % 2 ? 2 : -2)} 0 ${-i * 20})`} />)}</g>)}
+      {/* a laptop with a full inbox */}
+      <g transform="translate(-20 -30)"><rect x={-70} y={-50} width={140} height={54} rx={6} fill={COLORS.outline} /><rect x={-60} y={-42} width={120} height={38} rx={3} fill={COLORS.sky} /><text x={0} y={-18} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={16} fill={COLORS.white}>99+</text></g>
+      {/* a phone buzzing */}
+      <g transform="translate(80 -34)"><rect x={-18} y={-30} width={36} height={60} rx={8} fill={COLORS.wallNightDark} {...lg} />{[0, 1].map((i) => <path key={i} d={`M ${22 + i * 6} -24 q 10 20 0 40`} fill="none" stroke={COLORS.red} strokeWidth={STROKE.sm} strokeLinecap="round" />)}</g>
+    </g>
+  </g>
+);
+
+/** Reaching-hands room: a surreal space where many hands and asks reach toward one
+ *  overwhelmed figure — the pressure to please. */
+export const ReachingHandsRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.04)} floor={shade(COLORS.purpleDeep, 0.2)} floorY={840} stripe={false} />
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.purpleDeep, -0.03)} opacity={0.5} />)}
+    {/* a ring of 'asking' speech bubbles around the top */}
+    {[[220, 180, 'can you?'], [560, 130, 'please?'], [900, 160, 'just this once'], [1300, 130, 'for me?'], [1680, 180, 'help?']].map(([x, y, t], i) => <g key={i} transform={`translate(${x} ${y})`}><ellipse cx={0} cy={0} rx={82} ry={44} fill={COLORS.white} {...lg} /><path d="M -20 36 l -10 28 l 32 -18 Z" fill={COLORS.white} {...sm} /><text x={0} y={7} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={20} fill={COLORS.outline}>{t as string}</text></g>)}
+    {/* many reaching hands coming from the sides */}
+    {[[80, 560, 1], [120, 720, 1], [1840, 560, -1], [1800, 720, -1], [80, 880, 1], [1840, 880, -1]].map(([x, y, dir], i) => <g key={i} transform={`translate(${x} ${y}) scale(${dir} 1)`}><path d="M 0 0 Q 90 -10 150 10 Q 120 20 150 40 Q 110 36 130 56 Q 96 48 110 70 Q 70 40 0 40 Z" fill={COLORS.skin} {...lg} /></g>)}
+    {/* the overwhelmed figure in the centre */}
+    <g transform="translate(960 760)"><circle cx={0} cy={-50} r={56} fill={COLORS.white} {...xl} /><path d="M -30 -66 Q -20 -82 -8 -70 M 8 -70 Q 20 -82 30 -66" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><path d="M -16 -32 Q 0 -24 16 -32" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><path d="M -60 90 Q -64 6 0 2 Q 64 6 60 90 Z" fill={COLORS.hoodie} {...xl} /></g>
+  </g>
+);
+
+/** Calm garden gate: a peaceful walled garden with a simple gate — the serenity of
+ *  healthy boundaries. */
+export const CalmGardenGate: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.sky} floor={shade(COLORS.greenLeaf, 0.08)} floorY={760} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={260} fill={shade(COLORS.sky, 0.08)} />
+    <circle cx={300} cy={200} r={70} fill={COLORS.yellowSoft} opacity={0.7} />
+    {[700, 1100, 1500].map((x, i) => <g key={i} opacity={0.9}><ellipse cx={x} cy={160 + (i % 2) * 30} rx={70} ry={30} fill={COLORS.white} /></g>)}
+    {/* a low garden wall with a welcoming gate in the middle */}
+    <rect x={0} y={560} width={760} height={200} rx={6} fill={shade(COLORS.greenTeal, 0.04)} {...lg} />
+    <rect x={1160} y={560} width={760} height={200} rx={6} fill={shade(COLORS.greenTeal, 0.04)} {...lg} />
+    {Array.from({ length: 16 }).map((_, i) => { const x = i < 8 ? 40 + i * 92 : 1200 + (i - 8) * 92; return <line key={i} x1={x} y1={560} x2={x} y2={760} stroke={shade(COLORS.greenTeal, -0.06)} strokeWidth={STROKE.sm} opacity={0.5} />; })}
+    {/* the open wooden gate */}
+    <g transform="translate(960 600)"><rect x={-100} y={-20} width={16} height={180} fill={COLORS.woodDark} /><rect x={84} y={-20} width={16} height={180} fill={COLORS.woodDark} /><g transform="rotate(-18 -92 -10)"><rect x={-92} y={-10} width={90} height={150} rx={6} fill={shade(COLORS.wood, 0.08)} {...lg} /><line x1={-92} y1={40} x2={-2} y2={40} stroke={shade(COLORS.wood, -0.04)} strokeWidth={STROKE.lg} /></g></g>
+    {/* flower beds + a path through the gate */}
+    <path d="M 880 1080 L 920 760 L 1000 760 L 1040 1080 Z" fill={shade(COLORS.wood, 0.12)} {...lg} />
+    {[[300, 900], [1600, 900], [500, 960]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><rect x={-50} y={0} width={100} height={30} rx={8} fill={COLORS.woodDark} {...lg} />{[-30, 0, 30].map((dx, j) => <g key={j} transform={`translate(${dx} 0)`}><line x1={0} y1={0} x2={0} y2={-40} stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={0} cy={-46} r={12} fill={[COLORS.pink, COLORS.yellow, COLORS.red][j]} {...sm} /></g>)}</g>)}
+    {/* a tree */}
+    <g transform="translate(1720 620)"><rect x={-18} y={0} width={36} height={140} rx={8} fill={COLORS.woodDark} {...lg} /><circle cx={0} cy={-40} r={84} fill={COLORS.greenDark} {...xl} /></g>
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4386,6 +4461,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'crossroads-dusk': CrossroadsDusk,
   'reflective-porch': ReflectivePorch,
   'start-line-dawn': StartLineDawn,
+  'task-pile-desk': TaskPileDesk,
+  'reaching-hands-room': ReachingHandsRoom,
+  'calm-garden-gate': CalmGardenGate,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

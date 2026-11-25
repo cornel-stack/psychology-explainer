@@ -1,0 +1,225 @@
+{
+  "slug": "cant-say-no",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 17
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "boundary-reframe",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "fawn-response",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "no-social-threat",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "pleasing-cost",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        19,
+        21,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        7
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        20,
+        22
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        7,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "boundary-gate",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        18,
+        23
+      ]
+    },
+    {
+      "name": "earn-love",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "fawn-appease",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        6
+      ]
+    },
+    {
+      "name": "guilt-after-no",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        15
+      ]
+    },
+    {
+      "name": "juggle-everyone",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3
+      ]
+    },
+    {
+      "name": "kind-firm-no",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        19,
+        20
+      ]
+    },
+    {
+      "name": "no-threat-alarm",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        10
+      ]
+    },
+    {
+      "name": "pour-empty-cup",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "resentment-pot",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "silent-no",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2
+      ]
+    },
+    {
+      "name": "calm-garden-gate",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        19,
+        21
+      ]
+    },
+    {
+      "name": "reaching-hands-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "task-pile-desk",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0
+      ]
+    }
+  ]
+}

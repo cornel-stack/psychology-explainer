@@ -51,6 +51,7 @@ import * as Bo from './boredom';
 import * as Dj from './dejavu';
 import * as Bm from './babymemory';
 import * as Rg from './regret';
+import * as Sn from './sayno';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -622,6 +623,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'regret-spiral': Rg.RegretSpiral,
   'self-forgive-hand': Rg.SelfForgiveHand,
   'take-the-leap': Rg.TakeTheLeap,
+  // cant-say-no emblems (all new)
+  'silent-no': Sn.SilentNo,
+  'juggle-everyone': Sn.JuggleEveryone,
+  'fawn-appease': Sn.FawnAppease,
+  'earn-love': Sn.EarnLove,
+  'no-threat-alarm': Sn.NoThreatAlarm,
+  'resentment-pot': Sn.ResentmentPot,
+  'pour-empty-cup': Sn.PourEmptyCup,
+  'guilt-after-no': Sn.GuiltAfterNo,
+  'boundary-gate': Sn.BoundaryGate,
+  'kind-firm-no': Sn.KindFirmNo,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

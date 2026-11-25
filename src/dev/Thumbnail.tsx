@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'cant-say-no': {
+    A: { lines: ["WHY YOU", "CAN'T SAY", 'NO'], accent: COLORS.red, bg: COLORS.purpleDeep, emotion: 'scared', textColor: COLORS.white, badge: '!', prop: 'silent-no' },
+    B: { lines: ['PEOPLE-', 'PLEASING ISN\'T', 'KINDNESS'], accent: COLORS.yellow, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'fawn-appease' },
+    C: { lines: ['HOW TO SAY', 'NO WITHOUT', 'THE GUILT'], accent: COLORS.greenLeaf, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '✓', prop: 'kind-firm-no' },
+  },
   'regret': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF REGRET'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'tearful', textColor: COLORS.white, badge: '?', prop: 'if-only-fork' },
     B: { lines: ['WHAT WE', 'REGRET MOST', 'AT THE END'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'did-vs-didnt' },

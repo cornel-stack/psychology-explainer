@@ -4344,8 +4344,96 @@ const RegretFunction: React.FC = () => {
   );
 };
 
+/** fawn-response: fight / flight / freeze / FAWN — the fourth response. */
+const FawnResponse: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const modes: [string, string, boolean][] = [['FIGHT', COLORS.red, false], ['FLIGHT', COLORS.sky, false], ['FREEZE', COLORS.ledGrey, false], ['FAWN', COLORS.pink, true]];
+  const g = 0.5 + 0.5 * Math.sin(frame / 6);
+  return (
+    <g>
+      {modes.map(([lab, c, hot], i) => {
+        const x = cx - 240 + i * 160; const p = springIn(frame - i * 5, 12);
+        return (
+          <g key={i} transform={`translate(${x} ${cy}) scale(${0.7 + 0.3 * p})`}>
+            <circle cx={0} cy={0} r={58} fill={c} opacity={hot ? 0.6 + g * 0.3 : 0.4} {...xl} />
+            <text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{lab}</text>
+            {hot && <text x={0} y={88} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={14} fill={COLORS.outline}>= please &amp; appease</text>}
+          </g>
+        );
+      })}
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the fourth threat response</text>
+    </g>
+  );
+};
+
+/** no-social-threat: "no" → fear of rejection → auto-yes loop. */
+const NoSocialThreat: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const R = 130;
+  const nodes = [['you want to\nsay NO', COLORS.sky], ['fear of\nrejection', COLORS.red], ['anxiety\nalarm', COLORS.red], ['auto "yes"\n(relief)', COLORS.yellow]];
+  const a = (frame / 30) % (Math.PI * 2);
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeDasharray="4 16" />
+      <g transform={`translate(${cx + Math.cos(a) * R} ${cy + Math.sin(a) * R})`}><circle cx={0} cy={0} r={8} fill={COLORS.redDark} /></g>
+      {nodes.map(([lab, c], i) => {
+        const ang = -Math.PI / 2 + (i / 4) * Math.PI * 2; const x = cx + Math.cos(ang) * R; const y = cy + Math.sin(ang) * R;
+        return <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={0} r={52} fill={c as string} {...lg} />{(lab as string).split('\n').map((ln, j) => <text key={j} x={0} y={-4 + j * 16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={12} fill={COLORS.outline}>{ln}</text>)}</g>;
+      })}
+      <text x={cx} y={cy - R - 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>why 'yes' leaps out on its own</text>
+    </g>
+  );
+};
+
+/** people-pleasing-cost: short-term relief vs long-term resentment & burnout. */
+const PleasingCost: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 480; const H = 180;
+  const x0 = cx - W / 2; const base = cy + H / 2;
+  const relief = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; const y = base - H * (0.7 * Math.exp(-t * 6)); return `${x0 + t * W},${y}`; });
+  const cost = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; const y = base - H * (0.1 + 0.8 * t); return `${x0 + t * W},${y}`; });
+  return (
+    <g>
+      <line x1={x0} y1={base} x2={x0 + W} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <polyline points={relief.join(' ')} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <polyline points={cost.join(' ')} fill="none" stroke={COLORS.red} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      <text x={x0 + W + 6} y={base - H * 0.1 + 6} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.sky}>quick relief</text>
+      <text x={x0 + W + 6} y={base - H * 0.9 + 6} textAnchor="start" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.red}>resentment</text>
+      <text x={x0} y={base + 32} textAnchor="start" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>the "yes"</text>
+      <text x={x0 + W} y={base + 32} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>over time</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>relief now, resentment later</text>
+    </g>
+  );
+};
+
+/** boundary-reframe: "no" to a request is not "no" to the person. */
+const BoundaryReframe: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const g = 0.5 + 0.4 * Math.sin(frame / 6);
+  return (
+    <g>
+      {/* what they hear you fear */}
+      <g transform={`translate(${cx - 170} ${cy})`}>
+        <rect x={-90} y={-50} width={180} height={100} rx={14} fill={shade(COLORS.red, 0.1)} {...lg} />
+        <text x={0} y={-6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>"no" =</text>
+        <text x={0} y={18} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>I reject you</text>
+        <g transform="translate(70 -38)"><circle cx={0} cy={0} r={16} fill={COLORS.red} /><line x1={-7} y1={-7} x2={7} y2={7} stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={7} y1={-7} x2={-7} y2={7} stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" /></g>
+      </g>
+      {/* the truth */}
+      <g transform={`translate(${cx + 170} ${cy})`}>
+        <rect x={-96} y={-50} width={192} height={100} rx={14} fill={shade(COLORS.greenLeaf, 0.1)} {...lg} />
+        <text x={0} y={-6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>"no" to this,</text>
+        <text x={0} y={18} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>not to you</text>
+        <g transform="translate(78 -38)" opacity={0.7 + g * 0.3}><circle cx={0} cy={0} r={16} fill={COLORS.greenLeaf} /><path d="M -7 0 l 5 6 l 10 -12" fill="none" stroke={COLORS.white} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" /></g>
+      </g>
+      <text x={cx} y={cy - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a boundary isn't a rejection</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory' | 'counterfactual' | 'action-inaction-time' | 'near-miss' | 'regret-function' | 'fawn-response' | 'no-social-threat' | 'pleasing-cost' | 'boundary-reframe';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4531,6 +4619,10 @@ export const DiagramCard: React.FC<{
     'action-inaction-time': COLORS.sky,
     'near-miss': COLORS.yellow,
     'regret-function': COLORS.greenLeaf,
+    'fawn-response': COLORS.sky,
+    'no-social-threat': COLORS.red,
+    'pleasing-cost': COLORS.yellow,
+    'boundary-reframe': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4723,6 +4815,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'action-inaction-time' && <ActionInactionTime />}
         {diagram === 'near-miss' && <NearMissDiagram />}
         {diagram === 'regret-function' && <RegretFunction />}
+        {diagram === 'fawn-response' && <FawnResponse />}
+        {diagram === 'no-social-threat' && <NoSocialThreat />}
+        {diagram === 'pleasing-cost' && <PleasingCost />}
+        {diagram === 'boundary-reframe' && <BoundaryReframe />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

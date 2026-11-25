@@ -197,6 +197,10 @@ const NEW_ASSETS = new Set([
   'crossroads-dusk', 'reflective-porch', 'start-line-dawn',
   'if-only-fork', 'road-not-taken', 'regret-weight', 'did-vs-didnt', 'silver-medal', 'regret-compass', 'lesson-gem', 'regret-spiral', 'self-forgive-hand', 'take-the-leap',
   'counterfactual', 'action-inaction-time', 'near-miss', 'regret-function',
+  // cant-say-no (all new)
+  'task-pile-desk', 'reaching-hands-room', 'calm-garden-gate',
+  'silent-no', 'juggle-everyone', 'fawn-appease', 'earn-love', 'no-threat-alarm', 'resentment-pot', 'pour-empty-cup', 'guilt-after-no', 'boundary-gate', 'kind-firm-no',
+  'fawn-response', 'no-social-threat', 'pleasing-cost', 'boundary-reframe',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';
