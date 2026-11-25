@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'nostalgia': {
+    A: { lines: ['THE', 'PSYCHOLOGY', 'OF NOSTALGIA'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'tearful', textColor: COLORS.white, badge: '♥', prop: 'bittersweet-heart' },
+    B: { lines: ['WHY THE PAST', 'FEELS SO', 'GOOD'], accent: COLORS.pink, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '?', prop: 'music-box' },
+    C: { lines: ['WHY A SMELL', 'BRINGS BACK', 'A WHOLE YEAR'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'serious-expert', textColor: COLORS.white, badge: '!', prop: 'scent-trigger' },
+  },
   'spotless-house': {
     A: { lines: ['WHY SOME', 'PEOPLE KEEP', 'A SPOTLESS HOME'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'happy-talk', textColor: COLORS.outline, badge: '✨', prop: 'spotless-sparkle' },
     B: { lines: ["IT'S NOT", 'ABOUT BEING', 'CLEAN'], accent: COLORS.yellow, bg: COLORS.purpleDeep, emotion: 'serious-expert', textColor: COLORS.white, badge: '?', prop: 'control-island' },

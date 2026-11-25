@@ -1,0 +1,243 @@
+{
+  "slug": "nostalgia",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 6,
+    "NEW": 16
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        3,
+        9,
+        11,
+        15,
+        21,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "bittersweet-mix",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        5
+      ]
+    },
+    {
+      "name": "nostalgia-benefits",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        7
+      ]
+    },
+    {
+      "name": "nostalgia-coping-loop",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "reminiscence-bump",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        13
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        17
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        9,
+        11,
+        15,
+        25,
+        27,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        14,
+        16,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        26,
+        28
+      ]
+    },
+    {
+      "name": "tearful",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        3,
+        9,
+        11,
+        15,
+        21,
+        25,
+        27
+      ]
+    },
+    {
+      "name": "bittersweet-heart",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        2,
+        6,
+        24
+      ]
+    },
+    {
+      "name": "childhood-home-mem",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "connection-thread",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        16,
+        19,
+        21
+      ]
+    },
+    {
+      "name": "music-box",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        11
+      ]
+    },
+    {
+      "name": "old-cassette",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        12,
+        14,
+        15
+      ]
+    },
+    {
+      "name": "present-anchor",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        25,
+        29
+      ]
+    },
+    {
+      "name": "rose-tint-glasses",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        17,
+        26
+      ]
+    },
+    {
+      "name": "scent-trigger",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "sepia-photo",
+      "type": "prop",
+      "status": "NEW",
+      "beats": [
+        3,
+        4,
+        22
+      ]
+    },
+    {
+      "name": "memory-attic",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        0,
+        3,
+        21,
+        27
+      ]
+    },
+    {
+      "name": "retro-kitchen",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        9
+      ]
+    },
+    {
+      "name": "vinyl-room",
+      "type": "room",
+      "status": "NEW",
+      "beats": [
+        11,
+        15,
+        25
+      ]
+    }
+  ]
+}

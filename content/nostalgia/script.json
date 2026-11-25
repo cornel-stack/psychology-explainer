@@ -1,0 +1,463 @@
+{
+  "title": "The Psychology of Nostalgia",
+  "slug": "nostalgia",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "It catches you off guard. A song on the radio, the smell of a certain sunscreen, the particular light of a late afternoon, and suddenly you're somewhere else entirely. A summer twenty years gone. A kitchen that no longer exists. People you can almost reach. Your chest aches, warm and sad at the same time. That ache has a name. Nostalgia.",
+          "scene": "story",
+          "room": "memory-attic",
+          "emotion": "tearful",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE PSYCHOLOGY OF",
+          "subtitle": "nostalgia",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "tearful",
+              "x": 820,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "It's one of the strangest feelings we have. Bittersweet, tender, a longing for a time you can never return to. And for a long time, doctors genuinely believed it was a disease. But modern psychology has discovered something beautiful, nostalgia isn't a sickness at all. It's one of the mind's quiet superpowers.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "That wistful pull toward the past is doing real, measurable good for you. It lifts your mood, deepens your sense of meaning, and reminds you that you belong. It's the brain's own comfort blanket, stitched from memory. And once you understand how it works, you can use it, deliberately, to feel better.",
+          "scene": "explainer",
+          "prop": "bittersweet-heart",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Once Called A Disease",
+      "beats": [
+        {
+          "vo": "Let's start with that surprising history. The word nostalgia was invented back in 1688 by a Swiss doctor named Johannes Hofer. He stitched together two Greek words, nostos, meaning homecoming, and algos, meaning pain. The pain of wanting to go home.",
+          "scene": "story",
+          "room": "memory-attic",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "ONCE CALLED A DISEASE",
+          "subtitle": "a 'pain for home'",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 820,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "sepia-photo",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "He coined it to describe soldiers, far from home, so consumed by longing that they fell genuinely ill. For centuries after, nostalgia was treated as a dangerous medical condition, a disorder of the homesick mind. It's only recently that scientists flipped the script, and asked, what if this feeling is actually good for us?",
+          "scene": "explainer",
+          "prop": "sepia-photo",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Bittersweet Blend",
+      "beats": [
+        {
+          "vo": "So what is nostalgia, really? At its heart, it's a blend of two opposite feelings. There's the warmth, the sweetness of a cherished memory, the people, the places, the moments you loved. And there's the loss, the quiet sting that it's gone, and you can never truly go back.",
+          "scene": "diagramCard",
+          "diagram": "bittersweet-mix",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE BITTERSWEET BLEND",
+          "subtitle": "warmth and loss, together"
+        },
+        {
+          "vo": "Those two feelings, warmth and loss, braided together, are what make nostalgia feel so uniquely poignant. It's happiness and grief holding hands. And notice what these memories are almost always about, not possessions, not achievements, but people. The ones we loved, the ones we miss. Nostalgia, at its core, is about connection.",
+          "scene": "explainer",
+          "prop": "bittersweet-heart",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "It's Good For You",
+      "beats": [
+        {
+          "vo": "Now to the surprising part, the research. Psychologists at the University of Southampton have spent years studying nostalgia, and found that when people deliberately reminisce, remarkable things happen. Their mood lifts. Their self-esteem rises. They feel their life has more meaning, and more hope for the future.",
+          "scene": "diagramCard",
+          "diagram": "nostalgia-benefits",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "IT'S GOOD FOR YOU",
+          "subtitle": "what the research found"
+        },
+        {
+          "vo": "Think about that. Just revisiting a warm old memory measurably boosts your wellbeing. It's not idle dwelling, it's psychological nourishment. Nostalgia turns out to be a resource we carry everywhere, a way of reaching into the past to feed the present. Far from a weakness, it's one of the healthiest things the mind does.",
+          "scene": "explainer",
+          "prop": "childhood-home-mem",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "There's even a charming physical twist. In one study, people made to feel cold became more nostalgic, and people prompted to feel nostalgic judged the room as warmer. The warmth of memory isn't only a metaphor, your brain turns emotional comfort into a felt, bodily cosiness. Nostalgia is, in a quiet way, how we keep ourselves warm.",
+          "scene": "explainer",
+          "prop": "childhood-home-mem",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Smell Shortcut",
+      "beats": [
+        {
+          "vo": "So what unlocks it? The most powerful key of all is smell. Have you noticed how a particular scent, a perfume, baking bread, rain on hot pavement, can throw you into the past more vividly than any photograph? There's a reason, and it's in the brain's wiring.",
+          "scene": "story",
+          "room": "retro-kitchen",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE SMELL SHORTCUT",
+          "subtitle": "the fastest route to the past",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 1300,
+              "y": 780,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "scent-trigger",
+              "x": 420,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Your sense of smell has an unusually direct line to the parts of the brain that handle memory and emotion. Most senses take a detour, smell goes almost straight there. So a scent can unlock a flood of feeling and detail, instantly, bypassing your thinking mind. It's why grandma's kitchen can live forever in a single whiff of cinnamon.",
+          "scene": "explainer",
+          "prop": "scent-trigger",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Soundtrack Of You",
+      "beats": [
+        {
+          "vo": "The second great key is music. A few notes of an old song, and you're sixteen again, in a specific room, with a specific feeling. Music is woven so tightly into our memories that it can resurrect not just events, but the exact emotion of who we were back then.",
+          "scene": "story",
+          "room": "vinyl-room",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE SOUNDTRACK OF YOU",
+          "subtitle": "the songs wired deepest",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 1100,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "music-box",
+              "x": 400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "And here's a lovely quirk. The music that moves us most, for the rest of our lives, tends to be the music of our youth. The songs you loved as a teenager and young adult are wired in deeper than almost anything you'll hear later. Which leads us to one of memory's most fascinating patterns.",
+          "scene": "explainer",
+          "prop": "old-cassette",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Reminiscence Bump",
+      "beats": [
+        {
+          "vo": "If you plot out all the memories a person recalls across their whole life, you don't get an even spread. You get a hill, a bump, clustered around one particular window, roughly ages ten to thirty. Psychologists call it the reminiscence bump, and almost everyone has one.",
+          "scene": "diagramCard",
+          "diagram": "reminiscence-bump",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE REMINISCENCE BUMP",
+          "subtitle": "why ages 10 to 30 stick"
+        },
+        {
+          "vo": "Why that window? Because those are the years you were becoming you, first loves, first freedoms, leaving home, forming your identity. Your brain flags all of it as deeply important and files it away vividly. That's why your teens and twenties feel like the soundtrack and scrapbook of your whole life. They were the making of you.",
+          "scene": "explainer",
+          "prop": "old-cassette",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "We Share It Together",
+      "beats": [
+        {
+          "vo": "And nostalgia isn't only personal, it's collective. Whole generations feel it together, for the same music, films, toys and TV of their youth. It's why reboots, retro fashion and throwback playlists are such reliable magic. They're not just selling you a product. They're selling you a feeling, a warm, shared trip back to when.",
+          "scene": "story",
+          "room": "vinyl-room",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WE SHARE IT TOGETHER",
+          "subtitle": "nostalgia is collective too",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 1100,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "old-cassette",
+              "x": 400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "That's why reminiscing with old friends is such a powerful bond, you're not just remembering, you're re-living a shared world only the two of you still hold. Collective nostalgia knits groups, friendships, even whole cultures closer. Looking back, it turns out, is often something we're meant to do side by side.",
+          "scene": "explainer",
+          "prop": "connection-thread",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Longing For What You Never Knew",
+      "beats": [
+        {
+          "vo": "Here's a stranger cousin of nostalgia, have you ever felt homesick for a time you never actually lived? A 1950s diner, a decade before you were born, a place you've only seen in films? There's a word for that oddly specific ache, anemoia, nostalgia for a past that was never yours.",
+          "scene": "explainer",
+          "prop": "rose-tint-glasses",
+          "emotion": "confused",
+          "chapterStart": true,
+          "title": "LONGING FOR WHAT YOU NEVER KNEW",
+          "subtitle": "nostalgia for a past that wasn't yours"
+        },
+        {
+          "vo": "It reveals something telling. Nostalgia isn't really about accurate history, it's about a mood, a longing for simplicity, warmth, belonging, a slower and kinder world. We project those wishes onto the past, our own or an imagined one. In a way, nostalgia is less about where we've been, and more about what we quietly long for.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "A Bridge To Others",
+      "beats": [
+        {
+          "vo": "Let's come back to what nostalgia actually does for us, because it's lovely. Remember how nostalgic memories are nearly always about people? That's the key to one of its greatest gifts, it fights loneliness. When you feel isolated or disconnected, reminiscing reminds you, vividly, that you are loved, that you belong somewhere.",
+          "scene": "explainer",
+          "prop": "connection-thread",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "A BRIDGE TO OTHERS",
+          "subtitle": "nostalgia fights loneliness"
+        },
+        {
+          "vo": "Studies show that when people are made to feel lonely, they naturally become more nostalgic, and that nostalgia then restores their sense of connection and support. It's an emotional rescue system. Your mind reaches back to the people who loved you, and uses that warmth to carry you through the cold of the present.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Thread Of You",
+      "beats": [
+        {
+          "vo": "Nostalgia does one more quiet, vital job. It holds you together. Life is full of change, we move, we age, we lose and gain whole versions of ourselves. It would be easy to feel like a stranger to who you used to be. Nostalgia is the thread that stops that from happening.",
+          "scene": "story",
+          "room": "memory-attic",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "THE THREAD OF YOU",
+          "subtitle": "one continuous self",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 820,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "connection-thread",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "By reaching back and connecting present-you to past-you, nostalgia weaves your life into one continuous story. It tells you, through all the change, you are still you. That sense of self-continuity is deeply grounding, especially in hard or uncertain times. Your memories aren't just the past. They're the roots that keep you standing.",
+          "scene": "explainer",
+          "prop": "sepia-photo",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "When We Reach For It",
+      "beats": [
+        {
+          "vo": "Here's something that ties it all together. Nostalgia tends to arrive exactly when we need it. Notice when you get most nostalgic, it's often when you're a little sad, lonely, bored, or unsettled. That's not a coincidence. It's your mind reaching for a remedy.",
+          "scene": "diagramCard",
+          "diagram": "nostalgia-coping-loop",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "WHEN WE REACH FOR IT",
+          "subtitle": "a built-in comfort loop"
+        },
+        {
+          "vo": "A low mood triggers a nostalgic memory, the memory brings warmth, meaning and connection, and your mood lifts. It's a built-in emotional repair loop, running quietly in the background of your life. So the next time a wave of nostalgia washes over you on a grey day, know that it's not you being soft. It's your mind looking after you.",
+          "scene": "explainer",
+          "prop": "bittersweet-heart",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Using It Well",
+      "beats": [
+        {
+          "vo": "So how do you make the most of this gift? Use nostalgia on purpose. On a hard day, put on the album from your best summer. Dig out the old photos. Call the friend who remembers. Cook the dish that smells like childhood. You can reach for these on purpose, and reliably top up your mood, meaning, and sense of belonging.",
+          "scene": "story",
+          "room": "vinyl-room",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "USING IT WELL",
+          "subtitle": "a comfort you can choose",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 1100,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "present-anchor",
+              "x": 400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Just one gentle caution. Nostalgia is a wonderful place to visit, but not to live. Memory wears rose-tinted glasses, polishing the past until it glows brighter than it really was. If you ever find yourself hiding in the past to avoid the present, that's the shadow side. Let those warm memories fuel your today, then come home to now.",
+          "scene": "explainer",
+          "prop": "rose-tint-glasses",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time a song, a smell, or a slant of golden light pulls you gently into the past, don't brush it away. Let it wash over you. That bittersweet ache isn't weakness, and it isn't a sickness. It's your mind reminding you of who you've loved, where you've been, and that your life is one long, meaningful story.",
+          "scene": "story",
+          "room": "memory-attic",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "VISIT, THEN COME HOME",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 820,
+              "y": 800,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "A tender note to close. If looking back brings only pain, or you find you can only live in the past and not the present, be gentle with yourself, and know that a kind professional can help you carry it. But for most of us, nostalgia is a friend, a warm hand reaching across the years, to remind us we are loved, and we belong.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So visit the past often, and freely. Walk down memory lane, hold the people you've loved, feel the warmth of who you were. And then, carrying all of it, come home to the present, which, one day, will be the very thing you feel nostalgic for. These are the good old days too.",
+          "scene": "explainer",
+          "prop": "present-anchor",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, what's the song, smell, or memory that transports you instantly? Share it, and let's take a little trip together. Thank you, truly, for spending this time with me. If this stirred something warm, subscribe and stay a while. I'm Dear Brain. Go hold a good memory close.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

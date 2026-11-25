@@ -3686,8 +3686,90 @@ const TidySpectrum: React.FC = () => {
   );
 };
 
+/** nostalgia-benefits: warm memory at the centre, benefits radiating out. */
+const NostalgiaBenefits: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const spokes = ['lifts mood', 'more meaning', 'feel connected', 'optimism', 'self-esteem'];
+  const g = 0.5 + 0.4 * Math.sin(frame / 8);
+  return (
+    <g>
+      {spokes.map((s, i) => {
+        const a = -Math.PI / 2 + (i / spokes.length) * Math.PI * 2; const R = 170;
+        const x = cx + Math.cos(a) * R; const y = cy + Math.sin(a) * R; const p = springIn(frame - i * 5, 12);
+        return (
+          <g key={i}>
+            <line x1={cx} y1={cy} x2={x} y2={y} stroke={COLORS.yellow} strokeWidth={STROKE.lg} opacity={0.6 * p} />
+            <g transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * p})`}><rect x={-72} y={-24} width={144} height={48} rx={12} fill={COLORS.yellowSoft} {...lg} /><text x={0} y={7} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>{s}</text></g>
+          </g>
+        );
+      })}
+      <circle cx={cx} cy={cy} r={54} fill={COLORS.yellow} opacity={0.4 + g * 0.3} />
+      <circle cx={cx} cy={cy} r={54} fill="none" {...xl} />
+      <path d="M 0 30 Q -34 -2 -34 -22 Q -34 -46 -11 -46 Q 0 -46 0 -30 Q 0 -46 11 -46 Q 34 -46 34 -22 Q 34 -2 0 30 Z" fill={COLORS.red} transform={`translate(${cx} ${cy})`} {...lg} />
+      <text x={cx} y={cy - 230} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>nostalgia is good for you</text>
+    </g>
+  );
+};
+
+/** reminiscence-bump: autobiographical memory peaks for roughly ages 10–30. */
+const ReminiscenceBump: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5; const W = 480; const H = 200;
+  const x0 = cx - W / 2; const base = cy + H / 2;
+  const pts = Array.from({ length: 120 }).map((_, i) => { const t = i / 119; const age = t * 80; const bump = Math.exp(-Math.pow((age - 20) / 10, 2)); const recency = t > 0.85 ? (t - 0.85) * 3 : 0; const y = base - H * (0.12 + 0.8 * bump + recency); return `${x0 + t * W},${Math.max(base - H, y)}`; });
+  return (
+    <g>
+      <line x1={x0 - 10} y1={base} x2={x0 + W + 10} y2={base} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      <line x1={x0} y1={base + 10} x2={x0} y2={base - H - 10} stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+      {/* highlight the 10-30 window */}
+      <rect x={x0 + W * 0.125} y={base - H - 6} width={W * 0.25} height={H + 6} fill={COLORS.yellowSoft} opacity={0.3} />
+      <polyline points={pts.join(' ')} fill="none" stroke={COLORS.sky} strokeWidth={STROKE.lg} strokeLinecap="round" strokeLinejoin="round" />
+      <text x={x0 + W * 0.25} y={base - H - 14} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>ages ~10–30</text>
+      <text x={x0} y={base + 34} textAnchor="start" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>birth</text>
+      <text x={x0 + W} y={base + 34} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={14} fill={COLORS.outline}>now</text>
+      <text x={x0 - 14} y={base - H + 10} textAnchor="end" fontFamily={fontFamily} fontWeight={700} fontSize={13} fill={COLORS.outline}>memories</text>
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the reminiscence bump</text>
+    </g>
+  );
+};
+
+/** bittersweet-mix: sweet + bitter blend into the nostalgic feeling. */
+const BittersweetMix: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const merge = springIn(frame, 30);
+  const off = 150 * (1 - merge);
+  return (
+    <g>
+      <g transform={`translate(${cx - 120 - off} ${cy})`}><circle cx={0} cy={0} r={64} fill={COLORS.yellow} opacity={0.6} {...xl} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>warmth</text></g>
+      <g transform={`translate(${cx + 120 + off} ${cy})`}><circle cx={0} cy={0} r={64} fill={COLORS.sky} opacity={0.6} {...xl} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={18} fill={COLORS.outline}>loss</text></g>
+      {merge > 0.6 && <g transform={`translate(${cx} ${cy})`} opacity={(merge - 0.6) / 0.4}><circle cx={0} cy={0} r={46} fill={COLORS.pink} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>bittersweet</text></g>}
+      <text x={cx} y={cy - 150} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>warmth and loss, at once</text>
+    </g>
+  );
+};
+
+/** nostalgia-coping-loop: low mood → nostalgia → mood repaired. */
+const NostalgiaCopingLoop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.46; const R = 130;
+  const a = (frame / 30) % (Math.PI * 2);
+  const nodes = [['feeling low', COLORS.sky], ['reach for a memory', COLORS.yellow], ['warmth + meaning', COLORS.pink], ['mood lifts', COLORS.greenLeaf]];
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={COLORS.greenLeaf} strokeWidth={STROKE.lg} strokeDasharray="4 14" />
+      <g transform={`translate(${cx + Math.cos(a) * R} ${cy + Math.sin(a) * R})`}><circle cx={0} cy={0} r={8} fill={COLORS.greenDark} /></g>
+      {nodes.map(([lab, c], i) => {
+        const ang = -Math.PI / 2 + (i / 4) * Math.PI * 2; const x = cx + Math.cos(ang) * R; const y = cy + Math.sin(ang) * R;
+        return <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={0} r={56} fill={c as string} {...lg} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.outline}>{lab as string}</text></g>;
+      })}
+      <text x={cx} y={cy - R - 40} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={24} fill={COLORS.outline}>a built-in comfort loop</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -3841,6 +3923,10 @@ export const DiagramCard: React.FC<{
     'orderliness-trait': COLORS.greenLeaf,
     'clutter-attention': COLORS.yellow,
     'tidy-spectrum': COLORS.red,
+    'nostalgia-benefits': COLORS.yellow,
+    'reminiscence-bump': COLORS.sky,
+    'bittersweet-mix': COLORS.pink,
+    'nostalgia-coping-loop': COLORS.greenLeaf,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4001,6 +4087,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'orderliness-trait' && <OrderlinessTrait />}
         {diagram === 'clutter-attention' && <ClutterAttention />}
         {diagram === 'tidy-spectrum' && <TidySpectrum />}
+        {diagram === 'nostalgia-benefits' && <NostalgiaBenefits />}
+        {diagram === 'reminiscence-bump' && <ReminiscenceBump />}
+        {diagram === 'bittersweet-mix' && <BittersweetMix />}
+        {diagram === 'nostalgia-coping-loop' && <NostalgiaCopingLoop />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

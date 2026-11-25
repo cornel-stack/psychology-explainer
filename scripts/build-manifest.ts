@@ -165,6 +165,10 @@ const NEW_ASSETS = new Set([
   'show-home-lounge', 'cluttered-chaos-room', 'serene-tidy-bedroom',
   'spotless-sparkle', 'control-island', 'scrub-calm', 'label-jars', 'disgust-dial', 'clutter-static', 'clear-desk-focus', 'tidy-cage', 'good-enough-home', 'reset-ritual',
   'control-in-chaos', 'orderliness-trait', 'clutter-attention', 'tidy-spectrum',
+  // nostalgia (all new)
+  'memory-attic', 'retro-kitchen', 'vinyl-room',
+  'bittersweet-heart', 'sepia-photo', 'memory-lane', 'scent-trigger', 'music-box', 'old-cassette', 'childhood-home-mem', 'rose-tint-glasses', 'connection-thread', 'present-anchor',
+  'nostalgia-benefits', 'reminiscence-bump', 'bittersweet-mix', 'nostalgia-coping-loop',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

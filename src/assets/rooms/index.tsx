@@ -133,7 +133,10 @@ export type RoomName =
   | 'detective-board'
   | 'show-home-lounge'
   | 'cluttered-chaos-room'
-  | 'serene-tidy-bedroom';
+  | 'serene-tidy-bedroom'
+  | 'memory-attic'
+  | 'retro-kitchen'
+  | 'vinyl-room';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -3625,6 +3628,87 @@ export const SereneTidyBedroom: React.FC = () => (
   </g>
 );
 
+/** Memory attic: a dusty, warm-lit attic of boxes, trunks and old things — where
+ *  the past is lovingly stored. */
+export const MemoryAttic: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.wood, 0.1)} floor={COLORS.woodDark} floorY={840} stripe={false} />
+    {/* horizontal plank panelling across the whole wall */}
+    {Array.from({ length: 9 }).map((_, i) => <line key={i} x1={0} y1={90 + i * 86} x2={CANVAS.width} y2={90 + i * 86} stroke={shade(COLORS.wood, -0.06)} strokeWidth={STROKE.sm} opacity={0.5} />)}
+    {Array.from({ length: 30 }).map((_, i) => <rect key={`n${i}`} x={(i * 127) % 1900} y={90 + (i % 9) * 86 - 3} width={6} height={6} rx={2} fill={shade(COLORS.wood, -0.12)} opacity={0.4} />)}
+    {/* big full-height roof beams framing the sides */}
+    <path d="M 0 0 L 520 400 L 0 400 Z" fill={shade(COLORS.wood, -0.04)} opacity={0.5} />
+    <path d="M 1920 0 L 1400 400 L 1920 400 Z" fill={shade(COLORS.wood, -0.04)} opacity={0.5} />
+    {/* a hanging string of pennants + a dangling bare bulb */}
+    <path d="M 480 60 Q 720 130 960 70 Q 1200 10 1440 70" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />
+    {Array.from({ length: 7 }).map((_, i) => <path key={`p${i}`} d={`M ${540 + i * 140} ${86 + 22 * Math.sin(i)} l 22 0 l -11 22 Z`} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.lavender][i % 4]} opacity={0.7} {...sm} />)}
+    <g transform="translate(1680 60)"><line x1={0} y1={0} x2={0} y2={90} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><circle cx={0} cy={104} r={16} fill={COLORS.yellowSoft} {...sm} /></g>
+    {[0, 1, 2, 3].map((i) => <line key={i} x1={200 + i * 70} y1={0} x2={60 + i * 90} y2={300} stroke={shade(COLORS.woodDark, 0.1)} strokeWidth={STROKE.lg} opacity={0.4} />)}
+    {/* round attic window with warm dusty light */}
+    <g transform="translate(960 300)"><circle cx={0} cy={0} r={130} fill={COLORS.yellowSoft} {...xl} /><line x1={-130} y1={0} x2={130} y2={0} stroke={shade(COLORS.yellowDark, 0.1)} strokeWidth={STROKE.lg} /><line x1={0} y1={-130} x2={0} y2={130} stroke={shade(COLORS.yellowDark, 0.1)} strokeWidth={STROKE.lg} /><circle cx={0} cy={0} r={130} fill="none" stroke={shade(COLORS.wood, -0.08)} strokeWidth={STROKE.lg} /></g>
+    {/* dusty light beams */}
+    <path d="M 900 420 L 700 900 L 820 900 Z" fill={COLORS.yellowSoft} opacity={0.12} />
+    <path d="M 1020 420 L 1200 900 L 1080 900 Z" fill={COLORS.yellowSoft} opacity={0.12} />
+    {/* stacked labelled boxes */}
+    {[[260, 820], [430, 760], [300, 640]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><rect x={-80} y={-70} width={160} height={150} rx={6} fill={COLORS.wood} {...xl} /><path d="M -80 -70 L 0 -44 L 80 -70" fill="none" stroke={shade(COLORS.wood, 0.1)} strokeWidth={STROKE.lg} strokeLinecap="round" /><rect x={-50} y={-20} width={100} height={30} rx={4} fill={COLORS.white} opacity={0.7} /><text x={0} y={2} textAnchor="middle" fontFamily="Baloo 2" fontWeight={700} fontSize={16} fill={shade(COLORS.wood,-0.1)}>{['TOYS', 'PHOTOS', '2005'][i]}</text></g>)}
+    {/* an old trunk + a lamp + a teddy on the right */}
+    <g transform="translate(1560 860)"><rect x={-110} y={-50} width={220} height={120} rx={12} fill={COLORS.red} {...xl} /><path d="M -110 -10 L 110 -10" stroke={shade(COLORS.red, -0.1)} strokeWidth={STROKE.lg} /><rect x={-16} y={-18} width={32} height={22} rx={4} fill={COLORS.yellow} {...sm} /></g>
+    <g transform="translate(1380 700)"><rect x={-6} y={0} width={12} height={150} fill={COLORS.woodDark} /><path d="M -40 0 L 40 0 L 28 -56 L -28 -56 Z" fill={COLORS.yellowSoft} {...lg} /></g>
+    {/* a framed picture leaning against a box */}
+    <g transform="translate(640 870) rotate(-6)"><rect x={-50} y={-66} width={100} height={132} rx={6} fill={COLORS.woodDark} {...lg} /><rect x={-38} y={-52} width={76} height={104} rx={4} fill={shade(COLORS.sky, 0.06)} /></g>
+  </g>
+);
+
+/** Retro kitchen: a warm 70s-style kitchen with a pie cooling on the sill — the
+ *  scent that unlocks a flood of memory. */
+export const RetroKitchen: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowDark, 0.06)} floor={COLORS.wood} floorY={820} stripe={false} />
+    {/* retro wallpaper: rows of little flowers */}
+    {Array.from({ length: 11 }).map((_, r) => Array.from({ length: 14 }).map((_, c) => <circle key={`${r}-${c}`} cx={70 + c * 140} cy={60 + r * 70} r={7} fill={shade(COLORS.yellowDark, 0.14)} opacity={0.4} />))}
+    {/* upper cabinets */}
+    <g transform="translate(0 180)">{[200, 440, 1480, 1720].map((x, i) => <rect key={i} x={x - 100} y={0} width={200} height={140} rx={8} fill={COLORS.greenTeal} {...xl} />)}</g>
+    {/* counter + lower cabinets */}
+    <rect x={0} y={560} width={CANVAS.width} height={40} fill={shade(COLORS.wood, 0.08)} {...lg} />
+    <rect x={0} y={600} width={CANVAS.width} height={240} fill={COLORS.greenTeal} />
+    {Array.from({ length: 8 }).map((_, i) => <rect key={i} x={60 + i * 240} y={630} width={200} height={180} rx={8} fill={shade(COLORS.greenTeal, 0.06)} {...lg} />)}
+    {/* a round retro clock */}
+    <g transform="translate(960 230)"><circle cx={0} cy={0} r={56} fill={COLORS.white} {...xl} /><line x1={0} y1={0} x2={0} y2={-34} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" /><line x1={0} y1={0} x2={24} y2={10} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><circle cx={0} cy={0} r={6} fill={COLORS.outline} /></g>
+    {/* the cooling pie on the counter, scent rising */}
+    <g transform="translate(720 520)"><path d="M -60 20 Q 0 2 60 20 L 54 40 Q 0 54 -54 40 Z" fill={shade(COLORS.yellowDark, 0.1)} {...xl} /><ellipse cx={0} cy={18} rx={60} ry={16} fill={COLORS.yellow} {...lg} /><path d="M -28 14 l 56 10 M 28 14 l -56 10" stroke={shade(COLORS.yellowDark, 0.12)} strokeWidth={STROKE.sm} /></g>
+    {/* kettle + mugs */}
+    <g transform="translate(1200 530)"><path d="M -34 0 Q -40 -40 0 -40 Q 40 -40 34 0 Z" fill={COLORS.red} {...xl} /><rect x={-10} y={-56} width={20} height={16} rx={4} fill={COLORS.redDark} /></g>
+    {[[1320, 560], [1380, 560]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><rect x={-14} y={-20} width={28} height={24} rx={6} fill={[COLORS.sky, COLORS.pink][i]} {...sm} /></g>)}
+    {/* a framed sampler on the wall */}
+    <g transform="translate(1000 420)"><rect x={-54} y={-40} width={108} height={80} rx={6} fill={COLORS.white} {...lg} /><text x={0} y={6} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={16} fill={COLORS.pinkDark}>HOME</text></g>
+  </g>
+);
+
+/** Vinyl room: a cosy nook with a record player, shelves of records and a beanbag —
+ *  the soundtrack of your life. */
+export const VinylRoom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.purpleDeep, 0.02)} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={580} width={CANVAS.width} height={260} fill={shade(COLORS.purpleDeep, -0.02)} />
+    {/* wall of framed album art */}
+    {[180, 380, 580, 1340, 1540, 1740].map((x, i) => <g key={i} transform={`translate(${x} 240)`}><rect x={-70} y={-70} width={140} height={140} rx={6} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.pink, COLORS.greenLeaf, COLORS.lavender][i]} {...lg} /><circle cx={0} cy={0} r={48} fill={COLORS.outline} /><circle cx={0} cy={0} r={12} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.pink, COLORS.greenLeaf, COLORS.lavender][i]} /></g>)}
+    {/* shelf of record spines */}
+    <g transform="translate(960 420)"><rect x={-200} y={0} width={400} height={16} rx={4} fill={COLORS.wood} {...lg} />{Array.from({ length: 24 }).map((_, i) => <rect key={i} x={-192 + i * 16} y={-70} width={12} height={70} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.pink, COLORS.lavender][i % 6]} {...sm} />)}</g>
+    {/* the record player on a stand */}
+    <g transform="translate(700 760)">
+      <rect x={-130} y={0} width={260} height={120} rx={10} fill={COLORS.woodDark} {...xl} />
+      <rect x={-120} y={-70} width={240} height={70} rx={8} fill={shade(COLORS.wood, 0.06)} {...xl} />
+      <circle cx={-30} cy={-34} r={44} fill={COLORS.outline} /><circle cx={-30} cy={-34} r={10} fill={COLORS.red} />
+      <line x1={70} y1={-64} x2={10} y2={-24} stroke={COLORS.ledGrey} strokeWidth={STROKE.lg} strokeLinecap="round" />
+    </g>
+    {/* a comfy beanbag + floor lamp */}
+    <g transform="translate(1340 900)"><path d="M -110 60 Q -130 -50 -30 -56 Q 90 -60 110 40 Q 120 70 0 78 Q -90 76 -110 60 Z" fill={COLORS.pink} {...xl} /></g>
+    <g transform="translate(1660 680)"><rect x={-6} y={0} width={12} height={180} fill={COLORS.woodDark} /><path d="M -40 0 L 40 0 L 28 -56 L -28 -56 Z" fill={COLORS.yellowSoft} {...lg} /></g>
+    {/* floating music notes */}
+    {[[560, 620], [860, 560]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><circle cx={0} cy={8} r={9} fill={COLORS.lavenderDark} /><rect x={7} y={-18} width={5} height={26} fill={COLORS.lavenderDark} /></g>)}
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -3743,6 +3827,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'show-home-lounge': ShowHomeLounge,
   'cluttered-chaos-room': ClutteredChaosRoom,
   'serene-tidy-bedroom': SereneTidyBedroom,
+  'memory-attic': MemoryAttic,
+  'retro-kitchen': RetroKitchen,
+  'vinyl-room': VinylRoom,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];

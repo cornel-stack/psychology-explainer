@@ -43,6 +43,7 @@ import * as Cr from './crying';
 import * as Fr from './friends';
 import * as Ly from './lying';
 import * as Sp from './spotless';
+import * as No from './nostalgia';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -526,6 +527,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'tidy-cage': Sp.TidyCage,
   'good-enough-home': Sp.GoodEnoughHome,
   'reset-ritual': Sp.ResetRitual,
+  // nostalgia emblems (all new)
+  'bittersweet-heart': No.BittersweetHeart,
+  'sepia-photo': No.SepiaPhoto,
+  'memory-lane': No.MemoryLane,
+  'scent-trigger': No.ScentTrigger,
+  'music-box': No.MusicBox,
+  'old-cassette': No.OldCassette,
+  'childhood-home-mem': No.ChildhoodHomeMem,
+  'rose-tint-glasses': No.RoseTintGlasses,
+  'connection-thread': No.ConnectionThread,
+  'present-anchor': No.PresentAnchor,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
