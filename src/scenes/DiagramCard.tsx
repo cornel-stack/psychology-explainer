@@ -4184,8 +4184,85 @@ const LayoutMatch: React.FC = () => {
   );
 };
 
+/** memory-offset: a life-timeline with a forgetting curtain before ~3.5. */
+const MemoryOffset: React.FC = () => {
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5; const W = 520;
+  const x0 = cx - W / 2;
+  return (
+    <g>
+      <line x1={x0} y1={cy} x2={x0 + W} y2={cy} stroke={COLORS.outline} strokeWidth={STROKE.lg} strokeLinecap="round" />
+      {[0, 3.5, 7, 12, 20].map((age, i) => { const x = x0 + (age / 20) * W; return <g key={i}><line x1={x} y1={cy - 8} x2={x} y2={cy + 8} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><text x={x} y={cy + 34} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>{age}</text></g>; })}
+      {/* the fog curtain over 0–3.5 */}
+      <rect x={x0 - 6} y={cy - 80} width={(3.5 / 20) * W + 6} height={100} rx={8} fill={COLORS.lavender} opacity={0.5} />
+      <text x={x0 + (1.75 / 20) * W} y={cy - 34} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>blank</text>
+      <text x={x0 + (12 / 20) * W} y={cy - 34} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={15} fill={COLORS.outline}>memories begin ~3–4</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>a blank before about age three</text>
+    </g>
+  );
+};
+
+/** hippocampus-building: an immature vs mature memory-binder. */
+const HippocampusBuilding: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48;
+  const g = 0.5 + 0.4 * Math.sin(frame / 6);
+  return (
+    <g>
+      {/* immature: dashed, incomplete */}
+      <g transform={`translate(${cx - 160} ${cy})`}>
+        <path d="M -40 50 Q -66 16 -40 -16 Q -18 -44 20 -38 Q 50 -34 48 -8" fill="none" stroke={COLORS.sky} strokeWidth={STROKE.xl} strokeLinecap="round" strokeDasharray="8 10" />
+        <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>infant: unfinished</text>
+      </g>
+      <path d={`M ${cx - 70} ${cy} l 50 0 l -12 -9 m 12 9 l -12 9`} fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" strokeLinejoin="round" />
+      {/* mature: solid */}
+      <g transform={`translate(${cx + 170} ${cy})`}>
+        <path d="M -40 50 Q -66 16 -40 -16 Q -18 -44 20 -38 Q 50 -34 48 -8 Q 46 16 20 14 Q 4 12 8 -2" fill="none" stroke={COLORS.pink} strokeWidth={STROKE.xl} strokeLinecap="round" opacity={0.7 + g * 0.3} />
+        <text x={0} y={92} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={16} fill={COLORS.outline}>later: ready</text>
+      </g>
+      <text x={cx} y={cy - 110} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>the memory-binder is still growing</text>
+    </g>
+  );
+};
+
+/** neurogenesis-overwrite: new neurons overwrite early memory traces. */
+const NeurogenesisOverwrite: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.48; const W = 480;
+  const x0 = cx - W / 2;
+  const fresh = springIn(frame, 30);
+  return (
+    <g>
+      {/* an old memory trace, being covered */}
+      <path d={`M ${x0} ${cy} Q ${cx} ${cy - 90} ${x0 + W} ${cy}`} fill="none" stroke={COLORS.ledGrey} strokeWidth={STROKE.lg} opacity={0.5} strokeDasharray="4 6" />
+      {/* bright new neurons sprouting over it */}
+      {Array.from({ length: 7 }).map((_, i) => { const x = x0 + 30 + i * ((W - 60) / 6); const p = springIn(frame - i * 4, 12); return <g key={i} transform={`translate(${x} ${cy - 20}) scale(${0.6 + 0.4 * p})`}><circle cx={0} cy={0} r={14} fill={COLORS.red} {...sm} />{[0, 1, 2, 3, 4].map((j) => <line key={j} x1={0} y1={0} x2={Math.cos((j / 5) * Math.PI * 2) * 22} y2={Math.sin((j / 5) * Math.PI * 2) * 22} stroke={COLORS.red} strokeWidth={STROKE.sm} strokeLinecap="round" />)}</g>; })}
+      <text x={cx} y={cy + 70} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={16} fill={COLORS.outline} opacity={fresh}>fast new growth wipes the old trace</text>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>growth itself erases early memories</text>
+    </g>
+  );
+};
+
+/** reconstructed-memory: a true recall vs one built from photos & stories. */
+const ReconstructedMemory: React.FC = () => {
+  const frame = useCurrentFrame();
+  const cx = CANVAS.width * 0.56; const cy = CANVAS.height * 0.5;
+  const g = 0.5 + 0.4 * Math.sin(frame / 6);
+  return (
+    <g>
+      {/* sources: photo + story */}
+      <g transform={`translate(${cx - 180} ${cy - 20})`}><rect x={-44} y={-54} width={88} height={78} rx={6} fill={COLORS.white} {...lg} /><circle cx={-10} cy={-24} r={12} fill={COLORS.yellow} /><text x={0} y={46} textAnchor="middle" fontFamily={fontFamily} fontWeight={700} fontSize={13} fill={COLORS.outline}>photos</text></g>
+      <g transform={`translate(${cx - 180} ${cy + 80})`}><rect x={-44} y={-24} width={88} height={48} rx={8} fill={COLORS.sky} {...lg} /><text x={0} y={5} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={13} fill={COLORS.white}>"remember..."</text></g>
+      {/* arrows into a 'memory' */}
+      <path d={`M ${cx - 120} ${cy - 20} Q ${cx - 40} ${cy} ${cx + 40} ${cy}`} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.sm} strokeDasharray="4 6" />
+      <path d={`M ${cx - 120} ${cy + 80} Q ${cx - 40} ${cy + 20} ${cx + 40} ${cy}`} fill="none" stroke={COLORS.lavender} strokeWidth={STROKE.sm} strokeDasharray="4 6" />
+      <g transform={`translate(${cx + 120} ${cy})`}><circle cx={0} cy={0} r={60} fill={COLORS.lavender} opacity={0.4 + g * 0.3} {...xl} /><text x={0} y={-4} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>"my first</text><text x={0} y={16} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={15} fill={COLORS.outline}>memory"</text></g>
+      <text x={cx} y={cy - 130} textAnchor="middle" fontFamily={fontFamily} fontWeight={800} fontSize={26} fill={COLORS.outline}>often built, not truly recalled</text>
+    </g>
+  );
+};
+
 export const DiagramCard: React.FC<{
-  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match';
+  diagram: 'sleep-stage' | 'switchboard' | 'signal-race' | 'overflow-meter' | 'two-gates' | 'then-now' | 'decision-fork' | 'dk-curve' | 'loss-scale' | 'framing-flip' | 'defense-shield' | 'iceberg' | 'maturity-ladder' | 'redirect-arrow' | 'pressure-valve' | 'attachment-grid' | 'secure-base' | 'push-pull' | 'chase-cycle' | 'bell-curve' | 'flynn-effect' | 'multi-intelligence' | 'fog-triangle' | 'manipulation-cycle' | 'ask-ladder' | 'dopamine-loop' | 'comparison-trap' | 'attention-economy' | 'default-mode-network' | 'rumination-loop' | 'ironic-process' | 'window-of-now' | 'dial-not-switch' | 'attention-spotlight' | 'hypnogram' | 'sleep-threshold' | 'rem-switch' | 'dream-layers' | 'mind-body-sleep' | 'terror-vs-nightmare' | 'knowledge-circle' | 'iq-vs-eq' | 'overexcitability' | 'complexity-comfort' | 'curiosity-tree' | 'daydream-spectrum' | 'immersion-meter' | 'trigger-loop' | 'two-lives' | 'absorption-scale' | 'circadian-low' | 'cortisol-curve' | 'night-brain' | 'molehill-mountain' | 'dawn-vs-dark' | 'overthink-ladder' | 'thought-vs-action' | 'whatif-branches' | 'spiral-funnel' | 'comparison-envy' | 'warm-cold-map' | 'jealousy-roots' | 'how-to-respond' | 'complex-core' | 'overcompensate-arc' | 'hidden-roots' | 'two-sides-coin' | 'four-axes' | 'four-families' | 'cognitive-stack' | 'type-not-a-box' | 'awareness-ladder' | 'mind-floors' | 'flow-channel' | 'spectrum-line' | 'present-vs-future' | 'limbic-vs-cortex' | 'avoidance-loop' | 'do-it-ladder' | 'argument-anatomy' | 'attack-argument' | 'correlation-causation' | 'spot-it-checklist' | 'introvert-battery' | 'quality-quantity' | 'solitude-vs-loneliness' | 'social-budget' | 'intelligence-wheel' | 'not-one-number' | 'spiky-profile' | 'strength-finder' | 'cbt-triangle' | 'distortion-vs-reality' | 'catch-check-change' | 'thought-spiral' | 'emotion-wheel-map' | 'emotions-job' | 'opposite-emotions' | 'emotion-blends' | 'sternberg-triangle' | 'loves-wheel' | 'love-over-time' | 'self-love-first' | 'warmth-competence-grid' | 'charisma-loop' | 'presence-dial' | 'charisma-learnable' | 'habit-loop-diagram' | 'reward-timing' | 'four-laws' | 'compound-growth' | 'impostor-cycle' | 'competence-confidence-gap' | 'five-types' | 'feelings-vs-facts' | 'five-stages' | 'grief-not-linear' | 'grief-waves-time' | 'grief-grows-around' | 'happiness-pie' | 'hedonic-curve' | 'what-makes-happy' | 'happy-vs-meaningful' | 'zeigarnik-open-loop' | 'variable-reward' | 'idealization-gap' | 'letting-go-curve' | 'gaze-detector' | 'hit-miss-bias' | 'watch-feedback-loop' | 'vigilance-dial' | 'overflow-threshold' | 'sensitivity-spectrum' | 'tears-three-jobs' | 'being-moved-curve' | 'friendship-hours' | 'liking-gap' | 'everyone-waiting' | 'closeness-ladder' | 'accuracy-coinflip' | 'myth-vs-fact' | 'load-truth-vs-lie' | 'cluster-baseline' | 'control-in-chaos' | 'orderliness-trait' | 'clutter-attention' | 'tidy-spectrum' | 'nostalgia-benefits' | 'reminiscence-bump' | 'bittersweet-mix' | 'nostalgia-coping-loop' | 'music-reward-loop' | 'two-dopamine-hits' | 'expectation-violation' | 'who-gets-chills' | 'memory-sticky' | 'social-survival' | 'mind-wander-surfacing' | 'spotlight-reality' | 'inner-speech-origin' | 'self-talk-performance' | 'name-distance' | 'critic-vs-coach' | 'boredom-equation' | 'shock-choice' | 'boredom-creativity' | 'tolerance-eroding' | 'two-memory-systems' | 'deja-glitch' | 'factcheck-flag' | 'layout-match' | 'memory-offset' | 'hippocampus-building' | 'neurogenesis-overwrite' | 'reconstructed-memory';
   highlight?: string;
   withMascot?: boolean;
   labels?: string[];
@@ -4363,6 +4440,10 @@ export const DiagramCard: React.FC<{
     'deja-glitch': COLORS.lavender,
     'factcheck-flag': COLORS.red,
     'layout-match': COLORS.greenLeaf,
+    'memory-offset': COLORS.lavender,
+    'hippocampus-building': COLORS.sky,
+    'neurogenesis-overwrite': COLORS.red,
+    'reconstructed-memory': COLORS.yellow,
   };
   const emo = diagram === 'switchboard' || diagram === 'two-gates' ? 'confused' : diagram === 'overflow-meter' || diagram === 'dk-curve' ? 'excited' : 'serious-expert';
   return (
@@ -4547,6 +4628,10 @@ export const DiagramCard: React.FC<{
         {diagram === 'deja-glitch' && <DejaGlitch />}
         {diagram === 'factcheck-flag' && <FactcheckFlag />}
         {diagram === 'layout-match' && <LayoutMatch />}
+        {diagram === 'memory-offset' && <MemoryOffset />}
+        {diagram === 'hippocampus-building' && <HippocampusBuilding />}
+        {diagram === 'neurogenesis-overwrite' && <NeurogenesisOverwrite />}
+        {diagram === 'reconstructed-memory' && <ReconstructedMemory />}
       </svg>
       <Mascot costume="labcoat" pose="point-right" emotion={emo} talking x={CANVAS.width * 0.15} y={CANVAS.height * 0.64} scale={1.2} seed={6} />
       <ChapterFlash active={chapterStart} />

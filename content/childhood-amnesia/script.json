@@ -1,0 +1,407 @@
+{
+  "title": "Why You Can't Remember Being a Baby",
+  "slug": "childhood-amnesia",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Try, right now, to remember being two years old. Your first steps. The first time you said a word. The feeling of being carried. You can't, can you? There's just, nothing. A blank. And this is the strange part, you spent those years doing the most important learning of your life, and you remember none of it.",
+          "scene": "story",
+          "room": "toddler-playroom",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "WHY YOU CAN'T REMEMBER",
+          "subtitle": "being a baby",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 760,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "Psychologists call it childhood amnesia, and it's one of the great puzzles of the mind. You learned to walk, to talk, to love, to understand the entire world, all of it gone. Where did those memories go? Why does our life story seem to start, for most of us, around age three or four, with everything before it lost to fog?",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The answer involves a half-built brain, a surprising kind of forgetting that's actually caused by growing, and the strange fact that your very first memory is probably part invention. Let's go back, as far as the mind will let us, to the years you'll never consciously remember, and find out where they went.",
+          "scene": "explainer",
+          "prop": "baby-no-recall",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Great Forgetting",
+      "beats": [
+        {
+          "vo": "Let's start with the pattern itself, because it's remarkably consistent. If you ask people for their earliest memory, the answers cluster in a telling way. Almost nobody can recall anything from before about age three. Memories stay thin and patchy until six or seven. Before that line, there's a curtain.",
+          "scene": "diagramCard",
+          "diagram": "memory-offset",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "THE GREAT FORGETTING",
+          "subtitle": "a blank before about age three"
+        },
+        {
+          "vo": "This is true across the whole human species, in every culture. It's not that your early life was boring, far from it, those years were bursting with firsts, with intense emotion and discovery. And yet, almost all of it is sealed behind that curtain. The question isn't why we forget some of it. It's why we forget nearly all of it.",
+          "scene": "explainer",
+          "prop": "amnesia-curtain",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "You Did Remember, Then",
+      "beats": [
+        {
+          "vo": "Now, here's the first twist that makes this a genuine mystery. It's not that babies can't form memories. They absolutely can. A toddler remembers where their toys are, recognises faces, learns hundreds of words, and can copy something they saw days ago. In the moment, their memory works beautifully.",
+          "scene": "story",
+          "room": "toddler-playroom",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "YOU DID REMEMBER, THEN",
+          "subtitle": "babies form memories too",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 760,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "fading-babymemory",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "So the memories were made. The puzzle is that they don't last. They form, work for a while, and then quietly vanish, never making it into your permanent, adult collection. Something happens, between being a toddler and being an older child, that wipes those early recordings clean. And scientists have some fascinating ideas about what.",
+          "scene": "explainer",
+          "prop": "fading-babymemory",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "A Half-Built Binder",
+      "beats": [
+        {
+          "vo": "The first clue is a little seahorse-shaped structure deep in your brain, the hippocampus. Its job is to bind together all the pieces of an experience, the sights, sounds, places and feelings, into a single, filed-away memory you can retrieve later. It's the brain's memory-maker. And in a baby, it is still very much under construction.",
+          "scene": "diagramCard",
+          "diagram": "hippocampus-building",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "A HALF-BUILT BINDER",
+          "subtitle": "the memory-maker is still growing"
+        },
+        {
+          "vo": "Because the hippocampus isn't fully developed in those early years, it may simply not be able to store memories in the stable, long-term form your adult brain can retrieve. The recordings are made on equipment that isn't finished yet, so they don't get saved for the long haul. Part of your past was lost to a brain still building itself.",
+          "scene": "explainer",
+          "prop": "building-hippocampus",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Growing Erases",
+      "beats": [
+        {
+          "vo": "But here's the most beautiful, counter-intuitive clue of all. One leading theory says those early memories aren't just failing to save, they're actively being erased, by the very thing that makes childhood so magical, growth. The infant brain grows at a staggering pace, sprouting huge numbers of brand-new brain cells.",
+          "scene": "diagramCard",
+          "diagram": "neurogenesis-overwrite",
+          "emotion": "serious-expert",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "GROWTH ERASES",
+          "subtitle": "new cells overwrite old memories"
+        },
+        {
+          "vo": "And researchers found that when a brain adds new neurons that fast, they rewire existing circuits, disrupting the delicate memory traces already stored there. In other words, your childhood memories may have been wiped by your own blooming, developing brain, building its future at the cost of its past.",
+          "scene": "explainer",
+          "prop": "neuron-overwrite",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Clue From Animals",
+      "beats": [
+        {
+          "vo": "You might wonder how scientists could ever test an idea like memories being erased by growth. The answer is lovely, other animals have childhood amnesia too. Mice and monkeys also forget their infancy, which let researchers carefully study, in the lab, exactly what happens to those early memories as a young brain matures.",
+          "scene": "explainer",
+          "prop": "neuron-overwrite",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE CLUE FROM ANIMALS",
+          "subtitle": "they forget their infancy too"
+        },
+        {
+          "vo": "In those studies, when scientists slowed down the burst of new brain cells, early memories lasted longer. When they sped it up, memories vanished faster. That's powerful evidence that the growth itself is doing the forgetting. It also tells us this isn't a human flaw, it's a deep feature of how young brains everywhere are built.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "No Words, No Story",
+      "beats": [
+        {
+          "vo": "There's another piece, and it's about language. Think about how you store a memory, you tend to wrap it in words, a little narrative, this happened, then that, and I felt this way. But for the first years of life, you had no language to do that with. You experienced the world in pure, wordless sensation.",
+          "scene": "story",
+          "room": "growing-brainscape",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "NO WORDS, NO STORY",
+          "subtitle": "memory needs a narrative",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "serious-expert",
+              "x": 760,
+              "y": 740,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "wordless-experience",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Without language, experiences aren't filed as the kind of story-shaped memories you can later retrieve and tell. There's no narrative scaffold to hang them on. It's part of why children start forming lasting memories right around the time their language explodes. The words give the memories somewhere to live.",
+          "scene": "explainer",
+          "prop": "wordless-experience",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "There Was No 'Me' Yet",
+      "beats": [
+        {
+          "vo": "And there's one more deep ingredient missing, you. Autobiographical memory, the memory of things that happened to me, requires a clear sense that there is a me for things to happen to. And that stable sense of self isn't there at birth. It has to develop.",
+          "scene": "explainer",
+          "prop": "mirror-me",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THERE WAS NO 'ME' YET",
+          "subtitle": "the self has to form first"
+        },
+        {
+          "vo": "Somewhere around eighteen months to two years, a toddler looks in a mirror and realises, with a jolt, that's me. That dawning sense of self is a milestone. And only once you have a stable I, a main character, can experiences be stored as your story. Before then there was experience, but no one quite there yet to remember it as their own.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Your First Memory Is Fake",
+      "beats": [
+        {
+          "vo": "So now, the unsettling part. That one hazy memory you do have from very early on, the birthday, the beach, the family dog? There's a good chance it never actually happened the way you think, or that you're not really remembering it at all. You may have built it.",
+          "scene": "diagramCard",
+          "diagram": "reconstructed-memory",
+          "emotion": "confused",
+          "withMascot": true,
+          "chapterStart": true,
+          "title": "YOUR FIRST MEMORY IS FAKE",
+          "subtitle": "built from photos and stories"
+        },
+        {
+          "vo": "Here's the giveaway. Picture your earliest memory. Do you see it through your own eyes, or do you see little you, in the scene, from the outside? If you can see yourself in it, it can't be a true memory, you never saw yourself from there. Your mind reconstructed it, from photos and family stories, and it feels just like the real thing.",
+          "scene": "explainer",
+          "prop": "photo-built-memory",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Memories You Can Plant",
+      "beats": [
+        {
+          "vo": "And it goes further than fuzzy reconstruction. In experiments, researchers have planted entirely false childhood memories in adults, just by suggesting, with a little confident detail, that something happened. A sizeable number of people end up vividly remembering an event that never took place at all.",
+          "scene": "story",
+          "room": "family-photo-wall",
+          "emotion": "confused",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "MEMORIES YOU CAN PLANT",
+          "subtitle": "the mind fills in the blanks",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "confused",
+              "x": 620,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "photo-built-memory",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.45,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "It's a humbling reminder that memory isn't a video recording, it's a story your brain rebuilds each time, filling the gaps with what seems likely. That's not a flaw to fear, it's just how memory works. But it does mean we should hold our earliest, haziest memories a little more lightly. Less a recording, more a cherished retelling.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "Shaped Anyway",
+      "beats": [
+        {
+          "vo": "Now, this might feel a little sad, losing the record of your own beginning. But here's the comforting truth. Just because you can't consciously recall those years, doesn't mean they didn't matter, or that they're truly gone. In the deepest way, they're still with you, every day.",
+          "scene": "story",
+          "room": "growing-brainscape",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "SHAPED ANYWAY",
+          "subtitle": "forgotten, but not lost",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 760,
+              "y": 740,
+              "scale": 1.0,
+              "talking": true
+            }
+          ],
+          "props": [
+            {
+              "name": "implicit-imprint",
+              "x": 1400,
+              "y": 440,
+              "scale": 0.5,
+              "appearAt": 6
+            }
+          ]
+        },
+        {
+          "vo": "Those early years shaped you implicitly, beneath conscious memory. The love you received, your first bonds, whether the world felt safe, all of it got woven into who you are, your personality, your patterns, your way of relating. You can't recall the lessons, but you are, in a very real sense, made of them. Forgotten, yet carried forever.",
+          "scene": "explainer",
+          "prop": "implicit-imprint",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "And notice what you did keep. The skills from those years never left, you never forgot how to walk, or speak your first language, or recognise a face. That kind of memory, for how to do things, is stored differently, and it survives. So it's specifically the story-memories that fade. The deep know-how stays for life.",
+          "scene": "explainer",
+          "prop": "implicit-imprint",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Reminiscing Effect",
+      "beats": [
+        {
+          "vo": "There's also a lovely way the curtain can lift a little earlier, and it's about connection. Children who grow up with parents who reminisce with them, who tell rich, detailed stories, remember when we went to the lake, remember how you laughed, tend to form their first lasting memories earlier.",
+          "scene": "explainer",
+          "prop": "reminisce-bonding",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE REMINISCING EFFECT",
+          "subtitle": "stories grow memory"
+        },
+        {
+          "vo": "Talking about experiences helps a child's brain learn how to encode them as lasting, retrievable stories. It's partly why the age of our earliest memory varies by family and culture. Our memories, it turns out, are partly built together, in conversation. We help each other learn to remember. There's something quite beautiful in that.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "So if you want to give a child more of their own early story, talk with them about their day, in warm, curious detail. Ask what they saw, how it felt, what happened next. You're not just chatting, you're literally helping build the architecture of their memory, and handing them a few more pages of a chapter most of us lose.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "beats": [
+        {
+          "vo": "So the next time you stare at a baby photo of yourself, and feel that strange gap, no memory at all behind those little eyes, don't feel robbed. Marvel instead. You're looking at the most important chapter of your whole life, written in a brain growing so fast, and so beautifully, that it had to forget, in order to become you.",
+          "scene": "story",
+          "room": "family-photo-wall",
+          "emotion": "happy-talk",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "FORGOTTEN, YET FOUNDATIONAL",
+          "mascots": [
+            {
+              "costume": "hoodie",
+              "pose": "idle",
+              "emotion": "happy-talk",
+              "x": 620,
+              "y": 760,
+              "scale": 1.0,
+              "talking": true
+            }
+          ]
+        },
+        {
+          "vo": "And one gentle note. This same forgetting is why very early hard experiences aren't consciously remembered, even though they can still leave their mark. If you ever feel shaped by something you can't quite name, be kind to yourself, that's deeply human, and a good therapist can help you understand and tend to it.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "For most of us, though, childhood amnesia is simply one of the quiet wonders of being human. Your life story has a missing first chapter, written in a language you no longer speak, by a self that hadn't quite arrived yet. You can't read it. But you are living proof that it happened, every single day. And that is more than enough.",
+          "scene": "explainer",
+          "prop": "amnesia-curtain",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So tell me in the comments, what's your earliest memory, and how old were you? And now that you know the trick, is it a real one, through your own eyes, or do you see yourself in it? Have a look. Thank you, truly, for spending this time with me. If this made you marvel at your own mind, subscribe and stay a while. I'm Dear Brain.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    }
+  ]
+}

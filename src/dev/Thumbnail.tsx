@@ -94,6 +94,11 @@ export const THUMBS_BY_SLUG: Record<string, Record<string, ThumbVariant>> = {
     B: { lines: ['THE FAKE', 'SMILE', 'DECODED'], accent: COLORS.pink, bg: COLORS.purpleDeep, emotion: 'annoyed', textColor: COLORS.white, badge: '!', prop: 'fake-smile-mask' },
     C: { lines: ['WHY THEY', "CAN'T BE", 'HAPPY FOR YOU'], accent: COLORS.sky, bg: COLORS.greenTeal, emotion: 'confused', textColor: COLORS.outline, badge: '?!', prop: 'side-eye' },
   },
+  'childhood-amnesia': {
+    A: { lines: ["WHY YOU CAN'T", 'REMEMBER', 'BEING A BABY'], accent: COLORS.sky, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'baby-no-recall' },
+    B: { lines: ['YOUR FIRST', 'MEMORY IS', 'PROBABLY FAKE'], accent: COLORS.yellow, bg: COLORS.greenTeal, emotion: 'serious-expert', textColor: COLORS.outline, badge: '!', prop: 'photo-built-memory' },
+    C: { lines: ['THE GREAT', 'CHILDHOOD', 'FORGETTING'], accent: COLORS.lavender, bg: COLORS.wallNight, emotion: 'sleepy', textColor: COLORS.white, badge: '?', prop: 'amnesia-curtain' },
+  },
   'deja-vu': {
     A: { lines: ['THE', 'PSYCHOLOGY', 'OF DÉJÀ VU'], accent: COLORS.lavender, bg: COLORS.purpleDeep, emotion: 'confused', textColor: COLORS.white, badge: '?', prop: 'deja-recognition' },
     B: { lines: ['WHY YOU FEEL', "LIKE YOU'VE", 'BEEN HERE BEFORE'], accent: COLORS.sky, bg: COLORS.wallNight, emotion: 'terrified', textColor: COLORS.white, badge: '!', prop: 'deja-loop' },

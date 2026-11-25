@@ -49,6 +49,7 @@ import * as Cg from './cringe';
 import * as St from './selftalk';
 import * as Bo from './boredom';
 import * as Dj from './dejavu';
+import * as Bm from './babymemory';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -598,6 +599,17 @@ export const PROPS: Record<string, React.FC<any>> = {
   'jamais-vu': Dj.JamaisVu,
   'deja-loop': Dj.DejaLoop,
   'healthy-glitch': Dj.HealthyGlitch,
+  // childhood-amnesia emblems (all new)
+  'baby-no-recall': Bm.BabyNoRecall,
+  'fading-babymemory': Bm.FadingBabymemory,
+  'building-hippocampus': Bm.BuildingHippocampus,
+  'neuron-overwrite': Bm.NeuronOverwrite,
+  'wordless-experience': Bm.WordlessExperience,
+  'mirror-me': Bm.MirrorMe,
+  'photo-built-memory': Bm.PhotoBuiltMemory,
+  'implicit-imprint': Bm.ImplicitImprint,
+  'reminisce-bonding': Bm.ReminisceBonding,
+  'amnesia-curtain': Bm.AmnesiaCurtain,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

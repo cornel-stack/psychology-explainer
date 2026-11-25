@@ -189,6 +189,10 @@ const NEW_ASSETS = new Set([
   'deja-street', 'repeating-corridor', 'memory-lab',
   'deja-recognition', 'familiarity-glow', 'recollection-blank', 'memory-mismatch', 'brain-factchecker', 'layout-echo', 'temporal-lobe', 'jamais-vu', 'deja-loop', 'healthy-glitch',
   'two-memory-systems', 'deja-glitch', 'factcheck-flag', 'layout-match',
+  // childhood-amnesia (all new)
+  'toddler-playroom', 'family-photo-wall', 'growing-brainscape',
+  'baby-no-recall', 'fading-babymemory', 'building-hippocampus', 'neuron-overwrite', 'wordless-experience', 'mirror-me', 'photo-built-memory', 'implicit-imprint', 'reminisce-bonding', 'amnesia-curtain',
+  'memory-offset', 'hippocampus-building', 'neurogenesis-overwrite', 'reconstructed-memory',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

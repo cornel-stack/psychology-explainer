@@ -151,7 +151,10 @@ export type RoomName =
   | 'maker-workshop'
   | 'deja-street'
   | 'repeating-corridor'
-  | 'memory-lab';
+  | 'memory-lab'
+  | 'toddler-playroom'
+  | 'family-photo-wall'
+  | 'growing-brainscape';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -4098,6 +4101,75 @@ export const MemoryLab: React.FC = () => (
   </g>
 );
 
+/** Toddler playroom: a bright playroom of toys, blocks and a rug — the world of the
+ *  years you can't remember. */
+export const ToddlerPlayroom: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellow, 0.04)} floor={COLORS.wood} floorY={840} stripe={false} />
+    {/* cheerful wallpaper stripes */}
+    {Array.from({ length: 16 }).map((_, i) => <rect key={`st${i}`} x={i * 120} y={0} width={60} height={840} fill={shade(COLORS.yellow, 0.1)} opacity={0.55} />)}
+    {/* bigger scattered wallpaper shapes */}
+    {Array.from({ length: 7 }).map((_, r) => Array.from({ length: 12 }).map((_, c) => <g key={`${r}-${c}`} transform={`translate(${110 + c * 150} ${80 + r * 76})`}>{(r + c) % 3 === 0 ? <circle cx={0} cy={0} r={13} fill={COLORS.pink} opacity={0.4} /> : (r + c) % 3 === 1 ? <rect x={-11} y={-11} width={22} height={22} rx={4} fill={COLORS.sky} opacity={0.4} /> : <path d="M 0 -13 l 11 18 l -22 0 Z" fill={COLORS.greenLeaf} opacity={0.35} />}</g>))}
+    {/* a hanging cot mobile + a growth height-chart */}
+    <g transform="translate(960 60)"><line x1={-90} y1={0} x2={90} y2={0} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><line x1={0} y1={0} x2={0} y2={-40} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} />{[-70, -20, 30, 80].map((x, i) => <g key={i} transform={`translate(${x} ${60})`}><line x1={0} y1={-60} x2={0} y2={0} stroke={COLORS.woodDark} strokeWidth={STROKE.sm} /><circle cx={0} cy={10} r={16} fill={[COLORS.red, COLORS.sky, COLORS.yellow, COLORS.greenLeaf][i]} {...sm} /></g>)}</g>
+    <g transform="translate(1180 360)"><rect x={-20} y={-180} width={40} height={360} rx={8} fill={COLORS.white} {...lg} />{[0,1,2,3,4,5,6].map((i)=><line key={i} x1={-20} y1={-150+i*50} x2={i%2?0:8} y2={-150+i*50} stroke={COLORS.sky} strokeWidth={STROKE.sm} />)}<circle cx={0} cy={-120} r={14} fill={COLORS.pink} opacity={0.7} /></g>
+    {/* a toy shelf */}
+    <g transform="translate(300 330)"><rect x={-130} y={-120} width={260} height={300} rx={10} fill={COLORS.sky} {...xl} />{[0, 1, 2].map((r) => <g key={r}><rect x={-120} y={-70 + r * 90} width={240} height={14} fill={shade(COLORS.sky, -0.08)} />{[-80, -20, 40, 90].map((x, i) => <rect key={i} x={x - 16} y={-110 + r * 90} width={32} height={38} rx={4} fill={[COLORS.red, COLORS.yellow, COLORS.greenLeaf, COLORS.pink][(r + i) % 4]} {...sm} />)}</g>)}</g>
+    {/* a window with daylight */}
+    <g transform="translate(1600 320)"><rect x={-140} y={-150} width={280} height={300} rx={12} fill={COLORS.sky} {...xl} /><circle cx={60} cy={-80} r={40} fill={COLORS.yellow} /><line x1={0} y1={-150} x2={0} y2={150} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /><line x1={-140} y1={0} x2={140} y2={0} stroke={shade(COLORS.sky, -0.1)} strokeWidth={STROKE.lg} /></g>
+    {/* a stack of alphabet blocks + a toy train on the floor */}
+    <g transform="translate(900 780)">{[[-40, 0, 'A', COLORS.red], [0, 0, 'B', COLORS.sky], [40, 0, 'C', COLORS.yellow], [-20, -52, 'D', COLORS.greenLeaf], [20, -52, 'E', COLORS.pink]].map(([x, y, ch, c], i) => <g key={i} transform={`translate(${x} ${y})`}><rect x={-24} y={-24} width={48} height={48} rx={6} fill={c as string} {...lg} /><text x={0} y={8} textAnchor="middle" fontFamily="Baloo 2" fontWeight={800} fontSize={24} fill={COLORS.white}>{ch as string}</text></g>)}</g>
+    <g transform="translate(1340 900)"><rect x={-70} y={-20} width={140} height={40} rx={10} fill={COLORS.red} {...xl} /><circle cx={-40} cy={28} r={16} fill={COLORS.outline} /><circle cx={40} cy={28} r={16} fill={COLORS.outline} /><rect x={-20} y={-54} width={40} height={36} rx={6} fill={COLORS.yellow} {...lg} /></g>
+    {/* a soft play rug */}
+    <ellipse cx={1050} cy={990} rx={360} ry={56} fill={shade(COLORS.greenLeaf, 0.06)} opacity={0.6} />
+    {/* a teddy */}
+    <g transform="translate(640 900)"><circle cx={0} cy={0} r={34} fill={COLORS.wood} {...xl} /><circle cx={-26} cy={-26} r={14} fill={COLORS.wood} {...lg} /><circle cx={26} cy={-26} r={14} fill={COLORS.wood} {...lg} /><circle cx={-10} cy={-4} r={4} fill={COLORS.outline} /><circle cx={10} cy={-4} r={4} fill={COLORS.outline} /></g>
+  </g>
+);
+
+/** Family photo wall: a cosy living room dominated by a wall of framed baby photos —
+ *  where "memories" get rebuilt from pictures. */
+export const FamilyPhotoWall: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.greenTeal, 0.1)} floor={COLORS.wood} floorY={840} stripe={false} />
+    <rect x={0} y={600} width={CANVAS.width} height={240} fill={shade(COLORS.greenTeal, 0.05)} />
+    {Array.from({ length: 11 }).map((_, i) => <line key={i} x1={i * 180} y1={0} x2={i * 180} y2={600} stroke={shade(COLORS.greenTeal, 0.05)} strokeWidth={STROKE.sm} opacity={0.4} />)}
+    {/* a grid of framed baby photos */}
+    {[[260, 180], [470, 230], [690, 170], [1230, 190], [1460, 160], [1680, 220]].map(([x, y], i) => (
+      <g key={i} transform={`translate(${x} ${y}) rotate(${(i % 2 ? 1 : -1) * 4})`}>
+        <rect x={-66} y={-82} width={132} height={164} rx={6} fill={COLORS.white} {...lg} />
+        <rect x={-52} y={-68} width={104} height={110} rx={4} fill={[COLORS.pink, COLORS.sky, COLORS.yellow, COLORS.greenLeaf, COLORS.lavender, COLORS.pink][i]} opacity={0.6} />
+        <circle cx={0} cy={-24} r={22} fill={COLORS.white} /><path d="M -14 -16 Q 0 -8 14 -16" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} />
+        <text x={0} y={64} textAnchor="middle" fontFamily="Baloo 2" fontWeight={700} fontSize={14} fill={shade(COLORS.wood, -0.1)}>{['age 1', 'age 2', 'age 3', 'age 1', 'age 2', 'age 4'][i]}</text>
+      </g>
+    ))}
+    {/* a sofa + a photo album on a table */}
+    <g transform="translate(600 800)"><rect x={-220} y={-40} width={440} height={160} rx={26} fill={COLORS.pink} {...xl} /><rect x={-260} y={-20} width={60} height={140} rx={20} fill={shade(COLORS.pink, 0.1)} {...lg} /><rect x={200} y={-20} width={60} height={140} rx={20} fill={shade(COLORS.pink, 0.1)} {...lg} />{[-120, -10, 100].map((x, i) => <rect key={i} x={x - 40} y={-30} width={80} height={70} rx={14} fill={[COLORS.white, COLORS.yellowSoft, COLORS.white][i]} {...lg} />)}</g>
+    <g transform="translate(1340 900)"><rect x={-100} y={-16} width={200} height={28} rx={8} fill={COLORS.woodDark} {...xl} /><g transform="translate(0 -40)"><rect x={-64} y={-30} width={128} height={56} rx={6} fill={COLORS.red} {...lg} /><line x1={0} y1={-30} x2={0} y2={26} stroke={shade(COLORS.red, -0.1)} strokeWidth={STROKE.lg} /></g></g>
+  </g>
+);
+
+/** Growing brainscape: a soft, surreal landscape of a growing brain — neurons
+ *  sprouting like plants, for the developing-memory beats. */
+export const GrowingBrainscape: React.FC = () => (
+  <g>
+    <WallFloor wall={COLORS.lavender} floor={shade(COLORS.lavender, 0.14)} floorY={820} stripe={false} />
+    <rect x={0} y={0} width={CANVAS.width} height={300} fill={shade(COLORS.lavender, 0.06)} />
+    {/* soft glowing orbs (synapses) floating */}
+    {Array.from({ length: 20 }).map((_, i) => <circle key={i} cx={(i * 211) % 1880} cy={80 + ((i * 123) % 420)} r={5 + (i % 3) * 3} fill={COLORS.white} opacity={0.4} />)}
+    {/* big central developing brain */}
+    <g transform="translate(960 420)">
+      <path d="M -220 60 Q -280 -140 -120 -180 Q -70 -250 40 -210 Q 160 -250 190 -140 Q 280 -100 220 20 Q 240 130 100 150 Q 0 220 -100 150 Q -240 140 -220 60 Z" fill={COLORS.pink} opacity={0.5} {...xl} />
+      {/* folds */}
+      <path d="M -120 -120 Q -40 -60 -120 0 Q -40 60 -120 120 M 40 -150 Q -20 -70 60 -30 Q -20 40 60 100" fill="none" stroke={shade(COLORS.pink, 0.16)} strokeWidth={STROKE.lg} strokeLinecap="round" opacity={0.6} />
+    </g>
+    {/* neurons sprouting like plants from the floor */}
+    {[220, 500, 1420, 1700].map((x, i) => <g key={i} transform={`translate(${x} 820)`}><path d="M 0 0 q -20 -70 0 -140 M 0 -60 q -30 -20 -50 -50 M 0 -90 q 30 -16 54 -44" fill="none" stroke={COLORS.lavenderDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><circle cx={0} cy={-140} r={14} fill={COLORS.sky} {...sm} /><circle cx={-50} cy={-110} r={10} fill={COLORS.yellow} {...sm} /><circle cx={54} cy={-134} r={11} fill={COLORS.pink} {...sm} /></g>)}
+    {/* a ground mist */}
+    <ellipse cx={960} cy={1000} rx={700} ry={60} fill={shade(COLORS.lavender, 0.2)} opacity={0.5} />
+  </g>
+);
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -4234,6 +4306,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'deja-street': DejaStreet,
   'repeating-corridor': RepeatingCorridor,
   'memory-lab': MemoryLab,
+  'toddler-playroom': ToddlerPlayroom,
+  'family-photo-wall': FamilyPhotoWall,
+  'growing-brainscape': GrowingBrainscape,
 };
 
 export const ROOM_NAMES = Object.keys(ROOMS) as RoomName[];
