@@ -1,0 +1,322 @@
+{
+  "title": "Every Type of Couple Explained",
+  "slug": "types-of-couple",
+  "chapters": [
+    {
+      "name": "Cold Open",
+      "beats": [
+        {
+          "vo": "Think of three couples you know well. Odds are they run on completely different engines. One bickers constantly and seems blissfully happy. One never raises a voice and is quietly falling apart. The question psychologists have chased for decades isn't which style is right. It's which ones actually last, and why.",
+          "scene": "story",
+          "room": "shared-apartment",
+          "emotion": "serious-expert",
+          "camera": "slowZoom",
+          "chapterStart": true,
+          "title": "EVERY TYPE OF",
+          "subtitle": "couple",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 760, "y": 980, "scale": 0.85, "talking": true },
+            { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1160, "y": 980, "scale": 0.85, "flip": true }
+          ]
+        },
+        {
+          "vo": "Here's the surprise from the research. The happiest couples aren't the calmest ones, and the most explosive aren't always doomed. What separates lasting love from slow collapse isn't how much you fight. It's the ratio of warmth to friction, and whether you can repair after a rupture. Style matters far less than most people think.",
+          "scene": "diagramCard",
+          "diagram": "gottman-grid",
+          "emotion": "serious-expert",
+          "withMascot": true
+        },
+        {
+          "vo": "So today, a field guide to couples. The three stable types that tend to go the distance, the warning signs that predict breakup with eerie accuracy, the attachment trap that drives so many apart, and the dynamics in between. See if you recognise yourself, and see what the stayers actually do differently.",
+          "scene": "explainer",
+          "prop": "repair-bridge",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Validating Couple",
+      "beats": [
+        {
+          "vo": "We start with the first of the stable types: the validating couple. When these two disagree, they stay calm, they take turns, and above all they make sure the other feels heard before anyone tries to solve anything. The phrase you hear most is, I get why you feel that way.",
+          "scene": "explainer",
+          "prop": "validating-couple",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE VALIDATING COUPLE",
+          "subtitle": "calm, heard, compromising"
+        },
+        {
+          "vo": "John Gottman, who studied thousands of couples in his famous love lab, found this to be the classic textbook-healthy pairing. They pick their battles, they compromise easily, and conflict feels more like a negotiation between teammates than a duel. The warmth is steady rather than fiery.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "validating-couple",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "The one risk? All that smooth cooperation can slide into feeling more like business partners than lovers. These couples have to protect romance and passion on purpose, or the friendship quietly swallows the spark. Calm is a strength, but it can go flat if nobody tends the fire.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "The Volatile Couple",
+      "beats": [
+        {
+          "vo": "Type two, and it surprises everyone: the volatile couple. These two argue loudly, interrupt constantly, and feel everything at full volume. From the outside it can look like a disaster. Gottman found it can be perfectly stable, as long as the fireworks go both ways.",
+          "scene": "explainer",
+          "prop": "volatile-couple",
+          "emotion": "excited",
+          "chapterStart": true,
+          "title": "THE VOLATILE COUPLE",
+          "subtitle": "passionate, fiery, affectionate"
+        },
+        {
+          "vo": "The secret is that for every heated clash, there's an equal burst of laughter, affection, and passion. They fight hard because they engage hard. The danger is obvious: if the heat tips from passionate into cruel, if contempt creeps in, all that intensity becomes corrosive fast.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "volatile-couple",
+          "emotion": "excited"
+        },
+        {
+          "vo": "Picture them at dinner, mid-debate over something small, both talking over each other, and then one lands a joke and they both crack up. That's the tell. The energy swings between heat and warmth, never settling into cold. For this couple, intensity isn't a bug. It's how they stay alive to each other.",
+          "scene": "story",
+          "room": "candlelit-bistro",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "excited", "x": 780, "y": 980, "scale": 0.82, "talking": true },
+            { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1150, "y": 980, "scale": 0.82, "flip": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Conflict-Avoidant Couple",
+      "beats": [
+        {
+          "vo": "The third stable type: the conflict-avoidant couple. These two minimise disagreement. They'd rather agree to disagree than hash it out, they emphasise what they share, and they let a lot of small things slide. Their home is peaceful, and that peace is the whole point.",
+          "scene": "explainer",
+          "prop": "avoidant-couple",
+          "emotion": "neutral",
+          "chapterStart": true,
+          "title": "THE CONFLICT-AVOIDANT COUPLE",
+          "subtitle": "peaceful, independent, live and let live"
+        },
+        {
+          "vo": "It works beautifully when both genuinely don't sweat the small stuff. The risk is when a real issue needs confronting and nobody will go near it. Problems get buried instead of solved, and distance grows in the silence. Avoiding a fight is not the same as resolving it.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "avoidant-couple",
+          "emotion": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "The Warning Signs",
+      "beats": [
+        {
+          "vo": "Here's the twist Gottman is famous for. All three of those types can thrive. What predicts divorce isn't a style at all. It's four specific behaviours he called the Four Horsemen, and watching for them, he could forecast breakup with over ninety percent accuracy from a short conversation.",
+          "scene": "explainer",
+          "prop": "four-horsemen",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "THE FOUR HORSEMEN",
+          "subtitle": "what actually predicts breakup"
+        },
+        {
+          "vo": "First, criticism: attacking who your partner is, not what they did. Second, defensiveness: deflecting blame instead of owning your part. Third, stonewalling: shutting down and going silent. And deadliest of all, contempt: eye-rolls, mockery, that cold superiority. Contempt is the single biggest predictor that a couple won't make it.",
+          "scene": "diagramCard",
+          "diagram": "magic-ratio",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "Each horseman has an antidote. Swap criticism for a gentle complaint about a specific behaviour. Swap defensiveness for taking even a sliver of responsibility. Swap stonewalling for asking to pause and come back. And the cure for contempt is the slow, daily practice of fondness and admiration. These are skills, and skills can be built.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "four-horsemen",
+          "emotion": "serious-expert"
+        },
+        {
+          "vo": "The flip side is hopeful. Gottman found a magic ratio: in stable relationships, positive interactions outnumber negative ones by about five to one, even during conflict. You don't need zero fights. You need far more warmth than friction, and the willingness to repair when you slip.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Pursue-Withdraw Couple",
+      "beats": [
+        {
+          "vo": "Now the most common painful pattern of all: the pursue-withdraw couple. One partner, often anxiously attached, chases connection when upset. The other, often avoidant, feels flooded and pulls away. The more one pursues, the more the other retreats, and round and round it goes.",
+          "scene": "explainer",
+          "prop": "pursue-withdraw",
+          "emotion": "scared",
+          "chapterStart": true,
+          "title": "THE PURSUE-WITHDRAW COUPLE",
+          "subtitle": "the anxious-avoidant trap"
+        },
+        {
+          "vo": "The cruel irony is that both are trying to protect the same bond. The pursuer's protests are a cry to not be abandoned. The withdrawer's silence is an attempt to stop things getting worse. Each one's coping move is the other's worst trigger, so the cycle feeds itself.",
+          "scene": "diagramCard",
+          "diagram": "pursue-withdraw-cycle",
+          "emotion": "scared"
+        },
+        {
+          "vo": "The way out isn't finding a less anxious or less avoidant partner. It's naming the dance itself, out loud, as the shared enemy. When the pursuer softens their approach and the withdrawer stays and reassures instead of fleeing, the loop finally loosens. You beat the pattern as a team.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "pursue-withdraw",
+          "emotion": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "The Secure Couple",
+      "beats": [
+        {
+          "vo": "The opposite of that trap is the secure couple. Each one acts as a safe harbour for the other. They can be close without losing themselves, and apart without panicking. When one is stressed, the other is a reliable anchor rather than another storm.",
+          "scene": "explainer",
+          "prop": "secure-base-couple",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE SECURE COUPLE",
+          "subtitle": "a safe harbour for each other"
+        },
+        {
+          "vo": "Here's the encouraging part: security isn't only something you're born with from a lucky childhood. Psychologists call it earned security. Through a steady, trustworthy partner, or good therapy, people can grow into it over time. A secure bond can be built, not just inherited.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "secure-base-couple",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "What secure couples do, almost without noticing, is turn toward each other in the tiny moments. A sigh gets a glance. A random fact gets a real reply. Gottman called these bids for connection, and the stayers answer them again and again. It's not grand gestures that build safety. It's a thousand small yeses.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "happy-talk"
+        }
+      ]
+    },
+    {
+      "name": "The Best-Friends Couple",
+      "beats": [
+        {
+          "vo": "Next, the best-friends couple. These two are companions first. They finish each other's sentences, share a thousand private jokes, and genuinely like hanging out. Gottman actually found that deep friendship is the foundation under every lasting romance, so this is a powerful base to build on.",
+          "scene": "explainer",
+          "prop": "best-friends-couple",
+          "emotion": "happy-talk",
+          "chapterStart": true,
+          "title": "THE BEST-FRIENDS COUPLE",
+          "subtitle": "companions first"
+        },
+        {
+          "vo": "The watch-out is the mirror of the validating couple. When the friendship is this comfortable, desire can quietly fade, and you drift toward feeling like roommates who adore each other but rarely touch. The fix is to deliberately court the person you've already won. Keep dating them.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "best-friends-couple",
+          "emotion": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "The Power Couple",
+      "beats": [
+        {
+          "vo": "Then there's the power couple. Two ambitious, high-achieving people, each with a big career and a packed calendar. They admire each other's drive and look dazzling from outside. The engine running this pair is mutual respect and a shared love of the climb.",
+          "scene": "explainer",
+          "prop": "power-couple",
+          "emotion": "smug",
+          "chapterStart": true,
+          "title": "THE POWER COUPLE",
+          "subtitle": "two ambitions, parallel climbs"
+        },
+        {
+          "vo": "The hidden cost is time and presence. When both lives run at full throttle, the relationship can become a logistics meeting: two people managing a household and syncing diaries, but rarely truly connecting. The ones who thrive guard their time together as fiercely as they guard their careers.",
+          "scene": "explainer",
+          "prop": "power-couple",
+          "emotion": "neutral"
+        },
+        {
+          "vo": "There's a quieter version too, where one partner's ambition outruns the other's, and the gap breeds resentment on both sides. What keeps a power couple strong isn't equal success. It's feeling like genuine allies in each other's dreams, instead of two rivals who happen to share an address.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Enmeshed Couple",
+      "beats": [
+        {
+          "vo": "On the far end of closeness is the enmeshed, or codependent, couple. These two do everything together, share every opinion, and slowly dissolve their separate selves into one. From inside it can feel like the ultimate intimacy. In truth, two people have quietly collapsed into one.",
+          "scene": "explainer",
+          "prop": "enmeshed-knot",
+          "emotion": "confused",
+          "chapterStart": true,
+          "title": "THE ENMESHED COUPLE",
+          "subtitle": "when two become dangerously one"
+        },
+        {
+          "vo": "Healthy love needs two whole people who choose each other, not two halves who can't function alone. When there are no separate friends, no solo hobbies, no independent opinions, the bond becomes fragile and suffocating. Psychologists picture it as a spectrum, from disengaged, through interdependent, to enmeshed.",
+          "scene": "diagramCard",
+          "diagram": "interdependence-spectrum",
+          "emotion": "serious-expert"
+        }
+      ]
+    },
+    {
+      "name": "The Drifting Couples",
+      "beats": [
+        {
+          "vo": "A few more you'll recognise instantly. The on-again, off-again couple, caught in a breakup-makeup loop, mistaking the drama of reunion for real compatibility. The opposites-attract couple, where differences that first felt exciting slowly become the very things they argue about most.",
+          "scene": "closeUp",
+          "subject": "face",
+          "emotion": "confused",
+          "chapterStart": true,
+          "title": "THE DRIFTERS",
+          "subtitle": "cycles, opposites, and roommates"
+        },
+        {
+          "vo": "And the quietly growing-apart couple: no fighting, no drama, just two people sharing a home and a calendar while living increasingly separate lives. This one is dangerous precisely because it's so calm. There's no fire alarm, only a slow, silent cooling that's easy to ignore until it's very late.",
+          "scene": "explainer",
+          "prop": "repair-bridge",
+          "emotion": "sleepy"
+        }
+      ]
+    },
+    {
+      "name": "What Actually Lasts",
+      "beats": [
+        {
+          "vo": "So after all these types, what actually makes love last? Not a personality match, not avoiding every fight, and not some perfect style. The stayers share three unglamorous habits, and the good news is that every one of them can be learned, starting tonight.",
+          "scene": "explainer",
+          "prop": "repair-bridge",
+          "emotion": "serious-expert",
+          "chapterStart": true,
+          "title": "WHAT ACTUALLY LASTS",
+          "subtitle": "three learnable habits"
+        },
+        {
+          "vo": "One: they keep the warmth-to-friction ratio high, flooding ordinary days with small affections. Two: they repair fast after a rupture, with a joke, a touch, a genuine sorry, instead of letting resentment harden. Three: they stay curious about a person they'll never fully finish knowing.",
+          "scene": "closeUp",
+          "subject": "object",
+          "prop": "repair-bridge",
+          "emotion": "happy-talk"
+        },
+        {
+          "vo": "So which couple are you? Maybe you saw yourself in several, or you've been more than one over the years. None of these is a verdict or a diagnosis. They're mirrors. Notice your pattern, protect the warmth, learn to repair, and keep choosing each other on purpose. That's the whole secret. Take care of your minds, and of each other.",
+          "scene": "story",
+          "room": "harbor-dusk",
+          "emotion": "happy-talk",
+          "mascots": [
+            { "costume": "hoodie", "pose": "idle", "emotion": "happy-talk", "x": 780, "y": 980, "scale": 0.85, "talking": true },
+            { "costume": "tee", "pose": "idle", "emotion": "happy-talk", "x": 1160, "y": 980, "scale": 0.85, "flip": true }
+          ]
+        }
+      ]
+    }
+  ]
+}

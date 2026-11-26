@@ -223,7 +223,10 @@ export type RoomName =
   | 'couples-therapy'
   | 'hall-of-mirrors'
   | 'mind-watchtower'
-  | 'reflection-pool';
+  | 'reflection-pool'
+  | 'shared-apartment'
+  | 'candlelit-bistro'
+  | 'harbor-dusk';
 
 export const BedroomNight: React.FC = () => (
   <g>
@@ -5725,6 +5728,107 @@ export const ReflectionPool: React.FC = () => (
   </g>
 );
 
+/** Shared apartment: a cozy lived-in living room — a sofa, coffee table with two mugs,
+ *  two framed photos, a plant, a rug and a warm window. The couples' shared home. */
+export const SharedApartment: React.FC = () => (
+  <g>
+    <WallFloor wall={shade(COLORS.yellowSoft, -0.02)} floor={shade(COLORS.wood, 0.02)} floorY={812} stripe={false} />
+    {/* wainscot + wallpaper stripes */}
+    <rect x={0} y={560} width={CANVAS.width} height={252} fill={shade(COLORS.wood, -0.1)} opacity={0.35} />
+    <rect x={0} y={548} width={CANVAS.width} height={16} fill={COLORS.woodDark} opacity={0.5} />
+    {Array.from({ length: 16 }).map((_, i) => <rect key={i} x={i * 122} y={0} width={60} height={560} fill={shade(COLORS.yellowSoft, -0.07)} opacity={0.45} />)}
+    {/* window with evening sky */}
+    <g transform="translate(300 300)"><rect x={-130} y={-130} width={260} height={260} rx={10} fill={shade(COLORS.sky, -0.04)} {...xl} /><rect x={-110} y={-110} width={220} height={220} fill={shade(COLORS.pink, 0.02)} opacity={0.5} /><circle cx={40} cy={-30} r={40} fill={COLORS.yellow} opacity={0.7} /><line x1={0} y1={-130} x2={0} y2={130} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><line x1={-130} y1={0} x2={130} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.sm} /></g>
+    {/* bookshelf on the right wall */}
+    <g transform="translate(1400 200)"><rect x={-130} y={-80} width={260} height={320} rx={10} fill={COLORS.woodDark} {...xl} />{[0, 1, 2].map((r) => <g key={r}><rect x={-118} y={-64 + r * 104} width={236} height={92} rx={4} fill={shade(COLORS.wood, -0.12)} />{[0, 1, 2, 3, 4, 5].map((c) => <rect key={c} x={-112 + c * 38} y={-60 + r * 104} width={30} height={84} rx={3} fill={[COLORS.red, COLORS.sky, COLORS.greenLeaf, COLORS.yellow, COLORS.lavender, COLORS.pink][(r + c) % 6]} {...sm} />)}</g>)}</g>
+    {/* round wall clock */}
+    <g transform="translate(700 210)"><circle cx={0} cy={0} r={56} fill={COLORS.white} {...xl} /><circle cx={0} cy={0} r={5} fill={COLORS.outline} /><line x1={0} y1={0} x2={0} y2={-34} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /><line x1={0} y1={0} x2={24} y2={10} stroke={COLORS.outline} strokeWidth={STROKE.sm} strokeLinecap="round" /></g>
+    {/* floor lamp (left) */}
+    <g transform="translate(170 560)"><rect x={-10} y={120} width={20} height={252} fill={COLORS.woodDark} {...sm} /><rect x={-50} y={370} width={100} height={20} rx={6} fill={COLORS.woodDark} {...sm} /><path d="M -46 120 L 46 120 L 30 46 L -30 46 Z" fill={COLORS.yellowSoft} {...lg} /><ellipse cx={0} cy={150} rx={120} ry={30} fill={COLORS.yellow} opacity={0.18} /></g>
+    {/* two framed photos */}
+    {[[900, 260], [1050, 300]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><rect x={-44} y={-54} width={88} height={108} rx={6} fill={COLORS.white} {...lg} /><circle cx={0} cy={-12} r={20} fill={COLORS.skin} {...sm} /><path d="M -28 48 Q -30 6 0 6 Q 30 6 28 48 Z" fill={[COLORS.pink, COLORS.sky][i]} {...sm} /></g>)}
+    {/* tall plant */}
+    <g transform="translate(1680 560)"><rect x={-40} y={200} width={80} height={120} rx={10} fill={COLORS.woodDark} {...lg} />{[[-50, 0], [0, -40], [50, 0], [0, 40]].map(([dx, dy], i) => <path key={i} d={`M 0 200 Q ${dx} ${80 + dy} ${dx * 1.1} ${dy}`} fill="none" stroke={COLORS.greenDark} strokeWidth={STROKE.lg} strokeLinecap="round" />)}{[[-56, -4], [0, -44], [56, -4]].map(([x, y], i) => <ellipse key={i} cx={x} cy={y} rx={26} ry={44} fill={COLORS.greenLeaf} {...sm} transform={`rotate(${(i - 1) * 24} ${x} ${y})`} />)}</g>
+    {/* rug */}
+    <ellipse cx={1000} cy={940} rx={520} ry={80} fill={shade(COLORS.pink, -0.02)} opacity={0.5} {...sm} />
+    {/* sofa */}
+    <g transform="translate(1180 740)"><rect x={-300} y={-40} width={600} height={160} rx={30} fill={COLORS.lavender} {...xl} /><rect x={-300} y={-120} width={600} height={100} rx={28} fill={shade(COLORS.lavender, 0.06)} {...xl} /><rect x={-320} y={-80} width={60} height={200} rx={24} fill={shade(COLORS.lavender, -0.06)} {...lg} /><rect x={260} y={-80} width={60} height={200} rx={24} fill={shade(COLORS.lavender, -0.06)} {...lg} />{[-160, 0, 160].map((x, i) => <rect key={i} x={x - 54} y={-26} width={108} height={96} rx={16} fill={shade(COLORS.lavender, 0.04)} {...sm} />)}{[[-120, COLORS.yellow], [120, COLORS.sky]].map(([x, c], i) => <rect key={i} x={(x as number) - 36} y={-10} width={72} height={72} rx={14} fill={c as string} {...sm} />)}</g>
+    {/* coffee table + two mugs */}
+    <g transform="translate(640 900)"><rect x={-150} y={0} width={300} height={40} rx={8} fill={COLORS.wood} {...lg} /><rect x={-130} y={40} width={24} height={60} fill={COLORS.woodDark} /><rect x={106} y={40} width={24} height={60} fill={COLORS.woodDark} />{[[-60, COLORS.red], [60, COLORS.greenTeal]].map(([x, c], i) => <g key={i} transform={`translate(${x} -16)`}><rect x={-18} y={-20} width={36} height={32} rx={6} fill={c as string} {...sm} /><path d="M 18 -14 q 14 2 14 14 q 0 12 -14 12" fill="none" stroke={COLORS.outline} strokeWidth={STROKE.sm} /><ellipse cx={0} cy={-20} rx={18} ry={6} fill={shade(c as string, -0.1)} /></g>)}</g>
+  </g>
+);
+
+/** Candlelit bistro: a warm date-night restaurant — a small table for two with a candle,
+ *  two place settings and glasses, bistro chairs, hanging bulbs and a dusk window. */
+export const CandlelitBistro: React.FC = () => {
+  const f = useCurrentFrame();
+  const flick = 0.9 + 0.12 * Math.sin(f / 4);
+  return (
+    <g>
+      <WallFloor wall={shade(COLORS.red, -0.12)} floor={shade(COLORS.wood, -0.04)} floorY={820} stripe={false} />
+      {/* brick courses on the wall */}
+      {Array.from({ length: 8 }).map((_, r) => <g key={r}>{Array.from({ length: 13 }).map((_, c) => <rect key={c} x={c * 150 + (r % 2) * 75} y={r * 72} width={140} height={62} rx={6} fill={shade(COLORS.red, -0.05)} opacity={0.4} stroke={shade(COLORS.redDark, -0.1)} strokeWidth={STROKE.sm} />)}</g>)}
+      {/* hanging bulbs */}
+      {[460, 960, 1460].map((x, i) => <g key={i} transform={`translate(${x} 0)`}><line x1={0} y1={0} x2={0} y2={150} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><circle cx={0} cy={168} r={22} fill={COLORS.yellow} opacity={0.85} {...sm} /><circle cx={0} cy={168} r={44} fill={COLORS.yellowSoft} opacity={0.25} /></g>)}
+      {/* dusk window */}
+      <g transform="translate(1600 360)"><rect x={-150} y={-150} width={300} height={300} rx={14} fill={shade(COLORS.purpleDeep, 0.06)} {...xl} />{Array.from({ length: 3 }).map((_, i) => <rect key={i} x={-150} y={-150 + i * 100} width={300} height={100} fill={shade([COLORS.purpleDeep, COLORS.pink, COLORS.red][i], 0.04)} opacity={0.4} />)}<line x1={0} y1={-150} x2={0} y2={150} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><line x1={-150} y1={0} x2={150} y2={0} stroke={COLORS.outline} strokeWidth={STROKE.sm} /></g>
+      {/* table for two */}
+      <g transform="translate(900 860)">
+        <ellipse cx={0} cy={0} rx={260} ry={60} fill={COLORS.white} {...xl} />
+        <rect x={-20} y={40} width={40} height={120} fill={COLORS.woodDark} />
+        {/* tablecloth drape */}
+        <path d="M -260 0 Q 0 60 260 0 L 240 70 Q 0 120 -240 70 Z" fill={shade(COLORS.white, -0.06)} opacity={0.6} />
+        {/* candle in the centre */}
+        <g transform="translate(0 -14)"><rect x={-12} y={-30} width={24} height={44} rx={6} fill={COLORS.yellowSoft} {...sm} /><g transform={`scale(${flick})`}><path d="M 0 -56 Q 10 -40 0 -30 Q -10 -40 0 -56 Z" fill={COLORS.yellow} /><path d="M 0 -50 Q 5 -40 0 -34 Q -5 -40 0 -50 Z" fill={COLORS.red} opacity={0.7} /></g></g>
+        {/* two plates + glasses */}
+        {[[-150, COLORS.sky], [150, COLORS.pink]].map(([x, c], i) => <g key={i} transform={`translate(${x} 6)`}><ellipse cx={0} cy={0} rx={56} ry={20} fill={shade(COLORS.white, -0.04)} {...sm} /><ellipse cx={0} cy={-2} rx={34} ry={12} fill={COLORS.white} /><g transform={`translate(${i ? 70 : -70} -36)`}><path d="M -14 0 Q -14 24 0 30 Q 14 24 14 0 Z" fill={c as string} opacity={0.55} {...sm} /><line x1={0} y1={30} x2={0} y2={52} stroke={COLORS.outline} strokeWidth={STROKE.sm} /><ellipse cx={0} cy={54} rx={14} ry={4} fill={shade(c as string, -0.1)} /></g></g>)}
+      </g>
+      {/* two bistro chairs */}
+      {[[640, 1], [1160, -1]].map(([x, s], i) => <g key={i} transform={`translate(${x} 900) scale(${s} 1)`}><rect x={-44} y={0} width={88} height={30} rx={6} fill={COLORS.woodDark} {...lg} /><rect x={-44} y={-120} width={20} height={150} rx={6} fill={COLORS.woodDark} {...sm} /><path d="M -44 -120 Q 0 -150 44 -120" fill="none" stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" /><rect x={-40} y={30} width={14} height={80} fill={COLORS.woodDark} /><rect x={26} y={30} width={14} height={80} fill={COLORS.woodDark} /></g>)}
+    </g>
+  );
+};
+
+/** Harbour at dusk: a calm pier over still water with a moored boat, an anchor post and
+ *  a low sun — the "safe harbour" of a secure bond. */
+export const HarborDusk: React.FC = () => {
+  const f = useCurrentFrame();
+  const bob = 4 * Math.sin(f / 18);
+  return (
+    <g>
+      <WallFloor wall={shade(COLORS.sky, -0.06)} floor={shade(COLORS.navy, 0.06)} floorY={640} stripe={false} />
+      {/* graduated dusk sky */}
+      {Array.from({ length: 6 }).map((_, i) => <rect key={i} x={0} y={i * 108} width={CANVAS.width} height={108} fill={shade([COLORS.purpleDeep, COLORS.lavender, COLORS.pink, COLORS.pink, COLORS.yellowSoft, COLORS.yellowSoft][i], 0.03)} opacity={0.5} />)}
+      {/* low sun */}
+      <circle cx={960} cy={560} r={90} fill={COLORS.yellow} opacity={0.85} />
+      <circle cx={960} cy={560} r={130} fill={COLORS.yellowSoft} opacity={0.3} />
+      {/* soft clouds */}
+      {[[320, 200], [1500, 260], [760, 150]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`} opacity={0.45}><ellipse cx={0} cy={0} rx={90} ry={32} fill={COLORS.white} /><ellipse cx={-60} cy={12} rx={54} ry={26} fill={COLORS.white} /><ellipse cx={60} cy={10} rx={50} ry={24} fill={COLORS.white} /></g>)}
+      {/* a couple of early stars */}
+      {[[200, 120], [1720, 90], [1400, 160]].map(([x, y], i) => <g key={i} stroke={COLORS.white} strokeWidth={STROKE.sm} opacity={0.6}><line x1={x - 7} y1={y} x2={x + 7} y2={y} strokeLinecap="round" /><line x1={x} y1={y - 7} x2={x} y2={y + 7} strokeLinecap="round" /></g>)}
+      {/* water: sun reflection + ripple bands */}
+      <rect x={880} y={640} width={160} height={300} fill={COLORS.yellow} opacity={0.3} />
+      {Array.from({ length: 6 }).map((_, i) => <line key={i} x1={0} y1={700 + i * 56} x2={CANVAS.width} y2={700 + i * 56} stroke={shade(COLORS.sky, -0.12)} strokeWidth={STROKE.sm} opacity={0.4} strokeDasharray="40 30" />)}
+      {/* pier/dock */}
+      <g transform="translate(0 0)">
+        <rect x={120} y={720} width={760} height={34} rx={6} fill={COLORS.wood} {...lg} />
+        {[180, 380, 580, 780].map((x, i) => <rect key={i} x={x} y={754} width={24} height={200} fill={COLORS.woodDark} />)}
+        {[200, 420, 640].map((x, i) => <line key={i} x1={x} y1={700} x2={x} y2={722} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" />)}
+      </g>
+      {/* anchor post with coiled rope */}
+      <g transform="translate(820 700)"><rect x={-16} y={0} width={32} height={60} rx={8} fill={COLORS.woodDark} {...lg} /><ellipse cx={0} cy={0} rx={22} ry={10} fill={shade(COLORS.wood, -0.06)} {...sm} /><circle cx={0} cy={54} r={18} fill="none" stroke={shade(COLORS.yellowSoft, -0.06)} strokeWidth={STROKE.sm} /></g>
+      {/* moored boat gently bobbing */}
+      <g transform={`translate(1360 ${790 + bob})`}>
+        <path d="M -150 0 Q 0 70 150 0 L 120 60 Q 0 92 -120 60 Z" fill={COLORS.red} {...xl} />
+        <rect x={-130} y={-6} width={260} height={16} rx={6} fill={shade(COLORS.red, 0.08)} />
+        <line x1={0} y1={0} x2={0} y2={-160} stroke={COLORS.woodDark} strokeWidth={STROKE.lg} strokeLinecap="round" />
+        <path d="M 6 -156 L 90 -60 L 6 -60 Z" fill={COLORS.white} {...lg} />
+        <path d="M -6 -140 L -70 -60 L -6 -60 Z" fill={shade(COLORS.sky, 0.06)} {...lg} />
+      </g>
+    </g>
+  );
+};
+
 export const ROOMS: Record<RoomName, React.FC> = {
   'bedroom-night': BedroomNight,
   kitchen: Kitchen,
@@ -5930,6 +6034,9 @@ export const ROOMS: Record<RoomName, React.FC> = {
   'distant-bedroom': DistantBedroom,
   'secret-glow-room': SecretGlowRoom,
   'couples-therapy': CouplesTherapy,
+  'shared-apartment': SharedApartment,
+  'candlelit-bistro': CandlelitBistro,
+  'harbor-dusk': HarborDusk,
   'hall-of-mirrors': HallOfMirrors,
   'mind-watchtower': MindWatchtower,
   'reflection-pool': ReflectionPool,

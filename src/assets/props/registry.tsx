@@ -73,6 +73,7 @@ import * as Li from './lies';
 import * as Fr2 from './friends-types';
 import * as Che from './cheating';
 import * as Sa from './self-awareness';
+import * as Tc from './types-of-couple';
 
 export const PROPS: Record<string, React.FC<any>> = {
   // bedroom
@@ -869,6 +870,16 @@ export const PROPS: Record<string, React.FC<any>> = {
   'witness-self': Sa.WitnessSelf,
   'self-accept': Sa.SelfAccept,
   'clear-self': Sa.ClearSelf,
+  'validating-couple': Tc.ValidatingCouple,
+  'volatile-couple': Tc.VolatileCouple,
+  'avoidant-couple': Tc.AvoidantCouple,
+  'four-horsemen': Tc.FourHorsemen,
+  'pursue-withdraw': Tc.PursueWithdraw,
+  'secure-base-couple': Tc.SecureBaseCouple,
+  'best-friends-couple': Tc.BestFriendsCouple,
+  'power-couple': Tc.PowerCouple,
+  'enmeshed-knot': Tc.EnmeshedKnot,
+  'repair-bridge': Tc.RepairBridge,
 };
 
 export const PROP_NAMES = Object.keys(PROPS);

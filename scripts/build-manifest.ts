@@ -284,7 +284,7 @@ const NEW_ASSETS = new Set([
   // self-awareness (all new)
   'hall-of-mirrors', 'mind-watchtower', 'reflection-pool',
   'blind-spot', 'mount-confidence', 'hindsight-mirror', 'catch-moment', 'inner-map', 'others-view', 'thought-watching', 'witness-self', 'self-accept', 'clear-self',
-  'awareness-gap', 'internal-external', 'johari-window', 'what-not-why',
+  'awareness-gap', 'internal-external', 'johari-window', 'what-not-why', 'gottman-grid', 'magic-ratio', 'pursue-withdraw-cycle', 'interdependence-spectrum',
 ]);
 
 type Type = 'prop' | 'room' | 'costume' | 'pose' | 'emotion' | 'accessory' | 'diagram';

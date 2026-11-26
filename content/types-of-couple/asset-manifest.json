@@ -1,0 +1,278 @@
+{
+  "slug": "types-of-couple",
+  "generated": "by scripts/build-manifest.ts",
+  "counts": {
+    "exists": 23,
+    "NEW": 5
+  },
+  "assets": [
+    {
+      "name": "hoodie",
+      "type": "costume",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        32
+      ]
+    },
+    {
+      "name": "tee",
+      "type": "costume",
+      "status": "NEW",
+      "beats": [
+        0,
+        8,
+        32
+      ]
+    },
+    {
+      "name": "gottman-grid",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        1
+      ]
+    },
+    {
+      "name": "interdependence-spectrum",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        27
+      ]
+    },
+    {
+      "name": "magic-ratio",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        12
+      ]
+    },
+    {
+      "name": "pursue-withdraw-cycle",
+      "type": "diagram",
+      "status": "NEW",
+      "beats": [
+        16
+      ]
+    },
+    {
+      "name": "confused",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        26,
+        28
+      ]
+    },
+    {
+      "name": "excited",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "happy-talk",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        3,
+        4,
+        8,
+        18,
+        19,
+        20,
+        21,
+        31,
+        32
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        5,
+        9,
+        10,
+        17,
+        22,
+        24
+      ]
+    },
+    {
+      "name": "scared",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        15,
+        16
+      ]
+    },
+    {
+      "name": "serious-expert",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        0,
+        1,
+        2,
+        11,
+        12,
+        13,
+        14,
+        25,
+        27,
+        30
+      ]
+    },
+    {
+      "name": "sleepy",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        29
+      ]
+    },
+    {
+      "name": "smug",
+      "type": "emotion",
+      "status": "exists",
+      "beats": [
+        23
+      ]
+    },
+    {
+      "name": "idle",
+      "type": "pose",
+      "status": "exists",
+      "beats": [
+        0,
+        8,
+        32
+      ]
+    },
+    {
+      "name": "avoidant-couple",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "best-friends-couple",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "enmeshed-knot",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        26
+      ]
+    },
+    {
+      "name": "four-horsemen",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        11,
+        13
+      ]
+    },
+    {
+      "name": "power-couple",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        23,
+        24
+      ]
+    },
+    {
+      "name": "pursue-withdraw",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        15,
+        17
+      ]
+    },
+    {
+      "name": "repair-bridge",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        2,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "secure-base-couple",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        18,
+        19
+      ]
+    },
+    {
+      "name": "validating-couple",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "volatile-couple",
+      "type": "prop",
+      "status": "exists",
+      "beats": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "candlelit-bistro",
+      "type": "room",
+      "status": "exists",
+      "beats": [
+        8
+      ]
+    },
+    {
+      "name": "harbor-dusk",
+      "type": "room",
+      "status": "exists",
+      "beats": [
+        32
+      ]
+    },
+    {
+      "name": "shared-apartment",
+      "type": "room",
+      "status": "exists",
+      "beats": [
+        0
+      ]
+    }
+  ]
+}
