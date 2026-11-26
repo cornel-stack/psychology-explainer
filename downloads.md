@@ -71,6 +71,6 @@ Repo: https://github.com/cornel-stack/psychology-explainer
 | 63 | Every Type of Friend Explained | `types-of-friend` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45588637626 | ✅ render OK |
 | 64 | The Psychology of People Who Cheat | `people-who-cheat` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45593483912 | ✅ render OK |
 | 65 | Every Level of Self-Awareness Explained | `self-awareness` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45597793375 | ✅ render OK |
-| 66 | Every Type of Couple Explained | `types-of-couple` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45770195557 | ⏳ rendering |
+| 66 | Every Type of Couple Explained | `types-of-couple` | ~10 min | https://github.com/cornel-stack/psychology-explainer/actions/runs/45770195557 | ✅ render OK |
 
 _First-15 tier complete (all ✅). Broader catalogue in progress. Videos are sized to 10–15 min (#17–19 re-rendered to length)._
